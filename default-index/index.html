@@ -130,13 +130,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -195,6 +195,519 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/20/21-55-35/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="邱金羽的Bolg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的Bolg">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/20/21-55-35/" class="post-title-link" itemprop="url">电子学笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-02-20 21:55:35 / 修改时间：22:29:56" itemprop="dateCreated datePublished" datetime="2022-02-20T21:55:35+08:00">2022-02-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="纲要"><a href="#纲要" class="headerlink" title="纲要"></a>纲要</h2><p>BJT 晶体管有三个工作状态，分别是：截止，放大和饱和。其中我们在模拟电子技术中主要研究放大这种工作状态，在数字电路中我们主要使用截止和饱和两种状态。<br>BJT 晶体管是一种 3 端子元器件。晶体管是由 2个 PN 节组成，二极管由 1个 PN 节组成，两者都是非线性元器件。<br>非线性元器件意味着其端口电压与电流的变化不是线性的，即伏安关系曲线的斜率不断发生变化，所以在任意给定电压的情况下无法得到对应的电流。<br>研究晶体管的<br>我们在研究晶体管时从两个方面进行研究，一个是物理角度，以三极管的内部物理结构为基础对</p>
+<p>组态：</p>
+<ul>
+<li>定义：晶体管接入电路的方法（晶体管接入电路的形态）。</li>
+<li>种类：共基组态（共基极的接入方法）、共射组态和共集组态</li>
+<li>F&amp;Q：<ul>
+<li>共”的含义——共在组态的概念中指端口共用。<ul>
+<li>进一步解释端口共用：”将 BJT 晶体管看作一个双端口网络模型进行分析时，需要输入输出各两个端口，而晶体管有 3 个端口，因此需要一个端口共用。”</li>
+</ul>
+</li>
+<li>在组态概念下我们要讨论的问题是什么：<ul>
+<li>首先明确组态概念下讨论的是晶体管本身的伏安特性，谈论组态时是不含不涵盖除晶体管之外的其他元器件的。</li>
+<li>不同组态下晶体管展现出的不同的输入输出特性（伏安特性）是我们研究的重点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>电路负载线：</p>
+<ul>
+<li>定义：电路负载线表征电路对元器件施加的约束，这个约束表现为一种伏安关系</li>
+<li>方法：负载线可以由基本的电路定律得到（如基尔霍夫定律）</li>
+<li>tips：使用电路定律得到的负载线公式可以整理成针对于某一负载伏安关系的一次函数: $i=k v+b$  </li>
+</ul>
+<p>器件的伏安特性与</p>
+<p>耦合：</p>
+<ul>
+<li>定义：耦合就是连接的意思</li>
+<li>耦合电容：晶体管电路中的耦合电容起到连接直流源与交流源的作用</li>
+</ul>
+<p>偏置与静态工作点：</p>
+<ul>
+<li>偏置的含义：偏置是一种利用直流电压为电路设置固定直流电流和电压的广义称谓</li>
+<li>讨论偏置时的研究对象我们的研究对象不是电子元器件，而是某一电路</li>
+<li>偏置操作不但在”电路网络（黑箱）”外加入了直流电源，而且配合了电阻器件进行约束。<ul>
+<li>以晶体管的偏置为例：直流电源与电阻一起构成了晶体管电路，该对晶体管工作范围进行了约束，这种约束可以使用负载线来表示，并且可以通过数学形式变化将负载线与晶体管的输入输出特征曲线放在同一坐标轴下得到一个交点，称为静态工作点</li>
+</ul>
+</li>
+<li>静态工作点的含义：<ul>
+<li>偏置时设置的固定的电流与电压被称为静态工作点，标记为 Q</li>
+<li>静态工作点由元器件伏安特性和电路伏安约束共同确定，对于特定的器件，静态工作点仅由电路的配置决定。</li>
+<li>对于晶体管，配置不同的静态工作点有两个目标<ul>
+<li>第一个目标时让晶体管工作在特定的状态，在模拟电子技术中我们希望让晶体管工作在放大的工作状态</li>
+<li>第二个目标是针对线性的放大工作范围，我们还要挑选一个合适的位置，不能使得放大的信号失真</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>晶体管电路的基本构成：</p>
+<ul>
+<li>直流源+电阻-&gt;偏置得到静态工作点</li>
+<li>耦合电容+交流源-&gt;将交流源耦合在直流源上</li>
+<li>三极管-&gt;三极管选择不同的组态意味着不同的偏置方式</li>
+</ul>
+<p>半导体：</p>
+<ol>
+<li><p>半导体内部有两种载流子：电子和空穴</p>
+</li>
+<li><p>半导体处于热平衡时，电子浓度记作$n_o$，空穴浓度记作$p_o$</p>
+</li>
+<li><p>半导体中载流子浓度总满足等式$n_i^2=n_op_o$，使用$n_o,p_o$符号暗示了半导体处于热平衡状态</p>
+<ol>
+<li>$n_i$是热激发产生的电子空穴对的浓度，针对某一半导体，$n_i$只与温度有关，关系为$n_i=\sqrt{BT^3e^{\large{(\frac{-E_g}{2kT})}}}$</li>
+<li></li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>本征半导体就是指纯净不含杂质的半导体，其内部含有载流子且只由热激发产生，故本征半导体中的载流子浓度就是$n_i$</p>
+</li>
+<li><p>本征半导体内载流子由热激发产生</p>
+<ol>
+<li>热激发产生电子空穴对，故热激发产生的电子和空穴浓度相同</li>
+<li>浓度为：$n_o=p_o=\sqrt{BT^3e^{\large{(\frac{-E_g}{2kT})}}}$</li>
+<li>对于本征半导体载流子浓度，我们给一统一记号记作$n_i$，有$n_i=n_o=p_o=\sqrt{BT^3e^{\large{(\frac{-E_g}{2kT})}}}$</li>
+</ol>
+</li>
+<li><p>非本征半导体内载流子由热激发和掺杂产生</p>
+<ol>
+<li>掺杂只会产生电子或者空穴，非本征半导体的载流子浓度主要由掺杂决定</li>
+<li>浓度为（以N型半导体为例子）：$\begin{cases}\begin{aligned}  n_o&amp;=N_d+n_i \approx N_d \\ \\ p_o&amp;=\frac{n_i^2}{n_o}=\frac{n_i^2}{N_d}  \end{aligned}\end{cases} $</li>
+<li></li>
+</ol>
+</li>
+</ol>
+<h3 id="载流子"><a href="#载流子" class="headerlink" title="载流子"></a>载流子</h3><p>五个重要的符号：</p>
+<p>​    新版本：</p>
+<ul>
+<li>本征载流子浓度记作$n_i$</li>
+<li>热平衡时自由电子的浓度记作$n_o$</li>
+<li>热平衡时空穴的浓度记作$p_o$</li>
+<li>施主离子(Donor Ino)的浓度记作$N_d$，施主原子对半导体施加了电子，本身变成带正电的离子</li>
+<li>受主离子(Accepctor Ino)的浓度记作$N_a$，受主原子接收（复合）了半导体中的电子，本身变成了带负电的离子</li>
+</ul>
+<p>三个重要的等式：</p>
+<script type="math/tex; mode=display">
+n_i \equiv \sqrt{BT^3exp{\Big(\frac{-E_g}{2kT}\Big)}} \quad\sf{本征载流子全部源于热激发}\\
+n_i^2 = n_op_o \quad Mass\; Action\; Law\quad\sf{质量作用定律}\\
+N_a+n=p+N_d</script><p>​    旧版本：</p>
+<ul>
+<li>热平衡时半导体中电子浓度记为$n_o$</li>
+<li>热平衡时半导体中空穴浓度记作$p_o$</li>
+<li>热激发产生的电子空穴对的浓度记为$n_i$</li>
+<li>掺杂在半导体中增加的电子浓度记为$N_d$</li>
+<li>掺杂在半导体中增加的空穴浓度记为$N_a$</li>
+</ul>
+<p>三个重要的等式：</p>
+<script type="math/tex; mode=display">
+n_i \equiv \sqrt{BT^3e^{\large{(\frac{-E_g}{2kT})}}} \\
+n_i^2 \equiv n_op_o \\
+n_o=N_d+n_i \approx N_d / p_o=N_a+n_i \approx N_a \\</script><h3 id="电流"><a href="#电流" class="headerlink" title="电流"></a>电流</h3><p>半导体中存在两种电流</p>
+<ul>
+<li><p>扩散电流</p>
+<p>载流子分布不均匀产生浓度梯度而发生运动形成的电流</p>
+</li>
+<li><p>漂移电流</p>
+<p>外加电场加速载流子形成的电流</p>
+</li>
+</ul>
+<p>电流定义式：$I\large{=\frac{\Delta q}{\Delta t}=\frac{n·v \Delta t·S·e}{\Delta t}}=\normalsize{nvSe}$</p>
+<ul>
+<li><p>$e$是常量</p>
+</li>
+<li><p>研究电流时我们通常更关注单位面积上的电流密度$J=I/S$，因此$S$不用管</p>
+</li>
+</ul>
+<p>因此，我们这部分的研究对象变成了载流子的速度$v$和浓度$n$。</p>
+<p>描述扩散电流就是描述载流子在半导体内的扩散运动。扩散运动是基于分子热运动的现象，我们引入分子热运动中平均自由程$l$和热运动平均速度$v_{th}$来描述这个现象。通过这两个概念的引入我们可以将$J=nve$转化为$J=eD_n\frac{dn}{dx}$，$D_n$即载流子的浓度梯度，$\frac{dn}{dx}$即载流子的扩散系数</p>
+<p>漂移电流密度$J=n_{载流子浓度}v_{载流子平均漂移速度}e$</p>
+<p>载流子浓度可以由上一节的方式计算，平均漂移速度的计算比较复杂，涉及到两方面影响：</p>
+<ul>
+<li>载流子受电场影响加速运动</li>
+<li>载流子同电离杂质原子和晶格热振动原子发生碰撞或散射</li>
+</ul>
+<p>在这两方面影响下可以获得一个最终的漂移平均速度，在模电学习中我们隐藏起复杂的参数并定义一个简单的参数——载流子迁移率$\mu$，则漂移平均速度为</p>
+<script type="math/tex; mode=display">
+v=\mu E</script><p>而漂移电流密度为$J=nve=en\mu_nE$</p>
+<p>对上述式子进行变形</p>
+<script type="math/tex; mode=display">
+(e\mu_nn)\frac{V}{l}J=\frac{I}{A}=(e\mu_nn)E=(e\mu_nn)\frac{V}{l}\\
+\Downarrow\\
+V=(\frac{\frac{1}{e\mu_nn}l}{A})I=RI\\
+\Downarrow\\
+\sigma=\frac{1}{\rho}=en\mu_n</script><p>零偏（无偏置）：零偏状态下，两种半导体交界面处有较大的浓度梯度，多数载流子向对面进行扩散，并在对面进行复合形成耗尽区。耗尽区因为复合留下的离子形成与扩散电压相反的势垒电压，两者达到平衡时及稳定的零偏状态</p>
+<p>反向偏置：反向偏置是指外接电压正极接PN结的N区（负极），外界电压负极接PN结的P区（正极），因此反向偏置时外接电压与势垒电压相同，进一步扩大的耗尽区，扩散电流（多子电流）进一步被抑制；漂移电流（少子电流不受影响？？或者增强？）仍存在</p>
+<p>正向偏置：正向偏置是指外接电压正极接PN结的P区（正极），外界电压负极接PN结的N区（负极），因此正向偏置时外接电压与势垒电压相反。因此耗尽区减小，扩散电压大于势垒电压，扩散电流（多子电流）</p>
+<p>漂移电流是指外加电场加速半导体中的载流子形成的电流。</p>
+<p>以空穴为例，在外加电场下，空穴的运动方程为</p>
+<script type="math/tex; mode=display">
+F=m_{cp}^*a=eE,\;\sf{其中m_{cp}^*是空穴的有效质量}</script><p>又因为$a=\frac{dv}{dt}$，带入到上述方程有：</p>
+<script type="math/tex; mode=display">
+m_{cp}^*\frac{dv}{dt}=eE \Longleftrightarrow dv=\frac{eE}{m_{cp}^*}dt</script><p>两边同时积分可得</p>
+<script type="math/tex; mode=display">
+v=\frac{eEt}{m_{cp}^*}</script><p>按照目前为止的推导，空穴的速度应随着时间线性增加。但是，事实是半导体中的载流子会与电离杂质原子和晶格热振动原子发生碰撞或散射从而改变空穴的速度特性。最终空穴将会拥有一个平均速度。为了描述该速度，我们将上式的时间$t$换成平均碰撞时间$\tau_{cp}$，则得到一个统计上的平均漂移速度$v_d$（下式中$v_d$后面的小p下标代表是空穴，各个式子中的小p下标均为positive空穴）</p>
+<script type="math/tex; mode=display">
+<v_{dp}>=\frac{1}{2}(\frac{e\tau_{cp}}{m_{cp}^*})E</script><p>该模型并不能非常精确的描述实际情况，在更加精确的模型中，$\frac{1}{2}$的因子将被去掉，而$v_{dp}$则被表示成$(\frac{e\tau_{cp}}{m_{cp}^*})E$</p>
+<p>至于空穴迁移率，则最终被定义为</p>
+<script type="math/tex; mode=display">
+\mu_p=\frac{v_{dp}}{E}=\frac{e\tau_{cp}}{m_{cp}^*}</script><p>电子迁移率则为$\mu_n=\frac{v_{dn}}{E}=\frac{e\tau_{cn}}{m_{cn}^*}$</p>
+<h3 id="二极管电路应用"><a href="#二极管电路应用" class="headerlink" title="二极管电路应用"></a>二极管电路应用</h3><h4 id="整流电路"><a href="#整流电路" class="headerlink" title="整流电路"></a>整流电路</h4><h5 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h5><p>首先，分析整流电路前提是对于整流电路有一个基本的认识。整流电路，顾名思义，就是实现整流操作的电路。整流操作是指将交流电变成直流电的操作。整流电源是在给定一个交流电源（如插座提供的220V市电）的情况下得到一个直流电路。实践中，直流电源是放大器正常执行功能的必要条件，但是借由发电机得到的一般是交流电，市电供给的也是220V的交流电。因此，从交流电得到直流电是</p>
+<p>整流电路是一种将交流电源转化成直流电源的电路。整流电路可以看作是一个双端口网络，输入端是交流电源，输出端是直流电源。</p>
+<script type="math/tex; mode=display">
+\sf{交流电源 }\Rightarrow
+
+
+\begin{bmatrix}
+
+\underbrace
+{
+    \sf{整流器（脉动直流） \Rightarrow 滤波器（去除纹波） \Rightarrow 稳压器（固定幅值） }
+}_
+{
+     \sf{整流电路} 
+}
+
+\end{bmatrix}
+
+\sf{\Rightarrow 直流电源}</script><p>整流电路是一种将交流电源转化成直流电源的电路。</p>
+<p>整流电路由整流器、滤波器和稳压器三部分组成，接下来我们将依次介绍</p>
+<p>分析整流电路是我们首先</p>
+<h3 id="傅里叶分析简介"><a href="#傅里叶分析简介" class="headerlink" title="傅里叶分析简介"></a>傅里叶分析简介</h3><p>傅里叶定理表明，任何一个角频率为$\omega_0$的周期函数都可以表示为无穷多个频率为$\omega_0$整数倍的正弦函数与余弦函数之和。</p>
+<p>对于一个周期函数$f(t)$，若满足Dirichlet条件，则该周期函数可以展开成傅里叶级数，即：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&if\quad f(t)=f(t+T)\\\\
+&then\quad f(t)=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) + \displaystyle\sum_{n=1}^{\infty}b_nsin(n\omega_0t)\\
+&\boxed{\begin{aligned}
+&a_0=\frac{1}{T}\int^{T}_{0}f(t)\,dt\\
+&a_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+&b_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+\end{aligned}
+}
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+&if \quad f(t)=f(-t)\\\\
+
+&\boxed{\begin{aligned}
+&a_0=\frac{2}{T}\int^{T/2}_{0}f(t)\,dt\\
+&a_n=\frac{4}{T}\int^{T/2}_{0} f(t) cos(n\omega_0t) \,dt \\
+&b_n=0 \\
+\end{aligned}
+}
+\end{aligned}</script><script type="math/tex; mode=display">
+</script><p>展开式中$a_0$称为直流分量，其值等于函数$f(t)$的平均值；$a_n$与$b_n(n\not=0)$是交流分量的幅值</p>
+<script type="math/tex; mode=display">
+f(t)=f(t+T)\Rightarrow
+f(t)=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) + \displaystyle\sum_{n=1}^{\infty}b_nsin(n\omega_0t)\\
+
+
+\begin{array}{c|c|c}
+\begin{aligned}
+&general\quad condition\\
+&\boxed{\begin{aligned}
+&a_0=\frac{1}{T}\int^{T}_{0}f(t)\,dt\\
+&a_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+&b_n=\frac{2}{T}\int^{T}_{0} f(t) sin(n\omega_0t) \,dt \\
+\end{aligned}
+}
+\end{aligned}
+& 
+\begin{aligned}
+&if \quad f(t)=f(-t)\\
+&\boxed{\begin{aligned}
+&a_0=\frac{2}{T}\int^{T/2}_{0}f(t)\,dt\\
+&a_n=\frac{4}{T}\int^{T/2}_{0} f(t) cos(n\omega_0t) \,dt \\
+&b_n=0 \\
+\end{aligned}
+}
+\end{aligned}
+& 
+\begin{aligned}
+&if \quad f(t)=-f(-t)\\
+&\boxed{\begin{aligned}
+&a_0=0\\
+&a_n=0\\
+&b_n=\frac{4}{T}\int^{T/2}_{0} f(t) sin(n\omega_0t) \,dt  \\
+\end{aligned}
+}
+\end{aligned}\\
+\end{array}\\
+P_{1\Omega}=F_{rms}^2=a_0^2+\frac{1}{2}\displaystyle\sum_{n=1}^{\infty}(a_n^2+b_n^2)</script><h2 id="整流器电路分析"><a href="#整流器电路分析" class="headerlink" title="整流器电路分析"></a>整流器电路分析</h2><p>整流电路是一种从交流源得到直流源的电路。本文的目标在于选取一些物理量来衡量一个整流电路的优劣并为构造一个整流电路提供依据。为了简化计算，我们选取最简单的整流电路——半波整流器进行分析。</p>
+<p>半波整流器电路如下图中$(a)$所示</p>
+<p><img src="C:\Users\qjy\AppData\Roaming\Typora\typora-user-images\image-20220209094212599.png" alt="image-20220209094212599" style="zoom:25%;" /></p>
+<p>分析该电路时，如果采用理想二极管模型去替换上面的二极管，即施加正向电压时将二极管看作导线，施加反向电压时将二极管看作断路，那么此时，当$v_S$输出正向电压时，$v_O=v_S$；当$v_S$输出正向电压时，$v_O=0$。最终得到的输出电压是一个分段函数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+V_{out} = 
+\begin{cases}
+V_m sin(\omega t) &{0 \le \omega t \le \pi}\\\\
+0 &\pi \le \omega t \le 2\pi\\
+\end{cases}\\
+\end{aligned}\\</script><p>经过半波整流器后得到电压随时间大小发生变化，但方向不变，这种电压我们称为脉动直流电压。</p>
+<p>对于理想的整流电路，我们期望输入交流电得到完美的直流电，因此我们希望</p>
+<p>对于半波整流器，我们有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+V_{out} = 
+\begin{cases}
+V_m sin(\omega t) &{0 \le \omega t \le \pi}\\\\
+0 &\pi \le \omega t \le 2\pi\\
+\end{cases}\\
+\end{aligned}\\
+\iff 
+\begin{aligned}
+V_{out} = 
+\begin{cases}
+0 &{\,-\pi\le \omega t \le -\frac{\pi}{2}}\\\\
+V_m cos(\omega t) &{\,-\frac{\pi}{2} \le \omega t \le \frac{\pi}{2}}\\\\
+0 &{\quad \frac{\pi}{2} \le \omega t \le \pi}\\\\
+\end{cases}\\
+\end{aligned}\\</script><p>对$V_out$进行谐波分析（傅里叶分析）：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&V_{out}=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) + \displaystyle\sum_{n=1}^{\infty}b_nsin(n\omega_0t)\\
+&\boxed{\begin{aligned}
+a_0&=\frac{1}{2\pi}\int^{\pi}_{-\pi}f(\omega_0t)\,d\omega_0t\\
+   &=\frac{1}{2\pi} \Big( \int^{-\pi/2}_{-\pi} 0 \,d\omega_0t + \int^{\pi/2}_{-\pi/2}V_m cos(\omega_0t)\,d\omega_0t + \int^{\pi}_{\pi/2} 0 \,d\omega_0t\Big)=\frac{V_m}{\pi}\\
+a_n&=\frac{2}{\pi}\int^{\pi}_{0} f(t) cos(n\omega_0t)  \,d\omega_0t \, \\
+b_n&=0
+\end{aligned}}
+\end{aligned}</script><p>基波（n=1）</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+V_{out}&=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) + \displaystyle\sum_{n=1}^{\infty}b_nsin(n\omega_0t)\\
+V_{dc}&=a_0=V_{ave}\\
+
+\end{aligned}</script><script type="math/tex; mode=display">
+f(t)=f(t+T)\Rightarrow
+f(t)=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) + \displaystyle\sum_{n=1}^{\infty}b_nsin(n\omega_0t)\\
+
+
+\begin{array}{c|c}
+
+\begin{aligned}
+&Average\quad load\quad voltage:V_{dc}=V_{avg}=\frac{\int_{0}^{2\pi}{v_{out}}\,d(\omega t)}{2\pi -0}=\frac{V_m}{\pi}\\
+&Average\quad load\quad current:I_{dc}=V_{dc}/R=V_{avg}/R=\frac{V_m}{\pi R}\\
+&Peak\quad voltage:V_m\\
+&Peak\quad current:I_m\\
+&rms\quad of\quad load\quad voltage:V_{dc}=\sqrt{\frac{1}{2\pi}\int_{0}^{2\pi}{(V_{out})^2}d(\omega t)}=\frac{V_m}{2}\\
+&rms\quad of\quad load\quad current:I_{rms}=\sqrt{\frac{1}{2\pi}\int_{0}^{2\pi}{(I_{out})^2}d(\omega t)}=\frac{I_m}{2}\\
+&Effiency:\eta=P_{dc}/P_{out}I^2_{dc}/I^2_{rms}=4/\pi^2=40.06\%\\
+&Ripple \quad factor:\gamma=I_{ac(rms)}/I_{dc}=\sqrt{I^2_{rms}-I^2_{dc}}/I_{dc}=\sqrt{\frac{\pi^2}{4}-1}=121\%\\
+&From\quad factor:FF=I_{rms}/I_{dc}=2/\pi=1.57\\
+\end{aligned}
+& 
+\begin{aligned}
+c
+\end{aligned}
+\end{array}\\</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>半波整流参数</th>
+<th>半波整流</th>
+<th>半波整流(傅里叶分析)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$Average\quad load\quad voltage$</td>
+<td>$V_{dc}=V_{avg}=\frac{\int_{0}^{2\pi}{v_{out}}\,d(\omega t)}{2\pi -0}=\frac{V_m}{\pi}$</td>
+<td>$V_{dc}=V_{avg}=a_0$</td>
+</tr>
+<tr>
+<td>$Average\quad load\quad current$</td>
+<td>$I_{dc}=\frac{V_{dc}}{R}=\frac{V_{avg}}{R}=\frac{V_m}{\pi R}$</td>
+<td>$I_{dc}=a_0/R$</td>
+</tr>
+<tr>
+<td>$Peak\quad voltage$</td>
+<td>$V_m$</td>
+<td>$V_m$</td>
+</tr>
+<tr>
+<td>$Peak\quad current$</td>
+<td>$I_m$</td>
+<td>$I_m$</td>
+</tr>
+<tr>
+<td>$rms\quad of\quad load\quad voltage$</td>
+<td>$V_{rms}=\sqrt{\frac{1}{2\pi}\int_{0}^{2\pi}{(V_{out})^2}d(\omega t)}=\frac{V_m}{2}$</td>
+<td>$V_{rms}=\sqrt{\frac{1}{2\pi}\int_{0}^{2\pi}{(V_{out})^2}d(\omega t)}=F_{rms}$</td>
+</tr>
+<tr>
+<td>$rms\quad of\quad load\quad current$</td>
+<td>$I_{rms}=\sqrt{\frac{1}{2\pi}\int_{0}^{2\pi}{(I_{out})^2}d(\omega t)}=\frac{I_m}{2}$</td>
+<td>$I_{rms}=F_{rms}$</td>
+</tr>
+<tr>
+<td>$Effiency$</td>
+<td>$\eta=P_{dc}/P_{out}=I^2_{dc}/I^2_{rms}=4/\pi^2=40.06\%$</td>
+<td>$\eta=a_0^2/P=a^2_0/F_{rms}$</td>
+</tr>
+<tr>
+<td>$Ripple \quad factor$</td>
+<td>$\gamma=\frac{I_{ac(rms)}}{I_{dc}}=\frac{\sqrt{I^2_{rms}-I^2_{dc}}}{I_{dc}}=\sqrt{\frac{\pi^2}{4}-1}=121\%$</td>
+<td>$\gamma=\sqrt{(F^2_{rms}-a^2_0)/I_{dc}}=121\%$</td>
+</tr>
+<tr>
+<td>$From\quad factor$</td>
+<td>$FF=I_{rms}/I_{dc}=2/\pi=1.57$</td>
+<td>$FF=F_{rms}/I_{dc}=2/\pi=1.57$</td>
+</tr>
+<tr>
+<td>$\sf{脉动系数}$</td>
+<td>$S=\frac{V_m/2}{V_m/\pi}=2/\pi$</td>
+<td>$S=\frac{a_1}{a_0}=2/\pi$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>晶体管的物理模型</p>
+<p>物理概念（电路课）中有四种受控源——压控电压源、流控电压源、压控电流源和流控电流源</p>
+<p>新概念模拟电路上将BJT的物理模型解释为流控电流源，核心公式即$I_c=\beta I_b$</p>
+<p>但是在半导体物理与器件上认为bjt的核心公式是$I_c=I_se^{V_{be}/V_T}$</p>
+<p>我个人偏向于通过第二种方式来理解，</p>
+<h3 id="理想晶体管的物理模型："><a href="#理想晶体管的物理模型：" class="headerlink" title="理想晶体管的物理模型："></a>理想晶体管的物理模型：</h3><p>核心公式：$i_C=I_se^{v_{BE}/V_T}$，该公式表明三极管一极的电流由加到另外两极的电压决定</p>
+<p>$i_E=i_C+i_{BE}$</p>
+<p>$i_B=i_{BE}+i_{补充复合的空穴形成基极电流}$</p>
+<p>BE两端电压控制C端的电流</p>
+<p>定义时有两个恒等式</p>
+<script type="math/tex; mode=display">
+\frac{i_C}{i_E}\equiv\alpha\\
+\frac{i_C}{i_B}\equiv\beta\\</script><p>使用基本的电路定理进行分析时，有</p>
+<script type="math/tex; mode=display">
+i_E=i_B+i_C</script><h4 id="非理想晶体管"><a href="#非理想晶体管" class="headerlink" title="非理想晶体管"></a>非理想晶体管</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t = </span><br></pre></td></tr></table></figure>
+<p>首先,最基本的。</p>
+<p>电路最简单的形式是由电源、负载和连接路径组成。</p>
+<p>电源提供能量，负载消耗能量(并做一些有用的事情作为回报，如提供照明，或驱动电机)，路径只是方便能源从源到负载的转移。</p>
+<p>电源可以是电压或电流的形式。负载可以是电阻、电感或电容。上述三个基本电路元件都是线性的。这意味着这些电路元件的输入和输出可以用线性表达式来表示，比如 y = Cx，其中 y 是输出，x 是输入，c 是常量。</p>
+<p>例如，对于电阻v = iR。这意味着如果我们让电流i通过电阻R，产生的电压将是v。</p>
+<p>你还在听吗?</p>
+<p>大多数电路比上面的例子稍微复杂一点。</p>
+<p>所以，为了理解这些更复杂的电路，我们试着用更简单的形式来表达它们。</p>
+<p>我们知道电阻的工作是限制电流——交流和直流，电容的工作是限制直流，而电感的工作是限制交流。</p>
+<p>研究一个含有晶体管的电路给我们带来了一些复杂性。首先，晶体管不是一个简单的线性器件。这意味着输入-输出关系不能用容易理解的线性表达式来描述，如y = Cx。那么，我们该怎么办呢?</p>
+<p>我们简化。</p>
+<p>在电压和电流方面，我们对晶体管施加了一定的限制，因此它的行为几乎是线性的，这意味着在一定的限制下，输入-输出关系变成了一个线性表达式，比如y=Cx。</p>
+<p>一个非常完整的晶体管线性模型是混合参数模型。为了用这个模型描述晶体管的工作，我们需要知道四个参数，hfe, hre, hie和hoe(在共发射极模式下)。</p>
+<p>如果我们能使用一个更简单的模型，这样我们就不用跟踪四个参数，不是很好吗?</p>
+<p>事实证明，重塑模式就是这样。这是对混合模型的一种简化，因此为了研究晶体管的近似行为，我们只需要跟踪hfe，而可以忽略其他三个参数。</p>
+<p>因此，由于晶体管是一个非线性器件，我们想用一个线性模型来描述它的行为，这样它的操作就更容易理解了。混合模型是一个比较完整的模型，它不仅适用于晶体管，而且可以用来研究其他非线性器件。</p>
+<p>为了进一步简化晶体管的研究，我们将混合模型简化为re模型，这样我们就可以用更少的时间来解方程，而用更多的时间来构建电路。</p>
+<p>双极性晶体管（以下简称晶体管）是由两个PN结组成的非线性电子元器件。每一个PN结有正偏和反偏两种偏置方式。因此晶体管拥有四种工作模式——截至、饱和、正向放大和反向放大。研究信号放大时，我们的关注点在于晶体管的正向放大模式，对应的PN结的偏置方式为发射结正向偏置，集电结反向偏置。</p>
+<p>晶体管由两个PN结组成，可以分成NPN型晶体管和PNP型晶体管，下面的讨论以NPN型晶体管为例。</p>
+<p>对于处于正向放大工作模式的NPN型晶体管，我们关注这样几件事：</p>
+<ul>
+<li>放大状态下晶体管的物理模型：三级的电流</li>
+<li>晶体管建模</li>
+<li>晶体管组态</li>
+</ul>
+<p>首先我们先介绍放大状态下晶体管的物理模型：三级的电流。</p>
+<p>晶体管有三个端子——基极、发射极和集电极；其中基极电流记作$i_B$，发射极电流记作$i_E$，集电极电流记作$i_C$。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>EBJ</th>
+<th>CBJ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>截至</td>
+<td>反偏</td>
+<td>反偏</td>
+</tr>
+<tr>
+<td>正向放大</td>
+<td>正偏</td>
+<td>反偏</td>
+</tr>
+<tr>
+<td>反向放大</td>
+<td>反偏</td>
+<td>正偏</td>
+</tr>
+<tr>
+<td>饱和</td>
+<td>正偏</td>
+<td>正偏</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%已知信息：参数</span></span><br><span class="line">V_BB = <span class="number">1.2</span>;</span><br><span class="line">V_CC = <span class="number">12</span>;</span><br><span class="line">R_C = <span class="number">6000</span>;</span><br><span class="line">R_B = <span class="number">50000</span>;</span><br><span class="line"><span class="built_in">beta</span> = <span class="number">100</span>;</span><br><span class="line">I_S = <span class="number">10</span>^(<span class="number">-12</span>);</span><br><span class="line"><span class="comment">%V_BE = 0.7;</span></span><br><span class="line">V_T = <span class="number">0.026</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">%直流量</span></span><br><span class="line"><span class="comment">%$i_B=\frac&#123;I_S&#125;&#123;\beta&#125;×e^&#123;\frac&#123;V_&#123;BEQ&#125;&#125;&#123;V_T&#125;&#125;$</span></span><br><span class="line">i_b1 = I_S/<span class="built_in">beta</span>*<span class="built_in">exp</span>(V_BE/V_T);</span><br><span class="line">i_b2 = V_BB/R_B+V_BE/R_B;</span><br><span class="line"></span><br><span class="line"><span class="comment">%设置V_D的范围</span></span><br><span class="line">V_BE = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">%绘图：</span></span><br><span class="line"><span class="built_in">plot</span>(V_BE, i_b1, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;Linewidth&#x27;</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(V_BE, i_b2, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;Linewidth&#x27;</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%通过改变x轴和y轴的范围来使交点在显示出的范围内是可见的</span></span><br><span class="line"><span class="comment">%xlim([0, 5]);</span></span><br><span class="line">ylim([<span class="number">0</span>, <span class="number">0.001</span>]);</span><br></pre></td></tr></table></figure>
+<p>$i_B=\frac{I_S}{\beta}×e^{\frac{V_{BEQ}}{V_T}}$</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/17/11-07-35/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,11 +747,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">double</span> a, <span class="type">int</span> b, Node* c) : <span class="built_in">coef</span>(a), <span class="built_in">expn</span>(b), <span class="built_in">next</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    Node* next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Node*&amp; head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> num; std::cin &gt;&gt; num;<span class="comment">//每个链表中数字的个数</span></span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; num / <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        std::cin &gt;&gt; coef &gt;&gt; expn;</span><br><span class="line">        Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(coef, expn, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="keyword">if</span> (head != <span class="literal">NULL</span>)</span><br><span class="line">            new_node-&gt;next = head;</span><br><span class="line">        head = new_node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Add</span><span class="params">(Node*&amp; head1, Node*&amp; head2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (head2 != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Node* ptr1 = head1;</span><br><span class="line">        <span class="keyword">while</span> (ptr1 != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (head2-&gt;expn == ptr1-&gt;expn)</span><br><span class="line">            &#123;</span><br><span class="line">                ptr1-&gt;coef = ptr1-&gt;coef + head2-&gt;coef;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ptr1 = ptr1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ptr1 == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(head2-&gt;coef, head2-&gt;expn, head1);</span><br><span class="line">            head1 = new_node;</span><br><span class="line">        &#125;</span><br><span class="line">        head2 = head2-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node* x1 = <span class="literal">NULL</span>, * x2 = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Create</span>(x1); <span class="built_in">Create</span>(x2);</span><br><span class="line">    <span class="built_in">Add</span>(x1, x2);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 <h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">tree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">tree</span>(<span class="type">char</span> a, tree *b, tree *c) : <span class="built_in">data</span>(a), <span class="built_in">left</span>(b), <span class="built_in">right</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    tree *left;</span><br><span class="line">    tree *right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(tree *&amp;root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">    cin &gt;&gt; c;</span><br><span class="line">    <span class="keyword">if</span> (c != <span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        root = <span class="keyword">new</span> <span class="built_in">tree</span>(c, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;left);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PreOrder</span><span class="params">(tree *root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stack&lt;tree *&gt; stack;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">NULL</span> || !stack.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//此处输出是前序遍历</span></span><br><span class="line">            cout &lt;&lt; root-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            stack.<span class="built_in">push</span>(root);</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            root = stack.<span class="built_in">top</span>();</span><br><span class="line">            <span class="comment">//此处输出是中序遍历</span></span><br><span class="line">            <span class="comment">// cout&lt;&lt;root-&gt;data&lt;&lt;&quot; &quot;;</span></span><br><span class="line">            root = root-&gt;right;</span><br><span class="line">            stack.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree *root = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Creat</span>(root);</span><br><span class="line">    <span class="built_in">PreOrder</span>(root);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 <h4 id="树的非递归前序遍历"><a href="#树的非递归前序遍历" class="headerlink" title="树的非递归前序遍历"></a>树的非递归前序遍历</h4><ol>
 <li>创建一个栈<ol>
 <li>只要节点不为空或者栈不为空<ol>
@@ -260,8 +769,6 @@
 </li>
 </ol>
 <h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_VERTEX_NUM 20</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> vertex[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">bool</span> visited[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> edge[MAX_VERTEX_NUM][MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> vertex_num, edge_num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; G-&gt;vertex_num;</span><br><span class="line">    cin &gt;&gt; G-&gt;edge_num;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; G-&gt;vertex[i];</span><br><span class="line">        G-&gt;visited[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">            G-&gt;edge[i][j] = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; G-&gt;edge_num; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G-&gt;edge[v1][v2] = <span class="number">1</span>;</span><br><span class="line">        G-&gt;edge[v2][v1] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Graph* G, <span class="type">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; G-&gt;vertex[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;edge[i][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])</span><br><span class="line">            <span class="built_in">DFS</span>(G, j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">visit</span><span class="params">(queue&lt;<span class="type">int</span>&gt;&amp; queue, <span class="type">int</span> i, Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    queue.<span class="built_in">push</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; queue;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">if</span> (!G-&gt;visited[i])<span class="comment">//这个模块起名为访问列吧</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">visit</span>(queue, i, G);<span class="comment">//每列入队</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())<span class="comment">//行入队后检查队是否为空，队首作为行的检测依据</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">                    <span class="keyword">if</span> (G-&gt;edge[queue.<span class="built_in">front</span>()][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])<span class="comment">//这个模块起名为访问行</span></span><br><span class="line">                        <span class="built_in">visit</span>(queue, j, G);<span class="comment">//每行入队</span></span><br><span class="line">                cout &lt;&lt; G-&gt;vertex[queue.<span class="built_in">front</span>()] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">                queue.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//测试数据：9 15  A B C D E F G H I 0 1 0 5 1 2 1 8 1 6 2 3 2 8 3 4 3 7 3 6 3 8 4 5 4 7 5 6 6 7</span></span><br><span class="line">    Graph G;</span><br><span class="line">    <span class="built_in">Create</span>(&amp;G);</span><br><span class="line">    <span class="comment">//每次只能选择一个运行</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G, 0);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 <h4 id="邻接矩阵的广度遍历"><a href="#邻接矩阵的广度遍历" class="headerlink" title="邻接矩阵的广度遍历"></a>邻接矩阵的广度遍历</h4><ol>
 <li>创建队列</li>
 <li>遍历 i (列)所有节点，对于未访问的节点进行下述操作<ol>
@@ -285,8 +792,6 @@
 <li>DFS 函数：<br><br />1. 打印进入 DFS 的节点并设置为访问<br><br />2. 遍历 j (行)所有节点，当 i 和 j 有关系且未访问的节点进入 DFS(G,j)</li>
 </ol>
 <h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Vertex</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    <span class="type">bool</span> visited;</span><br><span class="line">    list&lt;Vertex*&gt; edge;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(vector&lt;Vertex&gt;&amp; G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> vertex_num; cin &gt;&gt; vertex_num;</span><br><span class="line">    <span class="type">int</span> edge_num; cin &gt;&gt; edge_num;</span><br><span class="line"></span><br><span class="line">    Vertex temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; temp.data;</span><br><span class="line">        temp.visited = <span class="literal">false</span>;</span><br><span class="line">        G.<span class="built_in">push_back</span>(temp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span> * edge_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G[v1].edge.<span class="built_in">push_back</span>(&amp;G[v2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Vertex* <span class="title">next_vertex</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">return</span> *iiter;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (vertex != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; vertex-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        vertex-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_level</span><span class="params">(queue&lt;Vertex*&gt;&amp; queue, Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            queue.<span class="built_in">push</span>((*iiter));</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;Vertex*&gt; queue;</span><br><span class="line">    queue.<span class="built_in">push</span>(vertex);</span><br><span class="line">    <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; queue.<span class="built_in">front</span>()-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        queue.<span class="built_in">front</span>()-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">get_level</span>(queue, queue.<span class="built_in">front</span>());</span><br><span class="line">        queue.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 9 15 A B C D E F G H I 0 1 0 5 1 0 1 2 1 6 1 8 2 1 2 3 2 8 3 2 3 4 3 6 3 7 3 8 4 3 4 5 4 7 5 0 5 4 5 6 6 1 6 3 6 5 6 7 7 3 7 4 7 6 8 1 8 2 8 3</span></span><br><span class="line">    vector&lt;Vertex&gt; G;</span><br><span class="line">    <span class="built_in">Creat</span>(G);</span><br><span class="line">    <span class="comment">//每次只能运行一个</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G[0]);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 <h4 id="邻接表的深度遍历"><a href="#邻接表的深度遍历" class="headerlink" title="邻接表的深度遍历"></a>邻接表的深度遍历</h4><p>·只要顶点不为空，打印顶点并设置为访问过；将下一个顶点进入该函数</p>
 <h4 id="邻接表的广度遍历"><a href="#邻接表的广度遍历" class="headerlink" title="邻接表的广度遍历"></a>邻接表的广度遍历</h4><ol>
 <li>创建队列</li>
@@ -302,11 +807,7 @@
 <h4 id="next-node"><a href="#next-node" class="headerlink" title="next_node"></a>next_node</h4><p>查链表，找到未访问顶点；设置为访问，返回该顶点</p>
 <h4 id="get-level"><a href="#get-level" class="headerlink" title="get_level"></a>get_level</h4><p>查链表，找到未访问顶点；设置为访问，将该顶点入队</p>
 <h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (begin &lt; end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> sbit = begin;</span><br><span class="line">        <span class="type">int</span> pivot = arry[end];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = begin; j &lt; end; j++)</span><br><span class="line">            <span class="keyword">if</span> (arry[j] &lt; pivot)</span><br><span class="line">              &#123;<span class="built_in">swap</span>(arry[j], arry[sbit]); sbit++;&#125;</span><br><span class="line">              <span class="comment">//每个数字与pivot比较，较小的与sbit交换</span></span><br><span class="line">              <span class="comment">//将pivot与sbit交换</span></span><br><span class="line">        <span class="built_in">swap</span>(arry[sbit], arry[end]);</span><br><span class="line">        <span class="built_in">sort</span>(arry, begin, sbit - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">sort</span>(arry, sbit + <span class="number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">8</span>] = &#123; <span class="number">27</span>, <span class="number">13</span>, <span class="number">65</span>, <span class="number">8</span>, <span class="number">45</span>, <span class="number">3</span>, <span class="number">81</span>, <span class="number">72</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">0</span>, <span class="number">7</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 <h3 id="堆排"><a href="#堆排" class="headerlink" title="堆排"></a>堆排</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heap</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> root = begin;</span><br><span class="line">    <span class="type">int</span> left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[right] &amp;&amp; right &lt;= end) left++;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[root]) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">swap</span>(arry[left], arry[root]);</span><br><span class="line">            root = left;</span><br><span class="line">            left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">            right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, i, end);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arry[<span class="number">0</span>], arry[i]);</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, <span class="number">0</span>, i<span class="number">-1</span> );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">11</span>] = &#123; <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">16</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 <ol>
 <li>堆排序</li>
 <li>得最大堆的方法：  <ol>
@@ -386,18 +887,84 @@
     <div class="post-body" itemprop="articleBody">
           <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/27/20-01-43/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="邱金羽的Bolg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的Bolg">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/27/20-01-43/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-27 20:01:43" itemprop="dateCreated datePublished" datetime="2021-01-27T20:01:43+08:00">2021-01-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-02-20 22:25:49" itemprop="dateModified" datetime="2022-02-20T22:25:49+08:00">2022-02-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Typroa数学公式"><a href="#Typroa数学公式" class="headerlink" title="Typroa数学公式"></a>Typroa数学公式</h1><h3 id="常用符号："><a href="#常用符号：" class="headerlink" title="常用符号："></a>常用符号：</h3><script type="math/tex; mode=display">A = \begin{bmatrix}        a_{11}    & a_{12}    & ...    & a_{1n}\\        a_{21}    & a_{22}    & ...    & a_{2n}\\        a_{31}    & a_{22}    & ...    & a_{3n}\\        \vdots    & \vdots    & \ddots & \vdots\\        a_{n1}    & a_{n2}    & ... & a_{nn}\\    \end{bmatrix} , b = \begin{bmatrix}        b_{1}  \\        b_{2}  \\        b_{3}  \\        \vdots \\        b_{n}  \\    \end{bmatrix}</script>
       
     </div>
 
@@ -454,7 +1021,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
