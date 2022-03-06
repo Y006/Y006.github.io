@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"y006.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="微机原理与接口技术 基本概念 微型计算机简称微机，是微机原理这门课程的主要研究范围。 首先我们先对微型计算机有一个初步的认识。 电脑——微型计算机系统 电脑是我们熟悉的事物，我们家用的台式电脑和笔记本电脑都是属于个人电脑（Personal Computer），简称为PC。个人电脑PC是一个通用微型计算机系统（）。其中，“通用”暗示了“专用”计算机系统的存在，而“微型”暗示了“大型”计算机">
+<meta property="og:type" content="website">
+<meta property="og:title" content="微机原理与接口技术">
+<meta property="og:url" content="https://y006.github.io/2022/03/05/16-32-26/index.html">
+<meta property="og:site_name" content="我的Bolg">
+<meta property="og:description" content="微机原理与接口技术 基本概念 微型计算机简称微机，是微机原理这门课程的主要研究范围。 首先我们先对微型计算机有一个初步的认识。 电脑——微型计算机系统 电脑是我们熟悉的事物，我们家用的台式电脑和笔记本电脑都是属于个人电脑（Personal Computer），简称为PC。个人电脑PC是一个通用微型计算机系统（）。其中，“通用”暗示了“专用”计算机系统的存在，而“微型”暗示了“大型”计算机">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-05T08:32:26.000Z">
+<meta property="article:modified_time" content="2022-03-06T02:58:03.427Z">
+<meta property="article:author" content="邱金羽">
+<meta property="article:tag" content="Electrical Engineering">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://y006.github.io/2022/03/05/16-32-26/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://y006.github.io/2022/03/05/16-32-26/","path":"2022/03/05/16-32-26/","title":"微机原理与接口技术"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>微机原理与接口技术 | 我的Bolg</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我的Bolg</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我的技术博客！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF"><span class="nav-number">1.</span> <span class="nav-text">微机原理与接口技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E8%84%91%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">电脑——微型计算机系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">微型计算机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">微处理器</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">邱金羽</p>
+  <div class="site-description" itemprop="description">联系我：2420457716@qq.com</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/32844822/dynamic" title="Bilibili个人空间 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;32844822&#x2F;dynamic" rel="noopener" target="_blank">Bilibili个人空间</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/qiu-jin-yu-60" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;qiu-jin-yu-60" rel="noopener" target="_blank">知乎</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.zhihu.com/people/qiu-jin-yu-60" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;qiu-jin-yu-60" rel="noopener" target="_blank">My Zhihu</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/03/05/16-32-26/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的Bolg">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          微机原理与接口技术
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-05 16:32:26" itemprop="dateCreated datePublished" datetime="2022-03-05T16:32:26+08:00">2022-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-06 10:58:03" itemprop="dateModified" datetime="2022-03-06T10:58:03+08:00">2022-03-06</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/03/05/16-32-26/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/05/16-32-26/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="微机原理与接口技术">微机原理与接口技术</h1>
+<h2 id="基本概念">基本概念</h2>
+<p>微型计算机简称微机，是微机原理这门课程的主要研究范围。</p>
+<p>首先我们先对微型计算机有一个初步的认识。</p>
+<h4 id="电脑微型计算机系统">电脑——微型计算机系统</h4>
+<p>电脑是我们熟悉的事物，我们家用的台式电脑和笔记本电脑都是属于<strong>个人电脑（Personal Computer）</strong>，简称为PC。个人电脑PC是一个<strong>通用微型计算机系统（）</strong>。其中，“通用”暗示了“专用”计算机系统的存在，而“微型”暗示了“大型”计算机系统的存在。其中还有值得注意的是计算机系统中的“系统”二字，因为这暗示了在计算机之上还存在一个更加宏观的概念。</p>
+<p>计算机根据规格和能力区分的话可以粗略分作超级计算机，大型计算机，小型计算机和微型计算机。其中超算和微机可能是我们日常生活中常常能听到的词语，前者出现在新闻里面，比如天河二号；后者出现在我们们的日常生活中，也就是我们的电脑（主机）。</p>
+<p>经典的电脑硬件配置包括鼠标，键盘，显示器和电脑主机，虽然笔记本发展后大多数笔记本都配备有触控板作为鼠标的代替，但是鼠标依旧是更受欢迎的计算机<strong>外设（Peripherals）</strong>。除了鼠标，键盘和显示器也是最经典的外设，但是对于完全不了解电脑构造却经常使用电脑的人来说，或许会认为显示器是计算机，尤其是一体机的存在使得这个错误更容易犯下。但是，计算机，顾名思义是计算的机器，它的功能并不会包括“显示”。根据输入，计算机会得到输出，但是这个输出不是我们可以直接看到的“显示”，“显示”的功能来自一个密布发光单元的显示器，显示器可以将计算机的输出变成屏幕上的文字或者图片为我们“显示”出来。</p>
+<p>外设不是计算机，真正的计算机是我们通常称为“电脑主机”的的部分，在台式机中，它是显示器旁边的长方体的箱子；在笔记本中，它一般在你的键盘的下面。</p>
+<p>计算机（个人计算机）和外设，配合上电源，便组成了微型计算机系统的硬件部分。完整的微型计算机系统不仅包括硬件，还包括软件。后者不是我们在微机原理课程中重点的关注的内容，但是理解软件部分是微型计算机系统不可缺少的部分却很重要。</p>
+<p>微型计算机系统的软件部分包括<strong>系统软件</strong>和<strong>应用软件</strong>，系统软件中我们最熟悉的就是操作系统，如Windows和MacOS；而像Office或者浏览器等软件则是应用程序即应用软件。</p>
+<p>==总结：家用电脑整体称作<strong>微型计算机系统（）</strong>，这个系统分为硬件和软件两大部分，其中软件部分包括系统软件和应用软件；硬件部分包括电源、外设和最重要的微型计算机（电脑主机）。接下来我们重点介绍微型计算机的内部结构。==</p>
+<h4 id="微型计算机">微型计算机</h4>
+<p><strong>微型计算机（）</strong>内部结构可概括为四部分：</p>
+<ul>
+<li>CPU（这个肯定耳熟了，稍后会进一步介绍）</li>
+<li>存储器（比较复杂，稍后重点介绍）</li>
+<li>总线（bus）：总线就是连接计算机内部部件的导线</li>
+<li>输入输出接口电路：与外设连接的导线</li>
+</ul>
+<p>相信即便是最不了解电脑的小白也听说过CPU的大名。CPU中的字母C表示Center，是中心的意思，表明CPU是计算机的中心。计算机中的一切一切都是围绕着CPU转圈的。这样重要且复杂的部件，我们肯定要单独拿出来讲：下一节微处理器，就是对CPU的详细介绍。</p>
+<p>计算机的本质是计算，无论是使用计算机显示文本或是图形，播放音乐或是视频，计算机本身都只是在快速做着最简单的运算。我们从很小的时候便学习开始做运算了，我们知道，做运算首先我们需要纸笔记录下数字，然后可能还需要将结果记录在另一张纸上（比如你的试卷）。计算机中也存在大量的数字，我们称作数据（data），它们存在计算机的存储器中。除数据外，计算中我们需要知道算数的方法，比如老师对我们说，将两个数字相乘，我们就做乘法。计算机也存在类似的东西，称作指令（code）。众所周知，计算机使用二进制，也就是计算机中不存在文字，甚至不存在数字2，我们在计算机中只有0和1。因此计算机中指令和数据都是由0和1进行表示的。在计算机经典结构——冯·诺伊曼结构中，指令和数字不加区分的放在存储器中；而在另一种改进过的计算机结构——哈佛结构中，指令放在指令存储器中而数据放在数据存储器中。这种分开存放的优势在于可以使数据和指令的存取同时进行，我们将在后面进一步看到这样做的重要意义。</p>
+<p>目前我们已经知道了，存储器存储着数据和指令。处理数据是计算机无时无刻都在做的事情，而指令则告诉计算机该怎样处理数据。那么接下来的问题是：我们需要一个什么样的存储器呢？</p>
+<p>简单来说，我们需要一个好的存储器。一般来说，我们关注存储器的如下3个特点</p>
+<ol type="1">
+<li>存储器是一个存储结构，既要存，还要取
+<ul>
+<li>存——要求能存住，机器断电（掉电）后能不能一直保存</li>
+<li>取——主要看速度，取出来自然是越快越好</li>
+</ul></li>
+<li>最后就是作为商品，我们还是要考虑成本的，成本太高买不起就不行了。</li>
+</ol>
+<p>综上，我们需要一个价格便宜，能掉电存储且读取速度快的存储器。</p>
+<p>可惜的是，现实中没有那么完美的存储器（至少目前），虽然根据不同的原理人们制作出的低成本且掉电存储的快闪存储器Flash（就是很多人U盘用的那个），但是它传输速度慢；另一方面人们制作出了静态随机存储器SRAM，虽然便宜还传输快，但是掉电不保存。虽然除了上述两种还有一些类型的存储器，但是也都有其缺点。为了协调速度、容量和成本三个方面，人们设计出了三级存储结构：<strong>高速缓存存储器</strong>、<strong>内存储器（主存）</strong>和<strong>外存储器（辅存）</strong>。</p>
+<p>高速缓存存储器存在于主存与CPU之间的一级存储器，容量小但是速度很快，接近于CPU的速度。</p>
+<p>内存储器是CPU读取数据和指令的地方，如果数据在外存储器中，CPU将先把数据从外存储器移至内存储器中然后再处理数据。</p>
+<p>外存储器就是我们平时说的电脑的固态硬盘，手里拿的U盘和已经淘汰了的光盘。</p>
+<p>三级存储结构帮助我们再速度、容量和成本三个方面达到一个平衡。但是未来如果有更好的存储手段，能同时满足上述三点，或许我们就将创造全新的存储器结构，主存和辅存也将会像光盘一样被淘汰掉。</p>
+<hr>
+<p>微型计算机的分类——按微型计算机的结构形式分类。</p>
+<ul>
+<li>单片机</li>
+<li>单板机</li>
+<li>多板机</li>
+</ul>
+<p>对于数码爱好者，尤其是那些对于台式机组装机器充满兴趣的人都不会对多板机这个概念感到困惑。在台式机中存在一个叫主板或是叫母板的东西。典型的主板能提供一系列接合点，供我们非常熟悉名字的例如处理器、显卡、硬盘驱动器、存储器、对外设备等设备的接合。</p>
+<p>多板机是在一块主板上提供了多个扩展插槽，并使用总线将各个部分进行连接，最终将一切封装在一个机箱里面。在组装的开始，我们有一堆板子，在组装完成后，我们有一台电脑。</p>
+<p>单板机的思路与多板机不同，单板机将一台电脑用到的所用功能集成在一块电路板上，在购买单板机时我们直接买到的就是一台电脑，而不需要再进行组装。当然，鉴于单板机性能弱一般用于实验室和简单的控制场所，所以单板机所在的电路板可能会进一步连接在其他的电路板上。但是，无论外部还会连接什么，重点是，在一小块电路板上我们有了一台基础功能完备的电脑。这里值得一提的是，对于电子设计爱好者，很可能听说过Arduino和树莓派的大名，这里要说明，Arduino和树莓派都属于单板机。</p>
+<p>单片机也被称作微控制器，这个名字基本对单片机定了性质。单片机通常是用来做控制的，常常用于工业，在实验室也经常见到它的身影。单片机将CPU和存储器……其实就是上面提到的微型计算机中该有的那些东西，集成在了一个芯片上面。通常来讲，你对商店老板说来来些单片机，那你将收到的是一些黑色塑料外壳包着的下方有许多金属引脚的小东西。与Arduino和树莓派，一个芯片既不能直接连接一个LED控制它的亮灭，也不能直接烧录程序。单片机正常执行控制需要建立一个最小工作系统，然后才能进行控制。如果想了解更具体些，<a href>这里</a>会有你想知道的。</p>
+<p>==总结一下：微型计算机由CPU和存储器组成，内部有总线连接，向外有输入输出电路进行扩展。计算机的本职工作是做计算，计算需要指令和数据，根据指令数据的存储方式的不同可以将微型计算机分为冯·诺伊曼结构和哈佛结构。计算机可以分为单片机、单板机和多板机。将计算机放在一个芯片上是单片机，放在一个电路板上是单板机，多个板子各司其职组装在一起形成电脑叫多板机。==</p>
+<h4 id="微处理器">微处理器</h4>
+<p>微处理器（microprocessor）也称中央处理单元（central processing unit），是微型计算机的核心部件。</p>
+<p>前面我们已将提过，计算机的本职工作是做计算。计算需要两方面内容——数据和指令。前者就相当于给你数字2和3，后者就相当于告诉你对2和3做乘法。对于CPU来说不止但肯定有下述三个功能：</p>
+<ul>
+<li>进行基本的算数和逻辑运算（如果想要知道电路是如何做运算的，<a href>这里</a>会找到答案的）</li>
+<li>暂存少量数据（这是好理解的，毕竟我们计算式也要先把数字写在草稿纸上）</li>
+<li>执行指令（值得注意的是指令是需要译码的）</li>
+</ul>
+<p>上面的再概括一下就是</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Q：如果阅读本文需要付费，你是否愿意为此支付1元？</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="邱金羽 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="邱金羽 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>邱金羽
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://y006.github.io/2022/03/05/16-32-26/" title="微机原理与接口技术">https://y006.github.io/2022/03/05/16-32-26/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Electrical-Engineering/" rel="tag"># Electrical Engineering</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/02/27/16-42-18/" rel="prev" title="信号与系统">
+                  <i class="fa fa-chevron-left"></i> 信号与系统
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">邱金羽</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"Bolgqjy","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
