@@ -134,7 +134,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -199,6 +199,132 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/03/09/16-14-26/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的Bolg">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/09/16-14-26/" class="post-title-link" itemprop="url">逻辑设计基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-09 16:14:26" itemprop="dateCreated datePublished" datetime="2022-03-09T16:14:26+08:00">2022-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-12 21:09:04" itemprop="dateModified" datetime="2022-03-12T21:09:04+08:00">2022-03-12</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/03/09/16-14-26/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/09/16-14-26/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="logic-design">Logic Design</h1>
+<h3 id="数字系统">数字系统</h3>
+<p>数字系统设计大致分为三个方面</p>
+<ul>
+<li>系统设计
+<ul>
+<li>系统设计是将一个数字系统划分为多个子系统进行设计。</li>
+</ul></li>
+<li>逻辑设计
+<ul>
+<li>逻辑设计是将多个逻辑功能块互联实现特定功能</li>
+</ul></li>
+<li>电路设计</li>
+</ul>
+<p>数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分析。开关电路有两种——组合电路和时序电路。</p>
+<p>开关电路分类：</p>
+<ul>
+<li>组合电路
+<ul>
+<li>组合电路中输出值仅与当前输入值有关</li>
+<li>组合电路的基本构成是逻辑门，逻辑设计就是将逻辑门相互连接起来以便将电路的输入信号转化为预期的输出信号。</li>
+</ul></li>
+<li>时序电路
+<ul>
+<li>时序电路中输出值不仅与当前输入值有关，也与之前的输入值有关；可以认为时序电路具有记忆功能</li>
+<li>时序电路的基本存储元件（存储之前的值）是触发器，触发器与逻辑门一起组成时序电路——如计数器和寄存器。</li>
+</ul></li>
+</ul>
+<h3 id="布尔代数">布尔代数</h3>
+<p>逻辑设计课程中我们使用二值布尔代数来设计开关电路。我们使用布尔变量来表示电路的输入和输出，其中布尔变量代表逻辑电路中的两种不同状态——</p>
+<p>普通代数中的<strong>交换律</strong>和<strong>结合律</strong>同样可以在布尔代数中使用。</p>
+<p>布尔代数中的交换律表明开关的位置（出现次序）不会影响最终结果，结合律表明开关导通的次序不会影响最终结果。</p>
+<p>在布尔代数中，分配律有两种形式：</p>
+<ul>
+<li><p>一种是普通的分配律：<span class="math inline">\(X(Y+Z)=XY+XZ\)</span></p>
+<p>​ 与运算可以分配在或运算上</p>
+<p>​ 去和括号内相乘</p></li>
+<li><p>另一种被称作第二分配律：<span class="math inline">\(X+(YZ)=(X+Y)(X+Z)\)</span></p>
+<p>​ 或运算可以分配在与运算上</p>
+<p>​ 去和括号内相加</p></li>
+</ul>
+<p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/03/05/16-32-26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -230,7 +356,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-06 10:58:03" itemprop="dateModified" datetime="2022-03-06T10:58:03+08:00">2022-03-06</time>
+      <time title="修改时间：2022-03-14 19:47:47" itemprop="dateModified" datetime="2022-03-14T19:47:47+08:00">2022-03-14</time>
     </span>
 
   
@@ -315,7 +441,11 @@
 <li>暂存少量数据（这是好理解的，毕竟我们计算式也要先把数字写在草稿纸上）</li>
 <li>执行指令（值得注意的是指令是需要译码的）</li>
 </ul>
-<p>上面的再概括一下就是</p>
+<h3 id="嵌入式系统">嵌入式系统</h3>
+<p>上文我们以通用计算机系统为例，沿着“微型计算机系统-&gt;微型计算机-&gt;微（型）处理器”三个层次描述了微机的基本概念。最后我们注意微机的另一大类，即平行于通用计算机系统的，名为嵌入式系统的专用计算机系统。</p>
+<p>嵌入式系统也是微型计算机系统，上面描述的通用计算机系统包含的内容，在嵌入式系统中也同样有所体现。但是嵌入式系统的关键词在于“专用”。专用意味着嵌入式系统为某一具体的应用问题而生，不需要具备通用计算机系统的全部内容。例如，嵌入式系统中可能不会连接鼠标键盘等外设，而且不会具备完整的系统软件。</p>
+<h1 id="arm微处理器">ARM微处理器</h1>
+<p>ARM微处理器最重要的特性是其英文名称</p>
 
       
     </div>
@@ -531,7 +661,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-03 17:17:57" itemprop="dateModified" datetime="2022-03-03T17:17:57+08:00">2022-03-03</time>
+      <time title="修改时间：2022-03-15 14:53:16" itemprop="dateModified" datetime="2022-03-15T14:53:16+08:00">2022-03-15</time>
     </span>
 
   
@@ -567,7 +697,7 @@
 <p>正式开始本节前，我们简单地回顾一下中学的知识，以下这些是作者默认读者已经了解了的知识。</p>
 <ul>
 <li>导体中存在大量可以自由移动的电子，称之为自由电子（free electron）。自由电子在受到外电场或外磁场的作用时，能够在物质中自由移动。</li>
-<li>导体中自由电子的定向移动形成了电流，电流（current）的定义式为<span class="math inline">\(i=\frac{dq}{dt}\)</span>。</li>
+<li>导体中自由电子的定向移动形成了电流，电流（current）的定义式为 <span class="math inline">\(i=\frac{dq}{dt}\)</span>。</li>
 <li>载流子（charge carrier）指可以自由移动的带有电荷的物质微粒，是物质中电流形成的原因，导体中的载流子是电子。</li>
 <li>在半导体中存在两种载流子——电子（electron）和空穴（hole）。空穴是电子移动后留下的空位，从物理模型上可以将空穴看作是正电子。在半导体中，电子和空穴两种载流子共同形成半导体中的电流。</li>
 </ul>
@@ -588,6 +718,129 @@
 <p>TODO</p>
 <h2 id="数字电子技术">数字电子技术</h2>
 <p>TODO</p>
+<p>运算放大器电路</p>
+<p>分析顺序</p>
+<ul>
+<li>图像</li>
+<li>公式</li>
+<li>结论</li>
+</ul>
+<ol type="1">
+<li><p>反相放大电路</p>
+<ul>
+<li><p>反相放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1249-16473232199221.PNG" alt="IMG_1249" style="zoom: 25%;"></p></li>
+<li><p>反相放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p>假设运算放大器是理想的，即</p>
+<ul>
+<li>开环增益 <span class="math inline">\(A_{od}=\infin\)</span>：故输入信号 <span class="math inline">\(v_1\)</span> 和 <span class="math inline">\(v_2\)</span> 是相等的。且由于 <span class="math inline">\(v_2\)</span> 与地面连接，故 <span class="math inline">\(v_2\)</span> 是“接地”，而 <span class="math inline">\(v_1\)</span> 是“虚地”。</li>
+<li>输入阻抗大小为 <span class="math inline">\(\infin\)</span>：流入运算放大器的电流为 <span class="math inline">\(0\)</span> 。</li>
+</ul>
+<p>理想运放约束+基尔霍夫定律可得： <span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;\frac{v_{i_1}-v_1}{R_1}=\frac{v_1-v_o}{R_2}\\\\
+&amp;v_1=0
+\end{aligned}
+\end{cases}
+\quad
+\Longrightarrow
+\quad
+A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
+\]</span></p></li>
+<li><p>结论和注意事项：</p>
+<ul>
+<li>对于理想运放，闭环电压增益是运放外电阻比值的函数，与运放内部的参数无关。</li>
+<li>增益中的负号表示 “反相” ，是反相放大电路名字的由来。</li>
+<li>反相放大电路中没有耦合电容（就是电容，作用是耦合所以叫耦合电容），因此反相放大电路可以放大直流电压信号。</li>
+</ul></li>
+</ul></li>
+<li><p>反相放大电路扩展——带 T 型网络的放大电路</p>
+<ul>
+<li><p>作为改进方案被提出的原因：</p>
+<p>反相放大电路的增益 <span class="math inline">\(A_v\)</span> 为 <span class="math inline">\(-\frac{R_2}{R_1}\)</span>，那么如果我们的设计目标是设计一个闭环增益 <span class="math inline">\(A_v=-100\)</span> 且输入电阻 <span class="math inline">\(R_i=R_1=50k\Omega\)</span> 的反相放大电路。于是，反馈电阻 <span class="math inline">\(R_2\)</span> 就必须是 <span class="math inline">\(5M\Omega\)</span>。然而，这个电阻值对大多数实际电路来说太大了。为了解决这个问题我们提出了作为改进方案的带 T 型网络的放大电路。</p></li>
+<li><p>带 T 型网络的放大电路的电路图如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1258.PNG" alt="IMG_1258" style="zoom:25%;"></p></li>
+<li><p>设 <span class="math inline">\(R_2\)</span>、<span class="math inline">\(R_3\)</span> 和 <span class="math inline">\(R_4\)</span> 三个电阻的公共节点处电势为 <span class="math inline">\(v_x\)</span>，则: <span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;i_2+i_3=i_4\\\\
+&amp;\frac{v_1-v_x}{R_2}+\frac{v_x-v_o}{R_3}=\frac{v_x}{R_4}\\\\
+&amp;v_1=0
+\end{aligned}
+\end{cases}
+\quad
+\Longrightarrow
+\quad
+A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
+\]</span></p></li>
+<li><p>结论和注意事项：</p>
+<p>使用带 T 型网络的放大电路，可以在使用合理大小电阻的情况下获得更大的增益。</p></li>
+</ul></li>
+<li><p>同相放大电路；</p>
+<ul>
+<li><p>同相放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1253-16473270320863.PNG" alt="IMG_1253" style="zoom: 25%;"></p></li>
+<li><p>同相放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>电压跟随器：</p>
+<ul>
+<li><p>电压跟随器连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1246.PNG" alt="IMG_1246" style="zoom:25%;"></p></li>
+<li><p>电压跟随器增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>求和放大电路：</p>
+<ul>
+<li><p>求和放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1252.PNG" alt="IMG_1252" style="zoom:25%;"></p></li>
+<li><p>求和放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>差分放大电路：</p>
+<ul>
+<li><p>差分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1244.PNG" alt="IMG_1244" style="zoom:25%;"></p></li>
+<li><p>差分放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>积分放大电路：</p>
+<ul>
+<li><p>积分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1254.PNG" alt="IMG_1254" style="zoom:25%;"></p></li>
+<li><p>积分放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>微分放大电路：</p>
+<ul>
+<li><p>微分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1251.PNG" alt="IMG_1251" style="zoom:25%;"></p></li>
+<li><p>微分放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>对数放大电路：</p>
+<ul>
+<li><p>对数放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1247.PNG" alt="IMG_1247" style="zoom:25%;"></p></li>
+<li><p>对数放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>指数放大电路：</p>
+<ul>
+<li><p>指数放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1257.PNG" alt="IMG_1257" style="zoom:25%;"></p></li>
+<li><p>指数放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>仪用放大电路：</p>
+<ul>
+<li><p>仪用放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1256.PNG" alt="IMG_1256" style="zoom:25%;"></p></li>
+<li><p>仪用放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+</ol>
 
       
     </div>
@@ -724,7 +977,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-27 12:45:26" itemprop="dateModified" datetime="2022-02-27T12:45:26+08:00">2022-02-27</time>
+      <time title="修改时间：2022-03-08 20:44:36" itemprop="dateModified" datetime="2022-03-08T20:44:36+08:00">2022-03-08</time>
     </span>
 
   
@@ -848,12 +1101,26 @@
 <p>使用上述代码</p>
 <h4 id="数字滤波器">数字滤波器</h4>
 <p>TODO</p>
+<p>一阶互补滤波器（仅roll值）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MPU = <span class="number">0x68</span>; <span class="comment">// MPU6050 I2C address</span></span><br><span class="line"><span class="type">float</span> AccX, AccY, AccZ;</span><br><span class="line"><span class="type">float</span> GyroX;</span><br><span class="line"><span class="type">float</span> accAngleX, gyroAngleX;</span><br><span class="line"><span class="type">float</span> roll;</span><br><span class="line"><span class="type">float</span> elapsedTime, currentTime, previousTime;</span><br><span class="line"><span class="type">float</span> AccErrorX = <span class="number">-1.5</span>,GyroErrorX = <span class="number">-0.25</span>,rollError = <span class="number">-3.2</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">  Serial.begin(<span class="number">19200</span>);</span><br><span class="line">  Wire.begin();                      <span class="comment">// Initialize comunication</span></span><br><span class="line">  Wire.beginTransmission(MPU);       <span class="comment">// Start communication with MPU6050 // MPU=0x68</span></span><br><span class="line">  Wire.write(<span class="number">0x6B</span>);                  <span class="comment">// Talk to the register 6B</span></span><br><span class="line">  Wire.write(<span class="number">0x00</span>);                  <span class="comment">// Make reset - place a 0 into the 6B register</span></span><br><span class="line">  Wire.endTransmission(<span class="literal">true</span>);        <span class="comment">//end the transmission</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// === Read acceleromter data === //</span></span><br><span class="line">  Wire.beginTransmission(MPU);</span><br><span class="line">  Wire.write(<span class="number">0x3B</span>); </span><br><span class="line">  Wire.endTransmission(<span class="literal">false</span>);</span><br><span class="line">  Wire.requestFrom(MPU, <span class="number">6</span>, <span class="literal">true</span>); </span><br><span class="line">    </span><br><span class="line">  AccX = (Wire.read() &lt;&lt; <span class="number">8</span> | Wire.read()) / <span class="number">16384.0</span>;</span><br><span class="line">  AccY = (Wire.read() &lt;&lt; <span class="number">8</span> | Wire.read()) / <span class="number">16384.0</span>; <span class="comment">// Y-axis value</span></span><br><span class="line">  AccZ = (Wire.read() &lt;&lt; <span class="number">8</span> | Wire.read()) / <span class="number">16384.0</span>; <span class="comment">// Z-axis value</span></span><br><span class="line">  accAngleX = (<span class="built_in">atan</span>(AccY / <span class="built_in">sqrt</span>(<span class="built_in">pow</span>(AccX, <span class="number">2</span>) + <span class="built_in">pow</span>(AccZ, <span class="number">2</span>))) * <span class="number">180</span> / PI) - AccErrorX;</span><br><span class="line">   </span><br><span class="line">  <span class="comment">// === Read gyroscope data === //</span></span><br><span class="line">  previousTime = currentTime;</span><br><span class="line">  currentTime = millis();</span><br><span class="line">  elapsedTime = (currentTime - previousTime) / <span class="number">1000</span>;</span><br><span class="line">    </span><br><span class="line">  Wire.beginTransmission(MPU);</span><br><span class="line">  Wire.write(<span class="number">0x43</span>);</span><br><span class="line">  Wire.endTransmission(<span class="literal">false</span>);</span><br><span class="line">  Wire.requestFrom(MPU, <span class="number">6</span>, <span class="literal">true</span>); </span><br><span class="line">    </span><br><span class="line">  GyroX = (Wire.read() &lt;&lt; <span class="number">8</span> | Wire.read()) / <span class="number">131.0</span>;</span><br><span class="line">  GyroX = GyroX - GyroErrorX;</span><br><span class="line">  gyroAngleX = gyroAngleX + GyroX * elapsedTime;</span><br><span class="line">  </span><br><span class="line">  roll = <span class="number">0.96</span> * gyroAngleX + <span class="number">0.04</span> * accAngleX -rollError;</span><br><span class="line">  Serial.println(roll);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="pid控制">PID控制</h3>
 <p>TODO</p>
 <h3 id="d建模制作小车外壳">3D建模——制作小车外壳</h3>
 <p>TODO</p>
 <h3 id="pcb设计制作小车电路板">PCB设计——制作小车电路板</h3>
-<p>TODO</p>
+<p>与使用面包板进行测试不同，绘制PCB板时使用的连线在打印PCB后就会固定下来，因此我们必须在编程时调用相应的引脚，这样才不会出错。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HC06</span></span><br><span class="line"><span class="comment">//TX-&gt;Nano_Rx</span></span><br><span class="line"><span class="comment">//RX-&gt;Nano_TX</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//左电机——6个引脚</span></span><br><span class="line"><span class="type">const</span> byte L1_M1 = <span class="number">9</span>;</span><br><span class="line"><span class="comment">//L2_GND-&gt;Nano_GND</span></span><br><span class="line"><span class="type">const</span> byte L3_C1 = <span class="number">4</span>;</span><br><span class="line"><span class="type">const</span> byte L4_C2 = <span class="number">11</span>;</span><br><span class="line"><span class="comment">//L5_VCC-&gt;Nano_5V</span></span><br><span class="line"><span class="type">const</span> byte L6_M2 = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//右电机——6个引脚</span></span><br><span class="line"><span class="type">const</span> byte R1_M1 = <span class="number">5</span>;</span><br><span class="line"><span class="comment">//R2_GND-&gt;Nano_GND</span></span><br><span class="line"><span class="type">const</span> byte R3_C1 = <span class="number">3</span>;</span><br><span class="line"><span class="type">const</span> byte R4_C2 = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//R5_VCC-&gt;Nano_5V</span></span><br><span class="line"><span class="type">const</span> byte R6_M2 = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//MPU6050</span></span><br><span class="line"><span class="comment">//SCL-&gt;Nano_A5</span></span><br><span class="line"><span class="comment">//SDA-&gt;Nano_A4</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MPU = <span class="number">0x68</span>; <span class="comment">// MPU6050 I2C 地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//MPU6050 仅计算Roll时需要的变量如下</span></span><br><span class="line"><span class="type">float</span> AccX, AccY, AccZ;</span><br><span class="line"><span class="type">float</span> GyroX;</span><br><span class="line"><span class="type">float</span> accAngleX, gyroAngleX;</span><br><span class="line"><span class="type">float</span> roll;</span><br><span class="line"><span class="type">float</span> elapsedTime, currentTime, previousTime;</span><br><span class="line"><span class="type">float</span> AccErrorX,GyroErrorX,rollError;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> byte L1_M1 = <span class="number">9</span>;</span><br><span class="line"><span class="comment">//L2_GND-&gt;Nano_GND</span></span><br><span class="line"><span class="type">const</span> byte L3_C1 = <span class="number">4</span>;</span><br><span class="line"><span class="type">const</span> byte L4_C2 = <span class="number">11</span>;</span><br><span class="line"><span class="comment">//L5_VCC-&gt;Nano_5V</span></span><br><span class="line"><span class="type">const</span> byte L6_M2 = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> byte R1_M1 = <span class="number">5</span>;</span><br><span class="line"><span class="comment">//R2_GND-&gt;Nano_GND</span></span><br><span class="line"><span class="type">const</span> byte R3_C1 = <span class="number">3</span>;</span><br><span class="line"><span class="type">const</span> byte R4_C2 = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//R5_VCC-&gt;Nano_5V</span></span><br><span class="line"><span class="type">const</span> byte R6_M2 = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span>&#123;</span><br><span class="line">  pinMode(L1_M1,OUTPUT);</span><br><span class="line">  pinMode(L6_M2,OUTPUT);</span><br><span class="line"></span><br><span class="line">  pinMode(R1_M1,OUTPUT);</span><br><span class="line">  pinMode(R6_M2,OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="comment">//小车直行代码</span></span><br><span class="line">  analogWrite(L1_M1,<span class="number">255</span>);</span><br><span class="line">  analogWrite(L6_M2,<span class="number">0</span>);</span><br><span class="line">  analogWrite(R1_M1,<span class="number">0</span>);</span><br><span class="line">  analogWrite(R6_M2,<span class="number">255</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>记录一个可以使用的卡尔曼滤波器，直接使用下面的代码可以使用串口绘图器绘制出Roll的角度变化，打开绘图器时Roll的值记作0，然后表现为相对偏移，这个滤波器效果还不错，至少比那个一阶互补滤波器强，但是感觉相应速度不是很快。</p>
+<p>主函数：</p>
+<p>Kalman Filter</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//连线方法</span></span><br><span class="line"><span class="comment">// MPU-&gt;UNO</span></span><br><span class="line"><span class="comment">// VCC-&gt;VCC</span></span><br><span class="line"><span class="comment">// GND-&gt;GND</span></span><br><span class="line"><span class="comment">// SCL-&gt;A5</span></span><br><span class="line"><span class="comment">// SDA-&gt;A4</span></span><br><span class="line"><span class="comment">// INT-&gt;2 (Optional)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Kalman.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">float</span> fRad2Deg = <span class="number">57.295779513f</span>; <span class="comment">//将弧度转为角度的乘数</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MPU = <span class="number">0x68</span>;           <span class="comment">// MPU-6050的I2C地址</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> nValCnt = <span class="number">7</span>;          <span class="comment">//一次读取寄存器的数量</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> nCalibTimes = <span class="number">1000</span>; <span class="comment">//校准时读数的次数</span></span><br><span class="line"><span class="type">int</span> calibData[nValCnt];       <span class="comment">//校准数据</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> nLastTime = <span class="number">0</span>; <span class="comment">//上一次读数的时间</span></span><br><span class="line"><span class="type">float</span> fLastRoll = <span class="number">0.0f</span>;      <span class="comment">//上一次滤波得到的Roll角</span></span><br><span class="line">Kalman kalmanRoll;           <span class="comment">// Roll角滤波器</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);   <span class="comment">//初始化串口，指定波特率</span></span><br><span class="line">  Wire.begin();         <span class="comment">//初始化Wire库</span></span><br><span class="line">  WriteMPUReg(<span class="number">0x6B</span>, <span class="number">0</span>); <span class="comment">//启动MPU6050设备</span></span><br><span class="line"></span><br><span class="line">  Calibration();        <span class="comment">//执行校准</span></span><br><span class="line">  nLastTime = micros(); <span class="comment">//记录当前时间</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//向串口打印输出Roll角和Pitch角，运行时在Arduino的串口监视器中查看</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Roll:&quot;</span>);</span><br><span class="line">  Serial.println(GetValue());</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">float</span> <span class="title function_">GetValue</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> readouts[nValCnt];</span><br><span class="line">  ReadAccGyr(readouts); <span class="comment">//读出测量值</span></span><br><span class="line"></span><br><span class="line">  <span class="type">float</span> realVals[<span class="number">7</span>];</span><br><span class="line">  Rectify(readouts, realVals); <span class="comment">//根据校准的偏移量进行纠正</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//计算加速度向量的模长，均以g为单位</span></span><br><span class="line">  <span class="type">float</span> fNorm = <span class="built_in">sqrt</span>(realVals[<span class="number">0</span>] * realVals[<span class="number">0</span>] + realVals[<span class="number">1</span>] * realVals[<span class="number">1</span>] + realVals[<span class="number">2</span>] * realVals[<span class="number">2</span>]);</span><br><span class="line">  <span class="type">float</span> fRoll = GetRoll(realVals, fNorm); <span class="comment">//计算Roll角</span></span><br><span class="line">  <span class="keyword">if</span> (realVals[<span class="number">1</span>] &gt; <span class="number">0</span>)</span><br><span class="line">  	fRoll = -fRoll;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//计算两次测量的时间间隔dt，以秒为单位</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">long</span> nCurTime = micros();</span><br><span class="line">  <span class="type">float</span> dt = (<span class="type">double</span>)(nCurTime - nLastTime) / <span class="number">1000000.0</span>;</span><br><span class="line">  <span class="comment">//对Roll角和Pitch角进行卡尔曼滤波</span></span><br><span class="line">  <span class="type">float</span> fNewRoll = kalmanRoll.getAngle(fRoll, realVals[<span class="number">4</span>], dt);</span><br><span class="line">  <span class="comment">//跟据滤波值计算角度速</span></span><br><span class="line">  <span class="type">float</span> fRollRate = (fNewRoll - fLastRoll) / dt;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//更新Roll角和Pitch角</span></span><br><span class="line">  fLastRoll = fNewRoll;</span><br><span class="line">  <span class="comment">//更新本次测的时间</span></span><br><span class="line">  nLastTime = nCurTime;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">return</span> fNewRoll;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//向MPU6050写入一个字节的数据</span></span><br><span class="line"><span class="comment">//指定寄存器地址与一个字节的值</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">WriteMPUReg</span><span class="params">(<span class="type">int</span> nReg, <span class="type">unsigned</span> <span class="type">char</span> nVal)</span></span><br><span class="line">&#123;</span><br><span class="line">  Wire.beginTransmission(MPU);</span><br><span class="line">  Wire.write(nReg);</span><br><span class="line">  Wire.write(nVal);</span><br><span class="line">  Wire.endTransmission(<span class="literal">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从MPU6050读出一个字节的数据</span></span><br><span class="line"><span class="comment">//指定寄存器地址，返回读出的值</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> <span class="title function_">ReadMPUReg</span><span class="params">(<span class="type">int</span> nReg)</span></span><br><span class="line">&#123;</span><br><span class="line">  Wire.beginTransmission(MPU);</span><br><span class="line">  Wire.write(nReg);</span><br><span class="line">  Wire.requestFrom(MPU, <span class="number">1</span>, <span class="literal">true</span>);</span><br><span class="line">  Wire.endTransmission(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Wire.read();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从MPU6050读出加速度计三个分量、温度和三个角速度计</span></span><br><span class="line"><span class="comment">//保存在指定的数组中</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">ReadAccGyr</span><span class="params">(<span class="type">int</span> *pVals)</span></span><br><span class="line">&#123;</span><br><span class="line">  Wire.beginTransmission(MPU);</span><br><span class="line">  Wire.write(<span class="number">0x3B</span>);</span><br><span class="line">  Wire.requestFrom(MPU, nValCnt * <span class="number">2</span>, <span class="literal">true</span>);</span><br><span class="line">  Wire.endTransmission(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">long</span> i = <span class="number">0</span>; i &lt; nValCnt; ++i)</span><br><span class="line">    pVals[i] = Wire.read() &lt;&lt; <span class="number">8</span> | Wire.read();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对大量读数进行统计，校准平均偏移量</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Calibration</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">float</span> valSums[<span class="number">7</span>] = &#123;<span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0</span>&#125;; <span class="comment">//先求和</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nCalibTimes; ++i)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="type">int</span> mpuVals[nValCnt];</span><br><span class="line">    ReadAccGyr(mpuVals);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; nValCnt; ++j)</span><br><span class="line">      valSums[j] += mpuVals[j];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//再求平均</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nValCnt; ++i)</span><br><span class="line">    calibData[i] = <span class="type">int</span>(valSums[i] / nCalibTimes);</span><br><span class="line">  calibData[<span class="number">2</span>] += <span class="number">16384</span>; <span class="comment">//设芯片Z轴竖直向下，设定静态工作点。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//算得Roll角。算法见文档。</span></span><br><span class="line"><span class="type">float</span> <span class="title function_">GetRoll</span><span class="params">(<span class="type">float</span> *pRealVals, <span class="type">float</span> fNorm)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">float</span> fNormXZ = <span class="built_in">sqrt</span>(pRealVals[<span class="number">0</span>] * pRealVals[<span class="number">0</span>] + pRealVals[<span class="number">2</span>] * pRealVals[<span class="number">2</span>]);</span><br><span class="line">  <span class="type">float</span> fCos = fNormXZ / fNorm;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">acos</span>(fCos) * fRad2Deg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对读数进行纠正，消除偏移，并转换为物理量。公式见文档。</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Rectify</span><span class="params">(<span class="type">int</span> *pReadout, <span class="type">float</span> *pRealVals)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i)</span><br><span class="line">    pRealVals[i] = (<span class="type">float</span>)(pReadout[i] - calibData[i]) / <span class="number">16384.0f</span>;</span><br><span class="line"></span><br><span class="line">  pRealVals[<span class="number">3</span>] = pReadout[<span class="number">3</span>] / <span class="number">340.0f</span> + <span class="number">36.53</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">4</span>; i &lt; <span class="number">7</span>; ++i)</span><br><span class="line">    pRealVals[i] = (<span class="type">float</span>)(pReadout[i] - calibData[i]) / <span class="number">131.0f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>新建标签："Kalman.cpp"</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Kalman.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">Kalman::Kalman() </span><br><span class="line">&#123;</span><br><span class="line">  Q_angle = <span class="number">0.001f</span>;</span><br><span class="line">  Q_bias = <span class="number">0.003f</span>;</span><br><span class="line">  R_measure = <span class="number">0.03f</span>;</span><br><span class="line"></span><br><span class="line">  angle = <span class="number">0.0f</span>;</span><br><span class="line">  bias = <span class="number">0.0f</span>;</span><br><span class="line"></span><br><span class="line">  P[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0.0f</span>;</span><br><span class="line">  P[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">0.0f</span>;</span><br><span class="line">  P[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">0.0f</span>;</span><br><span class="line">  P[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">0.0f</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">float</span> <span class="title function_">Kalman::getAngle</span><span class="params">(<span class="type">float</span> newAngle, <span class="type">float</span> newRate, <span class="type">float</span> dt)</span> </span><br><span class="line">&#123;</span><br><span class="line">  rate = newRate - bias;</span><br><span class="line">  angle += dt * rate;</span><br><span class="line">  P[<span class="number">0</span>][<span class="number">0</span>] += dt * (dt * P[<span class="number">1</span>][<span class="number">1</span>] - P[<span class="number">0</span>][<span class="number">1</span>] - P[<span class="number">1</span>][<span class="number">0</span>] + Q_angle);</span><br><span class="line">  P[<span class="number">0</span>][<span class="number">1</span>] -= dt * P[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">  P[<span class="number">1</span>][<span class="number">0</span>] -= dt * P[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">  P[<span class="number">1</span>][<span class="number">1</span>] += Q_bias * dt;</span><br><span class="line"></span><br><span class="line">  <span class="type">float</span> S = P[<span class="number">0</span>][<span class="number">0</span>] + R_measure;</span><br><span class="line">  <span class="type">float</span> K[<span class="number">2</span>];</span><br><span class="line">  K[<span class="number">0</span>] = P[<span class="number">0</span>][<span class="number">0</span>] / S;</span><br><span class="line">  K[<span class="number">1</span>] = P[<span class="number">1</span>][<span class="number">0</span>] / S;</span><br><span class="line"></span><br><span class="line">  <span class="type">float</span> y = newAngle - angle;</span><br><span class="line">  angle += K[<span class="number">0</span>] * y;</span><br><span class="line">  bias += K[<span class="number">1</span>] * y;</span><br><span class="line"></span><br><span class="line">  <span class="type">float</span> P00_temp = P[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">  <span class="type">float</span> P01_temp = P[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">  P[<span class="number">0</span>][<span class="number">0</span>] -= K[<span class="number">0</span>] * P00_temp;</span><br><span class="line">  P[<span class="number">0</span>][<span class="number">1</span>] -= K[<span class="number">0</span>] * P01_temp;</span><br><span class="line">  P[<span class="number">1</span>][<span class="number">0</span>] -= K[<span class="number">1</span>] * P00_temp;</span><br><span class="line">  P[<span class="number">1</span>][<span class="number">1</span>] -= K[<span class="number">1</span>] * P01_temp;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> angle;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Kalman::setAngle</span><span class="params">(<span class="type">float</span> angle)</span> </span><br><span class="line">&#123;</span><br><span class="line">  this-&gt;angle = angle;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">float</span> <span class="title function_">Kalman::getRate</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> this-&gt;rate;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Kalman::setQangle</span><span class="params">(<span class="type">float</span> Q_angle)</span> </span><br><span class="line">&#123;</span><br><span class="line">  this-&gt;Q_angle = Q_angle;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Kalman::setQbias</span><span class="params">(<span class="type">float</span> Q_bias)</span> </span><br><span class="line">&#123;</span><br><span class="line">  this-&gt;Q_bias = Q_bias;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Kalman::setRmeasure</span><span class="params">(<span class="type">float</span> R_measure)</span> </span><br><span class="line">&#123;</span><br><span class="line">  this-&gt;R_measure = R_measure;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">float</span> <span class="title function_">Kalman::getQangle</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> this-&gt;Q_angle;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">float</span> <span class="title function_">Kalman::getQbias</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> this-&gt;Q_bias;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">float</span> <span class="title function_">Kalman::getRmeasure</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> this-&gt;R_measure;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>新建标签"Kalman.h"</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _Kalman_h_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _Kalman_h_</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Kalman</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  public:</span><br><span class="line">    Kalman();</span><br><span class="line"></span><br><span class="line">    <span class="type">float</span> <span class="title function_">getAngle</span><span class="params">(<span class="type">float</span> newAngle, <span class="type">float</span> newRate, <span class="type">float</span> dt)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">void</span> <span class="title function_">setAngle</span><span class="params">(<span class="type">float</span> angle)</span>;</span><br><span class="line">    <span class="type">float</span> <span class="title function_">getRate</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">void</span> <span class="title function_">setQangle</span><span class="params">(<span class="type">float</span> Q_angle)</span>;</span><br><span class="line">    <span class="type">void</span> <span class="title function_">setQbias</span><span class="params">(<span class="type">float</span> Q_bias)</span>;</span><br><span class="line">    <span class="type">void</span> <span class="title function_">setRmeasure</span><span class="params">(<span class="type">float</span> R_measure)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">float</span> <span class="title function_">getQangle</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">float</span> <span class="title function_">getQbias</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">float</span> <span class="title function_">getRmeasure</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">  private:</span><br><span class="line">    <span class="type">float</span> Q_angle;</span><br><span class="line">    <span class="type">float</span> Q_bias;</span><br><span class="line">    <span class="type">float</span> R_measure;</span><br><span class="line"></span><br><span class="line">    <span class="type">float</span> angle;</span><br><span class="line">    <span class="type">float</span> bias;</span><br><span class="line">    <span class="type">float</span> rate;</span><br><span class="line">    </span><br><span class="line">    <span class="type">float</span> P[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Kalman_Filter(Adxl_angle, Gyro_sensor); <span class="comment">//卡尔曼融合获取angle</span></span><br><span class="line">Input = angle;</span><br><span class="line">myPID.Compute();  <span class="comment">//PID计算获取 Output</span></span><br><span class="line">Drive(Output);   <span class="comment">//根据Output驱动电机</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//连线方法</span></span><br><span class="line"><span class="comment">// MPU-&gt;UNO</span></span><br><span class="line"><span class="comment">// VCC-&gt;VCC</span></span><br><span class="line"><span class="comment">// GND-&gt;GND</span></span><br><span class="line"><span class="comment">// SCL-&gt;A5</span></span><br><span class="line"><span class="comment">// SDA-&gt;A4</span></span><br><span class="line"><span class="comment">// INT-&gt;2 (Optional)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;PID_v1.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Kalman.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Wire.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">double</span> Setpoint, Input, Output;</span><br><span class="line"><span class="type">float</span> fRad2Deg = <span class="number">57.295779513f</span>; <span class="comment">//将弧度转为角度的乘数</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MPU = <span class="number">0x68</span>;           <span class="comment">// MPU-6050的I2C地址</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> nValCnt = <span class="number">7</span>;          <span class="comment">//一次读取寄存器的数量</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> nCalibTimes = <span class="number">1000</span>; <span class="comment">//校准时读数的次数</span></span><br><span class="line"><span class="type">int</span> calibData[nValCnt];       <span class="comment">//校准数据</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> nLastTime = <span class="number">0</span>; <span class="comment">//上一次读数的时间</span></span><br><span class="line"><span class="type">float</span> fLastRoll = <span class="number">0.0f</span>;      <span class="comment">//上一次滤波得到的Roll角</span></span><br><span class="line">Kalman kalmanRoll;           <span class="comment">// Roll角滤波器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//左电机——6个引脚</span></span><br><span class="line"><span class="type">const</span> byte L1_M1 = <span class="number">9</span>;</span><br><span class="line"><span class="comment">//L2_GND-&gt;Nano_GND</span></span><br><span class="line"><span class="type">const</span> byte L3_C1 = <span class="number">4</span>;</span><br><span class="line"><span class="type">const</span> byte L4_C2 = <span class="number">11</span>;</span><br><span class="line"><span class="comment">//L5_VCC-&gt;Nano_5V</span></span><br><span class="line"><span class="type">const</span> byte L6_M2 = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//右电机——6个引脚</span></span><br><span class="line"><span class="type">const</span> byte R1_M1 = <span class="number">5</span>;</span><br><span class="line"><span class="comment">//R2_GND-&gt;Nano_GND</span></span><br><span class="line"><span class="type">const</span> byte R3_C1 = <span class="number">3</span>;</span><br><span class="line"><span class="type">const</span> byte R4_C2 = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//R5_VCC-&gt;Nano_5V</span></span><br><span class="line"><span class="type">const</span> byte R6_M2 = <span class="number">6</span>;</span><br><span class="line">  PID <span class="title function_">myPID</span><span class="params">(&amp;Input, &amp;Output, &amp;Setpoint,<span class="number">2</span>,<span class="number">5</span>,<span class="number">1</span>, DIRECT)</span>; <span class="comment">//PID对象声明</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);   <span class="comment">//初始化串口，指定波特率</span></span><br><span class="line">  Wire.begin();         <span class="comment">//初始化Wire库</span></span><br><span class="line">  WriteMPUReg(<span class="number">0x6B</span>, <span class="number">0</span>); <span class="comment">//启动MPU6050设备</span></span><br><span class="line"></span><br><span class="line">  Calibration();        <span class="comment">//执行校准</span></span><br><span class="line">  nLastTime = micros(); <span class="comment">//记录当前时间</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">  setupPID();  <span class="comment">//PID初始化</span></span><br><span class="line">    </span><br><span class="line">  pinMode(L1_M1,OUTPUT);</span><br><span class="line">  pinMode(L6_M2,OUTPUT);</span><br><span class="line"></span><br><span class="line">  pinMode(R1_M1,OUTPUT);</span><br><span class="line">  pinMode(R6_M2,OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//向串口打印输出Roll角和Pitch角，运行时在Arduino的串口监视器中查看</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Roll:&quot;</span>);</span><br><span class="line">  Serial.println();</span><br><span class="line">  </span><br><span class="line">  Input = GetValue();</span><br><span class="line">  myPID.Compute();  <span class="comment">//PID计算获取 Output</span></span><br><span class="line">  Drive(Output);   <span class="comment">//根据Output驱动电机</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Drive</span><span class="params">(<span class="type">float</span> Output)</span></span><br><span class="line">&#123;    </span><br><span class="line">  analogWrite(L1_M1,Output);</span><br><span class="line">  analogWrite(L6_M2,<span class="number">0</span>);</span><br><span class="line">  analogWrite(R1_M1,<span class="number">0</span>);</span><br><span class="line">  analogWrite(R6_M2,Output);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">setupPID</span><span class="params">()</span>&#123;</span><br><span class="line">  Input = <span class="number">0</span>;</span><br><span class="line">  Setpoint = <span class="number">17</span>;  <span class="comment">//我的小车自平衡角度为17</span></span><br><span class="line">  myPID.SetSampleTime(<span class="number">100</span>);  <span class="comment">//控制器的采样时间100ms</span></span><br><span class="line">  <span class="comment">//myPID.SetOutputLimits(0, 2000); </span></span><br><span class="line">  myPID.SetMode(AUTOMATIC);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">float</span> <span class="title function_">GetValue</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> readouts[nValCnt];</span><br><span class="line">  ReadAccGyr(readouts); <span class="comment">//读出测量值</span></span><br><span class="line"></span><br><span class="line">  <span class="type">float</span> realVals[<span class="number">7</span>];</span><br><span class="line">  Rectify(readouts, realVals); <span class="comment">//根据校准的偏移量进行纠正</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//计算加速度向量的模长，均以g为单位</span></span><br><span class="line">  <span class="type">float</span> fNorm = <span class="built_in">sqrt</span>(realVals[<span class="number">0</span>] * realVals[<span class="number">0</span>] + realVals[<span class="number">1</span>] * realVals[<span class="number">1</span>] + realVals[<span class="number">2</span>] * realVals[<span class="number">2</span>]);</span><br><span class="line">  <span class="type">float</span> fRoll = GetRoll(realVals, fNorm); <span class="comment">//计算Roll角</span></span><br><span class="line">  <span class="keyword">if</span> (realVals[<span class="number">1</span>] &gt; <span class="number">0</span>)</span><br><span class="line">    fRoll = -fRoll;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//计算两次测量的时间间隔dt，以秒为单位</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">long</span> nCurTime = micros();</span><br><span class="line">  <span class="type">float</span> dt = (<span class="type">double</span>)(nCurTime - nLastTime) / <span class="number">1000000.0</span>;</span><br><span class="line">  <span class="comment">//对Roll角和Pitch角进行卡尔曼滤波</span></span><br><span class="line">  <span class="type">float</span> fNewRoll = kalmanRoll.getAngle(fRoll, realVals[<span class="number">4</span>], dt);</span><br><span class="line">  <span class="comment">//跟据滤波值计算角度速</span></span><br><span class="line">  <span class="type">float</span> fRollRate = (fNewRoll - fLastRoll) / dt;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//更新Roll角和Pitch角</span></span><br><span class="line">  fLastRoll = fNewRoll;</span><br><span class="line">  <span class="comment">//更新本次测的时间</span></span><br><span class="line">  nLastTime = nCurTime;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">return</span> fNewRoll;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//向MPU6050写入一个字节的数据</span></span><br><span class="line"><span class="comment">//指定寄存器地址与一个字节的值</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">WriteMPUReg</span><span class="params">(<span class="type">int</span> nReg, <span class="type">unsigned</span> <span class="type">char</span> nVal)</span></span><br><span class="line">&#123;</span><br><span class="line">  Wire.beginTransmission(MPU);</span><br><span class="line">  Wire.write(nReg);</span><br><span class="line">  Wire.write(nVal);</span><br><span class="line">  Wire.endTransmission(<span class="literal">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从MPU6050读出一个字节的数据</span></span><br><span class="line"><span class="comment">//指定寄存器地址，返回读出的值</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> <span class="title function_">ReadMPUReg</span><span class="params">(<span class="type">int</span> nReg)</span></span><br><span class="line">&#123;</span><br><span class="line">  Wire.beginTransmission(MPU);</span><br><span class="line">  Wire.write(nReg);</span><br><span class="line">  Wire.requestFrom(MPU, <span class="number">1</span>, <span class="literal">true</span>);</span><br><span class="line">  Wire.endTransmission(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Wire.read();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从MPU6050读出加速度计三个分量、温度和三个角速度计</span></span><br><span class="line"><span class="comment">//保存在指定的数组中</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">ReadAccGyr</span><span class="params">(<span class="type">int</span> *pVals)</span></span><br><span class="line">&#123;</span><br><span class="line">  Wire.beginTransmission(MPU);</span><br><span class="line">  Wire.write(<span class="number">0x3B</span>);</span><br><span class="line">  Wire.requestFrom(MPU, nValCnt * <span class="number">2</span>, <span class="literal">true</span>);</span><br><span class="line">  Wire.endTransmission(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">long</span> i = <span class="number">0</span>; i &lt; nValCnt; ++i)</span><br><span class="line">    pVals[i] = Wire.read() &lt;&lt; <span class="number">8</span> | Wire.read();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对大量读数进行统计，校准平均偏移量</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Calibration</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">float</span> valSums[<span class="number">7</span>] = &#123;<span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0</span>&#125;; <span class="comment">//先求和</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nCalibTimes; ++i)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="type">int</span> mpuVals[nValCnt];</span><br><span class="line">    ReadAccGyr(mpuVals);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; nValCnt; ++j)</span><br><span class="line">      valSums[j] += mpuVals[j];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//再求平均</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nValCnt; ++i)</span><br><span class="line">    calibData[i] = <span class="type">int</span>(valSums[i] / nCalibTimes);</span><br><span class="line">  calibData[<span class="number">2</span>] += <span class="number">16384</span>; <span class="comment">//设芯片Z轴竖直向下，设定静态工作点。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//算得Roll角。算法见文档。</span></span><br><span class="line"><span class="type">float</span> <span class="title function_">GetRoll</span><span class="params">(<span class="type">float</span> *pRealVals, <span class="type">float</span> fNorm)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">float</span> fNormXZ = <span class="built_in">sqrt</span>(pRealVals[<span class="number">0</span>] * pRealVals[<span class="number">0</span>] + pRealVals[<span class="number">2</span>] * pRealVals[<span class="number">2</span>]);</span><br><span class="line">  <span class="type">float</span> fCos = fNormXZ / fNorm;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">acos</span>(fCos) * fRad2Deg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对读数进行纠正，消除偏移，并转换为物理量。公式见文档。</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Rectify</span><span class="params">(<span class="type">int</span> *pReadout, <span class="type">float</span> *pRealVals)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i)</span><br><span class="line">    pRealVals[i] = (<span class="type">float</span>)(pReadout[i] - calibData[i]) / <span class="number">16384.0f</span>;</span><br><span class="line"></span><br><span class="line">  pRealVals[<span class="number">3</span>] = pReadout[<span class="number">3</span>] / <span class="number">340.0f</span> + <span class="number">36.53</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">4</span>; i &lt; <span class="number">7</span>; ++i)</span><br><span class="line">    pRealVals[i] = (<span class="type">float</span>)(pReadout[i] - calibData[i]) / <span class="number">131.0f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1264,315 +1531,6 @@ so\:TH0=0x24,TL0=0x00;
 <figure>
 <img src="/2022/02/25/06-07-35/Users\qjy\Desktop\untitled.png" alt="untitled"><figcaption aria-hidden="true">untitled</figcaption>
 </figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/02/25/05-07-35/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="邱金羽">
-      <meta itemprop="description" content="联系我：2420457716@qq.com">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的Bolg">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/25/05-07-35/" class="post-title-link" itemprop="url">常微分方程笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-25 05:07:35" itemprop="dateCreated datePublished" datetime="2022-02-25T05:07:35+08:00">2022-02-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-26 00:01:33" itemprop="dateModified" datetime="2022-02-26T00:01:33+08:00">2022-02-26</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2022/02/25/05-07-35/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/25/05-07-35/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>​</p>
-<p>[TOC]</p>
-<hr>
-<h3 id="分类和解法">分类和解法</h3>
-<h4 id="一阶线性方程">一阶线性方程</h4>
-<p>$$ First,order,linear,differential,equation:x'+p(t)x=q(t) \\ solution:</p>
-<p>e<sup>{<em>{}{}{p(t)}dt}x'+e^{</em>{}{}{p(t)}dt}p(t)x=e</sup>{<em>{}{}{p(t)}dt}q(t) \  \ (e^{</em>{}{}{p(t)}dt}x)'=e^{_{}{}{p(t)}dt}q(t) $$</p>
-<h4 id="变量分离方程">变量分离方程</h4>
-<p><span class="math display">\[
-Separable\,equation : x&#39;=h(t)g(x) \qquad g(x)!= 0
-\\\\
-solution:x&#39;=h(t)g(x) \xrightarrow{x&#39;=\frac{dx}{dt}} \frac{dx}{g(x)}=h(t)dt
-\\
-\Downarrow 
-\\
-\int_{}{}{\frac{1}{g(x)}}dx=\int_{}{}{h(t)}dt
-\]</span></p>
-<h4 id="恰当方程">恰当方程</h4>
-<p><span class="math display">\[
-Exact\,equation:
-\begin{cases}
-M(x,y)dx+N(x,y)dy=0\\
-\\
-N_x=M_y\\
-\end{cases}
-\\\\
-\]</span></p>
-<h3 id="二阶线性常微分方程">二阶线性常微分方程</h3>
-<p>最一般的二阶线性微分方程为： <span class="math display">\[
-a_0(t)x&#39;&#39;+a_1(t)x&#39;+a_2(t)x=g(t)
-\]</span> 下述讨论中，我们仅讨论<span class="math inline">\(a_0(t)\not=0\)</span>的情况</p>
-<p>即： <span class="math display">\[
-x&#39;&#39;+p(t)x&#39;+q(t)x=f(t)
-\]</span></p>
-<h4 id="齐次方程">齐次方程：</h4>
-<p>求解目标： <span class="math display">\[
-x&#39;&#39;+p(t)x&#39;+q(t)x=0\tag{1}
-\]</span> 求齐次方程通解的方法：</p>
-<ol type="1">
-<li><p>找到两个特解<span class="math inline">\(x_1\)</span>与<span class="math inline">\(x_2\)</span></p>
-<ol type="1">
-<li><p>如果不能找到两个特解，那就先找到一个特解<span class="math inline">\(x_1\)</span>，那么<span class="math inline">\(x_2\)</span>为：</p>
-<ol type="1">
-<li>设<span class="math inline">\(x_2=v_1(t)x_1\)</span>，将<span class="math inline">\(x_2\)</span>带入到<span class="math inline">\(x&#39;&#39;+p(t)x&#39;+q(t)x=0\)</span>中，整理求出<span class="math inline">\(v_1(t)\)</span></li>
-</ol>
-<p><span class="math display">\[
-x_2=x_1\int \frac{e^{-\int p(t)dt}}{x_1^2}dt
-\]</span></p></li>
-<li><p>如果一个特解也找不到：</p>
-<p>？？？？？</p></li>
-</ol></li>
-<li><p>验证两个特解<strong>线性无关</strong>:<span class="math inline">\(W(t)\not=0\)</span></p>
-<ol type="1">
-<li><p>Remark：若<span class="math inline">\(x_1\)</span>与<span class="math inline">\(x_2\)</span>是二阶常微分方程的解，则：<span class="math inline">\(x_1\)</span>与<span class="math inline">\(x_2\)</span>线性相关<span class="math inline">\(\,\Leftrightarrow W(x_1,x_2)(t)=0\)</span></p></li>
-<li><p>其中： <span class="math display">\[
-W(x_1,x_2)(t)=\begin{vmatrix}
-x_1 &amp; x_2\\
-x_1&#39; &amp; x_2&#39;
-\end{vmatrix}=x_1x_2&#39;-x_1&#39;x_2
-\]</span></p></li>
-</ol></li>
-<li><p>若两特解线性无关，则齐次方程(1)式的通解为：<span class="math inline">\(x=c_1x_1+c_2x_2\)</span></p></li>
-</ol>
-<h4 id="非齐次方程">非齐次方程</h4>
-<p>求解目标： <span class="math display">\[
-x&#39;&#39;+p(t)x&#39;+q(t)x=f(t)\tag{2}
-\]</span> 求非齐次方程通解的方法：</p>
-<ol type="1">
-<li><p>先令<span class="math inline">\(f(t)\equiv 0\)</span>，求出<span class="math inline">\(x&#39;&#39;+p(t)x&#39;+q(t)x=f(t)\)</span>的通解<span class="math inline">\(x_1\)</span>与<span class="math inline">\(x_2\)</span></p></li>
-<li><p>非齐次方程的通解可以表示为：<span class="math inline">\(x=c_1x_1+c_2x_2+x_p\)</span>，其中<span class="math inline">\(x_p=v_1(t)x_1+v_2(t)x_2\)</span></p></li>
-<li><p>求解<span class="math inline">\(v_1(t),v_2(t)\)</span></p>
-<ol type="1">
-<li><p>列方程组 <span class="math display">\[
-\begin{cases}
-\begin{aligned}
-v_1&#39;x_1+v_2&#39;x_2&amp;=0\\\\
-v_1&#39;x_1&#39;+v_2&#39;x_2&#39;&amp;=f(t)
-\end{aligned}
-\end{cases}
-\]</span></p></li>
-<li><p>利用克莱姆法则：</p>
-<ul>
-<li><p>克莱姆法则：</p>
-<p><img src="/2022/02/25/05-07-35/image-20211126105116954.png" alt="image-20211126105116954" style="zoom:33%;"></p>
-<p><img src="/2022/02/25/05-07-35/Users\qjy\AppData\Roaming\Typora\typora-user-images\image-20211126105131958.png" alt="image-20211126105131958" style="zoom:33%;"></p></li>
-</ul>
-<p><span class="math display">\[
-v1&#39;=\frac{\begin{vmatrix}0 &amp; x_2\\f(t) &amp; x_1&#39;\end{vmatrix}}{W(t)}=-\frac{x_2f(t)}{W(t)}\\\\
-v2&#39;=\frac{\begin{vmatrix}x_1 &amp; 0\\x_1&#39; &amp; f(t)\end{vmatrix}}{W(t)}=-\frac{x_1f(t)}{W(t)}
-\]</span></p></li>
-<li><p>最终对<span class="math inline">\(v_1&#39;\)</span>和<span class="math inline">\(v_2&#39;\)</span>进行积分 <span class="math display">\[
-v_1=\int{}v_1&#39;dt\,,\:v_2=\int{}v_2&#39;dt,
-\]</span></p></li>
-</ol></li>
-<li><p>最终得到非齐次方程的通解：<span class="math inline">\(x=c_1x_1+c_2x_2+x_p\)</span></p></li>
-</ol>
-<h4 id="常系数的二阶微分方程">常系数的二阶微分方程</h4>
-<p>求解目标： <span class="math display">\[
-ax&#39;&#39;+bx&#39;+cx=0\,,\:(a\not= 0)
-\]</span> 求解方法： <span class="math display">\[
-Let\;\;x=e^{mt}\;x&#39;=me^{mt}\;x&#39;&#39;=m^2e^{mt}\\ \Downarrow\\
-ax&#39;&#39;+bx&#39;+cx=am^2e^{mt}+bme^{mt}+ce^{mt}=0\\ \Downarrow\\
-e^{mt}(am^2+bm+c)=0
-\]</span> 对于：<span class="math inline">\(am^2+bm+c=0\)</span></p>
-<ul>
-<li><p>case 1: <span class="math display">\[
-\Delta &gt; 0\\
-&amp;m_1=\frac{-b+\sqrt{b^2-4ac}}{2a}\\
-&amp;m_2=\frac{-b-\sqrt{b^2-4ac}}{2a}\\
-so\\
-&amp;x_1=e^{m_1t}\;x_2=e^{m_2t}\\
-&amp;x=c_1x_1+c_2x_2=c_1e^{m_1t}+c_2e^{m_2t}
-\]</span></p></li>
-<li><p>case 2: <span class="math display">\[
-\Delta = 0\\
-&amp;m=-\frac{b}{2a}\\
-so\\
-&amp;x_1=e^{mt}=e^{-\frac{b}{2a}t}\\
-&amp;x_2=te^{-\frac{b}{2a}t}\\
-&amp;x=c_1x_1+c_2x_2=c_1e^{-\frac{b}{2a}t}+c_2te^{-\frac{b}{2a}t}
-\]</span></p></li>
-<li><p>case 3: <span class="math display">\[
-i^2=-1
-\]</span></p>
-<p>$$ =b^2-4ac &lt; 0\ &amp;m==i=i\</p>
-<p>&amp;x=e^{t}(cos(t)+isin(t)) $$</p></li>
-</ul>
-<h4 id="欧拉等式">欧拉等式</h4>
-<p>求解目标： <span class="math display">\[
-at^2x&#39;&#39;+btx&#39;+cx=0
-\]</span> 求解方法：</p>
-<ol type="1">
-<li><p>首先令：<span class="math inline">\(t=e^s,s=lnt\)</span></p></li>
-<li><p>则有：<span class="math inline">\(x&#39;(s)=tx&#39;(t);\, x&#39;&#39;(s)-x&#39;(s)=t^2x&#39;&#39;(t)\)</span></p></li>
-<li><p>上面两个式子带入<span class="math inline">\(at^2x&#39;&#39;+btx&#39;+cx=0\)</span>有：</p>
-<p><span class="math inline">\(\begin{aligned}at^2x(t)&#39;&#39;+btx(t)&#39;+cx(t)\\&amp;=a(x&#39;&#39;(s)-x&#39;(s))+bx&#39;(s)+cx(s)\\&amp;=ax&#39;&#39;(s)+(b-a)x&#39;(s)+cx(s)\\&amp;=0\end{aligned}\)</span></p></li>
-<li><p>根据常系数的二阶微分方程的求解方法：<span class="math inline">\(e^{mt}(am^2+(b-a)m+c)=0\)</span></p></li>
-<li><p><span class="math display">\[
-(am^2+(b-a)m+c)=0\;\;\sf{分三种情况讨论：}
-\begin{cases}
-\begin{aligned}
-\Delta&gt;0\\\\
-\Delta=0\\\\
-\Delta&lt;0\\\\
-\end{aligned}
-\end{cases}
-\]</span></p></li>
-</ol>
-<p>如果<span class="math inline">\(A\)</span>是一个<span class="math inline">\(n × n\)</span>矩阵，那么下列语句是等价的。</p>
-<ol type="1">
-<li><span class="math inline">\(A\)</span>是可逆的。</li>
-<li><span class="math inline">\(Ax = 0\)</span>只有平凡解。</li>
-<li><span class="math inline">\(A\)</span>的行简化阶梯形是<span class="math inline">\(I_n\)</span>。</li>
-<li>A可以表示为初等矩阵的乘积.</li>
-<li><span class="math inline">\(Ax = b\)</span>对每个<span class="math inline">\(n × 1\)</span>矩阵<span class="math inline">\(b\)</span>都是一致的。</li>
-<li><span class="math inline">\(Ax = b\)</span>对每个<span class="math inline">\(n × 1\)</span>矩阵<span class="math inline">\(b\)</span>只有一个解</li>
-<li><span class="math inline">\(det(A) \not= 0\)</span></li>
-<li><span class="math inline">\(A\)</span>的列向量是线性无关的。</li>
-<li><span class="math inline">\(A\)</span>的行向量是线性无关的。</li>
-<li><span class="math inline">\(A\)</span>张成空间<span class="math inline">\(R_n\)</span>的列向量。</li>
-<li><span class="math inline">\(A\)</span>的行向量张成<span class="math inline">\(R_n\)</span>。</li>
-<li><span class="math inline">\(A\)</span>的列向量形成<span class="math inline">\(R_n\)</span>的一组基。</li>
-<li><span class="math inline">\(A\)</span>的行向量形成<span class="math inline">\(R_n\)</span>的一组基。</li>
-<li><span class="math inline">\(A\)</span>的等级是<span class="math inline">\(n\)</span>。</li>
-<li><span class="math inline">\(A\)</span>的零度为零。</li>
-<li><span class="math inline">\(A\)</span>的零空间的正交补是<span class="math inline">\(R_n\)</span>。</li>
-<li><span class="math inline">\(A\)</span>的行空间的正交补是<span class="math inline">\(\{0\}\)</span>。</li>
-</ol>
-<p>线性相关性，两种表述方式 <span class="math display">\[
-x_3=c_1x_1+c_2x_2\\
-\]</span> 线性无关：只有系数全为0时线性组合才恒为0</p>
-<p>线性相关：能找出一组非零常数使得线性组合结果为0</p>
-<h2 id="高阶微分方程">高阶微分方程</h2>
-<h3 id="线性微分方程的一般理论">线性微分方程的一般理论</h3>
-<p>本章讨论的问题：求解微分方程（高阶导数使用数字上标表示） <span class="math display">\[
-x^n+a_1x^{n-1}+\cdot\cdot\cdot+a_{n-1}x&#39;+a_n=f(t)\tag{1}
-\]</span></p>
-<ol type="1">
-<li><p>齐次形式： <span class="math display">\[
-x^n+a_1x^{n-1}+\cdot\cdot\cdot+a_{n-1}x&#39;+a_n=f(t)\tag{2}
-\]</span></p></li>
-<li><p>解的存在唯一性：</p>
-<p>如果<span class="math inline">\(a_i(t)(i=1,2,\cdot\cdot\cdot,n)\)</span>及<span class="math inline">\(f(t)\)</span>都是$a t b <span class="math inline">\(上的连续函数，则对于任一\)</span>t_0<span class="math inline">\(及任意的\)</span>x_0<span class="math inline">\(，\)</span>x_0'<span class="math inline">\(，\)</span><span class="math inline">\(，\)</span>x_0^{(n-1)}<span class="math inline">\(，方程（1）存在唯一解\)</span>x(t)<span class="math inline">\(，符号记为\)</span>x=(t)<span class="math inline">\(，定义于\)</span>a t b $，且满足初值条件： <span class="math display">\[
-\varphi(t_0)=x_0,\;\varphi(t_0)&#39;=x_0&#39;,\;\varphi(t_0)^{(n-1)}=x_0^{(n-1)}
-\]</span></p></li>
-</ol>
-<h4 id="齐次线性微分方程解的性质和结构"><code>齐次线性微分方程解</code>的性质和结构</h4>
-<ol type="1">
-<li><code>齐次线性微分方程的解</code>的<code>叠加原理</code>
-<ol type="1">
-<li>描述：<code>齐次线性微分方程的解</code>的<code>线性叠加</code>仍为<code>齐次线性微分方程的解</code></li>
-<li>原理：
-<ol type="1">
-<li>常数可以从微分号下提出来</li>
-<li>和的导数等于导数的和</li>
-</ol></li>
-<li>问题：什么情况下解的线性组合可以成为齐次线性微分方程的通解？</li>
-</ol></li>
-<li></li>
-</ol>
-<p>变量分离方程：</p>
-<p>解法：</p>
-<ol type="1">
-<li>非初值问题
-<ol type="1">
-<li>先研究是否存在常数解：<span class="math inline">\(g(k)=0;x(t)=k\)</span>是方程的解</li>
-<li>再研究非常数解：<span class="math inline">\(\int_{}{}{\frac{1}{g(x)}}dx=\int_{}{}{h(t)}dt\)</span></li>
-</ol></li>
-<li>初值问题
-<ol type="1">
-<li>先研究是否存在常数解：<span class="math inline">\(g(k)=0;x(t)=k\)</span>是方程的解
-<ol type="1">
-<li>若<span class="math inline">\(x=0\)</span>是方程的解，则<span class="math inline">\(x\)</span>要么恒大于0，要么恒小于0</li>
-</ol></li>
-<li>再研究非常数解：<span class="math inline">\(\int_{}{}{\frac{1}{g(x)}}dx=\int_{}{}{h(t)}dt\)</span>，其中<span class="math inline">\(g(x)\not=0\)</span></li>
-<li>最后使用<span class="math inline">\(x(t_0)=x_0\)</span>求解常数<span class="math inline">\(c\)</span></li>
-</ol></li>
-</ol>
-<p>备注：如果求解出的<span class="math inline">\(x(t)\)</span>的分母可以等于0，那么要排除等于0的点；如果带有初值，那么t的取值范围为带有初值的那一部分</p>
-<p>如何寻找常数解？对于常数解，我们7有<span class="math inline">\(x&#39;=0\)</span>，所以只要寻找使得方程右边为<span class="math inline">\(0\)</span>的常数<span class="math inline">\(k\)</span>就好了</p>
-<p>存在唯一性定理：</p>
-<p>解的存在和个数由f在(x0,t0)附近的性质决定</p>
-<p>如果f在(x0,t0)附近连续即可知初值问题至少存在局部唯一解</p>
-<p>如果f在(x0,t0)附近连续 &amp;&amp; <span class="math inline">\(f_x\)</span>在(x0,t0)上连续 =&gt; 解在局部唯一</p>
-<p>如果f在(x0,t0)附近连续 &amp;&amp; <span class="math inline">\(f_x\)</span>在(x0,t0)上连续 &amp;&amp; 偏导数在一条形区域内有界 =&gt; 则在条形区间内有唯一解</p>
 
       
     </div>

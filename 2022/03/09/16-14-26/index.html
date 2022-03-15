@@ -21,33 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"y006.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-  <meta name="description" content="VScode配置笔记  下载并安装编译器MinGW：https:&#x2F;&#x2F;bit.ly&#x2F;mingw10 将MinGW的bin文件路径添加到系统环境变量中 在cmd中运行 1g++ --version 检测是否成功配置路径 安装VScode：Visual Studio Code - Code Editing. Redefined “设置”中输入&quot;run in terminal&quot; 安装插件">
+  <meta name="description" content="Logic Design 数字系统 数字系统设计大致分为三个方面  系统设计  系统设计是将一个数字系统划分为多个子系统进行设计。  逻辑设计  逻辑设计是将多个逻辑功能块互联实现特定功能  电路设计  数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分">
 <meta property="og:type" content="website">
-<meta property="og:title" content="VScode配置笔记">
-<meta property="og:url" content="https://y006.github.io/2022/02/20/22-32-35/index.html">
+<meta property="og:title" content="逻辑设计基础">
+<meta property="og:url" content="https://y006.github.io/2022/03/09/16-14-26/index.html">
 <meta property="og:site_name" content="我的Bolg">
-<meta property="og:description" content="VScode配置笔记  下载并安装编译器MinGW：https:&#x2F;&#x2F;bit.ly&#x2F;mingw10 将MinGW的bin文件路径添加到系统环境变量中 在cmd中运行 1g++ --version 检测是否成功配置路径 安装VScode：Visual Studio Code - Code Editing. Redefined “设置”中输入&quot;run in terminal&quot; 安装插件">
+<meta property="og:description" content="Logic Design 数字系统 数字系统设计大致分为三个方面  系统设计  系统设计是将一个数字系统划分为多个子系统进行设计。  逻辑设计  逻辑设计是将多个逻辑功能块互联实现特定功能  电路设计  数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://y006.github.io/2022/02/20/22-32-35/image-20210907225325312.png">
-<meta property="og:image" content="https://y006.github.io/2022/02/20/22-32-35/Users/qjy/AppData/Roaming/Typora/typora-user-images/image-20210916093752004.png">
-<meta property="og:image" content="https://y006.github.io/2022/02/20/22-32-35/image-20210916093952277.png">
-<meta property="og:image" content="https://y006.github.io/2022/02/20/22-32-35/image-20210907225635399.png">
-<meta property="article:published_time" content="2022-02-20T14:32:35.000Z">
-<meta property="article:modified_time" content="2022-02-25T16:02:46.295Z">
+<meta property="article:published_time" content="2022-03-09T08:14:26.000Z">
+<meta property="article:modified_time" content="2022-03-12T13:09:04.411Z">
 <meta property="article:author" content="邱金羽">
-<meta property="article:tag" content="备忘笔记">
+<meta property="article:tag" content="Electrical Engineering">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://y006.github.io/2022/02/20/22-32-35/image-20210907225325312.png">
 
 
-<link rel="canonical" href="https://y006.github.io/2022/02/20/22-32-35/">
+<link rel="canonical" href="https://y006.github.io/2022/03/09/16-14-26/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://y006.github.io/2022/02/20/22-32-35/","path":"2022/02/20/22-32-35/","title":"VScode配置笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://y006.github.io/2022/03/09/16-14-26/","path":"2022/03/09/16-14-26/","title":"逻辑设计基础"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>VScode配置笔记 | 我的Bolg</title>
+<title>逻辑设计基础 | 我的Bolg</title>
   
 
 
@@ -130,7 +125,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">VScode配置笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E7%BB%88%E7%AB%AFshell%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">补充：终端（shell）命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%B7%B3%E8%BD%AC"><span class="nav-number">2.1.</span> <span class="nav-text">文件跳转</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#logic-design"><span class="nav-number">1.</span> <span class="nav-text">Logic Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.0.1.</span> <span class="nav-text">数字系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0"><span class="nav-number">1.0.2.</span> <span class="nav-text">布尔代数</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,7 +204,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/02/20/22-32-35/">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/03/09/16-14-26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -222,7 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          VScode配置笔记
+          逻辑设计基础
         </h1>
 
         <div class="post-meta-container">
@@ -233,14 +228,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-02-20 22:32:35" itemprop="dateCreated datePublished" datetime="2022-02-20T22:32:35+08:00">2022-02-20</time>
+      <time title="创建时间：2022-03-09 16:14:26" itemprop="dateCreated datePublished" datetime="2022-03-09T16:14:26+08:00">2022-03-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-26 00:02:46" itemprop="dateModified" datetime="2022-02-26T00:02:46+08:00">2022-02-26</time>
+      <time title="修改时间：2022-03-12 21:09:04" itemprop="dateModified" datetime="2022-03-12T21:09:04+08:00">2022-03-12</time>
     </span>
 
   
@@ -252,8 +247,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2022/02/20/22-32-35/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/20/22-32-35/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/03/09/16-14-26/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/09/16-14-26/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -267,47 +262,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="vscode配置笔记">VScode配置笔记</h2>
-<ol type="1">
-<li><p>下载并安装编译器MinGW：https://bit.ly/mingw10</p></li>
-<li><p>将MinGW的bin文件路径添加到系统环境变量中</p></li>
-<li><p>在cmd中运行</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ --version</span><br></pre></td></tr></table></figure>
-<p>检测是否成功配置路径</p></li>
-<li><p>安装VScode：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code - Code Editing. Redefined</a></p></li>
-<li><p>“设置”中输入"run in terminal"<img src="/2022/02/20/22-32-35/image-20210907225325312.png" alt="image-20210907225325312"></p></li>
-<li><p>安装插件”Code Runner“和”C/C++“；选装”Chinese (Simplified) Language Pack for Visual Studio Code“</p></li>
-<li><p>为了正确地在文本编辑器上敲除中文，需要给文本编辑器设置合适的编码方式：<img src="/2022/02/20/22-32-35/Users\qjy\AppData\Roaming\Typora\typora-user-images\image-20210916093752004.png" alt="image-20210916093752004"></p>
-<p>点红框，选择“通过编码重新打开”，输入编码方式即可。</p>
-<p>打开cmd，查看“属性”可得知终端的编码方式</p>
-<p><img src="/2022/02/20/22-32-35/image-20210916093952277.png" alt="image-20210916093952277" style="zoom:25%;"></p>
-<p>终端的编码方式需要与编辑器的编码方式匹配</p>
-<p>在终端输入：“chcp 65001”可以切换代码页到使用UTF8。</p></li>
-<li><p>想要正确识别别人代码中的中文，需要“设置”中输入"<strong>files.autoGuessEncoding</strong>"<img src="/2022/02/20/22-32-35/image-20210907225635399.png" alt="image-20210907225635399"></p></li>
-<li><p>设置自动保存：“设置“中输入”<strong>auto save</strong>“，选择"afterDelay"选项</p></li>
-<li><p>設置自動格式化：“设置”中输入“<strong>editor.formatOnType</strong>”，选择True“</p></li>
-<li><p>”ctrl+k“配合”ctrl+t“可快速切换主题</p></li>
-<li><p>”ctrl+“是放大</p></li>
-<li><p>单行注释：“Ctrl + /”；块注释：“Alt+Shift+A”</p></li>
-<li><p>多文件编译：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#code in CMakeLists.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set the project name</span></span><br><span class="line"><span class="keyword">project</span>(Tutorial)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the executable</span></span><br><span class="line"><span class="keyword">add_executable</span>(Tutorial tutorial.cxx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#output in Chinese</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GB2312&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="补充终端shell命令">补充：终端（shell）命令</h2>
-<p>不区分大小写。</p>
-<p>tab键补全内容，再次点击切换内容</p>
-<h3 id="文件跳转">文件跳转</h3>
-<p>磁盘跳转</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:</span></span><br></pre></td></tr></table></figure>
-<p>显示所有文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
-<p>树形显示所有文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
-<p>进入下一级文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 文件名（有空格的夹引号，平时使用tab补全就好）</span><br></pre></td></tr></table></figure>
-<p>进入上一级文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd..</span><br></pre></td></tr></table></figure>
-<p>退回磁盘根目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd/</span><br></pre></td></tr></table></figure>
+        <h1 id="logic-design">Logic Design</h1>
+<h3 id="数字系统">数字系统</h3>
+<p>数字系统设计大致分为三个方面</p>
+<ul>
+<li>系统设计
+<ul>
+<li>系统设计是将一个数字系统划分为多个子系统进行设计。</li>
+</ul></li>
+<li>逻辑设计
+<ul>
+<li>逻辑设计是将多个逻辑功能块互联实现特定功能</li>
+</ul></li>
+<li>电路设计</li>
+</ul>
+<p>数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分析。开关电路有两种——组合电路和时序电路。</p>
+<p>开关电路分类：</p>
+<ul>
+<li>组合电路
+<ul>
+<li>组合电路中输出值仅与当前输入值有关</li>
+<li>组合电路的基本构成是逻辑门，逻辑设计就是将逻辑门相互连接起来以便将电路的输入信号转化为预期的输出信号。</li>
+</ul></li>
+<li>时序电路
+<ul>
+<li>时序电路中输出值不仅与当前输入值有关，也与之前的输入值有关；可以认为时序电路具有记忆功能</li>
+<li>时序电路的基本存储元件（存储之前的值）是触发器，触发器与逻辑门一起组成时序电路——如计数器和寄存器。</li>
+</ul></li>
+</ul>
+<h3 id="布尔代数">布尔代数</h3>
+<p>逻辑设计课程中我们使用二值布尔代数来设计开关电路。我们使用布尔变量来表示电路的输入和输出，其中布尔变量代表逻辑电路中的两种不同状态——</p>
+<p>普通代数中的<strong>交换律</strong>和<strong>结合律</strong>同样可以在布尔代数中使用。</p>
+<p>布尔代数中的交换律表明开关的位置（出现次序）不会影响最终结果，结合律表明开关导通的次序不会影响最终结果。</p>
+<p>在布尔代数中，分配律有两种形式：</p>
+<ul>
+<li><p>一种是普通的分配律：<span class="math inline">\(X(Y+Z)=XY+XZ\)</span></p>
+<p>​ 与运算可以分配在或运算上</p>
+<p>​ 去和括号内相乘</p></li>
+<li><p>另一种被称作第二分配律：<span class="math inline">\(X+(YZ)=(X+Y)(X+Z)\)</span></p>
+<p>​ 或运算可以分配在与运算上</p>
+<p>​ 去和括号内相加</p></li>
+</ul>
+<p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
 
     </div>
 
@@ -343,7 +339,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://y006.github.io/2022/02/20/22-32-35/" title="VScode配置笔记">https://y006.github.io/2022/02/20/22-32-35/</a>
+      <a href="https://y006.github.io/2022/03/09/16-14-26/" title="逻辑设计基础">https://y006.github.io/2022/03/09/16-14-26/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -352,21 +348,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%A4%87%E5%BF%98%E7%AC%94%E8%AE%B0/" rel="tag"># 备忘笔记</a>
+              <a href="/tags/Electrical-Engineering/" rel="tag"># Electrical Engineering</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/02/17/11-07-35/" rel="prev" title="数据结构笔记">
-                  <i class="fa fa-chevron-left"></i> 数据结构笔记
+                <a href="/2022/03/05/16-32-26/" rel="prev" title="微机原理与接口技术">
+                  <i class="fa fa-chevron-left"></i> 微机原理与接口技术
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/02/20/23-32-35/" rel="next" title="数学公式(Latex)">
-                  数学公式(Latex) <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
