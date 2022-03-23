@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"y006.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-  <meta name="description" content="Logic Design 数字系统 数字系统设计大致分为三个方面  系统设计  系统设计是将一个数字系统划分为多个子系统进行设计。  逻辑设计  逻辑设计是将多个逻辑功能块互联实现特定功能  电路设计  数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分">
+  <meta name="description" content="Logic Design 数制 数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中基数是指使用数码的个数，例如：二进制的基数为2，十进制的基数为10。位权是指数制某位所表示的数值权重的大小，例如：十进制数123，1的位权是100，2的位权是10，3的位权是1。二进制数1011，从左至右1、0、1、1的位权依次是8、4、2、1。常用的数制有二、八、十、十六四种进">
 <meta property="og:type" content="website">
 <meta property="og:title" content="逻辑设计基础">
 <meta property="og:url" content="https://y006.github.io/2022/03/09/16-14-26/index.html">
 <meta property="og:site_name" content="我的Bolg">
-<meta property="og:description" content="Logic Design 数字系统 数字系统设计大致分为三个方面  系统设计  系统设计是将一个数字系统划分为多个子系统进行设计。  逻辑设计  逻辑设计是将多个逻辑功能块互联实现特定功能  电路设计  数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分">
+<meta property="og:description" content="Logic Design 数制 数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中基数是指使用数码的个数，例如：二进制的基数为2，十进制的基数为10。位权是指数制某位所表示的数值权重的大小，例如：十进制数123，1的位权是100，2的位权是10，3的位权是1。二进制数1011，从左至右1、0、1、1的位权依次是8、4、2、1。常用的数制有二、八、十、十六四种进">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-09T08:14:26.000Z">
-<meta property="article:modified_time" content="2022-03-12T13:09:04.411Z">
+<meta property="article:modified_time" content="2022-03-22T13:17:40.718Z">
 <meta property="article:author" content="邱金羽">
 <meta property="article:tag" content="Electrical Engineering">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#logic-design"><span class="nav-number">1.</span> <span class="nav-text">Logic Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.0.1.</span> <span class="nav-text">数字系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0"><span class="nav-number">1.0.2.</span> <span class="nav-text">布尔代数</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#logic-design"><span class="nav-number">1.</span> <span class="nav-text">Logic Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%88%B6"><span class="nav-number">1.0.1.</span> <span class="nav-text">数制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%81%E5%88%B6"><span class="nav-number">1.0.2.</span> <span class="nav-text">码制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.0.3.</span> <span class="nav-text">数字系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0"><span class="nav-number">1.0.4.</span> <span class="nav-text">布尔代数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">数字电路概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%98%BB%E6%80%81"><span class="nav-number">1.1.1.</span> <span class="nav-text">高阻态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E6%80%81%E9%97%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">三态门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="nav-number">1.1.3.</span> <span class="nav-text">组合&#x2F;时序逻辑电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpio"><span class="nav-number">1.1.4.</span> <span class="nav-text">GPIO</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,7 +235,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-12 21:09:04" itemprop="dateModified" datetime="2022-03-12T21:09:04+08:00">2022-03-12</time>
+      <time title="修改时间：2022-03-22 21:17:40" itemprop="dateModified" datetime="2022-03-22T21:17:40+08:00">2022-03-22</time>
     </span>
 
   
@@ -263,6 +263,13 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="logic-design">Logic Design</h1>
+<h3 id="数制">数制</h3>
+<p>数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中<strong>基数</strong>是指使用数码的个数，例如：二进制的基数为<code>2</code>，十进制的基数为<code>10</code>。<strong>位权</strong>是指数制某位所表示的数值权重的大小，例如：十进制数<code>123</code>，<code>1</code>的位权是<code>100</code>，<code>2</code>的位权是<code>10</code>，<code>3</code>的位权是<code>1</code>。二进制数<code>1011</code>，从左至右<code>1</code>、<code>0</code>、<code>1</code>、<code>1</code>的位权依次是<code>8</code>、<code>4</code>、<code>2</code>、<code>1</code>。常用的数制有<strong>二</strong>、<strong>八</strong>、<strong>十</strong>、<strong>十六</strong>四种进制，书写时可以在相应数值尾部添加字母<strong>B</strong>、<strong>O</strong>、<strong>D</strong>、<strong>H</strong>或者下标<strong>2</strong>、<strong>8</strong>、<strong>10</strong>、<strong>16</strong>进行标识，计算机<strong>传输和保存数据</strong>通常使用的是<strong>二进制</strong>。</p>
+<h3 id="码制">码制</h3>
+<p>码制是计算机存储、传输数据所使用的编码规则；其中原码、反码、补码是计算机设备保存数值类型数据的编码方式，ASCII 与 Unicode 属于保存字符类型数据的编码格式；而 BCD 编码、格雷码则主要用于设备之间的数据<strong>传输以及转换</strong>。</p>
+<blockquote>
+<p>BCD 码的优点在于格式转换容易，十进制数值表达精度较高；缺点是增加了电路进行算术运算的复杂度，并且存储效率较低。</p>
+</blockquote>
 <h3 id="数字系统">数字系统</h3>
 <p>数字系统设计大致分为三个方面</p>
 <ul>
@@ -304,6 +311,45 @@
 <p>​ 去和括号内相加</p></li>
 </ul>
 <p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
+<h2 id="数字电路概念">数字电路概念</h2>
+<h3 id="高阻态">高阻态</h3>
+<p>高阻抗状态（<em>High impedance</em>）表示电路中的某个节点具有相对电路中其它点更高的阻抗，电路分析时通常将高阻态作为开路理解。即可以将其视为输出/输入电阻极大，极限状态可以认为是悬空（<em>断路</em>）的状态，高阻态通常使用字母<strong>Z</strong>表示。</p>
+<h3 id="三态门">三态门</h3>
+<p>数字电路中的三态逻辑（<em>Three-state logic</em>）是指其输出既可以是代表<code>0</code>和<code>1</code>的高低电平，也可以是其特有的高阻抗状态（<em>相当于隔断状态，电阻极大，类似于开路</em>）。</p>
+<p>具有高电平、低电平、高阻态三种状态的元器件称为三态器件，三态器件都通过一个控制使能端 B 来控制整个三态门电路的通断。当使能端高电平有效时，三态器件可以正常的<code>0</code>或<code>1</code>输出，当使能端低电平无效时，三态电路将会输出高阻态。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">输入端 A</th>
+<th style="text-align: left;">使能端 B</th>
+<th style="text-align: left;">输出端 C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>X</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Z</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="组合时序逻辑电路">组合/时序逻辑电路</h3>
+<ul>
+<li><strong>组合逻辑电路</strong>（<em>Combinational Logic Circuit</em>），其任一时刻的稳态输出仅与该时刻输入的变量取值有关，而与该时刻之前输入的变量取值无关。组合电路主要由各种逻辑门（<code>半加器</code>、<code>全加器</code>、<code>半减器</code>、<code>全减器</code>、<code>数据选择器</code>、<code>数据分配器</code>、<code>编码器</code>、<code>译码器</code>）组成，电路中没有记忆元件和反馈线。</li>
+<li><strong>时序逻辑电路</strong>（<em>Sequential Logic Circuit</em>）任意时刻的稳态输出不仅取决于当前输入，还与前一时刻输入的状态有关，换而言之，时序逻辑电路必须拥有特定的储存元件来保存前一次的输入状态。因此，时序逻辑电路除包含有组合逻辑电路以外，还必须含拥有存储信息能力的电路（<code>触发器</code>、<code>寄存器</code>、<code>计数器</code>）。</li>
+</ul>
+<h3 id="gpio">GPIO</h3>
+<p><strong>通用输入输出</strong>（<em>General-purpose input/output</em>），功能类似于 8051 单片机的 P0 到 P3 口，引脚输出的高低电平可由开发人员读写相应寄存器进行控制。该接口有时也称为<strong>总线扩展器</strong>，当开发板接口不够用时，可以通过转接板将其扩展为<code>I²C</code>、<code>SPI</code>等其它串行接口。</p>
 
     </div>
 

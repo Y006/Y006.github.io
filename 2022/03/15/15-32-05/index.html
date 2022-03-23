@@ -29,7 +29,7 @@
 <meta property="og:description" content="FPGA 时序约束  如通信实验，时钟频率比较高的实验，需要进行时序约束 当占用芯片的逻辑资源多的时候，需要使用时序约束：因为FPGA在布线时会优先考虑面积  时钟约束用来描述设计人员对于时序的要求，包括时钟频率和输入输出延时 D触发器 arduino 机械臂 123456789101112131415161718192021222324252627282930313233343">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-15T07:32:05.000Z">
-<meta property="article:modified_time" content="2022-03-17T13:20:28.918Z">
+<meta property="article:modified_time" content="2022-03-22T14:24:14.993Z">
 <meta property="article:author" content="邱金羽">
 <meta property="article:tag" content="电子设计">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fpga"><span class="nav-number">1.</span> <span class="nav-text">FPGA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.0.1.</span> <span class="nav-text">时序约束</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fpga"><span class="nav-number">1.</span> <span class="nav-text">FPGA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.0.1.</span> <span class="nav-text">时序约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%AD%E7%9A%84%E9%80%BB%E8%BE%91%E5%80%BC"><span class="nav-number">1.0.2.</span> <span class="nav-text">数字电路中的逻辑值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#verilog-%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.0.3.</span> <span class="nav-text">Verilog 中的数字表示：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">标识符：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.0.4.</span> <span class="nav-text">数据类型</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,7 +235,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-17 21:20:28" itemprop="dateModified" datetime="2022-03-17T21:20:28+08:00">2022-03-17</time>
+      <time title="修改时间：2022-03-22 22:24:14" itemprop="dateModified" datetime="2022-03-22T22:24:14+08:00">2022-03-22</time>
     </span>
 
   
@@ -272,6 +272,52 @@
 <p>D触发器</p>
 <p>arduino 机械臂</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Servo.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">Servo myservo_1;  <span class="comment">// 定义Servo对象来控制</span></span><br><span class="line">Servo myservo_2;  <span class="comment">// 定义Servo对象来控制</span></span><br><span class="line">Servo myservo_3;  <span class="comment">// 定义Servo对象来控制</span></span><br><span class="line"><span class="type">int</span> pos_1 = <span class="number">0</span>;    <span class="comment">// 角度存储变量</span></span><br><span class="line"><span class="type">int</span> pos_2 = <span class="number">0</span>;    <span class="comment">// 角度存储变量</span></span><br><span class="line"><span class="type">int</span> pos_3 = <span class="number">0</span>;    <span class="comment">// 角度存储变量</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  myservo_1.attach(<span class="number">12</span>);  <span class="comment">// 控制线连接数字9</span></span><br><span class="line">    myservo_2.attach(<span class="number">11</span>);  <span class="comment">// 控制线连接数字9</span></span><br><span class="line">      myservo_3.attach(<span class="number">10</span>);  <span class="comment">// 控制线连接数字9</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  myservo_1.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">myservo_2.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">myservo_3.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">delay(<span class="number">5000</span>);</span><br><span class="line">    <span class="keyword">for</span> (pos_1 = <span class="number">0</span>; pos_1 &lt;= <span class="number">10</span>; pos_1 ++) &#123; <span class="comment">// 0°到180°</span></span><br><span class="line">    <span class="comment">// in steps of 1 degree</span></span><br><span class="line">    myservo_1.write(pos_1);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">    delay(<span class="number">5</span>);                       <span class="comment">// 等待转动到指定角度</span></span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">      <span class="keyword">for</span> (pos_2 = <span class="number">0</span>; pos_2 &lt;= <span class="number">60</span>; pos_2 ++) &#123; <span class="comment">// 从180°到0°</span></span><br><span class="line">    myservo_2.write(pos_2);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">    delay(<span class="number">5</span>);                       <span class="comment">// 等待转动到指定角度</span></span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">for</span> (pos_3 = <span class="number">0</span>; pos_3 &lt;= <span class="number">30</span>; pos_3 ++) &#123; <span class="comment">// 从180°到0°</span></span><br><span class="line">    myservo_3.write(pos_3);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">    delay(<span class="number">5</span>);                       <span class="comment">// 等待转动到指定角度</span></span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line">myservo_3.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">delay(<span class="number">1000</span>);</span><br><span class="line">myservo_2.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">delay(<span class="number">1000</span>);</span><br><span class="line">myservo_1.write(<span class="number">-5</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">////  for (pos_1 = 0; pos_1 &lt;= 120; pos_1 ++) &#123; // 0°到g180°</span></span><br><span class="line"><span class="comment">////    // in steps of 1 degree</span></span><br><span class="line"><span class="comment">////    myservo_1.write(pos_1);              // 舵机角度写入</span></span><br><span class="line"><span class="comment">////    delay(5);                       // 等待转动到指定角度</span></span><br><span class="line"><span class="comment">////  &#125;</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数字电路中的逻辑值">数字电路中的逻辑值：</h3>
+<ul>
+<li>逻辑 0：表示低电平，相当于电路 GND。</li>
+<li>逻辑 1：表示高电平，相当于电路 VCC。</li>
+<li>逻辑 X：表示未知，高或低。</li>
+<li>逻辑 Z：表示高阻态，悬空状态</li>
+</ul>
+<h3 id="verilog-中的数字表示">Verilog 中的数字表示：</h3>
+<p>“（数字的二进制）位宽 + 进制（缩写） + 数值”来表示一个数字。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二进制0101的表示</span></span><br><span class="line"><span class="number">4&#x27;b0101</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//十进制2的表示，数字2的二进制表示为0010占4位</span></span><br><span class="line"><span class="number">4&#x27;d2</span></span><br></pre></td></tr></table></figure>
+<p>Verilog 的默认二进制位宽为32位，默认的进制为十进制。</p>
+<p>当二进制数字位数多的时候可以使用下划线增加可读性，编译时下划线会被去掉。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">16&#x27;b1001_1010_1010_1001</span></span><br></pre></td></tr></table></figure>
+<h4 id="标识符">标识符：</h4>
+<p>Verilog 的标识符可以用于定义模块名、端口名和信号名。</p>
+<p>Verilog 的命名规则与 C 语言变量名的命名规则基本相同：只有一点，可以在命名中包含$符号。</p>
+<p>标识符规则：</p>
+<ul>
+<li></li>
+</ul>
+<p>标识符推荐写法：</p>
+<ul>
+<li>不建议大小写混合</li>
+<li>普通内部信号全部小写</li>
+<li>信号命名体现含义</li>
+<li>使用下划线区分词</li>
+<li>采用前后缀：比如时钟可以采用：clk_50，clk_cpu</li>
+</ul>
+<h3 id="数据类型">数据类型</h3>
+<p>三种数据类型：</p>
+<ul>
+<li><p>寄存器数据类型：实际电路物理模型</p>
+<ul>
+<li><p>抽象数据存储单元，可以通过赋值语句改变寄存器储存的值</p></li>
+<li><p>关键字：reg，默认初始值为 X 不确定</p></li>
+<li><div class="sourceCode" id="cb1"><pre class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>  <span class="co">// reg + [位宽：31:0 指32位位宽，高位在前] + 标识符名称（寄存器名称）</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="dt">reg</span> [<span class="dv">31</span>:<span class="dv">0</span>] delay_cnt; <span class="co">//延时计数使用的寄存器</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="dt">reg</span>        key_reg; <span class="co">//没给位宽时默认位宽为1</span></span></code></pre></div></li>
+<li><p>reg 类型的数据只能在 always 语句和 initial 语句中被赋值</p></li>
+<li><p>如果 always 中带有时钟信号即过程语句描述的是时序逻辑，则寄存器对应为触发器</p></li>
+<li><p>如果 always 中不带有时钟信号即过程语句描述的是组合逻辑，则寄存器对应为硬件连线</p></li>
+<li></li>
+</ul></li>
+<li><p>线网数据类型：实际电路物理模型</p></li>
+<li><p>参数数据类型：给编译器用的</p></li>
+</ul>
 
     </div>
 

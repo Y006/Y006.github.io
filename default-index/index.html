@@ -230,7 +230,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-17 21:20:28" itemprop="dateModified" datetime="2022-03-17T21:20:28+08:00">2022-03-17</time>
+      <time title="修改时间：2022-03-22 22:24:14" itemprop="dateModified" datetime="2022-03-22T22:24:14+08:00">2022-03-22</time>
     </span>
 
   
@@ -267,6 +267,52 @@
 <p>D触发器</p>
 <p>arduino 机械臂</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Servo.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">Servo myservo_1;  <span class="comment">// 定义Servo对象来控制</span></span><br><span class="line">Servo myservo_2;  <span class="comment">// 定义Servo对象来控制</span></span><br><span class="line">Servo myservo_3;  <span class="comment">// 定义Servo对象来控制</span></span><br><span class="line"><span class="type">int</span> pos_1 = <span class="number">0</span>;    <span class="comment">// 角度存储变量</span></span><br><span class="line"><span class="type">int</span> pos_2 = <span class="number">0</span>;    <span class="comment">// 角度存储变量</span></span><br><span class="line"><span class="type">int</span> pos_3 = <span class="number">0</span>;    <span class="comment">// 角度存储变量</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  myservo_1.attach(<span class="number">12</span>);  <span class="comment">// 控制线连接数字9</span></span><br><span class="line">    myservo_2.attach(<span class="number">11</span>);  <span class="comment">// 控制线连接数字9</span></span><br><span class="line">      myservo_3.attach(<span class="number">10</span>);  <span class="comment">// 控制线连接数字9</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  myservo_1.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">myservo_2.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">myservo_3.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">delay(<span class="number">5000</span>);</span><br><span class="line">    <span class="keyword">for</span> (pos_1 = <span class="number">0</span>; pos_1 &lt;= <span class="number">10</span>; pos_1 ++) &#123; <span class="comment">// 0°到180°</span></span><br><span class="line">    <span class="comment">// in steps of 1 degree</span></span><br><span class="line">    myservo_1.write(pos_1);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">    delay(<span class="number">5</span>);                       <span class="comment">// 等待转动到指定角度</span></span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">      <span class="keyword">for</span> (pos_2 = <span class="number">0</span>; pos_2 &lt;= <span class="number">60</span>; pos_2 ++) &#123; <span class="comment">// 从180°到0°</span></span><br><span class="line">    myservo_2.write(pos_2);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">    delay(<span class="number">5</span>);                       <span class="comment">// 等待转动到指定角度</span></span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">for</span> (pos_3 = <span class="number">0</span>; pos_3 &lt;= <span class="number">30</span>; pos_3 ++) &#123; <span class="comment">// 从180°到0°</span></span><br><span class="line">    myservo_3.write(pos_3);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">    delay(<span class="number">5</span>);                       <span class="comment">// 等待转动到指定角度</span></span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line">myservo_3.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">delay(<span class="number">1000</span>);</span><br><span class="line">myservo_2.write(<span class="number">0</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">delay(<span class="number">1000</span>);</span><br><span class="line">myservo_1.write(<span class="number">-5</span>);              <span class="comment">// 舵机角度写入</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">////  for (pos_1 = 0; pos_1 &lt;= 120; pos_1 ++) &#123; // 0°到g180°</span></span><br><span class="line"><span class="comment">////    // in steps of 1 degree</span></span><br><span class="line"><span class="comment">////    myservo_1.write(pos_1);              // 舵机角度写入</span></span><br><span class="line"><span class="comment">////    delay(5);                       // 等待转动到指定角度</span></span><br><span class="line"><span class="comment">////  &#125;</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数字电路中的逻辑值">数字电路中的逻辑值：</h3>
+<ul>
+<li>逻辑 0：表示低电平，相当于电路 GND。</li>
+<li>逻辑 1：表示高电平，相当于电路 VCC。</li>
+<li>逻辑 X：表示未知，高或低。</li>
+<li>逻辑 Z：表示高阻态，悬空状态</li>
+</ul>
+<h3 id="verilog-中的数字表示">Verilog 中的数字表示：</h3>
+<p>“（数字的二进制）位宽 + 进制（缩写） + 数值”来表示一个数字。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二进制0101的表示</span></span><br><span class="line"><span class="number">4&#x27;b0101</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//十进制2的表示，数字2的二进制表示为0010占4位</span></span><br><span class="line"><span class="number">4&#x27;d2</span></span><br></pre></td></tr></table></figure>
+<p>Verilog 的默认二进制位宽为32位，默认的进制为十进制。</p>
+<p>当二进制数字位数多的时候可以使用下划线增加可读性，编译时下划线会被去掉。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">16&#x27;b1001_1010_1010_1001</span></span><br></pre></td></tr></table></figure>
+<h4 id="标识符">标识符：</h4>
+<p>Verilog 的标识符可以用于定义模块名、端口名和信号名。</p>
+<p>Verilog 的命名规则与 C 语言变量名的命名规则基本相同：只有一点，可以在命名中包含$符号。</p>
+<p>标识符规则：</p>
+<ul>
+<li></li>
+</ul>
+<p>标识符推荐写法：</p>
+<ul>
+<li>不建议大小写混合</li>
+<li>普通内部信号全部小写</li>
+<li>信号命名体现含义</li>
+<li>使用下划线区分词</li>
+<li>采用前后缀：比如时钟可以采用：clk_50，clk_cpu</li>
+</ul>
+<h3 id="数据类型">数据类型</h3>
+<p>三种数据类型：</p>
+<ul>
+<li><p>寄存器数据类型：实际电路物理模型</p>
+<ul>
+<li><p>抽象数据存储单元，可以通过赋值语句改变寄存器储存的值</p></li>
+<li><p>关键字：reg，默认初始值为 X 不确定</p></li>
+<li><div class="sourceCode" id="cb1"><pre class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>  <span class="co">// reg + [位宽：31:0 指32位位宽，高位在前] + 标识符名称（寄存器名称）</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="dt">reg</span> [<span class="dv">31</span>:<span class="dv">0</span>] delay_cnt; <span class="co">//延时计数使用的寄存器</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="dt">reg</span>        key_reg; <span class="co">//没给位宽时默认位宽为1</span></span></code></pre></div></li>
+<li><p>reg 类型的数据只能在 always 语句和 initial 语句中被赋值</p></li>
+<li><p>如果 always 中带有时钟信号即过程语句描述的是时序逻辑，则寄存器对应为触发器</p></li>
+<li><p>如果 always 中不带有时钟信号即过程语句描述的是组合逻辑，则寄存器对应为硬件连线</p></li>
+<li></li>
+</ul></li>
+<li><p>线网数据类型：实际电路物理模型</p></li>
+<li><p>参数数据类型：给编译器用的</p></li>
+</ul>
 
       
     </div>
@@ -324,7 +370,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-12 21:09:04" itemprop="dateModified" datetime="2022-03-12T21:09:04+08:00">2022-03-12</time>
+      <time title="修改时间：2022-03-22 21:17:40" itemprop="dateModified" datetime="2022-03-22T21:17:40+08:00">2022-03-22</time>
     </span>
 
   
@@ -352,6 +398,13 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="logic-design">Logic Design</h1>
+<h3 id="数制">数制</h3>
+<p>数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中<strong>基数</strong>是指使用数码的个数，例如：二进制的基数为<code>2</code>，十进制的基数为<code>10</code>。<strong>位权</strong>是指数制某位所表示的数值权重的大小，例如：十进制数<code>123</code>，<code>1</code>的位权是<code>100</code>，<code>2</code>的位权是<code>10</code>，<code>3</code>的位权是<code>1</code>。二进制数<code>1011</code>，从左至右<code>1</code>、<code>0</code>、<code>1</code>、<code>1</code>的位权依次是<code>8</code>、<code>4</code>、<code>2</code>、<code>1</code>。常用的数制有<strong>二</strong>、<strong>八</strong>、<strong>十</strong>、<strong>十六</strong>四种进制，书写时可以在相应数值尾部添加字母<strong>B</strong>、<strong>O</strong>、<strong>D</strong>、<strong>H</strong>或者下标<strong>2</strong>、<strong>8</strong>、<strong>10</strong>、<strong>16</strong>进行标识，计算机<strong>传输和保存数据</strong>通常使用的是<strong>二进制</strong>。</p>
+<h3 id="码制">码制</h3>
+<p>码制是计算机存储、传输数据所使用的编码规则；其中原码、反码、补码是计算机设备保存数值类型数据的编码方式，ASCII 与 Unicode 属于保存字符类型数据的编码格式；而 BCD 编码、格雷码则主要用于设备之间的数据<strong>传输以及转换</strong>。</p>
+<blockquote>
+<p>BCD 码的优点在于格式转换容易，十进制数值表达精度较高；缺点是增加了电路进行算术运算的复杂度，并且存储效率较低。</p>
+</blockquote>
 <h3 id="数字系统">数字系统</h3>
 <p>数字系统设计大致分为三个方面</p>
 <ul>
@@ -393,6 +446,45 @@
 <p>​ 去和括号内相加</p></li>
 </ul>
 <p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
+<h2 id="数字电路概念">数字电路概念</h2>
+<h3 id="高阻态">高阻态</h3>
+<p>高阻抗状态（<em>High impedance</em>）表示电路中的某个节点具有相对电路中其它点更高的阻抗，电路分析时通常将高阻态作为开路理解。即可以将其视为输出/输入电阻极大，极限状态可以认为是悬空（<em>断路</em>）的状态，高阻态通常使用字母<strong>Z</strong>表示。</p>
+<h3 id="三态门">三态门</h3>
+<p>数字电路中的三态逻辑（<em>Three-state logic</em>）是指其输出既可以是代表<code>0</code>和<code>1</code>的高低电平，也可以是其特有的高阻抗状态（<em>相当于隔断状态，电阻极大，类似于开路</em>）。</p>
+<p>具有高电平、低电平、高阻态三种状态的元器件称为三态器件，三态器件都通过一个控制使能端 B 来控制整个三态门电路的通断。当使能端高电平有效时，三态器件可以正常的<code>0</code>或<code>1</code>输出，当使能端低电平无效时，三态电路将会输出高阻态。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">输入端 A</th>
+<th style="text-align: left;">使能端 B</th>
+<th style="text-align: left;">输出端 C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>X</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Z</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="组合时序逻辑电路">组合/时序逻辑电路</h3>
+<ul>
+<li><strong>组合逻辑电路</strong>（<em>Combinational Logic Circuit</em>），其任一时刻的稳态输出仅与该时刻输入的变量取值有关，而与该时刻之前输入的变量取值无关。组合电路主要由各种逻辑门（<code>半加器</code>、<code>全加器</code>、<code>半减器</code>、<code>全减器</code>、<code>数据选择器</code>、<code>数据分配器</code>、<code>编码器</code>、<code>译码器</code>）组成，电路中没有记忆元件和反馈线。</li>
+<li><strong>时序逻辑电路</strong>（<em>Sequential Logic Circuit</em>）任意时刻的稳态输出不仅取决于当前输入，还与前一时刻输入的状态有关，换而言之，时序逻辑电路必须拥有特定的储存元件来保存前一次的输入状态。因此，时序逻辑电路除包含有组合逻辑电路以外，还必须含拥有存储信息能力的电路（<code>触发器</code>、<code>寄存器</code>、<code>计数器</code>）。</li>
+</ul>
+<h3 id="gpio">GPIO</h3>
+<p><strong>通用输入输出</strong>（<em>General-purpose input/output</em>），功能类似于 8051 单片机的 P0 到 P3 口，引脚输出的高低电平可由开发人员读写相应寄存器进行控制。该接口有时也称为<strong>总线扩展器</strong>，当开发板接口不够用时，可以通过转接板将其扩展为<code>I²C</code>、<code>SPI</code>等其它串行接口。</p>
 
       
     </div>
@@ -450,7 +542,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-14 19:47:47" itemprop="dateModified" datetime="2022-03-14T19:47:47+08:00">2022-03-14</time>
+      <time title="修改时间：2022-03-23 11:38:16" itemprop="dateModified" datetime="2022-03-23T11:38:16+08:00">2022-03-23</time>
     </span>
 
   
@@ -538,8 +630,120 @@
 <h3 id="嵌入式系统">嵌入式系统</h3>
 <p>上文我们以通用计算机系统为例，沿着“微型计算机系统-&gt;微型计算机-&gt;微（型）处理器”三个层次描述了微机的基本概念。最后我们注意微机的另一大类，即平行于通用计算机系统的，名为嵌入式系统的专用计算机系统。</p>
 <p>嵌入式系统也是微型计算机系统，上面描述的通用计算机系统包含的内容，在嵌入式系统中也同样有所体现。但是嵌入式系统的关键词在于“专用”。专用意味着嵌入式系统为某一具体的应用问题而生，不需要具备通用计算机系统的全部内容。例如，嵌入式系统中可能不会连接鼠标键盘等外设，而且不会具备完整的系统软件。</p>
-<h1 id="arm微处理器">ARM微处理器</h1>
+<h2 id="arm微处理器">ARM微处理器</h2>
 <p>ARM微处理器最重要的特性是其英文名称</p>
+<h4 id="arm-微处理器的工作状态">ARM 微处理器的工作状态</h4>
+<ul>
+<li>ARM 状态：处理器执行32位的 ARM 指令集，即执行字方式的 ARM 指令</li>
+<li>Thumb 状态：处理器执行16位的 Thumb 指令集，即执行半字方式的 ARM 指令</li>
+</ul>
+<p>ARM 微处理器在两种工作模式下都有切换处理器工作状态的指令，但是在 ARM 处理器开始执行代码时处理器应处于 ARM 状态。</p>
+<h4 id="arm-微处理器的工作模式">ARM 微处理器的工作模式</h4>
+<ul>
+<li>用户模式</li>
+<li>特权模式
+<ul>
+<li>系统模式</li>
+<li>异常模式
+<ul>
+<li>管理模式</li>
+<li>快速中断模式</li>
+<li>外部中断模式</li>
+<li>数据访问中止模式</li>
+<li>未定义指令中止模式</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>工作模式可以通过软件改变，也可以通过外部中断和处理器异常来改变。并且每一种模式下可以使用的寄存器是不同的。</p>
+<h4 id="arm-处理器支持的数据类型和存储格式">ARM 处理器支持的数据类型和存储格式</h4>
+<h5 id="数据类型">数据类型</h5>
+<p>在处理器中数据类型是这样分类的，分成下面三种类型：</p>
+<ul>
+<li>字节类型</li>
+<li>半字类型</li>
+<li>字类型</li>
+</ul>
+<p>数据操作都是以字为单位的（这里课本写：ARM 指令是一个字长而 Thumb 指令是半字长；但不是说操作都是以字为单位并且都是一样长吗？？？），而从存储器读写的数据则可以按上述三种不同的数据类型进行读写。</p>
+<p>对存储器按字或者半字类型进行读取时，需要进行对齐操作；对数据进行字节传输时不需要对齐。</p>
+<blockquote>
+<p>一条指令（指的是机器码）由操作码（opcode）和操作数（operand）构成。操作数可以是1个，也可以是多个，甚至可以没有。操作码则是每一条指令都必须有。操作码表示该指令要做什么动作，例如跳转，加减等等。操作数则表示操作对象，操作数可能还会分为目的操作数和源操作数。操作数当然是一个数字，该操作数可以由多种来源，例如寄存器，存储器或者立即数。本节介绍的处理器的寻址方式就是讨论指令中操作数的来源问题。</p>
+</blockquote>
+<h5 id="存储格式">存储格式</h5>
+<blockquote>
+<p>指令编码中，用来说明操作数来源和操作数构成存储器地址的方法，叫做寻址方式，英文为Addressing Mode。寻址方式是由处理器的指令编码直接决定的，是处理器体系架构的一部分，所以我们一般叫做xxx处理器寻址方式，例如8086寻址方式，MIPS寻址方式。寻址方式是学习任何一种汇编语言的起点。</p>
+</blockquote>
+<p>ARM 存储器的最大寻址空间为4 GB。</p>
+<p>存储器可以看作是一个从零开始线性递增的一个容器，容器的基本单位为字节。</p>
+<p>数据以字为单位存储在存储器中，这意味着一个（字）数据将存放在存储器的四个基本单位中。</p>
+<p>数据在存储器中的存储方式有两种，区分两种存储方式的关键在于一个字的四个字节在存储器中哪一个存在高位哪一个存在低位：</p>
+<ul>
+<li>大端格式：数据的高字节位存储在存储器的低地址中</li>
+<li>小端格式：数据的低字节位存储在存储器的低地址中</li>
+</ul>
+<p>大小端的存储方式可以通过外部引脚和内部寄存器的配置来进行选择，选择要在使用前进行配置，开始使用后只能选择一种存储器数据存储方式。</p>
+<h4 id="arm-处理器的寄存器">ARM 处理器的寄存器</h4>
+<p>ARM 寄存器：</p>
+<ul>
+<li>定义：寄存器是 CPU 内部用来暂时存放参与运算的数据和运算结果的小型存储区域</li>
+<li>特征：传输数据的速度非常快</li>
+<li>分类：
+<ul>
+<li>通用寄存器：保存数据和地址</li>
+<li>状态寄存器：标识 CPU 的工作状态及程序的运行状态</li>
+</ul></li>
+<li>经典 ARM 寄存器在物理上共有37个32位寄存器组成
+<ul>
+<li>31个通用寄存器</li>
+<li>6个状态寄存器</li>
+</ul></li>
+</ul>
+<h4 id="arm-处理器的io组织">ARM 处理器的I/O组织</h4>
+<p>I/O 是 CPU 与外部设备之间通信的桥梁</p>
+<p>对 I/O 端口物理地址进行编址的方式有两种：</p>
+<ul>
+<li><p>独立编址方式：I/O映射方式，x86采用</p>
+<p>I/O 端口地址与内存单元地址分开独立编址，I/O 端口地址不占用内存空间的地址范围，需要专门的I/O 指令和控制逻辑</p></li>
+<li><p>统一编址方式：内存映射方式，ARM采用</p>
+<p>I/O 端口地址与内存单元地址混在一起：将内存的一部分划分出来作为I/O 地址空间。</p></li>
+</ul>
+<h2 id="cortex-m4-微处理器">Cortex-M4 微处理器</h2>
+<h4 id="cortex-m4-微处理器的工作状态">Cortex-M4 微处理器的工作状态</h4>
+<h4 id="cortex-m4-微处理器的工作模式">Cortex-M4 微处理器的工作模式</h4>
+<h4 id="cortex-m4-微处理器的寄存器组织">Cortex-M4 微处理器的寄存器组织</h4>
+<ul>
+<li>存在于：寄存器存在于处理器的内核之中</li>
+<li>作用：执行数据处理和控制</li>
+<li>分类：16个32位寄存器
+<ul>
+<li>通用寄存器组</li>
+<li>特殊功能寄存器</li>
+</ul></li>
+<li>与经典的 ARM 微处理器对比：Cortex-M4 微处理器的寄存器较少</li>
+<li>通用寄存器详解：
+<ol type="1">
+<li><span class="math inline">\(R0-R7\)</span>：
+<ul>
+<li>统称：低组寄存器</li>
+<li>访问指令：32位指令和大多数16位指令</li>
+<li>初始化：复位后初始化为未定义</li>
+</ul></li>
+<li><span class="math inline">\(R8-R12\)</span>：
+<ul>
+<li>统称：高组寄存器</li>
+<li>访问指令：32位指令和少量16位指令</li>
+<li>初始化：复位后初始化为未定义</li>
+</ul></li>
+<li><span class="math inline">\(R13\)</span>：
+<ul>
+<li>统称：堆栈指针寄存器</li>
+<li>系统可以同时支持两个堆栈，</li>
+</ul></li>
+</ol></li>
+</ul>
+<h4 id="cortex-m4-微处理器的存储组织">Cortex-M4 微处理器的存储组织</h4>
+<h1 id="摘抄">摘抄：</h1>
+<p>RISC使用的是load-store结构。load-store结构的本质，在于RISC技术的CPU只处理（指逻辑，算术运算处理）寄存器中的数据。相反，X86却能够直接处理存储器中的数据。</p>
+<p><a target="_blank" rel="noopener" href="https://nieyong.github.io/wiki_cpu/index.html">index (nieyong.github.io)</a></p>
 
       
     </div>
