@@ -224,7 +224,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-03-23 15:24:59 / 修改时间：20:48:37" itemprop="dateCreated datePublished" datetime="2022-03-23T15:24:59+08:00">2022-03-23</time>
+      <time title="创建时间：2022-03-23 15:24:59 / 修改时间：23:41:45" itemprop="dateCreated datePublished" datetime="2022-03-23T15:24:59+08:00">2022-03-23</time>
     </span>
 
   
@@ -537,7 +537,7 @@
 </tr>
 </tbody>
 </table>
-<p>大三上学期：</p>
+<h3 id="大三上学期">大三上学期：</h3>
 <table>
 <colgroup>
 <col style="width: 48%">
@@ -552,15 +552,15 @@
 <tbody>
 <tr class="odd">
 <td>离散时间信号与系统（Discrete-Time Signals and Systems）</td>
-<td></td>
+<td>《中文版 信号与系统 奥本海姆》</td>
 </tr>
 <tr class="even">
 <td>电磁场原理（Electromagnetic Field Theory）</td>
-<td><em>Field and Wave Electromagnetics by David K. Cheng</em></td>
+<td><em>Field and Wave Electromagnetics by David K. Cheng</em><br>《电磁场与电磁波 中文版》</td>
 </tr>
 <tr class="odd">
 <td>固态电子学（Solid-State Electronics）</td>
-<td><em>Semiconductor physics and devices basic principles by Donald A. Neamen</em></td>
+<td><em>Semiconductor physics and devices basic principles by Donald A. Neamen</em><br>《半导体物理与器件 中文版》</td>
 </tr>
 <tr class="even">
 <td>单片机原理（MCU Principle）</td>
@@ -568,11 +568,11 @@
 </tr>
 <tr class="odd">
 <td>结构化数字设计（含FPGA）Structured Digital Design</td>
-<td></td>
+<td>《Verilog HDL 数字设计与综合》</td>
 </tr>
 <tr class="even">
 <td>创新项目实践（一）Practice of Innovation Project I</td>
-<td></td>
+<td><del>无课本</del></td>
 </tr>
 </tbody>
 </table>
@@ -591,15 +591,15 @@
 <tbody>
 <tr class="odd">
 <td>嵌入式微处理系统设计（Embedded Microprocessor System Design）</td>
-<td></td>
+<td>《嵌入式系统设计——基于STM32CubeMX与HAL库》</td>
 </tr>
 <tr class="even">
 <td>通信系统（Communication Systems）</td>
-<td>《通信系统》</td>
+<td>《通信系统 中文版》<br>《通信原理》</td>
 </tr>
 <tr class="odd">
 <td>线性控制系统（Linear Control Systems）</td>
-<td></td>
+<td><em>Communication Systems 4th Edition by Simon Haykin</em></td>
 </tr>
 <tr class="even">
 <td>电力电子（Power Electronics）</td>
@@ -607,7 +607,7 @@
 </tr>
 <tr class="odd">
 <td>VLSI 大规模集成电路系统（Large-scale Integrated Circuit System）</td>
-<td></td>
+<td><em>Digital integrated circuits a design perspective</em><br>《数字集成电路——电路系统与设计 中文版》</td>
 </tr>
 <tr class="even">
 <td>模拟集成电路（Analog Integrated Circuit）</td>
@@ -615,7 +615,7 @@
 </tr>
 <tr class="odd">
 <td>创新项目实践（二）Practice of Innovation Project II</td>
-<td></td>
+<td><del>无课本</del></td>
 </tr>
 </tbody>
 </table>
@@ -1515,7 +1515,7 @@ r(t)=r_h(t)+r_h(t)
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-16 22:48:34" itemprop="dateModified" datetime="2022-03-16T22:48:34+08:00">2022-03-16</time>
+      <time title="修改时间：2022-03-25 21:27:07" itemprop="dateModified" datetime="2022-03-25T21:27:07+08:00">2022-03-25</time>
     </span>
 
   
@@ -1635,7 +1635,15 @@ A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
 <ul>
 <li><p>同相放大电路连接方式如图所示：</p>
 <p><img src="/2022/02/27/16-41-33/IMG_1253-16473270320863.PNG" alt="IMG_1253" style="zoom: 25%;"></p></li>
-<li><p>同相放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>同相放大电路增益 <span class="math inline">\(A_v=\frac{R_2}{R_1}+1\)</span>： <span class="math display">\[
+\begin{aligned}
+&amp;\begin{cases}
+v_-=v_+=v_i\\\\
+\frac{0-v_-}{R1}=\frac{v_--v_o}{R_2}\\
+\end{cases}\\\\
+&amp;get\quad A_v=\frac{v_o}{v_i}=\frac{R_2}{R_1}+1
+\end{aligned}
+\]</span></p></li>
 <li><p>结论和注意事项：</p></li>
 </ul></li>
 <li><p>电压跟随器：</p>
@@ -1649,49 +1657,85 @@ A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
 <ul>
 <li><p>求和放大电路连接方式如图所示：</p>
 <p><img src="/2022/02/27/16-41-33/IMG_1252.PNG" alt="IMG_1252" style="zoom:25%;"></p></li>
-<li><p>求和放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>输出电压为 <span class="math inline">\(v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}\)</span>：</p>
+<p><span class="math display">\[
+\sum_{j=1}^{n}\frac{v_{i_j}-0}{R_i}=\frac{0-v_o}{R_f}\\
+get\quad v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}
+\]</span></p></li>
 <li><p>结论和注意事项：</p></li>
 </ul></li>
 <li><p>差分放大电路：</p>
 <ul>
 <li><p>差分放大电路连接方式如图所示：</p>
 <p><img src="/2022/02/27/16-41-33/IMG_1244.PNG" alt="IMG_1244" style="zoom:25%;"></p></li>
-<li><p>差分放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>输出电压为 <span class="math inline">\(v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})\)</span>：</p>
+<p>$$</p>
+<span class="math display">\[\begin{aligned}
+&amp;if\quad v_{i_2}=0,\;v_{i_1}\not=0\\
+
+&amp;then\quad v_{o_1}=-\frac{R_2}{R_1}v_{i_1}\\\\\\
+
+&amp;if\quad v_{i_2}\not=0,\;v_{i_1}=0\\
+
+&amp;then\quad v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}\\\\\\
+
+&amp;so\quad v_o=v_{o_1}+v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}-\frac{R_2}{R_1}v_{i_1}\\
+
+&amp;To\quad satified\quad when\quad v_{i_1}=v_{i_2},v_o=0\,;so\quad \frac{R_4}{R_3}=\frac{R_2}{R_1}\\
+
+&amp;Finally\quad v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})
+\end{aligned}\]</span>
+<p>$$</p></li>
 <li><p>结论和注意事项：</p></li>
 </ul></li>
 <li><p>积分放大电路：</p>
 <ul>
 <li><p>积分放大电路连接方式如图所示：</p>
 <p><img src="/2022/02/27/16-41-33/IMG_1254.PNG" alt="IMG_1254" style="zoom:25%;"></p></li>
-<li><p>积分放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>积分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=V_C-\frac{1}{RC}\int_{0}^{t}v_i(\tau)d\tau
+\]</span></p></li>
 <li><p>结论和注意事项：</p></li>
 </ul></li>
 <li><p>微分放大电路：</p>
 <ul>
 <li><p>微分放大电路连接方式如图所示：</p>
 <p><img src="/2022/02/27/16-41-33/IMG_1251.PNG" alt="IMG_1251" style="zoom:25%;"></p></li>
-<li><p>微分放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>微分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-RC\frac{dv_{i}}{dt}
+\]</span></p></li>
 <li><p>结论和注意事项：</p></li>
 </ul></li>
 <li><p>对数放大电路：</p>
 <ul>
 <li><p>对数放大电路连接方式如图所示：</p>
 <p><img src="/2022/02/27/16-41-33/IMG_1247.PNG" alt="IMG_1247" style="zoom:25%;"></p></li>
-<li><p>对数放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>对数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-V_Tln\left(\frac{v_i}{I_SR_1}\right)
+\]</span></p></li>
 <li><p>结论和注意事项：</p></li>
 </ul></li>
 <li><p>指数放大电路：</p>
 <ul>
 <li><p>指数放大电路连接方式如图所示：</p>
 <p><img src="/2022/02/27/16-41-33/IMG_1257.PNG" alt="IMG_1257" style="zoom:25%;"></p></li>
-<li><p>指数放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>指数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-I_SR\cdot e^{v_i/V_T}
+\]</span></p></li>
 <li><p>结论和注意事项：</p></li>
 </ul></li>
 <li><p>仪用放大电路：</p>
 <ul>
 <li><p>仪用放大电路连接方式如图所示：</p>
 <p><img src="/2022/02/27/16-41-33/IMG_1256.PNG" alt="IMG_1256" style="zoom:25%;"></p></li>
-<li><p>仪用放大电路增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>仪用放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=\frac{R_4}{R_3}\left(1+\frac{2R_2}{R_1}\right)(v_{i_2}-v_{i_1})
+\]</span></p></li>
 <li><p>结论和注意事项：</p></li>
 </ul></li>
 </ol>
@@ -1712,6 +1756,11 @@ A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
 <p>本章介绍的是主要内容是一种多晶体管电路——差分放大电路。与之前理想运放一节不同的是，这里的差分放大电路是由基本的晶体管构成的电路</p>
 <p>差分放大电路是模拟电路的基本单元，既是几乎所有运放的输入级，也是高速数字逻辑电路的基础。</p>
 <p>差分放大电路为</p>
+<h2 id="section"></h2>
+<h3 id="施密特触发器">施密特触发器</h3>
+<h4 id="比较器">比较器</h4>
+<h4 id="施密特触发器-1">施密特触发器</h4>
+<h4 id="section-1"></h4>
 
       
     </div>
