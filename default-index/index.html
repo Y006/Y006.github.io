@@ -676,7 +676,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-22 22:24:14" itemprop="dateModified" datetime="2022-03-22T22:24:14+08:00">2022-03-22</time>
+      <time title="修改时间：2022-03-26 13:29:57" itemprop="dateModified" datetime="2022-03-26T13:29:57+08:00">2022-03-26</time>
     </span>
 
   
@@ -748,17 +748,11 @@
 <ul>
 <li><p>抽象数据存储单元，可以通过赋值语句改变寄存器储存的值</p></li>
 <li><p>关键字：reg，默认初始值为 X 不确定</p></li>
-<li><div class="sourceCode" id="cb1"><pre class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>  <span class="co">// reg + [位宽：31:0 指32位位宽，高位在前] + 标识符名称（寄存器名称）</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="dt">reg</span> [<span class="dv">31</span>:<span class="dv">0</span>] delay_cnt; <span class="co">//延时计数使用的寄存器</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="dt">reg</span>        key_reg; <span class="co">//没给位宽时默认位宽为1</span></span></code></pre></div></li>
-<li><p>reg 类型的数据只能在 always 语句和 initial 语句中被赋值</p></li>
-<li><p>如果 always 中带有时钟信号即过程语句描述的是时序逻辑，则寄存器对应为触发器</p></li>
-<li><p>如果 always 中不带有时钟信号即过程语句描述的是组合逻辑，则寄存器对应为硬件连线</p></li>
-<li></li>
+<li><p>```verilog // reg + [位宽：31:0 指32位位宽，高位在前] + 标识符名称（寄存器名称） reg [31:0] delay_cnt; //延时计数使用的寄存器 reg key_reg; //没给位宽时默认位宽为1 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  + reg 类型的数据只能在 always 语句和 initial 语句中被赋值</span><br><span class="line"></span><br><span class="line">  + 如果 always 中带有时钟信号即过程语句描述的是时序逻辑，则寄存器对应为触发器</span><br><span class="line"></span><br><span class="line">  + 如果 always 中不带有时钟信号即过程语句描述的是组合逻辑，则寄存器对应为硬件连线</span><br><span class="line"></span><br><span class="line">  + </span><br><span class="line"></span><br><span class="line">+ 线网数据类型：实际电路物理模型</span><br><span class="line"></span><br><span class="line">+ 参数数据类型：给编译器用的</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 图像处理</span><br><span class="line"></span><br><span class="line">OV7725摄像头</span><br><span class="line"></span><br><span class="line">主控器控制OV7725时采用SCCB协议读写其寄存器，而它输出图像时则使用VGA或QVGA时序， 其中VGA在输出图像分辨率为480*640时采用，QVGA是Quarter VGA，其输出分辨率为240*320， 这些时序跟控制液晶屏输出图像数据时十分类似。</span><br><span class="line"></span><br><span class="line">OV7725传感器输出图像时，一帧帧地输出，在帧内的数据一般从左到右，从上到下， 一个像素一个像素地输出(也可通过寄存器修改方向)，见图 [摄像头数据输出](https://doc.embedfire.com/mcu/stm32/f103zhinanzhe/std/zh/latest/book/OV7725.html#id20) 。</span><br><span class="line"></span><br><span class="line">![摄像头数据输出](记录/OV7725012.jpg)</span><br><span class="line"></span><br><span class="line">例如，见图 [像素同步时序](https://doc.embedfire.com/mcu/stm32/f103zhinanzhe/std/zh/latest/book/OV7725.html#id21) 和图 [QVGA帧图像同步时序](https://doc.embedfire.com/mcu/stm32/f103zhinanzhe/std/zh/latest/book/OV7725.html#qvga) ， 若我们使用D2-D9数据线，图像格式设置为RGB565，&lt;img src=&quot;记录/image-20220326130518483.png&quot; alt=&quot;image-20220326130518483&quot; style=&quot;zoom:33%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">```verilog</span><br><span class="line">//RGB数据转换为YCBCR</span><br><span class="line">//因为FPGA处理除法是比较耗费资源的，所以我们团队采用左移右移以替代乘除法。处理整形数据可以将数据整体左移八位，再进行计算，最后在右移回去即可。</span><br><span class="line"></span><br><span class="line">Y’ = 0.257R’ + 0.504G’ + 0.098*B’ + 16</span><br><span class="line">Cb’ = -0.148R’ - 0.291G’ + 0.439*B’ + 128</span><br><span class="line">Cr’ = 0.439R’ - 0.368G’ - 0.071*B’ + 128</span><br></pre></td></tr></table></figure></p></li>
 </ul></li>
-<li><p>线网数据类型：实际电路物理模型</p></li>
-<li><p>参数数据类型：给编译器用的</p></li>
 </ul>
+<p>进行数据输出时，D2-D9数据线在PCLK在上升沿阶段维持稳定， 并且会在1个像素同步时钟PCLK的驱动下发送1字节的数据信号，所以2个PCLK时钟可发送1个RGB565格式的像素数据。 当HREF为高电平时，像素数据依次传输，每传输完一行数据时，行同步信号HREF会输出一个电平跳变信号间隔开当前行和下一行的数据； 一帧的图像由N行数据组成，当VSYNC为低电平时，各行的像素数据依次传输，每传输完一帧图像时，VSYNC会输出一个电平跳变信号。</p>
+<p><img src="/2022/03/15/15-32-05/image-20220326132950059.png" alt="image-20220326132950059" style="zoom:50%;"></p>
 
       
     </div>
@@ -1247,7 +1241,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-21 20:34:32" itemprop="dateModified" datetime="2022-03-21T20:34:32+08:00">2022-03-21</time>
+      <time title="修改时间：2022-03-26 16:25:10" itemprop="dateModified" datetime="2022-03-26T16:25:10+08:00">2022-03-26</time>
     </span>
 
   
@@ -1275,6 +1269,100 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="x系统">x系统</h2>
+<h3 id="常见的奇异信号">常见的奇异信号</h3>
+<p>奇异信号：函数中包含不连续点或其微分与积分有不连续点的函数，统称为奇异函数，也就是奇异信号。</p>
+<table>
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>名称</th>
+<th>函数表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(f(t)\)</span>：单位斜变信号</td>
+<td><span class="math inline">\(f(t) = \begin{cases} 0 &amp; t&lt;0 \\\\ t &amp; t\ge0 \\ \end{cases}\)</span></td>
+</tr>
+<tr class="even">
+<td>$ u(t)$：单位阶跃信号</td>
+<td><span class="math inline">\(u(t) = \begin{cases} 0 &amp; t&lt;0 \\\\ 1 &amp; t&gt;0 \\ \end{cases}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta(t)\)</span>：单位冲激函数</td>
+<td><span class="math inline">\(\begin{cases} \begin{aligned} &amp;\int_{-\infty}^{\infty}\delta(t)dt = 1\\\\ &amp;\delta(t) = 0\quad while(t\not=0) \end{aligned} \end{cases}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta(t)&#39;\)</span>：冲激偶函数</td>
+<td><span class="math inline">\(\delta(t)&#39;=\frac{d\delta(t)}{dt}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="ft单位斜变信号"><span class="math inline">\(f(t)\)</span>：单位斜变信号</h4>
+<p>单位斜变信号的“单位”体现在其非零部分的斜率为 <span class="math inline">\(1\)</span> 。</p>
+<p>函数表达式： <span class="math display">\[
+f(t) = 
+\begin{cases}
+0 &amp;     t&lt;0     \\\\
+t &amp;     t\ge0   \\
+\end{cases}
+\]</span> 起始点移位 <span class="math inline">\(t\)</span> 后： <span class="math display">\[
+f(t-t_0) = 
+\begin{cases}
+0       &amp;       t&lt;t_0           \\\\
+t-t_0   &amp;       t\ge t_0        \\
+\end{cases}
+\]</span></p>
+<h4 id="ut单位阶跃信号">$ u(t)$：单位阶跃信号</h4>
+<p>函数表达式：</p>
+<p>由表达式可知 <span class="math inline">\(t=0\)</span> 处函数未定义，可以将 <span class="math inline">\(t=0\)</span> 处函数值定义为 <span class="math inline">\(u(0)=\frac{1}{2}\)</span>。 <span class="math display">\[
+u(t) = 
+\begin{cases}
+0   &amp;       t&lt;0     \\\\
+1   &amp;       t&gt;0     \\
+\end{cases}
+\]</span> 起始点移位 <span class="math inline">\(t\)</span> 后（或认为阶跃延时 <span class="math inline">\(t\)</span> 后），有： <span class="math display">\[
+u(t-t_0) = 
+\begin{cases}
+0   &amp;       t&lt;t_0       \\\\
+1   &amp;       t&gt;t_0       \\
+\end{cases}
+\]</span></p>
+<h4 id="deltat单位冲激函数"><span class="math inline">\(\delta(t)\)</span>：单位冲激函数</h4>
+<p>狄拉克（Dirac）定义方式： <span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;\int_{-\infty}^{\infty}\delta(t)dt = 1\\\\
+&amp;\delta(t) = 0\quad while(t\not=0)
+\end{aligned}
+\end{cases}
+\]</span> 狄拉克（Dirac）定义表明：</p>
+<ol type="1">
+<li>除了坐标轴零点处，其余位置单位冲激函数的函数值均为 <span class="math inline">\(0\)</span> 。</li>
+<li>单位冲激函数仅在一点处取值，而其面积（积分）为 <span class="math inline">\(1\)</span> ，由此可知单位冲激函数为长度为 <span class="math inline">\(1\)</span> 的线段：表示中我们使用长度为 <span class="math inline">\(1\)</span> 的向量来表示，方向与 <span class="math inline">\(y\)</span> 轴正半轴方向相同。</li>
+</ol>
+<h4 id="deltat冲激偶函数"><span class="math inline">\(\delta(t)&#39;\)</span>：冲激偶函数</h4>
+<p>由符号可知冲激偶函数为冲激函数的导数。</p>
+<h4 id="常见奇异信号之间的关系">常见奇异信号之间的关系：</h4>
+<p><span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;\frac{df(t)}{dt}=u(t)\\\\
+&amp;\frac{du(t)}{dt}=\delta(t)\\\\
+&amp;\delta(t)&#39;=\frac{d\delta(t)}{dt}
+\end{aligned}
+\end{cases}
+\]</span></p>
+<h4 id="单位冲激函数-deltat-的简单性质">单位冲激函数 <span class="math inline">\(\delta(t)\)</span> 的简单性质：</h4>
+<ol type="1">
+<li><p>单位冲激函数 <span class="math inline">\(\delta(t)\)</span> 具有<strong>抽样特性</strong>（也称“筛选”特性），<span class="math inline">\(\delta(t)\)</span> 可以用来筛选出信号中某一时刻的值（函数值），具体操作如下： <span class="math display">\[
+\int_{-\infty}^{\infty}\delta(t-t_0)f(t)dt=f(t_0)
+\]</span> 解释：对于任意一个信号 <span class="math inline">\(f(t)\)</span> ，我们使用 <span class="math inline">\(\delta(t)\)</span> 可以筛选出目标的函数值 <span class="math inline">\(f(t_0)\)</span> 。</p></li>
+<li><p>单位冲激函数 <span class="math inline">\(\delta(t)\)</span> 是一个偶函数，即 <span class="math inline">\(\delta(t)=\delta(-t)\)</span></p></li>
+</ol>
 <h3 id="线性时不变系统lti">线性时不变系统——LTI</h3>
 <ol type="1">
 <li><p>理解线性：</p>

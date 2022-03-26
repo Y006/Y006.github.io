@@ -28,11 +28,13 @@
 <meta property="og:site_name" content="我的Bolg">
 <meta property="og:description" content="FPGA 时序约束  如通信实验，时钟频率比较高的实验，需要进行时序约束 当占用芯片的逻辑资源多的时候，需要使用时序约束：因为FPGA在布线时会优先考虑面积  时钟约束用来描述设计人员对于时序的要求，包括时钟频率和输入输出延时 D触发器 arduino 机械臂 123456789101112131415161718192021222324252627282930313233343">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://y006.github.io/2022/03/15/15-32-05/image-20220326132950059.png">
 <meta property="article:published_time" content="2022-03-15T07:32:05.000Z">
-<meta property="article:modified_time" content="2022-03-22T14:24:14.993Z">
+<meta property="article:modified_time" content="2022-03-26T05:29:57.560Z">
 <meta property="article:author" content="邱金羽">
 <meta property="article:tag" content="电子设计">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://y006.github.io/2022/03/15/15-32-05/image-20220326132950059.png">
 
 
 <link rel="canonical" href="https://y006.github.io/2022/03/15/15-32-05/">
@@ -235,7 +237,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-22 22:24:14" itemprop="dateModified" datetime="2022-03-22T22:24:14+08:00">2022-03-22</time>
+      <time title="修改时间：2022-03-26 13:29:57" itemprop="dateModified" datetime="2022-03-26T13:29:57+08:00">2022-03-26</time>
     </span>
 
   
@@ -307,17 +309,11 @@
 <ul>
 <li><p>抽象数据存储单元，可以通过赋值语句改变寄存器储存的值</p></li>
 <li><p>关键字：reg，默认初始值为 X 不确定</p></li>
-<li><div class="sourceCode" id="cb1"><pre class="sourceCode verilog"><code class="sourceCode verilog"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>  <span class="co">// reg + [位宽：31:0 指32位位宽，高位在前] + 标识符名称（寄存器名称）</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="dt">reg</span> [<span class="dv">31</span>:<span class="dv">0</span>] delay_cnt; <span class="co">//延时计数使用的寄存器</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="dt">reg</span>        key_reg; <span class="co">//没给位宽时默认位宽为1</span></span></code></pre></div></li>
-<li><p>reg 类型的数据只能在 always 语句和 initial 语句中被赋值</p></li>
-<li><p>如果 always 中带有时钟信号即过程语句描述的是时序逻辑，则寄存器对应为触发器</p></li>
-<li><p>如果 always 中不带有时钟信号即过程语句描述的是组合逻辑，则寄存器对应为硬件连线</p></li>
-<li></li>
+<li><p>```verilog // reg + [位宽：31:0 指32位位宽，高位在前] + 标识符名称（寄存器名称） reg [31:0] delay_cnt; //延时计数使用的寄存器 reg key_reg; //没给位宽时默认位宽为1 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  + reg 类型的数据只能在 always 语句和 initial 语句中被赋值</span><br><span class="line"></span><br><span class="line">  + 如果 always 中带有时钟信号即过程语句描述的是时序逻辑，则寄存器对应为触发器</span><br><span class="line"></span><br><span class="line">  + 如果 always 中不带有时钟信号即过程语句描述的是组合逻辑，则寄存器对应为硬件连线</span><br><span class="line"></span><br><span class="line">  + </span><br><span class="line"></span><br><span class="line">+ 线网数据类型：实际电路物理模型</span><br><span class="line"></span><br><span class="line">+ 参数数据类型：给编译器用的</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 图像处理</span><br><span class="line"></span><br><span class="line">OV7725摄像头</span><br><span class="line"></span><br><span class="line">主控器控制OV7725时采用SCCB协议读写其寄存器，而它输出图像时则使用VGA或QVGA时序， 其中VGA在输出图像分辨率为480*640时采用，QVGA是Quarter VGA，其输出分辨率为240*320， 这些时序跟控制液晶屏输出图像数据时十分类似。</span><br><span class="line"></span><br><span class="line">OV7725传感器输出图像时，一帧帧地输出，在帧内的数据一般从左到右，从上到下， 一个像素一个像素地输出(也可通过寄存器修改方向)，见图 [摄像头数据输出](https://doc.embedfire.com/mcu/stm32/f103zhinanzhe/std/zh/latest/book/OV7725.html#id20) 。</span><br><span class="line"></span><br><span class="line">![摄像头数据输出](记录/OV7725012.jpg)</span><br><span class="line"></span><br><span class="line">例如，见图 [像素同步时序](https://doc.embedfire.com/mcu/stm32/f103zhinanzhe/std/zh/latest/book/OV7725.html#id21) 和图 [QVGA帧图像同步时序](https://doc.embedfire.com/mcu/stm32/f103zhinanzhe/std/zh/latest/book/OV7725.html#qvga) ， 若我们使用D2-D9数据线，图像格式设置为RGB565，&lt;img src=&quot;记录/image-20220326130518483.png&quot; alt=&quot;image-20220326130518483&quot; style=&quot;zoom:33%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">```verilog</span><br><span class="line">//RGB数据转换为YCBCR</span><br><span class="line">//因为FPGA处理除法是比较耗费资源的，所以我们团队采用左移右移以替代乘除法。处理整形数据可以将数据整体左移八位，再进行计算，最后在右移回去即可。</span><br><span class="line"></span><br><span class="line">Y’ = 0.257R’ + 0.504G’ + 0.098*B’ + 16</span><br><span class="line">Cb’ = -0.148R’ - 0.291G’ + 0.439*B’ + 128</span><br><span class="line">Cr’ = 0.439R’ - 0.368G’ - 0.071*B’ + 128</span><br></pre></td></tr></table></figure></p></li>
 </ul></li>
-<li><p>线网数据类型：实际电路物理模型</p></li>
-<li><p>参数数据类型：给编译器用的</p></li>
 </ul>
+<p>进行数据输出时，D2-D9数据线在PCLK在上升沿阶段维持稳定， 并且会在1个像素同步时钟PCLK的驱动下发送1字节的数据信号，所以2个PCLK时钟可发送1个RGB565格式的像素数据。 当HREF为高电平时，像素数据依次传输，每传输完一行数据时，行同步信号HREF会输出一个电平跳变信号间隔开当前行和下一行的数据； 一帧的图像由N行数据组成，当VSYNC为低电平时，各行的像素数据依次传输，每传输完一帧图像时，VSYNC会输出一个电平跳变信号。</p>
+<p><img src="/2022/03/15/15-32-05/image-20220326132950059.png" alt="image-20220326132950059" style="zoom:50%;"></p>
 
     </div>
 
