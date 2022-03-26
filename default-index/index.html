@@ -1241,7 +1241,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-26 16:25:10" itemprop="dateModified" datetime="2022-03-26T16:25:10+08:00">2022-03-26</time>
+      <time title="修改时间：2022-03-26 18:07:41" itemprop="dateModified" datetime="2022-03-26T18:07:41+08:00">2022-03-26</time>
     </span>
 
   
@@ -1268,7 +1268,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="x系统">x系统</h2>
+          <h2 id="x信号">x信号</h2>
 <h3 id="常见的奇异信号">常见的奇异信号</h3>
 <p>奇异信号：函数中包含不连续点或其微分与积分有不连续点的函数，统称为奇异函数，也就是奇异信号。</p>
 <table>
@@ -1456,11 +1456,184 @@ r(t)=r_h(t)+r_h(t)
 <ul>
 <li><p>令 <span class="math inline">\(\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=0\)</span>，该式称为齐次方程</p></li>
 <li><p>将 <span class="math inline">\(r(t)=Ae^{\alpha t}\)</span> 代入齐次方程得 <span class="math inline">\(\sum_{i=0}^nC_{n-i}\alpha^{i}=0\)</span>，称为特征方程</p></li>
-<li><p>根据特征方程可以得齐次解 <span class="math inline">\(r_h(t)\)</span> 为：</p>
+<li><p>根据特征方程可以得齐次解 <span class="math inline">\(r_h(t)\)</span> 为</p>
 <ul>
-<li>特征方程没有重根： $$ r_h(t)=_{i=1}<sup>nA_ie</sup></li>
+<li><p>特征方程没有重根：</p></li>
+<li><p>特征方程有重根：</p></li>
 </ul></li>
 </ul>
+<ol start="2" type="1">
+<li><p>求特解 <span class="math inline">\(r_h(t)\)</span>：</p>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>激励函数 <span class="math inline">\(e(t)\)</span></th>
+<th>响应函数 <span class="math inline">\(r(t)\)</span> 的特解</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(E\)</span></td>
+<td><span class="math inline">\(B\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(t^p\)</span></td>
+<td><span class="math inline">\(B_1t^p+B_2t^{p-1}+···+B_pt+B_{p+1}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(e^{\alpha t}\)</span></td>
+<td><span class="math inline">\(Be^{\alpha t}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(cos(\omega t)\)</span></td>
+<td><span class="math inline">\(B_1cos(\omega t)+B_2sin(\omega t)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(sin(\omega t)\)</span></td>
+<td><span class="math inline">\(B_1cos(\omega t)+B_2sin(\omega t)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(t^pe^{\alpha t}cos(\omega t)\)</span></td>
+<td><span class="math inline">\((B_1t^p+···+B_pt+B_{p+1})e^{\alpha t}cos(\omega t)+(D_1t^p+···+D_pt+D_{p+1})e^{\alpha t}sin(\omega t)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(t^pe^{\alpha t}sin(\omega t)\)</span></td>
+<td><span class="math inline">\((B_1t^p+···+B_pt+B_{p+1})e^{\alpha t}cos(\omega t)+(D_1t^p+···+D_pt+D_{p+1})e^{\alpha t}sin(\omega t)\)</span></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>求待定系数 <span class="math inline">\(A\)</span>：</p></li>
+</ol>
+<h3 id="拉普拉斯变换">拉普拉斯变换</h3>
+<p>形态上，拉普拉斯变换做了这样一件事： <span class="math display">\[
+f(t)\xrightarrow{\sf{拉普拉斯变换}}F(s)
+\]</span> 或者说： <span class="math display">\[
+f(t)\xrightarrow{\mathscr{L}\{f(t)\}}F(s)
+\]</span> 从形态上讲，拉普拉斯变换将一个以时间 <span class="math inline">\(t\)</span> 为自变量的函数变换成了一个以频率 <span class="math inline">\(s\)</span> 为自变量的函数。</p>
+<p>拉普拉斯变换将函数从时域变换到了频域，其实就是信号的自变量发生了变化。</p>
+<p>意义：拉普拉斯变换可以将时域内的微分方程变换成频域内的代数方程，降低计算难度并且从频域再次回到时域时保证解不变。</p>
+<p><span class="math inline">\(\mathscr{L}\{f(t)\}\)</span> 拉氏变换的定义为： <span class="math display">\[
+\mathscr{L}\{f(t)\}=\int_{0}^{\infty}f(t)\cdot e^{-st}dt
+\]</span> 注意事项：</p>
+<ol type="1">
+<li>进行拉氏变换的 <span class="math inline">\(f(t)\)</span> 是否存在的问题：
+<ul>
+<li>首先是初等函数都能进行拉氏变换</li>
+<li>默认在线性电路分析中均使用能够进行拉氏变换的电源进行系统的激励</li>
+</ul></li>
+<li>上述拉氏变换也可以称作单边拉氏变换，此变换忽略了 <span class="math inline">\(t&lt;0\)</span> 时的 <span class="math inline">\(f(t)\)</span></li>
+<li><span class="math inline">\(t&lt;0\)</span> 时的 <span class="math inline">\(f(t)\)</span> 可以通过初始条件来考虑</li>
+</ol>
+<p>分类：</p>
+<p>学习拉普拉斯变换将拉普拉斯变换分为函数变换和算子变换</p>
+<ul>
+<li>函数变换：研究初等函数的拉氏变换</li>
+<li>算子变换：研究一般函数的拉氏变换</li>
+</ul>
+<h4 id="算子变换">算子变换：</h4>
+<table>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>拉氏变换</th>
+<th><span class="math inline">\(\mathscr{L}\{f(t)\}=F(s)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>乘以常数</td>
+<td><span class="math inline">\(\mathscr{L}\{Kf(t)\}=KF(s)\)</span></td>
+</tr>
+<tr class="even">
+<td>加减运算</td>
+<td><span class="math inline">\(\mathscr{L}\{f(t_1)+f(t_2)-f(t_3)\}=F(s_1)+F(s_2)-F(s_3)\)</span></td>
+</tr>
+<tr class="odd">
+<td>微分运算</td>
+<td>一重微分：<span class="math inline">\(\mathscr{L}\{\frac{df(t)}{dt}\}=sF(s)-f(0^-)\)</span><br><span class="math inline">\(n\)</span> 重微分：<span class="math inline">\(\mathscr{L}\{\frac{d^nf(t)}{dt^n}\}=s^nF(s)-s^{n-1}f(0^-)-\sum_{i=2}^{n}s^{n-i}\frac{d^{i-1}f(0^-)}{dt^{i-1}}\)</span></td>
+</tr>
+<tr class="even">
+<td>积分运算</td>
+<td><span class="math inline">\(\mathscr{L}\{\int_{0^-}^{t}f(t)dt\}=F(s)/s\)</span></td>
+</tr>
+<tr class="odd">
+<td>时域平移特性</td>
+<td><span class="math inline">\(\mathscr{L}\{f(t-a)\cdot u(t-a)\}=e^{-as}\cdot F(s),\quad a&gt;0\)</span><br><span class="math inline">\(\mathscr{L}\{e^{-as}\cdot F(s)\}=F(s+a)\)</span></td>
+</tr>
+<tr class="even">
+<td>尺度变换特性</td>
+<td><span class="math inline">\(\mathscr{L}\{f(at)\}=\frac{1}{a}F\left(\frac{s}{a}\right),\quad a&gt;0\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="傅里叶分析简介">傅里叶分析简介</h3>
+<p>傅里叶定理表明，任何一个角频率为<span class="math inline">\(\omega_0\)</span>的周期函数都可以表示为无穷多个频率为<span class="math inline">\(\omega_0\)</span>整数倍的正弦函数与余弦函数之和。</p>
+<p>对于一个周期函数<span class="math inline">\(f(t)\)</span>，若满足Dirichlet条件，则该周期函数可以展开成傅里叶级数，即： <span class="math display">\[
+\begin{aligned}
+&amp;if\quad f(t)=f(t+T)\\\\
+&amp;then\quad f(t)=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) + \displaystyle\sum_{n=1}^{\infty}b_nsin(n\omega_0t)\\
+&amp;\boxed{\begin{aligned}
+&amp;a_0=\frac{1}{T}\int^{T}_{0}f(t)\,dt\\
+&amp;a_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+&amp;b_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+\end{aligned}
+}
+\end{aligned}
+\]</span></p>
+$$
+<span class="math display">\[\begin{aligned}
+&amp;if \quad f(t)=f(-t)\\\\
+
+&amp;\boxed{\begin{aligned}
+&amp;a_0=\frac{2}{T}\int^{T/2}_{0}f(t)\,dt\\
+&amp;a_n=\frac{4}{T}\int^{T/2}_{0} f(t) cos(n\omega_0t) \,dt \\
+&amp;b_n=0 \\
+\end{aligned}
+}
+\end{aligned}\]</span>
+<p>$$</p>
+<p>$$</p>
+<p>$$</p>
+<p>展开式中<span class="math inline">\(a_0\)</span>称为直流分量，其值等于函数<span class="math inline">\(f(t)\)</span>的平均值；<span class="math inline">\(a_n\)</span>与<span class="math inline">\(b_n(n\not=0)\)</span>是交流分量的幅值 $$ f(t)=f(t+T) f(t)=a_0 + _{n=1}<sup>{}a_ncos(n<em>0t) + </em>{n=1}</sup>{}b_nsin(n_0t)\</p>
+<span class="math display">\[\begin{array}{c|c|c}
+\begin{aligned}
+&amp;general\quad condition\\
+&amp;\boxed{\begin{aligned}
+&amp;a_0=\frac{1}{T}\int^{T}_{0}f(t)\,dt\\
+&amp;a_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+&amp;b_n=\frac{2}{T}\int^{T}_{0} f(t) sin(n\omega_0t) \,dt \\
+\end{aligned}
+}
+\end{aligned}
+&amp; 
+\begin{aligned}
+&amp;if \quad f(t)=f(-t)\\
+&amp;\boxed{\begin{aligned}
+&amp;a_0=\frac{2}{T}\int^{T/2}_{0}f(t)\,dt\\
+&amp;a_n=\frac{4}{T}\int^{T/2}_{0} f(t) cos(n\omega_0t) \,dt \\
+&amp;b_n=0 \\
+\end{aligned}
+}
+\end{aligned}
+&amp; 
+\begin{aligned}
+&amp;if \quad f(t)=-f(-t)\\
+&amp;\boxed{\begin{aligned}
+&amp;a_0=0\\
+&amp;a_n=0\\
+&amp;b_n=\frac{4}{T}\int^{T/2}_{0} f(t) sin(n\omega_0t) \,dt  \\
+\end{aligned}
+}
+\end{aligned}\\
+\end{array}\]</span>
+<p>\ P_{1}=F_{rms}<sup>2=a_0</sup>2+_{n=1}<sup>{}(a_n</sup>2+b_n^2) $$</p>
 
       
     </div>
