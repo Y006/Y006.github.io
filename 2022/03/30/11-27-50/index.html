@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"y006.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="OpenCV In Python 为什么学习 OpenCV？ 电子设计中使用OpenCV进行图像处理的仿真 使用工具： python 安装OpenCV： 1pip install opencv-python 例程展示 官网链接 Getting Started with Images 图片入门——读取和显示图片 12345678910111213141516#作为第一步，导入O">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenCv笔记">
+<meta property="og:url" content="https://y006.github.io/2022/03/30/11-27-50/index.html">
+<meta property="og:site_name" content="我的Bolg">
+<meta property="og:description" content="OpenCV In Python 为什么学习 OpenCV？ 电子设计中使用OpenCV进行图像处理的仿真 使用工具： python 安装OpenCV： 1pip install opencv-python 例程展示 官网链接 Getting Started with Images 图片入门——读取和显示图片 12345678910111213141516#作为第一步，导入O">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-30T03:27:50.000Z">
+<meta property="article:modified_time" content="2022-03-30T11:22:31.668Z">
+<meta property="article:author" content="邱金羽">
+<meta property="article:tag" content="电子设计">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://y006.github.io/2022/03/30/11-27-50/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://y006.github.io/2022/03/30/11-27-50/","path":"2022/03/30/11-27-50/","title":"OpenCv笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>OpenCv笔记 | 我的Bolg</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我的Bolg</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我的技术博客！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#opencv-in-python"><span class="nav-number">1.</span> <span class="nav-text">OpenCV In Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E7%A8%8B%E5%B1%95%E7%A4%BA"><span class="nav-number">1.1.</span> <span class="nav-text">例程展示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#getting-started-with-images"><span class="nav-number">1.1.1.</span> <span class="nav-text">Getting Started with Images</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#capture-video-from-camera"><span class="nav-number">1.2.</span> <span class="nav-text">Capture Video from Camera</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-operations-on-images"><span class="nav-number">1.2.1.</span> <span class="nav-text">Basic Operations on Images</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">邱金羽</p>
+  <div class="site-description" itemprop="description">联系我：2420457716@qq.com</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/32844822/dynamic" title="Bilibili个人空间 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;32844822&#x2F;dynamic" rel="noopener" target="_blank">Bilibili个人空间</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/qiu-jin-yu-60" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;qiu-jin-yu-60" rel="noopener" target="_blank">知乎</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.zhihu.com/people/qiu-jin-yu-60" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;qiu-jin-yu-60" rel="noopener" target="_blank">My Zhihu</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/03/30/11-27-50/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的Bolg">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OpenCv笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-03-30 11:27:50 / 修改时间：19:22:31" itemprop="dateCreated datePublished" datetime="2022-03-30T11:27:50+08:00">2022-03-30</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/03/30/11-27-50/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/30/11-27-50/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="opencv-in-python">OpenCV In Python</h1>
+<p>为什么学习 OpenCV？</p>
+<p>电子设计中使用OpenCV进行图像处理的仿真</p>
+<p>使用工具：</p>
+<p>python</p>
+<p>安装OpenCV：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install opencv-python</span><br></pre></td></tr></table></figure>
+<h2 id="例程展示">例程展示</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html">官网链接</a></p>
+<h3 id="getting-started-with-images">Getting Started with Images</h3>
+<p>图片入门——读取和显示图片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#作为第一步，导入OpenCV python库。正确的方法是给它附加赋一个名称cv，下面将使用它来引用这个库。</span></span><br><span class="line"><span class="comment">#（不知道为什么要加别称，但是实践是不加别称也可以使用）</span></span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="comment">#调用cv::imread()来读入图片（在官网的示例中使用了绝对路径，在我实践中我的电脑上需要使用绝对路径，具体原因不清楚。）</span></span><br><span class="line">img = cv.imread(cv.samples.findFile(<span class="string">r&#x27;C:\Users\qjy\Desktop\2.jpg&#x27;</span>))</span><br><span class="line"><span class="comment">#如果图像打开失败，退出并显示“不能读取图片。”</span></span><br><span class="line"><span class="keyword">if</span> img <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    sys.exit(<span class="string">&quot;不能读取图片。&quot;</span>)</span><br><span class="line"><span class="comment">#使用cv::imshow()显示图片，cv::waitkey()用于维持图片显示：cv::waitKey函数唯一的参数是等待用户输入的时间(以毫秒为单位)。零意味着永远等待。返回值是被按下的键。</span></span><br><span class="line">cv.imshow(<span class="string">&quot;显示窗口&quot;</span>, img)</span><br><span class="line">k = cv.waitKey(<span class="number">0</span>)</span><br><span class="line"><span class="comment">#如果按下的键是“s”键，图像将被写入一个文件。为此，cv::imwrite()函数被调用，该函数具有文件路径和cv::Mat对象作为参数。</span></span><br><span class="line"><span class="keyword">if</span> k == <span class="built_in">ord</span>(<span class="string">&quot;s&quot;</span>):</span><br><span class="line">    cv.imwrite(<span class="string">&quot;另存为图片名&quot;</span>, img)</span><br><span class="line">    k = cv.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>读取图像函数：cv::imread</p>
+<p>第一个参数指定的文件路径来加载图像。第二个参数是可选的，它指定图像的格式:</p>
+<ul>
+<li><p>IMREAD_COLOR 以BGR 8位格式加载图像。这是这里使用的<strong>默认</strong>。</p></li>
+<li><p>IMREAD_UNCHANGED 按原样加载图像(包括alpha通道)。</p></li>
+<li><p>IMREAD_GRAYSCALE 以灰度值加载图像。</p></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#具体写法</span></span><br><span class="line">img = cv.imread(cv.samples.findFile(<span class="string">r&#x27;C:\Users\qjy\Desktop\2.jpg&#x27;</span>),cv.IMREAD_GRAYSCALE)</span><br></pre></td></tr></table></figure>
+<p>备注：</p>
+<ul>
+<li><p>对于彩色图像，解码后的图像将以B G R顺序存储通道。</p></li>
+<li><p>当使用IMREAD_GRAYSCALE时，如果可用，将使用编解码器的内部灰度转换。结果可能与cvtColor()的输出不同</p></li>
+</ul></li>
+</ol>
+<h2 id="capture-video-from-camera">Capture Video from Camera</h2>
+<p>视频入门——调用电脑摄像头并获取视频</p>
+<p>有时我们需要用摄像头捕获实时流，OpenCV提供了一个非常简单的接口来做到这一点。本次任务使用电脑内置的摄像头捕获视频并且显示。</p>
+<p>要捕获视频，您需要创建一个<strong>VideoCapture</strong>对象。它的参数可以是设备索引或视频文件的名称。设备索引只是指定哪个摄像机的数字。通常会连接一个摄像头。所以我只是传递0（或 -1）。你可以通过传递1来选择第二个摄像机，以此类推。之后，您可以逐帧捕捉。但在最后，不要忘记释放<strong>Capture</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line">cap = cv.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> cap.isOpened():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Cannot open camera&quot;</span>)</span><br><span class="line">    exit()</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="comment"># Capture frame-by-frame</span></span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    <span class="comment"># if frame is read correctly ret is True</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ret:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Can&#x27;t receive frame (stream end?). Exiting ...&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="comment"># Our operations on the frame come here</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Display the resulting frame</span></span><br><span class="line">    cv.imshow(<span class="string">&#x27;frame&#x27;</span>, frame)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>) == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="comment"># When everything done, release the capture</span></span><br><span class="line">cap.release()</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line">cap = cv.VideoCapture(<span class="string">r&#x27;C:\Users\qjy\Desktop\a.mp4&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> cap.isOpened():</span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    <span class="comment"># if frame is read correctly ret is True</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ret:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Can&#x27;t receive frame (stream end?). Exiting ...&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)</span><br><span class="line">    cv.imshow(<span class="string">&#x27;frame&#x27;</span>, gray)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">1</span>) == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cap.release()</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h3 id="basic-operations-on-images">Basic Operations on Images</h3>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Q：如果阅读本文需要付费，你是否愿意为此支付1元？</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="邱金羽 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="邱金羽 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>邱金羽
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://y006.github.io/2022/03/30/11-27-50/" title="OpenCv笔记">https://y006.github.io/2022/03/30/11-27-50/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/" rel="tag"># 电子设计</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/03/29/16-12-02/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">邱金羽</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"Bolgqjy","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
