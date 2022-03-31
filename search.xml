@@ -1,55 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>VScode配置笔记</title>
-    <url>/2022/02/20/22-32-35/</url>
-    <content><![CDATA[<h2 id="vscode配置笔记">VScode配置笔记</h2>
-<ol type="1">
-<li><p>下载并安装编译器MinGW：https://bit.ly/mingw10</p></li>
-<li><p>将MinGW的bin文件路径添加到系统环境变量中</p></li>
-<li><p>在cmd中运行</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">g++ --version</span><br></pre></td></tr></table></figure>
-<p>检测是否成功配置路径</p></li>
-<li><p>安装VScode：<a href="https://code.visualstudio.com/">Visual Studio Code - Code Editing. Redefined</a></p></li>
-<li><p>“设置”中输入"run in terminal"<img src="/2022/02/20/22-32-35/image-20210907225325312.png" alt="image-20210907225325312"></p></li>
-<li><p>安装插件”Code Runner“和”C/C++“；选装”Chinese (Simplified) Language Pack for Visual Studio Code“</p></li>
-<li><p>为了正确地在文本编辑器上敲除中文，需要给文本编辑器设置合适的编码方式：<img src="/2022/02/20/22-32-35/Users\qjy\AppData\Roaming\Typora\typora-user-images\image-20210916093752004.png" alt="image-20210916093752004"></p>
-<p>点红框，选择“通过编码重新打开”，输入编码方式即可。</p>
-<p>打开cmd，查看“属性”可得知终端的编码方式</p>
-<p><img src="/2022/02/20/22-32-35/image-20210916093952277.png" alt="image-20210916093952277" style="zoom:25%;"></p>
-<p>终端的编码方式需要与编辑器的编码方式匹配</p>
-<p>在终端输入：“chcp 65001”可以切换代码页到使用UTF8。</p></li>
-<li><p>想要正确识别别人代码中的中文，需要“设置”中输入"<strong>files.autoGuessEncoding</strong>"<img src="/2022/02/20/22-32-35/image-20210907225635399.png" alt="image-20210907225635399"></p></li>
-<li><p>设置自动保存：“设置“中输入”<strong>auto save</strong>“，选择"afterDelay"选项</p></li>
-<li><p>設置自動格式化：“设置”中输入“<strong>editor.formatOnType</strong>”，选择True“</p></li>
-<li><p>”ctrl+k“配合”ctrl+t“可快速切换主题</p></li>
-<li><p>”ctrl+“是放大</p></li>
-<li><p>单行注释：“Ctrl + /”；块注释：“Alt+Shift+A”</p></li>
-<li><p>多文件编译：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment">#code in CMakeLists.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set the project name</span></span><br><span class="line"><span class="keyword">project</span>(Tutorial)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the executable</span></span><br><span class="line"><span class="keyword">add_executable</span>(Tutorial tutorial.cxx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#output in Chinese</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GB2312&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="补充终端shell命令">补充：终端（shell）命令</h2>
-<p>不区分大小写。</p>
-<p>tab键补全内容，再次点击切换内容</p>
-<h3 id="文件跳转">文件跳转</h3>
-<p>磁盘跳转</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">D:</span></span><br></pre></td></tr></table></figure>
-<p>显示所有文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
-<p>树形显示所有文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
-<p>进入下一级文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd 文件名（有空格的夹引号，平时使用tab补全就好）</span><br></pre></td></tr></table></figure>
-<p>进入上一级文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd..</span><br></pre></td></tr></table></figure>
-<p>退回磁盘根目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd/</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>备忘笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Homework</title>
     <url>/2022/02/24/11-07-35/</url>
     <content><![CDATA[<h2 id="homework">Homework</h2>
@@ -349,6 +300,55 @@
 ]]></content>
       <tags>
         <tag>Electrical Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VScode配置笔记</title>
+    <url>/2022/02/20/22-32-35/</url>
+    <content><![CDATA[<h2 id="vscode配置笔记">VScode配置笔记</h2>
+<ol type="1">
+<li><p>下载并安装编译器MinGW：https://bit.ly/mingw10</p></li>
+<li><p>将MinGW的bin文件路径添加到系统环境变量中</p></li>
+<li><p>在cmd中运行</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">g++ --version</span><br></pre></td></tr></table></figure>
+<p>检测是否成功配置路径</p></li>
+<li><p>安装VScode：<a href="https://code.visualstudio.com/">Visual Studio Code - Code Editing. Redefined</a></p></li>
+<li><p>“设置”中输入"run in terminal"<img src="/2022/02/20/22-32-35/image-20210907225325312.png" alt="image-20210907225325312"></p></li>
+<li><p>安装插件”Code Runner“和”C/C++“；选装”Chinese (Simplified) Language Pack for Visual Studio Code“</p></li>
+<li><p>为了正确地在文本编辑器上敲除中文，需要给文本编辑器设置合适的编码方式：<img src="/2022/02/20/22-32-35/Users\qjy\AppData\Roaming\Typora\typora-user-images\image-20210916093752004.png" alt="image-20210916093752004"></p>
+<p>点红框，选择“通过编码重新打开”，输入编码方式即可。</p>
+<p>打开cmd，查看“属性”可得知终端的编码方式</p>
+<p><img src="/2022/02/20/22-32-35/image-20210916093952277.png" alt="image-20210916093952277" style="zoom:25%;"></p>
+<p>终端的编码方式需要与编辑器的编码方式匹配</p>
+<p>在终端输入：“chcp 65001”可以切换代码页到使用UTF8。</p></li>
+<li><p>想要正确识别别人代码中的中文，需要“设置”中输入"<strong>files.autoGuessEncoding</strong>"<img src="/2022/02/20/22-32-35/image-20210907225635399.png" alt="image-20210907225635399"></p></li>
+<li><p>设置自动保存：“设置“中输入”<strong>auto save</strong>“，选择"afterDelay"选项</p></li>
+<li><p>設置自動格式化：“设置”中输入“<strong>editor.formatOnType</strong>”，选择True“</p></li>
+<li><p>”ctrl+k“配合”ctrl+t“可快速切换主题</p></li>
+<li><p>”ctrl+“是放大</p></li>
+<li><p>单行注释：“Ctrl + /”；块注释：“Alt+Shift+A”</p></li>
+<li><p>多文件编译：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment">#code in CMakeLists.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set the project name</span></span><br><span class="line"><span class="keyword">project</span>(Tutorial)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the executable</span></span><br><span class="line"><span class="keyword">add_executable</span>(Tutorial tutorial.cxx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#output in Chinese</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GB2312&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="补充终端shell命令">补充：终端（shell）命令</h2>
+<p>不区分大小写。</p>
+<p>tab键补全内容，再次点击切换内容</p>
+<h3 id="文件跳转">文件跳转</h3>
+<p>磁盘跳转</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">D:</span></span><br></pre></td></tr></table></figure>
+<p>显示所有文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
+<p>树形显示所有文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
+<p>进入下一级文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd 文件名（有空格的夹引号，平时使用tab补全就好）</span><br></pre></td></tr></table></figure>
+<p>进入上一级文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd..</span><br></pre></td></tr></table></figure>
+<p>退回磁盘根目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd/</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>备忘笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -1048,107 +1048,6 @@ x^n+a_1x^{n-1}+\cdot\cdot\cdot+a_{n-1}x&#39;+a_n=f(t)\tag{2}
 ]]></content>
       <tags>
         <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构笔记</title>
-    <url>/2022/02/17/11-07-35/</url>
-    <content><![CDATA[<h1 id="数据结构">数据结构</h1>
-<h2 id="链表">链表</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">double</span> a, <span class="type">int</span> b, Node* c) : <span class="built_in">coef</span>(a), <span class="built_in">expn</span>(b), <span class="built_in">next</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    Node* next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Node*&amp; head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> num; std::cin &gt;&gt; num;<span class="comment">//每个链表中数字的个数</span></span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; num / <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        std::cin &gt;&gt; coef &gt;&gt; expn;</span><br><span class="line">        Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(coef, expn, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="keyword">if</span> (head != <span class="literal">NULL</span>)</span><br><span class="line">            new_node-&gt;next = head;</span><br><span class="line">        head = new_node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Add</span><span class="params">(Node*&amp; head1, Node*&amp; head2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (head2 != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Node* ptr1 = head1;</span><br><span class="line">        <span class="keyword">while</span> (ptr1 != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (head2-&gt;expn == ptr1-&gt;expn)</span><br><span class="line">            &#123;</span><br><span class="line">                ptr1-&gt;coef = ptr1-&gt;coef + head2-&gt;coef;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ptr1 = ptr1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ptr1 == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(head2-&gt;coef, head2-&gt;expn, head1);</span><br><span class="line">            head1 = new_node;</span><br><span class="line">        &#125;</span><br><span class="line">        head2 = head2-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node* x1 = <span class="literal">NULL</span>, * x2 = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Create</span>(x1); <span class="built_in">Create</span>(x2);</span><br><span class="line">    <span class="built_in">Add</span>(x1, x2);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="树">树</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">tree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">tree</span>(<span class="type">char</span> a, tree *b, tree *c) : <span class="built_in">data</span>(a), <span class="built_in">left</span>(b), <span class="built_in">right</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    tree *left;</span><br><span class="line">    tree *right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(tree *&amp;root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">    cin &gt;&gt; c;</span><br><span class="line">    <span class="keyword">if</span> (c != <span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        root = <span class="keyword">new</span> <span class="built_in">tree</span>(c, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;left);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PreOrder</span><span class="params">(tree *root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stack&lt;tree *&gt; stack;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">NULL</span> || !stack.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//此处输出是前序遍历</span></span><br><span class="line">            cout &lt;&lt; root-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            stack.<span class="built_in">push</span>(root);</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            root = stack.<span class="built_in">top</span>();</span><br><span class="line">            <span class="comment">//此处输出是中序遍历</span></span><br><span class="line">            <span class="comment">// cout&lt;&lt;root-&gt;data&lt;&lt;&quot; &quot;;</span></span><br><span class="line">            root = root-&gt;right;</span><br><span class="line">            stack.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree *root = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Creat</span>(root);</span><br><span class="line">    <span class="built_in">PreOrder</span>(root);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="树的非递归前序遍历">树的非递归前序遍历</h4>
-<ol type="1">
-<li>创建一个栈
-<ol type="1">
-<li>只要节点不为空或者栈不为空
-<ol type="1">
-<li>如果节点为空
-<ol type="1">
-<li>打印</li>
-<li>入栈</li>
-<li>左走</li>
-</ol></li>
-<li>如果节点不为空
-<ol type="1">
-<li>取栈首</li>
-<li>右走</li>
-<li>出栈</li>
-</ol></li>
-</ol></li>
-</ol></li>
-</ol>
-<h2 id="图">图</h2>
-<h3 id="邻接矩阵">邻接矩阵</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_VERTEX_NUM 20</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> vertex[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">bool</span> visited[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> edge[MAX_VERTEX_NUM][MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> vertex_num, edge_num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; G-&gt;vertex_num;</span><br><span class="line">    cin &gt;&gt; G-&gt;edge_num;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; G-&gt;vertex[i];</span><br><span class="line">        G-&gt;visited[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">            G-&gt;edge[i][j] = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; G-&gt;edge_num; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G-&gt;edge[v1][v2] = <span class="number">1</span>;</span><br><span class="line">        G-&gt;edge[v2][v1] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Graph* G, <span class="type">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; G-&gt;vertex[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;edge[i][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])</span><br><span class="line">            <span class="built_in">DFS</span>(G, j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">visit</span><span class="params">(queue&lt;<span class="type">int</span>&gt;&amp; queue, <span class="type">int</span> i, Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    queue.<span class="built_in">push</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; queue;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">if</span> (!G-&gt;visited[i])<span class="comment">//这个模块起名为访问列吧</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">visit</span>(queue, i, G);<span class="comment">//每列入队</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())<span class="comment">//行入队后检查队是否为空，队首作为行的检测依据</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">                    <span class="keyword">if</span> (G-&gt;edge[queue.<span class="built_in">front</span>()][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])<span class="comment">//这个模块起名为访问行</span></span><br><span class="line">                        <span class="built_in">visit</span>(queue, j, G);<span class="comment">//每行入队</span></span><br><span class="line">                cout &lt;&lt; G-&gt;vertex[queue.<span class="built_in">front</span>()] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">                queue.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//测试数据：9 15  A B C D E F G H I 0 1 0 5 1 2 1 8 1 6 2 3 2 8 3 4 3 7 3 6 3 8 4 5 4 7 5 6 6 7</span></span><br><span class="line">    Graph G;</span><br><span class="line">    <span class="built_in">Create</span>(&amp;G);</span><br><span class="line">    <span class="comment">//每次只能选择一个运行</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G, 0);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="邻接矩阵的广度遍历">邻接矩阵的广度遍历</h4>
-<ol type="1">
-<li>创建队列</li>
-<li>遍历 i (列)所有节点，对于未访问的节点进行下述操作
-<ol type="1">
-<li>打印 i 处节点并设置为访问过</li>
-<li>将数字 i 入队</li>
-<li>队列不为空时执行如下操作
-<ol type="1">
-<li>将队首元素赋值给 i</li>
-<li>遍历 j (行)所有节点，当 i 和 j 有关系且 j 处节点未访问时执行如下操作
-<ol type="1">
-<li>打印 j 处节点并设置为访问过</li>
-<li>将数字 j 入队</li>
-</ol></li>
-<li>队首出队</li>
-</ol></li>
-</ol></li>
-</ol>
-<h4 id="邻接矩阵的深度遍历">邻接矩阵的深度遍历</h4>
-<ol type="1">
-<li>遍历 i (列)所有节点，未访问节点进入 DFS(G,i)</li>
-<li>DFS 函数： <br>1. 打印进入 DFS 的节点并设置为访问 <br>2. 遍历 j (行)所有节点，当 i 和 j 有关系且未访问的节点进入 DFS(G,j)</li>
-</ol>
-<h3 id="邻接表">邻接表</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Vertex</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    <span class="type">bool</span> visited;</span><br><span class="line">    list&lt;Vertex*&gt; edge;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(vector&lt;Vertex&gt;&amp; G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> vertex_num; cin &gt;&gt; vertex_num;</span><br><span class="line">    <span class="type">int</span> edge_num; cin &gt;&gt; edge_num;</span><br><span class="line"></span><br><span class="line">    Vertex temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; temp.data;</span><br><span class="line">        temp.visited = <span class="literal">false</span>;</span><br><span class="line">        G.<span class="built_in">push_back</span>(temp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span> * edge_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G[v1].edge.<span class="built_in">push_back</span>(&amp;G[v2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Vertex* <span class="title">next_vertex</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">return</span> *iiter;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (vertex != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; vertex-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        vertex-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_level</span><span class="params">(queue&lt;Vertex*&gt;&amp; queue, Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            queue.<span class="built_in">push</span>((*iiter));</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;Vertex*&gt; queue;</span><br><span class="line">    queue.<span class="built_in">push</span>(vertex);</span><br><span class="line">    <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; queue.<span class="built_in">front</span>()-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        queue.<span class="built_in">front</span>()-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">get_level</span>(queue, queue.<span class="built_in">front</span>());</span><br><span class="line">        queue.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 9 15 A B C D E F G H I 0 1 0 5 1 0 1 2 1 6 1 8 2 1 2 3 2 8 3 2 3 4 3 6 3 7 3 8 4 3 4 5 4 7 5 0 5 4 5 6 6 1 6 3 6 5 6 7 7 3 7 4 7 6 8 1 8 2 8 3</span></span><br><span class="line">    vector&lt;Vertex&gt; G;</span><br><span class="line">    <span class="built_in">Creat</span>(G);</span><br><span class="line">    <span class="comment">//每次只能运行一个</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G[0]);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="邻接表的深度遍历">邻接表的深度遍历</h4>
-<p>·只要顶点不为空，打印顶点并设置为访问过；将下一个顶点进入该函数</p>
-<h4 id="邻接表的广度遍历">邻接表的广度遍历</h4>
-<ol type="1">
-<li>创建队列</li>
-<li>第一个顶点入队</li>
-<li>队不为空，执行下述操作
-<ol type="1">
-<li>取队首顶点</li>
-<li>打印队首顶点并设置为访问过</li>
-<li>获得下一层顶点</li>
-<li>队首出队</li>
-</ol></li>
-</ol>
-<h4 id="next_node">next_node</h4>
-<p>查链表，找到未访问顶点；设置为访问，返回该顶点</p>
-<h4 id="get_level">get_level</h4>
-<p>查链表，找到未访问顶点；设置为访问，将该顶点入队</p>
-<h2 id="排序">排序</h2>
-<h3 id="快排">快排</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (begin &lt; end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> sbit = begin;</span><br><span class="line">        <span class="type">int</span> pivot = arry[end];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = begin; j &lt; end; j++)</span><br><span class="line">            <span class="keyword">if</span> (arry[j] &lt; pivot)</span><br><span class="line">              &#123;<span class="built_in">swap</span>(arry[j], arry[sbit]); sbit++;&#125;</span><br><span class="line">              <span class="comment">//每个数字与pivot比较，较小的与sbit交换</span></span><br><span class="line">              <span class="comment">//将pivot与sbit交换</span></span><br><span class="line">        <span class="built_in">swap</span>(arry[sbit], arry[end]);</span><br><span class="line">        <span class="built_in">sort</span>(arry, begin, sbit - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">sort</span>(arry, sbit + <span class="number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">8</span>] = &#123; <span class="number">27</span>, <span class="number">13</span>, <span class="number">65</span>, <span class="number">8</span>, <span class="number">45</span>, <span class="number">3</span>, <span class="number">81</span>, <span class="number">72</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">0</span>, <span class="number">7</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="堆排">堆排</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heap</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> root = begin;</span><br><span class="line">    <span class="type">int</span> left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[right] &amp;&amp; right &lt;= end) left++;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[root]) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">swap</span>(arry[left], arry[root]);</span><br><span class="line">            root = left;</span><br><span class="line">            left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">            right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, i, end);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arry[<span class="number">0</span>], arry[i]);</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, <span class="number">0</span>, i<span class="number">-1</span> );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">11</span>] = &#123; <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">16</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li>堆排序</li>
-<li>得最大堆的方法：
-<ol type="1">
-<li>范围：从 非叶子节点 到 根节点<br>
-</li>
-<li>调整对象：循环因子 到 表</li>
-</ol></li>
-<li>排序的方法：
-<ol type="1">
-<li>范围：从 表尾 到 根节点前</li>
-<li>调整对象：无序首 到 无序尾</li>
-</ol></li>
-<li>维持堆的方法：</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -1910,6 +1809,107 @@ x + 2y &amp;= 1\\
       </tags>
   </entry>
   <entry>
+    <title>数据结构笔记</title>
+    <url>/2022/02/17/11-07-35/</url>
+    <content><![CDATA[<h1 id="数据结构">数据结构</h1>
+<h2 id="链表">链表</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">double</span> a, <span class="type">int</span> b, Node* c) : <span class="built_in">coef</span>(a), <span class="built_in">expn</span>(b), <span class="built_in">next</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    Node* next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Node*&amp; head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> num; std::cin &gt;&gt; num;<span class="comment">//每个链表中数字的个数</span></span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; num / <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        std::cin &gt;&gt; coef &gt;&gt; expn;</span><br><span class="line">        Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(coef, expn, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="keyword">if</span> (head != <span class="literal">NULL</span>)</span><br><span class="line">            new_node-&gt;next = head;</span><br><span class="line">        head = new_node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Add</span><span class="params">(Node*&amp; head1, Node*&amp; head2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (head2 != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Node* ptr1 = head1;</span><br><span class="line">        <span class="keyword">while</span> (ptr1 != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (head2-&gt;expn == ptr1-&gt;expn)</span><br><span class="line">            &#123;</span><br><span class="line">                ptr1-&gt;coef = ptr1-&gt;coef + head2-&gt;coef;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ptr1 = ptr1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ptr1 == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(head2-&gt;coef, head2-&gt;expn, head1);</span><br><span class="line">            head1 = new_node;</span><br><span class="line">        &#125;</span><br><span class="line">        head2 = head2-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node* x1 = <span class="literal">NULL</span>, * x2 = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Create</span>(x1); <span class="built_in">Create</span>(x2);</span><br><span class="line">    <span class="built_in">Add</span>(x1, x2);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="树">树</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">tree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">tree</span>(<span class="type">char</span> a, tree *b, tree *c) : <span class="built_in">data</span>(a), <span class="built_in">left</span>(b), <span class="built_in">right</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    tree *left;</span><br><span class="line">    tree *right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(tree *&amp;root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">    cin &gt;&gt; c;</span><br><span class="line">    <span class="keyword">if</span> (c != <span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        root = <span class="keyword">new</span> <span class="built_in">tree</span>(c, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;left);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PreOrder</span><span class="params">(tree *root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stack&lt;tree *&gt; stack;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">NULL</span> || !stack.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//此处输出是前序遍历</span></span><br><span class="line">            cout &lt;&lt; root-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            stack.<span class="built_in">push</span>(root);</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            root = stack.<span class="built_in">top</span>();</span><br><span class="line">            <span class="comment">//此处输出是中序遍历</span></span><br><span class="line">            <span class="comment">// cout&lt;&lt;root-&gt;data&lt;&lt;&quot; &quot;;</span></span><br><span class="line">            root = root-&gt;right;</span><br><span class="line">            stack.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree *root = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Creat</span>(root);</span><br><span class="line">    <span class="built_in">PreOrder</span>(root);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="树的非递归前序遍历">树的非递归前序遍历</h4>
+<ol type="1">
+<li>创建一个栈
+<ol type="1">
+<li>只要节点不为空或者栈不为空
+<ol type="1">
+<li>如果节点为空
+<ol type="1">
+<li>打印</li>
+<li>入栈</li>
+<li>左走</li>
+</ol></li>
+<li>如果节点不为空
+<ol type="1">
+<li>取栈首</li>
+<li>右走</li>
+<li>出栈</li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<h2 id="图">图</h2>
+<h3 id="邻接矩阵">邻接矩阵</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_VERTEX_NUM 20</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> vertex[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">bool</span> visited[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> edge[MAX_VERTEX_NUM][MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> vertex_num, edge_num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; G-&gt;vertex_num;</span><br><span class="line">    cin &gt;&gt; G-&gt;edge_num;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; G-&gt;vertex[i];</span><br><span class="line">        G-&gt;visited[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">            G-&gt;edge[i][j] = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; G-&gt;edge_num; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G-&gt;edge[v1][v2] = <span class="number">1</span>;</span><br><span class="line">        G-&gt;edge[v2][v1] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Graph* G, <span class="type">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; G-&gt;vertex[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;edge[i][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])</span><br><span class="line">            <span class="built_in">DFS</span>(G, j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">visit</span><span class="params">(queue&lt;<span class="type">int</span>&gt;&amp; queue, <span class="type">int</span> i, Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    queue.<span class="built_in">push</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; queue;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">if</span> (!G-&gt;visited[i])<span class="comment">//这个模块起名为访问列吧</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">visit</span>(queue, i, G);<span class="comment">//每列入队</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())<span class="comment">//行入队后检查队是否为空，队首作为行的检测依据</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">                    <span class="keyword">if</span> (G-&gt;edge[queue.<span class="built_in">front</span>()][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])<span class="comment">//这个模块起名为访问行</span></span><br><span class="line">                        <span class="built_in">visit</span>(queue, j, G);<span class="comment">//每行入队</span></span><br><span class="line">                cout &lt;&lt; G-&gt;vertex[queue.<span class="built_in">front</span>()] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">                queue.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//测试数据：9 15  A B C D E F G H I 0 1 0 5 1 2 1 8 1 6 2 3 2 8 3 4 3 7 3 6 3 8 4 5 4 7 5 6 6 7</span></span><br><span class="line">    Graph G;</span><br><span class="line">    <span class="built_in">Create</span>(&amp;G);</span><br><span class="line">    <span class="comment">//每次只能选择一个运行</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G, 0);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="邻接矩阵的广度遍历">邻接矩阵的广度遍历</h4>
+<ol type="1">
+<li>创建队列</li>
+<li>遍历 i (列)所有节点，对于未访问的节点进行下述操作
+<ol type="1">
+<li>打印 i 处节点并设置为访问过</li>
+<li>将数字 i 入队</li>
+<li>队列不为空时执行如下操作
+<ol type="1">
+<li>将队首元素赋值给 i</li>
+<li>遍历 j (行)所有节点，当 i 和 j 有关系且 j 处节点未访问时执行如下操作
+<ol type="1">
+<li>打印 j 处节点并设置为访问过</li>
+<li>将数字 j 入队</li>
+</ol></li>
+<li>队首出队</li>
+</ol></li>
+</ol></li>
+</ol>
+<h4 id="邻接矩阵的深度遍历">邻接矩阵的深度遍历</h4>
+<ol type="1">
+<li>遍历 i (列)所有节点，未访问节点进入 DFS(G,i)</li>
+<li>DFS 函数： <br>1. 打印进入 DFS 的节点并设置为访问 <br>2. 遍历 j (行)所有节点，当 i 和 j 有关系且未访问的节点进入 DFS(G,j)</li>
+</ol>
+<h3 id="邻接表">邻接表</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Vertex</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    <span class="type">bool</span> visited;</span><br><span class="line">    list&lt;Vertex*&gt; edge;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(vector&lt;Vertex&gt;&amp; G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> vertex_num; cin &gt;&gt; vertex_num;</span><br><span class="line">    <span class="type">int</span> edge_num; cin &gt;&gt; edge_num;</span><br><span class="line"></span><br><span class="line">    Vertex temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; temp.data;</span><br><span class="line">        temp.visited = <span class="literal">false</span>;</span><br><span class="line">        G.<span class="built_in">push_back</span>(temp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span> * edge_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G[v1].edge.<span class="built_in">push_back</span>(&amp;G[v2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Vertex* <span class="title">next_vertex</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">return</span> *iiter;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (vertex != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; vertex-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        vertex-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_level</span><span class="params">(queue&lt;Vertex*&gt;&amp; queue, Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            queue.<span class="built_in">push</span>((*iiter));</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;Vertex*&gt; queue;</span><br><span class="line">    queue.<span class="built_in">push</span>(vertex);</span><br><span class="line">    <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; queue.<span class="built_in">front</span>()-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        queue.<span class="built_in">front</span>()-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">get_level</span>(queue, queue.<span class="built_in">front</span>());</span><br><span class="line">        queue.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 9 15 A B C D E F G H I 0 1 0 5 1 0 1 2 1 6 1 8 2 1 2 3 2 8 3 2 3 4 3 6 3 7 3 8 4 3 4 5 4 7 5 0 5 4 5 6 6 1 6 3 6 5 6 7 7 3 7 4 7 6 8 1 8 2 8 3</span></span><br><span class="line">    vector&lt;Vertex&gt; G;</span><br><span class="line">    <span class="built_in">Creat</span>(G);</span><br><span class="line">    <span class="comment">//每次只能运行一个</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G[0]);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="邻接表的深度遍历">邻接表的深度遍历</h4>
+<p>·只要顶点不为空，打印顶点并设置为访问过；将下一个顶点进入该函数</p>
+<h4 id="邻接表的广度遍历">邻接表的广度遍历</h4>
+<ol type="1">
+<li>创建队列</li>
+<li>第一个顶点入队</li>
+<li>队不为空，执行下述操作
+<ol type="1">
+<li>取队首顶点</li>
+<li>打印队首顶点并设置为访问过</li>
+<li>获得下一层顶点</li>
+<li>队首出队</li>
+</ol></li>
+</ol>
+<h4 id="next_node">next_node</h4>
+<p>查链表，找到未访问顶点；设置为访问，返回该顶点</p>
+<h4 id="get_level">get_level</h4>
+<p>查链表，找到未访问顶点；设置为访问，将该顶点入队</p>
+<h2 id="排序">排序</h2>
+<h3 id="快排">快排</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (begin &lt; end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> sbit = begin;</span><br><span class="line">        <span class="type">int</span> pivot = arry[end];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = begin; j &lt; end; j++)</span><br><span class="line">            <span class="keyword">if</span> (arry[j] &lt; pivot)</span><br><span class="line">              &#123;<span class="built_in">swap</span>(arry[j], arry[sbit]); sbit++;&#125;</span><br><span class="line">              <span class="comment">//每个数字与pivot比较，较小的与sbit交换</span></span><br><span class="line">              <span class="comment">//将pivot与sbit交换</span></span><br><span class="line">        <span class="built_in">swap</span>(arry[sbit], arry[end]);</span><br><span class="line">        <span class="built_in">sort</span>(arry, begin, sbit - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">sort</span>(arry, sbit + <span class="number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">8</span>] = &#123; <span class="number">27</span>, <span class="number">13</span>, <span class="number">65</span>, <span class="number">8</span>, <span class="number">45</span>, <span class="number">3</span>, <span class="number">81</span>, <span class="number">72</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">0</span>, <span class="number">7</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="堆排">堆排</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heap</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> root = begin;</span><br><span class="line">    <span class="type">int</span> left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[right] &amp;&amp; right &lt;= end) left++;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[root]) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">swap</span>(arry[left], arry[root]);</span><br><span class="line">            root = left;</span><br><span class="line">            left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">            right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, i, end);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arry[<span class="number">0</span>], arry[i]);</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, <span class="number">0</span>, i<span class="number">-1</span> );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">11</span>] = &#123; <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">16</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li>堆排序</li>
+<li>得最大堆的方法：
+<ol type="1">
+<li>范围：从 非叶子节点 到 根节点<br>
+</li>
+<li>调整对象：循环因子 到 表</li>
+</ol></li>
+<li>排序的方法：
+<ol type="1">
+<li>范围：从 表尾 到 根节点前</li>
+<li>调整对象：无序首 到 无序尾</li>
+</ol></li>
+<li>维持堆的方法：</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Computer Science</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>电子学</title>
     <url>/2022/02/27/16-41-33/</url>
     <content><![CDATA[<h1 id="电子学">电子学</h1>
@@ -2220,15 +2220,6 @@ I_C=\frac{\alpha}{1-\alpha}I_B+\frac{1}{1-\alpha}I_{CBO}=\beta I_B+I_{CEO}
       </tags>
   </entry>
   <entry>
-    <title>电路基础</title>
-    <url>/2022/02/27/16-42-00/</url>
-    <content><![CDATA[
-]]></content>
-      <tags>
-        <tag>Electrical Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Matlab收集数据绘制箱型图</title>
     <url>/2022/02/25/08-07-35/</url>
     <content><![CDATA[<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%读取实验数据并绘制箱型图</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">##########################################################</span></span><br><span class="line"><span class="comment">使用手册：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">数据文档：(Data Text) 软件生成的文本文档，例如：qjy_q1-1_20210827181142。</span></span><br><span class="line"><span class="comment">数据文件夹：(Date File) 使用软件时创建的文件夹，例如：20210827；约定：数据文件夹的名称按“年月日”连续数字来命名，不按照约定命名可能导致读取异常。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">设置文件夹：</span></span><br><span class="line"><span class="comment">首先设置matlab的“当前文件夹”为包含“数据文件夹”的文件夹</span></span><br><span class="line"><span class="comment">根据提示输入“数据文件夹”名称</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">##########################################################</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line">prompt = <span class="string">&#x27;请输入数据文件夹名称：&#x27;</span>;</span><br><span class="line">str = input(prompt);</span><br><span class="line">DataFileName = sprintf(<span class="string">&#x27;%d&#x27;</span>,str);<span class="comment">%读入“数字”并转化为“文件夹名”</span></span><br><span class="line"></span><br><span class="line">stop_tag = <span class="built_in">length</span>(&#123;DataFileInf.name&#125;);<span class="comment">%先转化成元胞数组，然后统计元胞数量作为截至循环标签</span></span><br><span class="line"></span><br><span class="line">n=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> n+<span class="number">2</span>&lt;=stop_tag</span><br><span class="line">	DataText(n).Name=DataFileInf(n+<span class="number">2</span>).name;</span><br><span class="line"></span><br><span class="line">	userpath(DataFileInf(<span class="number">1</span>).folder);<span class="comment">%修改当前文件夹为“数据文件夹”</span></span><br><span class="line"></span><br><span class="line">	fileID = fopen(DataText(n).Name);</span><br><span class="line">	CellMidDatas = textscan(fileID,<span class="string">&#x27;%s %*[^\n]&#x27;</span>);<span class="comment">%以cell形式提取文件的第一列</span></span><br><span class="line">	fclose(fileID);</span><br><span class="line"></span><br><span class="line">	mid = CellMidDatas&#123;<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line">	C_usfull_data = [mid(<span class="number">3</span>,<span class="number">1</span>),mid(<span class="number">8</span>,<span class="number">1</span>),mid(<span class="number">9</span>,<span class="number">1</span>),mid(<span class="number">10</span>,<span class="number">1</span>)];<span class="comment">%提取有用信息</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">==================</span></span><br><span class="line"><span class="comment">J_sc=mid(3,1);</span></span><br><span class="line"><span class="comment">V_oc=mid(8,1);</span></span><br><span class="line"><span class="comment">FF=mid(9,1);</span></span><br><span class="line"><span class="comment">Eta = mid(10,1);</span></span><br><span class="line"><span class="comment">===================</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line">	usfull_data_str = cell2mat(C_usfull_data);<span class="comment">%将元胞数组转化为普通数组(单引号字符串的数组形式会自动合并)</span></span><br><span class="line">	C_usfull_data_num = regexp(usfull_data_str,<span class="string">&#x27;\d*\.?\d*&#x27;</span>,<span class="string">&#x27;match&#x27;</span>);<span class="comment">%提取字符串中的数字并以元胞数组形式储存</span></span><br><span class="line">	usfull_data_num=string(C_usfull_data_num);<span class="comment">%将元胞数组转换为普通(双引号字符串)数组</span></span><br><span class="line">	usfull_data = str2double(usfull_data_num);<span class="comment">%将字符串转化为数字</span></span><br><span class="line">	Data(n,:) = usfull_data(<span class="number">1</span>,:);</span><br><span class="line">	n=n+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">J_sc = Data(:,<span class="number">1</span>);</span><br><span class="line">V_oc = Data(:,<span class="number">2</span>);</span><br><span class="line">FF = Data(:,<span class="number">3</span>);</span><br><span class="line">Eta = Data(:,<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;统计数据完成&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -2237,6 +2228,15 @@ I_C=\frac{\alpha}{1-\alpha}I_B+\frac{1}{1-\alpha}I_{CBO}=\beta I_B+I_{CEO}
 ]]></content>
       <tags>
         <tag>备忘笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电路基础</title>
+    <url>/2022/02/27/16-42-00/</url>
+    <content><![CDATA[
+]]></content>
+      <tags>
+        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
@@ -2365,6 +2365,102 @@ so\:TH0=0x24,TL0=0x00;
 ]]></content>
       <tags>
         <tag>电子设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逻辑设计基础</title>
+    <url>/2022/03/09/16-14-26/</url>
+    <content><![CDATA[<h1 id="logic-design">Logic Design</h1>
+<h3 id="数制">数制</h3>
+<p>数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中<strong>基数</strong>是指使用数码的个数，例如：二进制的基数为<code>2</code>，十进制的基数为<code>10</code>。<strong>位权</strong>是指数制某位所表示的数值权重的大小，例如：十进制数<code>123</code>，<code>1</code>的位权是<code>100</code>，<code>2</code>的位权是<code>10</code>，<code>3</code>的位权是<code>1</code>。二进制数<code>1011</code>，从左至右<code>1</code>、<code>0</code>、<code>1</code>、<code>1</code>的位权依次是<code>8</code>、<code>4</code>、<code>2</code>、<code>1</code>。常用的数制有<strong>二</strong>、<strong>八</strong>、<strong>十</strong>、<strong>十六</strong>四种进制，书写时可以在相应数值尾部添加字母<strong>B</strong>、<strong>O</strong>、<strong>D</strong>、<strong>H</strong>或者下标<strong>2</strong>、<strong>8</strong>、<strong>10</strong>、<strong>16</strong>进行标识，计算机<strong>传输和保存数据</strong>通常使用的是<strong>二进制</strong>。</p>
+<h3 id="码制">码制</h3>
+<p>码制是计算机存储、传输数据所使用的编码规则；其中原码、反码、补码是计算机设备保存数值类型数据的编码方式，ASCII 与 Unicode 属于保存字符类型数据的编码格式；而 BCD 编码、格雷码则主要用于设备之间的数据<strong>传输以及转换</strong>。</p>
+<blockquote>
+<p>BCD 码的优点在于格式转换容易，十进制数值表达精度较高；缺点是增加了电路进行算术运算的复杂度，并且存储效率较低。</p>
+</blockquote>
+<h3 id="数字系统">数字系统</h3>
+<p>数字系统设计大致分为三个方面</p>
+<ul>
+<li>系统设计
+<ul>
+<li>系统设计是将一个数字系统划分为多个子系统进行设计。</li>
+</ul></li>
+<li>逻辑设计
+<ul>
+<li>逻辑设计是将多个逻辑功能块互联实现特定功能</li>
+</ul></li>
+<li>电路设计</li>
+</ul>
+<p>数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分析。开关电路有两种——组合电路和时序电路。</p>
+<p>开关电路分类：</p>
+<ul>
+<li>组合电路
+<ul>
+<li>组合电路中输出值仅与当前输入值有关</li>
+<li>组合电路的基本构成是逻辑门，逻辑设计就是将逻辑门相互连接起来以便将电路的输入信号转化为预期的输出信号。</li>
+</ul></li>
+<li>时序电路
+<ul>
+<li>时序电路中输出值不仅与当前输入值有关，也与之前的输入值有关；可以认为时序电路具有记忆功能</li>
+<li>时序电路的基本存储元件（存储之前的值）是触发器，触发器与逻辑门一起组成时序电路——如计数器和寄存器。</li>
+</ul></li>
+</ul>
+<h3 id="布尔代数">布尔代数</h3>
+<p>逻辑设计课程中我们使用二值布尔代数来设计开关电路。我们使用布尔变量来表示电路的输入和输出，其中布尔变量代表逻辑电路中的两种不同状态——</p>
+<p>普通代数中的<strong>交换律</strong>和<strong>结合律</strong>同样可以在布尔代数中使用。</p>
+<p>布尔代数中的交换律表明开关的位置（出现次序）不会影响最终结果，结合律表明开关导通的次序不会影响最终结果。</p>
+<p>在布尔代数中，分配律有两种形式：</p>
+<ul>
+<li><p>一种是普通的分配律：<span class="math inline">\(X(Y+Z)=XY+XZ\)</span></p>
+<p>​ 与运算可以分配在或运算上</p>
+<p>​ 去和括号内相乘</p></li>
+<li><p>另一种被称作第二分配律：<span class="math inline">\(X+(YZ)=(X+Y)(X+Z)\)</span></p>
+<p>​ 或运算可以分配在与运算上</p>
+<p>​ 去和括号内相加</p></li>
+</ul>
+<p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
+<h2 id="数字电路概念">数字电路概念</h2>
+<h3 id="高阻态">高阻态</h3>
+<p>高阻抗状态（<em>High impedance</em>）表示电路中的某个节点具有相对电路中其它点更高的阻抗，电路分析时通常将高阻态作为开路理解。即可以将其视为输出/输入电阻极大，极限状态可以认为是悬空（<em>断路</em>）的状态，高阻态通常使用字母<strong>Z</strong>表示。</p>
+<h3 id="三态门">三态门</h3>
+<p>数字电路中的三态逻辑（<em>Three-state logic</em>）是指其输出既可以是代表<code>0</code>和<code>1</code>的高低电平，也可以是其特有的高阻抗状态（<em>相当于隔断状态，电阻极大，类似于开路</em>）。</p>
+<p>具有高电平、低电平、高阻态三种状态的元器件称为三态器件，三态器件都通过一个控制使能端 B 来控制整个三态门电路的通断。当使能端高电平有效时，三态器件可以正常的<code>0</code>或<code>1</code>输出，当使能端低电平无效时，三态电路将会输出高阻态。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">输入端 A</th>
+<th style="text-align: left;">使能端 B</th>
+<th style="text-align: left;">输出端 C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>X</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Z</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="组合时序逻辑电路">组合/时序逻辑电路</h3>
+<ul>
+<li><strong>组合逻辑电路</strong>（<em>Combinational Logic Circuit</em>），其任一时刻的稳态输出仅与该时刻输入的变量取值有关，而与该时刻之前输入的变量取值无关。组合电路主要由各种逻辑门（<code>半加器</code>、<code>全加器</code>、<code>半减器</code>、<code>全减器</code>、<code>数据选择器</code>、<code>数据分配器</code>、<code>编码器</code>、<code>译码器</code>）组成，电路中没有记忆元件和反馈线。</li>
+<li><strong>时序逻辑电路</strong>（<em>Sequential Logic Circuit</em>）任意时刻的稳态输出不仅取决于当前输入，还与前一时刻输入的状态有关，换而言之，时序逻辑电路必须拥有特定的储存元件来保存前一次的输入状态。因此，时序逻辑电路除包含有组合逻辑电路以外，还必须含拥有存储信息能力的电路（<code>触发器</code>、<code>寄存器</code>、<code>计数器</code>）。</li>
+</ul>
+<h3 id="gpio">GPIO</h3>
+<p><strong>通用输入输出</strong>（<em>General-purpose input/output</em>），功能类似于 8051 单片机的 P0 到 P3 口，引脚输出的高低电平可由开发人员读写相应寄存器进行控制。该接口有时也称为<strong>总线扩展器</strong>，当开发板接口不够用时，可以通过转接板将其扩展为<code>I²C</code>、<code>SPI</code>等其它串行接口。</p>
+]]></content>
+      <tags>
+        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
@@ -2741,102 +2837,6 @@ so\:TH0=0x24,TL0=0x00;
 ]]></content>
       <tags>
         <tag>资料分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>逻辑设计基础</title>
-    <url>/2022/03/09/16-14-26/</url>
-    <content><![CDATA[<h1 id="logic-design">Logic Design</h1>
-<h3 id="数制">数制</h3>
-<p>数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中<strong>基数</strong>是指使用数码的个数，例如：二进制的基数为<code>2</code>，十进制的基数为<code>10</code>。<strong>位权</strong>是指数制某位所表示的数值权重的大小，例如：十进制数<code>123</code>，<code>1</code>的位权是<code>100</code>，<code>2</code>的位权是<code>10</code>，<code>3</code>的位权是<code>1</code>。二进制数<code>1011</code>，从左至右<code>1</code>、<code>0</code>、<code>1</code>、<code>1</code>的位权依次是<code>8</code>、<code>4</code>、<code>2</code>、<code>1</code>。常用的数制有<strong>二</strong>、<strong>八</strong>、<strong>十</strong>、<strong>十六</strong>四种进制，书写时可以在相应数值尾部添加字母<strong>B</strong>、<strong>O</strong>、<strong>D</strong>、<strong>H</strong>或者下标<strong>2</strong>、<strong>8</strong>、<strong>10</strong>、<strong>16</strong>进行标识，计算机<strong>传输和保存数据</strong>通常使用的是<strong>二进制</strong>。</p>
-<h3 id="码制">码制</h3>
-<p>码制是计算机存储、传输数据所使用的编码规则；其中原码、反码、补码是计算机设备保存数值类型数据的编码方式，ASCII 与 Unicode 属于保存字符类型数据的编码格式；而 BCD 编码、格雷码则主要用于设备之间的数据<strong>传输以及转换</strong>。</p>
-<blockquote>
-<p>BCD 码的优点在于格式转换容易，十进制数值表达精度较高；缺点是增加了电路进行算术运算的复杂度，并且存储效率较低。</p>
-</blockquote>
-<h3 id="数字系统">数字系统</h3>
-<p>数字系统设计大致分为三个方面</p>
-<ul>
-<li>系统设计
-<ul>
-<li>系统设计是将一个数字系统划分为多个子系统进行设计。</li>
-</ul></li>
-<li>逻辑设计
-<ul>
-<li>逻辑设计是将多个逻辑功能块互联实现特定功能</li>
-</ul></li>
-<li>电路设计</li>
-</ul>
-<p>数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分析。开关电路有两种——组合电路和时序电路。</p>
-<p>开关电路分类：</p>
-<ul>
-<li>组合电路
-<ul>
-<li>组合电路中输出值仅与当前输入值有关</li>
-<li>组合电路的基本构成是逻辑门，逻辑设计就是将逻辑门相互连接起来以便将电路的输入信号转化为预期的输出信号。</li>
-</ul></li>
-<li>时序电路
-<ul>
-<li>时序电路中输出值不仅与当前输入值有关，也与之前的输入值有关；可以认为时序电路具有记忆功能</li>
-<li>时序电路的基本存储元件（存储之前的值）是触发器，触发器与逻辑门一起组成时序电路——如计数器和寄存器。</li>
-</ul></li>
-</ul>
-<h3 id="布尔代数">布尔代数</h3>
-<p>逻辑设计课程中我们使用二值布尔代数来设计开关电路。我们使用布尔变量来表示电路的输入和输出，其中布尔变量代表逻辑电路中的两种不同状态——</p>
-<p>普通代数中的<strong>交换律</strong>和<strong>结合律</strong>同样可以在布尔代数中使用。</p>
-<p>布尔代数中的交换律表明开关的位置（出现次序）不会影响最终结果，结合律表明开关导通的次序不会影响最终结果。</p>
-<p>在布尔代数中，分配律有两种形式：</p>
-<ul>
-<li><p>一种是普通的分配律：<span class="math inline">\(X(Y+Z)=XY+XZ\)</span></p>
-<p>​ 与运算可以分配在或运算上</p>
-<p>​ 去和括号内相乘</p></li>
-<li><p>另一种被称作第二分配律：<span class="math inline">\(X+(YZ)=(X+Y)(X+Z)\)</span></p>
-<p>​ 或运算可以分配在与运算上</p>
-<p>​ 去和括号内相加</p></li>
-</ul>
-<p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
-<h2 id="数字电路概念">数字电路概念</h2>
-<h3 id="高阻态">高阻态</h3>
-<p>高阻抗状态（<em>High impedance</em>）表示电路中的某个节点具有相对电路中其它点更高的阻抗，电路分析时通常将高阻态作为开路理解。即可以将其视为输出/输入电阻极大，极限状态可以认为是悬空（<em>断路</em>）的状态，高阻态通常使用字母<strong>Z</strong>表示。</p>
-<h3 id="三态门">三态门</h3>
-<p>数字电路中的三态逻辑（<em>Three-state logic</em>）是指其输出既可以是代表<code>0</code>和<code>1</code>的高低电平，也可以是其特有的高阻抗状态（<em>相当于隔断状态，电阻极大，类似于开路</em>）。</p>
-<p>具有高电平、低电平、高阻态三种状态的元器件称为三态器件，三态器件都通过一个控制使能端 B 来控制整个三态门电路的通断。当使能端高电平有效时，三态器件可以正常的<code>0</code>或<code>1</code>输出，当使能端低电平无效时，三态电路将会输出高阻态。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">输入端 A</th>
-<th style="text-align: left;">使能端 B</th>
-<th style="text-align: left;">输出端 C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>0</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>1</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>X</code></td>
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>Z</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="组合时序逻辑电路">组合/时序逻辑电路</h3>
-<ul>
-<li><strong>组合逻辑电路</strong>（<em>Combinational Logic Circuit</em>），其任一时刻的稳态输出仅与该时刻输入的变量取值有关，而与该时刻之前输入的变量取值无关。组合电路主要由各种逻辑门（<code>半加器</code>、<code>全加器</code>、<code>半减器</code>、<code>全减器</code>、<code>数据选择器</code>、<code>数据分配器</code>、<code>编码器</code>、<code>译码器</code>）组成，电路中没有记忆元件和反馈线。</li>
-<li><strong>时序逻辑电路</strong>（<em>Sequential Logic Circuit</em>）任意时刻的稳态输出不仅取决于当前输入，还与前一时刻输入的状态有关，换而言之，时序逻辑电路必须拥有特定的储存元件来保存前一次的输入状态。因此，时序逻辑电路除包含有组合逻辑电路以外，还必须含拥有存储信息能力的电路（<code>触发器</code>、<code>寄存器</code>、<code>计数器</code>）。</li>
-</ul>
-<h3 id="gpio">GPIO</h3>
-<p><strong>通用输入输出</strong>（<em>General-purpose input/output</em>），功能类似于 8051 单片机的 P0 到 P3 口，引脚输出的高低电平可由开发人员读写相应寄存器进行控制。该接口有时也称为<strong>总线扩展器</strong>，当开发板接口不够用时，可以通过转接板将其扩展为<code>I²C</code>、<code>SPI</code>等其它串行接口。</p>
-]]></content>
-      <tags>
-        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
