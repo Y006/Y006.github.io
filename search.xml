@@ -1051,233 +1051,6 @@ x^n+a_1x^{n-1}+\cdot\cdot\cdot+a_{n-1}x&#39;+a_n=f(t)\tag{2}
       </tags>
   </entry>
   <entry>
-    <title>电子学</title>
-    <url>/2022/02/27/16-41-33/</url>
-    <content><![CDATA[<h1 id="电子学">电子学</h1>
-<h3 id="前言">前言</h3>
-<p>本书主要参考尼曼（Donald A. Neamen）的《电子电路分析与设计（第四版）》（Microelectronics: Circuit Analysis And Design Forth Edition）写成。</p>
-<h2 id="半导体器件及其基本应用">半导体器件及其基本应用</h2>
-<h3 id="半导体">半导体</h3>
-<p>在电路课和物理课上我们已经学习了一些电子器件，例如最典型的器件——电阻器。电阻器是导体，其最重要的性质“电阻”表示了导体对于电流的阻碍性质。除此之外我们还学习了电容和电感；电感的性质存在于线圈之中，线圈是使用导体制成的；电容则是导体极板中间夹着一个绝缘体介质形成。如此归纳，我们会发现在之前的课程之中，我们了解的范畴始终存在于导体和绝缘体之中，而半导体材料制作而成的器件却从未被提及。所以，在“半导体”这一节中，我们将注意力集中在半导体上，从研究半导体自身的性质开始，最终我们将得到一个简单的半导体器件。</p>
-<p>正式开始本节前，我们简单地回顾一下中学的知识，以下这些是作者默认读者已经了解了的知识。</p>
-<ul>
-<li>导体中存在大量可以自由移动的电子，称之为自由电子（free electron）。自由电子在受到外电场或外磁场的作用时，能够在物质中自由移动。</li>
-<li>导体中自由电子的定向移动形成了电流，电流（current）的定义式为 <span class="math inline">\(i=\frac{dq}{dt}\)</span>。</li>
-<li>载流子（charge carrier）指可以自由移动的带有电荷的物质微粒，是物质中电流形成的原因，导体中的载流子是电子。</li>
-<li>在半导体中存在两种载流子——电子（electron）和空穴（hole）。空穴是电子移动后留下的空位，从物理模型上可以将空穴看作是正电子。在半导体中，电子和空穴两种载流子共同形成半导体中的电流。</li>
-</ul>
-<h4 id="本征半导体intrinsic-semiconductor">本征半导体（intrinsic semiconductor）</h4>
-<blockquote>
-<p>本征半导体是指纯净（pure）的半导体</p>
-</blockquote>
-<p>本征半导体的概念是我们应当格外注意的，因为这不是一个偏日常化和口语化的词语，但是在这里它的含义却是十分简单——本征，不过就是纯净不含杂质的意思。</p>
-<p>强调材料的纯度似乎是一件奇怪的事情，因为常识中我们通常认为提纯是必须的，无需额外强调的。例如我们不会强调一个钢筋的纯度，但是我们知道</p>
-<p>本征半导体是指纯净的半导体，强调这个词似乎暗示着有一种不纯净的半导体的存在，并且这种不纯净的半导体的存在是十分有必要的。</p>
-<h3 id="二极管及其基本电路">二极管及其基本电路</h3>
-<p>TODO</p>
-<h3 id="三极管及其基本电路">三极管及其基本电路</h3>
-<p>TODO</p>
-<h3 id="场效应管及其基本电路">场效应管及其基本电路</h3>
-<p>TODO</p>
-<h2 id="模拟电子技术">模拟电子技术</h2>
-<p>TODO</p>
-<h2 id="数字电子技术">数字电子技术</h2>
-<p>TODO</p>
-<p>运算放大器电路</p>
-<p>分析顺序</p>
-<ul>
-<li>图像</li>
-<li>公式</li>
-<li>结论</li>
-</ul>
-<ol type="1">
-<li><p>反相放大电路</p>
-<ul>
-<li><p>反相放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1249-16473232199221.PNG" alt="IMG_1249" style="zoom: 25%;"></p></li>
-<li><p>反相放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p>假设运算放大器是理想的，即</p>
-<ul>
-<li>开环增益 <span class="math inline">\(A_{od}=\infty\)</span>：故输入信号 <span class="math inline">\(v_1\)</span> 和 <span class="math inline">\(v_2\)</span> 是相等的。且由于 <span class="math inline">\(v_2\)</span> 与地面连接，故 <span class="math inline">\(v_2\)</span> 是“接地”，而 <span class="math inline">\(v_1\)</span> 是“虚地”。</li>
-<li>输入阻抗大小为 <span class="math inline">\(\infty\)</span>：流入运算放大器的电流为 <span class="math inline">\(0\)</span> 。</li>
-</ul>
-<p>理想运放约束+基尔霍夫定律可得： <span class="math display">\[
-\begin{cases}
-\begin{aligned}
-&amp;\frac{v_{i_1}-v_1}{R_1}=\frac{v_1-v_o}{R_2}\\\\
-&amp;v_1=0
-\end{aligned}
-\end{cases}
-\quad
-\Longrightarrow
-\quad
-A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
-\]</span></p></li>
-<li><p>结论和注意事项：</p>
-<ul>
-<li>对于理想运放，闭环电压增益是运放外电阻比值的函数，与运放内部的参数无关。</li>
-<li>增益中的负号表示 “反相” ，是反相放大电路名字的由来。</li>
-<li>反相放大电路中没有耦合电容（就是电容，作用是耦合所以叫耦合电容），因此反相放大电路可以放大直流电压信号。</li>
-</ul></li>
-</ul></li>
-<li><p>反相放大电路扩展——带 T 型网络的放大电路</p>
-<ul>
-<li><p>作为改进方案被提出的原因：</p>
-<p>反相放大电路的增益 <span class="math inline">\(A_v\)</span> 为 <span class="math inline">\(-\frac{R_2}{R_1}\)</span>，那么如果我们的设计目标是设计一个闭环增益 <span class="math inline">\(A_v=-100\)</span> 且输入电阻 <span class="math inline">\(R_i=R_1=50k\Omega\)</span> 的反相放大电路。于是，反馈电阻 <span class="math inline">\(R_2\)</span> 就必须是 <span class="math inline">\(5M\Omega\)</span>。然而，这个电阻值对大多数实际电路来说太大了。为了解决这个问题我们提出了作为改进方案的带 T 型网络的放大电路。</p></li>
-<li><p>带 T 型网络的放大电路的电路图如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1258.PNG" alt="IMG_1258" style="zoom:25%;"></p></li>
-<li><p>设 <span class="math inline">\(R_2\)</span>、<span class="math inline">\(R_3\)</span> 和 <span class="math inline">\(R_4\)</span> 三个电阻的公共节点处电势为 <span class="math inline">\(v_x\)</span>，则: <span class="math display">\[
-\begin{cases}
-\begin{aligned}
-&amp;i_2+i_3=i_4\\\\
-&amp;\frac{v_1-v_x}{R_2}+\frac{v_x-v_o}{R_3}=\frac{v_x}{R_4}\\\\
-&amp;v_1=0
-\end{aligned}
-\end{cases}
-\quad
-\Longrightarrow
-\quad
-A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
-\]</span></p></li>
-<li><p>结论和注意事项：</p>
-<p>使用带 T 型网络的放大电路，可以在使用合理大小电阻的情况下获得更大的增益。</p></li>
-</ul></li>
-<li><p>同相放大电路；</p>
-<ul>
-<li><p>同相放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1253-16473270320863.PNG" alt="IMG_1253" style="zoom: 25%;"></p></li>
-<li><p>同相放大电路增益 <span class="math inline">\(A_v=\frac{R_2}{R_1}+1\)</span>： <span class="math display">\[
-\begin{aligned}
-&amp;\begin{cases}
-v_-=v_+=v_i\\\\
-\frac{0-v_-}{R1}=\frac{v_--v_o}{R_2}\\
-\end{cases}\\\\
-&amp;get\quad A_v=\frac{v_o}{v_i}=\frac{R_2}{R_1}+1
-\end{aligned}
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>电压跟随器：</p>
-<ul>
-<li><p>电压跟随器连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1246.PNG" alt="IMG_1246" style="zoom:25%;"></p></li>
-<li><p>电压跟随器增益 <span class="math inline">\(A_v\)</span>：</p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>求和放大电路：</p>
-<ul>
-<li><p>求和放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1252.PNG" alt="IMG_1252" style="zoom:25%;"></p></li>
-<li><p>输出电压为 <span class="math inline">\(v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}\)</span>：</p>
-<p><span class="math display">\[
-\sum_{j=1}^{n}\frac{v_{i_j}-0}{R_i}=\frac{0-v_o}{R_f}\\
-get\quad v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>差分放大电路：</p>
-<ul>
-<li><p>差分放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1244.PNG" alt="IMG_1244" style="zoom:25%;"></p></li>
-<li><p>输出电压为 <span class="math inline">\(v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})\)</span>：</p>
-<p>$$</p>
-<span class="math display">\[\begin{aligned}
-&amp;if\quad v_{i_2}=0,\;v_{i_1}\not=0\\
-
-&amp;then\quad v_{o_1}=-\frac{R_2}{R_1}v_{i_1}\\\\\\
-
-&amp;if\quad v_{i_2}\not=0,\;v_{i_1}=0\\
-
-&amp;then\quad v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}\\\\\\
-
-&amp;so\quad v_o=v_{o_1}+v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}-\frac{R_2}{R_1}v_{i_1}\\
-
-&amp;To\quad satified\quad when\quad v_{i_1}=v_{i_2},v_o=0\,;so\quad \frac{R_4}{R_3}=\frac{R_2}{R_1}\\
-
-&amp;Finally\quad v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})
-\end{aligned}\]</span>
-<p>$$</p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>积分放大电路：</p>
-<ul>
-<li><p>积分放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1254.PNG" alt="IMG_1254" style="zoom:25%;"></p></li>
-<li><p>积分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=V_C-\frac{1}{RC}\int_{0}^{t}v_i(\tau)d\tau
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>微分放大电路：</p>
-<ul>
-<li><p>微分放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1251.PNG" alt="IMG_1251" style="zoom:25%;"></p></li>
-<li><p>微分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=-RC\frac{dv_{i}}{dt}
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>对数放大电路：</p>
-<ul>
-<li><p>对数放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1247.PNG" alt="IMG_1247" style="zoom:25%;"></p></li>
-<li><p>对数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=-V_Tln\left(\frac{v_i}{I_SR_1}\right)
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>指数放大电路：</p>
-<ul>
-<li><p>指数放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1257.PNG" alt="IMG_1257" style="zoom:25%;"></p></li>
-<li><p>指数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=-I_SR\cdot e^{v_i/V_T}
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>仪用放大电路：</p>
-<ul>
-<li><p>仪用放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1256.PNG" alt="IMG_1256" style="zoom:25%;"></p></li>
-<li><p>仪用放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=\frac{R_4}{R_3}\left(1+\frac{2R_2}{R_1}\right)(v_{i_2}-v_{i_1})
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-</ol>
-<h2 id="集成电路偏置">集成电路偏置</h2>
-<p>使用分立电子元器件对晶体管放大电路进行偏置时，我们通常使用的是分压电阻网络。在集成电路设计中，电阻的集成需要比晶体管更大的面积，因此我们更希望通过晶体管来配置放大电路。在接下来的设计中我们可以看到，晶体管可以构成恒流源和负载器件。</p>
-<p>集成电路偏置和有源负载这一章节学习了在设计集成电路中需要使用到的<strong>晶体管恒流源——镜像电流源（Current Mirror）</strong>和<strong>晶体管电阻（负载）——有源负载</strong></p>
-<p>关于集成电路的部分放到下一阶段学习吧</p>
-<p>一个设计良好的电流源电路，必须同时满足如下这四点要求：</p>
-<ul>
-<li>能够输出符合要求的直流电流；</li>
-<li>温度稳定性更好；</li>
-<li>受到电源电压等因素的影响较小；</li>
-<li>输出电阻要尽可能更大；</li>
-</ul>
-<p>如果一个电流源能够同时满足上述这些要求，那么就可以将其等效为下面的<strong>理想电流源</strong>：<img src="/2022/02/27/16-41-33/image-20220316212039647-16474368536751.png" alt="image-20220316212039647" style="zoom:25%;"></p>
-<p>晶体管和场效应管等有源元件，在放大区的输出电流几乎不受输出电压的影响，展现出恒流特性：</p>
-<h2 id="差分和多级放大电路">差分和多级放大电路</h2>
-<p>本章介绍的是主要内容是一种多晶体管电路——差分放大电路。与之前理想运放一节不同的是，这里的差分放大电路是由基本的晶体管构成的电路</p>
-<p>差分放大电路是模拟电路的基本单元，既是几乎所有运放的输入级，也是高速数字逻辑电路的基础。</p>
-<p>差分放大电路为</p>
-<h2 id="section"></h2>
-<h3 id="施密特触发器">施密特触发器</h3>
-<h4 id="比较器">比较器</h4>
-<h4 id="施密特触发器-1">施密特触发器</h4>
-<h4 id="section-1"></h4>
-]]></content>
-      <tags>
-        <tag>Electrical Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构笔记</title>
     <url>/2022/02/17/11-07-35/</url>
     <content><![CDATA[<h1 id="数据结构">数据结构</h1>
@@ -2134,6 +1907,233 @@ x + 2y &amp;= 1\\
 ]]></content>
       <tags>
         <tag>备忘笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电子学</title>
+    <url>/2022/02/27/16-41-33/</url>
+    <content><![CDATA[<h1 id="电子学">电子学</h1>
+<h3 id="前言">前言</h3>
+<p>本书主要参考尼曼（Donald A. Neamen）的《电子电路分析与设计（第四版）》（Microelectronics: Circuit Analysis And Design Forth Edition）写成。</p>
+<h2 id="半导体器件及其基本应用">半导体器件及其基本应用</h2>
+<h3 id="半导体">半导体</h3>
+<p>在电路课和物理课上我们已经学习了一些电子器件，例如最典型的器件——电阻器。电阻器是导体，其最重要的性质“电阻”表示了导体对于电流的阻碍性质。除此之外我们还学习了电容和电感；电感的性质存在于线圈之中，线圈是使用导体制成的；电容则是导体极板中间夹着一个绝缘体介质形成。如此归纳，我们会发现在之前的课程之中，我们了解的范畴始终存在于导体和绝缘体之中，而半导体材料制作而成的器件却从未被提及。所以，在“半导体”这一节中，我们将注意力集中在半导体上，从研究半导体自身的性质开始，最终我们将得到一个简单的半导体器件。</p>
+<p>正式开始本节前，我们简单地回顾一下中学的知识，以下这些是作者默认读者已经了解了的知识。</p>
+<ul>
+<li>导体中存在大量可以自由移动的电子，称之为自由电子（free electron）。自由电子在受到外电场或外磁场的作用时，能够在物质中自由移动。</li>
+<li>导体中自由电子的定向移动形成了电流，电流（current）的定义式为 <span class="math inline">\(i=\frac{dq}{dt}\)</span>。</li>
+<li>载流子（charge carrier）指可以自由移动的带有电荷的物质微粒，是物质中电流形成的原因，导体中的载流子是电子。</li>
+<li>在半导体中存在两种载流子——电子（electron）和空穴（hole）。空穴是电子移动后留下的空位，从物理模型上可以将空穴看作是正电子。在半导体中，电子和空穴两种载流子共同形成半导体中的电流。</li>
+</ul>
+<h4 id="本征半导体intrinsic-semiconductor">本征半导体（intrinsic semiconductor）</h4>
+<blockquote>
+<p>本征半导体是指纯净（pure）的半导体</p>
+</blockquote>
+<p>本征半导体的概念是我们应当格外注意的，因为这不是一个偏日常化和口语化的词语，但是在这里它的含义却是十分简单——本征，不过就是纯净不含杂质的意思。</p>
+<p>强调材料的纯度似乎是一件奇怪的事情，因为常识中我们通常认为提纯是必须的，无需额外强调的。例如我们不会强调一个钢筋的纯度，但是我们知道</p>
+<p>本征半导体是指纯净的半导体，强调这个词似乎暗示着有一种不纯净的半导体的存在，并且这种不纯净的半导体的存在是十分有必要的。</p>
+<h3 id="二极管及其基本电路">二极管及其基本电路</h3>
+<p>TODO</p>
+<h3 id="三极管及其基本电路">三极管及其基本电路</h3>
+<p>TODO</p>
+<h3 id="场效应管及其基本电路">场效应管及其基本电路</h3>
+<p>TODO</p>
+<h2 id="模拟电子技术">模拟电子技术</h2>
+<p>TODO</p>
+<h2 id="数字电子技术">数字电子技术</h2>
+<p>TODO</p>
+<p>运算放大器电路</p>
+<p>分析顺序</p>
+<ul>
+<li>图像</li>
+<li>公式</li>
+<li>结论</li>
+</ul>
+<ol type="1">
+<li><p>反相放大电路</p>
+<ul>
+<li><p>反相放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1249-16473232199221.PNG" alt="IMG_1249" style="zoom: 25%;"></p></li>
+<li><p>反相放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p>假设运算放大器是理想的，即</p>
+<ul>
+<li>开环增益 <span class="math inline">\(A_{od}=\infty\)</span>：故输入信号 <span class="math inline">\(v_1\)</span> 和 <span class="math inline">\(v_2\)</span> 是相等的。且由于 <span class="math inline">\(v_2\)</span> 与地面连接，故 <span class="math inline">\(v_2\)</span> 是“接地”，而 <span class="math inline">\(v_1\)</span> 是“虚地”。</li>
+<li>输入阻抗大小为 <span class="math inline">\(\infty\)</span>：流入运算放大器的电流为 <span class="math inline">\(0\)</span> 。</li>
+</ul>
+<p>理想运放约束+基尔霍夫定律可得： <span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;\frac{v_{i_1}-v_1}{R_1}=\frac{v_1-v_o}{R_2}\\\\
+&amp;v_1=0
+\end{aligned}
+\end{cases}
+\quad
+\Longrightarrow
+\quad
+A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
+\]</span></p></li>
+<li><p>结论和注意事项：</p>
+<ul>
+<li>对于理想运放，闭环电压增益是运放外电阻比值的函数，与运放内部的参数无关。</li>
+<li>增益中的负号表示 “反相” ，是反相放大电路名字的由来。</li>
+<li>反相放大电路中没有耦合电容（就是电容，作用是耦合所以叫耦合电容），因此反相放大电路可以放大直流电压信号。</li>
+</ul></li>
+</ul></li>
+<li><p>反相放大电路扩展——带 T 型网络的放大电路</p>
+<ul>
+<li><p>作为改进方案被提出的原因：</p>
+<p>反相放大电路的增益 <span class="math inline">\(A_v\)</span> 为 <span class="math inline">\(-\frac{R_2}{R_1}\)</span>，那么如果我们的设计目标是设计一个闭环增益 <span class="math inline">\(A_v=-100\)</span> 且输入电阻 <span class="math inline">\(R_i=R_1=50k\Omega\)</span> 的反相放大电路。于是，反馈电阻 <span class="math inline">\(R_2\)</span> 就必须是 <span class="math inline">\(5M\Omega\)</span>。然而，这个电阻值对大多数实际电路来说太大了。为了解决这个问题我们提出了作为改进方案的带 T 型网络的放大电路。</p></li>
+<li><p>带 T 型网络的放大电路的电路图如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1258.PNG" alt="IMG_1258" style="zoom:25%;"></p></li>
+<li><p>设 <span class="math inline">\(R_2\)</span>、<span class="math inline">\(R_3\)</span> 和 <span class="math inline">\(R_4\)</span> 三个电阻的公共节点处电势为 <span class="math inline">\(v_x\)</span>，则: <span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;i_2+i_3=i_4\\\\
+&amp;\frac{v_1-v_x}{R_2}+\frac{v_x-v_o}{R_3}=\frac{v_x}{R_4}\\\\
+&amp;v_1=0
+\end{aligned}
+\end{cases}
+\quad
+\Longrightarrow
+\quad
+A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
+\]</span></p></li>
+<li><p>结论和注意事项：</p>
+<p>使用带 T 型网络的放大电路，可以在使用合理大小电阻的情况下获得更大的增益。</p></li>
+</ul></li>
+<li><p>同相放大电路；</p>
+<ul>
+<li><p>同相放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1253-16473270320863.PNG" alt="IMG_1253" style="zoom: 25%;"></p></li>
+<li><p>同相放大电路增益 <span class="math inline">\(A_v=\frac{R_2}{R_1}+1\)</span>： <span class="math display">\[
+\begin{aligned}
+&amp;\begin{cases}
+v_-=v_+=v_i\\\\
+\frac{0-v_-}{R1}=\frac{v_--v_o}{R_2}\\
+\end{cases}\\\\
+&amp;get\quad A_v=\frac{v_o}{v_i}=\frac{R_2}{R_1}+1
+\end{aligned}
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>电压跟随器：</p>
+<ul>
+<li><p>电压跟随器连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1246.PNG" alt="IMG_1246" style="zoom:25%;"></p></li>
+<li><p>电压跟随器增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>求和放大电路：</p>
+<ul>
+<li><p>求和放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1252.PNG" alt="IMG_1252" style="zoom:25%;"></p></li>
+<li><p>输出电压为 <span class="math inline">\(v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}\)</span>：</p>
+<p><span class="math display">\[
+\sum_{j=1}^{n}\frac{v_{i_j}-0}{R_i}=\frac{0-v_o}{R_f}\\
+get\quad v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>差分放大电路：</p>
+<ul>
+<li><p>差分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1244.PNG" alt="IMG_1244" style="zoom:25%;"></p></li>
+<li><p>输出电压为 <span class="math inline">\(v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})\)</span>：</p>
+<p>$$</p>
+<span class="math display">\[\begin{aligned}
+&amp;if\quad v_{i_2}=0,\;v_{i_1}\not=0\\
+
+&amp;then\quad v_{o_1}=-\frac{R_2}{R_1}v_{i_1}\\\\\\
+
+&amp;if\quad v_{i_2}\not=0,\;v_{i_1}=0\\
+
+&amp;then\quad v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}\\\\\\
+
+&amp;so\quad v_o=v_{o_1}+v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}-\frac{R_2}{R_1}v_{i_1}\\
+
+&amp;To\quad satified\quad when\quad v_{i_1}=v_{i_2},v_o=0\,;so\quad \frac{R_4}{R_3}=\frac{R_2}{R_1}\\
+
+&amp;Finally\quad v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})
+\end{aligned}\]</span>
+<p>$$</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>积分放大电路：</p>
+<ul>
+<li><p>积分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1254.PNG" alt="IMG_1254" style="zoom:25%;"></p></li>
+<li><p>积分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=V_C-\frac{1}{RC}\int_{0}^{t}v_i(\tau)d\tau
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>微分放大电路：</p>
+<ul>
+<li><p>微分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1251.PNG" alt="IMG_1251" style="zoom:25%;"></p></li>
+<li><p>微分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-RC\frac{dv_{i}}{dt}
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>对数放大电路：</p>
+<ul>
+<li><p>对数放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1247.PNG" alt="IMG_1247" style="zoom:25%;"></p></li>
+<li><p>对数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-V_Tln\left(\frac{v_i}{I_SR_1}\right)
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>指数放大电路：</p>
+<ul>
+<li><p>指数放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1257.PNG" alt="IMG_1257" style="zoom:25%;"></p></li>
+<li><p>指数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-I_SR\cdot e^{v_i/V_T}
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>仪用放大电路：</p>
+<ul>
+<li><p>仪用放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1256.PNG" alt="IMG_1256" style="zoom:25%;"></p></li>
+<li><p>仪用放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=\frac{R_4}{R_3}\left(1+\frac{2R_2}{R_1}\right)(v_{i_2}-v_{i_1})
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+</ol>
+<h2 id="集成电路偏置">集成电路偏置</h2>
+<p>使用分立电子元器件对晶体管放大电路进行偏置时，我们通常使用的是分压电阻网络。在集成电路设计中，电阻的集成需要比晶体管更大的面积，因此我们更希望通过晶体管来配置放大电路。在接下来的设计中我们可以看到，晶体管可以构成恒流源和负载器件。</p>
+<p>集成电路偏置和有源负载这一章节学习了在设计集成电路中需要使用到的<strong>晶体管恒流源——镜像电流源（Current Mirror）</strong>和<strong>晶体管电阻（负载）——有源负载</strong></p>
+<p>关于集成电路的部分放到下一阶段学习吧</p>
+<p>一个设计良好的电流源电路，必须同时满足如下这四点要求：</p>
+<ul>
+<li>能够输出符合要求的直流电流；</li>
+<li>温度稳定性更好；</li>
+<li>受到电源电压等因素的影响较小；</li>
+<li>输出电阻要尽可能更大；</li>
+</ul>
+<p>如果一个电流源能够同时满足上述这些要求，那么就可以将其等效为下面的<strong>理想电流源</strong>：<img src="/2022/02/27/16-41-33/image-20220316212039647-16474368536751.png" alt="image-20220316212039647" style="zoom:25%;"></p>
+<p>晶体管和场效应管等有源元件，在放大区的输出电流几乎不受输出电压的影响，展现出恒流特性：</p>
+<h2 id="差分和多级放大电路">差分和多级放大电路</h2>
+<p>本章介绍的是主要内容是一种多晶体管电路——差分放大电路。与之前理想运放一节不同的是，这里的差分放大电路是由基本的晶体管构成的电路</p>
+<p>差分放大电路是模拟电路的基本单元，既是几乎所有运放的输入级，也是高速数字逻辑电路的基础。</p>
+<p>差分放大电路为</p>
+<h2 id="section"></h2>
+<h3 id="施密特触发器">施密特触发器</h3>
+<h4 id="比较器">比较器</h4>
+<h4 id="施密特触发器-1">施密特触发器</h4>
+<h4 id="section-1"></h4>
+]]></content>
+      <tags>
+        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
