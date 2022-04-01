@@ -3191,7 +3191,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
   <entry>
     <title>电子课程书籍</title>
     <url>/2022/03/23/15-24-59/</url>
-    <content><![CDATA[<h2 id="河南大学迈阿密学院电子信息专业培养计划及其课本">河南大学迈阿密学院电子信息专业培养计划及其课本</h2>
+    <content><![CDATA[<h1 id="河南大学迈阿密学院电子信息专业培养计划及其课本">河南大学迈阿密学院电子信息专业培养计划及其课本</h1>
 <p>注：如果您不理解本篇博客的目的，请阅读<a href="https://qsctech.github.io/zju-icicles/">此文</a>。</p>
 <h3 id="大一上学期">大一上学期：</h3>
 <table>
@@ -3560,6 +3560,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </tbody>
 </table>
 <h1 id="电子专业课程书籍课程资源推荐">电子专业课程书籍课程资源推荐</h1>
+<h2 id="来自邱金羽的推荐">——来自邱金羽的推荐</h2>
 <h3 id="大一上学期-1">大一上学期：</h3>
 <table>
 <colgroup>
@@ -3579,7 +3580,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </tr>
 <tr class="even">
 <td>线性代数导论（Introduction to Linear Algebra）</td>
-<td><a href="https://kdocs.cn/l/cbVej03YO5yb?f=201"><em>Elementary Linear Algebra</em><br></a>（无中文版和答案）<br> <span class="math inline">\(3Blue1Brown\)</span> 的数学频道：《<a href="https://www.bilibili.com/video/BV1ys411472E">线性代数的本质</a>》</td>
+<td><span class="math inline">\(3Blue1Brown\)</span> 的数学频道：《<a href="https://www.bilibili.com/video/BV1ys411472E">线性代数的本质</a>》</td>
 </tr>
 <tr class="odd">
 <td>大学物理Ⅰ（University Physics Ⅰ）</td>
@@ -3758,7 +3759,215 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <tbody>
 <tr class="odd">
 <td>嵌入式微处理系统设计（Embedded Microprocessor System Design）</td>
-<td>~~~~</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>通信系统（Communication Systems）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>线性控制系统（Linear Control Systems）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>电力电子（Power Electronics）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>VLSI 大规模集成电路系统（Large-scale Integrated Circuit System）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>模拟集成电路（Analog Integrated Circuit）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="电子专业课程书籍课程资源推荐-1">电子专业课程书籍课程资源推荐</h1>
+<h2 id="推荐模板">——推荐模板</h2>
+<h3 id="大一上学期-2">大一上学期：</h3>
+<table>
+<thead>
+<tr class="header">
+<th>第一学期课程（Curriculum in First Semester）</th>
+<th>学习建议及资料推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>工程微积分Ⅰ（Calculus Ⅰ for Engineers）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>线性代数导论（Introduction to Linear Algebra）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>大学物理Ⅰ（University Physics Ⅰ）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>工程学导论Ⅰ（Introduction to Engineering Ⅰ）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>编程导论（Introduction to Programming）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="大一下学期-2">大一下学期：</h3>
+<table>
+<thead>
+<tr class="header">
+<th>第二学期课程（Curriculum in Second Semester）</th>
+<th>学习建议及资料推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>微积分Ⅱ和III（Calculus Ⅱ and III）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>大学物理Ⅱ及实验（University Physics Ⅱ and Lab）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>大学物理实验</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>工程学导论Ⅱ（Introduction to Engineering Ⅱ）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>电路原理及实验（Electrical Circuit Theory and Lab）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>电路实验</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="大二上学期-2">大二上学期：</h3>
+<table>
+<thead>
+<tr class="header">
+<th>第三学期课程（Curriculum in Third Semester）</th>
+<th>学习建议及资料推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>常微分方程导论（Introduction to Ordinary Differential）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>大学物理III及实验（University Physics III and Lab）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>大学物理实验</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>数据结构（Data Structures）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>电子学Ⅰ及实验（Electronics Ⅰ and Lab）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>电子学实验</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="大二下学期-2">大二下学期：</h3>
+<table>
+<thead>
+<tr class="header">
+<th>第四学期课程（Curriculum in Forth Semester）</th>
+<th>学习建议及资料推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>工程概率基础（Introduction to Engineering Probability）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>信号与系统（Circuits，Signals and System）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>逻辑设计（Logic Design）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>数字设计实验（Digital Design Lab）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>电子学Ⅱ和实验（Electronics Ⅱ and Lab）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>电子学实验</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>微机原理和接口技术（Processors：Hardware, Software，and Interfacing）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="大三上学期-2">大三上学期：</h3>
+<table>
+<thead>
+<tr class="header">
+<th>第五学期课程（Curriculum in Fifth Semester）</th>
+<th>学习建议及资料推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>离散时间信号与系统（Discrete-Time Signals and Systems）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>电磁场原理（Electromagnetic Field Theory）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>固态电子学（Solid-State Electronics）</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>单片机原理（MCU Principle）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>结构化数字设计（含FPGA）Structured Digital Design</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="大三下学期-2">大三下学期：</h3>
+<table>
+<thead>
+<tr class="header">
+<th>第六学期课程（Curriculum in Sixth Semester）</th>
+<th>学习建议及资料推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>嵌入式微处理系统设计（Embedded Microprocessor System Design）</td>
+<td></td>
 </tr>
 <tr class="even">
 <td>通信系统（Communication Systems）</td>
