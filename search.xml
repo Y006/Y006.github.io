@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/2022/03/29/16-12-02/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line">clc; </span><br><span class="line">close all; </span><br><span class="line">clear all; </span><br><span class="line">I=imread(&#x27;2019050913413134.png&#x27;);%要求你.m文件下有test.bmp这个图像文件 </span><br><span class="line">PR=I(:,:,1);%提取红色分量 </span><br><span class="line">PG=I(:,:,2);%提取绿色分量 </span><br><span class="line">PB=I(:,:,3);%提取蓝色分量 </span><br><span class="line"> </span><br><span class="line">figure; </span><br><span class="line">subplot(2,2,1);imshow(I);title(&#x27;原图像&#x27;); </span><br><span class="line">subplot(2,2,2);imshow(PR);title(&#x27;提取红分量后&#x27;); </span><br><span class="line">subplot(2,2,3);imshow(PG);title(&#x27;提取绿色分量后&#x27;); </span><br><span class="line">subplot(2,2,4);imshow(PB);title(&#x27;提取蓝色分量后&#x27;);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">I=imread(&#x27;2019050913413134.png&#x27;); </span><br><span class="line">[m,n,d]=size(I); </span><br><span class="line"> </span><br><span class="line">level=15;%设置阈值 </span><br><span class="line">level2=70;%设置阈值 </span><br><span class="line"> </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,1)-I(i,j,2)&gt;level2)&amp;&amp;(I(i,j,1)-I(i,j,3)&gt;level2)) </span><br><span class="line">            r(i,j,1)=I(i,j,1); </span><br><span class="line">            r(i,j,2)=I(i,j,2); </span><br><span class="line">            r(i,j,3)=I(i,j,3); </span><br><span class="line">       else  </span><br><span class="line">            r(i,j,1)=255; </span><br><span class="line">            r(i,j,2)=255; </span><br><span class="line">            r(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">figure; </span><br><span class="line">subplot(2,2,1);imshow(I);title(&#x27;原图像&#x27;); </span><br><span class="line">subplot(2,2,2);imshow(r);title(&#x27;提取红分量后&#x27;);%显示提取红分量后的图 </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">%提取绿分量，不满足阈值的变为白色 </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,2)-I(i,j,1)&gt;level)&amp;&amp;(I(i,j,2)-I(i,j,3)&gt;level)) </span><br><span class="line">            g(i,j,1)=I(i,j,1); </span><br><span class="line">            g(i,j,2)=I(i,j,2); </span><br><span class="line">            g(i,j,3)=I(i,j,3); </span><br><span class="line">        else </span><br><span class="line">            g(i,j,1)=255; </span><br><span class="line">            g(i,j,2)=255; </span><br><span class="line">            g(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">subplot(2,2,3);imshow(g);title(&#x27;提取绿分量后&#x27;); </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">%提取蓝色分量 </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,3)-I(i,j,1)&gt;level)&amp;&amp;(I(i,j,3)-I(i,j,2)&gt;level)) </span><br><span class="line">                    b(i,j,1)=I(i,j,1); </span><br><span class="line">                    b(i,j,2)=I(i,j,2); </span><br><span class="line">                    b(i,j,3)=I(i,j,3); </span><br><span class="line">        else </span><br><span class="line">            b(i,j,1)=255; </span><br><span class="line">            b(i,j,2)=255; </span><br><span class="line">            b(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">subplot(2,2,4);imshow(b);title(&#x27;提取蓝色分量后&#x27;);</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%清空变量，读取图像</span></span><br><span class="line">RGB = imread(<span class="string">&#x27;2019050913413134.png&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;process&#x27;</span>),</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>),imshow(RGB),title(<span class="string">&#x27;原始RGB&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%convert frame from RGB to YCBCR colorspace（转换到YCBCR空间）</span></span><br><span class="line">YCBCR = rgb2ycbcr(RGB);</span><br><span class="line">whos,</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>),imshow(YCBCR),title(<span class="string">&#x27;YCBCR&#x27;</span>),</span><br><span class="line"><span class="comment">%filter YCBCR image between values and store filtered image to threshold</span></span><br><span class="line"><span class="comment">%matrix（用各个通道的阈值对其进行二值化处理）</span></span><br><span class="line">Y_MIN = <span class="number">0</span>;  Y_MAX = <span class="number">256</span>;</span><br><span class="line">Cb_MIN = <span class="number">100</span>;   Cb_MAX = <span class="number">127</span>;</span><br><span class="line">Cr_MIN = <span class="number">138</span>;   Cr_MAX = <span class="number">170</span>;</span><br><span class="line">threshold=roicolor(YCBCR(:,:,<span class="number">1</span>),Y_MIN,Y_MAX)&amp;roicolor(YCBCR(:,:,<span class="number">2</span>),Cb_MIN,Cb_MAX)&amp;roicolor(YCBCR(:,:,<span class="number">3</span>),Cr_MIN,Cr_MAX);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>),imshow(threshold),title(<span class="string">&#x27;YCBCR二值化&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%perform morphological operations on thresholded image to eliminate noise</span></span><br><span class="line"><span class="comment">%and emphasize the filtered object(s)（进行形态学处理：腐蚀、膨胀、孔洞填充）</span></span><br><span class="line">erodeElement = strel(<span class="string">&#x27;square&#x27;</span>, <span class="number">3</span>) ;</span><br><span class="line">dilateElement=strel(<span class="string">&#x27;square&#x27;</span>, <span class="number">8</span>) ;</span><br><span class="line">threshold = imerode(threshold,erodeElement);</span><br><span class="line">threshold = imerode(threshold,erodeElement);</span><br><span class="line">threshold=imdilate(threshold, dilateElement);</span><br><span class="line">threshold=imdilate(threshold, dilateElement);</span><br><span class="line">threshold=imfill(threshold,<span class="string">&#x27;holes&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>),imshow(threshold),title(<span class="string">&#x27;形态学处理&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%获取区域的&#x27;basic&#x27;属性， &#x27;Area&#x27;, &#x27;Centroid&#x27;, and &#x27;BoundingBox&#x27; </span></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;处理结果&#x27;</span>),</span><br><span class="line">stats = regionprops(threshold, <span class="string">&#x27;basic&#x27;</span>);</span><br><span class="line">[C,area_index]=<span class="built_in">max</span>([stats.Area]);</span><br><span class="line"><span class="comment">%定位脸部区域</span></span><br><span class="line">face_locate=[stats(area_index).Centroid(<span class="number">1</span>),stats(area_index).Centroid(<span class="number">2</span>)];</span><br><span class="line">imshow(RGB);title(<span class="string">&#x27;after&#x27;</span>),<span class="built_in">hold</span> on</span><br><span class="line">text(face_locate(<span class="number">1</span>),face_locate(<span class="number">2</span>)<span class="number">-40</span>,  <span class="string">&#x27;face&#x27;</span>,<span class="string">&#x27;color&#x27;</span>,<span class="string">&#x27;red&#x27;</span>);</span><br><span class="line"><span class="built_in">plot</span>(face_locate(<span class="number">1</span>),face_locate(<span class="number">2</span>), <span class="string">&#x27;b*&#x27;</span>);</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[stats(area_index).BoundingBox],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;LineStyle&#x27;</span>,<span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>),</span><br><span class="line"><span class="built_in">hold</span> off</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>VScode配置笔记</title>
     <url>/2022/02/20/22-32-35/</url>
     <content><![CDATA[<h2 id="vscode配置笔记">VScode配置笔记</h2>
@@ -73,6 +66,315 @@
 <h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Homework</title>
+    <url>/2022/02/24/11-07-35/</url>
+    <content><![CDATA[<h2 id="homework">Homework</h2>
+<h3 id="home-work">1-Home work</h3>
+<p>1.d 2.c 3.a 4.a</p>
+<h3 id="home-work-1">2-Home work</h3>
+<p>1.b 2.c</p>
+<ol start="3" type="1">
+<li>Differentiate between insulator, semiconductor and conductor?
+<ul>
+<li>Insulator : Don't allow the current to pass through.</li>
+<li>Semiconductor : have a conductivity between conductors and insulators.</li>
+<li>Condctior : Allow the current and heat to pass through.</li>
+</ul></li>
+<li>What is forbidden energy gap?
+<ul>
+<li>The bandgap btewenn conduction band and valence band is called forbidden energy gap.</li>
+</ul></li>
+<li>How does the band gap indicate whether or not your substance is an insulator, semiconductor or conductor?
+<ul>
+<li>The bandgap of the insulator is very high;</li>
+<li>The bandgap of the semiconductor is low;</li>
+<li>There is no band gap in the conductor</li>
+</ul></li>
+</ol>
+<h3 id="home-work-2">3-Home work</h3>
+<ol type="1">
+<li><p>Define doping?</p>
+<ul>
+<li>The process by which an impurity is added to a semiconductor is known as Doping.</li>
+</ul></li>
+<li><p>What is difference between a pentavalent atom and a trivalent impurity?</p>
+<ul>
+<li>They have different numbers of outermost electrons.</li>
+<li>Pentavalent atoms have 5 valence electrons; Trivalent atoms have 3 valence electrons.</li>
+</ul></li>
+<li><p>How is an n-type semiconductor formed? Is N-type material electrically neutral? Comment.</p>
+<ul>
+<li>N-type semiconductors are formed by adding pentavalent impurity.</li>
+<li>N-type material is electrically neutral.</li>
+</ul></li>
+<li><p>How is an p-type semiconductor formed?</p>
+<ul>
+<li>N-type semiconductors are formed by adding trivalent impurity.</li>
+</ul></li>
+<li><p>What is difference between intrinsic and extrinsic semiconductor?</p>
+<ul>
+<li>Intrinsic semiconductors are pure and there are no impurities in it.</li>
+<li>Extrinsic semiconductor aren't pure and there are some impurities in it.</li>
+</ul></li>
+<li><p>c</p></li>
+</ol>
+<h3 id="home-work-3">4-Home work</h3>
+<ol type="1">
+<li>Calculate.</li>
+<li>Calculate.</li>
+<li>Calculate.</li>
+</ol>
+<h3 id="home-work-4">5-Home work</h3>
+<ol type="1">
+<li><p>Calculate.</p></li>
+<li><p>Describe the Avalanche and Zener breakdown mechanism in diode.</p>
+<ul>
+<li><p>Avalanche breakdown:</p>
+<p>If high reverse bias voltage is applied to a lightly doped diode, then the minority carriers will move to the PN junction with high velocity and collide with atoms in the depletion region and break the covalent bond.This cumulative process eventually leads current increase suddenly in the device. The phenomena is called avalanche breakdown.</p></li>
+<li><p>Zener breakdown:</p>
+<p>The depletion width in heavily doped diodes is very narrow, which develops high electric field across the depletion region under reverse voltage. In this case, the covalent bond is disrupted in the depletion region and more and more electrons are liberated. So the current increases repidly in the diode. The phenomena is called Zener breakdown.</p>
+<p>The depletion widthe is very narrow in heavily doped diodes, resulting in a large electric field in the depletion region when reverse voltage is applied</p></li>
+</ul></li>
+<li><p>Draw.</p></li>
+<li><p>Differentiate between Zener diode and PN junction normal diode. Also, explain how Zener breakdown differs from Avalanche breakdown.</p>
+<ul>
+<li><p>Compared with ordinary diodes, Zener diodes are heavily doped diodes, and Zener diodes work in the state of reverse breakdown.</p></li>
+<li><p>Avalanche breakdown</p>
+<ol type="1">
+<li>lightly doped.</li>
+<li>Depletion width is wide.</li>
+<li>Electric field is weaker in the depletion region as compared to Zener breakdown.</li>
+<li>Breakdown voltage is more than 8 V.</li>
+<li>Avalanche breakdown occurs due to collision of electron with atoms in the depletion region.</li>
+</ol></li>
+<li><p>Avalanche breakdown</p>
+<ol type="1">
+<li>highly doped.</li>
+<li>Depletion width is thin.</li>
+<li>Electric field is stronger in the depletion region as compared to Avalanche breakdown.</li>
+<li>Breakdown voltage is between 5V to 8V.</li>
+<li>Zener breakdown occurs Due to rupture of covalent bond in the depletion region since electric field is very strong.</li>
+</ol></li>
+</ul></li>
+</ol>
+<h3 id="home-work-5">6-Home work</h3>
+<ol type="1">
+<li>Draw:
+<ul>
+<li><span class="math inline">\(AC \Rightarrow Transform \Rightarrow Rectifier \Rightarrow Filter \Rightarrow Regulator \Rightarrow DC\)</span></li>
+</ul></li>
+<li>Explain the basic circuit operation of half wave rectifier.
+<ul>
+<li>In half wave rectifier circuit, when the AC voltage is positive, the diode is forward biased so the current will pass through the circuit. when the AC voltage is negatve, the diode is reverse biased and the current can't pass through the circuit. Hence only positive half of the signal can pass through the circuit and the other half is zero.</li>
+</ul></li>
+<li>Calcution.</li>
+</ol>
+<h3 id="home-work-6">7-Home work</h3>
+<ol type="1">
+<li>Why half-wave rectifiers are generally not used in dc power supply？
+<ul>
+<li>Its efficiency is low and its ripple factor is high.</li>
+</ul></li>
+<li>Define ripple in a rectifier circuit.
+<ul>
+<li>The AC harmonics in DC are called ripple. And we have full wave rectifier as an substitute.</li>
+</ul></li>
+<li>Calculate.</li>
+<li>Draw.</li>
+<li>Calculate.</li>
+</ol>
+<h3 id="home-work-7">8-Home work</h3>
+<ol type="1">
+<li>What are the bias voltage that need to be applied to an NPN transistor such that the transistor is biased in the forward active mode？
+<ul>
+<li>The input voltage should exceed cut-in voltage and make transisitor biased in the forward active region.</li>
+</ul></li>
+<li>What is the necessity of biasing a transistor circuit.State different types.
+<ul>
+<li>To achieve faithful amplification, the input voltage should exceed cut-in voltage and the transistor should be in the active region, so we need biasing to set the operating point.</li>
+<li>Fixed bias, Emitter bias, collector feedback bias and voltage divider bias.</li>
+</ul></li>
+<li>Define common base,common emitter and common current gain.
+<ul>
+<li>Equation.</li>
+</ul></li>
+<li>Define the Parameters that define a load line.define Q-point and it's significance in details. （i）Q-point region near cut off point （ii）Q-point near saturation region （iii）Q-point in the middle of the load line
+<ul>
+<li>The load line is jointly determined by Vcc and Rc, and the Q point is at the midpoint of the load line</li>
+<li>if the Q point is close to the saturation area or the cut-off area, the output signal will be clipped</li>
+<li>and if it is in the amplification area, a stable waveform can be output</li>
+</ul></li>
+<li>Mention the parameters that can cause shift in Q point in transistor circuit.
+<ul>
+<li><span class="math inline">\(I_B\)</span> and <span class="math inline">\(R_C\)</span></li>
+</ul></li>
+<li>Define Thermal Runaway in transistor and how to mitigate
+<ul>
+<li>Negative feedback and heat sink.</li>
+</ul></li>
+</ol>
+<h2 id="assignment">Assignment</h2>
+<ol type="1">
+<li><p>Define intrinsic and extrinsic semiconductor. Also describe need of trivalent and pentavalent imurities in semiconductor.</p>
+<ul>
+<li>Intrinsic semiconductors are pure and there are no impurities in it.</li>
+<li>Extrinsic semiconductor aren't pure and there are some impurities in it.</li>
+<li>N-type semiconductors are formed by adding pentavalent imurities and P-type semiconductors are formed by adding trivalent imurities.</li>
+</ul></li>
+<li><p>Explain P-N junction under no-bias, forward bias and reverse bias conditions.</p>
+<ul>
+<li>The concentration gradient lets the PN junction forms a diffusion current, resulting in a built-in electric field. When the built-in electric field and the concentration gradient reach equilibrium, the diffusion stops and a depletion layer is formed.</li>
+<li>When the PN junction is forward biased, the depletion width reduce and the balance between the built-in electric field and the concentration gradient is destroyed. The diffusion current continues to flow from the N-side to the P-side.</li>
+<li>When the PN junction is reverse biased, the depletion width increase and diffusion current is further suppressed. Only drift current exists when reverse biased.</li>
+</ul></li>
+<li><p>Define Knee voltage, reverse saturation current and Breakdown voltage.</p>
+<ul>
+<li>Knee voltage: The forword bias voltage at which current increase through diode rapidly.</li>
+<li>Reverse saturation current: Current due to minority carrier drift during reverse bias.</li>
+<li>Breakdown voltage: The reverse bias voltage at which current increase through diode rapidly.</li>
+</ul></li>
+<li><p>Explain the basic concept of mass-action law in semiconductor and <strong>Calculate</strong>.</p>
+<ul>
+<li>The product of electron and hole concentrations in thermal equilibrium is equal to the square of the intrinsic carrier concentration</li>
+</ul></li>
+<li><p>Draw.</p></li>
+<li><p>Describe the current flow mechanism in NPN transistor. Also compare the input and output characteristics of C-B,C-E and C-C.</p>
+<ul>
+<li><p>Transistor is used as an amplofying device when EB is forward biased and CB is reverse biased. When EB is forward biased, the electrons move from E into C through B, which formed the emitter current. The hole move from B into E and the hole move from wire into the B formed the base current. The electrons move form E into the C and the reverse current due to the reverse bias of CB formed the collector current.</p></li>
+<li><table>
+<thead>
+<tr class="header">
+<th></th>
+<th>CB</th>
+<th>CC</th>
+<th>CE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>输入电阻</td>
+<td>minimum</td>
+<td>maximum</td>
+<td>medium</td>
+</tr>
+<tr class="even">
+<td>输出电阻</td>
+<td>same to CE</td>
+<td>minimum</td>
+<td>same to CB</td>
+</tr>
+<tr class="odd">
+<td>放大情况</td>
+<td>only amplified voltage</td>
+<td>only amplified current</td>
+<td>both</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li><p>What is the necessity of biasing in a transistor. State different types biasing in detail.</p>
+<ul>
+<li>Find operating points for faithful amplification.</li>
+<li>Fixed bias:
+<ul>
+<li>include R_B, R_C and V_{CC}, simple but unstable.</li>
+</ul></li>
+<li>Emitter bias:
+<ul>
+<li>Introduce an additional R_E and makes it more stable.</li>
+</ul></li>
+<li>Voltage divider bias:
+<ul>
+<li>A voltage divider resistor is used for a more stable effect.</li>
+</ul></li>
+</ul></li>
+<li><p>Calculate.</p></li>
+<li><p>Calculate.</p></li>
+<li><p>Calculate.</p></li>
+<li><ol type="a">
+<li>Explain the basic construction, operation and characteristics of N-channel JFET. Also explain the input and output transfer characteristics. If we apply positive VGS to the JFET what will happen with the device?</li>
+<li>Draw.</li>
+</ol>
+<ul>
+<li>The main body of an n-channel JFET is an N-type semiconductor, and P-type semiconductors are embedded on both sides to form an n-channel. The top of the N-channel is the drain, the bottom is the source, and the left and right P-type semiconductors are connected to the gate.</li>
+<li>The gate controls the voltage across this drain and source</li>
+<li>The most important feature is the high input impedance</li>
+</ul></li>
+<li><p>Compare BJT and JFET.</p>
+<ul>
+<li><table>
+<thead>
+<tr class="header">
+<th>比较内容</th>
+<th>BJT</th>
+<th>JFET</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>construction</td>
+<td>NPN &amp; PNP</td>
+<td>N-channal &amp; P-channal</td>
+</tr>
+<tr class="even">
+<td>current carrier</td>
+<td>majorities diffusion<br>minorities drift</td>
+<td>majorities diffusion</td>
+</tr>
+<tr class="odd">
+<td>Input</td>
+<td>current</td>
+<td>voltage</td>
+</tr>
+<tr class="even">
+<td>contralled virable</td>
+<td><span class="math inline">\(\beta\)</span></td>
+<td><span class="math inline">\(g_m\)</span></td>
+</tr>
+<tr class="odd">
+<td>sensitivity to the temperature</td>
+<td>high</td>
+<td>low</td>
+</tr>
+<tr class="even">
+<td>stability</td>
+<td>bad</td>
+<td>good</td>
+</tr>
+<tr class="odd">
+<td>input resistance</td>
+<td>small</td>
+<td>large</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li><ol type="a">
+<li>Describe the operation and charcteristics of the inverting and Non-inverting amplifier.</li>
+<li>Draw.</li>
+</ol>
+<ul>
+<li>The amplifier which has 180 degrees out of phase output with respect to input is known as an inverted amplifier,</li>
+<li>whereas the amplifier which has the o/p in phase with respect to i/p is known as a non-inverting amplifier.</li>
+</ul></li>
+<li><p>What is the concept of virtual ground?</p>
+<ul>
+<li>A node of a circuit that is maintained at a steady reference potential, without being connected directly to the reference potential.</li>
+</ul></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Electrical Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/03/29/16-12-02/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line">clc; </span><br><span class="line">close all; </span><br><span class="line">clear all; </span><br><span class="line">I=imread(&#x27;2019050913413134.png&#x27;);%要求你.m文件下有test.bmp这个图像文件 </span><br><span class="line">PR=I(:,:,1);%提取红色分量 </span><br><span class="line">PG=I(:,:,2);%提取绿色分量 </span><br><span class="line">PB=I(:,:,3);%提取蓝色分量 </span><br><span class="line"> </span><br><span class="line">figure; </span><br><span class="line">subplot(2,2,1);imshow(I);title(&#x27;原图像&#x27;); </span><br><span class="line">subplot(2,2,2);imshow(PR);title(&#x27;提取红分量后&#x27;); </span><br><span class="line">subplot(2,2,3);imshow(PG);title(&#x27;提取绿色分量后&#x27;); </span><br><span class="line">subplot(2,2,4);imshow(PB);title(&#x27;提取蓝色分量后&#x27;);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">I=imread(&#x27;2019050913413134.png&#x27;); </span><br><span class="line">[m,n,d]=size(I); </span><br><span class="line"> </span><br><span class="line">level=15;%设置阈值 </span><br><span class="line">level2=70;%设置阈值 </span><br><span class="line"> </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,1)-I(i,j,2)&gt;level2)&amp;&amp;(I(i,j,1)-I(i,j,3)&gt;level2)) </span><br><span class="line">            r(i,j,1)=I(i,j,1); </span><br><span class="line">            r(i,j,2)=I(i,j,2); </span><br><span class="line">            r(i,j,3)=I(i,j,3); </span><br><span class="line">       else  </span><br><span class="line">            r(i,j,1)=255; </span><br><span class="line">            r(i,j,2)=255; </span><br><span class="line">            r(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">figure; </span><br><span class="line">subplot(2,2,1);imshow(I);title(&#x27;原图像&#x27;); </span><br><span class="line">subplot(2,2,2);imshow(r);title(&#x27;提取红分量后&#x27;);%显示提取红分量后的图 </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">%提取绿分量，不满足阈值的变为白色 </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,2)-I(i,j,1)&gt;level)&amp;&amp;(I(i,j,2)-I(i,j,3)&gt;level)) </span><br><span class="line">            g(i,j,1)=I(i,j,1); </span><br><span class="line">            g(i,j,2)=I(i,j,2); </span><br><span class="line">            g(i,j,3)=I(i,j,3); </span><br><span class="line">        else </span><br><span class="line">            g(i,j,1)=255; </span><br><span class="line">            g(i,j,2)=255; </span><br><span class="line">            g(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">subplot(2,2,3);imshow(g);title(&#x27;提取绿分量后&#x27;); </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">%提取蓝色分量 </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,3)-I(i,j,1)&gt;level)&amp;&amp;(I(i,j,3)-I(i,j,2)&gt;level)) </span><br><span class="line">                    b(i,j,1)=I(i,j,1); </span><br><span class="line">                    b(i,j,2)=I(i,j,2); </span><br><span class="line">                    b(i,j,3)=I(i,j,3); </span><br><span class="line">        else </span><br><span class="line">            b(i,j,1)=255; </span><br><span class="line">            b(i,j,2)=255; </span><br><span class="line">            b(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">subplot(2,2,4);imshow(b);title(&#x27;提取蓝色分量后&#x27;);</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%清空变量，读取图像</span></span><br><span class="line">RGB = imread(<span class="string">&#x27;2019050913413134.png&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;process&#x27;</span>),</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>),imshow(RGB),title(<span class="string">&#x27;原始RGB&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%convert frame from RGB to YCBCR colorspace（转换到YCBCR空间）</span></span><br><span class="line">YCBCR = rgb2ycbcr(RGB);</span><br><span class="line">whos,</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>),imshow(YCBCR),title(<span class="string">&#x27;YCBCR&#x27;</span>),</span><br><span class="line"><span class="comment">%filter YCBCR image between values and store filtered image to threshold</span></span><br><span class="line"><span class="comment">%matrix（用各个通道的阈值对其进行二值化处理）</span></span><br><span class="line">Y_MIN = <span class="number">0</span>;  Y_MAX = <span class="number">256</span>;</span><br><span class="line">Cb_MIN = <span class="number">100</span>;   Cb_MAX = <span class="number">127</span>;</span><br><span class="line">Cr_MIN = <span class="number">138</span>;   Cr_MAX = <span class="number">170</span>;</span><br><span class="line">threshold=roicolor(YCBCR(:,:,<span class="number">1</span>),Y_MIN,Y_MAX)&amp;roicolor(YCBCR(:,:,<span class="number">2</span>),Cb_MIN,Cb_MAX)&amp;roicolor(YCBCR(:,:,<span class="number">3</span>),Cr_MIN,Cr_MAX);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>),imshow(threshold),title(<span class="string">&#x27;YCBCR二值化&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%perform morphological operations on thresholded image to eliminate noise</span></span><br><span class="line"><span class="comment">%and emphasize the filtered object(s)（进行形态学处理：腐蚀、膨胀、孔洞填充）</span></span><br><span class="line">erodeElement = strel(<span class="string">&#x27;square&#x27;</span>, <span class="number">3</span>) ;</span><br><span class="line">dilateElement=strel(<span class="string">&#x27;square&#x27;</span>, <span class="number">8</span>) ;</span><br><span class="line">threshold = imerode(threshold,erodeElement);</span><br><span class="line">threshold = imerode(threshold,erodeElement);</span><br><span class="line">threshold=imdilate(threshold, dilateElement);</span><br><span class="line">threshold=imdilate(threshold, dilateElement);</span><br><span class="line">threshold=imfill(threshold,<span class="string">&#x27;holes&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>),imshow(threshold),title(<span class="string">&#x27;形态学处理&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%获取区域的&#x27;basic&#x27;属性， &#x27;Area&#x27;, &#x27;Centroid&#x27;, and &#x27;BoundingBox&#x27; </span></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;处理结果&#x27;</span>),</span><br><span class="line">stats = regionprops(threshold, <span class="string">&#x27;basic&#x27;</span>);</span><br><span class="line">[C,area_index]=<span class="built_in">max</span>([stats.Area]);</span><br><span class="line"><span class="comment">%定位脸部区域</span></span><br><span class="line">face_locate=[stats(area_index).Centroid(<span class="number">1</span>),stats(area_index).Centroid(<span class="number">2</span>)];</span><br><span class="line">imshow(RGB);title(<span class="string">&#x27;after&#x27;</span>),<span class="built_in">hold</span> on</span><br><span class="line">text(face_locate(<span class="number">1</span>),face_locate(<span class="number">2</span>)<span class="number">-40</span>,  <span class="string">&#x27;face&#x27;</span>,<span class="string">&#x27;color&#x27;</span>,<span class="string">&#x27;red&#x27;</span>);</span><br><span class="line"><span class="built_in">plot</span>(face_locate(<span class="number">1</span>),face_locate(<span class="number">2</span>), <span class="string">&#x27;b*&#x27;</span>);</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[stats(area_index).BoundingBox],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;LineStyle&#x27;</span>,<span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>),</span><br><span class="line"><span class="built_in">hold</span> off</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -464,6 +766,15 @@ P_{1\Omega}=F_{rms}^2=a_0^2+\frac{1}{2}\displaystyle\sum_{n=1}^{\infty}(a_n^2+b_
       </tags>
   </entry>
   <entry>
+    <title>写给电子专业同学的C语言教程</title>
+    <url>/2022/02/27/16-41-11/</url>
+    <content><![CDATA[
+]]></content>
+      <tags>
+        <tag>Electrical Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大学物理实验绘图</title>
     <url>/2022/02/25/06-07-35/</url>
     <content><![CDATA[<p>[TOC]</p>
@@ -504,317 +815,6 @@ P_{1\Omega}=F_{rms}^2=a_0^2+\frac{1}{2}\displaystyle\sum_{n=1}^{\infty}(a_n^2+b_
 ]]></content>
       <tags>
         <tag>备忘笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>写给电子专业同学的C语言教程</title>
-    <url>/2022/02/27/16-41-11/</url>
-    <content><![CDATA[
-]]></content>
-      <tags>
-        <tag>Electrical Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Homework</title>
-    <url>/2022/02/24/11-07-35/</url>
-    <content><![CDATA[<h2 id="homework">Homework</h2>
-<h3 id="home-work">1-Home work</h3>
-<p>1.d 2.c 3.a 4.a</p>
-<h3 id="home-work-1">2-Home work</h3>
-<p>1.b 2.c</p>
-<ol start="3" type="1">
-<li>Differentiate between insulator, semiconductor and conductor?
-<ul>
-<li>Insulator : Don't allow the current to pass through.</li>
-<li>Semiconductor : have a conductivity between conductors and insulators.</li>
-<li>Condctior : Allow the current and heat to pass through.</li>
-</ul></li>
-<li>What is forbidden energy gap?
-<ul>
-<li>The bandgap btewenn conduction band and valence band is called forbidden energy gap.</li>
-</ul></li>
-<li>How does the band gap indicate whether or not your substance is an insulator, semiconductor or conductor?
-<ul>
-<li>The bandgap of the insulator is very high;</li>
-<li>The bandgap of the semiconductor is low;</li>
-<li>There is no band gap in the conductor</li>
-</ul></li>
-</ol>
-<h3 id="home-work-2">3-Home work</h3>
-<ol type="1">
-<li><p>Define doping?</p>
-<ul>
-<li>The process by which an impurity is added to a semiconductor is known as Doping.</li>
-</ul></li>
-<li><p>What is difference between a pentavalent atom and a trivalent impurity?</p>
-<ul>
-<li>They have different numbers of outermost electrons.</li>
-<li>Pentavalent atoms have 5 valence electrons; Trivalent atoms have 3 valence electrons.</li>
-</ul></li>
-<li><p>How is an n-type semiconductor formed? Is N-type material electrically neutral? Comment.</p>
-<ul>
-<li>N-type semiconductors are formed by adding pentavalent impurity.</li>
-<li>N-type material is electrically neutral.</li>
-</ul></li>
-<li><p>How is an p-type semiconductor formed?</p>
-<ul>
-<li>N-type semiconductors are formed by adding trivalent impurity.</li>
-</ul></li>
-<li><p>What is difference between intrinsic and extrinsic semiconductor?</p>
-<ul>
-<li>Intrinsic semiconductors are pure and there are no impurities in it.</li>
-<li>Extrinsic semiconductor aren't pure and there are some impurities in it.</li>
-</ul></li>
-<li><p>c</p></li>
-</ol>
-<h3 id="home-work-3">4-Home work</h3>
-<ol type="1">
-<li>Calculate.</li>
-<li>Calculate.</li>
-<li>Calculate.</li>
-</ol>
-<h3 id="home-work-4">5-Home work</h3>
-<ol type="1">
-<li><p>Calculate.</p></li>
-<li><p>Describe the Avalanche and Zener breakdown mechanism in diode.</p>
-<ul>
-<li><p>Avalanche breakdown:</p>
-<p>If high reverse bias voltage is applied to a lightly doped diode, then the minority carriers will move to the PN junction with high velocity and collide with atoms in the depletion region and break the covalent bond.This cumulative process eventually leads current increase suddenly in the device. The phenomena is called avalanche breakdown.</p></li>
-<li><p>Zener breakdown:</p>
-<p>The depletion width in heavily doped diodes is very narrow, which develops high electric field across the depletion region under reverse voltage. In this case, the covalent bond is disrupted in the depletion region and more and more electrons are liberated. So the current increases repidly in the diode. The phenomena is called Zener breakdown.</p>
-<p>The depletion widthe is very narrow in heavily doped diodes, resulting in a large electric field in the depletion region when reverse voltage is applied</p></li>
-</ul></li>
-<li><p>Draw.</p></li>
-<li><p>Differentiate between Zener diode and PN junction normal diode. Also, explain how Zener breakdown differs from Avalanche breakdown.</p>
-<ul>
-<li><p>Compared with ordinary diodes, Zener diodes are heavily doped diodes, and Zener diodes work in the state of reverse breakdown.</p></li>
-<li><p>Avalanche breakdown</p>
-<ol type="1">
-<li>lightly doped.</li>
-<li>Depletion width is wide.</li>
-<li>Electric field is weaker in the depletion region as compared to Zener breakdown.</li>
-<li>Breakdown voltage is more than 8 V.</li>
-<li>Avalanche breakdown occurs due to collision of electron with atoms in the depletion region.</li>
-</ol></li>
-<li><p>Avalanche breakdown</p>
-<ol type="1">
-<li>highly doped.</li>
-<li>Depletion width is thin.</li>
-<li>Electric field is stronger in the depletion region as compared to Avalanche breakdown.</li>
-<li>Breakdown voltage is between 5V to 8V.</li>
-<li>Zener breakdown occurs Due to rupture of covalent bond in the depletion region since electric field is very strong.</li>
-</ol></li>
-</ul></li>
-</ol>
-<h3 id="home-work-5">6-Home work</h3>
-<ol type="1">
-<li>Draw:
-<ul>
-<li><span class="math inline">\(AC \Rightarrow Transform \Rightarrow Rectifier \Rightarrow Filter \Rightarrow Regulator \Rightarrow DC\)</span></li>
-</ul></li>
-<li>Explain the basic circuit operation of half wave rectifier.
-<ul>
-<li>In half wave rectifier circuit, when the AC voltage is positive, the diode is forward biased so the current will pass through the circuit. when the AC voltage is negatve, the diode is reverse biased and the current can't pass through the circuit. Hence only positive half of the signal can pass through the circuit and the other half is zero.</li>
-</ul></li>
-<li>Calcution.</li>
-</ol>
-<h3 id="home-work-6">7-Home work</h3>
-<ol type="1">
-<li>Why half-wave rectifiers are generally not used in dc power supply？
-<ul>
-<li>Its efficiency is low and its ripple factor is high.</li>
-</ul></li>
-<li>Define ripple in a rectifier circuit.
-<ul>
-<li>The AC harmonics in DC are called ripple. And we have full wave rectifier as an substitute.</li>
-</ul></li>
-<li>Calculate.</li>
-<li>Draw.</li>
-<li>Calculate.</li>
-</ol>
-<h3 id="home-work-7">8-Home work</h3>
-<ol type="1">
-<li>What are the bias voltage that need to be applied to an NPN transistor such that the transistor is biased in the forward active mode？
-<ul>
-<li>The input voltage should exceed cut-in voltage and make transisitor biased in the forward active region.</li>
-</ul></li>
-<li>What is the necessity of biasing a transistor circuit.State different types.
-<ul>
-<li>To achieve faithful amplification, the input voltage should exceed cut-in voltage and the transistor should be in the active region, so we need biasing to set the operating point.</li>
-<li>Fixed bias, Emitter bias, collector feedback bias and voltage divider bias.</li>
-</ul></li>
-<li>Define common base,common emitter and common current gain.
-<ul>
-<li>Equation.</li>
-</ul></li>
-<li>Define the Parameters that define a load line.define Q-point and it's significance in details. （i）Q-point region near cut off point （ii）Q-point near saturation region （iii）Q-point in the middle of the load line
-<ul>
-<li>The load line is jointly determined by Vcc and Rc, and the Q point is at the midpoint of the load line</li>
-<li>if the Q point is close to the saturation area or the cut-off area, the output signal will be clipped</li>
-<li>and if it is in the amplification area, a stable waveform can be output</li>
-</ul></li>
-<li>Mention the parameters that can cause shift in Q point in transistor circuit.
-<ul>
-<li><span class="math inline">\(I_B\)</span> and <span class="math inline">\(R_C\)</span></li>
-</ul></li>
-<li>Define Thermal Runaway in transistor and how to mitigate
-<ul>
-<li>Negative feedback and heat sink.</li>
-</ul></li>
-</ol>
-<h2 id="assignment">Assignment</h2>
-<ol type="1">
-<li><p>Define intrinsic and extrinsic semiconductor. Also describe need of trivalent and pentavalent imurities in semiconductor.</p>
-<ul>
-<li>Intrinsic semiconductors are pure and there are no impurities in it.</li>
-<li>Extrinsic semiconductor aren't pure and there are some impurities in it.</li>
-<li>N-type semiconductors are formed by adding pentavalent imurities and P-type semiconductors are formed by adding trivalent imurities.</li>
-</ul></li>
-<li><p>Explain P-N junction under no-bias, forward bias and reverse bias conditions.</p>
-<ul>
-<li>The concentration gradient lets the PN junction forms a diffusion current, resulting in a built-in electric field. When the built-in electric field and the concentration gradient reach equilibrium, the diffusion stops and a depletion layer is formed.</li>
-<li>When the PN junction is forward biased, the depletion width reduce and the balance between the built-in electric field and the concentration gradient is destroyed. The diffusion current continues to flow from the N-side to the P-side.</li>
-<li>When the PN junction is reverse biased, the depletion width increase and diffusion current is further suppressed. Only drift current exists when reverse biased.</li>
-</ul></li>
-<li><p>Define Knee voltage, reverse saturation current and Breakdown voltage.</p>
-<ul>
-<li>Knee voltage: The forword bias voltage at which current increase through diode rapidly.</li>
-<li>Reverse saturation current: Current due to minority carrier drift during reverse bias.</li>
-<li>Breakdown voltage: The reverse bias voltage at which current increase through diode rapidly.</li>
-</ul></li>
-<li><p>Explain the basic concept of mass-action law in semiconductor and <strong>Calculate</strong>.</p>
-<ul>
-<li>The product of electron and hole concentrations in thermal equilibrium is equal to the square of the intrinsic carrier concentration</li>
-</ul></li>
-<li><p>Draw.</p></li>
-<li><p>Describe the current flow mechanism in NPN transistor. Also compare the input and output characteristics of C-B,C-E and C-C.</p>
-<ul>
-<li><p>Transistor is used as an amplofying device when EB is forward biased and CB is reverse biased. When EB is forward biased, the electrons move from E into C through B, which formed the emitter current. The hole move from B into E and the hole move from wire into the B formed the base current. The electrons move form E into the C and the reverse current due to the reverse bias of CB formed the collector current.</p></li>
-<li><table>
-<thead>
-<tr class="header">
-<th></th>
-<th>CB</th>
-<th>CC</th>
-<th>CE</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>输入电阻</td>
-<td>minimum</td>
-<td>maximum</td>
-<td>medium</td>
-</tr>
-<tr class="even">
-<td>输出电阻</td>
-<td>same to CE</td>
-<td>minimum</td>
-<td>same to CB</td>
-</tr>
-<tr class="odd">
-<td>放大情况</td>
-<td>only amplified voltage</td>
-<td>only amplified current</td>
-<td>both</td>
-</tr>
-</tbody>
-</table></li>
-</ul></li>
-<li><p>What is the necessity of biasing in a transistor. State different types biasing in detail.</p>
-<ul>
-<li>Find operating points for faithful amplification.</li>
-<li>Fixed bias:
-<ul>
-<li>include R_B, R_C and V_{CC}, simple but unstable.</li>
-</ul></li>
-<li>Emitter bias:
-<ul>
-<li>Introduce an additional R_E and makes it more stable.</li>
-</ul></li>
-<li>Voltage divider bias:
-<ul>
-<li>A voltage divider resistor is used for a more stable effect.</li>
-</ul></li>
-</ul></li>
-<li><p>Calculate.</p></li>
-<li><p>Calculate.</p></li>
-<li><p>Calculate.</p></li>
-<li><ol type="a">
-<li>Explain the basic construction, operation and characteristics of N-channel JFET. Also explain the input and output transfer characteristics. If we apply positive VGS to the JFET what will happen with the device?</li>
-<li>Draw.</li>
-</ol>
-<ul>
-<li>The main body of an n-channel JFET is an N-type semiconductor, and P-type semiconductors are embedded on both sides to form an n-channel. The top of the N-channel is the drain, the bottom is the source, and the left and right P-type semiconductors are connected to the gate.</li>
-<li>The gate controls the voltage across this drain and source</li>
-<li>The most important feature is the high input impedance</li>
-</ul></li>
-<li><p>Compare BJT and JFET.</p>
-<ul>
-<li><table>
-<thead>
-<tr class="header">
-<th>比较内容</th>
-<th>BJT</th>
-<th>JFET</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>construction</td>
-<td>NPN &amp; PNP</td>
-<td>N-channal &amp; P-channal</td>
-</tr>
-<tr class="even">
-<td>current carrier</td>
-<td>majorities diffusion<br>minorities drift</td>
-<td>majorities diffusion</td>
-</tr>
-<tr class="odd">
-<td>Input</td>
-<td>current</td>
-<td>voltage</td>
-</tr>
-<tr class="even">
-<td>contralled virable</td>
-<td><span class="math inline">\(\beta\)</span></td>
-<td><span class="math inline">\(g_m\)</span></td>
-</tr>
-<tr class="odd">
-<td>sensitivity to the temperature</td>
-<td>high</td>
-<td>low</td>
-</tr>
-<tr class="even">
-<td>stability</td>
-<td>bad</td>
-<td>good</td>
-</tr>
-<tr class="odd">
-<td>input resistance</td>
-<td>small</td>
-<td>large</td>
-</tr>
-</tbody>
-</table></li>
-</ul></li>
-<li><ol type="a">
-<li>Describe the operation and charcteristics of the inverting and Non-inverting amplifier.</li>
-<li>Draw.</li>
-</ol>
-<ul>
-<li>The amplifier which has 180 degrees out of phase output with respect to input is known as an inverted amplifier,</li>
-<li>whereas the amplifier which has the o/p in phase with respect to i/p is known as a non-inverting amplifier.</li>
-</ul></li>
-<li><p>What is the concept of virtual ground?</p>
-<ul>
-<li>A node of a circuit that is maintained at a steady reference potential, without being connected directly to the reference potential.</li>
-</ul></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
@@ -1910,6 +1910,235 @@ x + 2y &amp;= 1\\
       </tags>
   </entry>
   <entry>
+    <title>概率论</title>
+    <url>/2022/04/10/11-17-01/</url>
+    <content><![CDATA[<h1 id="概率与统计">概率与统计</h1>
+<h3 id="随机实验">随机实验</h3>
+<p>满足条件：</p>
+<ol type="1">
+<li>可以被重复；</li>
+<li>具有多种可能结果并均明确可知；</li>
+<li>试验结果不可预先获知。</li>
+</ol>
+<p>随机实验可能出现的每一种结果称为<strong>样本点</strong>，每一个样本点都彼此不相容，因而它是构成试验结果的最基础原子，故而样本点也被称为<strong>基本事件</strong>。</p>
+<p>所有样本点（也即所有的可能结果）的集合就被称为<strong>样本空间</strong></p>
+<p>一次试验可能出现的结果称为<strong>随机事件</strong>，随机事件是一个集合，内部元素均为随机实验的样本点</p>
+<p>为什么要引入样本空间：</p>
+<p>引入样本空间是为了给予“随机”这一相对较为暧昧的机制一个严格的数学范围。在这以后，一切事件的概率才得以在其相对应的样本空间之下具备良好的定义。</p>
+<p>这就像样本空间（Sample space）产生出了事件域，而我们讨论相应的事件概率，就只在其定义的样本空间下具有意义，而同一事件在不同样本空间下，其发生的概率可能截然不同</p>
+<p>样本空间的引入实际上是在为概率的定义提供了一个严格的范围。</p>
+<p>一个样本空间可以是有限的，可数无穷的和不可数无穷的</p>
+<p>假如S是可数的，包括有限和可数无穷的，那么S为一个离散的样本空间</p>
+<p>假如S是不可数的，即不可数无穷的，那么S为一个连续的样本空间</p>
+<p>对于随机试验的结果，即随机事件，其描述可以由多个观测量组成，因此样本空间可以是有不同维度的，维度数即描述一个随机时间的测量量的数目</p>
+<p>概率的定义：（概率的本质）</p>
+<p>直觉：概率就是事件发生的可能性。</p>
+<p>古典概型：</p>
+<p>进行<span class="math inline">\(n\)</span>次随机实验，得到的某一结果的次数记作<span class="math inline">\(N_k(n)\)</span>，则得到该结果的相对次数为<span class="math inline">\(f_k(n)=\frac{N_k(n)}{n}\)</span></p>
+<p>当<span class="math inline">\(n\)</span>的数值足够大时，<span class="math inline">\(f_k(n)\)</span>则收敛于一个稳定的数值，即<span class="math inline">\(lim_{n-&gt;\infty}f_k(n)=p_k\)</span>，<span class="math inline">\(p_k\)</span>称作概率</p>
+<p>古典概型的前提：</p>
+<ol type="1">
+<li>在古典概型的样本空间中，样本点也即基本事件的个数是有限的（骰子只能掷出6个数字）</li>
+<li>每个样本点也即每个基本事件发生的可能性是相等的（投出6和投出1或任意其它一种结果的可能性完全一致）</li>
+</ol>
+<p>古典概型是<strong>先验</strong>的，因为我们<strong>先验</strong>的认为，这个骰子掷出任意一个数字的可能性都是相同的。并且同样<strong>先验</strong>的确定，掷出任意一个数字的频率都会稳定于古典概型计算出的这个先验概率附近。</p>
+<p>先验来自于我们的直觉，来自于实践中的观察</p>
+<p><strong>后验</strong>认为，对于事件发生的先验假设，我们不应当存在任何的偏好——即基本事件等可能这种事，并不是理所当然的</p>
+<p>后验中我们可以随意假设一个估计性质的开始概率，重要的是，我们可以通过后续的重复试验，来不断的更新纠正这一概率，而当通过试验获取的信息趋近于无穷时，我们最终就可以获得一个收敛于某个具体数值的<strong>后验</strong>概率。</p>
+<p>让我们能够摆脱“可能性”的束缚，从而绕开先验与后验的争论，来在数学上精确的定义概率呢？</p>
+<p>在有了样本空间将事件构造成的集合以后，再通过测度的方式，将它们映射至0到1取值范围内的实数域 <span class="math inline">\([0,1]\)</span>上。</p>
+<p>若以这样的方式来定义概率，我们不就可以将它从事件发生可能性这样的束缚上解脱出来，从而获得一个纯粹的数学定义。为了实现这种测度的构造，就可以人为的对样本空间到实数域的映射规则进行规定，即：</p>
+<ol type="1">
+<li>概率必然是非负的，即 <span class="math inline">\(P(A)\ge 0\)</span></li>
+<li>样本空间所代表的全集，概率规定为1，即 <span class="math inline">\(P(\Omega)=1\)</span></li>
+<li>对于任意可列的互不相容事件（即两两交集均为 <span class="math inline">\(\varnothing\)</span> 的子集），它们并集的概率等于它们概率的和，即 <span class="math inline">\(P(A\cup B)=P(A)+P(B)\)</span></li>
+</ol>
+<p>满足这三个条件的映射，即有概率 <span class="math inline">\(P\)</span> ，这也被称为概率的公理化定义。</p>
+<p>也由于这种定义的实质就是将样本空间对实数进行映射，故而这种映射也被称为<strong>概率测度</strong>。</p>
+<p>条件概率公式所反映的，实际上是决策树的<strong>剪枝</strong>过程。而条件概率的本质，则是<strong>由于前提事件的发生所导致的待计算事件其样本点与样本空间的同时缩小（如同上文中文氏图所示的右侧聚焦过程）</strong>。</p>
+<p><strong>全概率公式</strong>：</p>
+<p>假设：样本空间 <span class="math inline">\(S\)</span> 有一个完备的事件组 <span class="math inline">\(A_1,A_2,A_3\)</span>：也就是样本空间被这三个事件瓜分完了</p>
+<p>满足两个条件：三个事件：</p>
+<ol type="1">
+<li><span class="math inline">\(A_1 \cup A_2 \cup A_3=\Omega\)</span></li>
+<li><span class="math inline">\(A_1 \cap A_2 \cap A_3=\varnothing\)</span></li>
+</ol>
+<p>则又有一事件 <span class="math inline">\(B\)</span> 时，<span class="math inline">\(P(B)=P(B \cap \Omega)=P[B\cup (A_1 \cup A_2 \cup A_3)]=P(BA_1 \cup BA_2 \cup BA_3)\)</span></p>
+<p>因为 <span class="math inline">\(A_1 \cap A_2 \cap A_3=\varnothing\)</span>，所以 <span class="math inline">\(BA_1 \cup BA_2 \cup BA_3=\varnothing\)</span></p>
+<p>所以：<span class="math inline">\(P(BA_1 \cup BA_2 \cup BA_3)=P(BA_1)+P(BA_2)+P(BA_3)\)</span></p>
+<p>由条件概率公式可得：</p>
+<p><span class="math inline">\(P(B)=P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)P(B|A_3)\)</span></p>
+<p>即全概率公式事实上是一种<strong>对事件的先验分解</strong>。</p>
+<p>全概率公式的使用条件，就是连续做多次实验，可以画出决策树，然后每一种分支可能性会发生变化，即前一次的选择会对下一次的选择产生影响；这是若求解第二轮即以后某个结果发生的可能性，则使用全概率公式</p>
+<p>贝叶斯公式：</p>
+<p>贝叶斯公式是后验的，即，我们已经做了实验，然后通过实验结果我们不断去修正导致这一结果发生的某些概率值</p>
+<p>贝叶斯公式可以由全概率公式变形得来： <span class="math display">\[
+\begin{aligned}
+P(A_1|B)&amp;=\frac{P(A_1B)}{P(B)}\\
+&amp;=\frac{P(A_1B)}{P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)P(B|A_3)}\\
+&amp;=\frac{P(A_1)P(B|A_1)}{P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)P(B|A_3)}
+\end{aligned}
+\]</span></p>
+<p>随机变量：随机变量的本质实际上就是<strong>随机事件的数字化</strong>。</p>
+<p>现实世界中各色各样具象的随机事件，可以被映射成数学世界中抽象的数字，而这种映射规则就叫做随机变量。</p>
+<p>离散随机变量的概率质量函数（<span class="math inline">\(pmf\)</span>）：</p>
+<p>离散性随机变量记作 <span class="math inline">\(X\)</span>，<span class="math inline">\(X\)</span> 的可能值是一个可数集合中的元素：<span class="math inline">\(S_X={x_1,x_2,x_3...}\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(X\)</span></th>
+<th><span class="math inline">\(x=1\)</span></th>
+<th><span class="math inline">\(x=0\)</span></th>
+<th><span class="math inline">\(x=2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(pmf\)</span></td>
+<td><span class="math inline">\(P(x=1)=0.125\)</span></td>
+<td><span class="math inline">\(p(x=0)=0.25\)</span></td>
+<td><span class="math inline">\(P(x=2)=0.625\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(pmf\)</span> 的性质：</p>
+<ul>
+<li><p><span class="math display">\[
+对于所有\;x\; 都有 \;P_X(x)\ge 0
+\]</span></p></li>
+<li><p><span class="math display">\[
+\sum_{x\in S}P_X(x)=1
+\]</span></p></li>
+<li><p><span class="math display">\[
+P(X\;in\;B)=\sum_{x\in B}P_X(x)\;其中B\subset S_X 
+\]</span></p></li>
+</ul>
+<p>随机变量可以是离散的，连续的和混合的</p>
+<p>累积分布函数（<span class="math inline">\(cdf\)</span>：cumulative distribution function），常被使用在随机变量的正式定义中，可以处理三种类型的随机变量</p>
+<p>一个离散性随机变量的 <span class="math inline">\(pmf\)</span> 是由 <span class="math inline">\(\{X=b\}\)</span> 来定义的，累计分布函数（<span class="math inline">\(cdf\)</span>：cumulative distribution function）则是由 <span class="math inline">\(\{X\le b\}\)</span> 来定义的。</p>
+<p>累计分布函数的优点在于它不局限于离散型随机变量，而是可以在所有类型的随机变量中使用</p>
+<ol type="1">
+<li><span class="math inline">\(F_X(x)\)</span>必然是一个单调不减函数——因概率不可为负，随着对应样本点的增多，概率的累加必然是单调不减的；</li>
+<li><span class="math inline">\(F_X(x)\)</span> 必然是一个右连续函数；</li>
+<li><span class="math inline">\(\lim_{n \to -\infty}F_X(x)=0\)</span>，<span class="math inline">\(\lim_{n \to \infty}F_X(x)=1\)</span> ——即对应样本点集合为空时，概率必然为0，而对应样本点集合为整个样本空间时，概率必然为1。</li>
+</ol>
+<p>可以看到，无论分布函数以何种形式构造，又呈现出何种性质，其最最核心的效用，就是为了能够良好的表示出样本空间的这一性质： <span class="math display">\[
+P_1+P_2+P_3+...+P_n=\sum_iP_i=1
+\]</span> 即实现样本空间 <span class="math inline">\(S\)</span> 对应的概率<strong>归向于1</strong>，从而完成样本空间向值域 <span class="math inline">\([0,1]\)</span> 的映射。因此，分布函数的本质实际上是<strong>随机变量的归一化</strong>。</p>
+<p>而当随机变量由离散型扩展至连续型时，在把握到分布函数的本质是样本点概率的累加函数以后，便可以推测连续型随机变量的分布函数 <span class="math inline">\(F_X(x)\)</span> 必然会表现为一种积分形式。</p>
+<p>但是与离散型概率分布中，每个随机变量对应着一个确定的概率值所不同，若以类似的方式来通过分布函数计算连续型随机变量中任意一点的概率，即用这一点的分布函数值减去这一点处左极限的分布函数值： <span class="math display">\[
+P\{x=x_0\}=F_X(x_0)-\lim_{n \to x_0^-}F_X(x_0)
+\]</span> 由于 <span class="math inline">\(F_X(x)\)</span> 是连续的概率累加，因此它在性质上也必然是一个非负不减的连续函数，故根据连续的性质，有： <span class="math display">\[
+F_X(x_0)=\lim_{n \to x_0^+}F_X(x_0)= \lim_{n \to x_0^-}F_X(x_0)
+\]</span> 故有： <span class="math display">\[
+P\{x=x_0\}=0
+\]</span> 由此可以看到，无论我们怎么计算，在连续型随机变量的分布函数上想要直接计算某一点处的概率，它将始终都会是0。</p>
+<p>从这一结论，你应该就能明白，在概率论的开篇中，我们提到通过引入测度，将事件的概率测度与它在现实中发生的可能性这两个概念分开具有怎样重要的意义。</p>
+<p>可以看到，在连续型随机变量中，某一点出的概率为0，并不意味着它在事件发生的角度来看是不可能的，而只是意味着这一点处的概率测度为0。</p>
+<p>而之所以会出现概率测度为0的原因，是因为在这里一开始所着眼的计算目标就错了。打个比方来说就相当于，你并不会去计算一个点的长度，不会去计算一条线的面积，不会去计算一个面的体积。换句话说，在连续型随机变量中，计算某一点处的概率就相当于在求一条线的面积。</p>
+<p>在认识到这一点之后，为了刻画连续型随机变量中某点处局部的概率性质就需要另外的工具，而这个工具在微积分的阶段就已经准备好早已被我们熟稔于胸——当然就是导数，即有： <span class="math display">\[
+F^{&#39;}_X(x_0)=\lim_{x\to x_0}\frac{F_X(x)-F_X(x_0)}{x-x_0}
+\]</span> 换句话说，对于连续型随机变量，我们用以刻画在一点处局部性质的量不是概率，而应该是<strong>概率测度的变化率。</strong></p>
+<p>借用我们在散度与测度一章中的两个相类似的例子来说，就是：</p>
+<ul>
+<li>在位移运动中，刻画某一瞬时性质的不是位移而是速度；</li>
+<li>在有质物体中，刻画某一质点性质的不是质量而是密度。</li>
+</ul>
+<p>也因此，以质量与密度的关系来考量概率与概率变化率，才会将连续型随机变量的分布函数，一个变上限积分：<span class="math inline">\(F(x)=\int^x_{-\infty}f(t)dt\)</span> 的导函数： <span class="math inline">\(F&#39;(x)=f(x)\)</span> 命名为<strong>概率密度</strong>。</p>
+<p>更要值得一提的是，如果用离散型随机变量的概率分布即：</p>
+<p>一个随机变量对应一个确定的概率测度 <span class="math inline">\(x_i\sim P_i\)</span></p>
+<p>来进行类比的话，连续型随机变量的概率分布实际上应当为：</p>
+<p>一个随机变量对应其<strong>附近领域</strong>的概率测度 <span class="math inline">\(x_i\sim f(x_i)dx_i\)</span></p>
+<p>而非直接对应概率密度函数 <span class="math inline">\(f(x)\)</span>，从这个类比，可以更直观的认为，若视离散型随机变量的分布函数为一个楼层分明的阶梯，那么连续型随机变量的分布函数就是一个将楼层无限增加细分从而使层次分明的阶梯最终转换为一个<strong>平滑化</strong>的斜坡。</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电子学笔记</title>
+    <url>/2022/02/21/08-25-17/</url>
+    <content><![CDATA[<h1 id="电子学">电子学</h1>
+<h3 id="基本概念">基本概念</h3>
+<p>组态：</p>
+<ul>
+<li>定义：晶体管接入电路的方法（晶体管接入电路的形态）。</li>
+<li>种类：共基组态（共基极的接入方法）、共射组态和共集组态</li>
+<li>F&amp;Q：
+<ul>
+<li>共"的含义——共在组态的概念中指端口共用。
+<ul>
+<li>进一步解释端口共用："将 BJT 晶体管看作一个双端口网络模型进行分析时，需要输入输出各两个端口，而晶体管有 3 个端口，因此需要一个端口共用。"</li>
+</ul></li>
+<li>在组态概念下我们要讨论的问题是什么：
+<ul>
+<li>首先明确组态概念下讨论的是晶体管本身的伏安特性，谈论组态时是不含不涵盖除晶体管之外的其他元器件的。</li>
+<li>不同组态下晶体管展现出的不同的输入输出特性（伏安特性）是我们研究的重点</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>电路负载线：</p>
+<ul>
+<li>定义：电路负载线表征电路对元器件施加的约束，这个约束表现为一种伏安关系</li>
+<li>方法：负载线可以由基本的电路定律得到（如基尔霍夫定律）</li>
+<li>tips：使用电路定律得到的负载线公式可以整理成针对于某一负载伏安关系的一次函数: <span class="math inline">\(i=k v+b\)</span></li>
+</ul>
+<p>器件的伏安特性与</p>
+<p>耦合：</p>
+<ul>
+<li>定义：耦合就是连接的意思</li>
+<li>耦合电容：晶体管电路中的耦合电容起到连接直流源与交流源的作用</li>
+</ul>
+<p>偏置与静态工作点：</p>
+<ul>
+<li><p>偏置的含义：偏置是一种利用直流电压为电路设置固定直流电流和电压的广义称谓</p></li>
+<li><p>讨论偏置时的研究对象我们的研究对象不是电子元器件，而是某一电路</p></li>
+<li><p>偏置操作不但在"电路网络（黑箱）"外加入了直流电源，而且配合了电阻器件进行约束。</p>
+<ul>
+<li>以晶体管的偏置为例：直流电源与电阻一起构成了晶体管电路，该对晶体管工作范围进行了约束，这种约束可以使用负载线来表示，并且可以通过数学形式变化将负载线与晶体管的输入输出特征曲线放在同一坐标轴下得到一个交点，称为静态工作点</li>
+</ul></li>
+<li><p>静态工作点的含义：</p>
+<ul>
+<li>偏置时设置的固定的电流与电压被称为静态工作点，标记为 Q</li>
+<li>静态工作点由元器件伏安特性和电路伏安约束共同确定，对于特定的器件，静态工作点仅由电路的配置决定。</li>
+<li>对于晶体管，配置不同的静态工作点有两个目标
+<ul>
+<li>第一个目标时让晶体管工作在特定的状态，在模拟电子技术中我们希望让晶体管工作在放大的工作状态</li>
+<li>第二个目标是针对线性的放大工作范围，我们还要挑选一个合适的位置，不能使得放大的信号失真</li>
+</ul></li>
+</ul></li>
+<li><p>晶体管放大要求（偏置要求）</p>
+<ul>
+<li><p>输入电压应该超过晶体管导通电压。</p>
+<p>The input voltage should exceed <strong>cut-in voltage</strong> for the transistor to be <strong>ON</strong>.</p></li>
+<li><p>BJT应该在有源区，作为一个放大器。</p>
+<p>The BJT should be in the <strong>active region</strong>, to be operated as an <strong>amplifier</strong>.</p></li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\begin{gather*}
+\begin{aligned}
+I_C&amp;=I_{\sf{多子电流}}+I_{\sf{少子电流}}\\
+   &amp;=\alpha I_E+I_{CBO}\\
+   &amp;=\alpha (I_B+I_C)+I_{CBO}\\
+\end{aligned}
+\Rightarrow
+I_C=\frac{\alpha}{1-\alpha}I_B+\frac{1}{1-\alpha}I_{CBO}=\beta I_B+I_{CEO}
+\end{gather*}
+\]</span> <span class="math inline">\(I_E=I_se^{v_{BE}/V_T}\)</span></p>
+<p><span class="math inline">\(I_C=\alpha I_E+I_{CBO}\)</span></p>
+<h3 id="稳定化stabilization">稳定化（Stabilization）</h3>
+<p>为了让晶体管</p>
+<blockquote>
+<p>使操作点独立于温度变化或晶体管参数变化的过程被称为稳定。</p>
+<p>The process of making the operating point independent of temperature changes or variations in transistor parameters is known as <strong>Stabilization</strong>.</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>电子学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>电子学</title>
     <url>/2022/02/27/16-41-33/</url>
     <content><![CDATA[<h1 id="电子学">电子学</h1>
@@ -2178,6 +2407,15 @@ V_i（一个小信号输出电压）-&gt;放大电路-&gt;实现功率放大
       </tags>
   </entry>
   <entry>
+    <title>电路基础</title>
+    <url>/2022/02/27/16-42-00/</url>
+    <content><![CDATA[
+]]></content>
+      <tags>
+        <tag>Electrical Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Matlab收集数据绘制箱型图</title>
     <url>/2022/02/25/08-07-35/</url>
     <content><![CDATA[<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%读取实验数据并绘制箱型图</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">##########################################################</span></span><br><span class="line"><span class="comment">使用手册：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">数据文档：(Data Text) 软件生成的文本文档，例如：qjy_q1-1_20210827181142。</span></span><br><span class="line"><span class="comment">数据文件夹：(Date File) 使用软件时创建的文件夹，例如：20210827；约定：数据文件夹的名称按“年月日”连续数字来命名，不按照约定命名可能导致读取异常。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">设置文件夹：</span></span><br><span class="line"><span class="comment">首先设置matlab的“当前文件夹”为包含“数据文件夹”的文件夹</span></span><br><span class="line"><span class="comment">根据提示输入“数据文件夹”名称</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">##########################################################</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line">prompt = <span class="string">&#x27;请输入数据文件夹名称：&#x27;</span>;</span><br><span class="line">str = input(prompt);</span><br><span class="line">DataFileName = sprintf(<span class="string">&#x27;%d&#x27;</span>,str);<span class="comment">%读入“数字”并转化为“文件夹名”</span></span><br><span class="line"></span><br><span class="line">stop_tag = <span class="built_in">length</span>(&#123;DataFileInf.name&#125;);<span class="comment">%先转化成元胞数组，然后统计元胞数量作为截至循环标签</span></span><br><span class="line"></span><br><span class="line">n=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> n+<span class="number">2</span>&lt;=stop_tag</span><br><span class="line">	DataText(n).Name=DataFileInf(n+<span class="number">2</span>).name;</span><br><span class="line"></span><br><span class="line">	userpath(DataFileInf(<span class="number">1</span>).folder);<span class="comment">%修改当前文件夹为“数据文件夹”</span></span><br><span class="line"></span><br><span class="line">	fileID = fopen(DataText(n).Name);</span><br><span class="line">	CellMidDatas = textscan(fileID,<span class="string">&#x27;%s %*[^\n]&#x27;</span>);<span class="comment">%以cell形式提取文件的第一列</span></span><br><span class="line">	fclose(fileID);</span><br><span class="line"></span><br><span class="line">	mid = CellMidDatas&#123;<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line">	C_usfull_data = [mid(<span class="number">3</span>,<span class="number">1</span>),mid(<span class="number">8</span>,<span class="number">1</span>),mid(<span class="number">9</span>,<span class="number">1</span>),mid(<span class="number">10</span>,<span class="number">1</span>)];<span class="comment">%提取有用信息</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">==================</span></span><br><span class="line"><span class="comment">J_sc=mid(3,1);</span></span><br><span class="line"><span class="comment">V_oc=mid(8,1);</span></span><br><span class="line"><span class="comment">FF=mid(9,1);</span></span><br><span class="line"><span class="comment">Eta = mid(10,1);</span></span><br><span class="line"><span class="comment">===================</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line">	usfull_data_str = cell2mat(C_usfull_data);<span class="comment">%将元胞数组转化为普通数组(单引号字符串的数组形式会自动合并)</span></span><br><span class="line">	C_usfull_data_num = regexp(usfull_data_str,<span class="string">&#x27;\d*\.?\d*&#x27;</span>,<span class="string">&#x27;match&#x27;</span>);<span class="comment">%提取字符串中的数字并以元胞数组形式储存</span></span><br><span class="line">	usfull_data_num=string(C_usfull_data_num);<span class="comment">%将元胞数组转换为普通(双引号字符串)数组</span></span><br><span class="line">	usfull_data = str2double(usfull_data_num);<span class="comment">%将字符串转化为数字</span></span><br><span class="line">	Data(n,:) = usfull_data(<span class="number">1</span>,:);</span><br><span class="line">	n=n+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">J_sc = Data(:,<span class="number">1</span>);</span><br><span class="line">V_oc = Data(:,<span class="number">2</span>);</span><br><span class="line">FF = Data(:,<span class="number">3</span>);</span><br><span class="line">Eta = Data(:,<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;统计数据完成&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -2186,98 +2424,6 @@ V_i（一个小信号输出电压）-&gt;放大电路-&gt;实现功率放大
 ]]></content>
       <tags>
         <tag>备忘笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电子学笔记</title>
-    <url>/2022/02/21/08-25-17/</url>
-    <content><![CDATA[<h1 id="电子学">电子学</h1>
-<h3 id="基本概念">基本概念</h3>
-<p>组态：</p>
-<ul>
-<li>定义：晶体管接入电路的方法（晶体管接入电路的形态）。</li>
-<li>种类：共基组态（共基极的接入方法）、共射组态和共集组态</li>
-<li>F&amp;Q：
-<ul>
-<li>共"的含义——共在组态的概念中指端口共用。
-<ul>
-<li>进一步解释端口共用："将 BJT 晶体管看作一个双端口网络模型进行分析时，需要输入输出各两个端口，而晶体管有 3 个端口，因此需要一个端口共用。"</li>
-</ul></li>
-<li>在组态概念下我们要讨论的问题是什么：
-<ul>
-<li>首先明确组态概念下讨论的是晶体管本身的伏安特性，谈论组态时是不含不涵盖除晶体管之外的其他元器件的。</li>
-<li>不同组态下晶体管展现出的不同的输入输出特性（伏安特性）是我们研究的重点</li>
-</ul></li>
-</ul></li>
-</ul>
-<p>电路负载线：</p>
-<ul>
-<li>定义：电路负载线表征电路对元器件施加的约束，这个约束表现为一种伏安关系</li>
-<li>方法：负载线可以由基本的电路定律得到（如基尔霍夫定律）</li>
-<li>tips：使用电路定律得到的负载线公式可以整理成针对于某一负载伏安关系的一次函数: <span class="math inline">\(i=k v+b\)</span></li>
-</ul>
-<p>器件的伏安特性与</p>
-<p>耦合：</p>
-<ul>
-<li>定义：耦合就是连接的意思</li>
-<li>耦合电容：晶体管电路中的耦合电容起到连接直流源与交流源的作用</li>
-</ul>
-<p>偏置与静态工作点：</p>
-<ul>
-<li><p>偏置的含义：偏置是一种利用直流电压为电路设置固定直流电流和电压的广义称谓</p></li>
-<li><p>讨论偏置时的研究对象我们的研究对象不是电子元器件，而是某一电路</p></li>
-<li><p>偏置操作不但在"电路网络（黑箱）"外加入了直流电源，而且配合了电阻器件进行约束。</p>
-<ul>
-<li>以晶体管的偏置为例：直流电源与电阻一起构成了晶体管电路，该对晶体管工作范围进行了约束，这种约束可以使用负载线来表示，并且可以通过数学形式变化将负载线与晶体管的输入输出特征曲线放在同一坐标轴下得到一个交点，称为静态工作点</li>
-</ul></li>
-<li><p>静态工作点的含义：</p>
-<ul>
-<li>偏置时设置的固定的电流与电压被称为静态工作点，标记为 Q</li>
-<li>静态工作点由元器件伏安特性和电路伏安约束共同确定，对于特定的器件，静态工作点仅由电路的配置决定。</li>
-<li>对于晶体管，配置不同的静态工作点有两个目标
-<ul>
-<li>第一个目标时让晶体管工作在特定的状态，在模拟电子技术中我们希望让晶体管工作在放大的工作状态</li>
-<li>第二个目标是针对线性的放大工作范围，我们还要挑选一个合适的位置，不能使得放大的信号失真</li>
-</ul></li>
-</ul></li>
-<li><p>晶体管放大要求（偏置要求）</p>
-<ul>
-<li><p>输入电压应该超过晶体管导通电压。</p>
-<p>The input voltage should exceed <strong>cut-in voltage</strong> for the transistor to be <strong>ON</strong>.</p></li>
-<li><p>BJT应该在有源区，作为一个放大器。</p>
-<p>The BJT should be in the <strong>active region</strong>, to be operated as an <strong>amplifier</strong>.</p></li>
-</ul></li>
-</ul>
-<p><span class="math display">\[
-\begin{gather*}
-\begin{aligned}
-I_C&amp;=I_{\sf{多子电流}}+I_{\sf{少子电流}}\\
-   &amp;=\alpha I_E+I_{CBO}\\
-   &amp;=\alpha (I_B+I_C)+I_{CBO}\\
-\end{aligned}
-\Rightarrow
-I_C=\frac{\alpha}{1-\alpha}I_B+\frac{1}{1-\alpha}I_{CBO}=\beta I_B+I_{CEO}
-\end{gather*}
-\]</span> <span class="math inline">\(I_E=I_se^{v_{BE}/V_T}\)</span></p>
-<p><span class="math inline">\(I_C=\alpha I_E+I_{CBO}\)</span></p>
-<h3 id="稳定化stabilization">稳定化（Stabilization）</h3>
-<p>为了让晶体管</p>
-<blockquote>
-<p>使操作点独立于温度变化或晶体管参数变化的过程被称为稳定。</p>
-<p>The process of making the operating point independent of temperature changes or variations in transistor parameters is known as <strong>Stabilization</strong>.</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>电子学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电路基础</title>
-    <url>/2022/02/27/16-42-00/</url>
-    <content><![CDATA[
-]]></content>
-      <tags>
-        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
