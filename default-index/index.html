@@ -235,7 +235,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-04-10 11:17:01 / 修改时间：17:07:26" itemprop="dateCreated datePublished" datetime="2022-04-10T11:17:01+08:00">2022-04-10</time>
+      <time title="创建时间：2022-04-10 11:17:01 / 修改时间：17:55:30" itemprop="dateCreated datePublished" datetime="2022-04-10T11:17:01+08:00">2022-04-10</time>
     </span>
 
   
@@ -331,7 +331,7 @@ P(A_1|B)&amp;=\frac{P(A_1B)}{P(B)}\\
 \]</span></p>
 <p>随机变量：随机变量的本质实际上就是<strong>随机事件的数字化</strong>。</p>
 <p>现实世界中各色各样具象的随机事件，可以被映射成数学世界中抽象的数字，而这种映射规则就叫做随机变量。</p>
-<p>离散随机变量的概率质量函数（<span class="math inline">\(pmf\)</span>）：</p>
+<p>离散随机变量的（概率分布律）概率质量函数（<span class="math inline">\(pmf\)</span>）：</p>
 <p>离散性随机变量记作 <span class="math inline">\(X\)</span>，<span class="math inline">\(X\)</span> 的可能值是一个可数集合中的元素：<span class="math inline">\(S_X={x_1,x_2,x_3...}\)</span></p>
 <table>
 <thead>
@@ -2431,7 +2431,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-27 00:16:39" itemprop="dateModified" datetime="2022-03-27T00:16:39+08:00">2022-03-27</time>
+      <time title="修改时间：2022-04-19 00:11:16" itemprop="dateModified" datetime="2022-04-19T00:11:16+08:00">2022-04-19</time>
     </span>
 
   
@@ -2458,7 +2458,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="x信号">x信号</h2>
+          <h2 id="信号">信号</h2>
 <h3 id="常见的奇异信号">常见的奇异信号</h3>
 <p>奇异信号：函数中包含不连续点或其微分与积分有不连续点的函数，统称为奇异函数，也就是奇异信号。</p>
 <table>
@@ -2838,6 +2838,123 @@ f(t)=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) + \displaystyle\su
 <p><span class="math display">\[
 P_{1\Omega}=F_{rms}^2=a_0^2+\frac{1}{2}\displaystyle\sum_{n=1}^{\infty}(a_n^2+b_n^2)
 \]</span></p>
+<p>线性系统：</p>
+<p>线性系统是指具有叠加性和均匀性的系统：</p>
+<ul>
+<li>叠加性：多个激励同时作用时产生的响应 = 多个激励分别作用时产生的响应的和</li>
+<li>均匀性：输入增益于输出增益相同</li>
+</ul>
+<p><span class="math display">\[
+v_R(t)=Ri_R(t)\\
+v_L(t)=L\frac{i_L(t)}{dt}\\
+v_C(t)=\frac{1}{C}\int_{-\infty}^{t}i_C(\tau)d\tau
+\]</span></p>
+<p><span class="math display">\[
+V_L(t)+V_R(t)+V_C(t)=e(t)\\
+L\frac{i_L(t)}{dt}+Ri_R(t)+\frac{1}{C}\int_{-\infty}^{t}i_C(\tau)d\tau=e(t)\\
+L\frac{d^2i_L(t)}{dt^2}+R\frac{di_R(t)}{dt}+\frac{1}{C}i_C(t)=\frac{de(t)}{dt}\\
+对于串联，有i_L=i_R=i_C\\
+L\frac{d^2i(t)}{dt^2}+R\frac{di(t)}{dt}+\frac{1}{C}i(t)=\frac{de(t)}{dt}\\
+\]</span></p>
+<p><span class="math display">\[
+i_R(t)=\frac{1}{R}v(t)\\
+i_L(t)=\frac{1}{L}\int_{-\infty}^{t}v(\tau)d\tau\\
+i_C(t)=C\frac{dv_C(t)}{dt}
+\]</span></p>
+<p><span class="math display">\[
+i_C(t)+i_R(t)+i_L(t)=i_S(t)\\
+C\frac{d^2v(t)}{dt^2}+\frac{1}{R}\frac{dv(t)}{dt}+\frac{1}{L}v(t)=\frac{di_S(t)}{dt}\\
+\]</span></p>
+<p>若组成系统的都是参数恒定的线性元件，则相应的数学模型是一个线性常系数常微分方程，若各器件初始无储能，则为一个线性时不变系统</p>
+<p>则对于一个线性时不变系统来说，其数学模型可以使用一个微分方程来描述： <span class="math display">\[
+C_0\frac{d^nr(t)}{dt^n}+C_1\frac{d^{n-1}r(t)}{dt^{n-1}}+···+C_{n-1}\frac{dr(t)}{dt}+C_nr(t)=E_0\frac{d^me(t)}{dt^m}+E_1\frac{d^{m-1}e(t)}{dt^{m-1}}+···+E_{m-1}\frac{de(t)}{dt}+E_me(t)
+\]</span> 方程的解可以记作： $$</p>
+<p>$$</p>
+<p>线性电路系统由线性电子元器件构成，描述此类系统需要借助电路网络的两类约束条件：</p>
+<ul>
+<li>元件约束特性</li>
+<li>网络拓扑约束</li>
+</ul>
+<p>两种约束的数学描述可以由<strong>微分方程组</strong>给出，这类方程组称为系统的<strong>状态方程</strong></p>
+<p>我们联立上述方程组可以得到<strong>一个高阶微分方程</strong>，这个高阶微分方程称作<strong>输入输出方程</strong>，其阶数为系统的阶数</p>
+<p>系统的输入称为激励，输出称为响应；若能给出系统的<strong>初始状态</strong>和<strong>激励</strong>，则可以获得<strong>响应</strong></p>
+<p>系统的初始状态由若干独立条件给出，独立条件的个数与系统的阶数相同</p>
+<p>线性时不变系统一般使用一个n阶线性微分方程来描述</p>
+<p>这个方程可以被整理为： <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 一般来说，对于响应，其有实际意义的定义域称为响应区间，即：<span class="math inline">\(0_+ \le t&lt; \infty\)</span></p>
+<p><span class="math inline">\(e(t)\)</span>加入前，系统为起始状态（<span class="math inline">\(0_-\)</span>状态） <span class="math display">\[
+r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]
+\]</span></p>
+<p><span class="math inline">\(e(t)\)</span>加入后，系统为初始状态（<span class="math inline">\(0_+\)</span>状态） <span class="math display">\[
+r^k(0_+)=[r(0_+),\frac{d}{dt}r(0_+),...,\frac{d^n}{dt^n}r(0_+)]
+\]</span> 因此，决定关系为：</p>
+<ul>
+<li>起始状态 <span class="math inline">\(+\)</span> <span class="math inline">\(e(t)\)</span> <span class="math inline">\(\rightarrow\)</span> 初始状态</li>
+<li>初始状态 <span class="math inline">\(\rightarrow\)</span> 响应齐次解的常系数 <span class="math inline">\(A\)</span></li>
+</ul>
+<p>响应可以拆解为三种形式：</p>
+<ul>
+<li>固有响应 <span class="math inline">\(+\)</span> 受迫响应</li>
+<li>零输入响应 <span class="math inline">\(+\)</span> 零状态响应</li>
+<li>暂态响应 <span class="math inline">\(+\)</span> 稳态响应</li>
+</ul>
+<h6 id="全响应">全响应：</h6>
+<p>对于使用<span class="math inline">\(n\)</span>阶微分方程描述的线性系统： <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 上述微分方程的解，即系统的响应，为：<span class="math inline">\(r(t)=r_h+r_p\)</span>，求解步骤为：</p>
+<ul>
+<li>使用特征根求解待定系数的齐次解</li>
+<li>使用待定系数法求解特解</li>
+<li>求解齐次解中的系数
+<ul>
+<li>使用 <span class="math inline">\(r^k(0_+)=[r(0_+),\frac{d}{dt}r(0_+),...,\frac{d^n}{dt^n}r(0_+)]\)</span> 来求解系数向量 <span class="math inline">\(A_n\)</span></li>
+<li>寻找 <span class="math inline">\(r^k(0_-)\)</span> 与 <span class="math inline">\(r^k(0_+)\)</span> 之间的关系
+<ul>
+<li>物理法：对于电路系统来说即换路定理：电容电感端性质的连续性</li>
+<li>数学法：冲激函数匹配法：微分方程两端保持各阶奇异函数的平衡</li>
+</ul></li>
+</ul></li>
+</ul>
+<h6 id="固有响应和受迫响应">固有响应和受迫响应：</h6>
+<p><span class="math inline">\(r(t)=r_h+r_p\)</span> <span class="math display">\[
+r(t)=\underbrace_{\sf{固有响应}}+\underbrace_{\sf{受迫响应}}
+\]</span></p>
+<h6 id="零输入响应和零状态响应">零输入响应和零状态响应：</h6>
+<p><strong>零输入响应：</strong> <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=0
+\]</span> 其中 <span class="math display">\[
+\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}=0
+\]</span> 说明 <span class="math display">\[
+[r(0_+),\frac{d}{dt}r(0_+),...,\frac{d^n}{dt^n}r(0_+)]=r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]
+\]</span> <strong>零状态响应：</strong> <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 但是与全响应不同的是，零状态响应中： <span class="math display">\[
+r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]=[0,0,...,0]
+\]</span> 其余求法依旧是：</p>
+<ul>
+<li>使用特征根求解待定系数的齐次解</li>
+<li>使用待定系数法求解特解</li>
+<li>求解齐次解中的系数</li>
+</ul>
+<p>注意：先求特解再求系数不要乱！</p>
+<p>对于使用<span class="math inline">\(n\)</span>阶微分方程描述的线性系统： <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 上述微分方程的解，即系统的响应，为：<span class="math inline">\(r(t)=r_h+r_p\)</span>，求解步骤为：</p>
+<ul>
+<li>使用特征根求解待定系数的齐次解</li>
+<li>使用待定系数法求解特解</li>
+<li>求解齐次解中的系数：使用 <span class="math inline">\(r^k(0_+)=[r(0_+),\frac{d}{dt}r(0_+),...,\frac{d^n}{dt^n}r(0_+)]\)</span> 来求解系数向量 <span class="math inline">\(A_n\)</span></li>
+</ul>
+<h2 id="如何从微分方程上判断线性系统">如何从微分方程上判断线性系统</h2>
+<ol type="1">
+<li>只能出现函数本身，以及函数的任何阶次的导函数；</li>
+<li>函数本身跟所有的导函数之间除了加减之外，不可以有任何运算；</li>
+<li>函数本身跟本身、各阶导函数本身跟本身，都不可以有任何加减之外的运算；</li>
+<li>若有积分项，被积函数应为输入变量，如 <span class="math inline">\(\int_{-\infty}^{t}r(\tau)d\tau\)</span>。其实积分就是微分的负次幂。</li>
+<li>不允许对函数本身、各阶导函数做任何形式的复合运算。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/40919950">线性微分方程与非线性微分方程的区别是什么？</a></p>
 
       
     </div>
