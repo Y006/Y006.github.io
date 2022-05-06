@@ -137,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -178,6 +178,9 @@
         <li class="links-of-blogroll-item">
           <a href="https://blog.52diy.com.cn/" title="https:&#x2F;&#x2F;blog.52diy.com.cn&#x2F;" rel="noopener" target="_blank">52diy</a>
         </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://gaoyichao.com/Xiaotu/" title="https:&#x2F;&#x2F;gaoyichao.com&#x2F;Xiaotu&#x2F;" rel="noopener" target="_blank">小土的世界</a>
+        </li>
     </ul>
   </div>
 
@@ -204,6 +207,379 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/04/30/16-02-06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/30/16-02-06/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-30 16:02:06" itemprop="dateCreated datePublished" datetime="2022-04-30T16:02:06+08:00">2022-04-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-07 07:36:44" itemprop="dateModified" datetime="2022-05-07T07:36:44+08:00">2022-05-07</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/04/30/16-02-06/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/04/30/16-02-06/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="微机原理实验报告">微机原理实验报告</h1>
+<h2 id="课程实验1">课程实验1</h2>
+<h3 id="stm32仿真开发环境的构建与简单汇编程序的编写">——STM32仿真开发环境的构建与简单汇编程序的编写</h3>
+<h3 id="实验报告内容">实验报告内容</h3>
+<ol type="1">
+<li>实验目标与任务
+<ol type="1">
+<li>掌握MDK-ARM开发平台的使用，包括程序编写/调试/编译等。</li>
+<li>掌握ARM的基本汇编指令，能够理解并编写简单的汇编程序实现某些功能。</li>
+</ol></li>
+<li>实验内容
+<ol type="1">
+<li>STM32F407启动代码实现与分析。</li>
+<li>编写简单汇编程序：
+<ol type="1">
+<li>找到3个数字中最大的数字并将结果存储在R0中</li>
+<li>将N，N-1，…… 2，1共N个数字相加，将结果存储在R1，当N = 0时，输出的结果为0.</li>
+<li>调用子例程实现R3低4位中十六进制转换位对应的ASCII码，并将十六进制数和对应的结果存储在内存中，存储在从20000000开始的单元中</li>
+</ol></li>
+</ol></li>
+<li>实验步骤</li>
+</ol>
+<h3 id="实验报告">实验报告</h3>
+<h4 id="mdk-arm开发平台的使用">MDK-ARM开发平台的使用</h4>
+<h5 id="安装软件">安装软件</h5>
+<p>使用到的软件：</p>
+<ul>
+<li><p>MDK-ARM（微控制器开发工具）</p></li>
+<li><p>Protues（电子仿真工具）</p>
+<p>MDK-ARM</p></li>
+</ul>
+<p>uVision是由keil公司开发的集成开发环境（IDE），可以进行代码编辑，文件管理，程序的编译调试等。</p>
+<p>目前uVision的版本有uVision2、uVision3、uVision4、uVision5。</p>
+<p>我们常说的keil4指的是uVision4，keil5指的是uVision5。</p>
+<p>每一个uVision版本下都有4个独立的软件：C51、C251、C166、ARM。</p>
+<p>uVision ARM就是MDK，或者可以称为MDK-ARM。这一款软件主要支持ARM7，ARM9，Cortex等ARM内核。</p>
+<p>MDK-ARM中中包含PACK工具</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501135651588-16513846164571.png" alt="image-20220501135651588" style="zoom: 50%;"></p>
+<p>PACK工具可以打开.pack文件，双击下载后文件夹中的 “Keil.STM32F4xx_DFP.2.14.0.pack” 文件，选择默认安装路径，即可完成导入。</p>
+<h5 id="新建工程">新建工程</h5>
+<p>打开 MDK-ARM，选择 Project -&gt; New uVision Project</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501140158387-16513849197395.png" alt="image-20220501140158387" style="zoom:50%;"></p>
+<p>选择工程存储路径，并给工程起一个名字。</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501140436221-16513850782177.png" alt="image-20220501140436221" style="zoom:50%;"></p>
+<p>在弹出的选项卡的搜索框中搜索 “STM32F407”，点击加号，选择具体型号 “STM32F407ZET”</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501140958609.png" alt="image-20220501140958609" style="zoom:50%;"></p>
+<p>STM32 微控制器命名规则如下：</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501141117834-16513854807739.png" alt="image-20220501141115297" style="zoom: 33%;"></p>
+<p>为了导入启动程序，在新弹出的选项卡中做如下操作：</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501141406536-165138564869011.png" alt="image-20220501141406536" style="zoom:50%;"></p>
+<p>即可得到启动程序</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501141447804-165138568967813.png" alt="image-20220501141447804" style="zoom:50%;"></p>
+<h5 id="编译程序">编译程序</h5>
+<p>直接编译程序，会报错，如下：</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501141621369-165138578336915.png" alt="image-20220501141621369" style="zoom:50%;"></p>
+<p>错误为，没有找到 <code>main()</code> 函数</p>
+<p>因此，需要创建一个.c文件来补充 <code>main()</code> 函数：</p>
+<p>首先创建一个新文件</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501141803519-165138588563917.png" alt="image-20220501141803519" style="zoom:33%;"></p>
+<p>保存文件为.c文件</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501142026434.png" alt="image-20220501142026434" style="zoom:33%;"></p>
+<p>将.c文件加入到工程文件：在 Source Group 1 文件夹上右键，选择 Add Existing Fiels to Group 'Source Group 1' ...</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501142117084-165138607853919.png" alt="image-20220501142117084" style="zoom:33%;"></p>
+<p>选项卡中选择文件并添加，然后点击 close 关闭</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501142207067.png" alt="image-20220501142207067" style="zoom:33%;"></p>
+<p>编译成功：</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501142435430-165138627702721.png" alt="image-20220501142435430" style="zoom:67%;"></p>
+<h5 id="程序debug">程序Debug</h5>
+<p>在没有器件的情况下无法直接对程序进行Debug，因此需要使用模拟器来仿真，需要进行一定的配置</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501142555008-165138635699523.png" alt="image-20220501142555008" style="zoom:50%;"></p>
+<p>配置方式在课本P91页：</p>
+<figure>
+<img src="/2022/04/30/16-02-06/image-20220501142851518-165138653354225.png" alt="image-20220501142851518"><figcaption aria-hidden="true">image-20220501142851518</figcaption>
+</figure>
+<p>具体操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DARMSTM.DLL</span><br><span class="line">-pSTM32F407ZETx</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/30/16-02-06/image-20220501143156502.png" alt="image-20220501143156502" style="zoom:50%;"></p>
+<p>再次点击Debug即可进入Debug模式：</p>
+<p><img src="/2022/04/30/16-02-06/image-20220501143314055-165138679821227.png" alt="image-20220501143314055" style="zoom:50%;"></p>
+<h4 id="stm32f407启动代码分析">STM32F407启动代码分析</h4>
+<h5 id="整体分析">整体分析：</h5>
+<p>对于STM32F407启动代码整体的一个描述在 startup_stm32fxxx_xx.s 文件的顶部注释中有着解释，内容如下：</p>
+<blockquote>
+<p>;* Description: STM32F407xx devices vector table for MDK-ARM toolchain. ;* This module performs: ;* - Set the initial SP ;* - Set the initial PC == Reset_Handler ;* - Set the vector table entries with the exceptions ISR address ;* - Branches to __main in the C library (which eventually calls main()). ;* After Reset the CortexM4 processor is in Thread mode, priority is Privileged, and the Stack is set to Main.</p>
+</blockquote>
+<p>含义为：</p>
+<ul>
+<li>设置堆栈指针 <code>SP = _initial_sp</code></li>
+<li>设置程序寄存器 <code>PC = Reset_Handler</code></li>
+<li>使用例外ISR设置向量表项</li>
+<li>配置系统时钟</li>
+<li>配置外部 SRAM 用亍程序变量等数据存储(可选)</li>
+<li>调用C库中的 <code>__main()</code> 函数，最终调用 <code>main()</code> 函数</li>
+</ul>
+<h5 id="源代码解释">源代码解释：</h5>
+<ol type="1">
+<li><p>开辟栈 <em>(STACK)</em> 空间，用于局部变量，函数调用，函数形参等的开销，栈的大小不能超过内部SRAM的大小。如果编写的程序比较大，定义的局部变量很多，那么就需要修改栈的大小。 <span class="math display">\[
+\sf{通知编译器链接\rightarrow分配一片栈空间\rightarrow记录栈顶地址}
+\]</span></p>
+<table>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 89%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">指令</th>
+<th style="text-align: left;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>EQU</code></td>
+<td style="text-align: left;"><code>EQU</code>是一个伪指令，起作用是定义一个符号，这类似于C语言中的 <code>#define</code> ；<code>EQU</code>可以使用“*”来替代。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>AREA</code></td>
+<td style="text-align: left;">用于定义一个新的段（代码段或数据段），并说明段的相关属性。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>SPACE</code></td>
+<td style="text-align: left;">用于分配一定数量的内存空间并初始化为0；<code>SPACE</code>跟在<code>AREA</code>后面，用于给新定义的段分配合适大小的内存；SPACE后要跟随数字，指明初始化内存空间的大小；可以使用“%”来替代。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ALIGN</code></td>
+<td style="text-align: left;">编译器指令，对指令或数据存放地址进行对齐（一般跟一个立即数，缺省为4字节）</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Stack_Size      EQU     0x00000400</span><br><span class="line">;定义一个符号，其中0x400为1KB；此处含义为设置栈空间大小为1KB</span><br><span class="line">                AREA    STACK, NOINIT, READWRITE, ALIGN=3</span><br><span class="line">;新定义一个段名为STACK的段，不进行初始化，属性为可读，2^3=8字节对齐</span><br><span class="line">Stack_Mem       SPACE   Stack_Size</span><br><span class="line">;栈本体，这里指令是分配栈大小  </span><br><span class="line">__initial_sp</span><br><span class="line">;标号，表示该地址（这里是末尾，即栈顶地址）</span><br></pre></td></tr></table></figure></li>
+<li><p>开辟堆（HEAP）空间，主要用于动态内存分配，也就是说用 <code>malloc()</code>, <code>calloc()</code>等函数分配的变量空间在堆上： <span class="math display">\[
+\sf{通知编译器链接\rightarrow记录堆头地址\rightarrow分配一片堆空间\rightarrow记录堆尾地址}
+\]</span></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Heap_Size       EQU     0x00000200</span><br><span class="line"></span><br><span class="line">                AREA    HEAP, NOINIT, READWRITE, ALIGN=3</span><br><span class="line">__heap_base</span><br><span class="line">Heap_Mem        SPACE   Heap_Size</span><br><span class="line">__heap_limit</span><br></pre></td></tr></table></figure></li>
+<li><p>独立的过渡代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PRESERVE8 ;指定当前文件的栈按 8B 对齐</span><br><span class="line">THUMB ;表示后面的指令兼容 Thumb 指令集（ARM以前的16位指令集）</span><br></pre></td></tr></table></figure>
+<p>这里有一篇<a target="_blank" rel="noopener" href="http://www.cnblogs.com/reload/archive/2013/06/27/3159053.html">文章</a>，详细解释了为什么要设置 <code>PRESERVE8</code>。</p></li>
+<li><p>向量表：内核在异常时会访问这个表地址，并根据异常类型查表，按表跳转到异常处理函数执行。</p>
+<table>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">指令</th>
+<th style="text-align: left;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>EXPORT</code></td>
+<td style="text-align: left;">声明全局，可被外部文件使用，同义词 <code>GLOBAL</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>DCD</code></td>
+<td style="text-align: left;">以字为单位分配内存，要求4字节对齐且初始化该内存<br><code>DCD</code> 的功能是申请（1个或多个）字地址，并赋初值。每行 <code>DCD</code> 都会生成一个4字节的二进制代码（中断服务代码入口地址）</td>
+</tr>
+</tbody>
+</table>
+<p>向量表的位置在代码段的最前面。具体物理地址由连接器的配置参数（IROM1 的地址决定, keil target 中可修改）。如果程序在 Flash 运行， 则中断向量表默认的起始地址是 <code>0x08000000</code>。</p>
+<p><code>0x08000000</code> 是flash的首地址, 可以看到从 flash 的首地址开始，依次存储sp指针，Reset_Handler 中断地址。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">; Vector Table Mapped to Address 0 at Reset</span><br><span class="line">                AREA    RESET, DATA, READONLY</span><br><span class="line">;新定义一个段名为RESRT的段，DATA说明本段用于定义数据段，属性为只读</span><br><span class="line"></span><br><span class="line">;下述语句将3个标号申明为可外部引用，主要提供给连接器用于链接库文件或其他文件。</span><br><span class="line"></span><br><span class="line">                EXPORT  __Vectors</span><br><span class="line">;定义一个标号 __Vectors 代表向量表的起始地址</span><br><span class="line">                EXPORT  __Vectors_End</span><br><span class="line">;定义一个标号 __Vectors_End 代表向量表的结束地址</span><br><span class="line">                EXPORT  __Vectors_Size</span><br><span class="line">;定义一个标号 __Vectors_Size 代表向量表的地址长度</span><br><span class="line"></span><br><span class="line">__Vectors       DCD     __initial_sp               ; Top of Stack</span><br><span class="line">                DCD     Reset_Handler              ; Reset Handler</span><br><span class="line"></span><br><span class="line">;!此处省略大量相似语法的代码。76-172行的代码被省略，省略代码为向量表的具体内容</span><br><span class="line">   </span><br><span class="line">                DCD     FPU_IRQHandler                    ; FPU</span><br><span class="line">                </span><br><span class="line">                                         </span><br><span class="line">__Vectors_End</span><br><span class="line"></span><br><span class="line">__Vectors_Size  EQU  __Vectors_End - __Vectors</span><br><span class="line">;向量表的地址长度 __Vectors_Size 可以由 __Vectors_End - __Vectors 得到</span><br></pre></td></tr></table></figure></li>
+<li><p>各种中断处理程序 <code>xxx_Handler</code></p>
+<table>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>指令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>PROC</code></td>
+<td>定义子程序，与<code>ENDP</code>成对使用，表示子程序结束 同义词 <code>FUNCTION</code></td>
+</tr>
+<tr class="even">
+<td><code>WEAK</code></td>
+<td>编译器特性。弱定义，优先使用外部文件定义的标号。<br><code>WEAK</code> 声明其它的同名标号优先于该标号被引用，就是说如果外面声明了同样的标号，会优先调用在外部定义的</td>
+</tr>
+<tr class="odd">
+<td><code>EXPORT</code></td>
+<td>声明全局，可被外部文件使用，同义词 <code>GLOBAL</code></td>
+</tr>
+<tr class="even">
+<td><code>IMPORT</code></td>
+<td>声明标号来自外部文件，类似于C <code>extern</code></td>
+</tr>
+<tr class="odd">
+<td><code>B</code></td>
+<td>跳转到一个标号</td>
+</tr>
+</tbody>
+</table>
+<p>先指示编译器汇编一个新的代码段，名为 <code>|.text|</code>，只读</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AREA    |.text|, CODE, READONLY</span><br></pre></td></tr></table></figure>
+<p>除复位中断外的其它的函数默认跳转到中断后，在原地死循环。</p>
+<p>复位程序，也就是默认上电复位后执行的程序</p>
+<blockquote>
+<p>B：后面跟一个标签，标签直接对应一个地址，B的作用是跳转的标签指示的地址 BX：后面跟一个寄存器，寄存器里面保存地址，BX的作用是跳转到寄存器里面存放的地址 BL：后面跟一个标签，BL跳转到标签指示的地址，并且保存下一条指令地址到R14（即链接寄存器P33） BLX：后面跟一个寄存器，寄存器里面保存地址，并且保存下一条指令地址到R14（即链接寄存器P33）</p>
+<p><code>B &#123;条件&#125; 目标地址</code> 条件可选，立即跳转执行。（不返回程序），<code>B .</code> 是死循环while(1);的用法</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">;Reset handler</span><br><span class="line">Reset_Handler    PROC</span><br><span class="line">;利用PROC、ENDP这一对伪指令把程序分为若干个过程，使程序结构更加清晰</span><br><span class="line">                 EXPORT  Reset_Handler             [WEAK]</span><br><span class="line">;WEAK这个声明很重要，它可以让我们在 C 文件中的任意地方，放置中断服务程序，只要保证 C 函数的名字和向量表中的名字一致即可</span><br><span class="line">        IMPORT  SystemInit</span><br><span class="line">        IMPORT  __main</span><br><span class="line"></span><br><span class="line">                 LDR     R0, =SystemInit</span><br><span class="line">                 BLX     R0</span><br><span class="line">                 LDR     R0, =__main</span><br><span class="line">                 BX      R0</span><br><span class="line">                 ENDP</span><br></pre></td></tr></table></figure>
+<p>其他异常处理程序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">; Dummy Exception Handlers (infinite loops which can be modified)</span><br><span class="line">;_____________________________________________________________</span><br><span class="line">NMI_Handler     PROC</span><br><span class="line">                EXPORT  NMI_Handler                [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">                </span><br><span class="line">;!此处省略大量相似语法的代码。200-232行的代码被省略，省略代码为向量表的具体内容</span><br><span class="line"></span><br><span class="line">SysTick_Handler PROC</span><br><span class="line">                EXPORT  SysTick_Handler            [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">;B &#123;条件&#125; 目标地址 条件可选，立即跳转执行。（不返回程序），B . 是死循环while(1);的用法</span><br><span class="line">                ENDP</span><br><span class="line">                </span><br><span class="line">Default_Handler PROC</span><br><span class="line">;_____________________________________________________________</span><br><span class="line">                EXPORT  WWDG_IRQHandler                   [WEAK]                                        </span><br><span class="line">                EXPORT  PVD_IRQHandler                    [WEAK]                      </span><br><span class="line">;!此处省略大量相似语法的代码。242-319行的代码被省略，省略代码为向量表的具体内容</span><br><span class="line">                EXPORT  FPU_IRQHandler                    [WEAK]</span><br><span class="line">;_____________________________________________________________</span><br><span class="line">WWDG_IRQHandler                                                       </span><br><span class="line">PVD_IRQHandler                                      </span><br><span class="line"></span><br><span class="line">;!此处省略大量相似语法的代码。324-401行的代码被省略，省略代码为向量表的具体内容</span><br><span class="line"></span><br><span class="line">FPU_IRQHandler  </span><br><span class="line">;_____________________________________________________________</span><br><span class="line">                B       .</span><br><span class="line"></span><br><span class="line">                ENDP</span><br><span class="line"></span><br><span class="line">                ALIGN</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>用户堆栈和堆初始化</p>
+<ul>
+<li>if
+<ul>
+<li>如果使用了微库（MicroLib），就直接导出堆栈地址符号</li>
+</ul></li>
+<li>else
+<ul>
+<li>导入外部程序<code>__use_two_region_memory</code>并马上执行调用</li>
+<li>并导出子程序符号<code>__user_initial_stackheap</code>给外部程序调用</li>
+</ul></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">;**********************************************************************</span><br><span class="line">; User Stack and Heap initialization</span><br><span class="line">;**********************************************************************</span><br><span class="line">; 如果定义了 MICROLIB （微库，keil target 中设置），那么程序执行else后的语句</span><br><span class="line">                 IF      :DEF:__MICROLIB</span><br><span class="line">                </span><br><span class="line">                 EXPORT  __initial_sp</span><br><span class="line">                 EXPORT  __heap_base</span><br><span class="line">                 EXPORT  __heap_limit</span><br><span class="line">                </span><br><span class="line">                 ELSE</span><br><span class="line">                </span><br><span class="line">                 IMPORT  __use_two_region_memory</span><br><span class="line">                 EXPORT  __user_initial_stackheap</span><br><span class="line">                 </span><br><span class="line">__user_initial_stackheap</span><br><span class="line"></span><br><span class="line">                 LDR     R0, =  Heap_Mem</span><br><span class="line">                 LDR     R1, =(Stack_Mem + Stack_Size)</span><br><span class="line">                 LDR     R2, = (Heap_Mem +  Heap_Size)</span><br><span class="line">                 LDR     R3, = Stack_Mem</span><br><span class="line">                 BX      LR</span><br><span class="line"></span><br><span class="line">                 ALIGN</span><br><span class="line"></span><br><span class="line">                 ENDIF</span><br><span class="line"></span><br><span class="line">                 END</span><br><span class="line">;***************END OF FIEL***************</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="启动流程总结">启动流程总结</h5>
+<ol type="1">
+<li>分配堆栈</li>
+<li>向量表</li>
+<li>中断/异常处理函数
+<ol type="1">
+<li>复位程序（上电复位默认执行的函数）
+<ol type="1">
+<li>SystemInit()</li>
+<li>__main()</li>
+</ol></li>
+<li>其他异常处理程序</li>
+</ol></li>
+<li>导出堆栈信息等给外部使用</li>
+</ol>
+<h5 id="stm32-总体启动顺序">STM32 总体启动顺序</h5>
+<p><code>.s启动文件</code> -&gt; <code>中断处理函数外部定义</code> -&gt; <code>SystemInit()</code> -&gt; <code>SetSysClock</code> -&gt; <code>__main</code> -&gt; <code>main()</code></p>
+<h5 id="全部代码展示">全部代码展示</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br></pre></td><td class="code"><pre><span class="line">;******************** (C) COPYRIGHT 2017 STMicroelectronics ********************</span><br><span class="line">;* File Name          : startup_stm32f407xx.s</span><br><span class="line">;* Author             : MCD Application Team</span><br><span class="line">;* Description        : STM32F407xx devices vector table for MDK-ARM toolchain. </span><br><span class="line">;*                      This module performs:</span><br><span class="line">;*                      - Set the initial SP</span><br><span class="line">;*                      - Set the initial PC == Reset_Handler</span><br><span class="line">;*                      - Set the vector table entries with the exceptions ISR address</span><br><span class="line">;*                      - Branches to __main in the C library (which eventually</span><br><span class="line">;*                        calls main()).</span><br><span class="line">;*                      After Reset the CortexM4 processor is in Thread mode,</span><br><span class="line">;*                      priority is Privileged, and the Stack is set to Main.</span><br><span class="line">;* &lt;&lt;&lt; Use Configuration Wizard in Context Menu &gt;&gt;&gt;   </span><br><span class="line">;*******************************************************************************</span><br><span class="line">; </span><br><span class="line">;* Redistribution and use in source and binary forms, with or without modification,</span><br><span class="line">;* are permitted provided that the following conditions are met:</span><br><span class="line">;*   1. Redistributions of source code must retain the above copyright notice,</span><br><span class="line">;*      this list of conditions and the following disclaimer.</span><br><span class="line">;*   2. Redistributions in binary form must reproduce the above copyright notice,</span><br><span class="line">;*      this list of conditions and the following disclaimer in the documentation</span><br><span class="line">;*      and/or other materials provided with the distribution.</span><br><span class="line">;*   3. Neither the name of STMicroelectronics nor the names of its contributors</span><br><span class="line">;*      may be used to endorse or promote products derived from this software</span><br><span class="line">;*      without specific prior written permission.</span><br><span class="line">;*</span><br><span class="line">;* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span><br><span class="line">;* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span><br><span class="line">;* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span><br><span class="line">;* DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE</span><br><span class="line">;* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span><br><span class="line">;* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR</span><br><span class="line">;* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span><br><span class="line">;* CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,</span><br><span class="line">;* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span><br><span class="line">;* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span><br><span class="line">; </span><br><span class="line">;*******************************************************************************</span><br><span class="line"></span><br><span class="line">; Amount of memory (in bytes) allocated for Stack</span><br><span class="line">; Tailor this value to your application needs</span><br><span class="line">; &lt;h&gt; Stack Configuration</span><br><span class="line">;   &lt;o&gt; Stack Size (in Bytes) &lt;0x0-0xFFFFFFFF:8&gt;</span><br><span class="line">; &lt;/h&gt;·</span><br><span class="line"></span><br><span class="line">Stack_Size      EQU     0x00000400</span><br><span class="line"></span><br><span class="line">                AREA    STACK, NOINIT, READWRITE, ALIGN=3</span><br><span class="line">Stack_Mem       SPACE   Stack_Size</span><br><span class="line">__initial_sp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; &lt;h&gt; Heap Configuration</span><br><span class="line">;   &lt;o&gt;  Heap Size (in Bytes) &lt;0x0-0xFFFFFFFF:8&gt;</span><br><span class="line">; &lt;/h&gt;</span><br><span class="line"></span><br><span class="line">Heap_Size       EQU     0x00000200</span><br><span class="line"></span><br><span class="line">                AREA    HEAP, NOINIT, READWRITE, ALIGN=3</span><br><span class="line">__heap_base</span><br><span class="line">Heap_Mem        SPACE   Heap_Size</span><br><span class="line">__heap_limit</span><br><span class="line"></span><br><span class="line">                PRESERVE8</span><br><span class="line">                THUMB</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Vector Table Mapped to Address 0 at Reset</span><br><span class="line">                AREA    RESET, DATA, READONLY</span><br><span class="line">                EXPORT  __Vectors</span><br><span class="line">                EXPORT  __Vectors_End</span><br><span class="line">                EXPORT  __Vectors_Size</span><br><span class="line"></span><br><span class="line">__Vectors       DCD     __initial_sp               ; Top of Stack</span><br><span class="line">                DCD     Reset_Handler              ; Reset Handler</span><br><span class="line">                DCD     NMI_Handler                ; NMI Handler</span><br><span class="line">                DCD     HardFault_Handler          ; Hard Fault Handler</span><br><span class="line">                DCD     MemManage_Handler          ; MPU Fault Handler</span><br><span class="line">                DCD     BusFault_Handler           ; Bus Fault Handler</span><br><span class="line">                DCD     UsageFault_Handler         ; Usage Fault Handler</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     SVC_Handler                ; SVCall Handler</span><br><span class="line">                DCD     DebugMon_Handler           ; Debug Monitor Handler</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     PendSV_Handler             ; PendSV Handler</span><br><span class="line">                DCD     SysTick_Handler            ; SysTick Handler</span><br><span class="line"></span><br><span class="line">                ; External Interrupts</span><br><span class="line">                DCD     WWDG_IRQHandler                   ; Window WatchDog                                        </span><br><span class="line">                DCD     PVD_IRQHandler                    ; PVD through EXTI Line detection                        </span><br><span class="line">                DCD     TAMP_STAMP_IRQHandler             ; Tamper and TimeStamps through the EXTI line            </span><br><span class="line">                DCD     RTC_WKUP_IRQHandler               ; RTC Wakeup through the EXTI line                       </span><br><span class="line">                DCD     FLASH_IRQHandler                  ; FLASH                                           </span><br><span class="line">                DCD     RCC_IRQHandler                    ; RCC                                             </span><br><span class="line">                DCD     EXTI0_IRQHandler                  ; EXTI Line0                                             </span><br><span class="line">                DCD     EXTI1_IRQHandler                  ; EXTI Line1                                             </span><br><span class="line">                DCD     EXTI2_IRQHandler                  ; EXTI Line2                                             </span><br><span class="line">                DCD     EXTI3_IRQHandler                  ; EXTI Line3                                             </span><br><span class="line">                DCD     EXTI4_IRQHandler                  ; EXTI Line4                                             </span><br><span class="line">                DCD     DMA1_Stream0_IRQHandler           ; DMA1 Stream 0                                   </span><br><span class="line">                DCD     DMA1_Stream1_IRQHandler           ; DMA1 Stream 1                                   </span><br><span class="line">                DCD     DMA1_Stream2_IRQHandler           ; DMA1 Stream 2                                   </span><br><span class="line">                DCD     DMA1_Stream3_IRQHandler           ; DMA1 Stream 3                                   </span><br><span class="line">                DCD     DMA1_Stream4_IRQHandler           ; DMA1 Stream 4                                   </span><br><span class="line">                DCD     DMA1_Stream5_IRQHandler           ; DMA1 Stream 5                                   </span><br><span class="line">                DCD     DMA1_Stream6_IRQHandler           ; DMA1 Stream 6                                   </span><br><span class="line">                DCD     ADC_IRQHandler                    ; ADC1, ADC2 and ADC3s                            </span><br><span class="line">                DCD     CAN1_TX_IRQHandler                ; CAN1 TX                                                </span><br><span class="line">                DCD     CAN1_RX0_IRQHandler               ; CAN1 RX0                                               </span><br><span class="line">                DCD     CAN1_RX1_IRQHandler               ; CAN1 RX1                                               </span><br><span class="line">                DCD     CAN1_SCE_IRQHandler               ; CAN1 SCE                                               </span><br><span class="line">                DCD     EXTI9_5_IRQHandler                ; External Line[9:5]s                                    </span><br><span class="line">                DCD     TIM1_BRK_TIM9_IRQHandler          ; TIM1 Break and TIM9                   </span><br><span class="line">                DCD     TIM1_UP_TIM10_IRQHandler          ; TIM1 Update and TIM10                 </span><br><span class="line">                DCD     TIM1_TRG_COM_TIM11_IRQHandler     ; TIM1 Trigger and Commutation and TIM11</span><br><span class="line">                DCD     TIM1_CC_IRQHandler                ; TIM1 Capture Compare                                   </span><br><span class="line">                DCD     TIM2_IRQHandler                   ; TIM2                                            </span><br><span class="line">                DCD     TIM3_IRQHandler                   ; TIM3                                            </span><br><span class="line">                DCD     TIM4_IRQHandler                   ; TIM4                                            </span><br><span class="line">                DCD     I2C1_EV_IRQHandler                ; I2C1 Event                                             </span><br><span class="line">                DCD     I2C1_ER_IRQHandler                ; I2C1 Error                                             </span><br><span class="line">                DCD     I2C2_EV_IRQHandler                ; I2C2 Event                                             </span><br><span class="line">                DCD     I2C2_ER_IRQHandler                ; I2C2 Error                                               </span><br><span class="line">                DCD     SPI1_IRQHandler                   ; SPI1                                            </span><br><span class="line">                DCD     SPI2_IRQHandler                   ; SPI2                                            </span><br><span class="line">                DCD     USART1_IRQHandler                 ; USART1                                          </span><br><span class="line">                DCD     USART2_IRQHandler                 ; USART2                                          </span><br><span class="line">                DCD     USART3_IRQHandler                 ; USART3                                          </span><br><span class="line">                DCD     EXTI15_10_IRQHandler              ; External Line[15:10]s                                  </span><br><span class="line">                DCD     RTC_Alarm_IRQHandler              ; RTC Alarm (A and B) through EXTI Line                  </span><br><span class="line">                DCD     OTG_FS_WKUP_IRQHandler            ; USB OTG FS Wakeup through EXTI line                        </span><br><span class="line">                DCD     TIM8_BRK_TIM12_IRQHandler         ; TIM8 Break and TIM12                  </span><br><span class="line">                DCD     TIM8_UP_TIM13_IRQHandler          ; TIM8 Update and TIM13                 </span><br><span class="line">                DCD     TIM8_TRG_COM_TIM14_IRQHandler     ; TIM8 Trigger and Commutation and TIM14</span><br><span class="line">                DCD     TIM8_CC_IRQHandler                ; TIM8 Capture Compare                                   </span><br><span class="line">                DCD     DMA1_Stream7_IRQHandler           ; DMA1 Stream7                                           </span><br><span class="line">                DCD     FMC_IRQHandler                    ; FMC                                             </span><br><span class="line">                DCD     SDIO_IRQHandler                   ; SDIO                                            </span><br><span class="line">                DCD     TIM5_IRQHandler                   ; TIM5                                            </span><br><span class="line">                DCD     SPI3_IRQHandler                   ; SPI3                                            </span><br><span class="line">                DCD     UART4_IRQHandler                  ; UART4                                           </span><br><span class="line">                DCD     UART5_IRQHandler                  ; UART5                                           </span><br><span class="line">                DCD     TIM6_DAC_IRQHandler               ; TIM6 and DAC1&amp;2 underrun errors                   </span><br><span class="line">                DCD     TIM7_IRQHandler                   ; TIM7                   </span><br><span class="line">                DCD     DMA2_Stream0_IRQHandler           ; DMA2 Stream 0                                   </span><br><span class="line">                DCD     DMA2_Stream1_IRQHandler           ; DMA2 Stream 1                                   </span><br><span class="line">                DCD     DMA2_Stream2_IRQHandler           ; DMA2 Stream 2                                   </span><br><span class="line">                DCD     DMA2_Stream3_IRQHandler           ; DMA2 Stream 3                                   </span><br><span class="line">                DCD     DMA2_Stream4_IRQHandler           ; DMA2 Stream 4                                   </span><br><span class="line">                DCD     ETH_IRQHandler                    ; Ethernet                                        </span><br><span class="line">                DCD     ETH_WKUP_IRQHandler               ; Ethernet Wakeup through EXTI line                      </span><br><span class="line">                DCD     CAN2_TX_IRQHandler                ; CAN2 TX                                                </span><br><span class="line">                DCD     CAN2_RX0_IRQHandler               ; CAN2 RX0                                               </span><br><span class="line">                DCD     CAN2_RX1_IRQHandler               ; CAN2 RX1                                               </span><br><span class="line">                DCD     CAN2_SCE_IRQHandler               ; CAN2 SCE                                               </span><br><span class="line">                DCD     OTG_FS_IRQHandler                 ; USB OTG FS                                      </span><br><span class="line">                DCD     DMA2_Stream5_IRQHandler           ; DMA2 Stream 5                                   </span><br><span class="line">                DCD     DMA2_Stream6_IRQHandler           ; DMA2 Stream 6                                   </span><br><span class="line">                DCD     DMA2_Stream7_IRQHandler           ; DMA2 Stream 7                                   </span><br><span class="line">                DCD     USART6_IRQHandler                 ; USART6                                           </span><br><span class="line">                DCD     I2C3_EV_IRQHandler                ; I2C3 event                                             </span><br><span class="line">                DCD     I2C3_ER_IRQHandler                ; I2C3 error                                             </span><br><span class="line">                DCD     OTG_HS_EP1_OUT_IRQHandler         ; USB OTG HS End Point 1 Out                      </span><br><span class="line">                DCD     OTG_HS_EP1_IN_IRQHandler          ; USB OTG HS End Point 1 In                       </span><br><span class="line">                DCD     OTG_HS_WKUP_IRQHandler            ; USB OTG HS Wakeup through EXTI                         </span><br><span class="line">                DCD     OTG_HS_IRQHandler                 ; USB OTG HS                                      </span><br><span class="line">                DCD     DCMI_IRQHandler                   ; DCMI  </span><br><span class="line">                DCD     0                                 ; Reserved				                              </span><br><span class="line">                DCD     HASH_RNG_IRQHandler               ; Hash and Rng</span><br><span class="line">                DCD     FPU_IRQHandler                    ; FPU</span><br><span class="line">                </span><br><span class="line">                                         </span><br><span class="line">__Vectors_End</span><br><span class="line"></span><br><span class="line">__Vectors_Size  EQU  __Vectors_End - __Vectors</span><br><span class="line"></span><br><span class="line">                AREA    |.text|, CODE, READONLY</span><br><span class="line"></span><br><span class="line">; Reset handler</span><br><span class="line">Reset_Handler    PROC</span><br><span class="line">                 EXPORT  Reset_Handler             [WEAK]</span><br><span class="line">        IMPORT  SystemInit</span><br><span class="line">        IMPORT  __main</span><br><span class="line"></span><br><span class="line">                 LDR     R0, =SystemInit</span><br><span class="line">                 BLX     R0</span><br><span class="line">                 LDR     R0, =__main</span><br><span class="line">                 BX      R0</span><br><span class="line">                 ENDP</span><br><span class="line"></span><br><span class="line">; Dummy Exception Handlers (infinite loops which can be modified)</span><br><span class="line"></span><br><span class="line">NMI_Handler     PROC</span><br><span class="line">                EXPORT  NMI_Handler                [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">HardFault_Handler\</span><br><span class="line">                PROC</span><br><span class="line">                EXPORT  HardFault_Handler          [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">MemManage_Handler\</span><br><span class="line">                PROC</span><br><span class="line">                EXPORT  MemManage_Handler          [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">BusFault_Handler\</span><br><span class="line">                PROC</span><br><span class="line">                EXPORT  BusFault_Handler           [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">UsageFault_Handler\</span><br><span class="line">                PROC</span><br><span class="line">                EXPORT  UsageFault_Handler         [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">SVC_Handler     PROC</span><br><span class="line">                EXPORT  SVC_Handler                [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">DebugMon_Handler\</span><br><span class="line">                PROC</span><br><span class="line">                EXPORT  DebugMon_Handler           [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">PendSV_Handler  PROC</span><br><span class="line">                EXPORT  PendSV_Handler             [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line">SysTick_Handler PROC</span><br><span class="line">                EXPORT  SysTick_Handler            [WEAK]</span><br><span class="line">                B       .</span><br><span class="line">                ENDP</span><br><span class="line"></span><br><span class="line">Default_Handler PROC</span><br><span class="line"></span><br><span class="line">                EXPORT  WWDG_IRQHandler                   [WEAK]                                        </span><br><span class="line">                EXPORT  PVD_IRQHandler                    [WEAK]                      </span><br><span class="line">                EXPORT  TAMP_STAMP_IRQHandler             [WEAK]         </span><br><span class="line">                EXPORT  RTC_WKUP_IRQHandler               [WEAK]                     </span><br><span class="line">                EXPORT  FLASH_IRQHandler                  [WEAK]                                         </span><br><span class="line">                EXPORT  RCC_IRQHandler                    [WEAK]                                            </span><br><span class="line">                EXPORT  EXTI0_IRQHandler                  [WEAK]                                            </span><br><span class="line">                EXPORT  EXTI1_IRQHandler                  [WEAK]                                             </span><br><span class="line">                EXPORT  EXTI2_IRQHandler                  [WEAK]                                            </span><br><span class="line">                EXPORT  EXTI3_IRQHandler                  [WEAK]                                           </span><br><span class="line">                EXPORT  EXTI4_IRQHandler                  [WEAK]                                            </span><br><span class="line">                EXPORT  DMA1_Stream0_IRQHandler           [WEAK]                                </span><br><span class="line">                EXPORT  DMA1_Stream1_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  DMA1_Stream2_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  DMA1_Stream3_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  DMA1_Stream4_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  DMA1_Stream5_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  DMA1_Stream6_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  ADC_IRQHandler                    [WEAK]                         </span><br><span class="line">                EXPORT  CAN1_TX_IRQHandler                [WEAK]                                                </span><br><span class="line">                EXPORT  CAN1_RX0_IRQHandler               [WEAK]                                               </span><br><span class="line">                EXPORT  CAN1_RX1_IRQHandler               [WEAK]                                                </span><br><span class="line">                EXPORT  CAN1_SCE_IRQHandler               [WEAK]                                                </span><br><span class="line">                EXPORT  EXTI9_5_IRQHandler                [WEAK]                                    </span><br><span class="line">                EXPORT  TIM1_BRK_TIM9_IRQHandler          [WEAK]                  </span><br><span class="line">                EXPORT  TIM1_UP_TIM10_IRQHandler          [WEAK]                </span><br><span class="line">                EXPORT  TIM1_TRG_COM_TIM11_IRQHandler     [WEAK] </span><br><span class="line">                EXPORT  TIM1_CC_IRQHandler                [WEAK]                                   </span><br><span class="line">                EXPORT  TIM2_IRQHandler                   [WEAK]                                            </span><br><span class="line">                EXPORT  TIM3_IRQHandler                   [WEAK]                                            </span><br><span class="line">                EXPORT  TIM4_IRQHandler                   [WEAK]                                            </span><br><span class="line">                EXPORT  I2C1_EV_IRQHandler                [WEAK]                                             </span><br><span class="line">                EXPORT  I2C1_ER_IRQHandler                [WEAK]                                             </span><br><span class="line">                EXPORT  I2C2_EV_IRQHandler                [WEAK]                                            </span><br><span class="line">                EXPORT  I2C2_ER_IRQHandler                [WEAK]                                               </span><br><span class="line">                EXPORT  SPI1_IRQHandler                   [WEAK]                                           </span><br><span class="line">                EXPORT  SPI2_IRQHandler                   [WEAK]                                            </span><br><span class="line">                EXPORT  USART1_IRQHandler                 [WEAK]                                          </span><br><span class="line">                EXPORT  USART2_IRQHandler                 [WEAK]                                          </span><br><span class="line">                EXPORT  USART3_IRQHandler                 [WEAK]                                         </span><br><span class="line">                EXPORT  EXTI15_10_IRQHandler              [WEAK]                                  </span><br><span class="line">                EXPORT  RTC_Alarm_IRQHandler              [WEAK]                  </span><br><span class="line">                EXPORT  OTG_FS_WKUP_IRQHandler            [WEAK]                        </span><br><span class="line">                EXPORT  TIM8_BRK_TIM12_IRQHandler         [WEAK]                 </span><br><span class="line">                EXPORT  TIM8_UP_TIM13_IRQHandler          [WEAK]                 </span><br><span class="line">                EXPORT  TIM8_TRG_COM_TIM14_IRQHandler     [WEAK] </span><br><span class="line">                EXPORT  TIM8_CC_IRQHandler                [WEAK]                                   </span><br><span class="line">                EXPORT  DMA1_Stream7_IRQHandler           [WEAK]                                          </span><br><span class="line">                EXPORT  FMC_IRQHandler                    [WEAK]                                             </span><br><span class="line">                EXPORT  SDIO_IRQHandler                   [WEAK]                                             </span><br><span class="line">                EXPORT  TIM5_IRQHandler                   [WEAK]                                             </span><br><span class="line">                EXPORT  SPI3_IRQHandler                   [WEAK]                                             </span><br><span class="line">                EXPORT  UART4_IRQHandler                  [WEAK]                                            </span><br><span class="line">                EXPORT  UART5_IRQHandler                  [WEAK]                                            </span><br><span class="line">                EXPORT  TIM6_DAC_IRQHandler               [WEAK]                   </span><br><span class="line">                EXPORT  TIM7_IRQHandler                   [WEAK]                    </span><br><span class="line">                EXPORT  DMA2_Stream0_IRQHandler           [WEAK]                                  </span><br><span class="line">                EXPORT  DMA2_Stream1_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  DMA2_Stream2_IRQHandler           [WEAK]                                    </span><br><span class="line">                EXPORT  DMA2_Stream3_IRQHandler           [WEAK]                                    </span><br><span class="line">                EXPORT  DMA2_Stream4_IRQHandler           [WEAK]                                 </span><br><span class="line">                EXPORT  ETH_IRQHandler                    [WEAK]                                         </span><br><span class="line">                EXPORT  ETH_WKUP_IRQHandler               [WEAK]                     </span><br><span class="line">                EXPORT  CAN2_TX_IRQHandler                [WEAK]                                               </span><br><span class="line">                EXPORT  CAN2_RX0_IRQHandler               [WEAK]                                               </span><br><span class="line">                EXPORT  CAN2_RX1_IRQHandler               [WEAK]                                               </span><br><span class="line">                EXPORT  CAN2_SCE_IRQHandler               [WEAK]                                               </span><br><span class="line">                EXPORT  OTG_FS_IRQHandler                 [WEAK]                                       </span><br><span class="line">                EXPORT  DMA2_Stream5_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  DMA2_Stream6_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  DMA2_Stream7_IRQHandler           [WEAK]                                   </span><br><span class="line">                EXPORT  USART6_IRQHandler                 [WEAK]                                           </span><br><span class="line">                EXPORT  I2C3_EV_IRQHandler                [WEAK]                                              </span><br><span class="line">                EXPORT  I2C3_ER_IRQHandler                [WEAK]                                              </span><br><span class="line">                EXPORT  OTG_HS_EP1_OUT_IRQHandler         [WEAK]                      </span><br><span class="line">                EXPORT  OTG_HS_EP1_IN_IRQHandler          [WEAK]                      </span><br><span class="line">                EXPORT  OTG_HS_WKUP_IRQHandler            [WEAK]                        </span><br><span class="line">                EXPORT  OTG_HS_IRQHandler                 [WEAK]                                      </span><br><span class="line">                EXPORT  DCMI_IRQHandler                   [WEAK]                                                                                 </span><br><span class="line">                EXPORT  HASH_RNG_IRQHandler               [WEAK]</span><br><span class="line">                EXPORT  FPU_IRQHandler                    [WEAK]</span><br><span class="line">                </span><br><span class="line">WWDG_IRQHandler                                                       </span><br><span class="line">PVD_IRQHandler                                      </span><br><span class="line">TAMP_STAMP_IRQHandler                  </span><br><span class="line">RTC_WKUP_IRQHandler                                </span><br><span class="line">FLASH_IRQHandler                                                       </span><br><span class="line">RCC_IRQHandler                                                            </span><br><span class="line">EXTI0_IRQHandler                                                          </span><br><span class="line">EXTI1_IRQHandler                                                           </span><br><span class="line">EXTI2_IRQHandler                                                          </span><br><span class="line">EXTI3_IRQHandler                                                         </span><br><span class="line">EXTI4_IRQHandler                                                          </span><br><span class="line">DMA1_Stream0_IRQHandler                                       </span><br><span class="line">DMA1_Stream1_IRQHandler                                          </span><br><span class="line">DMA1_Stream2_IRQHandler                                          </span><br><span class="line">DMA1_Stream3_IRQHandler                                          </span><br><span class="line">DMA1_Stream4_IRQHandler                                          </span><br><span class="line">DMA1_Stream5_IRQHandler                                          </span><br><span class="line">DMA1_Stream6_IRQHandler                                          </span><br><span class="line">ADC_IRQHandler                                         </span><br><span class="line">CAN1_TX_IRQHandler                                                            </span><br><span class="line">CAN1_RX0_IRQHandler                                                          </span><br><span class="line">CAN1_RX1_IRQHandler                                                           </span><br><span class="line">CAN1_SCE_IRQHandler                                                           </span><br><span class="line">EXTI9_5_IRQHandler                                                </span><br><span class="line">TIM1_BRK_TIM9_IRQHandler                        </span><br><span class="line">TIM1_UP_TIM10_IRQHandler                      </span><br><span class="line">TIM1_TRG_COM_TIM11_IRQHandler  </span><br><span class="line">TIM1_CC_IRQHandler                                               </span><br><span class="line">TIM2_IRQHandler                                                           </span><br><span class="line">TIM3_IRQHandler                                                           </span><br><span class="line">TIM4_IRQHandler                                                           </span><br><span class="line">I2C1_EV_IRQHandler                                                         </span><br><span class="line">I2C1_ER_IRQHandler                                                         </span><br><span class="line">I2C2_EV_IRQHandler                                                        </span><br><span class="line">I2C2_ER_IRQHandler                                                           </span><br><span class="line">SPI1_IRQHandler                                                          </span><br><span class="line">SPI2_IRQHandler                                                           </span><br><span class="line">USART1_IRQHandler                                                       </span><br><span class="line">USART2_IRQHandler                                                       </span><br><span class="line">USART3_IRQHandler                                                      </span><br><span class="line">EXTI15_10_IRQHandler                                            </span><br><span class="line">RTC_Alarm_IRQHandler                            </span><br><span class="line">OTG_FS_WKUP_IRQHandler                                </span><br><span class="line">TIM8_BRK_TIM12_IRQHandler                      </span><br><span class="line">TIM8_UP_TIM13_IRQHandler                       </span><br><span class="line">TIM8_TRG_COM_TIM14_IRQHandler  </span><br><span class="line">TIM8_CC_IRQHandler                                               </span><br><span class="line">DMA1_Stream7_IRQHandler                                                 </span><br><span class="line">FMC_IRQHandler                                                            </span><br><span class="line">SDIO_IRQHandler                                                            </span><br><span class="line">TIM5_IRQHandler                                                            </span><br><span class="line">SPI3_IRQHandler                                                            </span><br><span class="line">UART4_IRQHandler                                                          </span><br><span class="line">UART5_IRQHandler                                                          </span><br><span class="line">TIM6_DAC_IRQHandler                            </span><br><span class="line">TIM7_IRQHandler                              </span><br><span class="line">DMA2_Stream0_IRQHandler                                         </span><br><span class="line">DMA2_Stream1_IRQHandler                                          </span><br><span class="line">DMA2_Stream2_IRQHandler                                           </span><br><span class="line">DMA2_Stream3_IRQHandler                                           </span><br><span class="line">DMA2_Stream4_IRQHandler                                        </span><br><span class="line">ETH_IRQHandler                                                         </span><br><span class="line">ETH_WKUP_IRQHandler                                </span><br><span class="line">CAN2_TX_IRQHandler                                                           </span><br><span class="line">CAN2_RX0_IRQHandler                                                          </span><br><span class="line">CAN2_RX1_IRQHandler                                                          </span><br><span class="line">CAN2_SCE_IRQHandler                                                          </span><br><span class="line">OTG_FS_IRQHandler                                                    </span><br><span class="line">DMA2_Stream5_IRQHandler                                          </span><br><span class="line">DMA2_Stream6_IRQHandler                                          </span><br><span class="line">DMA2_Stream7_IRQHandler                                          </span><br><span class="line">USART6_IRQHandler                                                        </span><br><span class="line">I2C3_EV_IRQHandler                                                          </span><br><span class="line">I2C3_ER_IRQHandler                                                          </span><br><span class="line">OTG_HS_EP1_OUT_IRQHandler                           </span><br><span class="line">OTG_HS_EP1_IN_IRQHandler                            </span><br><span class="line">OTG_HS_WKUP_IRQHandler                                </span><br><span class="line">OTG_HS_IRQHandler                                                   </span><br><span class="line">DCMI_IRQHandler                                                                                                             </span><br><span class="line">HASH_RNG_IRQHandler</span><br><span class="line">FPU_IRQHandler  </span><br><span class="line">           </span><br><span class="line">                B       .</span><br><span class="line"></span><br><span class="line">                ENDP</span><br><span class="line"></span><br><span class="line">                ALIGN</span><br><span class="line"></span><br><span class="line">;*******************************************************************************</span><br><span class="line">; User Stack and Heap initialization</span><br><span class="line">;*******************************************************************************</span><br><span class="line">                 IF      :DEF:__MICROLIB</span><br><span class="line">                </span><br><span class="line">                 EXPORT  __initial_sp</span><br><span class="line">                 EXPORT  __heap_base</span><br><span class="line">                 EXPORT  __heap_limit</span><br><span class="line">                </span><br><span class="line">                 ELSE</span><br><span class="line">                </span><br><span class="line">                 IMPORT  __use_two_region_memory</span><br><span class="line">                 EXPORT  __user_initial_stackheap</span><br><span class="line">                 </span><br><span class="line">__user_initial_stackheap</span><br><span class="line"></span><br><span class="line">                 LDR     R0, =  Heap_Mem</span><br><span class="line">                 LDR     R1, =(Stack_Mem + Stack_Size)</span><br><span class="line">                 LDR     R2, = (Heap_Mem +  Heap_Size)</span><br><span class="line">                 LDR     R3, = Stack_Mem</span><br><span class="line">                 BX      LR</span><br><span class="line"></span><br><span class="line">                 ALIGN</span><br><span class="line"></span><br><span class="line">                 ENDIF</span><br><span class="line"></span><br><span class="line">                 END</span><br><span class="line"></span><br><span class="line">;************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE*****</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="简单汇编程序实现">简单汇编程序实现</h3>
+<h4 id="三数中寻找最大数">三数中寻找最大数</h4>
+<h5 id="题目要求">题目要求：</h5>
+<p>找到3个数字中最大的数字并将结果存储在R0中。</p>
+<h5 id="代码展示">代码展示：</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">N1				EQU		456</span><br><span class="line">N2				EQU		1278</span><br><span class="line">N3				EQU		85</span><br><span class="line">Stack_Size		EQU		0x00000400</span><br><span class="line">				AREA	Mystack,	NOINIT,	READWRITE,	ALIGN=3</span><br><span class="line">Stack_Mem		SPACE	Stack_Size</span><br><span class="line">__initial_sp</span><br><span class="line"></span><br><span class="line">				AREA	Reset,	DATA,	READONLY</span><br><span class="line">__Vectors		DCD		__initial_sp</span><br><span class="line">				DCD		Reset_Handler</span><br><span class="line">					</span><br><span class="line">				THUMB</span><br><span class="line">				PRESERVE8</span><br><span class="line">				AREA	Init,	CODE,	READONLY</span><br><span class="line">				ENTRY</span><br><span class="line">				</span><br><span class="line">Reset_Handler</span><br><span class="line">		LDR		R0,=N1</span><br><span class="line">		LDR		R1,=N2</span><br><span class="line">		LDR		R2,=N3</span><br><span class="line">		CMP		R0,R1</span><br><span class="line">		BHI		next</span><br><span class="line">		MOV		R0,R1</span><br><span class="line">next</span><br><span class="line">		CMP		R0,R2</span><br><span class="line">		BHI		deadloop</span><br><span class="line">		MOV		R0,R2</span><br><span class="line">deadloop</span><br><span class="line">		B	deadloop</span><br><span class="line">		NOP</span><br><span class="line">		END</span><br></pre></td></tr></table></figure>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Rebuild started: Project: Project_1</span><br><span class="line">*** Using Compiler &#x27;V6.16&#x27;, folder: &#x27;D:\MDK\ARM\ARMCLANG\Bin&#x27;</span><br><span class="line">Rebuild target &#x27;Target 1&#x27;</span><br><span class="line">assembling startup_stm32f407xx.s...</span><br><span class="line">compiling system_stm32f4xx.c...</span><br><span class="line">linking...</span><br><span class="line">.\Objects\Project_1.axf: Error: L6320W: Ignoring --entry command. Cannot find argument &#x27;Reset_Handler&#x27;.</span><br><span class="line">.\Objects\Project_1.axf: Warning: L6320W: Ignoring --first command. Cannot find argument &#x27;__Vectors&#x27;.</span><br><span class="line">Not enough information to list image symbols.</span><br><span class="line">Not enough information to list load addresses in the image map.</span><br><span class="line">Finished: 2 information, 1 warning and 1 error messages.</span><br><span class="line">&quot;.\Objects\Project_1.axf&quot; - 1 Error(s), 1 Warning(s).</span><br><span class="line">Target not created.</span><br><span class="line">Build Time Elapsed:  00:00:00</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/30/16-02-06/image-20220506231919016-165185037825611.png" alt="image-20220506231919016" style="zoom:50%;"></p>
+<p>课本代码会报错，因此修正代码课本代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">N1				EQU		456</span><br><span class="line">N2				EQU		1278</span><br><span class="line">N3				EQU		85</span><br><span class="line">Stack_Size		EQU		0x00000400</span><br><span class="line">				AREA	Mystack,	NOINIT,	READWRITE,	ALIGN=3</span><br><span class="line">Stack_Mem		SPACE	Stack_Size</span><br><span class="line">__initial_sp</span><br><span class="line"></span><br><span class="line">				AREA	Reset,	DATA,	READONLY</span><br><span class="line">				EXPORT  __Vectors</span><br><span class="line">					</span><br><span class="line">__Vectors		DCD		__initial_sp</span><br><span class="line">				DCD		Reset_Handler</span><br><span class="line">					</span><br><span class="line">				THUMB</span><br><span class="line">				PRESERVE8</span><br><span class="line">				AREA	Init,	CODE,	READONLY</span><br><span class="line">				ENTRY</span><br><span class="line">				</span><br><span class="line">Reset_Handler</span><br><span class="line">		EXPORT  Reset_Handler             [WEAK]</span><br><span class="line">		LDR		R0,=N1</span><br><span class="line">		LDR		R1,=N2</span><br><span class="line">		LDR		R2,=N3</span><br><span class="line">		CMP		R0,R1</span><br><span class="line">		BHI		next</span><br><span class="line">		MOV		R0,R1</span><br><span class="line">next</span><br><span class="line">		CMP		R0,R2</span><br><span class="line">		BHI		deadloop</span><br><span class="line">		MOV		R0,R2</span><br><span class="line">deadloop</span><br><span class="line">		B	deadloop</span><br><span class="line">		NOP</span><br><span class="line">		END</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/30/16-02-06/image-20220506231830620-16518503124549.png" alt="image-20220506231830620" style="zoom:50%;"></p>
+<h5 id="结果展示">结果展示：</h5>
+<p><img src="/2022/04/30/16-02-06/image-20220506232317154-165185059873513.png" alt="image-20220506232317154" style="zoom:50%;"></p>
+<h4 id="n个数相加">N个数相加</h4>
+<h5 id="题目要求-1">题目要求：</h5>
+<p>将N，N-1，…… 2，1共N个数字相加，将结果存储在R1，当N = 0时，输出的结果为0。</p>
+<h5 id="代码展示-1">代码展示：</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">N				EQU		10</span><br><span class="line">Stack_Size		EQU		0x00000400</span><br><span class="line">				AREA	Mystack,	NOINIT,	READWRITE,	ALIGN=3</span><br><span class="line">Stack_Mem		SPACE	Stack_Size</span><br><span class="line">__initial_sp</span><br><span class="line"></span><br><span class="line">				AREA	Reset,	DATA,	READONLY</span><br><span class="line">				EXPORT  __Vectors</span><br><span class="line">				</span><br><span class="line">__Vectors		DCD		__initial_sp</span><br><span class="line">				DCD		Reset_Handler</span><br><span class="line">					</span><br><span class="line">				THUMB</span><br><span class="line">				PRESERVE8</span><br><span class="line">				AREA	Init,	CODE,	READONLY</span><br><span class="line">				ENTRY</span><br><span class="line">				</span><br><span class="line">Reset_Handler</span><br><span class="line">		</span><br><span class="line">		EXPORT  Reset_Handler             [WEAK]</span><br><span class="line">		</span><br><span class="line">		LDR		R0,	=N</span><br><span class="line">		MOV		R1,	#0</span><br><span class="line">loop</span><br><span class="line">		ADD		r1, r0</span><br><span class="line">		SUBS	r0,	#1</span><br><span class="line">		BNE		loop</span><br><span class="line">deadloop</span><br><span class="line">		B	deadloop</span><br><span class="line">		NOP</span><br><span class="line">		END</span><br></pre></td></tr></table></figure>
+<h5 id="结果展示-1">结果展示：</h5>
+<p><img src="/2022/04/30/16-02-06/image-20220506213516914-16518441195105.png" alt="image-20220506213516914" style="zoom:50%;"></p>
+<h4 id="十六进制转asic码">十六进制转ASIC码</h4>
+<h5 id="题目要求-2">题目要求：</h5>
+<p>调用子例程实现R3低4位中十六进制转换位对应的ASCII码，并将十六进制数和对应的结果存储在内存中，存储在从20000000开始的单元中</p>
+<h5 id="代码实现">代码实现：</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Stack_Size		EQU		0x00000400</span><br><span class="line">				AREA	Mystack,	NOINIT,	READWRITE,	ALIGN=3</span><br><span class="line">Stack_Mem		SPACE	Stack_Size</span><br><span class="line">__initial_sp</span><br><span class="line"></span><br><span class="line">				AREA	Reset,	DATA,	READONLY</span><br><span class="line">				EXPORT  __Vectors</span><br><span class="line">__Vectors		DCD		__initial_sp</span><br><span class="line">				DCD		Reset_Handler</span><br><span class="line">					</span><br><span class="line">				THUMB</span><br><span class="line">				PRESERVE8</span><br><span class="line">				AREA	Init,	CODE,	READONLY</span><br><span class="line">				ENTRY</span><br><span class="line">				</span><br><span class="line">Reset_Handler</span><br><span class="line">		EXPORT  Reset_Handler             [WEAK]</span><br><span class="line">		MOV 	R3,0x0A</span><br><span class="line">		CMP		R3,#9</span><br><span class="line">		BLE		Next</span><br><span class="line">		ADD		R3,R3,#7</span><br><span class="line">Next</span><br><span class="line">		ADD		R3,R3,#7</span><br><span class="line">deadloop</span><br><span class="line">		B	deadloop</span><br><span class="line">		NOP</span><br><span class="line">		END</span><br></pre></td></tr></table></figure>
+<h5 id="结果展示-2">结果展示：</h5>
+<p><img src="/2022/04/30/16-02-06/image-20220506212809459.png" alt="image-20220506212809459" style="zoom:50%;"></p>
+<p><img src="/2022/04/30/16-02-06/image-20220506213109858-16518438733371-16518438752213.png" alt="image-20220506213109858" style="zoom:50%;"></p>
+<h2 id="课程实验2">课程实验2</h2>
+<h3 id="使用stm32f401ve控制led">——使用STM32F401VE控制LED</h3>
+<h3 id="实验报告内容-1">实验报告内容</h3>
+<ol type="1">
+<li><p>实验目标与任务</p>
+<ol type="1">
+<li>掌握STM32F40x的GPIO输入输出的使用。</li>
+<li>主寄存器方法，库函数方法设置GPIO。</li>
+<li>了解如何使用STM32CubeMX构建初始代码。</li>
+</ol></li>
+<li><p>实验内容</p>
+<ol type="1">
+<li><p>开关控制LED灯。当按下按钮时，对应的LED灯亮500ms，然后熄灭。</p>
+<p><img src="/2022/04/30/16-02-06/image-20220507073550593-16518801528251.png" alt="image-20220507073550593" style="zoom:50%;"></p></li>
+<li><p>要求:需要详细的步骤，包括proteus仿真电路和程序。</p></li>
+</ol></li>
+<li><p>实验步骤</p></li>
+</ol>
+<h3 id="实验报告-1">实验报告</h3>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -460,7 +836,7 @@ F^{&#39;}_X(x_0)=\lim_{x\to x_0}\frac{F_X(x)-F_X(x_0)}{x-x_0}
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 17:25:07" itemprop="dateModified" datetime="2022-04-04T17:25:07+08:00">2022-04-04</time>
+      <time title="修改时间：2022-04-24 14:46:27" itemprop="dateModified" datetime="2022-04-24T14:46:27+08:00">2022-04-24</time>
     </span>
 
   
@@ -667,7 +1043,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <p>结果：</p>
 <p><img src="/2022/03/30/11-27-50/gaussian.jpg"></p></li>
 <li><p>模糊中值</p>
-<p>在这里，函数 <strong><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#ga564869aa33e58769b4469101aac458f9"><code>cv.medianBlur()</code></a></strong> 取内核区域下所有像素的中值，并将中心元素替换为这个中值。这对于图像中的椒盐噪声是非常有效的。有趣的是，在上面的过滤器中，中心元素是一个新计算的值，它可能是图像中的像素值，也可能是一个新值。但在中值模糊中，中心元素往往被图像中的某个像素值所替代。有效地降低了噪声。它的内核大小应该是一个正奇数。</p>
+<p>在这里，函数 <strong><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#ga564869aa33e58769b4469101aac458f9"><code>cv.medianBlur()</code></a></strong> 取内核区域下所有像素的中值，并将中心元素替换为这个中值。这对于图像中的椒盐噪声是非常有效的。有趣的是，在上面的过滤器中，中心元素是一个新计算的值，它可能是图像中的像素值，也可能是一个新值。但在中值模糊中，中心元素往往被图像中的某个像素值所替代。有效地降低了噪声。它的内核大小应该是一个正奇数。2</p>
 <p>在这个演示中，我给原始图像添加了 <span class="math inline">\(50%\)</span> 的噪声，并应用了中间值模糊。检查结果：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">median = cv.medianBlur(img,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 <p>结果：</p>
@@ -2175,7 +2551,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-23 11:38:16" itemprop="dateModified" datetime="2022-03-23T11:38:16+08:00">2022-03-23</time>
+      <time title="修改时间：2022-05-02 13:52:04" itemprop="dateModified" datetime="2022-05-02T13:52:04+08:00">2022-05-02</time>
     </span>
 
   
@@ -2377,6 +2753,47 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <h1 id="摘抄">摘抄：</h1>
 <p>RISC使用的是load-store结构。load-store结构的本质，在于RISC技术的CPU只处理（指逻辑，算术运算处理）寄存器中的数据。相反，X86却能够直接处理存储器中的数据。</p>
 <p><a target="_blank" rel="noopener" href="https://nieyong.github.io/wiki_cpu/index.html">index (nieyong.github.io)</a></p>
+<h1 id="stm32启动程序分析">STM32启动程序分析</h1>
+<p><strong>1.程序的内存分配</strong></p>
+<p>一个由C/C 编译的程序占用的内存分为以下几个部分：</p>
+<p><strong>栈区（stack）：</strong>由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p>
+<p><strong>堆区（heap）：</strong>一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，分配方式类似于链表。</p>
+<p><strong>全局区（静态区）（static）：</strong>全局变量和静态变量的存储是放在一块的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。程序结束后由系统释放。</p>
+<p><strong>文字常量区：</strong>常量字符串就是放在这里的，程序结束后由系统释放。</p>
+<p><strong>程序代码区：</strong>存放函数体的二进制代码。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">0</span>; <span class="comment">//全局初始化区</span></span><br><span class="line"><span class="type">char</span> *p1; <span class="comment">//全局未初始化区</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123; </span><br><span class="line">    <span class="type">int</span> b; <span class="comment">//栈 </span></span><br><span class="line">    <span class="type">char</span> s[] = <span class="string">&quot;abc&quot;</span>; <span class="comment">//栈 </span></span><br><span class="line">    <span class="type">char</span> *p2; <span class="comment">//栈 </span></span><br><span class="line">    <span class="type">char</span> *p3 = <span class="string">&quot;123456&quot;</span>; <span class="comment">//123456\0在常量区，p3在栈上。 </span></span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> c = <span class="number">0</span>;<span class="comment">//全局（静态）初始化区 </span></span><br><span class="line">    p1 = (<span class="type">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span>); </span><br><span class="line">    p2 = (<span class="type">char</span> *)<span class="built_in">malloc</span>(<span class="number">20</span>); <span class="comment">//分配得来得10和20字节的区域就在堆区。 </span></span><br><span class="line">    <span class="built_in">strcpy</span>(p1, <span class="string">&quot;123456&quot;</span>); <span class="comment">//123456\0放在常量区，编译器可能会将它与p3所指向的&quot;123456&quot;优化成一个地方。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这里要强调一点：传递指针只占4字节，如果传递的是结构体，就会占用结构大小空间。</span></span><br><span class="line"><span class="comment">//提示：在函数嵌套,递归时，系统仍会占用栈空间。</span></span><br><span class="line"><span class="comment">//虽然堆上的数据只要程序员不释放空间就可以一直访问，但是，如果忘记了释放堆内存，那么将会造成内存泄漏，甚至致命的潜在错误。</span></span><br></pre></td></tr></table></figure>
+<p>Q&amp;A</p>
+<p>Q:为什么驱动文件是汇编语言写而不是C语言? A:汇编语言处理一些更加底层的工作，如设置堆栈空间等，这一点C这个"高级语言"无法做到。</p>
+<p>Q:启动程序阶段，CPU对启动文件是从上向下足以读取吗？ A:编译之前的是源程序，编译之后的指令的机器码以地址进行排列。实际上按地址逐一进行读取，要看源码的组织结构。</p>
+<p>Q:用户通过Keil软件配置堆栈空间和自己定义堆栈有什么区别？ A:</p>
+<p>时钟系统就是CPU的脉搏，像人的心跳一样，重要性不言而喻。由于STM32本身十分复杂，外设非常多，但并不是所有的外设都需要系统时钟那么高的频率，比如看门狗以及RTC只需要几十k的时钟即可。并且，同一个电路，时钟越快功耗越快，同时抗电磁干扰能力也就越弱，所以较为复杂的MCU都是采用多时钟源的方法来解决这些问题。</p>
+<p>startup_stm32f10x_cl.s（启动文件） → SystemInit() → SetSysClock () → SetSysClockTo72()</p>
+<p>查看MDK的文档，会发现有这么一句说明：It is automatically created by the linker when it sees a definition of main()。简单点来说，当编译器发现定义了main函数，那么就会自动创建__main。</p>
+<p>程序经过汇编启动代码，执行到__main()，之后会执行两个大的函数：</p>
+<p>__scatterload()：负责把RW/RO输出段从装载域地址复制到运行域地址，并完成了ZI运行域的初始化工作。</p>
+<p>__rt_entry():负责初始化堆栈，完成库函数的初始化，<strong>最后自动跳转向main()函数</strong>。</p>
+<p>注意：有些应用中会要求在进入main函数之前先初始化一些外设或者变量区，如：初始化时钟、初始化SDRAM。在初始化他们的时候一定不要使用全局变量，部分库函数，HAL库。因为在__main之前，全局变量还没有初始化，使用会异常，甚至发生内存错误。<strong>因此建议使用寄存器来初始化。</strong></p>
+<p>https://blog.csdn.net/shenghuaDay/article/details/71643767</p>
+<p>r0-r3 用作传入函数参数，传出函数返回值。在子程序调用之间，可以将 r0-r3 用于任何用途。被调用函数在返回之前不必恢复 r0-r3。如果调用函数需要再次使用 r0-r3 的内容，则它必须保留这些内容。</p>
+<p>r4-r11 被用来存放函数的局部变量。如果被调用函数使用了这些寄存器，它在返回之前必须恢复这些寄存器的值。</p>
+<p>r12 是内部调用暂时寄存器 ip。它在过程链接胶合代码（例如，交互操作胶合代码）中用于此角色.在过程调用之间，可以将它用于任何用途。被调用函数在返回之前不必恢复 r12。</p>
+<p>r13 是栈指针 sp。它不能用于任何其它用途。sp 中存放的值在退出被调用函数时必须与进入时的值相同。</p>
+<p>r14 是链接寄存器 lr。如果您保存了返回地址，则可以在调用之间将 r14 用于其它用途，程序返回时要恢复</p>
+<p>r15 是程序计数器 PC。它不能用于任何其它用途。</p>
+<p>注意：在中断程序中，所有的寄存器都必须保护，编译器会自动保护R4～R11</p>
+<p>所谓启动，一般来说就是指我们下好程序后，重启芯片时，SYSCLK的第4个上升沿，BOOT引脚的值将被锁存。用户可以通过设置BOOT1和BOOT0引脚的状态，来选择在复位后的启动模式。</p>
+<p>STM32上电或者复位后，代码区始终从0x00000000开始，三种启动模式其实就是将各自存储空间的地址映射到0x00000000中。</p>
+<p>（1）从Flash启动，将主Flash地址0x08000000映射到0x00000000，这样代码启动之后就相当于从0x08000000开始。</p>
+<p>（2）从RAM启动，将RAM地址0x20000000映射到0x00000000,这样代码启动之后就相当于从0x20000000开始。</p>
+<p>（3）从系统存储器启动。首先控制BOOT0 BOOT1管脚，复位后，STM32与上述两种方式类似，从系统存储器地址0x1FFF F000开始执行代码。系统存储器存储的其实就是STM32自带的bootloader代码，在bootloader中提供了UART1的接口，通过此接口可以将用户所需的程序代码下载到主Flash中，下载完毕后，此时程序代码已经存储在主Flash当中，这时切换启动模式（从主Flash启动），复位后所执行的就是刚刚下载到Flash中的代码了。</p>
+<p>在STM32中，一般都会有一个片上的Flash和SRAM。Flash用于烧录我们编译后生成的目标代码，SRAM则用于栈空间和保存全局变量， 它们分别对应图1中地址空间的Code段和SRAM段。此外STM32中的Flash一般都映射在0x0800 0000的地址上的， 因此为了保证向量表写在0x0800 0000的位置上，我们必须保证生成的目标代码中一开始就是向量表的内容</p>
+<figure>
+<img src="/2022/03/05/16-32-26/image-20220502134455259-16514702975521.png" alt="image-20220502134455259"><figcaption aria-hidden="true">image-20220502134455259</figcaption>
+</figure>
+<figure>
+<img src="/2022/03/05/16-32-26/image-20220502134540053-16514703414583.png" alt="image-20220502134540053"><figcaption aria-hidden="true">image-20220502134540053</figcaption>
+</figure>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--cpu Cortex-M4.fp.sp *.o </span><br><span class="line">--strict --scatter &quot;.\Objects\project.sct&quot; </span><br><span class="line">--summary_stderr --info summarysizes --map --xref --callgraph --symbols </span><br><span class="line">--info sizes --info totals --info unused --info veneers </span><br><span class="line"> --list &quot;.\Listings\project.map&quot; </span><br><span class="line">-o .\Objects\project.axf </span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -3043,350 +3460,6 @@ r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]=[0,0,...,0]
     
     <div class="post-body" itemprop="articleBody">
           
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/02/27/16-41-33/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom-logo.jpg">
-      <meta itemprop="name" content="邱金羽">
-      <meta itemprop="description" content="联系我：2420457716@qq.com">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/27/16-41-33/" class="post-title-link" itemprop="url">电子学</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-27 16:41:33" itemprop="dateCreated datePublished" datetime="2022-02-27T16:41:33+08:00">2022-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-01 16:30:50" itemprop="dateModified" datetime="2022-04-01T16:30:50+08:00">2022-04-01</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2022/02/27/16-41-33/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/27/16-41-33/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="电子学">电子学</h1>
-<h3 id="前言">前言</h3>
-<p>本书主要参考尼曼（Donald A. Neamen）的《电子电路分析与设计（第四版）》（Microelectronics: Circuit Analysis And Design Forth Edition）写成。</p>
-<h2 id="半导体器件及其基本应用">半导体器件及其基本应用</h2>
-<h3 id="半导体">半导体</h3>
-<p>在电路课和物理课上我们已经学习了一些电子器件，例如最典型的器件——电阻器。电阻器是导体，其最重要的性质“电阻”表示了导体对于电流的阻碍性质。除此之外我们还学习了电容和电感；电感的性质存在于线圈之中，线圈是使用导体制成的；电容则是导体极板中间夹着一个绝缘体介质形成。如此归纳，我们会发现在之前的课程之中，我们了解的范畴始终存在于导体和绝缘体之中，而半导体材料制作而成的器件却从未被提及。所以，在“半导体”这一节中，我们将注意力集中在半导体上，从研究半导体自身的性质开始，最终我们将得到一个简单的半导体器件。</p>
-<p>正式开始本节前，我们简单地回顾一下中学的知识，以下这些是作者默认读者已经了解了的知识。</p>
-<ul>
-<li>导体中存在大量可以自由移动的电子，称之为自由电子（free electron）。自由电子在受到外电场或外磁场的作用时，能够在物质中自由移动。</li>
-<li>导体中自由电子的定向移动形成了电流，电流（current）的定义式为 <span class="math inline">\(i=\frac{dq}{dt}\)</span>。</li>
-<li>载流子（charge carrier）指可以自由移动的带有电荷的物质微粒，是物质中电流形成的原因，导体中的载流子是电子。</li>
-<li>在半导体中存在两种载流子——电子（electron）和空穴（hole）。空穴是电子移动后留下的空位，从物理模型上可以将空穴看作是正电子。在半导体中，电子和空穴两种载流子共同形成半导体中的电流。</li>
-</ul>
-<h4 id="本征半导体intrinsic-semiconductor">本征半导体（intrinsic semiconductor）</h4>
-<blockquote>
-<p>本征半导体是指纯净（pure）的半导体</p>
-</blockquote>
-<p>本征半导体的概念是我们应当格外注意的，因为这不是一个偏日常化和口语化的词语，但是在这里它的含义却是十分简单——本征，不过就是纯净不含杂质的意思。</p>
-<p>强调材料的纯度似乎是一件奇怪的事情，因为常识中我们通常认为提纯是必须的，无需额外强调的。例如我们不会强调一个钢筋的纯度，但是我们知道</p>
-<p>本征半导体是指纯净的半导体，强调这个词似乎暗示着有一种不纯净的半导体的存在，并且这种不纯净的半导体的存在是十分有必要的。</p>
-<h3 id="二极管及其基本电路">二极管及其基本电路</h3>
-<p>TODO</p>
-<h3 id="三极管及其基本电路">三极管及其基本电路</h3>
-<p>TODO</p>
-<h3 id="场效应管及其基本电路">场效应管及其基本电路</h3>
-<p>TODO</p>
-<h2 id="模拟电子技术">模拟电子技术</h2>
-<p>TODO</p>
-<h2 id="数字电子技术">数字电子技术</h2>
-<p>TODO</p>
-<h2 id="运算放大器电路">运算放大器电路</h2>
-<p>分析顺序</p>
-<ul>
-<li>图像</li>
-<li>公式</li>
-<li>结论</li>
-</ul>
-<ol type="1">
-<li><p>反相放大电路</p>
-<ul>
-<li><p>反相放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1249-16473232199221.PNG" alt="IMG_1249" style="zoom: 25%;"></p></li>
-<li><p>反相放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p>假设运算放大器是理想的，即</p>
-<ul>
-<li>开环增益 <span class="math inline">\(A_{od}=\infty\)</span>：故输入信号 <span class="math inline">\(v_1\)</span> 和 <span class="math inline">\(v_2\)</span> 是相等的。且由于 <span class="math inline">\(v_2\)</span> 与地面连接，故 <span class="math inline">\(v_2\)</span> 是“接地”，而 <span class="math inline">\(v_1\)</span> 是“虚地”。</li>
-<li>输入阻抗大小为 <span class="math inline">\(\infty\)</span>：流入运算放大器的电流为 <span class="math inline">\(0\)</span> 。</li>
-</ul>
-<p>理想运放约束+基尔霍夫定律可得： <span class="math display">\[
-\begin{cases}
-\begin{aligned}
-&amp;\frac{v_{i_1}-v_1}{R_1}=\frac{v_1-v_o}{R_2}\\\\
-&amp;v_1=0
-\end{aligned}
-\end{cases}
-\quad
-\Longrightarrow
-\quad
-A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
-\]</span></p></li>
-<li><p>结论和注意事项：</p>
-<ul>
-<li>对于理想运放，闭环电压增益是运放外电阻比值的函数，与运放内部的参数无关。</li>
-<li>增益中的负号表示 “反相” ，是反相放大电路名字的由来。</li>
-<li>反相放大电路中没有耦合电容（就是电容，作用是耦合所以叫耦合电容），因此反相放大电路可以放大直流电压信号。</li>
-</ul></li>
-</ul></li>
-<li><p>反相放大电路扩展——带 T 型网络的放大电路</p>
-<ul>
-<li><p>作为改进方案被提出的原因：</p>
-<p>反相放大电路的增益 <span class="math inline">\(A_v\)</span> 为 <span class="math inline">\(-\frac{R_2}{R_1}\)</span>，那么如果我们的设计目标是设计一个闭环增益 <span class="math inline">\(A_v=-100\)</span> 且输入电阻 <span class="math inline">\(R_i=R_1=50k\Omega\)</span> 的反相放大电路。于是，反馈电阻 <span class="math inline">\(R_2\)</span> 就必须是 <span class="math inline">\(5M\Omega\)</span>。然而，这个电阻值对大多数实际电路来说太大了。为了解决这个问题我们提出了作为改进方案的带 T 型网络的放大电路。</p></li>
-<li><p>带 T 型网络的放大电路的电路图如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1258.PNG" alt="IMG_1258" style="zoom:25%;"></p></li>
-<li><p>设 <span class="math inline">\(R_2\)</span>、<span class="math inline">\(R_3\)</span> 和 <span class="math inline">\(R_4\)</span> 三个电阻的公共节点处电势为 <span class="math inline">\(v_x\)</span>，则: <span class="math display">\[
-\begin{cases}
-\begin{aligned}
-&amp;i_2+i_3=i_4\\\\
-&amp;\frac{v_1-v_x}{R_2}+\frac{v_x-v_o}{R_3}=\frac{v_x}{R_4}\\\\
-&amp;v_1=0
-\end{aligned}
-\end{cases}
-\quad
-\Longrightarrow
-\quad
-A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
-\]</span></p></li>
-<li><p>结论和注意事项：</p>
-<p>使用带 T 型网络的放大电路，可以在使用合理大小电阻的情况下获得更大的增益。</p></li>
-</ul></li>
-<li><p>同相放大电路；</p>
-<ul>
-<li><p>同相放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1253-16473270320863.PNG" alt="IMG_1253" style="zoom: 25%;"></p></li>
-<li><p>同相放大电路增益 <span class="math inline">\(A_v=\frac{R_2}{R_1}+1\)</span>： <span class="math display">\[
-\begin{aligned}
-&amp;\begin{cases}
-v_-=v_+=v_i\\\\
-\frac{0-v_-}{R1}=\frac{v_--v_o}{R_2}\\
-\end{cases}\\\\
-&amp;get\quad A_v=\frac{v_o}{v_i}=\frac{R_2}{R_1}+1
-\end{aligned}
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>电压跟随器：</p>
-<ul>
-<li><p>电压跟随器连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1246.PNG" alt="IMG_1246" style="zoom:25%;"></p></li>
-<li><p>电压跟随器增益 <span class="math inline">\(A_v\)</span>：</p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>求和放大电路：</p>
-<ul>
-<li><p>求和放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1252.PNG" alt="IMG_1252" style="zoom:25%;"></p></li>
-<li><p>输出电压为 <span class="math inline">\(v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}\)</span>：</p>
-<p><span class="math display">\[
-\sum_{j=1}^{n}\frac{v_{i_j}-0}{R_i}=\frac{0-v_o}{R_f}\\
-get\quad v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>差分放大电路：</p>
-<ul>
-<li><p>差分放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1244.PNG" alt="IMG_1244" style="zoom:25%;"></p></li>
-<li><p>输出电压为 <span class="math inline">\(v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})\)</span>：</p>
-<p>$$</p>
-<span class="math display">\[\begin{aligned}
-&amp;if\quad v_{i_2}=0,\;v_{i_1}\not=0\\
-
-&amp;then\quad v_{o_1}=-\frac{R_2}{R_1}v_{i_1}\\\\\\
-
-&amp;if\quad v_{i_2}\not=0,\;v_{i_1}=0\\
-
-&amp;then\quad v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}\\\\\\
-
-&amp;so\quad v_o=v_{o_1}+v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}-\frac{R_2}{R_1}v_{i_1}\\
-
-&amp;To\quad satified\quad when\quad v_{i_1}=v_{i_2},v_o=0\,;so\quad \frac{R_4}{R_3}=\frac{R_2}{R_1}\\
-
-&amp;Finally\quad v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})
-\end{aligned}\]</span>
-<p>$$</p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>积分放大电路：</p>
-<ul>
-<li><p>积分放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1254.PNG" alt="IMG_1254" style="zoom:25%;"></p></li>
-<li><p>积分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=V_C-\frac{1}{RC}\int_{0}^{t}v_i(\tau)d\tau
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>微分放大电路：</p>
-<ul>
-<li><p>微分放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1251.PNG" alt="IMG_1251" style="zoom:25%;"></p></li>
-<li><p>微分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=-RC\frac{dv_{i}}{dt}
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>对数放大电路：</p>
-<ul>
-<li><p>对数放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1247.PNG" alt="IMG_1247" style="zoom:25%;"></p></li>
-<li><p>对数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=-V_Tln\left(\frac{v_i}{I_SR_1}\right)
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>指数放大电路：</p>
-<ul>
-<li><p>指数放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1257.PNG" alt="IMG_1257" style="zoom:25%;"></p></li>
-<li><p>指数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=-I_SR\cdot e^{v_i/V_T}
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-<li><p>仪用放大电路：</p>
-<ul>
-<li><p>仪用放大电路连接方式如图所示：</p>
-<p><img src="/2022/02/27/16-41-33/IMG_1256.PNG" alt="IMG_1256" style="zoom:25%;"></p></li>
-<li><p>仪用放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
-<p><span class="math display">\[
-v_o=\frac{R_4}{R_3}\left(1+\frac{2R_2}{R_1}\right)(v_{i_2}-v_{i_1})
-\]</span></p></li>
-<li><p>结论和注意事项：</p></li>
-</ul></li>
-</ol>
-<h2 id="集成电路偏置">集成电路偏置</h2>
-<p>使用分立电子元器件对晶体管放大电路进行偏置时，我们通常使用的是分压电阻网络。在集成电路设计中，电阻的集成需要比晶体管更大的面积，因此我们更希望通过晶体管来配置放大电路。在接下来的设计中我们可以看到，晶体管可以构成恒流源和负载器件。</p>
-<p>集成电路偏置和有源负载这一章节学习了在设计集成电路中需要使用到的<strong>晶体管恒流源——镜像电流源（Current Mirror）</strong>和<strong>晶体管电阻（负载）——有源负载</strong></p>
-<p>关于集成电路的部分放到下一阶段学习吧</p>
-<p>一个设计良好的电流源电路，必须同时满足如下这四点要求：</p>
-<ul>
-<li>能够输出符合要求的直流电流；</li>
-<li>温度稳定性更好；</li>
-<li>受到电源电压等因素的影响较小；</li>
-<li>输出电阻要尽可能更大；</li>
-</ul>
-<p>如果一个电流源能够同时满足上述这些要求，那么就可以将其等效为下面的<strong>理想电流源</strong>：<img src="/2022/02/27/16-41-33/image-20220316212039647-16474368536751.png" alt="image-20220316212039647" style="zoom:25%;"></p>
-<p>晶体管和场效应管等有源元件，在放大区的输出电流几乎不受输出电压的影响，展现出恒流特性：</p>
-<h2 id="差分和多级放大电路">差分和多级放大电路</h2>
-<p>本章介绍的是主要内容是一种多晶体管电路——差分放大电路。与之前理想运放一节不同的是，这里的差分放大电路是由基本的晶体管构成的电路</p>
-<p>差分放大电路是模拟电路的基本单元，既是几乎所有运放的输入级，也是高速数字逻辑电路的基础。</p>
-<p>差分放大电路为</p>
-<h2 id="section"></h2>
-<h3 id="施密特触发器">施密特触发器</h3>
-<h4 id="比较器">比较器</h4>
-<h4 id="施密特触发器-1">施密特触发器</h4>
-<h1 id="放大电路">放大电路</h1>
-<h2 id="基本放大电路的构成">基本放大电路的构成</h2>
-<p>设计一个放大电路：</p>
-<ol type="1">
-<li><p>放大的概念：</p>
-<p>放大电路的放大是指对于功率的放大，即小电流电压输入转化为一个大电流电压输出</p></li>
-<li><p>本质：</p>
-<p>功率放大的本质在于对能量的控制。</p>
-<p>为了首先对能量的控制，我们必须在电路中引入一个控制能力的元件——有源元件，具体来说就是三极管和场效应管等。</p></li>
-<li><p>前提：</p>
-<p>合理放大信号的前提是不失真</p></li>
-<li><p>测试：</p>
-<p>在实验中我们使用正弦波进行信号放大的测试。</p>
-<p>因为声波或其他各种波形，由傅里叶变换可以变换成多个正弦波的叠加，故只要电路系统可以正常的放大分解后的所有正弦波，就可以实现具体的设计目标。</p>
-<p>因此在实验中我们使用正弦波进行放大的测试</p></li>
-<li><p>放大电路的构建方法：</p>
-<ol type="1">
-<li>目标：小功率转化为大功率
-<ul>
-<li>小信号：小的什么程度：几毫伏或几十个毫伏</li>
-</ul></li>
-<li>条件：
-<ul>
-<li>有源元件</li>
-<li>能量</li>
-</ul></li>
-<li>技术路线：
-<ul>
-<li>三极管工作在放大状态下——即 <span class="math inline">\(i_b\)</span> 可以控制 <span class="math inline">\(i_c\)</span></li>
-<li>小信号控制 <span class="math inline">\(i_b\)</span></li>
-<li>合理的输出</li>
-</ul></li>
-<li></li>
-</ol></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li><p><span class="math display">\[
-V_i（一个小信号输出电压）-&gt;放大电路-&gt;实现功率放大
-\]</span></p></li>
-</ol>
 
       
     </div>

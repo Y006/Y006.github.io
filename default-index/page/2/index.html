@@ -137,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -178,6 +178,9 @@
         <li class="links-of-blogroll-item">
           <a href="https://blog.52diy.com.cn/" title="https:&#x2F;&#x2F;blog.52diy.com.cn&#x2F;" rel="noopener" target="_blank">52diy</a>
         </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://gaoyichao.com/Xiaotu/" title="https:&#x2F;&#x2F;gaoyichao.com&#x2F;Xiaotu&#x2F;" rel="noopener" target="_blank">小土的世界</a>
+        </li>
     </ul>
   </div>
 
@@ -204,6 +207,350 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/02/27/16-41-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/27/16-41-33/" class="post-title-link" itemprop="url">电子学</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-27 16:41:33" itemprop="dateCreated datePublished" datetime="2022-02-27T16:41:33+08:00">2022-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-01 16:30:50" itemprop="dateModified" datetime="2022-04-01T16:30:50+08:00">2022-04-01</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/02/27/16-41-33/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/27/16-41-33/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="电子学">电子学</h1>
+<h3 id="前言">前言</h3>
+<p>本书主要参考尼曼（Donald A. Neamen）的《电子电路分析与设计（第四版）》（Microelectronics: Circuit Analysis And Design Forth Edition）写成。</p>
+<h2 id="半导体器件及其基本应用">半导体器件及其基本应用</h2>
+<h3 id="半导体">半导体</h3>
+<p>在电路课和物理课上我们已经学习了一些电子器件，例如最典型的器件——电阻器。电阻器是导体，其最重要的性质“电阻”表示了导体对于电流的阻碍性质。除此之外我们还学习了电容和电感；电感的性质存在于线圈之中，线圈是使用导体制成的；电容则是导体极板中间夹着一个绝缘体介质形成。如此归纳，我们会发现在之前的课程之中，我们了解的范畴始终存在于导体和绝缘体之中，而半导体材料制作而成的器件却从未被提及。所以，在“半导体”这一节中，我们将注意力集中在半导体上，从研究半导体自身的性质开始，最终我们将得到一个简单的半导体器件。</p>
+<p>正式开始本节前，我们简单地回顾一下中学的知识，以下这些是作者默认读者已经了解了的知识。</p>
+<ul>
+<li>导体中存在大量可以自由移动的电子，称之为自由电子（free electron）。自由电子在受到外电场或外磁场的作用时，能够在物质中自由移动。</li>
+<li>导体中自由电子的定向移动形成了电流，电流（current）的定义式为 <span class="math inline">\(i=\frac{dq}{dt}\)</span>。</li>
+<li>载流子（charge carrier）指可以自由移动的带有电荷的物质微粒，是物质中电流形成的原因，导体中的载流子是电子。</li>
+<li>在半导体中存在两种载流子——电子（electron）和空穴（hole）。空穴是电子移动后留下的空位，从物理模型上可以将空穴看作是正电子。在半导体中，电子和空穴两种载流子共同形成半导体中的电流。</li>
+</ul>
+<h4 id="本征半导体intrinsic-semiconductor">本征半导体（intrinsic semiconductor）</h4>
+<blockquote>
+<p>本征半导体是指纯净（pure）的半导体</p>
+</blockquote>
+<p>本征半导体的概念是我们应当格外注意的，因为这不是一个偏日常化和口语化的词语，但是在这里它的含义却是十分简单——本征，不过就是纯净不含杂质的意思。</p>
+<p>强调材料的纯度似乎是一件奇怪的事情，因为常识中我们通常认为提纯是必须的，无需额外强调的。例如我们不会强调一个钢筋的纯度，但是我们知道</p>
+<p>本征半导体是指纯净的半导体，强调这个词似乎暗示着有一种不纯净的半导体的存在，并且这种不纯净的半导体的存在是十分有必要的。</p>
+<h3 id="二极管及其基本电路">二极管及其基本电路</h3>
+<p>TODO</p>
+<h3 id="三极管及其基本电路">三极管及其基本电路</h3>
+<p>TODO</p>
+<h3 id="场效应管及其基本电路">场效应管及其基本电路</h3>
+<p>TODO</p>
+<h2 id="模拟电子技术">模拟电子技术</h2>
+<p>TODO</p>
+<h2 id="数字电子技术">数字电子技术</h2>
+<p>TODO</p>
+<h2 id="运算放大器电路">运算放大器电路</h2>
+<p>分析顺序</p>
+<ul>
+<li>图像</li>
+<li>公式</li>
+<li>结论</li>
+</ul>
+<ol type="1">
+<li><p>反相放大电路</p>
+<ul>
+<li><p>反相放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1249-16473232199221.PNG" alt="IMG_1249" style="zoom: 25%;"></p></li>
+<li><p>反相放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p>假设运算放大器是理想的，即</p>
+<ul>
+<li>开环增益 <span class="math inline">\(A_{od}=\infty\)</span>：故输入信号 <span class="math inline">\(v_1\)</span> 和 <span class="math inline">\(v_2\)</span> 是相等的。且由于 <span class="math inline">\(v_2\)</span> 与地面连接，故 <span class="math inline">\(v_2\)</span> 是“接地”，而 <span class="math inline">\(v_1\)</span> 是“虚地”。</li>
+<li>输入阻抗大小为 <span class="math inline">\(\infty\)</span>：流入运算放大器的电流为 <span class="math inline">\(0\)</span> 。</li>
+</ul>
+<p>理想运放约束+基尔霍夫定律可得： <span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;\frac{v_{i_1}-v_1}{R_1}=\frac{v_1-v_o}{R_2}\\\\
+&amp;v_1=0
+\end{aligned}
+\end{cases}
+\quad
+\Longrightarrow
+\quad
+A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
+\]</span></p></li>
+<li><p>结论和注意事项：</p>
+<ul>
+<li>对于理想运放，闭环电压增益是运放外电阻比值的函数，与运放内部的参数无关。</li>
+<li>增益中的负号表示 “反相” ，是反相放大电路名字的由来。</li>
+<li>反相放大电路中没有耦合电容（就是电容，作用是耦合所以叫耦合电容），因此反相放大电路可以放大直流电压信号。</li>
+</ul></li>
+</ul></li>
+<li><p>反相放大电路扩展——带 T 型网络的放大电路</p>
+<ul>
+<li><p>作为改进方案被提出的原因：</p>
+<p>反相放大电路的增益 <span class="math inline">\(A_v\)</span> 为 <span class="math inline">\(-\frac{R_2}{R_1}\)</span>，那么如果我们的设计目标是设计一个闭环增益 <span class="math inline">\(A_v=-100\)</span> 且输入电阻 <span class="math inline">\(R_i=R_1=50k\Omega\)</span> 的反相放大电路。于是，反馈电阻 <span class="math inline">\(R_2\)</span> 就必须是 <span class="math inline">\(5M\Omega\)</span>。然而，这个电阻值对大多数实际电路来说太大了。为了解决这个问题我们提出了作为改进方案的带 T 型网络的放大电路。</p></li>
+<li><p>带 T 型网络的放大电路的电路图如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1258.PNG" alt="IMG_1258" style="zoom:25%;"></p></li>
+<li><p>设 <span class="math inline">\(R_2\)</span>、<span class="math inline">\(R_3\)</span> 和 <span class="math inline">\(R_4\)</span> 三个电阻的公共节点处电势为 <span class="math inline">\(v_x\)</span>，则: <span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;i_2+i_3=i_4\\\\
+&amp;\frac{v_1-v_x}{R_2}+\frac{v_x-v_o}{R_3}=\frac{v_x}{R_4}\\\\
+&amp;v_1=0
+\end{aligned}
+\end{cases}
+\quad
+\Longrightarrow
+\quad
+A_v=\frac{v_o}{v_{i_1}}=-\frac{R_2}{R_1}
+\]</span></p></li>
+<li><p>结论和注意事项：</p>
+<p>使用带 T 型网络的放大电路，可以在使用合理大小电阻的情况下获得更大的增益。</p></li>
+</ul></li>
+<li><p>同相放大电路；</p>
+<ul>
+<li><p>同相放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1253-16473270320863.PNG" alt="IMG_1253" style="zoom: 25%;"></p></li>
+<li><p>同相放大电路增益 <span class="math inline">\(A_v=\frac{R_2}{R_1}+1\)</span>： <span class="math display">\[
+\begin{aligned}
+&amp;\begin{cases}
+v_-=v_+=v_i\\\\
+\frac{0-v_-}{R1}=\frac{v_--v_o}{R_2}\\
+\end{cases}\\\\
+&amp;get\quad A_v=\frac{v_o}{v_i}=\frac{R_2}{R_1}+1
+\end{aligned}
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>电压跟随器：</p>
+<ul>
+<li><p>电压跟随器连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1246.PNG" alt="IMG_1246" style="zoom:25%;"></p></li>
+<li><p>电压跟随器增益 <span class="math inline">\(A_v\)</span>：</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>求和放大电路：</p>
+<ul>
+<li><p>求和放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1252.PNG" alt="IMG_1252" style="zoom:25%;"></p></li>
+<li><p>输出电压为 <span class="math inline">\(v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}\)</span>：</p>
+<p><span class="math display">\[
+\sum_{j=1}^{n}\frac{v_{i_j}-0}{R_i}=\frac{0-v_o}{R_f}\\
+get\quad v_o=-R_f\sum_{j=1}^{n}\frac{v_{i_j}}{R_i}
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>差分放大电路：</p>
+<ul>
+<li><p>差分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1244.PNG" alt="IMG_1244" style="zoom:25%;"></p></li>
+<li><p>输出电压为 <span class="math inline">\(v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})\)</span>：</p>
+<p>$$</p>
+<span class="math display">\[\begin{aligned}
+&amp;if\quad v_{i_2}=0,\;v_{i_1}\not=0\\
+
+&amp;then\quad v_{o_1}=-\frac{R_2}{R_1}v_{i_1}\\\\\\
+
+&amp;if\quad v_{i_2}\not=0,\;v_{i_1}=0\\
+
+&amp;then\quad v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}\\\\\\
+
+&amp;so\quad v_o=v_{o_1}+v_{o_2}=\left(1+\frac{R_2}{R_1}\right)\left(1+\frac{R_4}{R_3+R_4}\right)v_{i_2}-\frac{R_2}{R_1}v_{i_1}\\
+
+&amp;To\quad satified\quad when\quad v_{i_1}=v_{i_2},v_o=0\,;so\quad \frac{R_4}{R_3}=\frac{R_2}{R_1}\\
+
+&amp;Finally\quad v_o=\frac{R_2}{R_1}(v_{i_2}-v_{i_1})
+\end{aligned}\]</span>
+<p>$$</p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>积分放大电路：</p>
+<ul>
+<li><p>积分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1254.PNG" alt="IMG_1254" style="zoom:25%;"></p></li>
+<li><p>积分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=V_C-\frac{1}{RC}\int_{0}^{t}v_i(\tau)d\tau
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>微分放大电路：</p>
+<ul>
+<li><p>微分放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1251.PNG" alt="IMG_1251" style="zoom:25%;"></p></li>
+<li><p>微分放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-RC\frac{dv_{i}}{dt}
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>对数放大电路：</p>
+<ul>
+<li><p>对数放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1247.PNG" alt="IMG_1247" style="zoom:25%;"></p></li>
+<li><p>对数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-V_Tln\left(\frac{v_i}{I_SR_1}\right)
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>指数放大电路：</p>
+<ul>
+<li><p>指数放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1257.PNG" alt="IMG_1257" style="zoom:25%;"></p></li>
+<li><p>指数放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=-I_SR\cdot e^{v_i/V_T}
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+<li><p>仪用放大电路：</p>
+<ul>
+<li><p>仪用放大电路连接方式如图所示：</p>
+<p><img src="/2022/02/27/16-41-33/IMG_1256.PNG" alt="IMG_1256" style="zoom:25%;"></p></li>
+<li><p>仪用放大电路增益 <span class="math inline">\(A_v\)</span>：</p>
+<p><span class="math display">\[
+v_o=\frac{R_4}{R_3}\left(1+\frac{2R_2}{R_1}\right)(v_{i_2}-v_{i_1})
+\]</span></p></li>
+<li><p>结论和注意事项：</p></li>
+</ul></li>
+</ol>
+<h2 id="集成电路偏置">集成电路偏置</h2>
+<p>使用分立电子元器件对晶体管放大电路进行偏置时，我们通常使用的是分压电阻网络。在集成电路设计中，电阻的集成需要比晶体管更大的面积，因此我们更希望通过晶体管来配置放大电路。在接下来的设计中我们可以看到，晶体管可以构成恒流源和负载器件。</p>
+<p>集成电路偏置和有源负载这一章节学习了在设计集成电路中需要使用到的<strong>晶体管恒流源——镜像电流源（Current Mirror）</strong>和<strong>晶体管电阻（负载）——有源负载</strong></p>
+<p>关于集成电路的部分放到下一阶段学习吧</p>
+<p>一个设计良好的电流源电路，必须同时满足如下这四点要求：</p>
+<ul>
+<li>能够输出符合要求的直流电流；</li>
+<li>温度稳定性更好；</li>
+<li>受到电源电压等因素的影响较小；</li>
+<li>输出电阻要尽可能更大；</li>
+</ul>
+<p>如果一个电流源能够同时满足上述这些要求，那么就可以将其等效为下面的<strong>理想电流源</strong>：<img src="/2022/02/27/16-41-33/image-20220316212039647-16474368536751.png" alt="image-20220316212039647" style="zoom:25%;"></p>
+<p>晶体管和场效应管等有源元件，在放大区的输出电流几乎不受输出电压的影响，展现出恒流特性：</p>
+<h2 id="差分和多级放大电路">差分和多级放大电路</h2>
+<p>本章介绍的是主要内容是一种多晶体管电路——差分放大电路。与之前理想运放一节不同的是，这里的差分放大电路是由基本的晶体管构成的电路</p>
+<p>差分放大电路是模拟电路的基本单元，既是几乎所有运放的输入级，也是高速数字逻辑电路的基础。</p>
+<p>差分放大电路为</p>
+<h2 id="section"></h2>
+<h3 id="施密特触发器">施密特触发器</h3>
+<h4 id="比较器">比较器</h4>
+<h4 id="施密特触发器-1">施密特触发器</h4>
+<h1 id="放大电路">放大电路</h1>
+<h2 id="基本放大电路的构成">基本放大电路的构成</h2>
+<p>设计一个放大电路：</p>
+<ol type="1">
+<li><p>放大的概念：</p>
+<p>放大电路的放大是指对于功率的放大，即小电流电压输入转化为一个大电流电压输出</p></li>
+<li><p>本质：</p>
+<p>功率放大的本质在于对能量的控制。</p>
+<p>为了首先对能量的控制，我们必须在电路中引入一个控制能力的元件——有源元件，具体来说就是三极管和场效应管等。</p></li>
+<li><p>前提：</p>
+<p>合理放大信号的前提是不失真</p></li>
+<li><p>测试：</p>
+<p>在实验中我们使用正弦波进行信号放大的测试。</p>
+<p>因为声波或其他各种波形，由傅里叶变换可以变换成多个正弦波的叠加，故只要电路系统可以正常的放大分解后的所有正弦波，就可以实现具体的设计目标。</p>
+<p>因此在实验中我们使用正弦波进行放大的测试</p></li>
+<li><p>放大电路的构建方法：</p>
+<ol type="1">
+<li>目标：小功率转化为大功率
+<ul>
+<li>小信号：小的什么程度：几毫伏或几十个毫伏</li>
+</ul></li>
+<li>条件：
+<ul>
+<li>有源元件</li>
+<li>能量</li>
+</ul></li>
+<li>技术路线：
+<ul>
+<li>三极管工作在放大状态下——即 <span class="math inline">\(i_b\)</span> 可以控制 <span class="math inline">\(i_c\)</span></li>
+<li>小信号控制 <span class="math inline">\(i_b\)</span></li>
+<li>合理的输出</li>
+</ul></li>
+<li></li>
+</ol></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li><p><span class="math display">\[
+V_i（一个小信号输出电压）-&gt;放大电路-&gt;实现功率放大
+\]</span></p></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -244,7 +591,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-23 06:05:41" itemprop="dateModified" datetime="2022-04-23T06:05:41+08:00">2022-04-23</time>
+      <time title="修改时间：2022-04-24 12:15:00" itemprop="dateModified" datetime="2022-04-24T12:15:00+08:00">2022-04-24</time>
     </span>
 
   
@@ -355,6 +702,7 @@
 <img src="/2022/02/27/16-41-11/5898a6106be97a5e17f672399758dd2-165066466531719.jpg" alt="5898a6106be97a5e17f672399758dd2"><figcaption aria-hidden="true">5898a6106be97a5e17f672399758dd2</figcaption>
 </figure>
 <p>我们观察放大部分中的最后一列，可以看到，最后一列中所有的操作都是将圆盘从A移动到C，这种特性说明了每一次递归的终点都是“将圆盘从A移动到C”，如果你回到上面看代码，你会发现代码中真正打印的移动操作都是从a到c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">move_1</span><span class="params">(<span class="type">int</span> level, <span class="type">char</span> a, <span class="type">char</span> b, <span class="type">char</span> c)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;把 &quot;</span> &lt;&lt; level &lt;&lt; <span class="string">&quot; 号盘从 &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot; 移动到 &quot;</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">move_2</span><span class="params">(<span class="type">int</span> level, <span class="type">char</span> a, <span class="type">char</span> b, <span class="type">char</span> c)</span></span><br><span class="line">&#123;</span><br><span class="line">	move_1(level - <span class="number">1</span>, a, c, b);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;把 &quot;</span> &lt;&lt; level &lt;&lt; <span class="string">&quot; 号盘从 &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot; 移动到 &quot;</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	move_1(level - <span class="number">1</span>, b, a, c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">move_3</span><span class="params">(<span class="type">int</span> level, <span class="type">char</span> a, <span class="type">char</span> b, <span class="type">char</span> c)</span></span><br><span class="line">&#123;</span><br><span class="line">	move_2(level - <span class="number">1</span>, a, c, b);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;把 &quot;</span> &lt;&lt; level &lt;&lt; <span class="string">&quot; 号盘从 &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot; 移动到 &quot;</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	move_2(level - <span class="number">1</span>, b, a, c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">move_4</span><span class="params">(<span class="type">int</span> level,<span class="type">char</span> a,<span class="type">char</span> b,<span class="type">char</span> c)</span> </span><br><span class="line">&#123;</span><br><span class="line">	move_3(level - <span class="number">1</span>, a, c, b);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;把 &quot;</span> &lt;&lt; level &lt;&lt; <span class="string">&quot; 号盘从 &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot; 移动到 &quot;</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	move_3(level - <span class="number">1</span>, b, a, c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Towers</span><span class="params">(<span class="type">int</span> n, <span class="type">char</span> a, <span class="type">char</span> b, <span class="type">char</span> c)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Move disk &quot;</span> &lt;&lt; n &lt;&lt; <span class="string">&quot; from &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot; to &quot;</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		Towers(n - <span class="number">1</span>, a, c, b);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Move disk &quot;</span> &lt;&lt; n &lt;&lt; <span class="string">&quot; from &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot; to &quot;</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		Towers(n - <span class="number">1</span>, b, a, c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> level;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; level;</span><br><span class="line">	Towers(level, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;-------------------------------------&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	move_4(level, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -2646,131 +2994,6 @@ x + 2y &amp;= 1\\
 <figure>
 <img src="/2022/02/20/23-32-35/image-20220225234115328-16458036772432.png" alt="image-20220225234115328"><figcaption aria-hidden="true">image-20220225234115328</figcaption>
 </figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/02/20/22-32-35/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom-logo.jpg">
-      <meta itemprop="name" content="邱金羽">
-      <meta itemprop="description" content="联系我：2420457716@qq.com">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/20/22-32-35/" class="post-title-link" itemprop="url">VScode配置笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-20 22:32:35" itemprop="dateCreated datePublished" datetime="2022-02-20T22:32:35+08:00">2022-02-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-26 00:02:46" itemprop="dateModified" datetime="2022-02-26T00:02:46+08:00">2022-02-26</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2022/02/20/22-32-35/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/20/22-32-35/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="vscode配置笔记">VScode配置笔记</h2>
-<ol type="1">
-<li><p>下载并安装编译器MinGW：https://bit.ly/mingw10</p></li>
-<li><p>将MinGW的bin文件路径添加到系统环境变量中</p></li>
-<li><p>在cmd中运行</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ --version</span><br></pre></td></tr></table></figure>
-<p>检测是否成功配置路径</p></li>
-<li><p>安装VScode：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code - Code Editing. Redefined</a></p></li>
-<li><p>“设置”中输入"run in terminal"<img src="/2022/02/20/22-32-35/image-20210907225325312.png" alt="image-20210907225325312"></p></li>
-<li><p>安装插件”Code Runner“和”C/C++“；选装”Chinese (Simplified) Language Pack for Visual Studio Code“</p></li>
-<li><p>为了正确地在文本编辑器上敲除中文，需要给文本编辑器设置合适的编码方式：<img src="/2022/02/20/22-32-35/Users\qjy\AppData\Roaming\Typora\typora-user-images\image-20210916093752004.png" alt="image-20210916093752004"></p>
-<p>点红框，选择“通过编码重新打开”，输入编码方式即可。</p>
-<p>打开cmd，查看“属性”可得知终端的编码方式</p>
-<p><img src="/2022/02/20/22-32-35/image-20210916093952277.png" alt="image-20210916093952277" style="zoom:25%;"></p>
-<p>终端的编码方式需要与编辑器的编码方式匹配</p>
-<p>在终端输入：“chcp 65001”可以切换代码页到使用UTF8。</p></li>
-<li><p>想要正确识别别人代码中的中文，需要“设置”中输入"<strong>files.autoGuessEncoding</strong>"<img src="/2022/02/20/22-32-35/image-20210907225635399.png" alt="image-20210907225635399"></p></li>
-<li><p>设置自动保存：“设置“中输入”<strong>auto save</strong>“，选择"afterDelay"选项</p></li>
-<li><p>設置自動格式化：“设置”中输入“<strong>editor.formatOnType</strong>”，选择True“</p></li>
-<li><p>”ctrl+k“配合”ctrl+t“可快速切换主题</p></li>
-<li><p>”ctrl+“是放大</p></li>
-<li><p>单行注释：“Ctrl + /”；块注释：“Alt+Shift+A”</p></li>
-<li><p>多文件编译：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#code in CMakeLists.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set the project name</span></span><br><span class="line"><span class="keyword">project</span>(Tutorial)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the executable</span></span><br><span class="line"><span class="keyword">add_executable</span>(Tutorial tutorial.cxx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#output in Chinese</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GB2312&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="补充终端shell命令">补充：终端（shell）命令</h2>
-<p>不区分大小写。</p>
-<p>tab键补全内容，再次点击切换内容</p>
-<h3 id="文件跳转">文件跳转</h3>
-<p>磁盘跳转</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:</span></span><br></pre></td></tr></table></figure>
-<p>显示所有文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
-<p>树形显示所有文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
-<p>进入下一级文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 文件名（有空格的夹引号，平时使用tab补全就好）</span><br></pre></td></tr></table></figure>
-<p>进入上一级文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd..</span><br></pre></td></tr></table></figure>
-<p>退回磁盘根目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd/</span><br></pre></td></tr></table></figure>
 
       
     </div>
