@@ -3345,6 +3345,22 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <img src="/2022/03/05/16-32-26/image-20220502134540053-16514703414583.png" alt="image-20220502134540053"><figcaption aria-hidden="true">image-20220502134540053</figcaption>
 </figure>
 <figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">--cpu Cortex-M4.fp.sp *.o </span><br><span class="line">--strict --scatter &quot;.\Objects\project.sct&quot; </span><br><span class="line">--summary_stderr --info summarysizes --map --xref --callgraph --symbols </span><br><span class="line">--info sizes --info totals --info unused --info veneers </span><br><span class="line"> --list &quot;.\Listings\project.map&quot; </span><br><span class="line">-o .\Objects\project.axf </span><br></pre></td></tr></table></figure>
+<h3 id="arm寻址方式">ARM寻址方式：</h3>
+<h4 id="寄存器间接寻址">寄存器间接寻址：</h4>
+<p>把寄存器当作存储器的指针。</p>
+<p><img src="/2022/03/05/16-32-26/image-20220507083936948-16518839785891.png" alt="image-20220507083936948" style="zoom:50%;"></p>
+<h1 id="体系结构架构">体系结构——架构</h1>
+<p>架构由指令集和操作空间（寄存器和存储器）组成</p>
+<p>计算机中使用的单词叫指令，计算机使用的词汇表叫指令集</p>
+<p>指令包含操作码和操作数，操作数来自于存储器，寄存器和指令本身</p>
+<p>ARM架构将每条指令表示为一个32位的字，微处理器是一个可以读入并执行机器语言的指令的数字电路系统</p>
+<p>ARM设计的四个准则：</p>
+<ul>
+<li>规范性支持简单设计</li>
+<li>加快常见功能</li>
+<li>越小设计越快</li>
+<li>好的设计需要折中方法</li>
+</ul>
 ]]></content>
       <tags>
         <tag>Electrical Engineering</tag>
@@ -4728,6 +4744,15 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <li><p>实验步骤</p></li>
 </ol>
 <h3 id="实验报告-1">实验报告</h3>
+<p>1000 0001 1110 0101 1010 0100 1000 1010</p>
+<p>100 1101 0010</p>
+<p>1001 1010 0100 1010</p>
+<p>我现在参考的一本讲解arm体系结构的书，上面介绍了一些机器码的知识，但是我看书上是这样写的<img src="/2022/04/30/16-02-06/image-20220507113552993.png" alt="image-20220507113552993"></p>
+<p>但是我在编译的时候出现的是这样的</p>
+<figure>
+<img src="/2022/04/30/16-02-06/image-20220507113625448.png" alt="image-20220507113625448"><figcaption aria-hidden="true">image-20220507113625448</figcaption>
+</figure>
+<p>我猜测可能是使用的指令集不同，可能书上使用的是ARM指令集，但是因为我在代码中有写THUMB，所以我应该使用的是Thumb指令集，但是Thumb指令集是16位的，这个MOV...指令是32位的，所以我猜测是Thumb指令集，但是我去网上搜不到相关的信息，我现在比较困惑这个MOV对应的二进制数不同是因为指令集的原因呢还是汇编编译器的原因呢？</p>
 ]]></content>
   </entry>
 </search>
