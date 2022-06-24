@@ -4849,4 +4849,100 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </figure>
 ]]></content>
   </entry>
+  <entry>
+    <title>STM32G431-Nucleo-64开发板使用小记</title>
+    <url>/2022/06/24/15-48-41/</url>
+    <content><![CDATA[<h1 id="stm32g431-nucleo-64开发板使用小记">STM32G431-Nucleo-64开发板使用小记</h1>
+<h2 id="基本介绍">基本介绍</h2>
+<p>实物图片：<img src="/2022/06/24/15-48-41/en.nucleo-g431rb.jpg" alt="en.nucleo-g431rb"></p>
+<h2 id="点亮led灯">点亮LED灯</h2>
+<h4 id="软件选择">软件选择</h4>
+<p>使用CubeMX与MAD-ARM</p>
+<ul>
+<li><p>STMCubeMX：</p>
+<p>STMCubeMX是ST公司推出的一种自动创建单片机工程及初始化代码的工具。</p></li>
+<li><p>MDK-ARM：</p>
+<p>Keil公司开发的ARM开发工具MDK，是用来开发基于ARM核的系列微控制器的嵌入式应用程序。</p></li>
+</ul>
+<h4 id="实验流程">实验流程</h4>
+<p>使用 CubeMX 生成初始化代码 -&gt; 使用 MDK-ARM 编写主函数并编译 -&gt; 使用开发板自带的ST-LINK将编译好的程序烧录到开发板 -&gt; 搭建实物电路 -&gt; 开发板上电，观察现象。</p>
+<h4 id="具体操作">具体操作</h4>
+<p>打开CubeMX，可以看到如下界面。点击红色方框内的ACCESS TO MCU SELECTRO选择芯片型号。</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624155754981.png" alt="image-20220624155754981"><figcaption aria-hidden="true">image-20220624155754981</figcaption>
+</figure>
+<p>输入芯片型号查找对应芯片，选择“STM32G431RBT6”芯片。具体操作如图所示，操作执行后点击Start Progect进入配置页面。</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624161212803.png" alt="image-20220624161212803"><figcaption aria-hidden="true">image-20220624161212803</figcaption>
+</figure>
+<p>芯片配置页面如下：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624161504627.png" alt="image-20220624161504627"><figcaption aria-hidden="true">image-20220624161504627</figcaption>
+</figure>
+<p>配置包括 “Pinout &amp; Configuration”、“Clock Configuration”、“Project Manager” 和 “Tools”。</p>
+<p>首先配置 “Project Manager”，方式如下：其中 “Code Generator” 和 “Advanced Setings” 暂时用不到。</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624162039334.png" alt="image-20220624162039334"><figcaption aria-hidden="true">image-20220624162039334</figcaption>
+</figure>
+<p>想要点亮LED灯，我们需要对GPIO引脚进行控制，因此返回 “Pinout &amp; Configuration” 配置选项卡，进行输入输出引脚配置。我们选择引脚 PC3 ，将其初始化为高电平，并将输出电平再高低之间进行切换，使用HEL函数延时，每隔1000ms进行一次变换。具体操作如图所示：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624162854160.png" alt="image-20220624162854160"><figcaption aria-hidden="true">image-20220624162854160</figcaption>
+</figure>
+<p>最后点击生成代码。</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624163308481.png" alt="image-20220624163308481"><figcaption aria-hidden="true">image-20220624163308481</figcaption>
+</figure>
+<p>使用MDK-ARM打开工程，查看CubeMX生成的代码：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624164703328.png" alt="image-20220624164703328"><figcaption aria-hidden="true">image-20220624164703328</figcaption>
+</figure>
+<p>在主函数中插入我们要编写的LED闪烁代码：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624172922991.png" alt="image-20220624172922991"><figcaption aria-hidden="true">image-20220624172922991</figcaption>
+</figure>
+<p>代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET);</span><br><span class="line">HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET);</span><br><span class="line">HAL_Delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624173238440.png" alt="image-20220624173238440"><figcaption aria-hidden="true">image-20220624173238440</figcaption>
+</figure>
+<p>连接电路图，结果展示：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220624174456175.png" alt="image-20220624174456175" style="zoom:33%;"></p>
+<h3 id="开发板配置">开发板配置</h3>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624174830465.png" alt="image-20220624174830465"><figcaption aria-hidden="true">image-20220624174830465</figcaption>
+</figure>
+<p>基本工程配置：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624175021820.png" alt="image-20220624175021820"><figcaption aria-hidden="true">image-20220624175021820</figcaption>
+</figure>
+<p>直接生成工程：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624175042732.png" alt="image-20220624175042732"><figcaption aria-hidden="true">image-20220624175042732</figcaption>
+</figure>
+<p>可以看到，针对于这个开发板，默认芯片时钟配置如下：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624180243123.png" alt="image-20220624180243123"><figcaption aria-hidden="true">image-20220624180243123</figcaption>
+</figure>
+<h3 id="学习使用cubemx中的example">学习使用CubeMX中的Example</h3>
+<p>首先打开CubeMX进入工程选项界面，选择 “Example Selector” 。</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624192415831.png" alt="image-20220624192415831"><figcaption aria-hidden="true">image-20220624192415831</figcaption>
+</figure>
+<p>续：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624192555608.png" alt="image-20220624192555608"><figcaption aria-hidden="true">image-20220624192555608</figcaption>
+</figure>
+<p>在生成选项中，选择生成目录，然后直接使用MDK-ARM打开即可：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220624192653458.png" alt="image-20220624192653458" style="zoom:30%;"></p>
+<p>打开文档中的readme.txt文件，阅读该例程的使用方法：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220624193003158.png" alt="image-20220624193003158"><figcaption aria-hidden="true">image-20220624193003158</figcaption>
+</figure>
+<p>阅读文档可知，PA08-PA11分别输出四种不同占空比的PWM波形。</p>
+<p>编译文件并烧录到开发板中，使用示波器测试PWM波形，得如下结果：</p>
+]]></content>
+      <tags>
+        <tag>电子设计</tag>
+      </tags>
+  </entry>
 </search>

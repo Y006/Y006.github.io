@@ -137,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -207,6 +207,587 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/02/27/16-42-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/27/16-42-18/" class="post-title-link" itemprop="url">信号与系统</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-27 16:42:18" itemprop="dateCreated datePublished" datetime="2022-02-27T16:42:18+08:00">2022-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-19 00:11:16" itemprop="dateModified" datetime="2022-04-19T00:11:16+08:00">2022-04-19</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/02/27/16-42-18/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/27/16-42-18/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="信号">信号</h2>
+<h3 id="常见的奇异信号">常见的奇异信号</h3>
+<p>奇异信号：函数中包含不连续点或其微分与积分有不连续点的函数，统称为奇异函数，也就是奇异信号。</p>
+<table>
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>名称</th>
+<th>函数表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(f(t)\)</span>：单位斜变信号</td>
+<td><span class="math inline">\(f(t) = \begin{cases} 0 &amp; t&lt;0 \\\\ t &amp; t\ge0 \\ \end{cases}\)</span></td>
+</tr>
+<tr class="even">
+<td>$ u(t)$：单位阶跃信号</td>
+<td><span class="math inline">\(u(t) = \begin{cases} 0 &amp; t&lt;0 \\\\ 1 &amp; t&gt;0 \\ \end{cases}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta(t)\)</span>：单位冲激函数</td>
+<td><span class="math inline">\(\begin{cases} \begin{aligned} &amp;\int_{-\infty}^{\infty}\delta(t)dt = 1\\\\ &amp;\delta(t) = 0\quad while(t\not=0) \end{aligned} \end{cases}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta(t)&#39;\)</span>：冲激偶函数</td>
+<td><span class="math inline">\(\delta(t)&#39;=\frac{d\delta(t)}{dt}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="ft单位斜变信号"><span class="math inline">\(f(t)\)</span>：单位斜变信号</h4>
+<p>单位斜变信号的“单位”体现在其非零部分的斜率为 <span class="math inline">\(1\)</span> 。</p>
+<p>函数表达式： <span class="math display">\[
+f(t) = 
+\begin{cases}
+0 &amp;     t&lt;0     \\\\
+t &amp;     t\ge0   \\
+\end{cases}
+\]</span> 起始点移位 <span class="math inline">\(t\)</span> 后： <span class="math display">\[
+f(t-t_0) = 
+\begin{cases}
+0       &amp;       t&lt;t_0           \\\\
+t-t_0   &amp;       t\ge t_0        \\
+\end{cases}
+\]</span></p>
+<h4 id="ut单位阶跃信号">$ u(t)$：单位阶跃信号</h4>
+<p>函数表达式：</p>
+<p>由表达式可知 <span class="math inline">\(t=0\)</span> 处函数未定义，可以将 <span class="math inline">\(t=0\)</span> 处函数值定义为 <span class="math inline">\(u(0)=\frac{1}{2}\)</span>。 <span class="math display">\[
+u(t) = 
+\begin{cases}
+0   &amp;       t&lt;0     \\\\
+1   &amp;       t&gt;0     \\
+\end{cases}
+\]</span> 起始点移位 <span class="math inline">\(t\)</span> 后（或认为阶跃延时 <span class="math inline">\(t\)</span> 后），有： <span class="math display">\[
+u(t-t_0) = 
+\begin{cases}
+0   &amp;       t&lt;t_0       \\\\
+1   &amp;       t&gt;t_0       \\
+\end{cases}
+\]</span></p>
+<h4 id="deltat单位冲激函数"><span class="math inline">\(\delta(t)\)</span>：单位冲激函数</h4>
+<p>狄拉克（Dirac）定义方式： <span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;\int_{-\infty}^{\infty}\delta(t)dt = 1\\\\
+&amp;\delta(t) = 0\quad while(t\not=0)
+\end{aligned}
+\end{cases}
+\]</span> 狄拉克（Dirac）定义表明：</p>
+<ol type="1">
+<li>除了坐标轴零点处，其余位置单位冲激函数的函数值均为 <span class="math inline">\(0\)</span> 。</li>
+<li>单位冲激函数仅在一点处取值，而其面积（积分）为 <span class="math inline">\(1\)</span> ，由此可知单位冲激函数为长度为 <span class="math inline">\(1\)</span> 的线段：表示中我们使用长度为 <span class="math inline">\(1\)</span> 的向量来表示，方向与 <span class="math inline">\(y\)</span> 轴正半轴方向相同。</li>
+</ol>
+<h4 id="deltat冲激偶函数"><span class="math inline">\(\delta(t)&#39;\)</span>：冲激偶函数</h4>
+<p>由符号可知冲激偶函数为冲激函数的导数。</p>
+<h4 id="常见奇异信号之间的关系">常见奇异信号之间的关系：</h4>
+<p><span class="math display">\[
+\begin{cases}
+\begin{aligned}
+&amp;\frac{df(t)}{dt}=u(t)\\\\
+&amp;\frac{du(t)}{dt}=\delta(t)\\\\
+&amp;\delta(t)&#39;=\frac{d\delta(t)}{dt}
+\end{aligned}
+\end{cases}
+\]</span></p>
+<h4 id="单位冲激函数-deltat-的简单性质">单位冲激函数 <span class="math inline">\(\delta(t)\)</span> 的简单性质：</h4>
+<ol type="1">
+<li><p>单位冲激函数 <span class="math inline">\(\delta(t)\)</span> 具有<strong>抽样特性</strong>（也称“筛选”特性），<span class="math inline">\(\delta(t)\)</span> 可以用来筛选出信号中某一时刻的值（函数值），具体操作如下： <span class="math display">\[
+\int_{-\infty}^{\infty}\delta(t-t_0)f(t)dt=f(t_0)
+\]</span> 解释：对于任意一个信号 <span class="math inline">\(f(t)\)</span> ，我们使用 <span class="math inline">\(\delta(t)\)</span> 可以筛选出目标的函数值 <span class="math inline">\(f(t_0)\)</span> 。</p></li>
+<li><p>单位冲激函数 <span class="math inline">\(\delta(t)\)</span> 是一个偶函数，即 <span class="math inline">\(\delta(t)=\delta(-t)\)</span></p></li>
+</ol>
+<h3 id="线性时不变系统lti">线性时不变系统——LTI</h3>
+<ol type="1">
+<li><p>理解线性：</p>
+<ol type="1">
+<li>满足叠加性和均匀性</li>
+</ol></li>
+<li><p>理解时不变特性：即系统本身的参数不随时间发生改变</p></li>
+<li><p>线性时不变系统还具有的特性：</p>
+<ol type="1">
+<li><p>微分特性：微分特性由线性和时不变性共同得出，内容为：</p>
+<p>若激励信号 <span class="math inline">\(e(t)\)</span> 可使系统产生响应信号 <span class="math inline">\(r(t)\)</span>，则</p>
+<ul>
+<li>激励 <span class="math inline">\(\frac{de(t)}{dt}\)</span> 可产生响应 <span class="math inline">\(\frac{dr(t)}{dt}\)</span></li>
+<li>激励 <span class="math inline">\(\frac{d^2e(t)}{dt}\)</span> 可产生响应 <span class="math inline">\(\frac{d^2r(t)}{dt}\)</span>，其余高阶求导同理</li>
+<li>激励 <span class="math inline">\(\int^t_0e(\tau)d\tau\)</span> 可产生响应 <span class="math inline">\(\int^t_0r(\tau)d\tau\)</span></li>
+</ul></li>
+<li><p>因果特性：因果特性描述了激励信号与响应信号之间的联系，因果特性表明：<span class="math inline">\(t_0\)</span> 时刻的响应只与<span class="math inline">\(t=t_0\)</span> 和 <span class="math inline">\(t&lt;t_0\)</span> 时刻的输入有关，即激励和响应有着因果关系，只有有激励才会有响应。</p></li>
+</ol></li>
+</ol>
+<h3 id="分析lti">分析LTI</h3>
+<p>系统建模就是使用数学工具例如方程或者微分方程来建立模型。</p>
+<ol type="1">
+<li>系统的数学描述方法可以分为两大类：</li>
+</ol>
+<ul>
+<li>输入输出描述法——该方法注重系统激励和响应之间的关系，不关心系统内部变量情况
+<ul>
+<li>这种方法在数学上表现为一元<span class="math inline">\(n\)</span>阶微分方程</li>
+</ul></li>
+<li>状态变量描述法
+<ul>
+<li>可以给出系统响应</li>
+<li>提供系统内部各变量的情况</li>
+<li>可以用于多输入多输出系统的分析</li>
+<li>这种方法在数学上表现为<span class="math inline">\(n\)</span>元联立一阶微分方程</li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li>使用数学方法描述了一个系统后，我们就需要一些求解方法来求解系统模型，求解方法大体上也可以分为两类：</li>
+</ol>
+<ul>
+<li>时域分析——时域分析是指在时间域上分析系统；前文可知系统可以简单理解为一个以时间为自变量的函数或函数族，时间域分析就是直接分析这个以时间变量作为自变量的函数。
+<ul>
+<li>时域分析分析输入输出法描述的系统模型时：
+<ul>
+<li>可以使用经典的常系数微分方程和差分方程</li>
+<li>也可以使用算子符号来简化上面的微分方程和差分方程</li>
+<li>卷积是分析线性系统时域的重要数学工具</li>
+</ul></li>
+<li>时域分析分析状态变量法描述的系统模型时：
+<ul>
+<li>需要求解矩阵方程</li>
+</ul></li>
+</ul></li>
+<li>变换域分析——变换域是指将时变函数中的自变量：时间变量变换成其他变量函数。变换域分析使得时域分析中复杂的微分积分运算变成了代数运算，将复杂的卷积运算变成了乘法运算</li>
+</ul>
+<h3 id="电系统的lti数学模型建立">电系统的LTI数学模型建立</h3>
+<p>构成电系统的LTI模型表现为微分方程式</p>
+<p>构成此类方程式的依据是电系统网络的两类约束特性：</p>
+<ul>
+<li>电元器件约束特性——电子元器件的伏安特性
+<ul>
+<li>欧姆定律：
+<ul>
+<li><span class="math inline">\(V_R(t)=Ri_R(t)\)</span></li>
+<li><span class="math inline">\(V_L(t)=L\frac{di(t)}{dt}\)</span></li>
+<li><span class="math inline">\(V_C(t)=\frac{1}{C}\int_{-\infty}^ti_C{(\tau)}d\tau\)</span></li>
+</ul></li>
+</ul></li>
+<li>网络拓扑结构——网络结构决定的电流电压关系
+<ul>
+<li>基尔霍夫定律：
+<ul>
+<li><span class="math inline">\(\sum i(t)=0\)</span></li>
+<li><span class="math inline">\(\sum v(t)=0\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>线性时不变系统的时域分析，微分方程的一般形式： <span class="math display">\[
+C_0\frac{d^nr(t)}{dt^n}+C_1\frac{d^{n-1}r(t)}{dt^{n-1}}+···+C_{n-1}\frac{dr(t)}{dt}+C_nr(t)=E_0\frac{d^me(t)}{dt^m}+E_1\frac{d^{m-1}e(t)}{dt^{m-1}}+···+E_{m-1}\frac{de(t)}{dt}+E_me(t)
+\]</span> 上式可以缩写为： <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 特殊形式，例如我们可以整理约束关系得到下式： <span class="math display">\[
+\frac{d^3r(t)}{dt^3}+7\frac{d^2r(t)}{dt^2}+16\frac{dr(t)}{dt}+12r(t)=e(t)
+\]</span> 微分方程的全解由齐次解 <span class="math inline">\(r_h(t)\)</span> 和特解 <span class="math inline">\(r_h(t)\)</span> )组成，即： <span class="math display">\[
+r(t)=r_h(t)+r_h(t)
+\]</span> 解法：</p>
+<ol type="1">
+<li>求齐次解 <span class="math inline">\(r_h(t)\)</span>：</li>
+</ol>
+<ul>
+<li><p>令 <span class="math inline">\(\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=0\)</span>，该式称为齐次方程</p></li>
+<li><p>将 <span class="math inline">\(r(t)=Ae^{\alpha t}\)</span> 代入齐次方程得 <span class="math inline">\(\sum_{i=0}^nC_{n-i}\alpha^{i}=0\)</span>，称为特征方程</p></li>
+<li><p>根据特征方程可以得齐次解 <span class="math inline">\(r_h(t)\)</span> 为</p>
+<ul>
+<li><p>特征方程没有重根：<img src="/2022/02/27/16-42-18/image-20220326234840139-16483097818622.png" alt="image-20220326234840139" style="zoom: 40%;"></p></li>
+<li><p>特征方程有重根：<img src="/2022/02/27/16-42-18/image-20220326234918784-16483097790591.png" alt="image-20220326234918784" style="zoom: 40%;"></p></li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li><p>求特解 <span class="math inline">\(r_h(t)\)</span>：</p>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>激励函数 <span class="math inline">\(e(t)\)</span></th>
+<th>响应函数 <span class="math inline">\(r(t)\)</span> 的特解</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(E\)</span></td>
+<td><span class="math inline">\(B\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(t^p\)</span></td>
+<td><span class="math inline">\(B_1t^p+B_2t^{p-1}+···+B_pt+B_{p+1}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(e^{\alpha t}\)</span></td>
+<td><span class="math inline">\(Be^{\alpha t}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(cos(\omega t)\)</span></td>
+<td><span class="math inline">\(B_1cos(\omega t)+B_2sin(\omega t)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(sin(\omega t)\)</span></td>
+<td><span class="math inline">\(B_1cos(\omega t)+B_2sin(\omega t)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(t^pe^{\alpha t}cos(\omega t)\)</span></td>
+<td><span class="math inline">\((B_1t^p+···+B_pt+B_{p+1})e^{\alpha t}cos(\omega t)+(D_1t^p+···+D_pt+D_{p+1})e^{\alpha t}sin(\omega t)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(t^pe^{\alpha t}sin(\omega t)\)</span></td>
+<td><span class="math inline">\((B_1t^p+···+B_pt+B_{p+1})e^{\alpha t}cos(\omega t)+(D_1t^p+···+D_pt+D_{p+1})e^{\alpha t}sin(\omega t)\)</span></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>求待定系数 <span class="math inline">\(A\)</span>：</p></li>
+</ol>
+<h3 id="拉普拉斯变换">拉普拉斯变换</h3>
+<p>形态上，拉普拉斯变换做了这样一件事： <span class="math display">\[
+f(t)\xrightarrow{\sf{拉普拉斯变换}}F(s)
+\]</span> 或者说： <span class="math display">\[
+f(t)\xrightarrow{\mathscr{L}\{f(t)\}}F(s)
+\]</span> 从形态上讲，拉普拉斯变换将一个以时间 <span class="math inline">\(t\)</span> 为自变量的函数变换成了一个以频率 <span class="math inline">\(s\)</span> 为自变量的函数。</p>
+<p>拉普拉斯变换将函数从时域变换到了频域，其实就是信号的自变量发生了变化。</p>
+<p>意义：拉普拉斯变换可以将时域内的微分方程变换成频域内的代数方程，降低计算难度并且从频域再次回到时域时保证解不变。</p>
+<p><span class="math inline">\(\mathscr{L}\{f(t)\}\)</span> 拉氏变换的定义为： <span class="math display">\[
+\mathscr{L}\{f(t)\}=\int_{0}^{\infty}f(t)\cdot e^{-st}dt
+\]</span> 注意事项：</p>
+<ol type="1">
+<li>进行拉氏变换的 <span class="math inline">\(f(t)\)</span> 是否存在的问题：
+<ul>
+<li>首先是初等函数都能进行拉氏变换</li>
+<li>默认在线性电路分析中均使用能够进行拉氏变换的电源进行系统的激励</li>
+</ul></li>
+<li>上述拉氏变换也可以称作单边拉氏变换，此变换忽略了 <span class="math inline">\(t&lt;0\)</span> 时的 <span class="math inline">\(f(t)\)</span></li>
+<li><span class="math inline">\(t&lt;0\)</span> 时的 <span class="math inline">\(f(t)\)</span> 可以通过初始条件来考虑</li>
+</ol>
+<p>分类：</p>
+<p>学习拉普拉斯变换将拉普拉斯变换分为函数变换和算子变换</p>
+<ul>
+<li>函数变换：研究初等函数的拉氏变换</li>
+<li>算子变换：研究一般函数的拉氏变换</li>
+</ul>
+<h4 id="算子变换">算子变换：</h4>
+<table>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>拉氏变换</th>
+<th><span class="math inline">\(\mathscr{L}\{f(t)\}=F(s)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>乘以常数</td>
+<td><span class="math inline">\(\mathscr{L}\{Kf(t)\}=KF(s)\)</span></td>
+</tr>
+<tr class="even">
+<td>加减运算</td>
+<td><span class="math inline">\(\mathscr{L}\{f(t_1)+f(t_2)-f(t_3)\}=F(s_1)+F(s_2)-F(s_3)\)</span></td>
+</tr>
+<tr class="odd">
+<td>微分运算</td>
+<td>一重微分：<span class="math inline">\(\mathscr{L}\{\frac{df(t)}{dt}\}=sF(s)-f(0^-)\)</span><br><span class="math inline">\(n\)</span> 重微分：<span class="math inline">\(\mathscr{L}\{\frac{d^nf(t)}{dt^n}\}=s^nF(s)-s^{n-1}f(0^-)-\sum_{i=2}^{n}s^{n-i}\frac{d^{i-1}f(0^-)}{dt^{i-1}}\)</span></td>
+</tr>
+<tr class="even">
+<td>积分运算</td>
+<td><span class="math inline">\(\mathscr{L}\{\int_{0^-}^{t}f(t)dt\}=F(s)/s\)</span></td>
+</tr>
+<tr class="odd">
+<td>时域平移特性</td>
+<td><span class="math inline">\(\mathscr{L}\{f(t-a)\cdot u(t-a)\}=e^{-as}\cdot F(s),\quad a&gt;0\)</span><br><span class="math inline">\(\mathscr{L}\{e^{-as}\cdot F(s)\}=F(s+a)\)</span></td>
+</tr>
+<tr class="even">
+<td>尺度变换特性</td>
+<td><span class="math inline">\(\mathscr{L}\{f(at)\}=\frac{1}{a}F\left(\frac{s}{a}\right),\quad a&gt;0\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="傅里叶分析简介">傅里叶分析简介</h3>
+<p>傅里叶定理表明，任何一个角频率为<span class="math inline">\(\omega_0\)</span>的周期函数都可以表示为无穷多个频率为<span class="math inline">\(\omega_0\)</span>整数倍的正弦函数与余弦函数之和。</p>
+<p>对于一个周期函数<span class="math inline">\(f(t)\)</span>，若满足Dirichlet条件，则该周期函数可以展开成傅里叶级数，即： <span class="math display">\[
+\begin{aligned}
+    &amp;if\quad f(t)=f(t+T)\\\\
+    &amp;then\quad f(t)=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) +  \displaystyle\sum_{n=1}^{\infty}b_nsin(n\omega_0t)\\
+    &amp;\boxed
+    {
+        \begin{aligned}
+        &amp;a_0=\frac{1}{T}\int^{T}_{0}f(t)\,dt\\
+        &amp;a_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+        &amp;b_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+        \end{aligned}
+    }
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+    &amp;if \quad f(t)=f(-t)\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\;\,\\\\
+    &amp;\boxed
+    {
+        \begin{aligned}
+        &amp;a_0=\frac{2}{T}\int^{T/2}_{0}f(t)\,dt\\
+        &amp;a_n=\frac{4}{T}\int^{T/2}_{0} f(t) cos(n\omega_0t) \,dt \\
+        &amp;b_n=0 \\
+        \end{aligned}
+    }
+\end{aligned}
+\]</span></p>
+<p>展开式中<span class="math inline">\(a_0\)</span>称为直流分量，其值等于函数<span class="math inline">\(f(t)\)</span>的平均值；<span class="math inline">\(a_n\)</span>与<span class="math inline">\(b_n(n\not=0)\)</span>是交流分量的幅值 <span class="math display">\[
+f(t)=f(t+T)\Rightarrow
+f(t)=a_0 + \displaystyle\sum_{n=1}^{\infty}a_ncos(n\omega_0t) + \displaystyle\sum_{n=1}^{\infty}b_nsin(n\omega_0t)\\
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{c|c|c}
+    \begin{aligned}
+    &amp;general\quad condition\\
+    &amp;\boxed
+    {
+        \begin{aligned}
+            &amp;a_0=\frac{1}{T}\int^{T}_{0}f(t)\,dt\\
+            &amp;a_n=\frac{2}{T}\int^{T}_{0} f(t) cos(n\omega_0t) \,dt \\
+            &amp;b_n=\frac{2}{T}\int^{T}_{0} f(t) sin(n\omega_0t) \,dt \\
+        \end{aligned}
+    }
+    \end{aligned}
+    &amp;
+    \begin{aligned}
+        &amp;if \quad f(t)=f(-t)\\
+        &amp;\boxed
+        {
+            \begin{aligned}
+                &amp;a_0=\frac{2}{T}\int^{T/2}_{0}f(t)\,dt\\
+                &amp;a_n=\frac{4}{T}\int^{T/2}_{0} f(t) cos(n\omega_0t) \,dt \\
+                &amp;b_n=0 \\
+            \end{aligned}
+}
+    \end{aligned}
+    &amp; 
+    \begin{aligned}
+    &amp;if \quad f(t)=-f(-t)\\
+    &amp;\boxed
+    {
+        \begin{aligned}
+            &amp;a_0=0\\
+            &amp;a_n=0\\
+            &amp;b_n=\frac{4}{T}\int^{T/2}_{0} f(t) sin(n\omega_0t) \,dt  \\
+        \end{aligned}
+}
+    \end{aligned}\\
+\end{array}\\
+\]</span></p>
+<p><span class="math display">\[
+P_{1\Omega}=F_{rms}^2=a_0^2+\frac{1}{2}\displaystyle\sum_{n=1}^{\infty}(a_n^2+b_n^2)
+\]</span></p>
+<p>线性系统：</p>
+<p>线性系统是指具有叠加性和均匀性的系统：</p>
+<ul>
+<li>叠加性：多个激励同时作用时产生的响应 = 多个激励分别作用时产生的响应的和</li>
+<li>均匀性：输入增益于输出增益相同</li>
+</ul>
+<p><span class="math display">\[
+v_R(t)=Ri_R(t)\\
+v_L(t)=L\frac{i_L(t)}{dt}\\
+v_C(t)=\frac{1}{C}\int_{-\infty}^{t}i_C(\tau)d\tau
+\]</span></p>
+<p><span class="math display">\[
+V_L(t)+V_R(t)+V_C(t)=e(t)\\
+L\frac{i_L(t)}{dt}+Ri_R(t)+\frac{1}{C}\int_{-\infty}^{t}i_C(\tau)d\tau=e(t)\\
+L\frac{d^2i_L(t)}{dt^2}+R\frac{di_R(t)}{dt}+\frac{1}{C}i_C(t)=\frac{de(t)}{dt}\\
+对于串联，有i_L=i_R=i_C\\
+L\frac{d^2i(t)}{dt^2}+R\frac{di(t)}{dt}+\frac{1}{C}i(t)=\frac{de(t)}{dt}\\
+\]</span></p>
+<p><span class="math display">\[
+i_R(t)=\frac{1}{R}v(t)\\
+i_L(t)=\frac{1}{L}\int_{-\infty}^{t}v(\tau)d\tau\\
+i_C(t)=C\frac{dv_C(t)}{dt}
+\]</span></p>
+<p><span class="math display">\[
+i_C(t)+i_R(t)+i_L(t)=i_S(t)\\
+C\frac{d^2v(t)}{dt^2}+\frac{1}{R}\frac{dv(t)}{dt}+\frac{1}{L}v(t)=\frac{di_S(t)}{dt}\\
+\]</span></p>
+<p>若组成系统的都是参数恒定的线性元件，则相应的数学模型是一个线性常系数常微分方程，若各器件初始无储能，则为一个线性时不变系统</p>
+<p>则对于一个线性时不变系统来说，其数学模型可以使用一个微分方程来描述： <span class="math display">\[
+C_0\frac{d^nr(t)}{dt^n}+C_1\frac{d^{n-1}r(t)}{dt^{n-1}}+···+C_{n-1}\frac{dr(t)}{dt}+C_nr(t)=E_0\frac{d^me(t)}{dt^m}+E_1\frac{d^{m-1}e(t)}{dt^{m-1}}+···+E_{m-1}\frac{de(t)}{dt}+E_me(t)
+\]</span> 方程的解可以记作： $$</p>
+<p>$$</p>
+<p>线性电路系统由线性电子元器件构成，描述此类系统需要借助电路网络的两类约束条件：</p>
+<ul>
+<li>元件约束特性</li>
+<li>网络拓扑约束</li>
+</ul>
+<p>两种约束的数学描述可以由<strong>微分方程组</strong>给出，这类方程组称为系统的<strong>状态方程</strong></p>
+<p>我们联立上述方程组可以得到<strong>一个高阶微分方程</strong>，这个高阶微分方程称作<strong>输入输出方程</strong>，其阶数为系统的阶数</p>
+<p>系统的输入称为激励，输出称为响应；若能给出系统的<strong>初始状态</strong>和<strong>激励</strong>，则可以获得<strong>响应</strong></p>
+<p>系统的初始状态由若干独立条件给出，独立条件的个数与系统的阶数相同</p>
+<p>线性时不变系统一般使用一个n阶线性微分方程来描述</p>
+<p>这个方程可以被整理为： <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 一般来说，对于响应，其有实际意义的定义域称为响应区间，即：<span class="math inline">\(0_+ \le t&lt; \infty\)</span></p>
+<p><span class="math inline">\(e(t)\)</span>加入前，系统为起始状态（<span class="math inline">\(0_-\)</span>状态） <span class="math display">\[
+r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]
+\]</span></p>
+<p><span class="math inline">\(e(t)\)</span>加入后，系统为初始状态（<span class="math inline">\(0_+\)</span>状态） <span class="math display">\[
+r^k(0_+)=[r(0_+),\frac{d}{dt}r(0_+),...,\frac{d^n}{dt^n}r(0_+)]
+\]</span> 因此，决定关系为：</p>
+<ul>
+<li>起始状态 <span class="math inline">\(+\)</span> <span class="math inline">\(e(t)\)</span> <span class="math inline">\(\rightarrow\)</span> 初始状态</li>
+<li>初始状态 <span class="math inline">\(\rightarrow\)</span> 响应齐次解的常系数 <span class="math inline">\(A\)</span></li>
+</ul>
+<p>响应可以拆解为三种形式：</p>
+<ul>
+<li>固有响应 <span class="math inline">\(+\)</span> 受迫响应</li>
+<li>零输入响应 <span class="math inline">\(+\)</span> 零状态响应</li>
+<li>暂态响应 <span class="math inline">\(+\)</span> 稳态响应</li>
+</ul>
+<h6 id="全响应">全响应：</h6>
+<p>对于使用<span class="math inline">\(n\)</span>阶微分方程描述的线性系统： <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 上述微分方程的解，即系统的响应，为：<span class="math inline">\(r(t)=r_h+r_p\)</span>，求解步骤为：</p>
+<ul>
+<li>使用特征根求解待定系数的齐次解</li>
+<li>使用待定系数法求解特解</li>
+<li>求解齐次解中的系数
+<ul>
+<li>使用 <span class="math inline">\(r^k(0_+)=[r(0_+),\frac{d}{dt}r(0_+),...,\frac{d^n}{dt^n}r(0_+)]\)</span> 来求解系数向量 <span class="math inline">\(A_n\)</span></li>
+<li>寻找 <span class="math inline">\(r^k(0_-)\)</span> 与 <span class="math inline">\(r^k(0_+)\)</span> 之间的关系
+<ul>
+<li>物理法：对于电路系统来说即换路定理：电容电感端性质的连续性</li>
+<li>数学法：冲激函数匹配法：微分方程两端保持各阶奇异函数的平衡</li>
+</ul></li>
+</ul></li>
+</ul>
+<h6 id="固有响应和受迫响应">固有响应和受迫响应：</h6>
+<p><span class="math inline">\(r(t)=r_h+r_p\)</span> <span class="math display">\[
+r(t)=\underbrace_{\sf{固有响应}}+\underbrace_{\sf{受迫响应}}
+\]</span></p>
+<h6 id="零输入响应和零状态响应">零输入响应和零状态响应：</h6>
+<p><strong>零输入响应：</strong> <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=0
+\]</span> 其中 <span class="math display">\[
+\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}=0
+\]</span> 说明 <span class="math display">\[
+[r(0_+),\frac{d}{dt}r(0_+),...,\frac{d^n}{dt^n}r(0_+)]=r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]
+\]</span> <strong>零状态响应：</strong> <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 但是与全响应不同的是，零状态响应中： <span class="math display">\[
+r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]=[0,0,...,0]
+\]</span> 其余求法依旧是：</p>
+<ul>
+<li>使用特征根求解待定系数的齐次解</li>
+<li>使用待定系数法求解特解</li>
+<li>求解齐次解中的系数</li>
+</ul>
+<p>注意：先求特解再求系数不要乱！</p>
+<p>对于使用<span class="math inline">\(n\)</span>阶微分方程描述的线性系统： <span class="math display">\[
+\sum_{i=0}^nC_{n-i}\frac{d^ir(t)}{dt^i}=\sum_{j=0}^mE_{m-j}\frac{d^je(t)}{dt^j}
+\]</span> 上述微分方程的解，即系统的响应，为：<span class="math inline">\(r(t)=r_h+r_p\)</span>，求解步骤为：</p>
+<ul>
+<li>使用特征根求解待定系数的齐次解</li>
+<li>使用待定系数法求解特解</li>
+<li>求解齐次解中的系数：使用 <span class="math inline">\(r^k(0_+)=[r(0_+),\frac{d}{dt}r(0_+),...,\frac{d^n}{dt^n}r(0_+)]\)</span> 来求解系数向量 <span class="math inline">\(A_n\)</span></li>
+</ul>
+<h2 id="如何从微分方程上判断线性系统">如何从微分方程上判断线性系统</h2>
+<ol type="1">
+<li>只能出现函数本身，以及函数的任何阶次的导函数；</li>
+<li>函数本身跟所有的导函数之间除了加减之外，不可以有任何运算；</li>
+<li>函数本身跟本身、各阶导函数本身跟本身，都不可以有任何加减之外的运算；</li>
+<li>若有积分项，被积函数应为输入变量，如 <span class="math inline">\(\int_{-\infty}^{t}r(\tau)d\tau\)</span>。其实积分就是微分的负次幂。</li>
+<li>不允许对函数本身、各阶导函数做任何形式的复合运算。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/40919950">线性微分方程与非线性微分方程的区别是什么？</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -2088,165 +2669,6 @@ x^n+a_1x^{n-1}+\cdot\cdot\cdot+a_{n-1}x&#39;+a_n=f(t)\tag{2}
 <li>A node of a circuit that is maintained at a steady reference potential, without being connected directly to the reference potential.</li>
 </ul></li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/02/21/08-25-17/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom-logo.jpg">
-      <meta itemprop="name" content="邱金羽">
-      <meta itemprop="description" content="联系我：2420457716@qq.com">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/21/08-25-17/" class="post-title-link" itemprop="url">电子学笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-21 08:25:17" itemprop="dateCreated datePublished" datetime="2022-02-21T08:25:17+08:00">2022-02-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-27 16:44:34" itemprop="dateModified" datetime="2022-02-27T16:44:34+08:00">2022-02-27</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2022/02/21/08-25-17/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/21/08-25-17/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="电子学">电子学</h1>
-<h3 id="基本概念">基本概念</h3>
-<p>组态：</p>
-<ul>
-<li>定义：晶体管接入电路的方法（晶体管接入电路的形态）。</li>
-<li>种类：共基组态（共基极的接入方法）、共射组态和共集组态</li>
-<li>F&amp;Q：
-<ul>
-<li>共"的含义——共在组态的概念中指端口共用。
-<ul>
-<li>进一步解释端口共用："将 BJT 晶体管看作一个双端口网络模型进行分析时，需要输入输出各两个端口，而晶体管有 3 个端口，因此需要一个端口共用。"</li>
-</ul></li>
-<li>在组态概念下我们要讨论的问题是什么：
-<ul>
-<li>首先明确组态概念下讨论的是晶体管本身的伏安特性，谈论组态时是不含不涵盖除晶体管之外的其他元器件的。</li>
-<li>不同组态下晶体管展现出的不同的输入输出特性（伏安特性）是我们研究的重点</li>
-</ul></li>
-</ul></li>
-</ul>
-<p>电路负载线：</p>
-<ul>
-<li>定义：电路负载线表征电路对元器件施加的约束，这个约束表现为一种伏安关系</li>
-<li>方法：负载线可以由基本的电路定律得到（如基尔霍夫定律）</li>
-<li>tips：使用电路定律得到的负载线公式可以整理成针对于某一负载伏安关系的一次函数: <span class="math inline">\(i=k v+b\)</span></li>
-</ul>
-<p>器件的伏安特性与</p>
-<p>耦合：</p>
-<ul>
-<li>定义：耦合就是连接的意思</li>
-<li>耦合电容：晶体管电路中的耦合电容起到连接直流源与交流源的作用</li>
-</ul>
-<p>偏置与静态工作点：</p>
-<ul>
-<li><p>偏置的含义：偏置是一种利用直流电压为电路设置固定直流电流和电压的广义称谓</p></li>
-<li><p>讨论偏置时的研究对象我们的研究对象不是电子元器件，而是某一电路</p></li>
-<li><p>偏置操作不但在"电路网络（黑箱）"外加入了直流电源，而且配合了电阻器件进行约束。</p>
-<ul>
-<li>以晶体管的偏置为例：直流电源与电阻一起构成了晶体管电路，该对晶体管工作范围进行了约束，这种约束可以使用负载线来表示，并且可以通过数学形式变化将负载线与晶体管的输入输出特征曲线放在同一坐标轴下得到一个交点，称为静态工作点</li>
-</ul></li>
-<li><p>静态工作点的含义：</p>
-<ul>
-<li>偏置时设置的固定的电流与电压被称为静态工作点，标记为 Q</li>
-<li>静态工作点由元器件伏安特性和电路伏安约束共同确定，对于特定的器件，静态工作点仅由电路的配置决定。</li>
-<li>对于晶体管，配置不同的静态工作点有两个目标
-<ul>
-<li>第一个目标时让晶体管工作在特定的状态，在模拟电子技术中我们希望让晶体管工作在放大的工作状态</li>
-<li>第二个目标是针对线性的放大工作范围，我们还要挑选一个合适的位置，不能使得放大的信号失真</li>
-</ul></li>
-</ul></li>
-<li><p>晶体管放大要求（偏置要求）</p>
-<ul>
-<li><p>输入电压应该超过晶体管导通电压。</p>
-<p>The input voltage should exceed <strong>cut-in voltage</strong> for the transistor to be <strong>ON</strong>.</p></li>
-<li><p>BJT应该在有源区，作为一个放大器。</p>
-<p>The BJT should be in the <strong>active region</strong>, to be operated as an <strong>amplifier</strong>.</p></li>
-</ul></li>
-</ul>
-<p><span class="math display">\[
-\begin{gather*}
-\begin{aligned}
-I_C&amp;=I_{\sf{多子电流}}+I_{\sf{少子电流}}\\
-   &amp;=\alpha I_E+I_{CBO}\\
-   &amp;=\alpha (I_B+I_C)+I_{CBO}\\
-\end{aligned}
-\Rightarrow
-I_C=\frac{\alpha}{1-\alpha}I_B+\frac{1}{1-\alpha}I_{CBO}=\beta I_B+I_{CEO}
-\end{gather*}
-\]</span> <span class="math inline">\(I_E=I_se^{v_{BE}/V_T}\)</span></p>
-<p><span class="math inline">\(I_C=\alpha I_E+I_{CBO}\)</span></p>
-<h3 id="稳定化stabilization">稳定化（Stabilization）</h3>
-<p>为了让晶体管</p>
-<blockquote>
-<p>使操作点独立于温度变化或晶体管参数变化的过程被称为稳定。</p>
-<p>The process of making the operating point independent of temperature changes or variations in transistor parameters is known as <strong>Stabilization</strong>.</p>
-</blockquote>
 
       
     </div>
