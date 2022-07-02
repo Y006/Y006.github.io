@@ -4904,6 +4904,12 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
     <content><![CDATA[<figure>
 <img src="/2022/06/06/21-00-26/image-20220606210048954-16545204512881.png" alt="image-20220606210048954"><figcaption aria-hidden="true">image-20220606210048954</figcaption>
 </figure>
+<figure>
+<img src="/2022/06/06/21-00-26/image-20220701175231248.png" alt="image-20220701175231248"><figcaption aria-hidden="true">image-20220701175231248</figcaption>
+</figure>
+<figure>
+<img src="/2022/06/06/21-00-26/image-20220701181041908.png" alt="image-20220701181041908"><figcaption aria-hidden="true">image-20220701181041908</figcaption>
+</figure>
 ]]></content>
   </entry>
   <entry>
@@ -4970,6 +4976,12 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <p>连接电路图，结果展示：</p>
 <p><img src="/2022/06/24/15-48-41/image-20220624174456175.png" alt="image-20220624174456175" style="zoom:33%;"></p>
 <h3 id="开发板配置">开发板配置</h3>
+<p>开发板中的用户按键是高电平有效，默认状态下接PC13。</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220702140416463.png" alt="image-20220702140416463"><figcaption aria-hidden="true">image-20220702140416463</figcaption>
+</figure>
+<p>ST Board 的默认配置中使用外部中断配置按键。</p>
+<p>如果使用GPIO口输入模式来实现按键行为，则需要配置为 Pull-down 模式</p>
 <figure>
 <img src="/2022/06/24/15-48-41/image-20220624174830465.png" alt="image-20220624174830465"><figcaption aria-hidden="true">image-20220624174830465</figcaption>
 </figure>
@@ -5127,6 +5139,87 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <p>F407有三种时钟源可以用作系统时钟：内部高速时钟、外部高速时钟、PLL时钟。 一般我们希望芯片工作在最高频率168MHz，而无论是内部还是外部时钟都是达不到的，所以通常都是用PLL时钟作为系统时钟。 外部时钟通常都比内部时钟要稳定精确，所以一般还会用外部时钟作为PLL的输入。 F407还有一个低速时钟用来驱动RTC，以及满足低电压模式下的功能需求。</p>
 <p>通常系统总线AHB的频率设置为168MHz，高速外设总线APB2频率设置为84MHz，低速外设总线APB1频率设置为42MHz。 这些总线频率可以通过配置RCC_CFGR和RCC_PLLCFGR实现。</p>
 </blockquote>
+<h3 id="移植-multibutton">移植 MultiButton</h3>
+<h4 id="multibutton简介">MultiButton简介</h4>
+<p>Github里面的嵌入式开源项目，一个小巧简单易用的事件驱动型按键驱动模块，可无限量扩展按键，能够实现下述按键事件：</p>
+<table>
+<thead>
+<tr class="header">
+<th>事件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PRESS_DOWN</td>
+<td>按键按下，每次按下都触发</td>
+</tr>
+<tr class="even">
+<td>PRESS_UP</td>
+<td>按键弹起，每次松开都触发</td>
+</tr>
+<tr class="odd">
+<td>PRESS_REPEAT</td>
+<td>重复按下触发，变量repeat计数连击次数</td>
+</tr>
+<tr class="even">
+<td>SINGLE_CLICK</td>
+<td>单击按键事件</td>
+</tr>
+<tr class="odd">
+<td>DOUBLE_CLICK</td>
+<td>双击按键事件</td>
+</tr>
+<tr class="even">
+<td>LONG_PRESS_START</td>
+<td>达到长按时间阈值时触发一次</td>
+</tr>
+<tr class="odd">
+<td>LONG_PRESS_HOLD</td>
+<td>长按期间一直触发</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://github.com/0x1abin/MultiButton">Github开源地址</a></p>
+<h4 id="在stm32g431-nucleo-64开发板中使用">在STM32G431-Nucleo-64开发板中使用</h4>
+<p>首先使用CubeMX建立一个工程，初始化串口、测试LED和测试按键的GPIO口：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702160405595.png" alt="image-20220702160405595" style="zoom:67%;"></p>
+<p>生成代码，打开工程文件夹：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702160514425.png" alt="image-20220702160514425" style="zoom:50%;"></p>
+<p>然后在<a href="https://github.com/0x1abin/MultiButton">此处</a>下载项目文件到本地：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702160023733.png" alt="image-20220702160023733" style="zoom:50%;"></p>
+<p>将红框内的源文件放入到工程文件夹的MDK-ARM文件夹中，这里我给源文件了一个单独的文件夹</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702160647623.png" alt="image-20220702160647623" style="zoom:50%;"></p>
+<p>同时我也移植了我们之前使用的 “user_log.h” 文件。</p>
+<p>打开工程，从工程外部添加文件：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702161216790.png" alt="image-20220702161216790" style="zoom: 50%;"></p>
+<p><img src="/2022/06/24/15-48-41/image-20220702161310298.png" alt="image-20220702161310298" style="zoom:50%;"></p>
+<p>源文件中的头文件，可以添加进来，也可以不添加，只要添加头文件的查找地址，然后在写代码时包含头文件即可：</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220702161547708.png" alt="image-20220702161547708"><figcaption aria-hidden="true">image-20220702161547708</figcaption>
+</figure>
+<h4 id="编写测试代码">编写测试代码</h4>
+<ol type="1">
+<li><p>打开 uart.c 文件，添加串口重定向代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 0 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __GNUC__</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PUTCHAR_PROTOTYPE int __io_putchar(int ch)<span class="comment">//如果使用GCC编译</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)<span class="comment">//keil中适用</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">PUTCHAR_PROTOTYPE</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">uint8_t</span> temp[<span class="number">1</span>] = &#123;ch&#125;;</span><br><span class="line">	HAL_UART_Transmit(&amp;hlpuart1, temp, <span class="number">1</span>, <span class="number">2</span>);<span class="comment">//hlpuart1需要根据你的配置修改</span></span><br><span class="line">	<span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* USER CODE END 0 */</span></span><br></pre></td></tr></table></figure></li>
+<li><p>打开 main.c 文件</p>
+<ol type="1">
+<li><p>添加新的包含</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Private includes ----------------------------------------------------------*/</span></span><br><span class="line"><span class="comment">/* USER CODE BEGIN Includes */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;user_log.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;multi_button.h&quot;</span></span></span><br><span class="line"><span class="comment">/* USER CODE END Includes */</span></span><br></pre></td></tr></table></figure></li>
+<li><p>添加新的变量声明——按键结构体声明</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Private variables ---------------------------------------------------------*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* USER CODE BEGIN PV */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Button</span> <span class="title">button1</span>;</span></span><br><span class="line"><span class="comment">/* USER CODE END PV */</span></span><br></pre></td></tr></table></figure></li>
+<li><p>回调函数：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Private user code ---------------------------------------------------------*/</span></span><br><span class="line"><span class="comment">/* USER CODE BEGIN 0 */</span></span><br><span class="line"><span class="type">uint8_t</span> <span class="title function_">read_button1_GPIO</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">return</span> HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">button_callback</span><span class="params">(<span class="type">void</span> *button)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">uint32_t</span> btn_event_val; </span><br><span class="line">    btn_event_val = get_button_event((<span class="keyword">struct</span> Button *)button); </span><br><span class="line">    <span class="keyword">switch</span>(btn_event_val)</span><br><span class="line">    &#123;</span><br><span class="line">     <span class="keyword">case</span> PRESS_DOWN:</span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;---&gt; key1 press down! &lt;---\r\n&quot;</span>); </span><br><span class="line">      <span class="keyword">break</span>; </span><br><span class="line">     <span class="keyword">case</span> PRESS_UP: </span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;***&gt; key1 press up! &lt;***\r\n&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>; </span><br><span class="line">     <span class="keyword">case</span> PRESS_REPEAT: </span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;---&gt; key1 press repeat! &lt;---\r\n&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>; </span><br><span class="line">     <span class="keyword">case</span> SINGLE_CLICK: </span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;---&gt; key1 single click! &lt;---\r\n&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>; </span><br><span class="line">     <span class="keyword">case</span> DOUBLE_CLICK: </span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;***&gt; key1 double click! &lt;***\r\n&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>; </span><br><span class="line">     <span class="keyword">case</span> LONG_PRESS_START: </span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;---&gt; key1 long press start! &lt;---\r\n&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>; </span><br><span class="line">     <span class="keyword">case</span> LONG_PRESS_HOLD: </span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;***&gt; key1 long press hold! &lt;***\r\n&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>; </span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>进入 <code>main()</code> 函数，<code>while(1)</code> 之前：初始化对象 -&gt; 注册函数 -&gt; 启动函数</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize all configured peripherals */</span></span><br><span class="line">  MX_GPIO_Init();</span><br><span class="line">  MX_LPUART1_UART_Init();</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">	HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;MultiButton Test...\r\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//初始化按键对象</span></span><br><span class="line">	button_init(&amp;button1, read_button1_GPIO, <span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//注册函数</span></span><br><span class="line">	button_attach(&amp;button1, PRESS_DOWN,       button_callback);</span><br><span class="line">	button_attach(&amp;button1, PRESS_UP,         button_callback);</span><br><span class="line"><span class="comment">//	button_attach(&amp;button1, PRESS_REPEAT,     button_callback);</span></span><br><span class="line"><span class="comment">//	button_attach(&amp;button1, SINGLE_CLICK,     button_callback);</span></span><br><span class="line"><span class="comment">//	button_attach(&amp;button1, DOUBLE_CLICK,     button_callback);</span></span><br><span class="line"><span class="comment">//	button_attach(&amp;button1, LONG_PRESS_START, button_callback);</span></span><br><span class="line"><span class="comment">//	button_attach(&amp;button1, LONG_PRESS_HOLD,  button_callback);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//启动按键</span></span><br><span class="line">	button_start(&amp;button1);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br></pre></td></tr></table></figure></li>
+<li><p>设置一个5ms间隔的定时器循环调用后台处理函数，可以在while(1)中使用滴答定时器：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Infinite loop */</span></span><br><span class="line"><span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//每隔5ms调用一次后台处理函数</span></span><br><span class="line">button_ticks();</span><br><span class="line">HAL_Delay(<span class="number">5</span>);</span><br><span class="line">  <span class="comment">/* USER CODE END WHILE */</span></span><br></pre></td></tr></table></figure></li>
+</ol></li>
+<li><p>勾选使用 MicroLIB</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702162518916.png" alt="image-20220702162518916" style="zoom: 33%;"></p></li>
+<li><p>编译，烧录，打开串口助手，测试：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702162754097.png" alt="image-20220702162754097" style="zoom: 33%;"></p></li>
+</ol>
 <h2 id="hal库小记">HAL库小记</h2>
 <blockquote>
 <p><strong>硬件抽象层</strong>（HAL，Hardware Abstraction Layer）驱动程序提供了一组功能丰富，易于与应用上层交互的 API，它们涵盖了常见的外围设备，可以非常方便的向其它型号 STM32 微控制器移植。同时还实现了用户回调函数机制，允许并发调用 <code>USART1</code> 以及 <code>USART2</code> 等外设，并且支持<strong>轮询</strong>、<strong>中断</strong>、<strong>DMA</strong> 三种 API 编程模式。</p>
