@@ -4923,6 +4923,8 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <figure>
 <img src="/2022/06/24/15-48-41/image-20220625140101348.png" alt="image-20220625140101348"><figcaption aria-hidden="true">image-20220625140101348</figcaption>
 </figure>
+<p>特别提醒：如果要设置频率为170MHz（最大频率），需要修改输入为24MHz</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702201055670.png" alt="image-20220702201055670" style="zoom:50%;"></p>
 <h3 id="点亮led灯">点亮LED灯</h3>
 <h4 id="软件选择">软件选择</h4>
 <p>使用CubeMX与MAD-ARM</p>
