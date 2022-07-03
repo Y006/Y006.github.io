@@ -5072,6 +5072,9 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </figure>
 <p>生成代码，打开工程，进行工程设置：</p>
 <p><img src="/2022/06/24/15-48-41/image-20220627201706218.png" alt="image-20220627201706218" style="zoom: 40%;"></p>
+<p>如果不设置使用 Use MicroLIB，也可以添加如下代码实现串口重定向：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220703135818223.png" alt="image-20220703135818223" style="zoom:50%;"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 0 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> import(__use_no_semihosting)</span></span><br><span class="line"><span class="comment">//标准库需要的支持函数</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">FILE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> handle;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">FILE __stdout;</span><br><span class="line"><span class="comment">//定义_sys_exit()以避免使用半主机模式</span></span><br><span class="line"><span class="type">void</span> _sys_exit(<span class="type">int</span> x)</span><br><span class="line">&#123;</span><br><span class="line">    x = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __GNUC__</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PUTCHAR_PROTOTYPE int __io_putchar(int ch)<span class="comment">//如果使用GCC编译</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)<span class="comment">//keil中适用</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">PUTCHAR_PROTOTYPE</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">uint8_t</span> temp[<span class="number">1</span>] = &#123;ch&#125;;</span><br><span class="line">	HAL_UART_Transmit(&amp;hlpuart1, temp, <span class="number">1</span>, <span class="number">2</span>);<span class="comment">//hlpuart1需要根据你的配置修改</span></span><br><span class="line">	<span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* USER CODE END 0 */</span></span><br></pre></td></tr></table></figure>
 <p>添加代码：</p>
 <ol type="1">
 <li><p>添加头文件：user_log.h文件见目录： “HAL库小记 -&gt; 串口调试策率 -&gt; 日志打印文件”</p>
@@ -5088,6 +5091,14 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </ol>
 <p>测试结果：</p>
 <p><img src="/2022/06/24/15-48-41/image-20220627202356953.png" alt="image-20220627202356953" style="zoom:50%;"></p>
+<h4 id="中断方式">中断方式</h4>
+<p>使用CubeMX配置串口，打开相应串口中断</p>
+<figure>
+<img src="/2022/06/24/15-48-41/image-20220703175857659.png" alt="image-20220703175857659"><figcaption aria-hidden="true">image-20220703175857659</figcaption>
+</figure>
+<p>打开工程，修改 uart.c 实现串口重定向：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 0 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> import(__use_no_semihosting)</span></span><br><span class="line"><span class="comment">//标准库需要的支持函数</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">FILE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> handle;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">FILE __stdout;</span><br><span class="line"><span class="comment">//定义_sys_exit()以避免使用半主机模式</span></span><br><span class="line"><span class="type">void</span> _sys_exit(<span class="type">int</span> x)</span><br><span class="line">&#123;</span><br><span class="line">    x = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __GNUC__</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PUTCHAR_PROTOTYPE int __io_putchar(int ch)<span class="comment">//如果使用GCC编译</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)<span class="comment">//keil中适用</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">PUTCHAR_PROTOTYPE</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">uint8_t</span> temp[<span class="number">1</span>] = &#123;ch&#125;;</span><br><span class="line">	HAL_UART_Transmit(&amp;hlpuart1, temp, <span class="number">1</span>, <span class="number">2</span>);<span class="comment">//hlpuart1需要根据你的配置修改</span></span><br><span class="line">	<span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* USER CODE END 0 */</span></span><br></pre></td></tr></table></figure>
+<p>打开 main.c，配置中断服务函数</p>
 <h4 id="dma">DMA</h4>
 <p><strong>DMA传输方式</strong></p>
 <p><strong>方法1</strong>：DMA_Mode_Normal，正常模式，</p>
@@ -5141,7 +5152,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <p>F407有三种时钟源可以用作系统时钟：内部高速时钟、外部高速时钟、PLL时钟。 一般我们希望芯片工作在最高频率168MHz，而无论是内部还是外部时钟都是达不到的，所以通常都是用PLL时钟作为系统时钟。 外部时钟通常都比内部时钟要稳定精确，所以一般还会用外部时钟作为PLL的输入。 F407还有一个低速时钟用来驱动RTC，以及满足低电压模式下的功能需求。</p>
 <p>通常系统总线AHB的频率设置为168MHz，高速外设总线APB2频率设置为84MHz，低速外设总线APB1频率设置为42MHz。 这些总线频率可以通过配置RCC_CFGR和RCC_PLLCFGR实现。</p>
 </blockquote>
-<h3 id="移植-multibutton">移植 MultiButton</h3>
+<h3 id="移植-multibutton">移植 <a href="https://github.com/0x1abin/MultiButton">MultiButton</a></h3>
 <h4 id="multibutton简介">MultiButton简介</h4>
 <p>Github里面的嵌入式开源项目，一个小巧简单易用的事件驱动型按键驱动模块，可无限量扩展按键，能够实现下述按键事件：</p>
 <table>
@@ -5182,7 +5193,6 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </tr>
 </tbody>
 </table>
-<p><a href="https://github.com/0x1abin/MultiButton">Github开源地址</a></p>
 <h4 id="在stm32g431-nucleo-64开发板中使用">在STM32G431-Nucleo-64开发板中使用</h4>
 <p>首先使用CubeMX建立一个工程，初始化串口、测试LED和测试按键的GPIO口：</p>
 <p><img src="/2022/06/24/15-48-41/image-20220702160405595.png" alt="image-20220702160405595" style="zoom:67%;"></p>
@@ -5221,6 +5231,61 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <p><img src="/2022/06/24/15-48-41/image-20220702162518916.png" alt="image-20220702162518916" style="zoom: 33%;"></p></li>
 <li><p>编译，烧录，打开串口助手，测试：</p>
 <p><img src="/2022/06/24/15-48-41/image-20220702162754097.png" alt="image-20220702162754097" style="zoom: 33%;"></p></li>
+</ol>
+<h3 id="移植-guilite">移植 <a href="https://gitee.com/idea4good/GuiLite">GuiLite</a></h3>
+<h4 id="简介">简介</h4>
+<p>GuiLite是一个轻量的，可以运行在MPU平台的开源图形库。</p>
+<p>只要能点亮你的显示屏上一个像素点，就可以使用这个图形库绘制出复杂的图形。</p>
+<p>GuiLite还支持多个平台：</p>
+<ul>
+<li><p>支持的操作系统：iOS/macOS/WatchOS，Android，Linux（ARM/x86-64），Windows（包含VR），RTOS... 甚至<strong>无操作系统的单片机</strong></p></li>
+<li><p>支持的开发语言： C/C++, Swift, Java, Javascript, C#, Golang...</p></li>
+<li><p>支持的第3方库：Qt, MFC, Winforms, CoCoa...</p></li>
+</ul>
+<p>⚙️️最低硬件要求:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Processor</th>
+<th>Disk/ROM space</th>
+<th>Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>24 MHZ</td>
+<td>29 KB</td>
+<td>9 KB</td>
+</tr>
+</tbody>
+</table>
+<h4 id="在stm32g431-nucleo-64开发板中使用-1">在STM32G431-Nucleo-64开发板中使用</h4>
+<p>在TFT屏示例的基础上进行GUI测试：</p>
+<p>此处注意，可能会需要扩大默认的堆空间长度，具体操作如下：</p>
+<ol type="1">
+<li><p>CubeMX中修改堆的大小：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702213417565.png" alt="image-20220702213417565" style="zoom: 25%;"></p></li>
+<li><p>打开stm32的启动代码（汇编代码）即可看到修改成功：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702213543120.png" alt="image-20220702213543120" style="zoom: 25%;"></p></li>
+</ol>
+<p>移植过程：</p>
+<ol type="1">
+<li><p>点击<a href="https://gitee.com/idea4good/GuiLite">此处</a>下载源代码，在<a href="https://gitee.com/idea4good/GuiLiteSamples">此处</a>下载Example；我们需要Example进行测试。</p></li>
+<li><p>将Example中的实例代码放到自己的工程中，以Hello3DWave为例：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702214620179.png" alt="image-20220702214620179" style="zoom: 50%;"></p>
+<p>将这两个文件复制到自己的工程中，可以新建一个名为UIcode的文件夹存放。</p></li>
+<li><p>在自己的keil工程中的Target中新建一个Group：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702214000568.png" alt="image-20220702214000568" style="zoom:33%;"></p></li>
+<li><p>将例程代码添加到Group中：</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702214312012.png" alt="image-20220702214312012" style="zoom:50%;"></p></li>
+<li><p>添加完成后即可编写代码，注意：检查自己的工程中是否勾选了Use MicroLIB，如果勾选了就要取消勾选，因为我们需要编译器去解析.cpp文件，不能使用C库</p>
+<p><img src="/2022/06/24/15-48-41/image-20220702214859697.png" alt="image-20220702214859697" style="zoom:50%;"></p>
+<h4 id="编写测试代码-1">编写测试代码</h4>
+<ol type="1">
+<li><p>重新实现延时和绘制像素点：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN PFP */</span></span><br><span class="line"><span class="comment">//延时1ms函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay_ms</span><span class="params">(<span class="type">int</span> ms)</span></span><br><span class="line">&#123;</span><br><span class="line">	HAL_Delay(ms);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//RGB888转RGB565</span></span><br><span class="line"><span class="comment">//Transfer GuiLite 32 bits color to your LCD color</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> GL_RGB_32_to_16(rgb) (((((unsigned int)(rgb)) &amp; 0xFF) &gt;&gt; 3) | ((((unsigned int)(rgb)) &amp; 0xFC00) &gt;&gt; 5) | ((((unsigned int)(rgb)) &amp; 0xF80000) &gt;&gt; 8))</span></span><br><span class="line"><span class="comment">//Encapsulate your LCD driver:</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">gfx_draw_pixel</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">unsigned</span> <span class="type">int</span> rgb)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//LCD_Fast_DrawPoint(x, y, GL_RGB_32_to_16(rgb));</span></span><br><span class="line">  <span class="comment">//添加带颜色的画点函数</span></span><br><span class="line">  LCD_DrawPoint(x, y, GL_RGB_32_to_16(rgb));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Implement it, if you have more fast solution than drawing pixels one by one.</span></span><br><span class="line"><span class="comment">//void gfx_fill_rect(int x0, int y0, int x1, int y1, unsigned int rgb)&#123;&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li></li>
+</ol></li>
 </ol>
 <h2 id="hal库小记">HAL库小记</h2>
 <blockquote>
