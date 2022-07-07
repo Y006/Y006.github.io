@@ -5152,6 +5152,9 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <p>F407有三种时钟源可以用作系统时钟：内部高速时钟、外部高速时钟、PLL时钟。 一般我们希望芯片工作在最高频率168MHz，而无论是内部还是外部时钟都是达不到的，所以通常都是用PLL时钟作为系统时钟。 外部时钟通常都比内部时钟要稳定精确，所以一般还会用外部时钟作为PLL的输入。 F407还有一个低速时钟用来驱动RTC，以及满足低电压模式下的功能需求。</p>
 <p>通常系统总线AHB的频率设置为168MHz，高速外设总线APB2频率设置为84MHz，低速外设总线APB1频率设置为42MHz。 这些总线频率可以通过配置RCC_CFGR和RCC_PLLCFGR实现。</p>
 </blockquote>
+<h3 id="gps模块">GPS模块</h3>
+<p>GPS模块硬件可以将卫星传来的信号进行收集，然后我们可以通过串口通信的方式从GPS模块中读取卫星报文。读取后的报文我们可以将其缓存下来，然后进行译码。</p>
+<p>了解了 NMEA 格式有之后，我们就可以编写相应的解码程序了，而程序员 Tim(<a href="mailto:xtimor@gmail.com">xtimor@gmail.com</a>)提供了一个非常完善的 NMEA 解码库，在以下网址可以下载到：http://nmea.sourceforge.net/ ，直接使用该解码库，可以避免重复发明轮子的工作。</p>
 <h3 id="移植-multibutton">移植 <a href="https://github.com/0x1abin/MultiButton">MultiButton</a></h3>
 <h4 id="multibutton简介">MultiButton简介</h4>
 <p>Github里面的嵌入式开源项目，一个小巧简单易用的事件驱动型按键驱动模块，可无限量扩展按键，能够实现下述按键事件：</p>
