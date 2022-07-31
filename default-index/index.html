@@ -137,13 +137,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -213,6 +213,117 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/07/30/15-15-44/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/30/15-15-44/" class="post-title-link" itemprop="url">Spieed Maix Duino开发板使用小记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-30 15:15:44 / 修改时间：17:25:49" itemprop="dateCreated datePublished" datetime="2022-07-30T15:15:44+08:00">2022-07-30</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/07/30/15-15-44/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/07/30/15-15-44/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="sipeed-maixduino使用小记">SIPEED MaixDuino使用小记</h1>
+<h2 id="开箱跑例程">开箱跑例程</h2>
+<p>开箱后将摄像头、TF卡、显示屏都装到开发板上，上电后如下图所示。</p>
+<figure>
+<img src="/2022/07/30/15-15-44/88b4b368daca77a34d4d3d51c32b1ff.jpg" alt="88b4b368daca77a34d4d3d51c32b1ff"><figcaption aria-hidden="true">88b4b368daca77a34d4d3d51c32b1ff</figcaption>
+</figure>
+<p>在<a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/tools/ftdi_vcp_driver">此处</a>安装驱动：选择第二个</p>
+<p><img src="/2022/07/30/15-15-44/image-20220730150511809.png" alt="image-20220730150511809"></p>
+<p>解压下载好的文件，然后安装INF文件；两个INF文件都要安装：</p>
+<figure>
+<img src="/2022/07/30/15-15-44/image-20220730150747127.png" alt="image-20220730150747127"><figcaption aria-hidden="true">image-20220730150747127</figcaption>
+</figure>
+<p>下载<a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/ide/v0.2.5">官方IDE</a>：下载.exe文件进行安装</p>
+<figure>
+<img src="/2022/07/30/15-15-44/image-20220730151011092.png" alt="image-20220730151011092"><figcaption aria-hidden="true">image-20220730151011092</figcaption>
+</figure>
+<p>验证摄像头：第一步点击连接后需要选择串口，MaixDuino会在电脑上产生两个串口，其中一个可以使用，自行测试。</p>
+<figure>
+<img src="/2022/07/30/15-15-44/image-20220730151246776.png" alt="image-20220730151246776"><figcaption aria-hidden="true">image-20220730151246776</figcaption>
+</figure>
+<p>进行终端测试：</p>
+<figure>
+<img src="/2022/07/30/15-15-44/image-20220730152150910-16591657134626.png" alt="image-20220730152150910"><figcaption aria-hidden="true">image-20220730152150910</figcaption>
+</figure>
+<p>使用串口连接：直接点确定，一路确定，采用默认模式即可</p>
+<figure>
+<img src="/2022/07/30/15-15-44/image-20220730152231846.png" alt="image-20220730152231846"><figcaption aria-hidden="true">image-20220730152231846</figcaption>
+</figure>
+<p>然后就进入了串口中断模式：</p>
+<figure>
+<img src="/2022/07/30/15-15-44/image-20220730152322518.png" alt="image-20220730152322518"><figcaption aria-hidden="true">image-20220730152322518</figcaption>
+</figure>
+<p>在官方文档的<a target="_blank" rel="noopener" href="https://wiki.sipeed.com/soft/maixpy/zh/get_started/get_started_power_on.html">此处</a>浏览例程，使用串口终端模式进行测试：</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1015,7 +1126,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/30/16-02-06/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2022/04/30/16-02-06/" class="post-title-link" itemprop="url">微机原理实验报告</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1033,7 +1144,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-28 16:49:45" itemprop="dateModified" datetime="2022-06-28T16:49:45+08:00">2022-06-28</time>
+      <time title="修改时间：2022-07-31 21:44:55" itemprop="dateModified" datetime="2022-07-31T21:44:55+08:00">2022-07-31</time>
     </span>
 
   
@@ -2144,7 +2255,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-03 11:33:52" itemprop="dateModified" datetime="2022-06-03T11:33:52+08:00">2022-06-03</time>
+      <time title="修改时间：2022-07-31 21:42:20" itemprop="dateModified" datetime="2022-07-31T21:42:20+08:00">2022-07-31</time>
     </span>
 
   
@@ -2684,7 +2795,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </tr>
 <tr class="even">
 <td>信号与系统（Circuits，Signals and System）</td>
-<td></td>
+<td>想考高分，做好作业<br>承前是电路原理，往后是控制系统（不止）<br>想学明白一点，考虑找<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1CZ4y1j7hs?spm_id_from=..search-card.all.click">祖师爷</a>吧</td>
 </tr>
 <tr class="odd">
 <td>逻辑设计（Logic Design）</td>
@@ -2704,7 +2815,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </tr>
 <tr class="odd">
 <td>微机原理和接口技术（Processors：Hardware, Software，and Interfacing）</td>
-<td></td>
+<td>学习微机原理这门课的第一件事就是扔掉学校配的课本，切忌在学懂这门课之前翻看课本<br>第二件事是买一本：《数字设计和计算机结构体系》，仔细阅读第一章和第六章，粗略阅读中间章节<br>然后找到课本，直接阅读第四章<br>然后去学习stm32课程，比较推荐这个，日后做竞赛也会用到：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1q4411d7RX?vd_source=848d96f76bd7922d39f70343e2f35a57">STM32系列视频(CubeMX+MDK5+HAL库+库函数一站式学习)</a>；除了看一些基本的操作外，还应该阅读一下这个<a target="_blank" rel="noopener" href="https://gaoyichao.com/Xiaotu/?book=stm32&amp;title=index">STM32入门</a>中的内容。<br>可以看一下我博客上的微机原理章节，目前没有整理好，只是一份复习笔记。</td>
 </tr>
 </tbody>
 </table>
@@ -3374,322 +3485,6 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 </ul>
 <h3 id="gpio">GPIO</h3>
 <p><strong>通用输入输出</strong>（<em>General-purpose input/output</em>），功能类似于 8051 单片机的 P0 到 P3 口，引脚输出的高低电平可由开发人员读写相应寄存器进行控制。该接口有时也称为<strong>总线扩展器</strong>，当开发板接口不够用时，可以通过转接板将其扩展为<code>I²C</code>、<code>SPI</code>等其它串行接口。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/03/05/16-32-26/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom-logo.jpg">
-      <meta itemprop="name" content="邱金羽">
-      <meta itemprop="description" content="联系我：2420457716@qq.com">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/05/16-32-26/" class="post-title-link" itemprop="url">微机原理与接口技术</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-05 16:32:26" itemprop="dateCreated datePublished" datetime="2022-03-05T16:32:26+08:00">2022-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-07 08:40:55" itemprop="dateModified" datetime="2022-05-07T08:40:55+08:00">2022-05-07</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2022/03/05/16-32-26/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/05/16-32-26/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="微机原理与接口技术">微机原理与接口技术</h1>
-<h2 id="基本概念">基本概念</h2>
-<p>微型计算机简称微机，是微机原理这门课程的主要研究范围。</p>
-<p>首先我们先对微型计算机有一个初步的认识。</p>
-<h4 id="电脑微型计算机系统">电脑——微型计算机系统</h4>
-<p>电脑是我们熟悉的事物，我们家用的台式电脑和笔记本电脑都是属于<strong>个人电脑（Personal Computer）</strong>，简称为PC。个人电脑PC是一个<strong>通用微型计算机系统（）</strong>。其中，“通用”暗示了“专用”计算机系统的存在，而“微型”暗示了“大型”计算机系统的存在。其中还有值得注意的是计算机系统中的“系统”二字，因为这暗示了在计算机之上还存在一个更加宏观的概念。</p>
-<p>计算机根据规格和能力区分的话可以粗略分作超级计算机，大型计算机，小型计算机和微型计算机。其中超算和微机可能是我们日常生活中常常能听到的词语，前者出现在新闻里面，比如天河二号；后者出现在我们们的日常生活中，也就是我们的电脑（主机）。</p>
-<p>经典的电脑硬件配置包括鼠标，键盘，显示器和电脑主机，虽然笔记本发展后大多数笔记本都配备有触控板作为鼠标的代替，但是鼠标依旧是更受欢迎的计算机<strong>外设（Peripherals）</strong>。除了鼠标，键盘和显示器也是最经典的外设，但是对于完全不了解电脑构造却经常使用电脑的人来说，或许会认为显示器是计算机，尤其是一体机的存在使得这个错误更容易犯下。但是，计算机，顾名思义是计算的机器，它的功能并不会包括“显示”。根据输入，计算机会得到输出，但是这个输出不是我们可以直接看到的“显示”，“显示”的功能来自一个密布发光单元的显示器，显示器可以将计算机的输出变成屏幕上的文字或者图片为我们“显示”出来。</p>
-<p>外设不是计算机，真正的计算机是我们通常称为“电脑主机”的的部分，在台式机中，它是显示器旁边的长方体的箱子；在笔记本中，它一般在你的键盘的下面。</p>
-<p>计算机（个人计算机）和外设，配合上电源，便组成了微型计算机系统的硬件部分。完整的微型计算机系统不仅包括硬件，还包括软件。后者不是我们在微机原理课程中重点的关注的内容，但是理解软件部分是微型计算机系统不可缺少的部分却很重要。</p>
-<p>微型计算机系统的软件部分包括<strong>系统软件</strong>和<strong>应用软件</strong>，系统软件中我们最熟悉的就是操作系统，如Windows和MacOS；而像Office或者浏览器等软件则是应用程序即应用软件。</p>
-<p>==总结：家用电脑整体称作<strong>微型计算机系统（）</strong>，这个系统分为硬件和软件两大部分，其中软件部分包括系统软件和应用软件；硬件部分包括电源、外设和最重要的微型计算机（电脑主机）。接下来我们重点介绍微型计算机的内部结构。==</p>
-<h4 id="微型计算机">微型计算机</h4>
-<p><strong>微型计算机（）</strong>内部结构可概括为四部分：</p>
-<ul>
-<li>CPU（这个肯定耳熟了，稍后会进一步介绍）</li>
-<li>存储器（比较复杂，稍后重点介绍）</li>
-<li>总线（bus）：总线就是连接计算机内部部件的导线</li>
-<li>输入输出接口电路：与外设连接的导线</li>
-</ul>
-<p>相信即便是最不了解电脑的小白也听说过CPU的大名。CPU中的字母C表示Center，是中心的意思，表明CPU是计算机的中心。计算机中的一切一切都是围绕着CPU转圈的。这样重要且复杂的部件，我们肯定要单独拿出来讲：下一节微处理器，就是对CPU的详细介绍。</p>
-<p>计算机的本质是计算，无论是使用计算机显示文本或是图形，播放音乐或是视频，计算机本身都只是在快速做着最简单的运算。我们从很小的时候便学习开始做运算了，我们知道，做运算首先我们需要纸笔记录下数字，然后可能还需要将结果记录在另一张纸上（比如你的试卷）。计算机中也存在大量的数字，我们称作数据（data），它们存在计算机的存储器中。除数据外，计算中我们需要知道算数的方法，比如老师对我们说，将两个数字相乘，我们就做乘法。计算机也存在类似的东西，称作指令（code）。众所周知，计算机使用二进制，也就是计算机中不存在文字，甚至不存在数字2，我们在计算机中只有0和1。因此计算机中指令和数据都是由0和1进行表示的。在计算机经典结构——冯·诺伊曼结构中，指令和数字不加区分的放在存储器中；而在另一种改进过的计算机结构——哈佛结构中，指令放在指令存储器中而数据放在数据存储器中。这种分开存放的优势在于可以使数据和指令的存取同时进行，我们将在后面进一步看到这样做的重要意义。</p>
-<p>目前我们已经知道了，存储器存储着数据和指令。处理数据是计算机无时无刻都在做的事情，而指令则告诉计算机该怎样处理数据。那么接下来的问题是：我们需要一个什么样的存储器呢？</p>
-<p>简单来说，我们需要一个好的存储器。一般来说，我们关注存储器的如下3个特点</p>
-<ol type="1">
-<li>存储器是一个存储结构，既要存，还要取
-<ul>
-<li>存——要求能存住，机器断电（掉电）后能不能一直保存</li>
-<li>取——主要看速度，取出来自然是越快越好</li>
-</ul></li>
-<li>最后就是作为商品，我们还是要考虑成本的，成本太高买不起就不行了。</li>
-</ol>
-<p>综上，我们需要一个价格便宜，能掉电存储且读取速度快的存储器。</p>
-<p>可惜的是，现实中没有那么完美的存储器（至少目前），虽然根据不同的原理人们制作出的低成本且掉电存储的快闪存储器Flash（就是很多人U盘用的那个），但是它传输速度慢；另一方面人们制作出了静态随机存储器SRAM，虽然便宜还传输快，但是掉电不保存。虽然除了上述两种还有一些类型的存储器，但是也都有其缺点。为了协调速度、容量和成本三个方面，人们设计出了三级存储结构：<strong>高速缓存存储器</strong>、<strong>内存储器（主存）</strong>和<strong>外存储器（辅存）</strong>。</p>
-<p>高速缓存存储器存在于主存与CPU之间的一级存储器，容量小但是速度很快，接近于CPU的速度。</p>
-<p>内存储器是CPU读取数据和指令的地方，如果数据在外存储器中，CPU将先把数据从外存储器移至内存储器中然后再处理数据。</p>
-<p>外存储器就是我们平时说的电脑的固态硬盘，手里拿的U盘和已经淘汰了的光盘。</p>
-<p>三级存储结构帮助我们再速度、容量和成本三个方面达到一个平衡。但是未来如果有更好的存储手段，能同时满足上述三点，或许我们就将创造全新的存储器结构，主存和辅存也将会像光盘一样被淘汰掉。</p>
-<hr>
-<p>微型计算机的分类——按微型计算机的结构形式分类。</p>
-<ul>
-<li>单片机</li>
-<li>单板机</li>
-<li>多板机</li>
-</ul>
-<p>对于数码爱好者，尤其是那些对于台式机组装机器充满兴趣的人都不会对多板机这个概念感到困惑。在台式机中存在一个叫主板或是叫母板的东西。典型的主板能提供一系列接合点，供我们非常熟悉名字的例如处理器、显卡、硬盘驱动器、存储器、对外设备等设备的接合。</p>
-<p>多板机是在一块主板上提供了多个扩展插槽，并使用总线将各个部分进行连接，最终将一切封装在一个机箱里面。在组装的开始，我们有一堆板子，在组装完成后，我们有一台电脑。</p>
-<p>单板机的思路与多板机不同，单板机将一台电脑用到的所用功能集成在一块电路板上，在购买单板机时我们直接买到的就是一台电脑，而不需要再进行组装。当然，鉴于单板机性能弱一般用于实验室和简单的控制场所，所以单板机所在的电路板可能会进一步连接在其他的电路板上。但是，无论外部还会连接什么，重点是，在一小块电路板上我们有了一台基础功能完备的电脑。这里值得一提的是，对于电子设计爱好者，很可能听说过Arduino和树莓派的大名，这里要说明，Arduino和树莓派都属于单板机。</p>
-<p>单片机也被称作微控制器，这个名字基本对单片机定了性质。单片机通常是用来做控制的，常常用于工业，在实验室也经常见到它的身影。单片机将CPU和存储器……其实就是上面提到的微型计算机中该有的那些东西，集成在了一个芯片上面。通常来讲，你对商店老板说来来些单片机，那你将收到的是一些黑色塑料外壳包着的下方有许多金属引脚的小东西。与Arduino和树莓派，一个芯片既不能直接连接一个LED控制它的亮灭，也不能直接烧录程序。单片机正常执行控制需要建立一个最小工作系统，然后才能进行控制。如果想了解更具体些，<a href>这里</a>会有你想知道的。</p>
-<p>==总结一下：微型计算机由CPU和存储器组成，内部有总线连接，向外有输入输出电路进行扩展。计算机的本职工作是做计算，计算需要指令和数据，根据指令数据的存储方式的不同可以将微型计算机分为冯·诺伊曼结构和哈佛结构。计算机可以分为单片机、单板机和多板机。将计算机放在一个芯片上是单片机，放在一个电路板上是单板机，多个板子各司其职组装在一起形成电脑叫多板机。==</p>
-<h4 id="微处理器">微处理器</h4>
-<p>微处理器（microprocessor）也称中央处理单元（central processing unit），是微型计算机的核心部件。</p>
-<p>前面我们已将提过，计算机的本职工作是做计算。计算需要两方面内容——数据和指令。前者就相当于给你数字2和3，后者就相当于告诉你对2和3做乘法。对于CPU来说不止但肯定有下述三个功能：</p>
-<ul>
-<li>进行基本的算数和逻辑运算（如果想要知道电路是如何做运算的，<a href>这里</a>会找到答案的）</li>
-<li>暂存少量数据（这是好理解的，毕竟我们计算式也要先把数字写在草稿纸上）</li>
-<li>执行指令（值得注意的是指令是需要译码的）</li>
-</ul>
-<h3 id="嵌入式系统">嵌入式系统</h3>
-<p>上文我们以通用计算机系统为例，沿着“微型计算机系统-&gt;微型计算机-&gt;微（型）处理器”三个层次描述了微机的基本概念。最后我们注意微机的另一大类，即平行于通用计算机系统的，名为嵌入式系统的专用计算机系统。</p>
-<p>嵌入式系统也是微型计算机系统，上面描述的通用计算机系统包含的内容，在嵌入式系统中也同样有所体现。但是嵌入式系统的关键词在于“专用”。专用意味着嵌入式系统为某一具体的应用问题而生，不需要具备通用计算机系统的全部内容。例如，嵌入式系统中可能不会连接鼠标键盘等外设，而且不会具备完整的系统软件。</p>
-<h2 id="arm微处理器">ARM微处理器</h2>
-<p>ARM微处理器最重要的特性是其英文名称</p>
-<h4 id="arm-微处理器的工作状态">ARM 微处理器的工作状态</h4>
-<ul>
-<li>ARM 状态：处理器执行32位的 ARM 指令集，即执行字方式的 ARM 指令</li>
-<li>Thumb 状态：处理器执行16位的 Thumb 指令集，即执行半字方式的 ARM 指令</li>
-</ul>
-<p>ARM 微处理器在两种工作模式下都有切换处理器工作状态的指令，但是在 ARM 处理器开始执行代码时处理器应处于 ARM 状态。</p>
-<h4 id="arm-微处理器的工作模式">ARM 微处理器的工作模式</h4>
-<ul>
-<li>用户模式</li>
-<li>特权模式
-<ul>
-<li>系统模式</li>
-<li>异常模式
-<ul>
-<li>管理模式</li>
-<li>快速中断模式</li>
-<li>外部中断模式</li>
-<li>数据访问中止模式</li>
-<li>未定义指令中止模式</li>
-</ul></li>
-</ul></li>
-</ul>
-<p>工作模式可以通过软件改变，也可以通过外部中断和处理器异常来改变。并且每一种模式下可以使用的寄存器是不同的。</p>
-<h4 id="arm-处理器支持的数据类型和存储格式">ARM 处理器支持的数据类型和存储格式</h4>
-<h5 id="数据类型">数据类型</h5>
-<p>在处理器中数据类型是这样分类的，分成下面三种类型：</p>
-<ul>
-<li>字节类型</li>
-<li>半字类型</li>
-<li>字类型</li>
-</ul>
-<p>数据操作都是以字为单位的（这里课本写：ARM 指令是一个字长而 Thumb 指令是半字长；但不是说操作都是以字为单位并且都是一样长吗？？？），而从存储器读写的数据则可以按上述三种不同的数据类型进行读写。</p>
-<p>对存储器按字或者半字类型进行读取时，需要进行对齐操作；对数据进行字节传输时不需要对齐。</p>
-<blockquote>
-<p>一条指令（指的是机器码）由操作码（opcode）和操作数（operand）构成。操作数可以是1个，也可以是多个，甚至可以没有。操作码则是每一条指令都必须有。操作码表示该指令要做什么动作，例如跳转，加减等等。操作数则表示操作对象，操作数可能还会分为目的操作数和源操作数。操作数当然是一个数字，该操作数可以由多种来源，例如寄存器，存储器或者立即数。本节介绍的处理器的寻址方式就是讨论指令中操作数的来源问题。</p>
-</blockquote>
-<h5 id="存储格式">存储格式</h5>
-<blockquote>
-<p>指令编码中，用来说明操作数来源和操作数构成存储器地址的方法，叫做寻址方式，英文为Addressing Mode。寻址方式是由处理器的指令编码直接决定的，是处理器体系架构的一部分，所以我们一般叫做xxx处理器寻址方式，例如8086寻址方式，MIPS寻址方式。寻址方式是学习任何一种汇编语言的起点。</p>
-</blockquote>
-<p>ARM 存储器的最大寻址空间为4 GB。</p>
-<p>存储器可以看作是一个从零开始线性递增的一个容器，容器的基本单位为字节。</p>
-<p>数据以字为单位存储在存储器中，这意味着一个（字）数据将存放在存储器的四个基本单位中。</p>
-<p>数据在存储器中的存储方式有两种，区分两种存储方式的关键在于一个字的四个字节在存储器中哪一个存在高位哪一个存在低位：</p>
-<ul>
-<li>大端格式：数据的高字节位存储在存储器的低地址中</li>
-<li>小端格式：数据的低字节位存储在存储器的低地址中</li>
-</ul>
-<p>大小端的存储方式可以通过外部引脚和内部寄存器的配置来进行选择，选择要在使用前进行配置，开始使用后只能选择一种存储器数据存储方式。</p>
-<h4 id="arm-处理器的寄存器">ARM 处理器的寄存器</h4>
-<p>ARM 寄存器：</p>
-<ul>
-<li>定义：寄存器是 CPU 内部用来暂时存放参与运算的数据和运算结果的小型存储区域</li>
-<li>特征：传输数据的速度非常快</li>
-<li>分类：
-<ul>
-<li>通用寄存器：保存数据和地址</li>
-<li>状态寄存器：标识 CPU 的工作状态及程序的运行状态</li>
-</ul></li>
-<li>经典 ARM 寄存器在物理上共有37个32位寄存器组成
-<ul>
-<li>31个通用寄存器</li>
-<li>6个状态寄存器</li>
-</ul></li>
-</ul>
-<h4 id="arm-处理器的io组织">ARM 处理器的I/O组织</h4>
-<p>I/O 是 CPU 与外部设备之间通信的桥梁</p>
-<p>对 I/O 端口物理地址进行编址的方式有两种：</p>
-<ul>
-<li><p>独立编址方式：I/O映射方式，x86采用</p>
-<p>I/O 端口地址与内存单元地址分开独立编址，I/O 端口地址不占用内存空间的地址范围，需要专门的I/O 指令和控制逻辑</p></li>
-<li><p>统一编址方式：内存映射方式，ARM采用</p>
-<p>I/O 端口地址与内存单元地址混在一起：将内存的一部分划分出来作为I/O 地址空间。</p></li>
-</ul>
-<h2 id="cortex-m4-微处理器">Cortex-M4 微处理器</h2>
-<h4 id="cortex-m4-微处理器的工作状态">Cortex-M4 微处理器的工作状态</h4>
-<h4 id="cortex-m4-微处理器的工作模式">Cortex-M4 微处理器的工作模式</h4>
-<h4 id="cortex-m4-微处理器的寄存器组织">Cortex-M4 微处理器的寄存器组织</h4>
-<ul>
-<li>存在于：寄存器存在于处理器的内核之中</li>
-<li>作用：执行数据处理和控制</li>
-<li>分类：16个32位寄存器
-<ul>
-<li>通用寄存器组</li>
-<li>特殊功能寄存器</li>
-</ul></li>
-<li>与经典的 ARM 微处理器对比：Cortex-M4 微处理器的寄存器较少</li>
-<li>通用寄存器详解：
-<ol type="1">
-<li><span class="math inline">\(R0-R7\)</span>：
-<ul>
-<li>统称：低组寄存器</li>
-<li>访问指令：32位指令和大多数16位指令</li>
-<li>初始化：复位后初始化为未定义</li>
-</ul></li>
-<li><span class="math inline">\(R8-R12\)</span>：
-<ul>
-<li>统称：高组寄存器</li>
-<li>访问指令：32位指令和少量16位指令</li>
-<li>初始化：复位后初始化为未定义</li>
-</ul></li>
-<li><span class="math inline">\(R13\)</span>：
-<ul>
-<li>统称：堆栈指针寄存器</li>
-<li>系统可以同时支持两个堆栈，</li>
-</ul></li>
-</ol></li>
-</ul>
-<h4 id="cortex-m4-微处理器的存储组织">Cortex-M4 微处理器的存储组织</h4>
-<h1 id="摘抄">摘抄：</h1>
-<p>RISC使用的是load-store结构。load-store结构的本质，在于RISC技术的CPU只处理（指逻辑，算术运算处理）寄存器中的数据。相反，X86却能够直接处理存储器中的数据。</p>
-<p><a target="_blank" rel="noopener" href="https://nieyong.github.io/wiki_cpu/index.html">index (nieyong.github.io)</a></p>
-<h1 id="stm32启动程序分析">STM32启动程序分析</h1>
-<p><strong>1.程序的内存分配</strong></p>
-<p>一个由C/C 编译的程序占用的内存分为以下几个部分：</p>
-<p><strong>栈区（stack）：</strong>由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p>
-<p><strong>堆区（heap）：</strong>一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，分配方式类似于链表。</p>
-<p><strong>全局区（静态区）（static）：</strong>全局变量和静态变量的存储是放在一块的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。程序结束后由系统释放。</p>
-<p><strong>文字常量区：</strong>常量字符串就是放在这里的，程序结束后由系统释放。</p>
-<p><strong>程序代码区：</strong>存放函数体的二进制代码。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">0</span>; <span class="comment">//全局初始化区</span></span><br><span class="line"><span class="type">char</span> *p1; <span class="comment">//全局未初始化区</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123; </span><br><span class="line">    <span class="type">int</span> b; <span class="comment">//栈 </span></span><br><span class="line">    <span class="type">char</span> s[] = <span class="string">&quot;abc&quot;</span>; <span class="comment">//栈 </span></span><br><span class="line">    <span class="type">char</span> *p2; <span class="comment">//栈 </span></span><br><span class="line">    <span class="type">char</span> *p3 = <span class="string">&quot;123456&quot;</span>; <span class="comment">//123456\0在常量区，p3在栈上。 </span></span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> c = <span class="number">0</span>;<span class="comment">//全局（静态）初始化区 </span></span><br><span class="line">    p1 = (<span class="type">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span>); </span><br><span class="line">    p2 = (<span class="type">char</span> *)<span class="built_in">malloc</span>(<span class="number">20</span>); <span class="comment">//分配得来得10和20字节的区域就在堆区。 </span></span><br><span class="line">    <span class="built_in">strcpy</span>(p1, <span class="string">&quot;123456&quot;</span>); <span class="comment">//123456\0放在常量区，编译器可能会将它与p3所指向的&quot;123456&quot;优化成一个地方。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这里要强调一点：传递指针只占4字节，如果传递的是结构体，就会占用结构大小空间。</span></span><br><span class="line"><span class="comment">//提示：在函数嵌套,递归时，系统仍会占用栈空间。</span></span><br><span class="line"><span class="comment">//虽然堆上的数据只要程序员不释放空间就可以一直访问，但是，如果忘记了释放堆内存，那么将会造成内存泄漏，甚至致命的潜在错误。</span></span><br></pre></td></tr></table></figure>
-<p>Q&amp;A</p>
-<p>Q:为什么驱动文件是汇编语言写而不是C语言? A:汇编语言处理一些更加底层的工作，如设置堆栈空间等，这一点C这个"高级语言"无法做到。</p>
-<p>Q:启动程序阶段，CPU对启动文件是从上向下足以读取吗？ A:编译之前的是源程序，编译之后的指令的机器码以地址进行排列。实际上按地址逐一进行读取，要看源码的组织结构。</p>
-<p>Q:用户通过Keil软件配置堆栈空间和自己定义堆栈有什么区别？ A:</p>
-<p>时钟系统就是CPU的脉搏，像人的心跳一样，重要性不言而喻。由于STM32本身十分复杂，外设非常多，但并不是所有的外设都需要系统时钟那么高的频率，比如看门狗以及RTC只需要几十k的时钟即可。并且，同一个电路，时钟越快功耗越快，同时抗电磁干扰能力也就越弱，所以较为复杂的MCU都是采用多时钟源的方法来解决这些问题。</p>
-<p>startup_stm32f10x_cl.s（启动文件） → SystemInit() → SetSysClock () → SetSysClockTo72()</p>
-<p>查看MDK的文档，会发现有这么一句说明：It is automatically created by the linker when it sees a definition of main()。简单点来说，当编译器发现定义了main函数，那么就会自动创建__main。</p>
-<p>程序经过汇编启动代码，执行到__main()，之后会执行两个大的函数：</p>
-<p>__scatterload()：负责把RW/RO输出段从装载域地址复制到运行域地址，并完成了ZI运行域的初始化工作。</p>
-<p>__rt_entry():负责初始化堆栈，完成库函数的初始化，<strong>最后自动跳转向main()函数</strong>。</p>
-<p>注意：有些应用中会要求在进入main函数之前先初始化一些外设或者变量区，如：初始化时钟、初始化SDRAM。在初始化他们的时候一定不要使用全局变量，部分库函数，HAL库。因为在__main之前，全局变量还没有初始化，使用会异常，甚至发生内存错误。<strong>因此建议使用寄存器来初始化。</strong></p>
-<p>https://blog.csdn.net/shenghuaDay/article/details/71643767</p>
-<p>r0-r3 用作传入函数参数，传出函数返回值。在子程序调用之间，可以将 r0-r3 用于任何用途。被调用函数在返回之前不必恢复 r0-r3。如果调用函数需要再次使用 r0-r3 的内容，则它必须保留这些内容。</p>
-<p>r4-r11 被用来存放函数的局部变量。如果被调用函数使用了这些寄存器，它在返回之前必须恢复这些寄存器的值。</p>
-<p>r12 是内部调用暂时寄存器 ip。它在过程链接胶合代码（例如，交互操作胶合代码）中用于此角色.在过程调用之间，可以将它用于任何用途。被调用函数在返回之前不必恢复 r12。</p>
-<p>r13 是栈指针 sp。它不能用于任何其它用途。sp 中存放的值在退出被调用函数时必须与进入时的值相同。</p>
-<p>r14 是链接寄存器 lr。如果您保存了返回地址，则可以在调用之间将 r14 用于其它用途，程序返回时要恢复</p>
-<p>r15 是程序计数器 PC。它不能用于任何其它用途。</p>
-<p>注意：在中断程序中，所有的寄存器都必须保护，编译器会自动保护R4～R11</p>
-<p>所谓启动，一般来说就是指我们下好程序后，重启芯片时，SYSCLK的第4个上升沿，BOOT引脚的值将被锁存。用户可以通过设置BOOT1和BOOT0引脚的状态，来选择在复位后的启动模式。</p>
-<p>STM32上电或者复位后，代码区始终从0x00000000开始，三种启动模式其实就是将各自存储空间的地址映射到0x00000000中。</p>
-<p>（1）从Flash启动，将主Flash地址0x08000000映射到0x00000000，这样代码启动之后就相当于从0x08000000开始。</p>
-<p>（2）从RAM启动，将RAM地址0x20000000映射到0x00000000,这样代码启动之后就相当于从0x20000000开始。</p>
-<p>（3）从系统存储器启动。首先控制BOOT0 BOOT1管脚，复位后，STM32与上述两种方式类似，从系统存储器地址0x1FFF F000开始执行代码。系统存储器存储的其实就是STM32自带的bootloader代码，在bootloader中提供了UART1的接口，通过此接口可以将用户所需的程序代码下载到主Flash中，下载完毕后，此时程序代码已经存储在主Flash当中，这时切换启动模式（从主Flash启动），复位后所执行的就是刚刚下载到Flash中的代码了。</p>
-<p>在STM32中，一般都会有一个片上的Flash和SRAM。Flash用于烧录我们编译后生成的目标代码，SRAM则用于栈空间和保存全局变量， 它们分别对应图1中地址空间的Code段和SRAM段。此外STM32中的Flash一般都映射在0x0800 0000的地址上的， 因此为了保证向量表写在0x0800 0000的位置上，我们必须保证生成的目标代码中一开始就是向量表的内容</p>
-<figure>
-<img src="/2022/03/05/16-32-26/image-20220502134455259-16514702975521.png" alt="image-20220502134455259"><figcaption aria-hidden="true">image-20220502134455259</figcaption>
-</figure>
-<figure>
-<img src="/2022/03/05/16-32-26/image-20220502134540053-16514703414583.png" alt="image-20220502134540053"><figcaption aria-hidden="true">image-20220502134540053</figcaption>
-</figure>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--cpu Cortex-M4.fp.sp *.o </span><br><span class="line">--strict --scatter &quot;.\Objects\project.sct&quot; </span><br><span class="line">--summary_stderr --info summarysizes --map --xref --callgraph --symbols </span><br><span class="line">--info sizes --info totals --info unused --info veneers </span><br><span class="line"> --list &quot;.\Listings\project.map&quot; </span><br><span class="line">-o .\Objects\project.axf </span><br></pre></td></tr></table></figure>
-<h3 id="arm寻址方式">ARM寻址方式：</h3>
-<h4 id="寄存器间接寻址">寄存器间接寻址：</h4>
-<p>把寄存器当作存储器的指针。</p>
-<p><img src="/2022/03/05/16-32-26/image-20220507083936948-16518839785891.png" alt="image-20220507083936948" style="zoom:50%;"></p>
-<h1 id="体系结构架构">体系结构——架构</h1>
-<p>架构由指令集和操作空间（寄存器和存储器）组成</p>
-<p>计算机中使用的单词叫指令，计算机使用的词汇表叫指令集</p>
-<p>指令包含操作码和操作数，操作数来自于存储器，寄存器和指令本身</p>
-<p>ARM架构将每条指令表示为一个32位的字，微处理器是一个可以读入并执行机器语言的指令的数字电路系统</p>
-<p>ARM设计的四个准则：</p>
-<ul>
-<li>规范性支持简单设计</li>
-<li>加快常见功能</li>
-<li>越小设计越快</li>
-<li>好的设计需要折中方法</li>
-</ul>
 
       
     </div>
