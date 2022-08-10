@@ -253,7 +253,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-31 16:07:28" itemprop="dateModified" datetime="2022-07-31T16:07:28+08:00">2022-07-31</time>
+      <time title="修改时间：2022-08-01 23:16:28" itemprop="dateModified" datetime="2022-08-01T23:16:28+08:00">2022-08-01</time>
     </span>
 
   
@@ -788,7 +788,7 @@
 </ul>
 <p>模式可以通过编程来改变，每种模式能够使用的寄存器不同</p>
 <h4 id="arm微处理器支持的数据类型和存储格式">ARM微处理器支持的数据类型和存储格式</h4>
-<p>ARM汇编的数据类型：</p>
+<h5 id="arm汇编的数据类型">ARM汇编的数据类型：</h5>
 <p>3种数据类型：字、半字、字节</p>
 <p>4字节对齐（字对齐）：对存储器按字读写时，要求数据地址的低两位是00</p>
 <p>2字节对齐（半字对齐）：对存储器按字读写时，要求数据地址的最低为是0</p>
@@ -797,12 +797,12 @@
 <p>数据可以是有符号数：<span class="math inline">\(0到2^n-1\)</span>，也可以是无符号数：<span class="math inline">\(-2^{n-1}到2^{n-1}-1\)</span></p>
 <p>ARM指令是一个字长，Thumb指令是半个字长；</p>
 <p>数据操作指令是以字为单位的，对存储器进行读写的指令，有字节、半字和字为单位</p>
-<p>数据存储方式：</p>
+<h5 id="数据存储方式">数据存储方式：</h5>
 <ul>
 <li>大端格式：字数据的高字节存放在存储器的低地址</li>
 <li>小端格式：字数据的低字节存放在存储器的高地址</li>
 </ul>
-<p>ARM的寄存器</p>
+<h5 id="arm的寄存器">ARM的寄存器：</h5>
 <p>CPU内，暂时存放，参与运算的数据，和运算结果的，小型存储区域</p>
 <ul>
 <li>通用寄存器：保存数据和地址</li>
@@ -810,7 +810,7 @@
 </ul>
 <p>经典ARM处理器有37个寄存器，31个通用寄存器，6个状态寄存器</p>
 <ul>
-<li><p>31个通用寄存器：</p>
+<li>31个通用寄存器：
 <ul>
 <li>未分组寄存器 R0 ~ R7，共8个</li>
 <li>分组寄存器 R8 ~ R12，R13 ~ R14
@@ -820,12 +820,12 @@
 </ul></li>
 <li>程序计数器（PC） 即R15，共1个</li>
 </ul></li>
-<li><p>6个状态寄存器</p>
+<li>6个状态寄存器
 <ul>
 <li>状态寄存器 CPSR，和5个备份状态寄存器SPSR，共6个</li>
 </ul></li>
 </ul>
-<p>ARM处理器的I/O组织：</p>
+<h5 id="arm处理器的io组织">ARM处理器的I/O组织：</h5>
 <p>对I/O端口进行编址的方式有两种：独立和统一，这里的独立和统一针对的都是内存单元</p>
 <ul>
 <li>独立编址方式（IO映射方式）
@@ -840,7 +840,7 @@
 </ul></li>
 </ul>
 <h4 id="cortex-m4微处理器">Cortex-M4微处理器</h4>
-<p>Cortex-M4微处理器工作状态：</p>
+<h5 id="cortex-m4微处理器工作状态">Cortex-M4微处理器工作状态：</h5>
 <ul>
 <li>调试状态：进入调试状态意味着处理器被暂停，原因可能是调试时间或者触发断点
 <ul>
@@ -857,7 +857,256 @@
 </ul></li>
 </ul></li>
 </ul>
-<p>Cortex-M4微处理器寄存器结构：</p>
+<h5 id="cortex-m4微处理器寄存器组织">Cortex-M4微处理器寄存器组织：</h5>
+<table>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 37%">
+<col style="width: 12%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>通用寄存器</th>
+<th>功能</th>
+<th>特殊功能寄存器</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R0-R7</td>
+<td>低寄存器<br>32位指令和大多数16位指令可以访问</td>
+<td>xPSR</td>
+<td>APSR：应用程序状态寄存器，保存当前指令运算结果的状态<br>IPSR：中断状态寄存器，保存当前中断的向量号<br>EPSR：执行状态寄存器，进入异常时保护现场</td>
+</tr>
+<tr class="even">
+<td>R8-R12</td>
+<td>高寄存器<br>32位指令和少量16位指令可以访问</td>
+<td>中断屏蔽寄存器</td>
+<td>PROMASK：片上外设中断总开关，仅一位<br>FAULTMASK：异常屏蔽寄存器，异常的总开关<br>BASEPRI：定义屏蔽优先级的阈值</td>
+</tr>
+<tr class="odd">
+<td>R13（堆栈指针寄存器）</td>
+<td>一个堆栈指针对应两个物理寄存器<br>主堆栈指针（MSP）：内核及系统异常中断<br>进程堆栈指针（PSP）：用户任务</td>
+<td>控制寄存器（CONTROL）</td>
+<td>定义线程模式的访问级别<br>选择堆栈指针</td>
+</tr>
+<tr class="even">
+<td>R14（连接寄存器 LR）</td>
+<td>子程序或函数调用时保存返回地址<br>异常返回时保存返回后的状态<br>异常返回的地址由硬件电路保存在PC</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>R15（程序计数器 PC）</td>
+<td>指向 ”正在取指“ 的操作<br>读操作：返回当前指令地址加4<br>写操作：引起程序跳转操作</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="cortex-m4微处理器的存储组织">Cortex-M4微处理器的存储组织</h5>
+<p><strong>存储系统特征：</strong></p>
+<ul>
+<li>32位寻址访问4GB的存储器空间</li>
+<li>预定义的存储器映射</li>
+<li>可以自己配置大端或者小端模式</li>
+<li>可选位段访问</li>
+<li>具有存储器保护单元（MPU）</li>
+<li>支持非对其传输</li>
+</ul>
+<p><strong>存储器映射：</strong></p>
+<p><strong>存储区划分：</strong></p>
+<ul>
+<li>程序代码访问（code区）
+<ul>
+<li>存放指令或者数据</li>
+<li>ICode总线读写指令；DCode总线读写数据</li>
+<li>用于存代码，用于异常向量表</li>
+</ul></li>
+<li>数据访问（SRAM区）
+<ul>
+<li>片上SRAM
+<ul>
+<li>存放指令或者数据</li>
+<li>通过系统总线读写数据</li>
+<li>用于数据存储</li>
+</ul></li>
+<li>片外SRAM
+<ul>
+<li>通过系统总线读写数据</li>
+<li>用于扩展外部存储器</li>
+</ul></li>
+<li>该区域可以位寻址</li>
+</ul></li>
+<li>外设（外设区）
+<ul>
+<li>片上外设
+<ul>
+<li>通过系统总线访问</li>
+<li>用于作为片上外设的输入输出接口</li>
+</ul></li>
+<li>片外外设
+<ul>
+<li>通过系统总线访问</li>
+<li>用于扩展片外外设的输入输出接口</li>
+</ul></li>
+</ul></li>
+<li>处理器的内部控制和调试组件（私有外设总线）
+<ul>
+<li>分配给
+<ul>
+<li>中断控制器（NVIC）</li>
+<li>调试部件</li>
+</ul></li>
+</ul></li>
+<li>系统区域是给芯片厂家使用的</li>
+</ul>
+<p><strong>堆栈内存操作：</strong></p>
+<p>LIFO（Last In First Out）后入先出</p>
+<p>处理器中采用堆栈机制来临时存放数据和变量</p>
+<p>Cortex-M4将系统主存储器用于堆栈空间，用PUSH指令存数据，POP指令取数据，执行指令时堆栈指针会自动调整</p>
+<p>Cortex-M4使用的是 ”满递减“ 栈，PUSH指令执行时，指针地址数值减小；有于寄存器是32位的，每一次执行PUSH或POP指令时至少都会传输一个字。而且地址总是对齐到4字节的边界上，SP的最低两位也总为0</p>
+<h4 id="cortex-m4-微处理器的异常和中断">Cortex-M4 微处理器的异常和中断</h4>
+<p><strong>异常和中断的异同：</strong></p>
+<ul>
+<li>异：
+<ul>
+<li>中断信号来自内核外</li>
+<li>异常是内核产生的</li>
+</ul></li>
+<li>同：都需要保存当前状态，跳到处理程序，处理完成后再回到原来状态</li>
+</ul>
+<p><strong>嵌套向量中断控制器（NVIC）及向量表：</strong></p>
+<p>Cortex-M4提供了一个用于处理异常的嵌套向量中断控制器，其中包括了中断</p>
+<p>NVIC</p>
+<ul>
+<li>处理异常</li>
+<li>中断配置、优先级和中断屏蔽</li>
+</ul>
+<p>在异常发生时，内核要跳转到异常处理程序；实现跳转需要知道异常处理程序的地址。为了解决这个问题，我们在内存中为每个异常类型设置一个固定的地址，将这个地址存在系统的RAM或者ROM中，这样统一存放的地址被称作异常向量表。</p>
+<p>我们在stm32的启动代码中可以看到这个异常向量表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">__Vectors       DCD     __initial_sp               ; Top of Stack</span><br><span class="line">                DCD     Reset_Handler              ; Reset Handler</span><br><span class="line">                DCD     NMI_Handler                ; NMI Handler</span><br><span class="line">                DCD     HardFault_Handler          ; Hard Fault Handler</span><br><span class="line">                DCD     MemManage_Handler          ; MPU Fault Handler</span><br><span class="line">                DCD     BusFault_Handler           ; Bus Fault Handler</span><br><span class="line">                DCD     UsageFault_Handler         ; Usage Fault Handler</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     SVC_Handler                ; SVCall Handler</span><br><span class="line">                DCD     DebugMon_Handler           ; Debug Monitor Handler</span><br><span class="line">                DCD     0                          ; Reserved</span><br><span class="line">                DCD     PendSV_Handler             ; PendSV Handler</span><br><span class="line">                DCD     SysTick_Handler            ; SysTick Handler</span><br></pre></td></tr></table></figure>
+<p>上面的汇编代码与下图中的向量是一一对应的：</p>
+<p><img src="/2022/03/05/16-32-26/image-20220801094303542.png" alt="image-20220801094303542" style="zoom: 50%;"></p>
+<p><strong>复位和复位流程</strong></p>
+<p>对于Cortex-M4来说，复位有三种方式：</p>
+<ul>
+<li>上电复位：复位所有部分——处理器、外设、调试支持部件</li>
+<li>系统复位：复位——处理器、外设</li>
+<li>处理器复位：复位——处理器</li>
+</ul>
+<p>复位过程：</p>
+<p>复位后，程序开始执行之前，处理器会从存储器中读出头两个字，第一个字表示主栈指针的初始值（下方代码的第七行）第二个字表示复位处理起始地址的复位向量（下方代码的第八行），如下方代码的第15行所示，程序进入main函数就是先通过复位向量Reset_Handler跳转到15行来实现的。处理器读出前两个字后就会将这些数值赋给MSP和PC，来获得第一条指令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">; Vector Table Mapped to Address 0 at Reset</span><br><span class="line">                AREA    RESET, DATA, READONLY</span><br><span class="line">                EXPORT  __Vectors</span><br><span class="line">                EXPORT  __Vectors_End</span><br><span class="line">                EXPORT  __Vectors_Size</span><br><span class="line"></span><br><span class="line">__Vectors       DCD     __initial_sp               ; Top of Stack</span><br><span class="line">                DCD     Reset_Handler              ; Reset Handler</span><br><span class="line">                DCD     NMI_Handler                ; NMI Handler</span><br><span class="line">                DCD     HardFault_Handler          ; Hard Fault Handler</span><br><span class="line">                </span><br><span class="line">........</span><br><span class="line"></span><br><span class="line">; Reset handler</span><br><span class="line">Reset_Handler    PROC</span><br><span class="line">                 EXPORT  Reset_Handler             [WEAK]</span><br><span class="line">        IMPORT  SystemInit</span><br><span class="line">        IMPORT  __main</span><br><span class="line"></span><br><span class="line">                 LDR     R0, =SystemInit</span><br><span class="line">                 BLX     R0</span><br><span class="line">                 LDR     R0, =__main</span><br><span class="line">                 BX      R0</span><br><span class="line">                 ENDP</span><br></pre></td></tr></table></figure>
+<p>结合启动代码和 ”图2-3-8 Cortex-M4微处理器异常类型“ 可以理解下图：</p>
+<figure>
+<img src="/2022/03/05/16-32-26/image-20220801095422185.png" alt="image-20220801095422185"><figcaption aria-hidden="true">image-20220801095422185</figcaption>
+</figure>
+<h3 id="arm指令系统">ARM指令系统</h3>
+<h4 id="arm指令系统简介">ARM指令系统简介</h4>
+<p><strong>体系架构与指令系统</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>ARMv4</th>
+<th>ARMv4T</th>
+<th>ARMv5TE</th>
+<th>ARMv6</th>
+<th>ARMv7</th>
+<th>ARMv8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ARM8</td>
+<td>ARM7TDMI</td>
+<td>ARM7EJ</td>
+<td>ARM1156T2</td>
+<td>Cortex-M4</td>
+<td>Cortex-A8</td>
+</tr>
+<tr class="even">
+<td>ARM指令集</td>
+<td>引入Thumb指令集</td>
+<td>增加了增强型DSP指令</td>
+<td>开始引入Thumb2</td>
+<td>增强SIMD</td>
+<td>引入A64指令集</td>
+</tr>
+</tbody>
+</table>
+<p>统一汇编语言：</p>
+<p>不同指令集语法不同，因此ARM开发工具支持了统一汇编语言（UAL）</p>
+<p>UAL统一了ARM指令集和Thumb指令集的语法，16位指令和32位指令可以无缝出现在代码中</p>
+<p>Thumb2指令不需要分析这条指令是32位还是16位，编译器会按最简原则完成汇编；但是在UAL中可以用后缀 “.N</p>
+<p>” 和 “.W” 来指定指令长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ADD R1,R2			;自动汇编成16位代码</span><br><span class="line">ADD R1,R2,0x8000	;有大于8位数范围立即数的指令汇编成32位代码</span><br><span class="line">ADD R1,R1,R2		;自动汇编成16位代码</span><br><span class="line">ADD.W R1,R1,R2		;原来是16位代码，指定汇编为32位代码</span><br></pre></td></tr></table></figure>
+<p><strong>指令格式</strong></p>
+<p>指令一般由操作码和操作数两部分组成</p>
+<p>指令基本格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;opcode&gt;&#123;&lt;cond&gt;&#125;&#123;S&#125; &lt;Rd&gt;,&lt;Rn&gt;&#123;,&lt;shifter_operand&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p>指令的二进制编码基本格式：</p>
+<figure>
+<img src="/2022/03/05/16-32-26/image-20220801105302596.png" alt="image-20220801105302596"><figcaption aria-hidden="true">image-20220801105302596</figcaption>
+</figure>
+<p>其中：</p>
+<ul>
+<li>opcode是指操作码</li>
+<li>cond位于二进制编码中的最高四位，只有APSR中的条件码对应标志位满足指定条件时，带条件码的指令才被执行；cond指令内容见课本P53（PDF-P69）</li>
+<li>APSR标志位的值可以被带有{S}的指令改变</li>
+<li>Rn为第一源操作数，Rd为目的操作数</li>
+<li>shifter_operand为第二源操作数</li>
+</ul>
+<p>ARM指令中没有条件转移指令，该效果的实现如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ADDEQ	R1,R2,R3	;ADD加法指令+cond：“EQ”</span><br><span class="line">					;若之前的操作是相等状态，则执行该ADD指令</span><br><span class="line">BGE	L1				;B跳转指令+GE后缀</span><br><span class="line">					;若之前的比较结果是有符号数大于或等于，即（N==V），则跳转至L1</span><br></pre></td></tr></table></figure>
+<p><strong>shifter_operand 第二源操作数</strong></p>
+<ul>
+<li><p>立即数（#immed）</p>
+<ul>
+<li>立即数是一个32位无符号数，但不是所有32位无符号数都是立即数；因为我们在指令中只有12位来表示一个32位的立即数</li>
+<li>立即数组成：8位立即数（immed_8）和4位循环移位（rotate_imm）
+<ul>
+<li>32位立即数 = immed_8 循环右移（2 × rotate_imm）位</li>
+</ul></li>
+</ul></li>
+<li><p>寄存器方式（Rm）</p>
+<ul>
+<li><p>第二源操作数 shifter_operand 直接用ARM寄存器</p></li>
+<li><p>例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ADD	R2,R3,R4</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li><p>寄存器移位方式</p>
+<ul>
+<li><p>第一源操作数是寄存器Rm后，第二个操作数可以指定第一源操作数的移位方式和移位的位数</p></li>
+<li><p>移位的位数可以是立即数#shift_imm或者寄存器Rs的数值，移位方式有九种</p></li>
+<li><p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV	R0,R2,LSL#3	;R2逻辑左移3位（相当于乘8）后，赋值给R0寄存器</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+<h4 id="arm指令的寻址方式">ARM指令的寻址方式</h4>
+<p><strong>ARM指令有7种寻址方式</strong></p>
+<ul>
+<li>数据处理类指令：立即寻址、寄存器直接寻址、基址变址寻址</li>
+<li>内存访问指令：寄存器间接寻址、基址寻址、多寄存器直接寻址</li>
+<li>执行堆栈操作：堆栈寻址方式</li>
+</ul>
+<ol type="1">
+<li><p>立即寻址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MOV	R0,	#0	;P0&lt;-9</span><br><span class="line">			;32位指令，immed_12格式立即数0传送到寄存器R0中</span><br></pre></td></tr></table></figure></li>
+<li><p>寄存器直接寻址：寻址用的操作数位于CPU内部的寄存器中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV	R1, R2	;R1&lt;-R2，寄存器R2的内容传到寄存器R1中</span><br></pre></td></tr></table></figure></li>
+<li><p>寄存器移位寻址：寻址用的操作数由寄存器中的数值经过移位得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV	R0,	R1	ASR R2	;R0&lt;-（R1算数右移R2规定的位数）</span><br></pre></td></tr></table></figure></li>
+<li><p>寄存器间接寻址：寄存器中存放的内容为操作数的内存地址而不是操作数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">STR	R0, [R1]	;R0中的值传送到以R1的值作为地址的存储器中</span><br><span class="line">				;指令执行完成后R1中的值不变</span><br><span class="line">LDR R0, [R1]	;R1中的值作为地址，将内存中该地址单元的数据传送到R0</span><br><span class="line">				;指令执行完成后R1的值不变</span><br></pre></td></tr></table></figure></li>
+<li><p>基址变址寻址：寄存器提供基准地址，这个基准地址与指令称为 “地址偏移量” 的数据相加形成操作数的有效地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LDR	R0,[R1,#4]		;R0&lt;-[R1+4],立即数前索引变址寻址</span><br><span class="line">LDR R0,[R1,#4]!		;R0&lt;-[R1+4],R1&lt;-R1+4，立即数前索引变址寻址，带更新</span><br><span class="line">LDR R0,[R1].#4		;R0&lt;-[R1],R1&lt;-R1+4，立即数后索引变址寻址，带更新</span><br><span class="line">LDR R0,[R1,R2]		;R0&lt;-[R1+R2]，寄存器前索引变址寻址</span><br></pre></td></tr></table></figure></li>
+<li><p>多寄存器直接寻址：ARM架构中LDM（加载多个寄存器）和STM（存储多个寄存器）指令可以读写存储器中的多个连续数据传送到处理器的多个寄存器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LDMIA R0!,&#123;R1,R3-R5&#125;	;R1&lt;-[R0],R3&lt;-[R0+4],R4&lt;-[R0+8],R5&lt;-[R0+12],</span><br></pre></td></tr></table></figure>
+<p>IA：每次读写后地址加4 DB：每次读写前地址减4</p></li>
+</ol>
 <h3 id="总线技术">总线技术</h3>
 <h4 id="总线概述">总线概述</h4>
 <p>早期总线是并行的多分枝共享式的结构，现代计算机采用的多是串行、点对点、交换式的结构</p>
