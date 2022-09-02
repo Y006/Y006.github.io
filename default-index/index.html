@@ -137,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -213,6 +213,176 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/09/02/09-01-15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/09/02/09-01-15/" class="post-title-link" itemprop="url">verilog 开源工具链配置笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-09-02 09:01:15 / 修改时间：11:30:06" itemprop="dateCreated datePublished" datetime="2022-09-02T09:01:15+08:00">2022-09-02</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/09/02/09-01-15/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/02/09-01-15/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="效果展示">效果展示</h3>
+<p>本文配置的最终效果展示如下：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902092406126.png" alt="image-20220902092406126"><figcaption aria-hidden="true">image-20220902092406126</figcaption>
+</figure>
+<h3 id="工具介绍及安装">工具介绍及安装</h3>
+<p>首先介绍一下 VScode。VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。该软件支持语法高亮、代码自动补全等功能。VScode 的强大之处在于用户可以通过内置的扩展程序商店安装扩展以拓展软件功能。你可以在 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VScode 官网</a> 下载并安装 VScode，安装方法非常简单，这里不再进行说明。</p>
+<p>在 verilog 开发中，我们可以通过添加 "<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=mshr-h.VerilogHDL">Verilog-HDL/SystemVerilog/Bluespec SystemVerilog support for VS Code</a>" 插件实现 verilog 代码高亮和代码自动补全等功能。你可以直接在 VScode 的扩展中搜索并一键安装这个插件：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902093933026.png" alt="image-20220902093933026"><figcaption aria-hidden="true">image-20220902093933026</figcaption>
+</figure>
+<p>通过类似的方式，搜索并安装下面两个插件：</p>
+<p>左边的插件可以帮助你查看综合出的 .dot 格式的电路图文件，右边的插件可以帮你根据 .vcd 文件生成波形图：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902094417294.png" alt="image-20220902094417294"><figcaption aria-hidden="true">image-20220902094417294</figcaption>
+</figure>
+<p>上面展示的 verilog 代码的编译和综合过程主要使用到了两个工具：iVerilog 和 Yosys。这两个工具，包括也是非常常用的波形查看工具 GTKwave 都被集成在了一个开源工具组件 OSS CAD Suite 中。OSS CAD 套件中还有很多用于数字逻辑设计的开源软件的二进制软件发行版。你可以在这个 <a target="_blank" rel="noopener" href="https://github.com/YosysHQ/oss-cad-suite-build">GitHub 页面</a> 中进行查看。</p>
+<p>如果想要安装和使用 OSS CAD Suite ，我们可以直接在 <a target="_blank" rel="noopener" href="https://github.com/YosysHQ/oss-cad-suite-build/releases/tag/2022-09-01">这个界面</a> 下载 .exe 文件：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902095721658.png" alt="image-20220902095721658"><figcaption aria-hidden="true">image-20220902095721658</figcaption>
+</figure>
+<p>下载完成后直接运行这个 .exe 文件，即可获得这样一个文件夹：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902095934878.png" alt="image-20220902095934878"><figcaption aria-hidden="true">image-20220902095934878</figcaption>
+</figure>
+<p>我将这个 OSS CAD Suite 放在了我自己在 D盘 创建的 Program_Files 文件夹。在这个目录下，我们要重点关注第一个 bin 文件夹和最后标红的两个 .bat 文件。第一个 bin 文件夹里面是 OSS CAD Suite 介绍中所说的，用于数字逻辑设计的开源软件的二进制软件发行版。你可以从这个文件夹中找到包括 iVerilog、GTKwave 和 Yosys。</p>
+<p>那么如何使用这些组件呢？ OSS CAD Suite 提供了两种方法，一种是直接点击 start.bat 文件，然后使用命令的方式进行操作：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902100630814.png" alt="image-20220902100630814"><figcaption aria-hidden="true">image-20220902100630814</figcaption>
+</figure>
+<p>第二种方案是通过命令行工具，在 cmd 中调用 environment.bat 来使用该工具：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902101420630.png" alt="image-20220902101420630"><figcaption aria-hidden="true">image-20220902101420630</figcaption>
+</figure>
+<p>但是，之前我们的操作都是在 VScode 上进行的，所以我们希望也把 OSS CAD Suite 的使用放在 VScode 内进行，有没有办法呢？我的解决方案是使用第二种方法调用 OSS CAD Suite ，只要使用 VScode 内置的 cmd （终端）来实现调用 environment.bat 即可。操作如下：</p>
+<p>首先如下图提示的，我们使用快捷键调出终端</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902101612341.png" alt="image-20220902101612341"><figcaption aria-hidden="true">image-20220902101612341</figcaption>
+</figure>
+<p>我们可以将终端移动到编辑器区域：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902101716445.png" alt="image-20220902101716445"><figcaption aria-hidden="true">image-20220902101716445</figcaption>
+</figure>
+<p>然后我们注意到这个终端不是 cmd，而是 powershell，两者的区别读者可以自己去查一下，这里我们还是使用 cmd 来演示：注意在 cmd 中可以使用 tab 键进行补全。</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902102107905.png" alt="image-20220902102107905"><figcaption aria-hidden="true">image-20220902102107905</figcaption>
+</figure>
+<p>到此为止我们已经进行了全部内容的安装。下面我们使用一个 4 选 1 多路选择器代码进行演示：</p>
+<h3 id="使用方法">使用方法</h3>
+<p>首先新建一个文件夹，然后选择使用 VScode 打开：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902102705459.png" alt="image-20220902102705459"><figcaption aria-hidden="true">image-20220902102705459</figcaption>
+</figure>
+<p>然后建立如下目录结构：红框内的第一个图标是新建文件，第二个是新建文件夹</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902103003482.png" alt="image-20220902103003482"><figcaption aria-hidden="true">image-20220902103003482</figcaption>
+</figure>
+<p>输入代码：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902103049078.png" alt="image-20220902103049078"><figcaption aria-hidden="true">image-20220902103049078</figcaption>
+</figure>
+<p>附上代码：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Verilog HDL 数字设计与综合（第二版）（本科教学版）例6.2</span></span><br><span class="line"><span class="comment">//用逻辑方程描述四选一多路选择器</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> mux4_to_1 (out, i0, i1, i2, i3, s1, s0);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//直接取自输入输出图的端口声明语句</span></span><br><span class="line">    <span class="keyword">output</span> out;</span><br><span class="line">    <span class="keyword">input</span> i0, i1, i2, i3, s1, s0;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//产生输出 out 的逻辑方程</span></span><br><span class="line">    <span class="keyword">assign</span> out = ( ~s1 &amp; ~s0 &amp; i0)|</span><br><span class="line">                 ( ~s1 &amp;  s0 &amp; i1)|</span><br><span class="line">                 (  s1 &amp; ~s0 &amp; i2)|</span><br><span class="line">                 (  s1 &amp;  s0 &amp; i3);</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编写无端口激励模块</span></span><br><span class="line"><span class="comment">//为了使用yosys来进行综合，我们将电路描述模块和激励模块分离，然后对mux4_to_1.v进行单独的综合</span></span><br><span class="line"><span class="keyword">module</span> stimulus;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//声明连接到输入端口的变量</span></span><br><span class="line">    <span class="keyword">reg</span> IN0,IN1,IN2,IN3;</span><br><span class="line">    <span class="keyword">reg</span> S1,S0;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//声明输出连线</span></span><br><span class="line">    <span class="keyword">wire</span> OUTPUT;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//调用（实例引用）多路选择器</span></span><br><span class="line">    mux4_to_1 my_mux(OUTPUT,IN0,IN1,IN2,IN3,S1,S0);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//产生输入激励信号</span></span><br><span class="line">    <span class="comment">//Define the stimulus module (no ports)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">        <span class="comment">//设置输入线信号</span></span><br><span class="line">        IN0 = <span class="number">1</span>;</span><br><span class="line">        IN1 = <span class="number">0</span>;</span><br><span class="line">        IN2 = <span class="number">1</span>;</span><br><span class="line">        IN3 = <span class="number">0</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;IN0 = %b, IN1 = %b, IN2 = %b, IN3 = %b&quot;</span>,IN0,IN1,IN2,IN3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择IN0；</span></span><br><span class="line">        S1 = <span class="number">0</span>;</span><br><span class="line">        S0 = <span class="number">0</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;S1 = %b, S0 = %b, OUTPUT = %b&quot;</span>,S1, S0, OUTPUT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择IN0；</span></span><br><span class="line">        S1 = <span class="number">0</span>;</span><br><span class="line">        S0 = <span class="number">1</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;S1 = %b, S0 = %b, OUTPUT = %b&quot;</span>,S1, S0, OUTPUT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择IN0；</span></span><br><span class="line">        S1 = <span class="number">1</span>;</span><br><span class="line">        S0 = <span class="number">0</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;S1 = %b, S0 = %b, OUTPUT = %b&quot;</span>,S1, S0, OUTPUT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择IN0；</span></span><br><span class="line">        S1 = <span class="number">1</span>;</span><br><span class="line">        S0 = <span class="number">1</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;S1 = %b, S0 = %b, OUTPUT = %b&quot;</span>,S1, S0, OUTPUT);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//生产 VCD 文件需要的代码（非例题代码）</span></span><br><span class="line">    <span class="keyword">initial</span> <span class="keyword">begin</span> </span><br><span class="line">        <span class="built_in">$dumpfile</span>(<span class="string">&quot;wave.vcd&quot;</span>); <span class="comment">//生成波形文件vcd的名称 </span></span><br><span class="line">        <span class="built_in">$dumpvars</span>(<span class="number">0</span>, stimulus); <span class="comment">//tb模块名称</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后保存文件，打开终端，先进入 oss-cad-suite 文件夹打开 environment.bat 然后再回到 verilog 文件目录下对目标文件进行操作</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902103520387.png" alt="image-20220902103520387"><figcaption aria-hidden="true">image-20220902103520387</figcaption>
+</figure>
+<p>然后进行编译等一系列操作：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iverilog -o mux4_to_1<span class="variable">.vvp</span> -y ./ mux4_to_1_tb<span class="variable">.v</span> mux4_to_1<span class="variable">.v</span></span><br><span class="line">vvp mux4_to_1<span class="variable">.vvp</span></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902104216297.png" alt="image-20220902104216297"><figcaption aria-hidden="true">image-20220902104216297</figcaption>
+</figure>
+<p>然后在终端可以看到 <code>$display()</code> 的内容，然后我们查看 .vcd 文件：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902104553493.png" alt="image-20220902104553493"><figcaption aria-hidden="true">image-20220902104553493</figcaption>
+</figure>
+<p>接下来我们进行综合：</p>
+<p>首先进入 yosys，然后读入文件，处理文件，最后导出 .dot 格式</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902104654196.png" alt="image-20220902104654196"><figcaption aria-hidden="true">image-20220902104654196</figcaption>
+</figure>
+<p>过程如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">read_verilog mux4_to_1.v</span><br><span class="line">hierarchy -check</span><br><span class="line">proc; opt; opt; fsm; memory; opt</span><br><span class="line">show -format dot -prefix ./mux4_to_1</span><br></pre></td></tr></table></figure>
+<p>得到结果：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902105334206.png" alt="image-20220902105334206"><figcaption aria-hidden="true">image-20220902105334206</figcaption>
+</figure>
+<p>最终结果展示：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902105858211.png" alt="image-20220902105858211"><figcaption aria-hidden="true">image-20220902105858211</figcaption>
+</figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -3313,178 +3483,6 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <p>那么X乘以K的膨胀就是所有点X的集合使得Kx与X的交点非空。</p>
 <p>除了与输入图像相关联的一组坐标的导出方式之外，灰度膨胀的数学定义是相同的。此外，这些坐标是三维的，而不是二维的。</p>
 <p>作为二元扩张的一个例子</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/03/09/16-14-26/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom-logo.jpg">
-      <meta itemprop="name" content="邱金羽">
-      <meta itemprop="description" content="联系我：2420457716@qq.com">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/09/16-14-26/" class="post-title-link" itemprop="url">逻辑设计基础</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-09 16:14:26" itemprop="dateCreated datePublished" datetime="2022-03-09T16:14:26+08:00">2022-03-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-22 21:17:40" itemprop="dateModified" datetime="2022-03-22T21:17:40+08:00">2022-03-22</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2022/03/09/16-14-26/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/09/16-14-26/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="logic-design">Logic Design</h1>
-<h3 id="数制">数制</h3>
-<p>数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中<strong>基数</strong>是指使用数码的个数，例如：二进制的基数为<code>2</code>，十进制的基数为<code>10</code>。<strong>位权</strong>是指数制某位所表示的数值权重的大小，例如：十进制数<code>123</code>，<code>1</code>的位权是<code>100</code>，<code>2</code>的位权是<code>10</code>，<code>3</code>的位权是<code>1</code>。二进制数<code>1011</code>，从左至右<code>1</code>、<code>0</code>、<code>1</code>、<code>1</code>的位权依次是<code>8</code>、<code>4</code>、<code>2</code>、<code>1</code>。常用的数制有<strong>二</strong>、<strong>八</strong>、<strong>十</strong>、<strong>十六</strong>四种进制，书写时可以在相应数值尾部添加字母<strong>B</strong>、<strong>O</strong>、<strong>D</strong>、<strong>H</strong>或者下标<strong>2</strong>、<strong>8</strong>、<strong>10</strong>、<strong>16</strong>进行标识，计算机<strong>传输和保存数据</strong>通常使用的是<strong>二进制</strong>。</p>
-<h3 id="码制">码制</h3>
-<p>码制是计算机存储、传输数据所使用的编码规则；其中原码、反码、补码是计算机设备保存数值类型数据的编码方式，ASCII 与 Unicode 属于保存字符类型数据的编码格式；而 BCD 编码、格雷码则主要用于设备之间的数据<strong>传输以及转换</strong>。</p>
-<blockquote>
-<p>BCD 码的优点在于格式转换容易，十进制数值表达精度较高；缺点是增加了电路进行算术运算的复杂度，并且存储效率较低。</p>
-</blockquote>
-<h3 id="数字系统">数字系统</h3>
-<p>数字系统设计大致分为三个方面</p>
-<ul>
-<li>系统设计
-<ul>
-<li>系统设计是将一个数字系统划分为多个子系统进行设计。</li>
-</ul></li>
-<li>逻辑设计
-<ul>
-<li>逻辑设计是将多个逻辑功能块互联实现特定功能</li>
-</ul></li>
-<li>电路设计</li>
-</ul>
-<p>数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分析。开关电路有两种——组合电路和时序电路。</p>
-<p>开关电路分类：</p>
-<ul>
-<li>组合电路
-<ul>
-<li>组合电路中输出值仅与当前输入值有关</li>
-<li>组合电路的基本构成是逻辑门，逻辑设计就是将逻辑门相互连接起来以便将电路的输入信号转化为预期的输出信号。</li>
-</ul></li>
-<li>时序电路
-<ul>
-<li>时序电路中输出值不仅与当前输入值有关，也与之前的输入值有关；可以认为时序电路具有记忆功能</li>
-<li>时序电路的基本存储元件（存储之前的值）是触发器，触发器与逻辑门一起组成时序电路——如计数器和寄存器。</li>
-</ul></li>
-</ul>
-<h3 id="布尔代数">布尔代数</h3>
-<p>逻辑设计课程中我们使用二值布尔代数来设计开关电路。我们使用布尔变量来表示电路的输入和输出，其中布尔变量代表逻辑电路中的两种不同状态——</p>
-<p>普通代数中的<strong>交换律</strong>和<strong>结合律</strong>同样可以在布尔代数中使用。</p>
-<p>布尔代数中的交换律表明开关的位置（出现次序）不会影响最终结果，结合律表明开关导通的次序不会影响最终结果。</p>
-<p>在布尔代数中，分配律有两种形式：</p>
-<ul>
-<li><p>一种是普通的分配律：<span class="math inline">\(X(Y+Z)=XY+XZ\)</span></p>
-<p>​ 与运算可以分配在或运算上</p>
-<p>​ 去和括号内相乘</p></li>
-<li><p>另一种被称作第二分配律：<span class="math inline">\(X+(YZ)=(X+Y)(X+Z)\)</span></p>
-<p>​ 或运算可以分配在与运算上</p>
-<p>​ 去和括号内相加</p></li>
-</ul>
-<p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
-<h2 id="数字电路概念">数字电路概念</h2>
-<h3 id="高阻态">高阻态</h3>
-<p>高阻抗状态（<em>High impedance</em>）表示电路中的某个节点具有相对电路中其它点更高的阻抗，电路分析时通常将高阻态作为开路理解。即可以将其视为输出/输入电阻极大，极限状态可以认为是悬空（<em>断路</em>）的状态，高阻态通常使用字母<strong>Z</strong>表示。</p>
-<h3 id="三态门">三态门</h3>
-<p>数字电路中的三态逻辑（<em>Three-state logic</em>）是指其输出既可以是代表<code>0</code>和<code>1</code>的高低电平，也可以是其特有的高阻抗状态（<em>相当于隔断状态，电阻极大，类似于开路</em>）。</p>
-<p>具有高电平、低电平、高阻态三种状态的元器件称为三态器件，三态器件都通过一个控制使能端 B 来控制整个三态门电路的通断。当使能端高电平有效时，三态器件可以正常的<code>0</code>或<code>1</code>输出，当使能端低电平无效时，三态电路将会输出高阻态。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">输入端 A</th>
-<th style="text-align: left;">使能端 B</th>
-<th style="text-align: left;">输出端 C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>0</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>1</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>X</code></td>
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>Z</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="组合时序逻辑电路">组合/时序逻辑电路</h3>
-<ul>
-<li><strong>组合逻辑电路</strong>（<em>Combinational Logic Circuit</em>），其任一时刻的稳态输出仅与该时刻输入的变量取值有关，而与该时刻之前输入的变量取值无关。组合电路主要由各种逻辑门（<code>半加器</code>、<code>全加器</code>、<code>半减器</code>、<code>全减器</code>、<code>数据选择器</code>、<code>数据分配器</code>、<code>编码器</code>、<code>译码器</code>）组成，电路中没有记忆元件和反馈线。</li>
-<li><strong>时序逻辑电路</strong>（<em>Sequential Logic Circuit</em>）任意时刻的稳态输出不仅取决于当前输入，还与前一时刻输入的状态有关，换而言之，时序逻辑电路必须拥有特定的储存元件来保存前一次的输入状态。因此，时序逻辑电路除包含有组合逻辑电路以外，还必须含拥有存储信息能力的电路（<code>触发器</code>、<code>寄存器</code>、<code>计数器</code>）。</li>
-</ul>
-<h3 id="gpio">GPIO</h3>
-<p><strong>通用输入输出</strong>（<em>General-purpose input/output</em>），功能类似于 8051 单片机的 P0 到 P3 口，引脚输出的高低电平可由开发人员读写相应寄存器进行控制。该接口有时也称为<strong>总线扩展器</strong>，当开发板接口不够用时，可以通过转接板将其扩展为<code>I²C</code>、<code>SPI</code>等其它串行接口。</p>
 
       
     </div>

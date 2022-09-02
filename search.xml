@@ -6298,4 +6298,104 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
         <tag>Electrical Engineering</tag>
       </tags>
   </entry>
+  <entry>
+    <title>verilog 开源工具链配置笔记</title>
+    <url>/2022/09/02/09-01-15/</url>
+    <content><![CDATA[<h3 id="效果展示">效果展示</h3>
+<p>本文配置的最终效果展示如下：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902092406126.png" alt="image-20220902092406126"><figcaption aria-hidden="true">image-20220902092406126</figcaption>
+</figure>
+<h3 id="工具介绍及安装">工具介绍及安装</h3>
+<p>首先介绍一下 VScode。VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。该软件支持语法高亮、代码自动补全等功能。VScode 的强大之处在于用户可以通过内置的扩展程序商店安装扩展以拓展软件功能。你可以在 <a href="https://code.visualstudio.com/">VScode 官网</a> 下载并安装 VScode，安装方法非常简单，这里不再进行说明。</p>
+<p>在 verilog 开发中，我们可以通过添加 "<a href="https://marketplace.visualstudio.com/items?itemName=mshr-h.VerilogHDL">Verilog-HDL/SystemVerilog/Bluespec SystemVerilog support for VS Code</a>" 插件实现 verilog 代码高亮和代码自动补全等功能。你可以直接在 VScode 的扩展中搜索并一键安装这个插件：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902093933026.png" alt="image-20220902093933026"><figcaption aria-hidden="true">image-20220902093933026</figcaption>
+</figure>
+<p>通过类似的方式，搜索并安装下面两个插件：</p>
+<p>左边的插件可以帮助你查看综合出的 .dot 格式的电路图文件，右边的插件可以帮你根据 .vcd 文件生成波形图：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902094417294.png" alt="image-20220902094417294"><figcaption aria-hidden="true">image-20220902094417294</figcaption>
+</figure>
+<p>上面展示的 verilog 代码的编译和综合过程主要使用到了两个工具：iVerilog 和 Yosys。这两个工具，包括也是非常常用的波形查看工具 GTKwave 都被集成在了一个开源工具组件 OSS CAD Suite 中。OSS CAD 套件中还有很多用于数字逻辑设计的开源软件的二进制软件发行版。你可以在这个 <a href="https://github.com/YosysHQ/oss-cad-suite-build">GitHub 页面</a> 中进行查看。</p>
+<p>如果想要安装和使用 OSS CAD Suite ，我们可以直接在 <a href="https://github.com/YosysHQ/oss-cad-suite-build/releases/tag/2022-09-01">这个界面</a> 下载 .exe 文件：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902095721658.png" alt="image-20220902095721658"><figcaption aria-hidden="true">image-20220902095721658</figcaption>
+</figure>
+<p>下载完成后直接运行这个 .exe 文件，即可获得这样一个文件夹：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902095934878.png" alt="image-20220902095934878"><figcaption aria-hidden="true">image-20220902095934878</figcaption>
+</figure>
+<p>我将这个 OSS CAD Suite 放在了我自己在 D盘 创建的 Program_Files 文件夹。在这个目录下，我们要重点关注第一个 bin 文件夹和最后标红的两个 .bat 文件。第一个 bin 文件夹里面是 OSS CAD Suite 介绍中所说的，用于数字逻辑设计的开源软件的二进制软件发行版。你可以从这个文件夹中找到包括 iVerilog、GTKwave 和 Yosys。</p>
+<p>那么如何使用这些组件呢？ OSS CAD Suite 提供了两种方法，一种是直接点击 start.bat 文件，然后使用命令的方式进行操作：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902100630814.png" alt="image-20220902100630814"><figcaption aria-hidden="true">image-20220902100630814</figcaption>
+</figure>
+<p>第二种方案是通过命令行工具，在 cmd 中调用 environment.bat 来使用该工具：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902101420630.png" alt="image-20220902101420630"><figcaption aria-hidden="true">image-20220902101420630</figcaption>
+</figure>
+<p>但是，之前我们的操作都是在 VScode 上进行的，所以我们希望也把 OSS CAD Suite 的使用放在 VScode 内进行，有没有办法呢？我的解决方案是使用第二种方法调用 OSS CAD Suite ，只要使用 VScode 内置的 cmd （终端）来实现调用 environment.bat 即可。操作如下：</p>
+<p>首先如下图提示的，我们使用快捷键调出终端</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902101612341.png" alt="image-20220902101612341"><figcaption aria-hidden="true">image-20220902101612341</figcaption>
+</figure>
+<p>我们可以将终端移动到编辑器区域：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902101716445.png" alt="image-20220902101716445"><figcaption aria-hidden="true">image-20220902101716445</figcaption>
+</figure>
+<p>然后我们注意到这个终端不是 cmd，而是 powershell，两者的区别读者可以自己去查一下，这里我们还是使用 cmd 来演示：注意在 cmd 中可以使用 tab 键进行补全。</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902102107905.png" alt="image-20220902102107905"><figcaption aria-hidden="true">image-20220902102107905</figcaption>
+</figure>
+<p>到此为止我们已经进行了全部内容的安装。下面我们使用一个 4 选 1 多路选择器代码进行演示：</p>
+<h3 id="使用方法">使用方法</h3>
+<p>首先新建一个文件夹，然后选择使用 VScode 打开：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902102705459.png" alt="image-20220902102705459"><figcaption aria-hidden="true">image-20220902102705459</figcaption>
+</figure>
+<p>然后建立如下目录结构：红框内的第一个图标是新建文件，第二个是新建文件夹</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902103003482.png" alt="image-20220902103003482"><figcaption aria-hidden="true">image-20220902103003482</figcaption>
+</figure>
+<p>输入代码：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902103049078.png" alt="image-20220902103049078"><figcaption aria-hidden="true">image-20220902103049078</figcaption>
+</figure>
+<p>附上代码：</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Verilog HDL 数字设计与综合（第二版）（本科教学版）例6.2</span></span><br><span class="line"><span class="comment">//用逻辑方程描述四选一多路选择器</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> mux4_to_1 (out, i0, i1, i2, i3, s1, s0);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//直接取自输入输出图的端口声明语句</span></span><br><span class="line">    <span class="keyword">output</span> out;</span><br><span class="line">    <span class="keyword">input</span> i0, i1, i2, i3, s1, s0;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//产生输出 out 的逻辑方程</span></span><br><span class="line">    <span class="keyword">assign</span> out = ( ~s1 &amp; ~s0 &amp; i0)|</span><br><span class="line">                 ( ~s1 &amp;  s0 &amp; i1)|</span><br><span class="line">                 (  s1 &amp; ~s0 &amp; i2)|</span><br><span class="line">                 (  s1 &amp;  s0 &amp; i3);</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//编写无端口激励模块</span></span><br><span class="line"><span class="comment">//为了使用yosys来进行综合，我们将电路描述模块和激励模块分离，然后对mux4_to_1.v进行单独的综合</span></span><br><span class="line"><span class="keyword">module</span> stimulus;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//声明连接到输入端口的变量</span></span><br><span class="line">    <span class="keyword">reg</span> IN0,IN1,IN2,IN3;</span><br><span class="line">    <span class="keyword">reg</span> S1,S0;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//声明输出连线</span></span><br><span class="line">    <span class="keyword">wire</span> OUTPUT;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//调用（实例引用）多路选择器</span></span><br><span class="line">    mux4_to_1 my_mux(OUTPUT,IN0,IN1,IN2,IN3,S1,S0);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//产生输入激励信号</span></span><br><span class="line">    <span class="comment">//Define the stimulus module (no ports)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">        <span class="comment">//设置输入线信号</span></span><br><span class="line">        IN0 = <span class="number">1</span>;</span><br><span class="line">        IN1 = <span class="number">0</span>;</span><br><span class="line">        IN2 = <span class="number">1</span>;</span><br><span class="line">        IN3 = <span class="number">0</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;IN0 = %b, IN1 = %b, IN2 = %b, IN3 = %b&quot;</span>,IN0,IN1,IN2,IN3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择IN0；</span></span><br><span class="line">        S1 = <span class="number">0</span>;</span><br><span class="line">        S0 = <span class="number">0</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;S1 = %b, S0 = %b, OUTPUT = %b&quot;</span>,S1, S0, OUTPUT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择IN0；</span></span><br><span class="line">        S1 = <span class="number">0</span>;</span><br><span class="line">        S0 = <span class="number">1</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;S1 = %b, S0 = %b, OUTPUT = %b&quot;</span>,S1, S0, OUTPUT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择IN0；</span></span><br><span class="line">        S1 = <span class="number">1</span>;</span><br><span class="line">        S0 = <span class="number">0</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;S1 = %b, S0 = %b, OUTPUT = %b&quot;</span>,S1, S0, OUTPUT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择IN0；</span></span><br><span class="line">        S1 = <span class="number">1</span>;</span><br><span class="line">        S0 = <span class="number">1</span>;</span><br><span class="line">        #<span class="number">1</span> <span class="built_in">$display</span>(<span class="string">&quot;S1 = %b, S0 = %b, OUTPUT = %b&quot;</span>,S1, S0, OUTPUT);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//生产 VCD 文件需要的代码（非例题代码）</span></span><br><span class="line">    <span class="keyword">initial</span> <span class="keyword">begin</span> </span><br><span class="line">        <span class="built_in">$dumpfile</span>(<span class="string">&quot;wave.vcd&quot;</span>); <span class="comment">//生成波形文件vcd的名称 </span></span><br><span class="line">        <span class="built_in">$dumpvars</span>(<span class="number">0</span>, stimulus); <span class="comment">//tb模块名称</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后保存文件，打开终端，先进入 oss-cad-suite 文件夹打开 environment.bat 然后再回到 verilog 文件目录下对目标文件进行操作</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902103520387.png" alt="image-20220902103520387"><figcaption aria-hidden="true">image-20220902103520387</figcaption>
+</figure>
+<p>然后进行编译等一系列操作：</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">iverilog -o mux4_to_1<span class="variable">.vvp</span> -y ./ mux4_to_1_tb<span class="variable">.v</span> mux4_to_1<span class="variable">.v</span></span><br><span class="line">vvp mux4_to_1<span class="variable">.vvp</span></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902104216297.png" alt="image-20220902104216297"><figcaption aria-hidden="true">image-20220902104216297</figcaption>
+</figure>
+<p>然后在终端可以看到 <code>$display()</code> 的内容，然后我们查看 .vcd 文件：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902104553493.png" alt="image-20220902104553493"><figcaption aria-hidden="true">image-20220902104553493</figcaption>
+</figure>
+<p>接下来我们进行综合：</p>
+<p>首先进入 yosys，然后读入文件，处理文件，最后导出 .dot 格式</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902104654196.png" alt="image-20220902104654196"><figcaption aria-hidden="true">image-20220902104654196</figcaption>
+</figure>
+<p>过程如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">read_verilog mux4_to_1.v</span><br><span class="line">hierarchy -check</span><br><span class="line">proc; opt; opt; fsm; memory; opt</span><br><span class="line">show -format dot -prefix ./mux4_to_1</span><br></pre></td></tr></table></figure>
+<p>得到结果：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902105334206.png" alt="image-20220902105334206"><figcaption aria-hidden="true">image-20220902105334206</figcaption>
+</figure>
+<p>最终结果展示：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902105858211.png" alt="image-20220902105858211"><figcaption aria-hidden="true">image-20220902105858211</figcaption>
+</figure>
+]]></content>
+      <tags>
+        <tag>备忘笔记</tag>
+      </tags>
+  </entry>
 </search>
