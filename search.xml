@@ -6379,17 +6379,17 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <figure>
 <img src="/2022/09/02/09-01-15/image-20220902104553493.png" alt="image-20220902104553493"><figcaption aria-hidden="true">image-20220902104553493</figcaption>
 </figure>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220902104654196.png" alt="image-20220902104654196"><figcaption aria-hidden="true">image-20220902104654196</figcaption>
+</figure>
 <p>接下来我们进行综合：</p>
 <p>首先进入 yosys，然后读入文件，处理文件，最后导出 .dot 格式</p>
 <figure>
-<img src="/2022/09/02/09-01-15/image-20220902104654196.png" alt="image-20220902104654196"><figcaption aria-hidden="true">image-20220902104654196</figcaption>
+<img src="/2022/09/02/09-01-15/image-20220902105334206.png" alt="image-20220902105334206"><figcaption aria-hidden="true">image-20220902105334206</figcaption>
 </figure>
 <p>过程如下：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">read_verilog mux4_to_1.v</span><br><span class="line">hierarchy -check</span><br><span class="line">proc; opt; opt; fsm; memory; opt</span><br><span class="line">show -format dot -prefix ./mux4_to_1</span><br></pre></td></tr></table></figure>
 <p>得到结果：</p>
-<figure>
-<img src="/2022/09/02/09-01-15/image-20220902105334206.png" alt="image-20220902105334206"><figcaption aria-hidden="true">image-20220902105334206</figcaption>
-</figure>
 <p>最终结果展示：</p>
 <figure>
 <img src="/2022/09/02/09-01-15/image-20220902105858211.png" alt="image-20220902105858211"><figcaption aria-hidden="true">image-20220902105858211</figcaption>
