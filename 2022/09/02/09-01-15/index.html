@@ -21,12 +21,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"y006.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-  <meta name="description" content="效果展示 本文配置的最终效果展示如下：  image-20220902092406126  工具介绍及安装 首先介绍一下 VScode。VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。该软件支持语法高亮、代码自动补全等功能。VScode 的强大之处在于用户可以通过内置的扩展程序商店安装扩展以拓展软件功能。你可以在 VScode 官网">
+  <meta name="description" content="效果展示 本文配置的最终效果展示如下： Win11+VScode+oss-cad  image-20220902092406126  工具介绍及安装 首先介绍一下 VScode。VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。该软件支持语法高亮、代码自动补全等功能。VScode 的强大之处在于用户可以通过内置的扩展程序商店安装扩展">
 <meta property="og:type" content="website">
 <meta property="og:title" content="verilog 开源工具链配置笔记">
 <meta property="og:url" content="https://y006.github.io/2022/09/02/09-01-15/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="效果展示 本文配置的最终效果展示如下：  image-20220902092406126  工具介绍及安装 首先介绍一下 VScode。VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。该软件支持语法高亮、代码自动补全等功能。VScode 的强大之处在于用户可以通过内置的扩展程序商店安装扩展以拓展软件功能。你可以在 VScode 官网">
+<meta property="og:description" content="效果展示 本文配置的最终效果展示如下： Win11+VScode+oss-cad  image-20220902092406126  工具介绍及安装 首先介绍一下 VScode。VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。该软件支持语法高亮、代码自动补全等功能。VScode 的强大之处在于用户可以通过内置的扩展程序商店安装扩展">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220902092406126.png">
 <meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220902093933026.png">
@@ -47,8 +47,16 @@
 <meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220902104654196.png">
 <meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220902105334206.png">
 <meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220902105858211.png">
+<meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220904194326503.png">
+<meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220904194520104.png">
+<meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220905081644337.png">
+<meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220905093413337.png">
+<meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220905094143056.png">
+<meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220905105049582.png">
+<meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220905105508223.png">
+<meta property="og:image" content="https://y006.github.io/2022/09/02/09-01-15/image-20220905110336491.png">
 <meta property="article:published_time" content="2022-09-02T01:01:15.000Z">
-<meta property="article:modified_time" content="2022-09-02T03:30:06.223Z">
+<meta property="article:modified_time" content="2022-09-05T03:26:57.560Z">
 <meta property="article:author" content="邱金羽">
 <meta property="article:tag" content="备忘笔记">
 <meta name="twitter:card" content="summary">
@@ -146,7 +154,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">工具介绍及安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">使用方法</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">工具介绍及安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isseus-and-solution"><span class="nav-number">4.</span> <span class="nav-text">Isseus and Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-yosys-%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%B7%A5%E8%89%BA%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">在 Yosys 中使用工艺库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%9A%84%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">进一步的参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -270,9 +278,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-09-02 09:01:15 / 修改时间：11:30:06" itemprop="dateCreated datePublished" datetime="2022-09-02T09:01:15+08:00">2022-09-02</time>
+      <time title="创建时间：2022-09-02 09:01:15" itemprop="dateCreated datePublished" datetime="2022-09-02T09:01:15+08:00">2022-09-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-09-05 11:26:57" itemprop="dateModified" datetime="2022-09-05T11:26:57+08:00">2022-09-05</time>
     </span>
 
   
@@ -301,6 +315,7 @@
     <div class="post-body" itemprop="articleBody">
         <h3 id="效果展示">效果展示</h3>
 <p>本文配置的最终效果展示如下：</p>
+<p>Win11+VScode+oss-cad</p>
 <figure>
 <img src="/2022/09/02/09-01-15/image-20220902092406126.png" alt="image-20220902092406126"><figcaption aria-hidden="true">image-20220902092406126</figcaption>
 </figure>
@@ -391,6 +406,70 @@
 <figure>
 <img src="/2022/09/02/09-01-15/image-20220902105858211.png" alt="image-20220902105858211"><figcaption aria-hidden="true">image-20220902105858211</figcaption>
 </figure>
+<h3 id="isseus-and-solution">Isseus and Solution</h3>
+<p>这一小节记录一下我初用这个工具链遇到的问题：</p>
+<ol type="1">
+<li><p><strong>Isseus：</strong>进行编译和波形测试时，发现VScode上的WaveTrace插件不能正常进行查看，但是使用GTKwave开源查看，我的编译仿真指令如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iverilog -o wave -y ./  alu_tb.v  alu.v </span><br><span class="line">vvp -n wave -lxt2</span><br></pre></td></tr></table></figure>
+<p><strong>Solution：</strong>使用下面的指令来生成 .vcd 图像：即不要携带 <code>-lxt2</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vvp wave</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>Isseus：</strong>Yosys 出现如下报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR: System task `$display&#x27; called with invalid/unsupported format specifier.</span><br></pre></td></tr></table></figure>
+<p><strong>Solution：</strong>如果出现这个报错，考虑将测试的module放在一个单独的文件中，使yosys操作的对象不包括测试使用的module</p></li>
+<li><p><strong>Isseus：</strong>我在一个 .v 文件中包含了两个 module，但是使用 <code>show</code> 命令得到的图片只有一幅</p>
+<p><strong>Solution：</strong>打开 <code>show</code> 命令生成的 <code>.dot</code> 文件，可以看到里面其实包含两个 <code>digraph</code> ，可以手动将其他的进行剪切到其他文件夹，具体的指令操作可以通过阅读 Yosys 的文档解决。</p></li>
+<li><p><strong>Isseus：</strong>==待解决==在 Yosys 命令行中使用 help 指令可以看到 Yosys 中提供指令可以导出有限状态机的图：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220904194326503.png" alt="image-20220904194326503"><figcaption aria-hidden="true">image-20220904194326503</figcaption>
+</figure>
+<p>即指令 <code>fsm_export</code>，但是在实际操作中使用该指令后打印如下日志：</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220904194520104.png" alt="image-20220904194520104"><figcaption aria-hidden="true">image-20220904194520104</figcaption>
+</figure>
+<p>但是没有 KISS2 文件在操作目录下生成。</p>
+<p><strong>Solution：</strong>这个问题目前没有被解决，但是这里有两个网页可以提供重要参考</p>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://github.com/YosysHQ/yosys/issues/2402">Command "fsm_export" does not generate a .kiss2 file to represent correspondings FSM · Issue #2402 · YosysHQ/yosys</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/32645965/fsm-export-using-yosys">verilog - FSM export using Yosys - Stack Overflow</a></li>
+</ol></li>
+</ol>
+<h3 id="在-yosys-中使用工艺库">在 Yosys 中使用工艺库</h3>
+<p>在上面的过程中，我们使用 Yosys 读入 <code>.v</code> 文件，将高层次的描述转化为寄存器传输级描述（RTL）进而得到门级描述，然后在转化中我们都进行了化简和优化。得到的门级描述使用 Yosys 自带的单元（cells）进行的描述。我们可以在 Yosys中使用指令 <code>help -cells</code> 来查看 Yosys 默认使用的单元列表：如下图。</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220905081644337.png" alt="image-20220905081644337"><figcaption aria-hidden="true">image-20220905081644337</figcaption>
+</figure>
+<p>我们可以看到 Yosys 中包含有 <code>$_AND_</code> 或者 <code>$_ANDNOT_</code> 这种单元。首先我们先用默认的单元来综合我们的电路，然后导入新的单元来构建满足新工艺库的电路。</p>
+<p>用来演示的 Verilog 文件来自 <code>..\yosys-master\yosys-master\examples\cmos</code>，你可以在<a target="_blank" rel="noopener" href="https://github.com/YosysHQ/yosys/tree/master/examples/cmos">这里</a>查看。</p>
+<p>首先我在 <code>..\yosys-master\yosys-master\examples</code> 目录下创建了一个新的文件夹 <code>my_cmos</code>，然后将 <code>cmos</code> 中的 <code>counter.v</code> 文件移动到 <code>my_cmos</code> 中，然后复制<a target="_blank" rel="noopener" href="https://vlsiarch.ecen.okstate.edu/flows/MOSIS_SCMOS/latest/cadence/lib/tsmc025/signalstorm/osu025_stdcells.lib">这里</a>的代码到 <code>my_cmos</code> 文件夹中并命名为 <code>osu025_stdcells.lib</code>。最后使用 oss-cad 组件打开 <code>my_cmos</code> 这个文件夹进行后续操作。</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220905093413337.png" alt="image-20220905093413337"><figcaption aria-hidden="true">image-20220905093413337</figcaption>
+</figure>
+<p>然后进入 Yosys，使用下述指令读入文件到 Yosys：这是我们导入自己的单元库的方法。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">read_verilog counter.v</span><br><span class="line">read_liberty osu025_stdcells.lib</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220905094143056.png" alt="image-20220905094143056"><figcaption aria-hidden="true">image-20220905094143056</figcaption>
+</figure>
+<p>现在我们使用快捷键 <code>Ctrl+D</code> 退出 Yosys。然后我们来生成电路图展示一下 yosys 对于电路图的处理。同时我们引入 yosys 指令批量处理的方法：</p>
+<p>首先将下述指令复制到一个新建文件夹 <code>my_cells.ys</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">读入 counter.v</span></span><br><span class="line">read_verilog counter.v</span><br><span class="line"><span class="meta"># </span><span class="language-bash">读入后不做任何处理直接显示 counter.v 电路图，生成的文件起名为 a.dot</span></span><br><span class="line">show -prefix ./a</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">synth 指令由一些列综合和化简指令构成，这个命令组最后的效果是得到由 yosys 自带的 cells 构建的电路图</span></span><br><span class="line">synth</span><br><span class="line"><span class="meta"># </span><span class="language-bash">将化简后的结果显示成电路图b</span></span><br><span class="line">show -prefix ./b</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">导入 osu025_stdcells.lib，用库中的 FF(flip-flop) 去替换 yosys 自带的 FF</span></span><br><span class="line">dfflibmap -liberty osu025_stdcells.lib</span><br><span class="line"><span class="meta"># </span><span class="language-bash">将替换触发器后的电路图导出为c</span></span><br><span class="line">show -prefix ./c</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">替换自带的组合逻辑器件</span></span><br><span class="line">abc -liberty osu025_stdcells.lib</span><br><span class="line"><span class="meta"># </span><span class="language-bash">化简</span></span><br><span class="line">opt</span><br><span class="line"><span class="meta"># </span><span class="language-bash">将替换组合逻辑器件后的电路图导出为d</span></span><br><span class="line">show -prefix ./d</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">读入 osu025_stdcells.lib，yosys可以将其中的cells转化为modules</span></span><br><span class="line">read_liberty osu025_stdcells.lib</span><br><span class="line"><span class="meta"># </span><span class="language-bash">最终结果e,只展示 couter module，不展示 osu025_stdcells.lib 中的modules</span></span><br><span class="line">show -prefix ./e counter</span><br></pre></td></tr></table></figure>
+<p>然后在 oss-cad 组件中使用 <code>yosys -s my_cells.ys</code> 来批量执行指令</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220905105049582.png" alt="image-20220905105049582"><figcaption aria-hidden="true">image-20220905105049582</figcaption>
+</figure>
+<p>然后打开 <code>.dot</code> 文件观察结果</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220905105508223.png" alt="image-20220905105508223"><figcaption aria-hidden="true">image-20220905105508223</figcaption>
+</figure>
+<p>这两张图重复了使用方法一节中展现的化简过程</p>
+<p>然后我们观察后面几张图</p>
+<figure>
+<img src="/2022/09/02/09-01-15/image-20220905110336491.png" alt="image-20220905110336491"><figcaption aria-hidden="true">image-20220905110336491</figcaption>
+</figure>
+<p>上图为了进行对比，可能图片不是非常清晰，大家可以自己动手做一下然后进行观察。</p>
+<p>到此我们就实现了自己的cells库的导入，你可以进一步通过 <code>write_verilog</code> 指令导出综合后的电路图。</p>
+<h3 id="进一步的参考">进一步的参考</h3>
+<p>如果想要进一步了解 Yosys 的使用，推荐使用 <a target="_blank" rel="noopener" href="https://yosyshq.net/yosys/files/yosys_appnote_011_design_investigation.pdf">Yosys AppNote 011</a>、<a target="_blank" rel="noopener" href="https://github.com/YosysHQ/yosys-manual-build/releases/download/manual/manual.pdf">Yosys manual</a> 两篇文章进行学习</p>
+<p>如果想要配置 STA 工具，可以参考此工具 <a target="_blank" rel="noopener" href="https://github.com/YosysHQ/yosys-manual-build/releases/download/manual/manual.pdf">OpenTimer</a></p>
 
     </div>
 
