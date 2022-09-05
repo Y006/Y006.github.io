@@ -6394,6 +6394,7 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <figure>
 <img src="/2022/09/02/09-01-15/image-20220902105858211.png" alt="image-20220902105858211"><figcaption aria-hidden="true">image-20220902105858211</figcaption>
 </figure>
+<p>注：默认不读入工艺库的话，Yosys 使用自带的工艺库。</p>
 <h3 id="isseus-and-solution">Isseus and Solution</h3>
 <p>这一小节记录一下我初用这个工具链遇到的问题：</p>
 <ol type="1">
@@ -6404,8 +6405,6 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
 <li><p><strong>Isseus：</strong>Yosys 出现如下报错：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ERROR: System task `$display&#x27; called with invalid/unsupported format specifier.</span><br></pre></td></tr></table></figure>
 <p><strong>Solution：</strong>如果出现这个报错，考虑将测试的module放在一个单独的文件中，使yosys操作的对象不包括测试使用的module</p></li>
-<li><p><strong>Isseus：</strong>我在一个 .v 文件中包含了两个 module，但是使用 <code>show</code> 命令得到的图片只有一幅</p>
-<p><strong>Solution：</strong>打开 <code>show</code> 命令生成的 <code>.dot</code> 文件，可以看到里面其实包含两个 <code>digraph</code> ，可以手动将其他的进行剪切到其他文件夹，具体的指令操作可以通过阅读 Yosys 的文档解决。</p></li>
 <li><p><strong>Isseus：</strong>==待解决==在 Yosys 命令行中使用 help 指令可以看到 Yosys 中提供指令可以导出有限状态机的图：</p>
 <figure>
 <img src="/2022/09/02/09-01-15/image-20220904194326503.png" alt="image-20220904194326503"><figcaption aria-hidden="true">image-20220904194326503</figcaption>
