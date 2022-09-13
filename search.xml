@@ -6533,4 +6533,133 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
         <tag>备忘笔记</tag>
       </tags>
   </entry>
+  <entry>
+    <title>《从电路设计的角度入门VerilogHDL》笔记</title>
+    <url>/2022/09/13/17-54-09/</url>
+    <content><![CDATA[<h2 id="概述与特性">概述与特性</h2>
+<h3 id="简介">简介</h3>
+<p>VerilogHDL 不是编程语言，是硬件描述语言。学习 VerilogHDL 的过程中，我们应该从电路设计的角度去思考与 VerilogHDL 有关的问题而不是从如何编程的角度去思考。</p>
+<blockquote>
+<p>书籍推荐：</p>
+<p>轻松成为设计高手：VerilogHDL 使用精讲</p>
+<p>MOOC 课程推荐：</p>
+<p>芯动力——硬件加速设计方法</p>
+</blockquote>
+<p>什么是 HDL？</p>
+<p>HDL，全称是 Hardware <strong>Description</strong> Language，翻译过来是“硬件描述语言”。从名字可以看出进行 HDL 开发的过程不是设计的过程，而是描述事物的过程。对于 HDL 来说，我们是要将已经存在的电路用编程语言的方式描出来。因此，HDL 的开发过程是先设计硬件电路，然后使用 HDL 对于设计好的电路进行描述。</p>
+<p>VerilogHDL 由 Cadence 发明，以全定制电路设计方法学的挑战者诞生。VerilogHDL 随着芯片规模进入数亿晶体管时代，近年来受到了 HLS、Chisel 等语言的挑战。但是目前 VerilogHDL 仍是描述数字电路和数字逻辑系统的主流语言。</p>
+<h4 id="veriloghdl-设计流程">VerilogHDL 设计流程</h4>
+<ol type="1">
+<li><p>设计一个电路（RTL）</p></li>
+<li><p>对设计的电路进行仿真和验证</p></li>
+<li><p>进行逻辑综合</p></li>
+<li><p>将综合好的电路进行布局布线</p>
+<blockquote>
+<p>逻辑综合使得我们由 VerilogHDL 得到了具体的电路，布局布线则是得到了芯片上各个器件在版图上的坐标</p>
+</blockquote></li>
+<li><p>布局布线后的网表可以去流片得到真正可以使用的芯片</p></li>
+</ol>
+<h4 id="veriloghdl-的重要特性">VerilogHDL 的重要特性：</h4>
+<p>VerilogHDL 具备从 “抽象表达” 到 “门级连接” 的多层次表征的能力：既可以在较高层面进行电路行为级的描述，也可以在较低层面描述门级电路的连接关系。</p>
+<p>因此说 VerilogHDL 的功能非常全面。</p>
+<p>为了更加方便地描述超大规模集成电路，人们希望使用抽象程度更高的 HDL 来描述硬件。这是 HLS、Chisel 等语言的发展方向。</p>
+<p>VerilogHDL 可以看作是一个大工具箱，可以将其中的工具分为两类：一类是真正用于生成硬件电路的可综合语句，另一类是构建测试环境的语句。</p>
+<blockquote>
+<p>数字硬件电路的描述方法：</p>
+<p>两类：</p>
+<ul>
+<li>原理图：
+<ul>
+<li>早期方法</li>
+<li>直观，便于理解</li>
+</ul></li>
+<li>HDL：
+<ul>
+<li>适合大型设计</li>
+<li>HDL 的优势体现在超大规模集成电路的设计中。HDL 的可维护性强且模块的复用非常方便</li>
+</ul></li>
+</ul>
+</blockquote>
+<h4 id="veriloghdl-的工具简介">VerilogHDL 的工具简介：</h4>
+<table>
+<thead>
+<tr class="header">
+<th>使用场景</th>
+<th>开源工具解决方案</th>
+<th>商业工具解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>代码编辑器</td>
+<td>VScode、Vim等</td>
+<td>Vivado、Quaruts</td>
+</tr>
+<tr class="even">
+<td>仿真</td>
+<td>Iverilog、verilator、GTK-Wave</td>
+<td>VCS、Modelsim、Vivado、Quaruts</td>
+</tr>
+<tr class="odd">
+<td>逻辑综合</td>
+<td>Yosys</td>
+<td>Vivado、Quaruts</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="veriloghdl-的缺点">VerilogHDL 的缺点：</h4>
+<ul>
+<li>例化繁琐，需要手动连线</li>
+<li>大量中间信号需要写声明</li>
+<li>模块参数能力弱</li>
+<li>对于错误的检查能力弱</li>
+<li>基础电路需要重复写，电路的复用程度低</li>
+<li>...</li>
+</ul>
+<h2 id="编写方法">编写方法</h2>
+<h4 id="设计对象">设计对象</h4>
+<p>我们以下图为例介绍：<img src="/2022/09/13/17-54-09/image-20220913193245926.png" alt="image-20220913193245926"></p>
+<p>一个完整的数字电路工程称为一个 <strong>Design</strong>（设计），Design 由多个模块构成</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> TOP ( A,B,C,D,CLK,OUT1 );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">input</span> A,B,C,D,CLK;</span><br><span class="line">    <span class="keyword">output</span> [<span class="number">1</span>:<span class="number">0</span>] OUT1;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">wire</span> INV1,INV0;</span><br><span class="line">    </span><br><span class="line">    ENCODER U1 (<span class="variable">.AIN</span>(A),<span class="variable">.BIN</span>(B),<span class="variable">.CIN</span>(C),<span class="variable">.DIN</span>(D),<span class="variable">.Q0</span>(BUS0),<span class="variable">.Q1</span>(BUS1));</span><br><span class="line"></span><br><span class="line">    INV U2(<span class="variable">.A</span>(BUS0),<span class="variable">.Z</span>(INV0)),</span><br><span class="line">        U3(<span class="variable">.A</span>(BUS1),<span class="variable">.Z</span>(INV1));</span><br><span class="line"></span><br><span class="line">    REGFILE U4(<span class="variable">.D0</span>(INV0),<span class="variable">.D1</span>(INV1),<span class="variable">.CLK</span>(CLK),<span class="variable">.Q</span>(OUT1));</span><br><span class="line">    </span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/09/13/17-54-09/image-20220913193541195.png" alt="image-20220913193541195" style="zoom: 33%;"></p>
+<p>这种情况的出现是因为我们使用了 Yosys 无法正确识别的 cells：ENCODER、INV 和 REGFILE。因为这三个 Cells 是我们自己定义的，因此我们需要自己来规定这些 cells 的输入和输出。因此我们创建三个新的 module。</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> ENCODER ( AIN,BIN,CIN,DIN,Q0,Q1 );</span><br><span class="line">    <span class="keyword">input</span> AIN,BIN,CIN,DIN;</span><br><span class="line">    <span class="keyword">output</span> Q0,Q1;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> REGFILE ( D0,D1,CLK,Q );</span><br><span class="line">    <span class="keyword">input</span> D0,D1,CLK;</span><br><span class="line">    <span class="keyword">output</span> [<span class="number">1</span>:<span class="number">0</span>] Q;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> INV ( A,Z );</span><br><span class="line">    <span class="keyword">input</span> A;</span><br><span class="line">    <span class="keyword">output</span> Z;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<p>创建并保存文件后，我们重新进入 yosys，然后导入这三个 module：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">read_verilog ENCODER.v INV.v REGFILE.v</span><br><span class="line">show</span><br></pre></td></tr></table></figure>
+<p>然后我们得到如下电路图：</p>
+<figure>
+<img src="/2022/09/13/17-54-09/image-20220913191735354-16630687321171.png" alt="image-20220913191735354"><figcaption aria-hidden="true">image-20220913191735354</figcaption>
+</figure>
+<p>上述过程我们可以得知：</p>
+<ul>
+<li>在 TOP 层面进行描述的时候，我们不需要知道调用的 module 的内部实现，得到有意义的电路图只需要知道其端口中哪些是输入哪些是输出即可</li>
+<li></li>
+</ul>
+<p>VerilogHDL 与 C 语言的区别：</p>
+<p>与 C 语言相比，VerilogHDL 具备硬件设计的基本概念：</p>
+<ul>
+<li>互联（connectivity）：wire 类型变量可以描述各个模块之间的端口与网络的连接关系</li>
+<li>并发（concurrency）：可以有效的描述并行的硬件系统</li>
+<li>时间（time）：定义了绝对和相对的时间度量，可综合操作符具有物理延时</li>
+</ul>
+<p>VerilogHDL 中的并发执行：</p>
+<p>以下方代码块所示：</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> TOP;</span><br><span class="line">    <span class="keyword">always</span> @ (*) 	<span class="comment">//并行</span></span><br><span class="line">        <span class="keyword">begin</span>		<span class="comment">//串行</span></span><br><span class="line">            <span class="keyword">if</span>()</span><br><span class="line">            <span class="keyword">if</span>()</span><br><span class="line">        <span class="keyword">end</span>			<span class="comment">//串行</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">assign</span> a = b; 	<span class="comment">//并行</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<p>在 VerilogHDL 的 module 中，所有描述语句</p>
+<ul>
+<li>连续赋值语句（assign）</li>
+<li>行为语句块（always、initial）</li>
+<li>模块实例化</li>
+</ul>
+<p>都是并行发生的。</p>
+<p>而 begin ... end 中的语句是顺序执行的。</p>
+]]></content>
+  </entry>
 </search>
