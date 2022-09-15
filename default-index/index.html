@@ -137,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -213,6 +213,270 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/09/15/11-22-34/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/09/15/11-22-34/" class="post-title-link" itemprop="url">电力电子技术</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-09-15 11:22:34 / 修改时间：14:45:22" itemprop="dateCreated datePublished" datetime="2022-09-15T11:22:34+08:00">2022-09-15</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/09/15/11-22-34/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/15/11-22-34/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="电力电子器件">2. 电力电子器件</h2>
+<h3 id="电力电子器件概述">2.1 电力电子器件概述</h3>
+<p>主电路（main power circuit）：电力系统中直接承担电能变换或者控制任务的</p>
+<p>电力电子器件（power electronic device）：主电路中实现电能变换或者控制的电子器件</p>
+<ul>
+<li>分类：
+<ul>
+<li>电真空器件（淘汰）</li>
+<li>半导体器件（主流）—— 主要材料是硅</li>
+</ul></li>
+<li>与信息电子器件的区别
+<ul>
+<li>电力电子器件处理的电功率较大</li>
+<li>一般工作在开关状态：通态阻抗小，短态阻抗大，管子两端电压由外电路决定</li>
+<li>电力电子器件一般使用信息电子器件来控制，需要中间电路对控制信号进行放大，因此需要驱动电路</li>
+<li>因为开关损耗的存在，发热比较大，因此讲究散热设计</li>
+</ul></li>
+<li>分析方法：
+<ul>
+<li>关注电力电子器件的动态特性（开关特性）和参数</li>
+<li>做电路分析时一般使用理想开关来代替</li>
+</ul></li>
+</ul>
+<p>电力电子系统</p>
+<ul>
+<li>控制电路
+<ul>
+<li>信息电子器件：小功率</li>
+<li>检测主电路信号（需要检测电路），生成控制信号（需要驱动电路）</li>
+</ul></li>
+<li>主电路
+<ul>
+<li>电力电子器件：大功率</li>
+<li>电力电子器件相比于主电路中普通元器件承受过电压和过电流的能力弱，因此需要在主电路和控制电路之间加保护电路</li>
+</ul></li>
+<li>控制电路和主电路之间连接有检测电路和驱动电路，这些四种电路的连接中需要进行电气隔离，可以采用光或者磁信号来替代电信号</li>
+</ul>
+<p>电力电子器件的分类</p>
+<ul>
+<li><p>控制程度</p>
+<ul>
+<li><p>半控型器件：可以控制其导通但是不能控制其关断（晶闸管）</p></li>
+<li><p>全控型器件：既可以控制导通也可以控制关断（IGBT 和 MOSEFT）</p></li>
+<li><p>不可控器件：通断取决于电路，不能控制（电力二极管）</p></li>
+</ul></li>
+<li><p>控制信号</p>
+<ul>
+<li>电流控制型：控制端注入或者抽出电流形成通断</li>
+<li>电压控制型：控制端和公共端施加电压信号形成通断（也成为场控器件）
+<ul>
+<li>施加电压信号
+<ul>
+<li>脉冲触发型：给脉冲，改变状态直到下一个脉冲到来</li>
+<li>电平控制型：电平对应状态，电平改变即状态改变</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>载流子</p>
+<ul>
+<li>单极型：仅一种载流子（多子）</li>
+<li>双极型：电子空穴两种载流子</li>
+<li>复合型</li>
+</ul></li>
+</ul>
+<h3 id="电力二极管">2.2 电力二极管</h3>
+<p>PN结原理</p>
+<ul>
+<li>本征半导体：热激发使得本征半导体中产生电子空穴对，电子空穴相遇后会复合而成对消失。室温下本征半导体中存在少量的载流子</li>
+<li>非本征半导体：在本征半导体中掺杂低价或者高价元素可以引入多余的电子或者空穴，得到非本征半导体。非本征半导体中N型半导体是电子为多子的半导体，P型半导体是空穴为多子的半导体</li>
+<li>当P型半导体和N型半导体结合成为PN结时，由于双方中多子类型不同，因此形成了多子的浓度梯度，多子会在浓度梯度的作用下向对方扩散，此时多子扩散运动产生了扩散电流</li>
+<li>当多子进入对面半导体时成为了少子，并且在新环境中很容易与该环境的多子进行复合。复合使得PN结中间结处载流子数量减少并且产生空间电荷区。空间电荷区会平衡浓度梯度，最终扩散运动消失。</li>
+<li>空间电荷区会吸引附近的少子。少子会在电场加速向对面移动形成漂移电流。</li>
+<li>正向偏置是，电源正极对P型，负极对N型；此时外加电源的电场方向与空间电荷区电场方向相反，从而打破平衡，产生持续的扩散电流，此时为PN结正向导通状态。</li>
+<li>反向偏置时，电源正极对N型，负极对P型；此时外加电源的电场方向与空间电荷区电场方向相同，因空间电荷区加速产生的漂移电流进一步增强（不过因为是少子电流因此电流很小），而扩散电流被进一步抑制。总体上表现为几乎没有电流的反向截至状态。</li>
+</ul>
+<p>区别：普通的信息二极管可以认为是PN结，而电力二极管进行了一些变化以适应高电压和大电流</p>
+<ul>
+<li>横向导电结构改为了垂直导电结构：电流方向与硅片表面垂直，使得通过二极管的有效面积增大，显著提高了二极管的通流能力</li>
+<li>电力二极管增加在PN结中间增加了低掺杂N区，也称为漂移区，形成了N-I-P结构，低掺杂区域导电性差，类似于本征半导体，因此可以承受更高的反向电压而不被击穿产生大电流
+<ul>
+<li>漂移区不利于正向导通——解决方案：电导调制效应（Conductivity Modulation）
+<ul>
+<li>正向偏置时P区多子扩散到N区形成少子，扩散电流很大时大量少子注入N区会激发新的多子出现，从而提高N区载流子数量从而降低电阻率，使得正向导通时电力二极管表现为低阻态（压降始终维持在1V左右）</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>电力二极管的反向击穿：</p>
+<ul>
+<li>反向偏置电压过大时电流会突然增大，称为反向击穿
+<ul>
+<li>雪崩击穿</li>
+<li>齐纳击穿</li>
+</ul></li>
+<li>击穿发生时如果限制通过的电流，那么二极管不会损坏</li>
+<li>如果不限制电流使得功率超过了允许的耗散功率，那么会过热烧毁，称为热击穿</li>
+</ul>
+<p>电力二极管的电容效应：</p>
+<ul>
+<li>PN结中的电荷量随外加电压变化
+<ul>
+<li>扩散电容：正向偏置产生</li>
+<li>势垒电容：外部电压变化时产生</li>
+</ul></li>
+</ul>
+<p>电力二极管的基本特性：</p>
+<ul>
+<li><p>静态特性：电力二极管的伏安特性，与信息二极管类似</p></li>
+<li><p>动态特性：由于电容效应，在电力二级管发生状态变化时的电流电压特性不能使用静态描述中的伏安特性来描述。</p>
+<p><strong>理解两种特性：静态伏安特性认为电压变化时电流将瞬间发生变化，因此可以描点画线表示不同电压取值下一一对应的瞬态电流取值。但是动态效应考量的时真正的半导体器件具有电容效应，电压突变的时候电流不会随即发生变化，中间具有时间差，为了刻画这种时间差，我们将时间作为横坐标，将电压和电流同时作为纵坐标，绘制两条曲线，然后只要做垂直线就可以在时间轴上采样观察电压和电流的关系，体会电容带来的延时变化。</strong></p></li>
+</ul>
+<p>电力二极管的动态特性：</p>
+<ol type="1">
+<li>从零偏到正偏，正向电流线性增长然后稳定，正向电压先过冲然后减小趋于稳定</li>
+<li>正偏到反偏时，正向电流瞬间减小，下降速率由反偏电压和电路中电感决定</li>
+<li>正向电压不会随之下降，因为电导调制效应会增大电阻维持正向电压</li>
+<li>当正向电流减小为零时，正向电压开始下降</li>
+<li>当反向电流反向达将近最大值时，正向电压达到零并以大速率下降</li>
+<li>反向电流达到最值后开始下降，过程中由于外电路的电感效用会使反向电压产生过冲</li>
+<li>反向电流下降到比较低的时候，速度比较慢的时候，反向电压也减小到反偏电压</li>
+<li>时间：
+<ul>
+<li>延迟时间 = 反向电流取最值的时间点 - 正向电流减小为零的时间点</li>
+<li>电流下降时间 = 反向电压等于反偏电压的时间点 - 反向电流取最值的时间点</li>
+<li>电力二极管的反向恢复时间 = 延迟时间 + 电流下降时间</li>
+<li>恢复系数 = 电流下降时间 / 延迟时间</li>
+</ul></li>
+</ol>
+<p>电力二极管主要参数：</p>
+<table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>正向平均电流</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>正向压降</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>反向重复峰值压降</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>最高工作结温</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>反向恢复时间</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>浪涌电流</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>电力二极管的主要类型：</p>
+<table>
+<thead>
+<tr class="header">
+<th>类型</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>普通二极管</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>快速恢复二极管</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>肖特基二极管</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="晶闸管">2.3 晶闸管</h3>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -2640,901 +2904,6 @@ K = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp
     <div class="post-body" itemprop="articleBody">
           <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">clc; </span><br><span class="line">close all; </span><br><span class="line">clear all; </span><br><span class="line">I=imread(&#x27;2019050913413134.png&#x27;);%要求你.m文件下有test.bmp这个图像文件 </span><br><span class="line">PR=I(:,:,1);%提取红色分量 </span><br><span class="line">PG=I(:,:,2);%提取绿色分量 </span><br><span class="line">PB=I(:,:,3);%提取蓝色分量 </span><br><span class="line"> </span><br><span class="line">figure; </span><br><span class="line">subplot(2,2,1);imshow(I);title(&#x27;原图像&#x27;); </span><br><span class="line">subplot(2,2,2);imshow(PR);title(&#x27;提取红分量后&#x27;); </span><br><span class="line">subplot(2,2,3);imshow(PG);title(&#x27;提取绿色分量后&#x27;); </span><br><span class="line">subplot(2,2,4);imshow(PB);title(&#x27;提取蓝色分量后&#x27;);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">I=imread(&#x27;2019050913413134.png&#x27;); </span><br><span class="line">[m,n,d]=size(I); </span><br><span class="line"> </span><br><span class="line">level=15;%设置阈值 </span><br><span class="line">level2=70;%设置阈值 </span><br><span class="line"> </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,1)-I(i,j,2)&gt;level2)&amp;&amp;(I(i,j,1)-I(i,j,3)&gt;level2)) </span><br><span class="line">            r(i,j,1)=I(i,j,1); </span><br><span class="line">            r(i,j,2)=I(i,j,2); </span><br><span class="line">            r(i,j,3)=I(i,j,3); </span><br><span class="line">       else  </span><br><span class="line">            r(i,j,1)=255; </span><br><span class="line">            r(i,j,2)=255; </span><br><span class="line">            r(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">figure; </span><br><span class="line">subplot(2,2,1);imshow(I);title(&#x27;原图像&#x27;); </span><br><span class="line">subplot(2,2,2);imshow(r);title(&#x27;提取红分量后&#x27;);%显示提取红分量后的图 </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">%提取绿分量，不满足阈值的变为白色 </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,2)-I(i,j,1)&gt;level)&amp;&amp;(I(i,j,2)-I(i,j,3)&gt;level)) </span><br><span class="line">            g(i,j,1)=I(i,j,1); </span><br><span class="line">            g(i,j,2)=I(i,j,2); </span><br><span class="line">            g(i,j,3)=I(i,j,3); </span><br><span class="line">        else </span><br><span class="line">            g(i,j,1)=255; </span><br><span class="line">            g(i,j,2)=255; </span><br><span class="line">            g(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">subplot(2,2,3);imshow(g);title(&#x27;提取绿分量后&#x27;); </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">%提取蓝色分量 </span><br><span class="line">for i=1:m </span><br><span class="line">    for j=1:n </span><br><span class="line">        if((I(i,j,3)-I(i,j,1)&gt;level)&amp;&amp;(I(i,j,3)-I(i,j,2)&gt;level)) </span><br><span class="line">                    b(i,j,1)=I(i,j,1); </span><br><span class="line">                    b(i,j,2)=I(i,j,2); </span><br><span class="line">                    b(i,j,3)=I(i,j,3); </span><br><span class="line">        else </span><br><span class="line">            b(i,j,1)=255; </span><br><span class="line">            b(i,j,2)=255; </span><br><span class="line">            b(i,j,3)=255; </span><br><span class="line">        end </span><br><span class="line">    end </span><br><span class="line">end </span><br><span class="line"> </span><br><span class="line">subplot(2,2,4);imshow(b);title(&#x27;提取蓝色分量后&#x27;);</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%清空变量，读取图像</span></span><br><span class="line">RGB = imread(<span class="string">&#x27;2019050913413134.png&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;process&#x27;</span>),</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>),imshow(RGB),title(<span class="string">&#x27;原始RGB&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%convert frame from RGB to YCBCR colorspace（转换到YCBCR空间）</span></span><br><span class="line">YCBCR = rgb2ycbcr(RGB);</span><br><span class="line">whos,</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>),imshow(YCBCR),title(<span class="string">&#x27;YCBCR&#x27;</span>),</span><br><span class="line"><span class="comment">%filter YCBCR image between values and store filtered image to threshold</span></span><br><span class="line"><span class="comment">%matrix（用各个通道的阈值对其进行二值化处理）</span></span><br><span class="line">Y_MIN = <span class="number">0</span>;  Y_MAX = <span class="number">256</span>;</span><br><span class="line">Cb_MIN = <span class="number">100</span>;   Cb_MAX = <span class="number">127</span>;</span><br><span class="line">Cr_MIN = <span class="number">138</span>;   Cr_MAX = <span class="number">170</span>;</span><br><span class="line">threshold=roicolor(YCBCR(:,:,<span class="number">1</span>),Y_MIN,Y_MAX)&amp;roicolor(YCBCR(:,:,<span class="number">2</span>),Cb_MIN,Cb_MAX)&amp;roicolor(YCBCR(:,:,<span class="number">3</span>),Cr_MIN,Cr_MAX);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>),imshow(threshold),title(<span class="string">&#x27;YCBCR二值化&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%perform morphological operations on thresholded image to eliminate noise</span></span><br><span class="line"><span class="comment">%and emphasize the filtered object(s)（进行形态学处理：腐蚀、膨胀、孔洞填充）</span></span><br><span class="line">erodeElement = strel(<span class="string">&#x27;square&#x27;</span>, <span class="number">3</span>) ;</span><br><span class="line">dilateElement=strel(<span class="string">&#x27;square&#x27;</span>, <span class="number">8</span>) ;</span><br><span class="line">threshold = imerode(threshold,erodeElement);</span><br><span class="line">threshold = imerode(threshold,erodeElement);</span><br><span class="line">threshold=imdilate(threshold, dilateElement);</span><br><span class="line">threshold=imdilate(threshold, dilateElement);</span><br><span class="line">threshold=imfill(threshold,<span class="string">&#x27;holes&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>),imshow(threshold),title(<span class="string">&#x27;形态学处理&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">%获取区域的&#x27;basic&#x27;属性， &#x27;Area&#x27;, &#x27;Centroid&#x27;, and &#x27;BoundingBox&#x27; </span></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;处理结果&#x27;</span>),</span><br><span class="line">stats = regionprops(threshold, <span class="string">&#x27;basic&#x27;</span>);</span><br><span class="line">[C,area_index]=<span class="built_in">max</span>([stats.Area]);</span><br><span class="line"><span class="comment">%定位脸部区域</span></span><br><span class="line">face_locate=[stats(area_index).Centroid(<span class="number">1</span>),stats(area_index).Centroid(<span class="number">2</span>)];</span><br><span class="line">imshow(RGB);title(<span class="string">&#x27;after&#x27;</span>),<span class="built_in">hold</span> on</span><br><span class="line">text(face_locate(<span class="number">1</span>),face_locate(<span class="number">2</span>)<span class="number">-40</span>,  <span class="string">&#x27;face&#x27;</span>,<span class="string">&#x27;color&#x27;</span>,<span class="string">&#x27;red&#x27;</span>);</span><br><span class="line"><span class="built_in">plot</span>(face_locate(<span class="number">1</span>),face_locate(<span class="number">2</span>), <span class="string">&#x27;b*&#x27;</span>);</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[stats(area_index).BoundingBox],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;LineStyle&#x27;</span>,<span class="string">&#x27;--&#x27;</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>),</span><br><span class="line"><span class="built_in">hold</span> off</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/03/23/15-24-59/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom-logo.jpg">
-      <meta itemprop="name" content="邱金羽">
-      <meta itemprop="description" content="联系我：2420457716@qq.com">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/23/15-24-59/" class="post-title-link" itemprop="url">电子专业资料共享计划</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-23 15:24:59" itemprop="dateCreated datePublished" datetime="2022-03-23T15:24:59+08:00">2022-03-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-31 21:42:20" itemprop="dateModified" datetime="2022-07-31T21:42:20+08:00">2022-07-31</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2022/03/23/15-24-59/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/23/15-24-59/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言">前言</h1>
-<blockquote>
-<p>我也曾很努力地收集各种课程资料，但到最后，某些重要信息的得到却往往依然是纯属偶然。这种状态时常令我感到后怕与不安。我也曾在课程结束后终于有了些许方法与总结，但这些想法无处诉说，最终只能把花费时间与精力才换来的经验耗散在了漫漫的遗忘之中。</p>
-<p>我为这一年一年，这么多人孤军奋战的重复劳动感到不平。</p>
-<p>我希望能够将这些隐晦的、不确定的、口口相传的资料和经验，变为公开的、易于获取的和大家能够共同完善、积累的共享资料。</p>
-<p>我希望只要是前人走过的弯路，后人就不必再走。这是我的信念，也是我建立这个项目的原因。</p>
-</blockquote>
-<p>注：如果您对本篇博客的目的存在疑问，请阅读<a target="_blank" rel="noopener" href="https://qsctech.github.io/zju-icicles/">此文</a>。</p>
-<h3 id="加入我们">加入我们：</h3>
-<p><strong>如果您有意愿加入该计划，请注册wolai账号并在<a target="_blank" rel="noopener" href="https://www.wolai.com/aPVPDQTgKUnVaE9JQzKudx">此处</a>进行编辑，请选择文章最后一部分的”推荐模板“，并复制在其上面，然后将副标题改做”来自xxx的推荐“，结束后在评论区评论以联系我去将内容发布在博客内。</strong></p>
-<h4 id="资料链接">资料链接：</h4>
-<p>链接：https://pan.baidu.com/s/1JEZYkR3-MfOQYS646UjtBg 提取码：2038</p>
-<h1 id="河南大学迈阿密学院电子信息专业培养计划及其课本">河南大学迈阿密学院电子信息专业培养计划及其课本</h1>
-<h3 id="大一上学期">大一上学期：</h3>
-<table>
-<colgroup>
-<col style="width: 43%">
-<col style="width: 56%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第一学期课程（Curriculum in First Semester）</th>
-<th>课本</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>英语（English）</td>
-<td>学期共四门课</td>
-</tr>
-<tr class="even">
-<td>阅读</td>
-<td>《新视野大学英语 读写教程 1 智慧版》</td>
-</tr>
-<tr class="odd">
-<td>写作</td>
-<td><em>3 Longman Academic Writing Series</em><br> （无中文版）</td>
-</tr>
-<tr class="even">
-<td>口语</td>
-<td><del>无课本</del></td>
-</tr>
-<tr class="odd">
-<td>听力</td>
-<td>《新视野大学英语 视听说教程 1 智慧版》</td>
-</tr>
-<tr class="even">
-<td>思政课（Ideological and Political courses）</td>
-<td>学期共两门课</td>
-</tr>
-<tr class="odd">
-<td>中国近现代史纲要</td>
-<td>《中国近现代史纲要 （2018年版）》</td>
-</tr>
-<tr class="even">
-<td>形式与政策</td>
-<td>“教师讲义”</td>
-</tr>
-<tr class="odd">
-<td>大学体育（一）College Physical Education I</td>
-<td><del>无课本</del></td>
-</tr>
-<tr class="even">
-<td>工程微积分Ⅰ（Calculus Ⅰ for Engineers）</td>
-<td><em>Calculus (2nd Edition)</em> <br>《微积分 中文版 上》<br>参考答案</td>
-</tr>
-<tr class="odd">
-<td>线性代数导论（Introduction to Linear Algebra）</td>
-<td><a target="_blank" rel="noopener" href="https://kdocs.cn/l/cbVej03YO5yb?f=201"><em>Elementary Linear Algebra</em><br></a>（无中文版和答案）</td>
-</tr>
-<tr class="even">
-<td>大学物理Ⅰ（University Physics Ⅰ）</td>
-<td><em>Physics for Scientists &amp; Engineers with Modern Physics</em><br>《大学物理 中文版 上》<br>参考答案</td>
-</tr>
-<tr class="odd">
-<td>工程学导论Ⅰ（Introduction to Engineering Ⅰ）</td>
-<td><em>Thinking Like an Engineer</em><br>（无中文版和答案）</td>
-</tr>
-<tr class="even">
-<td>编程导论（Introduction to Programming）</td>
-<td><em>C++ Pregramming program Design Including Data Structures</em><br>（无中文版和答案）</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大一下学期">大一下学期：</h3>
-<table>
-<colgroup>
-<col style="width: 46%">
-<col style="width: 53%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第二学期课程（Curriculum in Second Semester）</th>
-<th>课本</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>英语（English）</td>
-<td>学期共四门课</td>
-</tr>
-<tr class="even">
-<td>阅读</td>
-<td>《新视野大学英语 读写教程 2 智慧版》</td>
-</tr>
-<tr class="odd">
-<td>写作</td>
-<td>The Everyday Writer 6th Edition <br>（无中文版）</td>
-</tr>
-<tr class="even">
-<td>口语</td>
-<td>《流畅英语口语教程 第二册》</td>
-</tr>
-<tr class="odd">
-<td>听力</td>
-<td>《新视野大学英语 视听说教程 2 智慧版》</td>
-</tr>
-<tr class="even">
-<td>思政课（Ideological and Political courses）</td>
-<td>学期共两门课</td>
-</tr>
-<tr class="odd">
-<td>思想道德修养与法律基础</td>
-<td>《思想道德修养与法律基础 （2021年版）》</td>
-</tr>
-<tr class="even">
-<td>毛泽东思想与中国特色社会主义理论体系概论</td>
-<td>《毛泽东思想与中国特色社会主义理论体系概论（2021年版）》</td>
-</tr>
-<tr class="odd">
-<td>大学体育（二）College Physical Education II</td>
-<td><del>无课本</del></td>
-</tr>
-<tr class="even">
-<td>微积分Ⅱ和III（Calculus Ⅱ and III）</td>
-<td><em>Calculus (2nd Edition)</em> <br>《微积分 中文版 下》<br>参考答案</td>
-</tr>
-<tr class="odd">
-<td>大学物理Ⅱ及实验（University Physics Ⅱ and Lab）</td>
-<td><em>Physics for Scientists &amp; Engineers with Modern Physics</em><br>《大学物理 中文版 下》<br>参考答案</td>
-</tr>
-<tr class="even">
-<td>大学物理实验</td>
-<td>《大学物理实验》</td>
-</tr>
-<tr class="odd">
-<td>工程学导论Ⅱ（Introduction to Engineering Ⅱ）</td>
-<td><em>Engineering Circuit Analysis</em><br>《工程电路分析 中文版》<br></td>
-</tr>
-<tr class="even">
-<td>电路原理及实验（Electrical Circuit Theory and Lab）</td>
-<td><em>Electric Circuit Ninth Edition</em><br>《电路 中文版》<br>参考答案</td>
-</tr>
-<tr class="odd">
-<td>电路实验</td>
-<td>“教师讲义 + 教学课件”</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大二上学期">大二上学期：</h3>
-<table>
-<colgroup>
-<col style="width: 48%">
-<col style="width: 51%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第三学期课程（Curriculum in Third Semester）</th>
-<th>课本</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>英语（English）</td>
-<td>学期共四门课</td>
-</tr>
-<tr class="even">
-<td>阅读</td>
-<td>《新视野大学英语 第三版 读写教程 3 智慧版》</td>
-</tr>
-<tr class="odd">
-<td>写作</td>
-<td><em>Technical Writing A Practical Guide for Engineers, Scientists, and Nontechnical Professionals by Phillip A. Laplante</em><br>无中文版</td>
-</tr>
-<tr class="even">
-<td>口语</td>
-<td><del>无课本</del></td>
-</tr>
-<tr class="odd">
-<td>听力</td>
-<td>《新视野大学英语 第三版 视听说教程 3 智慧版》</td>
-</tr>
-<tr class="even">
-<td>思政课（Ideological and Political courses）</td>
-<td>学期共两门课</td>
-</tr>
-<tr class="odd">
-<td>马克思主义基本原理概论</td>
-<td>《马克思主义基本原理概论 （2021年版）》</td>
-</tr>
-<tr class="even">
-<td>毛泽东思想与中国特色社会主义理论体系概论</td>
-<td>《毛泽东思想与中国特色社会主义理论体系概论（2021年版）》</td>
-</tr>
-<tr class="odd">
-<td>大学体育（三）College Physical Education III</td>
-<td><del>无课本</del></td>
-</tr>
-<tr class="even">
-<td>常微分方程导论（Introduction to Ordinary Differential）</td>
-<td><em>A Textbook on Ordinary Differential Equations</em><br>（无中文版和参考答案）<br>参考书：《常微分方程（第三版）简明本》</td>
-</tr>
-<tr class="odd">
-<td>大学物理III及实验（University Physics III and Lab）</td>
-<td><em>Physics for Scientists &amp; Engineers with Modern Physics</em><br>《大学物理 中文版 下》<br>参考答案</td>
-</tr>
-<tr class="even">
-<td>大学物理实验</td>
-<td>《大学物理实验》</td>
-</tr>
-<tr class="odd">
-<td>数据结构（Data Structures）</td>
-<td>《数据结构（C语言版）》<br><em>Data Structures Using C</em><br>参考资料：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Fv4y1f7T1">视频课</a></td>
-</tr>
-<tr class="even">
-<td>电子学Ⅰ及实验（Electronics Ⅰ and Lab）</td>
-<td><em>Microelectronic Circuits</em><br><em>Microelectronics Circuit Analysis and Design</em><br>《微电子电路 中文版 上》<br>《微电子电路 中文版 下》<br>《电子电路分析与设计 中文版》<br>参考资料：《模拟电子技术 中文版》</td>
-</tr>
-<tr class="odd">
-<td>电子学实验</td>
-<td>“教师讲义”</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大二下学期">大二下学期：</h3>
-<table>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第四学期课程（Curriculum in Forth Semester）</th>
-<th>课本</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>英语（English）</td>
-<td>学期共两门课</td>
-</tr>
-<tr class="even">
-<td>阅读</td>
-<td>《新视野大学英语 第三版 读写教程 4 智慧版》</td>
-</tr>
-<tr class="odd">
-<td>听力</td>
-<td>《新视野大学英语 第三版 视听说教程 4 智慧版》</td>
-</tr>
-<tr class="even">
-<td>大学体育（四）（College Physical Education IV）</td>
-<td><del>无课本</del></td>
-</tr>
-<tr class="odd">
-<td>工程概率基础（Introduction to Engineering Probability）</td>
-<td><em>Probability, Statistics, and Random Processes For Electrical Engineerin</em><br>《机率与统计 第三版 中文版 台版》<br><a href>参考答案</a><br>参考资料：《概率论与数理统计 (第四版)》</td>
-</tr>
-<tr class="even">
-<td>信号与系统（Circuits，Signals and System）</td>
-<td>《信号与系统（郑君里）第三版 上》<br>参考书籍：<br>《信号与系统（郑君里）第三版 下》<br>《信号与系统（奥本海姆）第二版》</td>
-</tr>
-<tr class="odd">
-<td>逻辑设计（Logic Design）</td>
-<td><em>Fundamentals Of Logic Design Seven Edition</em><br>《逻辑设计基础 中文版》<br>参考答案</td>
-</tr>
-<tr class="even">
-<td>数字设计实验（Digital Design Lab）</td>
-<td>“教师讲义”</td>
-</tr>
-<tr class="odd">
-<td>电子学Ⅱ和实验（Electronics Ⅱ and Lab）</td>
-<td><em>Microelectronic Circuits</em><br><em>Microelectronics Circuit Analysis and Design</em><br>《微电子电路 中文版 上》<br>《微电子电路 中文版 下》<br>《电子电路分析与设计 中文版》<br>参考资料：《模拟电子技术 中文版》</td>
-</tr>
-<tr class="even">
-<td>电子学实验</td>
-<td>“教师讲义”</td>
-</tr>
-<tr class="odd">
-<td>微机原理和接口技术（Processors：Hardware, Software，and Interfacing）</td>
-<td>ARM：《微机原理与接口技术 第三版 基于ARM Cortex-M4 田辉》<br><em>Practical Microcontroller Engineering with ARMÂ­ Technology by Ying Bai<br></em>参考资料：x86：《微型计算机原理与接口技术》</td>
-</tr>
-<tr class="even">
-<td><del>电子电路CAD （Electronic Circuit CAD）</del></td>
-<td>无</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大三上学期">大三上学期：</h3>
-<table>
-<colgroup>
-<col style="width: 48%">
-<col style="width: 51%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第五学期课程（Curriculum in Fifth Semester）</th>
-<th>课本</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>离散时间信号与系统（Discrete-Time Signals and Systems）</td>
-<td><em>Signal &amp; System</em><br>《中文版 信号与系统 奥本海姆》</td>
-</tr>
-<tr class="even">
-<td>电磁场原理（Electromagnetic Field Theory）</td>
-<td><em>Field and Wave Electromagnetics by David K. Cheng</em><br>《电磁场与电磁波 中文版》<br>参考答案</td>
-</tr>
-<tr class="odd">
-<td>固态电子学（Solid-State Electronics）</td>
-<td><em>Semiconductor physics and devices basic principles by Donald A. Neamen</em><br>《半导体物理与器件 中文版》</td>
-</tr>
-<tr class="even">
-<td>单片机原理（MCU Principle）</td>
-<td><em>The 8051 Microcontroller A Systems Approach (Mazidi, Muhammad AliMcKinlay, Rolin DMazidi etc.)</em> <br>《8051单片机系统》<br>《单片机原理及接口技术 第5版》</td>
-</tr>
-<tr class="odd">
-<td>结构化数字设计（含FPGA）Structured Digital Design</td>
-<td><em>Verilog HDL - A Guide To Digital Design And Synth<br></em>《Verilog HDL 数字设计与综合》</td>
-</tr>
-<tr class="even">
-<td>创新项目实践（一）Practice of Innovation Project I</td>
-<td><del>无课本</del></td>
-</tr>
-</tbody>
-</table>
-<h3 id="大三下学期">大三下学期：</h3>
-<table>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第六学期课程（Curriculum in Sixth Semester）</th>
-<th>课本</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>嵌入式微处理系统设计（Embedded Microprocessor System Design）</td>
-<td><del>《嵌入式系统设计——基于STM32CubeMX与HAL库》</del></td>
-</tr>
-<tr class="even">
-<td>通信系统（Communication Systems）</td>
-<td><em>Communication Systems 4th Edition by Simon Haykin<br></em>《通信系统 中文版》<br>《通信原理 第七版》</td>
-</tr>
-<tr class="odd">
-<td>线性控制系统（Linear Control Systems）</td>
-<td><em>Communication Systems 4th Edition by Simon Haykin</em><br>参考答案</td>
-</tr>
-<tr class="even">
-<td>电力电子（Power Electronics）</td>
-<td>《电力电子技术》<br>参考答案</td>
-</tr>
-<tr class="odd">
-<td>VLSI 大规模集成电路系统（Large-scale Integrated Circuit System）</td>
-<td><em>Digital integrated circuits a design perspective</em><br>《数字集成电路——电路系统与设计 中文版》</td>
-</tr>
-<tr class="even">
-<td>模拟集成电路（Analog Integrated Circuit）</td>
-<td><em>Design of Analog CMOS Integrated Circuits by Behzad Razavi</em><br>《数字集成电路：电路、系统与设计第2版》<br></td>
-</tr>
-<tr class="odd">
-<td>创新项目实践（二）Practice of Innovation Project II</td>
-<td><del>无课本</del></td>
-</tr>
-</tbody>
-</table>
-<h1 id="电子专业课程书籍课程资源推荐">电子专业课程书籍课程资源推荐</h1>
-<h2 id="来自邱金羽的推荐">——来自邱金羽的推荐</h2>
-<h3 id="大一上学期-1">大一上学期：</h3>
-<table>
-<colgroup>
-<col style="width: 43%">
-<col style="width: 56%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第一学期课程（Curriculum in First Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>工程微积分Ⅰ（Calculus Ⅰ for Engineers）</td>
-<td>课本讲的挺不错<br>入学前可以看一下 <span class="math inline">\(3Blue1Brown\)</span> 的数学频道，微积分对应为：《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qW411N7FU">微积分的本质</a>》<br>国内常用教材为：《高等数学》<br>推荐一个写微积分比较好的知乎文章：《<a target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1249046061567741952">Re:从零开始的数学世界生活</a>》，里面包括微积分、线性代数和概率论的知识</td>
-</tr>
-<tr class="even">
-<td>线性代数导论（Introduction to Linear Algebra）</td>
-<td><span class="math inline">\(3Blue1Brown\)</span> 的数学频道：《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ys411472E">线性代数的本质</a>》</td>
-</tr>
-<tr class="odd">
-<td>大学物理Ⅰ（University Physics Ⅰ）</td>
-<td>无</td>
-</tr>
-<tr class="even">
-<td>工程学导论Ⅰ（Introduction to Engineering Ⅰ）</td>
-<td>工程学导论教学内容：Excal + Matlab + 编程基础 + CAD基础<br>Excal要求很低，会使用基本函数就行<br>Matlab很值得学习，主要包括基本的语法和绘图操作，建议跟着官网的教程学习：<a target="_blank" rel="noopener" href="https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted">Matlba Courses</a><br>Matlab学习中实现一些小项目可以帮助自己去理解，善用谷歌搜索和官网文档解决问题<br>对电子来说编程基础与编程导论课程内容重复<br>CAD基础，课时很少，简单了解</td>
-</tr>
-<tr class="odd">
-<td>编程导论（Introduction to Programming）</td>
-<td>推荐网课：《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ls411w7rx?spm_id_from=..search-card.all.click">C语言程序设计</a>》<br>推荐书籍：《C Primer Plus 中文版》（这本书适合作为工具书使用，其中代码写的比较规范，适合跟着敲练习）<br> 《C Primer Plus 中文版》</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大一下学期-1">大一下学期：</h3>
-<table>
-<colgroup>
-<col style="width: 46%">
-<col style="width: 53%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第二学期课程（Curriculum in Second Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>微积分Ⅱ和III（Calculus Ⅱ and III）</td>
-<td>同上</td>
-</tr>
-<tr class="even">
-<td>大学物理Ⅱ及实验（University Physics Ⅱ and Lab）</td>
-<td>大物二：声热光，相对没大物三的电磁重要</td>
-</tr>
-<tr class="odd">
-<td>大学物理实验</td>
-<td>大物实验课比较水</td>
-</tr>
-<tr class="even">
-<td>工程学导论Ⅱ（Introduction to Engineering Ⅱ）</td>
-<td>Matlab绘图：如果大一学的好，现在应该不需要再学了<br>推荐一些博客：<br>《<a target="_blank" rel="noopener" href="http://cighao.com/2016/04/11/draw-picture-with-matlab-001-line-style/">matlab 画图</a>》<br>《<a target="_blank" rel="noopener" href="https://www.cnblogs.com/BlueMountain-HaggenDazs/p/4220232.html">MATLAB学习笔记</a>》</td>
-</tr>
-<tr class="odd">
-<td>电路原理及实验（Electrical Circuit Theory and Lab）</td>
-<td>强烈推荐看完整个《电路》课本，里面很多知识很重要</td>
-</tr>
-<tr class="even">
-<td>电路实验</td>
-<td>无</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大二上学期-1">大二上学期：</h3>
-<table>
-<colgroup>
-<col style="width: 48%">
-<col style="width: 51%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第三学期课程（Curriculum in Third Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>常微分方程导论（Introduction to Ordinary Differential）</td>
-<td>可以参考国内教材：《常微分方程（第三版）简明本》</td>
-</tr>
-<tr class="even">
-<td>大学物理III及实验（University Physics III and Lab）</td>
-<td>电磁部分比较难，需要认真学</td>
-</tr>
-<tr class="odd">
-<td>大学物理实验</td>
-<td>比较水</td>
-</tr>
-<tr class="even">
-<td>数据结构（Data Structures）</td>
-<td>强烈推荐使用此视频入门数据结构：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Fv4y1f7T1">深入浅出数据结构 - 顶尖程序员图文讲解</a><br>课程较难，需要认真学习</td>
-</tr>
-<tr class="odd">
-<td>电子学Ⅰ及实验（Electronics Ⅰ and Lab）</td>
-<td>可以使用此课程进行半导体器件的入门，比较生动：《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qt411m7Vm">可汗学院-半导体器件</a>》<br>强烈推荐使用此课程进行学习《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TJ411G7sk?p=1">【电子】模拟电子技术基础 上海交通大学 郑益慧主讲</a>》<br>书籍推荐：</td>
-</tr>
-<tr class="even">
-<td>电子学实验</td>
-<td>与理论课不匹配</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大二下学期-1">大二下学期：</h3>
-<table>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>第四学期课程（Curriculum in Forth Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>工程概率基础（Introduction to Engineering Probability）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>信号与系统（Circuits，Signals and System）</td>
-<td>想考高分，做好作业<br>承前是电路原理，往后是控制系统（不止）<br>想学明白一点，考虑找<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1CZ4y1j7hs?spm_id_from=..search-card.all.click">祖师爷</a>吧</td>
-</tr>
-<tr class="odd">
-<td>逻辑设计（Logic Design）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>数字设计实验（Digital Design Lab）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>电子学Ⅱ和实验（Electronics Ⅱ and Lab）</td>
-<td>强烈推荐使用此课程进行学习《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TJ411G7sk?p=1">【电子】模拟电子技术基础 上海交通大学 郑益慧主讲</a>》<br>书籍推荐：</td>
-</tr>
-<tr class="even">
-<td>电子学实验</td>
-<td>有一点匹配</td>
-</tr>
-<tr class="odd">
-<td>微机原理和接口技术（Processors：Hardware, Software，and Interfacing）</td>
-<td>学习微机原理这门课的第一件事就是扔掉学校配的课本，切忌在学懂这门课之前翻看课本<br>第二件事是买一本：《数字设计和计算机结构体系》，仔细阅读第一章和第六章，粗略阅读中间章节<br>然后找到课本，直接阅读第四章<br>然后去学习stm32课程，比较推荐这个，日后做竞赛也会用到：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1q4411d7RX?vd_source=848d96f76bd7922d39f70343e2f35a57">STM32系列视频(CubeMX+MDK5+HAL库+库函数一站式学习)</a>；除了看一些基本的操作外，还应该阅读一下这个<a target="_blank" rel="noopener" href="https://gaoyichao.com/Xiaotu/?book=stm32&amp;title=index">STM32入门</a>中的内容。<br>可以看一下我博客上的微机原理章节，目前没有整理好，只是一份复习笔记。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大三上学期-1">大三上学期：</h3>
-<table>
-<thead>
-<tr class="header">
-<th>第五学期课程（Curriculum in Fifth Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>离散时间信号与系统（Discrete-Time Signals and Systems）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>电磁场原理（Electromagnetic Field Theory）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>固态电子学（Solid-State Electronics）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>单片机原理（MCU Principle）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>结构化数字设计（含FPGA）Structured Digital Design</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="大三下学期-1">大三下学期：</h3>
-<table>
-<thead>
-<tr class="header">
-<th>第六学期课程（Curriculum in Sixth Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>嵌入式微处理系统设计（Embedded Microprocessor System Design）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>通信系统（Communication Systems）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>线性控制系统（Linear Control Systems）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>电力电子（Power Electronics）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>VLSI 大规模集成电路系统（Large-scale Integrated Circuit System）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>模拟集成电路（Analog Integrated Circuit）</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h1 id="电子专业课程书籍课程资源推荐-1">电子专业课程书籍课程资源推荐</h1>
-<h2 id="推荐模板">——推荐模板</h2>
-<h3 id="大一上学期-2">大一上学期：</h3>
-<table>
-<thead>
-<tr class="header">
-<th>第一学期课程（Curriculum in First Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>工程微积分Ⅰ（Calculus Ⅰ for Engineers）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>线性代数导论（Introduction to Linear Algebra）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>大学物理Ⅰ（University Physics Ⅰ）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>工程学导论Ⅰ（Introduction to Engineering Ⅰ）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>编程导论（Introduction to Programming）</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="大一下学期-2">大一下学期：</h3>
-<table>
-<thead>
-<tr class="header">
-<th>第二学期课程（Curriculum in Second Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>微积分Ⅱ和III（Calculus Ⅱ and III）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>大学物理Ⅱ及实验（University Physics Ⅱ and Lab）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>大学物理实验</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>工程学导论Ⅱ（Introduction to Engineering Ⅱ）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>电路原理及实验（Electrical Circuit Theory and Lab）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>电路实验</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="大二上学期-2">大二上学期：</h3>
-<table>
-<thead>
-<tr class="header">
-<th>第三学期课程（Curriculum in Third Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>常微分方程导论（Introduction to Ordinary Differential）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>大学物理III及实验（University Physics III and Lab）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>大学物理实验</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>数据结构（Data Structures）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>电子学Ⅰ及实验（Electronics Ⅰ and Lab）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>电子学实验</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="大二下学期-2">大二下学期：</h3>
-<table>
-<thead>
-<tr class="header">
-<th>第四学期课程（Curriculum in Forth Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>工程概率基础（Introduction to Engineering Probability）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>信号与系统（Circuits，Signals and System）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>逻辑设计（Logic Design）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>数字设计实验（Digital Design Lab）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>电子学Ⅱ和实验（Electronics Ⅱ and Lab）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>电子学实验</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>微机原理和接口技术（Processors：Hardware, Software，and Interfacing）</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="大三上学期-2">大三上学期：</h3>
-<table>
-<thead>
-<tr class="header">
-<th>第五学期课程（Curriculum in Fifth Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>离散时间信号与系统（Discrete-Time Signals and Systems）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>电磁场原理（Electromagnetic Field Theory）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>固态电子学（Solid-State Electronics）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>单片机原理（MCU Principle）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>结构化数字设计（含FPGA）Structured Digital Design</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="大三下学期-2">大三下学期：</h3>
-<table>
-<thead>
-<tr class="header">
-<th>第六学期课程（Curriculum in Sixth Semester）</th>
-<th>学习建议及资料推荐</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>嵌入式微处理系统设计（Embedded Microprocessor System Design）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>通信系统（Communication Systems）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>线性控制系统（Linear Control Systems）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>电力电子（Power Electronics）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>VLSI 大规模集成电路系统（Large-scale Integrated Circuit System）</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>模拟集成电路（Analog Integrated Circuit）</td>
-<td></td>
-</tr>
-</tbody>
-</table>
 
       
     </div>
