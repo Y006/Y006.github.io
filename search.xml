@@ -1158,58 +1158,6 @@ SysTick 定时器（基于 HSI 时钟）每间隔 <code>1ms</code>
       </tags>
   </entry>
   <entry>
-    <title>VScode配置笔记</title>
-    <url>/2022/02/20/22-32-35/</url>
-    <content><![CDATA[<h2 id="vscode配置笔记">VScode配置笔记</h2>
-<ol type="1">
-<li><p>下载并安装编译器MinGW：https://bit.ly/mingw10</p></li>
-<li><p>将MinGW的bin文件路径添加到系统环境变量中</p></li>
-<li><p>在cmd中运行</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">g++ --version</span><br></pre></td></tr></table></figure>
-<p>检测是否成功配置路径</p></li>
-<li><p>安装VScode：<a href="https://code.visualstudio.com/">Visual
-Studio Code - Code Editing. Redefined</a></p></li>
-<li><p>“设置”中输入"run in terminal"<img src="/2022/02/20/22-32-35/image-20210907225325312.png" alt="image-20210907225325312"></p></li>
-<li><p>安装插件”Code Runner“和”C/C++“；选装”Chinese (Simplified)
-Language Pack for Visual Studio Code“</p></li>
-<li><p>为了正确地在文本编辑器上敲除中文，需要给文本编辑器设置合适的编码方式：<img src="/2022/02/20/22-32-35/Users\qjy\AppData\Roaming\Typora\typora-user-images\image-20210916093752004.png" alt="image-20210916093752004"></p>
-<p>点红框，选择“通过编码重新打开”，输入编码方式即可。</p>
-<p>打开cmd，查看“属性”可得知终端的编码方式</p>
-<p><img src="/2022/02/20/22-32-35/image-20210916093952277.png" alt="image-20210916093952277" style="zoom:25%;"></p>
-<p>终端的编码方式需要与编辑器的编码方式匹配</p>
-<p>在终端输入：“chcp 65001”可以切换代码页到使用UTF8。</p></li>
-<li><p>想要正确识别别人代码中的中文，需要“设置”中输入"<strong>files.autoGuessEncoding</strong>"<img src="/2022/02/20/22-32-35/image-20210907225635399.png" alt="image-20210907225635399"></p></li>
-<li><p>设置自动保存：“设置“中输入”<strong>auto
-save</strong>“，选择"afterDelay"选项</p></li>
-<li><p>設置自動格式化：“设置”中输入“<strong>editor.formatOnType</strong>”，选择True“</p></li>
-<li><p>”ctrl+k“配合”ctrl+t“可快速切换主题</p></li>
-<li><p>”ctrl+“是放大</p></li>
-<li><p>单行注释：“Ctrl + /”；块注释：“Alt+Shift+A”</p></li>
-<li><p>多文件编译：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment">#code in CMakeLists.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set the project name</span></span><br><span class="line"><span class="keyword">project</span>(Tutorial)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the executable</span></span><br><span class="line"><span class="keyword">add_executable</span>(Tutorial tutorial.cxx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#output in Chinese</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GB2312&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="补充终端shell命令">补充：终端（shell）命令</h2>
-<p>不区分大小写。</p>
-<p>tab键补全内容，再次点击切换内容</p>
-<h3 id="文件跳转">文件跳转</h3>
-<p>磁盘跳转</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">D:</span></span><br></pre></td></tr></table></figure>
-<p>显示所有文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
-<p>树形显示所有文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
-<p>进入下一级文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd 文件名（有空格的夹引号，平时使用tab补全就好）</span><br></pre></td></tr></table></figure>
-<p>进入上一级文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd..</span><br></pre></td></tr></table></figure>
-<p>退回磁盘根目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd/</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>备忘笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Homework</title>
     <url>/2022/02/24/11-07-35/</url>
     <content><![CDATA[<h2 id="homework">Homework</h2>
@@ -1614,6 +1562,58 @@ potential.</li>
       </tags>
   </entry>
   <entry>
+    <title>VScode配置笔记</title>
+    <url>/2022/02/20/22-32-35/</url>
+    <content><![CDATA[<h2 id="vscode配置笔记">VScode配置笔记</h2>
+<ol type="1">
+<li><p>下载并安装编译器MinGW：https://bit.ly/mingw10</p></li>
+<li><p>将MinGW的bin文件路径添加到系统环境变量中</p></li>
+<li><p>在cmd中运行</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">g++ --version</span><br></pre></td></tr></table></figure>
+<p>检测是否成功配置路径</p></li>
+<li><p>安装VScode：<a href="https://code.visualstudio.com/">Visual
+Studio Code - Code Editing. Redefined</a></p></li>
+<li><p>“设置”中输入"run in terminal"<img src="/2022/02/20/22-32-35/image-20210907225325312.png" alt="image-20210907225325312"></p></li>
+<li><p>安装插件”Code Runner“和”C/C++“；选装”Chinese (Simplified)
+Language Pack for Visual Studio Code“</p></li>
+<li><p>为了正确地在文本编辑器上敲除中文，需要给文本编辑器设置合适的编码方式：<img src="/2022/02/20/22-32-35/Users\qjy\AppData\Roaming\Typora\typora-user-images\image-20210916093752004.png" alt="image-20210916093752004"></p>
+<p>点红框，选择“通过编码重新打开”，输入编码方式即可。</p>
+<p>打开cmd，查看“属性”可得知终端的编码方式</p>
+<p><img src="/2022/02/20/22-32-35/image-20210916093952277.png" alt="image-20210916093952277" style="zoom:25%;"></p>
+<p>终端的编码方式需要与编辑器的编码方式匹配</p>
+<p>在终端输入：“chcp 65001”可以切换代码页到使用UTF8。</p></li>
+<li><p>想要正确识别别人代码中的中文，需要“设置”中输入"<strong>files.autoGuessEncoding</strong>"<img src="/2022/02/20/22-32-35/image-20210907225635399.png" alt="image-20210907225635399"></p></li>
+<li><p>设置自动保存：“设置“中输入”<strong>auto
+save</strong>“，选择"afterDelay"选项</p></li>
+<li><p>設置自動格式化：“设置”中输入“<strong>editor.formatOnType</strong>”，选择True“</p></li>
+<li><p>”ctrl+k“配合”ctrl+t“可快速切换主题</p></li>
+<li><p>”ctrl+“是放大</p></li>
+<li><p>单行注释：“Ctrl + /”；块注释：“Alt+Shift+A”</p></li>
+<li><p>多文件编译：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment">#code in CMakeLists.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set the project name</span></span><br><span class="line"><span class="keyword">project</span>(Tutorial)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add the executable</span></span><br><span class="line"><span class="keyword">add_executable</span>(Tutorial tutorial.cxx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#output in Chinese</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GB2312&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="补充终端shell命令">补充：终端（shell）命令</h2>
+<p>不区分大小写。</p>
+<p>tab键补全内容，再次点击切换内容</p>
+<h3 id="文件跳转">文件跳转</h3>
+<p>磁盘跳转</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">D:</span></span><br></pre></td></tr></table></figure>
+<p>显示所有文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dir</span><br></pre></td></tr></table></figure>
+<p>树形显示所有文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
+<p>进入下一级文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd 文件名（有空格的夹引号，平时使用tab补全就好）</span><br></pre></td></tr></table></figure>
+<p>进入上一级文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd..</span><br></pre></td></tr></table></figure>
+<p>退回磁盘根目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd/</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>备忘笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客移植记录</title>
     <url>/2023/08/26/09-33-31/</url>
     <content><![CDATA[<p>22年8月换了新电脑，23年8月才把博客移植到新电脑上。最早建站的时候经历非常坎坷，各种配置折磨了我好久，遇到的一些问题网上查不到只能自己看着报错慢慢尝试，或者换着各种关键词去谷歌。我担心移植也会出现各种问题，大三又是比较繁忙的时候，如果出现了问题现在能显示的页面也显示不出来，还耽误时间，便暂停了移植计划，同时也暂停了更新。</p>
@@ -1664,30 +1664,6 @@ SSH key”（添加SSH密钥）。</p>
       <tags>
         <tag>备忘笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/08/26/08-39-07/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p>test</p>
-]]></content>
   </entry>
   <entry>
     <title>《从电路设计的角度入门VerilogHDL》笔记</title>
@@ -2450,21 +2426,27 @@ r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]=[0,0,...,0]
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>Hello World</title>
     <url>/2023/08/26/08-39-07/</url>
-    <content><![CDATA[<figure>
-<img src="/2023/08/26/08-39-07/image-20220606210048954-16545204512881.png" alt="image-20220606210048954">
-<figcaption aria-hidden="true">image-20220606210048954</figcaption>
-</figure>
-<figure>
-<img src="/2023/08/26/08-39-07/image-20220701175231248.png" alt="image-20220701175231248">
-<figcaption aria-hidden="true">image-20220701175231248</figcaption>
-</figure>
-<figure>
-<img src="/2023/08/26/08-39-07/image-20220701181041908.png" alt="image-20220701181041908">
-<figcaption aria-hidden="true">image-20220701181041908</figcaption>
-</figure>
-<p>test?</p>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>test</p>
 ]]></content>
   </entry>
   <entry>
@@ -2642,6 +2624,50 @@ r^k(0_-)=[r(0_-),\frac{d}{dt}r(0_-),...,\frac{d^n}{dt^n}r(0_-)]=[0,0,...,0]
       </tags>
   </entry>
   <entry>
+    <title>大学物理实验绘图</title>
+    <url>/2022/02/25/06-07-35/</url>
+    <content><![CDATA[<p>[TOC]</p>
+<h2 id="标准程序">标准程序</h2>
+<h3 id="数据标识标准">数据标识标准</h3>
+<blockquote>
+<p>实验测量数据统一使用measure的首字母m做下标表示</p>
+<p>标准数据使用standard的首字母s做下标表示</p>
+<p>通过拟合方程计算得出的结果使用calculate的首字母c做下标表示</p>
+</blockquote>
+<h3 id="相对误差计算程序">相对误差计算程序</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%计算相对误差</span></span><br><span class="line">prompt = <span class="string">&#x27;请输入测量值Xm=&#x27;</span>;</span><br><span class="line">Xm = input(prompt);</span><br><span class="line">prompt = <span class="string">&#x27;请输入标准值Xs=&#x27;</span>;</span><br><span class="line">Xs = input(prompt);</span><br><span class="line"><span class="comment">%计算相对误差</span></span><br><span class="line">RelEor =<span class="built_in">abs</span>((Xm-Xs)/Xs)*<span class="number">100</span>;</span><br><span class="line">R=<span class="built_in">round</span>(RelEor,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;计算得相对误差为:&#x27;</span>)</span><br><span class="line"><span class="built_in">disp</span>([num2str(R),<span class="string">&#x27;%&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+<h3 id="描点作图">描点作图</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">Xm=[];</span><br><span class="line">Ym=[];</span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym);</span><br></pre></td></tr></table></figure>
+<h3 id="求平均值">求平均值</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">Xm=[];</span><br><span class="line">Ym=[];y</span><br><span class="line">Xm_mean=<span class="built_in">mean</span>(Xm,Ym);</span><br></pre></td></tr></table></figure>
+<h3 id="一元线性回归">一元线性回归</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%一元线性回归分析</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%写入数据:</span></span><br><span class="line">Xm=[<span class="number">-1.875</span>,<span class="number">-1.474</span>,<span class="number">-1.262</span>,<span class="number">-0.709</span>,<span class="number">-0.586</span>];</span><br><span class="line">Ym=[<span class="number">8.214</span>,<span class="number">7.408</span>,<span class="number">6.879</span>,<span class="number">5.490</span>,<span class="number">5.196</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">%进行回归分析</span></span><br><span class="line">[p,s]=polyfit(Xm,Ym,<span class="number">1</span>);<span class="comment">%p中存储有k和b的信息，s中存的信息我不知道</span></span><br><span class="line">Yc=p(<span class="number">1</span>)*Xm+p(<span class="number">2</span>);</span><br><span class="line">R2=<span class="number">1</span> - (sum((Yc- Ym).^<span class="number">2</span>) / sum((Ym - <span class="built_in">mean</span>(Ym)).^<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">%打印回归结果</span></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;打印回归分析结果:&#x27;</span>);</span><br><span class="line">fprintf(<span class="string">&#x27;y=%fx+%f\n&#x27;</span>,p(<span class="number">1</span>),p(<span class="number">2</span>));</span><br><span class="line">fprintf(<span class="string">&#x27;R^2=%f\n&#x27;</span>,R2);</span><br><span class="line"></span><br><span class="line"><span class="comment">%绘图</span></span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym,<span class="string">&#x27;o&#x27;</span>);<span class="comment">%数据点图</span></span><br><span class="line">Xp=[<span class="built_in">min</span>(Xm):<span class="number">0.1</span>:<span class="built_in">max</span>(Xm)];</span><br><span class="line">Yp=p(<span class="number">1</span>)*Xp+p(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(Xp,Yp);<span class="comment">%拟合曲线图</span></span><br><span class="line">grid on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="绘图">绘图</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">title(<span class="string">&quot;标题&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;X轴&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&quot;Y轴&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="隐函数族图像绘制">隐函数族图像绘制</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">z</span> = <span class="title">z</span><span class="params">(x,y,k)</span></span></span><br><span class="line">z = <span class="number">0.5</span>*x^<span class="number">2</span>+<span class="number">3</span>*x*y+<span class="number">0.5</span>*y^<span class="number">2</span>-k;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%k限定着函数族的范围</span></span><br><span class="line">k = <span class="number">-10</span>;</span><br><span class="line"><span class="keyword">while</span> k &lt; <span class="number">10</span></span><br><span class="line">    k = k + <span class="number">1</span>;</span><br><span class="line">    ezplot(@(x,y)z(x,y,k));</span><br><span class="line">    <span class="built_in">hold</span> on;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="实验数据处理">实验数据处理</h2>
+<h3 id="非线性负组电路元件伏安特性">非线性负组电路元件伏安特性</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">clear</span><br><span class="line">clc</span><br><span class="line">Ym=[<span class="number">-0.002</span>,<span class="number">-0.011</span>,<span class="number">-0.031</span>,<span class="number">-0.046</span>,<span class="number">-0.072</span>,<span class="number">-0.140</span>,<span class="number">-0.618</span>,<span class="number">-0.731</span>,<span class="number">-0.894</span>,<span class="number">-1.148</span>,<span class="number">-1.582</span>,<span class="number">-1.672</span>,<span class="number">-1.688</span>,<span class="number">-1.748</span>,<span class="number">-1.901</span>,<span class="number">-2.068</span>,<span class="number">-2.250</span>,<span class="number">-2.677</span>,<span class="number">-2.926</span>,<span class="number">-3.206</span>,<span class="number">-3.888</span>,<span class="number">-4.311</span>,<span class="number">-4.806</span>,<span class="number">-6.106</span>,<span class="number">-6.276</span>,<span class="number">-6.493</span>,<span class="number">-6.618</span>,<span class="number">-6.803</span>,<span class="number">-7.195</span>,<span class="number">-8.105</span>,<span class="number">-8.656</span>,<span class="number">-9.267</span>,<span class="number">-9.962</span>,<span class="number">-10.353</span>,<span class="number">-10.766</span>,<span class="number">-11.214</span>,<span class="number">-11.214</span>,<span class="number">-11.533</span>,<span class="number">-11.645</span>,<span class="number">-11.893</span>,<span class="number">-12.094</span>,<span class="number">-12.146</span>,<span class="number">-12.273</span>,<span class="number">-12.352</span>,<span class="number">-12.457</span>];</span><br><span class="line">R=[<span class="number">300</span>,<span class="number">600</span>,<span class="number">900</span>,<span class="number">1000</span>,<span class="number">1100</span>,<span class="number">1200</span>,<span class="number">1300</span>,<span class="number">1305</span>,<span class="number">1310</span>,<span class="number">1315</span>,<span class="number">1320</span>,<span class="number">1325</span>,<span class="number">1330</span>,<span class="number">1350</span>,<span class="number">1400</span>,<span class="number">1450</span>,<span class="number">1500</span>,<span class="number">1600</span>,<span class="number">1650</span>,<span class="number">1700</span>,<span class="number">1800</span>,<span class="number">1850</span>,<span class="number">1900</span>,<span class="number">2000</span>,<span class="number">2010</span>,<span class="number">2020</span>,<span class="number">2030</span>,<span class="number">2040</span>,<span class="number">2060</span>,<span class="number">2100</span>,<span class="number">2120</span>,<span class="number">2140</span>,<span class="number">2160</span>,<span class="number">2170</span>,<span class="number">2180</span>,<span class="number">2190</span>,<span class="number">2200</span>,<span class="number">2700</span>,<span class="number">3000</span>,<span class="number">4000</span>,<span class="number">5000</span>,<span class="number">6000</span>,<span class="number">8000</span>,<span class="number">10000</span>,<span class="number">15000</span>];</span><br><span class="line">I=Ym./R;</span><br><span class="line">Xm=I;</span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym);<span class="comment">%数据点图</span></span><br><span class="line">title(<span class="string">&quot;非线性负组电路元件伏安特性&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;电流(A)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&quot;电压(V)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="弦线上波的传播规律">弦线上波的传播规律</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%固定张力和线密度</span></span><br><span class="line">f=[<span class="number">70</span> <span class="number">90</span> <span class="number">110</span> <span class="number">130</span> <span class="number">150</span> <span class="number">180</span>];</span><br><span class="line">lamt=[<span class="number">1.22</span> <span class="number">0.9122</span> <span class="number">0.74</span> <span class="number">0.6136</span> <span class="number">0.5264</span> <span class="number">0.449</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">%一元线性回归分析</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%写入数据:</span></span><br><span class="line">Xm=<span class="built_in">log</span>(lamt);</span><br><span class="line">Ym=<span class="built_in">log</span>(f);</span><br><span class="line"></span><br><span class="line"><span class="comment">%进行回归分析</span></span><br><span class="line">[p,s]=polyfit(Xm,Ym,<span class="number">1</span>);<span class="comment">%p中存储有k和b的信息，s中存的信息我不知道</span></span><br><span class="line">Yc=p(<span class="number">1</span>)*Xm+p(<span class="number">2</span>);</span><br><span class="line">R2=<span class="number">1</span> - (sum((Yc- Ym).^<span class="number">2</span>) / sum((Ym - <span class="built_in">mean</span>(Ym)).^<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">%打印回归结果</span></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;打印回归分析结果:&#x27;</span>);</span><br><span class="line">fprintf(<span class="string">&#x27;y=%fx+%f\n&#x27;</span>,p(<span class="number">1</span>),p(<span class="number">2</span>));</span><br><span class="line">fprintf(<span class="string">&#x27;R^2=%f\n&#x27;</span>,R2);</span><br><span class="line"></span><br><span class="line"><span class="comment">%绘图</span></span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym,<span class="string">&#x27;o&#x27;</span>);<span class="comment">%数据点图</span></span><br><span class="line">Xp=[<span class="built_in">min</span>(Xm):<span class="number">0.1</span>:<span class="built_in">max</span>(Xm)];</span><br><span class="line">Yp=p(<span class="number">1</span>)*Xp+p(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(Xp,Yp);<span class="comment">%拟合曲线图</span></span><br><span class="line">grid on;</span><br><span class="line">title(<span class="string">&quot;log(波长)与log(频率)的拟合图像&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;log(波长)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&quot;log(频率)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line"></span><br><span class="line">Xm</span><br><span class="line">Ym</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/25/06-07-35/image-20211106173254618.png" alt="image-20211106173254618" style="zoom:33%;"></p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">打印回归分析结果:</span><br><span class="line">y=<span class="number">-0.935900</span>x+<span class="number">4.421856</span></span><br><span class="line">R^<span class="number">2</span>=<span class="number">0.998356</span></span><br><span class="line"></span><br><span class="line">Xm =</span><br><span class="line"></span><br><span class="line">    <span class="number">0.1989</span>   <span class="number">-0.0919</span>   <span class="number">-0.3011</span>   <span class="number">-0.4884</span>   <span class="number">-0.6417</span>   <span class="number">-0.8007</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ym =</span><br><span class="line"></span><br><span class="line">    <span class="number">4.2485</span>    <span class="number">4.4998</span>    <span class="number">4.7005</span>    <span class="number">4.8675</span>    <span class="number">5.0106</span>    <span class="number">5.1930</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%固定频率和线密度</span></span><br><span class="line">T=[<span class="number">2.45</span> <span class="number">7.34</span> <span class="number">12.23</span> <span class="number">17.12</span> <span class="number">22.02</span> <span class="number">26.91</span>];</span><br><span class="line">lamt=[<span class="number">0.449</span> <span class="number">0.6850</span> <span class="number">0.8934</span> <span class="number">1.032</span> <span class="number">1.148</span> <span class="number">1.2662</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">%一元线性回归分析</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%写入数据:</span></span><br><span class="line">Xm=<span class="built_in">log</span>(T);</span><br><span class="line">Ym=<span class="built_in">log</span>(lamt);</span><br><span class="line"></span><br><span class="line"><span class="comment">%进行回归分析</span></span><br><span class="line">[p,s]=polyfit(Xm,Ym,<span class="number">1</span>);<span class="comment">%p中存储有k和b的信息，s中存的信息我不知道</span></span><br><span class="line">Yc=p(<span class="number">1</span>)*Xm+p(<span class="number">2</span>);</span><br><span class="line">R2=<span class="number">1</span> - (sum((Yc- Ym).^<span class="number">2</span>) / sum((Ym - <span class="built_in">mean</span>(Ym)).^<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">%打印回归结果</span></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;打印回归分析结果:&#x27;</span>);</span><br><span class="line">fprintf(<span class="string">&#x27;y=%fx+%f\n&#x27;</span>,p(<span class="number">1</span>),p(<span class="number">2</span>));</span><br><span class="line">fprintf(<span class="string">&#x27;R^2=%f\n&#x27;</span>,R2);</span><br><span class="line"></span><br><span class="line"><span class="comment">%绘图</span></span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym,<span class="string">&#x27;o&#x27;</span>);<span class="comment">%数据点图</span></span><br><span class="line">Xp=[<span class="built_in">min</span>(Xm):<span class="number">0.1</span>:<span class="built_in">max</span>(Xm)];</span><br><span class="line">Yp=p(<span class="number">1</span>)*Xp+p(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(Xp,Yp);<span class="comment">%拟合曲线图</span></span><br><span class="line">grid on;</span><br><span class="line">title(<span class="string">&quot;log(波长)与log(周期)的拟合图像&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;log(波长)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&quot;log(周期)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line"></span><br><span class="line">Xm</span><br><span class="line">Ym</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/25/06-07-35/image-20211106173033589.png" alt="image-20211106173033589" style="zoom: 33%;"></p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">打印回归分析结果:</span><br><span class="line">y=<span class="number">0.435631</span>x+<span class="number">-1.209052</span></span><br><span class="line">R^<span class="number">2</span>=<span class="number">0.997443</span></span><br><span class="line"></span><br><span class="line">Xm =</span><br><span class="line"></span><br><span class="line">    <span class="number">0.8961</span>    <span class="number">1.9933</span>    <span class="number">2.5039</span>    <span class="number">2.8402</span>    <span class="number">3.0920</span>    <span class="number">3.2925</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ym =</span><br><span class="line"></span><br><span class="line">   <span class="number">-0.8007</span>   <span class="number">-0.3783</span>   <span class="number">-0.1127</span>    <span class="number">0.0315</span>    <span class="number">0.1380</span>    <span class="number">0.2360</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="磁滞曲线">磁滞曲线</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">x=<span class="number">0</span>:<span class="number">0.2</span>:<span class="number">3</span>;</span><br><span class="line">&gt;&gt; y1=[<span class="number">-1.4</span>,<span class="number">-1.2</span>,<span class="number">-1.1</span>,<span class="number">-1.0</span>,<span class="number">-0.9</span>,<span class="number">-0.8</span>,<span class="number">-0.6</span>,<span class="number">-0.3</span>,<span class="number">0</span>,<span class="number">0.4</span>,<span class="number">0.7</span>,<span class="number">1.1</span>,<span class="number">1.4</span>,<span class="number">1.8</span>,<span class="number">1.9</span>,<span class="number">2.0</span>];</span><br><span class="line">&gt;&gt; y2=[<span class="number">1.4</span> <span class="number">1.3</span> <span class="number">1.4</span> <span class="number">1.4</span> <span class="number">1.6</span> <span class="number">1.6</span> <span class="number">1.6</span> <span class="number">1.7</span> <span class="number">1.7</span> <span class="number">1.8</span> <span class="number">1.8</span> <span class="number">1.8</span> <span class="number">1.8</span> <span class="number">1.9</span> <span class="number">2.0</span> <span class="number">2.0</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(x,y1)</span><br><span class="line">&gt;&gt; <span class="built_in">hold</span> on</span><br><span class="line">&gt;&gt; <span class="built_in">plot</span>(x,y2)</span><br><span class="line">&gt;&gt; <span class="built_in">plot</span>(-x,-y2)</span><br><span class="line">&gt;&gt; <span class="built_in">hold</span> on</span><br><span class="line">&gt;&gt; <span class="built_in">plot</span>(-x,-y1)</span><br><span class="line"></span><br><span class="line">title(<span class="string">&quot;磁滞曲线&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/02/25/06-07-35/Users\qjy\Desktop\untitled.png" alt="untitled">
+<figcaption aria-hidden="true">untitled</figcaption>
+</figure>
+]]></content>
+      <tags>
+        <tag>备忘笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>单片机实验讲义</title>
     <url>/2022/10/12/23-40-51/</url>
     <content><![CDATA[<h2 id="单片机第一次作业">单片机第一次作业</h2>
@@ -2790,50 +2816,6 @@ Pin，因此一个 Port 可以使用 8 位二进制数表示。这种情况下�
 ]]></content>
       <tags>
         <tag>Electrical Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大学物理实验绘图</title>
-    <url>/2022/02/25/06-07-35/</url>
-    <content><![CDATA[<p>[TOC]</p>
-<h2 id="标准程序">标准程序</h2>
-<h3 id="数据标识标准">数据标识标准</h3>
-<blockquote>
-<p>实验测量数据统一使用measure的首字母m做下标表示</p>
-<p>标准数据使用standard的首字母s做下标表示</p>
-<p>通过拟合方程计算得出的结果使用calculate的首字母c做下标表示</p>
-</blockquote>
-<h3 id="相对误差计算程序">相对误差计算程序</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%计算相对误差</span></span><br><span class="line">prompt = <span class="string">&#x27;请输入测量值Xm=&#x27;</span>;</span><br><span class="line">Xm = input(prompt);</span><br><span class="line">prompt = <span class="string">&#x27;请输入标准值Xs=&#x27;</span>;</span><br><span class="line">Xs = input(prompt);</span><br><span class="line"><span class="comment">%计算相对误差</span></span><br><span class="line">RelEor =<span class="built_in">abs</span>((Xm-Xs)/Xs)*<span class="number">100</span>;</span><br><span class="line">R=<span class="built_in">round</span>(RelEor,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;计算得相对误差为:&#x27;</span>)</span><br><span class="line"><span class="built_in">disp</span>([num2str(R),<span class="string">&#x27;%&#x27;</span>]);</span><br></pre></td></tr></table></figure>
-<h3 id="描点作图">描点作图</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">Xm=[];</span><br><span class="line">Ym=[];</span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym);</span><br></pre></td></tr></table></figure>
-<h3 id="求平均值">求平均值</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">Xm=[];</span><br><span class="line">Ym=[];y</span><br><span class="line">Xm_mean=<span class="built_in">mean</span>(Xm,Ym);</span><br></pre></td></tr></table></figure>
-<h3 id="一元线性回归">一元线性回归</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%一元线性回归分析</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%写入数据:</span></span><br><span class="line">Xm=[<span class="number">-1.875</span>,<span class="number">-1.474</span>,<span class="number">-1.262</span>,<span class="number">-0.709</span>,<span class="number">-0.586</span>];</span><br><span class="line">Ym=[<span class="number">8.214</span>,<span class="number">7.408</span>,<span class="number">6.879</span>,<span class="number">5.490</span>,<span class="number">5.196</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">%进行回归分析</span></span><br><span class="line">[p,s]=polyfit(Xm,Ym,<span class="number">1</span>);<span class="comment">%p中存储有k和b的信息，s中存的信息我不知道</span></span><br><span class="line">Yc=p(<span class="number">1</span>)*Xm+p(<span class="number">2</span>);</span><br><span class="line">R2=<span class="number">1</span> - (sum((Yc- Ym).^<span class="number">2</span>) / sum((Ym - <span class="built_in">mean</span>(Ym)).^<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">%打印回归结果</span></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;打印回归分析结果:&#x27;</span>);</span><br><span class="line">fprintf(<span class="string">&#x27;y=%fx+%f\n&#x27;</span>,p(<span class="number">1</span>),p(<span class="number">2</span>));</span><br><span class="line">fprintf(<span class="string">&#x27;R^2=%f\n&#x27;</span>,R2);</span><br><span class="line"></span><br><span class="line"><span class="comment">%绘图</span></span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym,<span class="string">&#x27;o&#x27;</span>);<span class="comment">%数据点图</span></span><br><span class="line">Xp=[<span class="built_in">min</span>(Xm):<span class="number">0.1</span>:<span class="built_in">max</span>(Xm)];</span><br><span class="line">Yp=p(<span class="number">1</span>)*Xp+p(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(Xp,Yp);<span class="comment">%拟合曲线图</span></span><br><span class="line">grid on;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="绘图">绘图</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">title(<span class="string">&quot;标题&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;X轴&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&quot;Y轴&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="隐函数族图像绘制">隐函数族图像绘制</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">z</span> = <span class="title">z</span><span class="params">(x,y,k)</span></span></span><br><span class="line">z = <span class="number">0.5</span>*x^<span class="number">2</span>+<span class="number">3</span>*x*y+<span class="number">0.5</span>*y^<span class="number">2</span>-k;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%k限定着函数族的范围</span></span><br><span class="line">k = <span class="number">-10</span>;</span><br><span class="line"><span class="keyword">while</span> k &lt; <span class="number">10</span></span><br><span class="line">    k = k + <span class="number">1</span>;</span><br><span class="line">    ezplot(@(x,y)z(x,y,k));</span><br><span class="line">    <span class="built_in">hold</span> on;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="实验数据处理">实验数据处理</h2>
-<h3 id="非线性负组电路元件伏安特性">非线性负组电路元件伏安特性</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">clear</span><br><span class="line">clc</span><br><span class="line">Ym=[<span class="number">-0.002</span>,<span class="number">-0.011</span>,<span class="number">-0.031</span>,<span class="number">-0.046</span>,<span class="number">-0.072</span>,<span class="number">-0.140</span>,<span class="number">-0.618</span>,<span class="number">-0.731</span>,<span class="number">-0.894</span>,<span class="number">-1.148</span>,<span class="number">-1.582</span>,<span class="number">-1.672</span>,<span class="number">-1.688</span>,<span class="number">-1.748</span>,<span class="number">-1.901</span>,<span class="number">-2.068</span>,<span class="number">-2.250</span>,<span class="number">-2.677</span>,<span class="number">-2.926</span>,<span class="number">-3.206</span>,<span class="number">-3.888</span>,<span class="number">-4.311</span>,<span class="number">-4.806</span>,<span class="number">-6.106</span>,<span class="number">-6.276</span>,<span class="number">-6.493</span>,<span class="number">-6.618</span>,<span class="number">-6.803</span>,<span class="number">-7.195</span>,<span class="number">-8.105</span>,<span class="number">-8.656</span>,<span class="number">-9.267</span>,<span class="number">-9.962</span>,<span class="number">-10.353</span>,<span class="number">-10.766</span>,<span class="number">-11.214</span>,<span class="number">-11.214</span>,<span class="number">-11.533</span>,<span class="number">-11.645</span>,<span class="number">-11.893</span>,<span class="number">-12.094</span>,<span class="number">-12.146</span>,<span class="number">-12.273</span>,<span class="number">-12.352</span>,<span class="number">-12.457</span>];</span><br><span class="line">R=[<span class="number">300</span>,<span class="number">600</span>,<span class="number">900</span>,<span class="number">1000</span>,<span class="number">1100</span>,<span class="number">1200</span>,<span class="number">1300</span>,<span class="number">1305</span>,<span class="number">1310</span>,<span class="number">1315</span>,<span class="number">1320</span>,<span class="number">1325</span>,<span class="number">1330</span>,<span class="number">1350</span>,<span class="number">1400</span>,<span class="number">1450</span>,<span class="number">1500</span>,<span class="number">1600</span>,<span class="number">1650</span>,<span class="number">1700</span>,<span class="number">1800</span>,<span class="number">1850</span>,<span class="number">1900</span>,<span class="number">2000</span>,<span class="number">2010</span>,<span class="number">2020</span>,<span class="number">2030</span>,<span class="number">2040</span>,<span class="number">2060</span>,<span class="number">2100</span>,<span class="number">2120</span>,<span class="number">2140</span>,<span class="number">2160</span>,<span class="number">2170</span>,<span class="number">2180</span>,<span class="number">2190</span>,<span class="number">2200</span>,<span class="number">2700</span>,<span class="number">3000</span>,<span class="number">4000</span>,<span class="number">5000</span>,<span class="number">6000</span>,<span class="number">8000</span>,<span class="number">10000</span>,<span class="number">15000</span>];</span><br><span class="line">I=Ym./R;</span><br><span class="line">Xm=I;</span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym);<span class="comment">%数据点图</span></span><br><span class="line">title(<span class="string">&quot;非线性负组电路元件伏安特性&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;电流(A)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&quot;电压(V)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="弦线上波的传播规律">弦线上波的传播规律</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%固定张力和线密度</span></span><br><span class="line">f=[<span class="number">70</span> <span class="number">90</span> <span class="number">110</span> <span class="number">130</span> <span class="number">150</span> <span class="number">180</span>];</span><br><span class="line">lamt=[<span class="number">1.22</span> <span class="number">0.9122</span> <span class="number">0.74</span> <span class="number">0.6136</span> <span class="number">0.5264</span> <span class="number">0.449</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">%一元线性回归分析</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%写入数据:</span></span><br><span class="line">Xm=<span class="built_in">log</span>(lamt);</span><br><span class="line">Ym=<span class="built_in">log</span>(f);</span><br><span class="line"></span><br><span class="line"><span class="comment">%进行回归分析</span></span><br><span class="line">[p,s]=polyfit(Xm,Ym,<span class="number">1</span>);<span class="comment">%p中存储有k和b的信息，s中存的信息我不知道</span></span><br><span class="line">Yc=p(<span class="number">1</span>)*Xm+p(<span class="number">2</span>);</span><br><span class="line">R2=<span class="number">1</span> - (sum((Yc- Ym).^<span class="number">2</span>) / sum((Ym - <span class="built_in">mean</span>(Ym)).^<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">%打印回归结果</span></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;打印回归分析结果:&#x27;</span>);</span><br><span class="line">fprintf(<span class="string">&#x27;y=%fx+%f\n&#x27;</span>,p(<span class="number">1</span>),p(<span class="number">2</span>));</span><br><span class="line">fprintf(<span class="string">&#x27;R^2=%f\n&#x27;</span>,R2);</span><br><span class="line"></span><br><span class="line"><span class="comment">%绘图</span></span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym,<span class="string">&#x27;o&#x27;</span>);<span class="comment">%数据点图</span></span><br><span class="line">Xp=[<span class="built_in">min</span>(Xm):<span class="number">0.1</span>:<span class="built_in">max</span>(Xm)];</span><br><span class="line">Yp=p(<span class="number">1</span>)*Xp+p(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(Xp,Yp);<span class="comment">%拟合曲线图</span></span><br><span class="line">grid on;</span><br><span class="line">title(<span class="string">&quot;log(波长)与log(频率)的拟合图像&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;log(波长)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&quot;log(频率)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line"></span><br><span class="line">Xm</span><br><span class="line">Ym</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/2022/02/25/06-07-35/image-20211106173254618.png" alt="image-20211106173254618" style="zoom:33%;"></p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">打印回归分析结果:</span><br><span class="line">y=<span class="number">-0.935900</span>x+<span class="number">4.421856</span></span><br><span class="line">R^<span class="number">2</span>=<span class="number">0.998356</span></span><br><span class="line"></span><br><span class="line">Xm =</span><br><span class="line"></span><br><span class="line">    <span class="number">0.1989</span>   <span class="number">-0.0919</span>   <span class="number">-0.3011</span>   <span class="number">-0.4884</span>   <span class="number">-0.6417</span>   <span class="number">-0.8007</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ym =</span><br><span class="line"></span><br><span class="line">    <span class="number">4.2485</span>    <span class="number">4.4998</span>    <span class="number">4.7005</span>    <span class="number">4.8675</span>    <span class="number">5.0106</span>    <span class="number">5.1930</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%固定频率和线密度</span></span><br><span class="line">T=[<span class="number">2.45</span> <span class="number">7.34</span> <span class="number">12.23</span> <span class="number">17.12</span> <span class="number">22.02</span> <span class="number">26.91</span>];</span><br><span class="line">lamt=[<span class="number">0.449</span> <span class="number">0.6850</span> <span class="number">0.8934</span> <span class="number">1.032</span> <span class="number">1.148</span> <span class="number">1.2662</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">%一元线性回归分析</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%写入数据:</span></span><br><span class="line">Xm=<span class="built_in">log</span>(T);</span><br><span class="line">Ym=<span class="built_in">log</span>(lamt);</span><br><span class="line"></span><br><span class="line"><span class="comment">%进行回归分析</span></span><br><span class="line">[p,s]=polyfit(Xm,Ym,<span class="number">1</span>);<span class="comment">%p中存储有k和b的信息，s中存的信息我不知道</span></span><br><span class="line">Yc=p(<span class="number">1</span>)*Xm+p(<span class="number">2</span>);</span><br><span class="line">R2=<span class="number">1</span> - (sum((Yc- Ym).^<span class="number">2</span>) / sum((Ym - <span class="built_in">mean</span>(Ym)).^<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">%打印回归结果</span></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;打印回归分析结果:&#x27;</span>);</span><br><span class="line">fprintf(<span class="string">&#x27;y=%fx+%f\n&#x27;</span>,p(<span class="number">1</span>),p(<span class="number">2</span>));</span><br><span class="line">fprintf(<span class="string">&#x27;R^2=%f\n&#x27;</span>,R2);</span><br><span class="line"></span><br><span class="line"><span class="comment">%绘图</span></span><br><span class="line"><span class="built_in">plot</span>(Xm,Ym,<span class="string">&#x27;o&#x27;</span>);<span class="comment">%数据点图</span></span><br><span class="line">Xp=[<span class="built_in">min</span>(Xm):<span class="number">0.1</span>:<span class="built_in">max</span>(Xm)];</span><br><span class="line">Yp=p(<span class="number">1</span>)*Xp+p(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot</span>(Xp,Yp);<span class="comment">%拟合曲线图</span></span><br><span class="line">grid on;</span><br><span class="line">title(<span class="string">&quot;log(波长)与log(周期)的拟合图像&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;log(波长)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&quot;log(周期)&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line"></span><br><span class="line">Xm</span><br><span class="line">Ym</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/2022/02/25/06-07-35/image-20211106173033589.png" alt="image-20211106173033589" style="zoom: 33%;"></p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">打印回归分析结果:</span><br><span class="line">y=<span class="number">0.435631</span>x+<span class="number">-1.209052</span></span><br><span class="line">R^<span class="number">2</span>=<span class="number">0.997443</span></span><br><span class="line"></span><br><span class="line">Xm =</span><br><span class="line"></span><br><span class="line">    <span class="number">0.8961</span>    <span class="number">1.9933</span>    <span class="number">2.5039</span>    <span class="number">2.8402</span>    <span class="number">3.0920</span>    <span class="number">3.2925</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ym =</span><br><span class="line"></span><br><span class="line">   <span class="number">-0.8007</span>   <span class="number">-0.3783</span>   <span class="number">-0.1127</span>    <span class="number">0.0315</span>    <span class="number">0.1380</span>    <span class="number">0.2360</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="磁滞曲线">磁滞曲线</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">x=<span class="number">0</span>:<span class="number">0.2</span>:<span class="number">3</span>;</span><br><span class="line">&gt;&gt; y1=[<span class="number">-1.4</span>,<span class="number">-1.2</span>,<span class="number">-1.1</span>,<span class="number">-1.0</span>,<span class="number">-0.9</span>,<span class="number">-0.8</span>,<span class="number">-0.6</span>,<span class="number">-0.3</span>,<span class="number">0</span>,<span class="number">0.4</span>,<span class="number">0.7</span>,<span class="number">1.1</span>,<span class="number">1.4</span>,<span class="number">1.8</span>,<span class="number">1.9</span>,<span class="number">2.0</span>];</span><br><span class="line">&gt;&gt; y2=[<span class="number">1.4</span> <span class="number">1.3</span> <span class="number">1.4</span> <span class="number">1.4</span> <span class="number">1.6</span> <span class="number">1.6</span> <span class="number">1.6</span> <span class="number">1.7</span> <span class="number">1.7</span> <span class="number">1.8</span> <span class="number">1.8</span> <span class="number">1.8</span> <span class="number">1.8</span> <span class="number">1.9</span> <span class="number">2.0</span> <span class="number">2.0</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(x,y1)</span><br><span class="line">&gt;&gt; <span class="built_in">hold</span> on</span><br><span class="line">&gt;&gt; <span class="built_in">plot</span>(x,y2)</span><br><span class="line">&gt;&gt; <span class="built_in">plot</span>(-x,-y2)</span><br><span class="line">&gt;&gt; <span class="built_in">hold</span> on</span><br><span class="line">&gt;&gt; <span class="built_in">plot</span>(-x,-y1)</span><br><span class="line"></span><br><span class="line">title(<span class="string">&quot;磁滞曲线&quot;</span>,<span class="string">&#x27;FontName&#x27;</span>,<span class="string">&#x27;SimHei&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2022/02/25/06-07-35/Users\qjy\Desktop\untitled.png" alt="untitled">
-<figcaption aria-hidden="true">untitled</figcaption>
-</figure>
-]]></content>
-      <tags>
-        <tag>备忘笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -4360,108 +4342,6 @@ bus）进而通过总线桥路接入到高性能的系统总线</p>
       </tags>
   </entry>
   <entry>
-    <title>数据结构笔记</title>
-    <url>/2022/02/17/11-07-35/</url>
-    <content><![CDATA[<h1 id="数据结构">数据结构</h1>
-<h2 id="链表">链表</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">double</span> a, <span class="type">int</span> b, Node* c) : <span class="built_in">coef</span>(a), <span class="built_in">expn</span>(b), <span class="built_in">next</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    Node* next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Node*&amp; head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> num; std::cin &gt;&gt; num;<span class="comment">//每个链表中数字的个数</span></span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; num / <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        std::cin &gt;&gt; coef &gt;&gt; expn;</span><br><span class="line">        Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(coef, expn, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="keyword">if</span> (head != <span class="literal">NULL</span>)</span><br><span class="line">            new_node-&gt;next = head;</span><br><span class="line">        head = new_node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Add</span><span class="params">(Node*&amp; head1, Node*&amp; head2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (head2 != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Node* ptr1 = head1;</span><br><span class="line">        <span class="keyword">while</span> (ptr1 != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (head2-&gt;expn == ptr1-&gt;expn)</span><br><span class="line">            &#123;</span><br><span class="line">                ptr1-&gt;coef = ptr1-&gt;coef + head2-&gt;coef;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ptr1 = ptr1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ptr1 == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(head2-&gt;coef, head2-&gt;expn, head1);</span><br><span class="line">            head1 = new_node;</span><br><span class="line">        &#125;</span><br><span class="line">        head2 = head2-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node* x1 = <span class="literal">NULL</span>, * x2 = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Create</span>(x1); <span class="built_in">Create</span>(x2);</span><br><span class="line">    <span class="built_in">Add</span>(x1, x2);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="树">树</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">tree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">tree</span>(<span class="type">char</span> a, tree *b, tree *c) : <span class="built_in">data</span>(a), <span class="built_in">left</span>(b), <span class="built_in">right</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    tree *left;</span><br><span class="line">    tree *right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(tree *&amp;root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">    cin &gt;&gt; c;</span><br><span class="line">    <span class="keyword">if</span> (c != <span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        root = <span class="keyword">new</span> <span class="built_in">tree</span>(c, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;left);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PreOrder</span><span class="params">(tree *root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stack&lt;tree *&gt; stack;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">NULL</span> || !stack.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//此处输出是前序遍历</span></span><br><span class="line">            cout &lt;&lt; root-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            stack.<span class="built_in">push</span>(root);</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            root = stack.<span class="built_in">top</span>();</span><br><span class="line">            <span class="comment">//此处输出是中序遍历</span></span><br><span class="line">            <span class="comment">// cout&lt;&lt;root-&gt;data&lt;&lt;&quot; &quot;;</span></span><br><span class="line">            root = root-&gt;right;</span><br><span class="line">            stack.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree *root = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Creat</span>(root);</span><br><span class="line">    <span class="built_in">PreOrder</span>(root);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="树的非递归前序遍历">树的非递归前序遍历</h4>
-<ol type="1">
-<li>创建一个栈
-<ol type="1">
-<li>只要节点不为空或者栈不为空
-<ol type="1">
-<li>如果节点为空
-<ol type="1">
-<li>打印</li>
-<li>入栈</li>
-<li>左走</li>
-</ol></li>
-<li>如果节点不为空
-<ol type="1">
-<li>取栈首</li>
-<li>右走</li>
-<li>出栈</li>
-</ol></li>
-</ol></li>
-</ol></li>
-</ol>
-<h2 id="图">图</h2>
-<h3 id="邻接矩阵">邻接矩阵</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_VERTEX_NUM 20</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> vertex[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">bool</span> visited[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> edge[MAX_VERTEX_NUM][MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> vertex_num, edge_num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; G-&gt;vertex_num;</span><br><span class="line">    cin &gt;&gt; G-&gt;edge_num;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; G-&gt;vertex[i];</span><br><span class="line">        G-&gt;visited[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">            G-&gt;edge[i][j] = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; G-&gt;edge_num; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G-&gt;edge[v1][v2] = <span class="number">1</span>;</span><br><span class="line">        G-&gt;edge[v2][v1] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Graph* G, <span class="type">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; G-&gt;vertex[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;edge[i][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])</span><br><span class="line">            <span class="built_in">DFS</span>(G, j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">visit</span><span class="params">(queue&lt;<span class="type">int</span>&gt;&amp; queue, <span class="type">int</span> i, Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    queue.<span class="built_in">push</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; queue;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">if</span> (!G-&gt;visited[i])<span class="comment">//这个模块起名为访问列吧</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">visit</span>(queue, i, G);<span class="comment">//每列入队</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())<span class="comment">//行入队后检查队是否为空，队首作为行的检测依据</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">                    <span class="keyword">if</span> (G-&gt;edge[queue.<span class="built_in">front</span>()][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])<span class="comment">//这个模块起名为访问行</span></span><br><span class="line">                        <span class="built_in">visit</span>(queue, j, G);<span class="comment">//每行入队</span></span><br><span class="line">                cout &lt;&lt; G-&gt;vertex[queue.<span class="built_in">front</span>()] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">                queue.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//测试数据：9 15  A B C D E F G H I 0 1 0 5 1 2 1 8 1 6 2 3 2 8 3 4 3 7 3 6 3 8 4 5 4 7 5 6 6 7</span></span><br><span class="line">    Graph G;</span><br><span class="line">    <span class="built_in">Create</span>(&amp;G);</span><br><span class="line">    <span class="comment">//每次只能选择一个运行</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G, 0);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="邻接矩阵的广度遍历">邻接矩阵的广度遍历</h4>
-<ol type="1">
-<li>创建队列</li>
-<li>遍历 i (列)所有节点，对于未访问的节点进行下述操作
-<ol type="1">
-<li>打印 i 处节点并设置为访问过</li>
-<li>将数字 i 入队</li>
-<li>队列不为空时执行如下操作
-<ol type="1">
-<li>将队首元素赋值给 i</li>
-<li>遍历 j (行)所有节点，当 i 和 j 有关系且 j 处节点未访问时执行如下操作
-<ol type="1">
-<li>打印 j 处节点并设置为访问过</li>
-<li>将数字 j 入队</li>
-</ol></li>
-<li>队首出队</li>
-</ol></li>
-</ol></li>
-</ol>
-<h4 id="邻接矩阵的深度遍历">邻接矩阵的深度遍历</h4>
-<ol type="1">
-<li>遍历 i (列)所有节点，未访问节点进入 DFS(G,i)</li>
-<li>DFS 函数： <br>1. 打印进入 DFS 的节点并设置为访问 <br>2. 遍历 j
-(行)所有节点，当 i 和 j 有关系且未访问的节点进入 DFS(G,j)</li>
-</ol>
-<h3 id="邻接表">邻接表</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Vertex</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    <span class="type">bool</span> visited;</span><br><span class="line">    list&lt;Vertex*&gt; edge;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(vector&lt;Vertex&gt;&amp; G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> vertex_num; cin &gt;&gt; vertex_num;</span><br><span class="line">    <span class="type">int</span> edge_num; cin &gt;&gt; edge_num;</span><br><span class="line"></span><br><span class="line">    Vertex temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; temp.data;</span><br><span class="line">        temp.visited = <span class="literal">false</span>;</span><br><span class="line">        G.<span class="built_in">push_back</span>(temp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span> * edge_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G[v1].edge.<span class="built_in">push_back</span>(&amp;G[v2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Vertex* <span class="title">next_vertex</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">return</span> *iiter;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (vertex != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; vertex-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        vertex-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_level</span><span class="params">(queue&lt;Vertex*&gt;&amp; queue, Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            queue.<span class="built_in">push</span>((*iiter));</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;Vertex*&gt; queue;</span><br><span class="line">    queue.<span class="built_in">push</span>(vertex);</span><br><span class="line">    <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; queue.<span class="built_in">front</span>()-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        queue.<span class="built_in">front</span>()-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">get_level</span>(queue, queue.<span class="built_in">front</span>());</span><br><span class="line">        queue.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 9 15 A B C D E F G H I 0 1 0 5 1 0 1 2 1 6 1 8 2 1 2 3 2 8 3 2 3 4 3 6 3 7 3 8 4 3 4 5 4 7 5 0 5 4 5 6 6 1 6 3 6 5 6 7 7 3 7 4 7 6 8 1 8 2 8 3</span></span><br><span class="line">    vector&lt;Vertex&gt; G;</span><br><span class="line">    <span class="built_in">Creat</span>(G);</span><br><span class="line">    <span class="comment">//每次只能运行一个</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G[0]);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="邻接表的深度遍历">邻接表的深度遍历</h4>
-<p>·只要顶点不为空，打印顶点并设置为访问过；将下一个顶点进入该函数</p>
-<h4 id="邻接表的广度遍历">邻接表的广度遍历</h4>
-<ol type="1">
-<li>创建队列</li>
-<li>第一个顶点入队</li>
-<li>队不为空，执行下述操作
-<ol type="1">
-<li>取队首顶点</li>
-<li>打印队首顶点并设置为访问过</li>
-<li>获得下一层顶点</li>
-<li>队首出队</li>
-</ol></li>
-</ol>
-<h4 id="next_node">next_node</h4>
-<p>查链表，找到未访问顶点；设置为访问，返回该顶点</p>
-<h4 id="get_level">get_level</h4>
-<p>查链表，找到未访问顶点；设置为访问，将该顶点入队</p>
-<h2 id="排序">排序</h2>
-<h3 id="快排">快排</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (begin &lt; end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> sbit = begin;</span><br><span class="line">        <span class="type">int</span> pivot = arry[end];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = begin; j &lt; end; j++)</span><br><span class="line">            <span class="keyword">if</span> (arry[j] &lt; pivot)</span><br><span class="line">              &#123;<span class="built_in">swap</span>(arry[j], arry[sbit]); sbit++;&#125;</span><br><span class="line">              <span class="comment">//每个数字与pivot比较，较小的与sbit交换</span></span><br><span class="line">              <span class="comment">//将pivot与sbit交换</span></span><br><span class="line">        <span class="built_in">swap</span>(arry[sbit], arry[end]);</span><br><span class="line">        <span class="built_in">sort</span>(arry, begin, sbit - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">sort</span>(arry, sbit + <span class="number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">8</span>] = &#123; <span class="number">27</span>, <span class="number">13</span>, <span class="number">65</span>, <span class="number">8</span>, <span class="number">45</span>, <span class="number">3</span>, <span class="number">81</span>, <span class="number">72</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">0</span>, <span class="number">7</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="堆排">堆排</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heap</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> root = begin;</span><br><span class="line">    <span class="type">int</span> left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[right] &amp;&amp; right &lt;= end) left++;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[root]) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">swap</span>(arry[left], arry[root]);</span><br><span class="line">            root = left;</span><br><span class="line">            left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">            right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, i, end);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arry[<span class="number">0</span>], arry[i]);</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, <span class="number">0</span>, i<span class="number">-1</span> );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">11</span>] = &#123; <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">16</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li>堆排序</li>
-<li>得最大堆的方法：
-<ol type="1">
-<li>范围：从 非叶子节点 到 根节点<br>
-</li>
-<li>调整对象：循环因子 到 表</li>
-</ol></li>
-<li>排序的方法：
-<ol type="1">
-<li>范围：从 表尾 到 根节点前</li>
-<li>调整对象：无序首 到 无序尾</li>
-</ol></li>
-<li>维持堆的方法：</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Computer Science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>微机原理实验报告</title>
     <url>/2023/08/26/08-39-07/</url>
     <content><![CDATA[<h1 id="微机原理实验报告">微机原理实验报告</h1>
@@ -4888,6 +4768,108 @@ MDK-ARM 编写主函数，生成 .hex 文件 -&gt; 将 .hex
 ]]></content>
       <tags>
         <tag>Homework</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构笔记</title>
+    <url>/2022/02/17/11-07-35/</url>
+    <content><![CDATA[<h1 id="数据结构">数据结构</h1>
+<h2 id="链表">链表</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">double</span> a, <span class="type">int</span> b, Node* c) : <span class="built_in">coef</span>(a), <span class="built_in">expn</span>(b), <span class="built_in">next</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    Node* next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Node*&amp; head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> num; std::cin &gt;&gt; num;<span class="comment">//每个链表中数字的个数</span></span><br><span class="line">    <span class="type">double</span> coef;</span><br><span class="line">    <span class="type">int</span> expn;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; num / <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        std::cin &gt;&gt; coef &gt;&gt; expn;</span><br><span class="line">        Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(coef, expn, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="keyword">if</span> (head != <span class="literal">NULL</span>)</span><br><span class="line">            new_node-&gt;next = head;</span><br><span class="line">        head = new_node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Add</span><span class="params">(Node*&amp; head1, Node*&amp; head2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (head2 != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Node* ptr1 = head1;</span><br><span class="line">        <span class="keyword">while</span> (ptr1 != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (head2-&gt;expn == ptr1-&gt;expn)</span><br><span class="line">            &#123;</span><br><span class="line">                ptr1-&gt;coef = ptr1-&gt;coef + head2-&gt;coef;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ptr1 = ptr1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ptr1 == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Node* new_node = <span class="keyword">new</span> <span class="built_in">Node</span>(head2-&gt;coef, head2-&gt;expn, head1);</span><br><span class="line">            head1 = new_node;</span><br><span class="line">        &#125;</span><br><span class="line">        head2 = head2-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node* x1 = <span class="literal">NULL</span>, * x2 = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Create</span>(x1); <span class="built_in">Create</span>(x2);</span><br><span class="line">    <span class="built_in">Add</span>(x1, x2);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="树">树</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">tree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">tree</span>(<span class="type">char</span> a, tree *b, tree *c) : <span class="built_in">data</span>(a), <span class="built_in">left</span>(b), <span class="built_in">right</span>(c) &#123;&#125;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    tree *left;</span><br><span class="line">    tree *right;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(tree *&amp;root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">    cin &gt;&gt; c;</span><br><span class="line">    <span class="keyword">if</span> (c != <span class="string">&#x27;#&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        root = <span class="keyword">new</span> <span class="built_in">tree</span>(c, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;left);</span><br><span class="line">        <span class="built_in">Creat</span>(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PreOrder</span><span class="params">(tree *root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stack&lt;tree *&gt; stack;</span><br><span class="line">    <span class="keyword">while</span> (root != <span class="literal">NULL</span> || !stack.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//此处输出是前序遍历</span></span><br><span class="line">            cout &lt;&lt; root-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            stack.<span class="built_in">push</span>(root);</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            root = stack.<span class="built_in">top</span>();</span><br><span class="line">            <span class="comment">//此处输出是中序遍历</span></span><br><span class="line">            <span class="comment">// cout&lt;&lt;root-&gt;data&lt;&lt;&quot; &quot;;</span></span><br><span class="line">            root = root-&gt;right;</span><br><span class="line">            stack.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tree *root = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Creat</span>(root);</span><br><span class="line">    <span class="built_in">PreOrder</span>(root);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="树的非递归前序遍历">树的非递归前序遍历</h4>
+<ol type="1">
+<li>创建一个栈
+<ol type="1">
+<li>只要节点不为空或者栈不为空
+<ol type="1">
+<li>如果节点为空
+<ol type="1">
+<li>打印</li>
+<li>入栈</li>
+<li>左走</li>
+</ol></li>
+<li>如果节点不为空
+<ol type="1">
+<li>取栈首</li>
+<li>右走</li>
+<li>出栈</li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<h2 id="图">图</h2>
+<h3 id="邻接矩阵">邻接矩阵</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_VERTEX_NUM 20</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> vertex[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">bool</span> visited[MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> edge[MAX_VERTEX_NUM][MAX_VERTEX_NUM];</span><br><span class="line">    <span class="type">int</span> vertex_num, edge_num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Create</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; G-&gt;vertex_num;</span><br><span class="line">    cin &gt;&gt; G-&gt;edge_num;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; G-&gt;vertex[i];</span><br><span class="line">        G-&gt;visited[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">            G-&gt;edge[i][j] = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; G-&gt;edge_num; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G-&gt;edge[v1][v2] = <span class="number">1</span>;</span><br><span class="line">        G-&gt;edge[v2][v1] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Graph* G, <span class="type">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; G-&gt;vertex[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;edge[i][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])</span><br><span class="line">            <span class="built_in">DFS</span>(G, j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">visit</span><span class="params">(queue&lt;<span class="type">int</span>&gt;&amp; queue, <span class="type">int</span> i, Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    G-&gt;visited[i] = <span class="literal">true</span>;</span><br><span class="line">    queue.<span class="built_in">push</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Graph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; queue;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G-&gt;vertex_num; i++)</span><br><span class="line">        <span class="keyword">if</span> (!G-&gt;visited[i])<span class="comment">//这个模块起名为访问列吧</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">visit</span>(queue, i, G);<span class="comment">//每列入队</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())<span class="comment">//行入队后检查队是否为空，队首作为行的检测依据</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; G-&gt;vertex_num; j++)</span><br><span class="line">                    <span class="keyword">if</span> (G-&gt;edge[queue.<span class="built_in">front</span>()][j] == <span class="number">1</span> &amp;&amp; !G-&gt;visited[j])<span class="comment">//这个模块起名为访问行</span></span><br><span class="line">                        <span class="built_in">visit</span>(queue, j, G);<span class="comment">//每行入队</span></span><br><span class="line">                cout &lt;&lt; G-&gt;vertex[queue.<span class="built_in">front</span>()] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">                queue.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//测试数据：9 15  A B C D E F G H I 0 1 0 5 1 2 1 8 1 6 2 3 2 8 3 4 3 7 3 6 3 8 4 5 4 7 5 6 6 7</span></span><br><span class="line">    Graph G;</span><br><span class="line">    <span class="built_in">Create</span>(&amp;G);</span><br><span class="line">    <span class="comment">//每次只能选择一个运行</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G, 0);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="邻接矩阵的广度遍历">邻接矩阵的广度遍历</h4>
+<ol type="1">
+<li>创建队列</li>
+<li>遍历 i (列)所有节点，对于未访问的节点进行下述操作
+<ol type="1">
+<li>打印 i 处节点并设置为访问过</li>
+<li>将数字 i 入队</li>
+<li>队列不为空时执行如下操作
+<ol type="1">
+<li>将队首元素赋值给 i</li>
+<li>遍历 j (行)所有节点，当 i 和 j 有关系且 j 处节点未访问时执行如下操作
+<ol type="1">
+<li>打印 j 处节点并设置为访问过</li>
+<li>将数字 j 入队</li>
+</ol></li>
+<li>队首出队</li>
+</ol></li>
+</ol></li>
+</ol>
+<h4 id="邻接矩阵的深度遍历">邻接矩阵的深度遍历</h4>
+<ol type="1">
+<li>遍历 i (列)所有节点，未访问节点进入 DFS(G,i)</li>
+<li>DFS 函数： <br>1. 打印进入 DFS 的节点并设置为访问 <br>2. 遍历 j
+(行)所有节点，当 i 和 j 有关系且未访问的节点进入 DFS(G,j)</li>
+</ol>
+<h3 id="邻接表">邻接表</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Vertex</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> data;</span><br><span class="line">    <span class="type">bool</span> visited;</span><br><span class="line">    list&lt;Vertex*&gt; edge;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Creat</span><span class="params">(vector&lt;Vertex&gt;&amp; G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> vertex_num; cin &gt;&gt; vertex_num;</span><br><span class="line">    <span class="type">int</span> edge_num; cin &gt;&gt; edge_num;</span><br><span class="line"></span><br><span class="line">    Vertex temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vertex_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; temp.data;</span><br><span class="line">        temp.visited = <span class="literal">false</span>;</span><br><span class="line">        G.<span class="built_in">push_back</span>(temp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> v1, v2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span> * edge_num; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">        G[v1].edge.<span class="built_in">push_back</span>(&amp;G[v2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Vertex* <span class="title">next_vertex</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">return</span> *iiter;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (vertex != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; vertex-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        vertex-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">        <span class="built_in">DFS</span>(<span class="built_in">next_vertex</span>(vertex));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_level</span><span class="params">(queue&lt;Vertex*&gt;&amp; queue, Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iiter = vertex-&gt;edge.<span class="built_in">begin</span>(); iiter != vertex-&gt;edge.<span class="built_in">end</span>(); iiter++)</span><br><span class="line">        <span class="keyword">if</span> ((*iiter)-&gt;visited == <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            (*iiter)-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">            queue.<span class="built_in">push</span>((*iiter));</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS</span><span class="params">(Vertex* vertex)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;Vertex*&gt; queue;</span><br><span class="line">    queue.<span class="built_in">push</span>(vertex);</span><br><span class="line">    <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; queue.<span class="built_in">front</span>()-&gt;data &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        queue.<span class="built_in">front</span>()-&gt;visited = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">get_level</span>(queue, queue.<span class="built_in">front</span>());</span><br><span class="line">        queue.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 9 15 A B C D E F G H I 0 1 0 5 1 0 1 2 1 6 1 8 2 1 2 3 2 8 3 2 3 4 3 6 3 7 3 8 4 3 4 5 4 7 5 0 5 4 5 6 6 1 6 3 6 5 6 7 7 3 7 4 7 6 8 1 8 2 8 3</span></span><br><span class="line">    vector&lt;Vertex&gt; G;</span><br><span class="line">    <span class="built_in">Creat</span>(G);</span><br><span class="line">    <span class="comment">//每次只能运行一个</span></span><br><span class="line">    <span class="comment">//DFS(&amp;G[0]);</span></span><br><span class="line">    <span class="built_in">BFS</span>(&amp;G[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="邻接表的深度遍历">邻接表的深度遍历</h4>
+<p>·只要顶点不为空，打印顶点并设置为访问过；将下一个顶点进入该函数</p>
+<h4 id="邻接表的广度遍历">邻接表的广度遍历</h4>
+<ol type="1">
+<li>创建队列</li>
+<li>第一个顶点入队</li>
+<li>队不为空，执行下述操作
+<ol type="1">
+<li>取队首顶点</li>
+<li>打印队首顶点并设置为访问过</li>
+<li>获得下一层顶点</li>
+<li>队首出队</li>
+</ol></li>
+</ol>
+<h4 id="next_node">next_node</h4>
+<p>查链表，找到未访问顶点；设置为访问，返回该顶点</p>
+<h4 id="get_level">get_level</h4>
+<p>查链表，找到未访问顶点；设置为访问，将该顶点入队</p>
+<h2 id="排序">排序</h2>
+<h3 id="快排">快排</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (begin &lt; end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> sbit = begin;</span><br><span class="line">        <span class="type">int</span> pivot = arry[end];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = begin; j &lt; end; j++)</span><br><span class="line">            <span class="keyword">if</span> (arry[j] &lt; pivot)</span><br><span class="line">              &#123;<span class="built_in">swap</span>(arry[j], arry[sbit]); sbit++;&#125;</span><br><span class="line">              <span class="comment">//每个数字与pivot比较，较小的与sbit交换</span></span><br><span class="line">              <span class="comment">//将pivot与sbit交换</span></span><br><span class="line">        <span class="built_in">swap</span>(arry[sbit], arry[end]);</span><br><span class="line">        <span class="built_in">sort</span>(arry, begin, sbit - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">sort</span>(arry, sbit + <span class="number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">8</span>] = &#123; <span class="number">27</span>, <span class="number">13</span>, <span class="number">65</span>, <span class="number">8</span>, <span class="number">45</span>, <span class="number">3</span>, <span class="number">81</span>, <span class="number">72</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">0</span>, <span class="number">7</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="堆排">堆排</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">max_heap</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> begin, <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> root = begin;</span><br><span class="line">    <span class="type">int</span> left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[right] &amp;&amp; right &lt;= end) left++;</span><br><span class="line">        <span class="keyword">if</span> (arry[left] &lt; arry[root]) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">swap</span>(arry[left], arry[root]);</span><br><span class="line">            root = left;</span><br><span class="line">            left = root * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">            right = root * <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(<span class="type">int</span> arry[], <span class="type">int</span> end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, i, end);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = end; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">swap</span>(arry[<span class="number">0</span>], arry[i]);</span><br><span class="line">        <span class="built_in">max_heap</span>(arry, <span class="number">0</span>, i<span class="number">-1</span> );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> arry[<span class="number">11</span>] = &#123; <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">16</span> &#125;;</span><br><span class="line">    <span class="built_in">sort</span>(arry, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li>堆排序</li>
+<li>得最大堆的方法：
+<ol type="1">
+<li>范围：从 非叶子节点 到 根节点<br>
+</li>
+<li>调整对象：循环因子 到 表</li>
+</ol></li>
+<li>排序的方法：
+<ol type="1">
+<li>范围：从 表尾 到 根节点前</li>
+<li>调整对象：无序首 到 无序尾</li>
+</ol></li>
+<li>维持堆的方法：</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Computer Science</tag>
       </tags>
   </entry>
   <entry>
@@ -6044,6 +6026,393 @@ Modulation）
 ]]></content>
   </entry>
   <entry>
+    <title>电子学笔记</title>
+    <url>/2022/02/21/08-25-17/</url>
+    <content><![CDATA[<h1 id="电子学">电子学</h1>
+<h3 id="基本概念">基本概念</h3>
+<p>组态：</p>
+<ul>
+<li>定义：晶体管接入电路的方法（晶体管接入电路的形态）。</li>
+<li>种类：共基组态（共基极的接入方法）、共射组态和共集组态</li>
+<li>F&amp;Q：
+<ul>
+<li>共"的含义——共在组态的概念中指端口共用。
+<ul>
+<li>进一步解释端口共用："将 BJT
+晶体管看作一个双端口网络模型进行分析时，需要输入输出各两个端口，而晶体管有
+3 个端口，因此需要一个端口共用。"</li>
+</ul></li>
+<li>在组态概念下我们要讨论的问题是什么：
+<ul>
+<li>首先明确组态概念下讨论的是晶体管本身的伏安特性，谈论组态时是不含不涵盖除晶体管之外的其他元器件的。</li>
+<li>不同组态下晶体管展现出的不同的输入输出特性（伏安特性）是我们研究的重点</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>电路负载线：</p>
+<ul>
+<li>定义：电路负载线表征电路对元器件施加的约束，这个约束表现为一种伏安关系</li>
+<li>方法：负载线可以由基本的电路定律得到（如基尔霍夫定律）</li>
+<li>tips：使用电路定律得到的负载线公式可以整理成针对于某一负载伏安关系的一次函数:
+<span class="math inline">\(i=k v+b\)</span></li>
+</ul>
+<p>器件的伏安特性与</p>
+<p>耦合：</p>
+<ul>
+<li>定义：耦合就是连接的意思</li>
+<li>耦合电容：晶体管电路中的耦合电容起到连接直流源与交流源的作用</li>
+</ul>
+<p>偏置与静态工作点：</p>
+<ul>
+<li><p>偏置的含义：偏置是一种利用直流电压为电路设置固定直流电流和电压的广义称谓</p></li>
+<li><p>讨论偏置时的研究对象我们的研究对象不是电子元器件，而是某一电路</p></li>
+<li><p>偏置操作不但在"电路网络（黑箱）"外加入了直流电源，而且配合了电阻器件进行约束。</p>
+<ul>
+<li>以晶体管的偏置为例：直流电源与电阻一起构成了晶体管电路，该对晶体管工作范围进行了约束，这种约束可以使用负载线来表示，并且可以通过数学形式变化将负载线与晶体管的输入输出特征曲线放在同一坐标轴下得到一个交点，称为静态工作点</li>
+</ul></li>
+<li><p>静态工作点的含义：</p>
+<ul>
+<li>偏置时设置的固定的电流与电压被称为静态工作点，标记为 Q</li>
+<li>静态工作点由元器件伏安特性和电路伏安约束共同确定，对于特定的器件，静态工作点仅由电路的配置决定。</li>
+<li>对于晶体管，配置不同的静态工作点有两个目标
+<ul>
+<li>第一个目标时让晶体管工作在特定的状态，在模拟电子技术中我们希望让晶体管工作在放大的工作状态</li>
+<li>第二个目标是针对线性的放大工作范围，我们还要挑选一个合适的位置，不能使得放大的信号失真</li>
+</ul></li>
+</ul></li>
+<li><p>晶体管放大要求（偏置要求）</p>
+<ul>
+<li><p>输入电压应该超过晶体管导通电压。</p>
+<p>The input voltage should exceed <strong>cut-in voltage</strong> for
+the transistor to be <strong>ON</strong>.</p></li>
+<li><p>BJT应该在有源区，作为一个放大器。</p>
+<p>The BJT should be in the <strong>active region</strong>, to be
+operated as an <strong>amplifier</strong>.</p></li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\begin{gather*}
+\begin{aligned}
+I_C&amp;=I_{\sf{多子电流}}+I_{\sf{少子电流}}\\
+   &amp;=\alpha I_E+I_{CBO}\\
+   &amp;=\alpha (I_B+I_C)+I_{CBO}\\
+\end{aligned}
+\Rightarrow
+I_C=\frac{\alpha}{1-\alpha}I_B+\frac{1}{1-\alpha}I_{CBO}=\beta
+I_B+I_{CEO}
+\end{gather*}
+\]</span> <span class="math inline">\(I_E=I_se^{v_{BE}/V_T}\)</span></p>
+<p><span class="math inline">\(I_C=\alpha I_E+I_{CBO}\)</span></p>
+<h3 id="稳定化stabilization">稳定化（Stabilization）</h3>
+<p>为了让晶体管</p>
+<blockquote>
+<p>使操作点独立于温度变化或晶体管参数变化的过程被称为稳定。</p>
+<p>The process of making the operating point independent of temperature
+changes or variations in transistor parameters is known as
+<strong>Stabilization</strong>.</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>电子学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电磁场与电磁波</title>
+    <url>/2022/09/28/14-52-54/</url>
+    <content><![CDATA[<h2 id="矢量分析">矢量分析</h2>
+<h3 id="坐标系">坐标系</h3>
+<p>基本正交坐标系的度量系数 <span class="math inline">\(h\)</span></p>
+<table>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 26%">
+<col style="width: 27%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>坐标系关系</th>
+<th>直角坐标系（<span class="math inline">\(x,y,z\)</span>）</th>
+<th>柱坐标系（<span class="math inline">\(r,\phi,z\)</span>）</th>
+<th>球坐标系（<span class="math inline">\(R,\theta,\phi\)</span>）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(h1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(h2\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(r\)</span></td>
+<td><span class="math inline">\(R\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(h3\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(Rsin\theta\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="矢量微积分中的微分元">矢量微积分中的微分元</h3>
+<ol type="1">
+<li>线微元：<span class="math inline">\(d\vec{l} =
+\vec{a_1}(h_1{a_{u_{1}}})+\vec{a_2}(h_2{a_{u_{2}}})+\vec{a_3}(h_3{a_{u_{3}}})\)</span><br>
+</li>
+<li>面微元：<span class="math inline">\(d\vec{s} =
+\vec{a_n}ds\)</span>，其中 <span class="math inline">\(\vec{a_n}\)</span> 是面积 <span class="math inline">\(s\)</span> 的单位法向量
+<ul>
+<li><span class="math inline">\(ds_1 = h_2h_3du_2du_3\)</span></li>
+<li><span class="math inline">\(ds_2 = h_1h_3du_1du_3\)</span></li>
+<li><span class="math inline">\(ds_3 = h_1h_2du_1du_2\)</span></li>
+</ul></li>
+<li>体微元：<span class="math inline">\(dv =
+h_1h_2h_3du_1du_2du_3\)</span></li>
+</ol>
+<h3 id="场函数的特性描述">场函数的特性描述</h3>
+<p>标量场梯度：对于标量场 <span class="math inline">\(V(u_1,u_2,u_3)\)</span></p>
+<ul>
+<li>梯度定义式： <span class="math inline">\(\vec{\nabla} =
+\vec{a_n}\frac{dV}{dn}\)</span></li>
+<li>梯度计算式：<span class="math inline">\(\vec{\nabla} V =
+\left(\vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1} +
+\vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
+\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}\right)V\)</span></li>
+<li>标量场方向导数：<span class="math inline">\(dV/dl = \vec{\nabla} V
+\cdot \vec{a_l}\)</span></li>
+</ul>
+<p>矢量场的散度：对于矢量场 <span class="math inline">\(\vec{A} =
+\vec{a_1}A_1 + \vec{a_2}A_2 + \vec{a_3}A_3\)</span></p>
+<ul>
+<li>散度定义式：<span class="math inline">\(div \vec{A} = \lim_{\Delta
+v\rightarrow0}{\frac{\oint_s\vec{A}d\vec{s}}{\Delta v}}\)</span></li>
+<li>散度计算式：<span class="math inline">\(div \vec{A} = \vec{\nabla}
+\cdot \vec{A}\)</span></li>
+<li>散度定理：<span class="math inline">\(\oint_s\vec{A}\,d\vec{s} =
+\int_v \vec{\nabla} \cdot \vec{A} \,dv\)</span></li>
+</ul>
+<p>矢量场的旋度：</p>
+<ul>
+<li>旋度的定义式：<span class="math inline">\(curl \vec{A} =
+\lim_{\Delta
+s\rightarrow0}{\left[\frac{\vec{a_n}\oint_c\vec{A}d\vec{l}}{\Delta
+s}\right]_{max}}\)</span><br>
+</li>
+<li>旋度的计算式：<span class="math inline">\(curl \vec{A} =
+\vec{\nabla} \times \vec{A}\)</span></li>
+<li>斯托克斯公式：<span class="math inline">\(\int_s \vec{\nabla} \times
+\vec{A} \,d\vec{s} = \oint_c\vec{A}\,d\vec{l}\)</span></li>
+</ul>
+<p>恒等式：</p>
+<ul>
+<li><span class="math inline">\(\vec{\nabla} \times (\vec{\nabla} V) =
+0\)</span></li>
+<li><span class="math inline">\(\vec{\nabla} \cdot (\vec{\nabla} \times
+\vec{A}) = 0\)</span></li>
+</ul>
+<p>亥姆霍兹定律：如果一个矢量场的散度和旋度处处都已经给定，那么这个矢量场（矢量点函数）就确定了，最多附加一个常数。</p>
+<h3 id="静电场">静电场</h3>
+<h4 id="真空静电学基本公理">真空静电学基本公理：</h4>
+<p><span class="math display">\[
+\vec{\nabla} \cdot \vec{E} = \frac{\rho}{\varepsilon_0}\\
+\vec{\nabla} \times \vec{E} =0
+\]</span></p>
+<h4 id="高斯定理">高斯定理：</h4>
+<p>对场强的散度描述可以推出高斯定理 <span class="math display">\[
+\oint_s\vec{E}\,d\vec{s} = \int_v\vec{\nabla} \cdot \vec{E} \,dv= \int_v
+\frac{\rho}{\varepsilon_0} \,dv = \frac{Q}{\varepsilon_0}
+\]</span></p>
+<h4 id="基尔霍夫定律">基尔霍夫定律：</h4>
+<p>对场强的旋度描述可以推出基尔霍夫定律 <span class="math display">\[
+\oint_c\vec{E}\,d\vec{l} = \int_s \vec{\nabla} \times \vec{E} \,d\vec{s}
+=  \int_s 0 \,d\vec{s} = 0
+\]</span></p>
+<h4 id="场强计算">场强计算：</h4>
+<ol type="1">
+<li><p>静止在无界真空中的单个点电荷 <span class="math inline">\(q\)</span> 的场强计算：</p>
+<ul>
+<li><p>点电荷的位置矢量为 <span class="math inline">\(\vec{0}\)</span>
+即 <span class="math inline">\(q\)</span> 位于坐标原点： <span class="math display">\[
+\oint_s\vec{E}\,d\vec{s} = E_R(4\pi R^2) = \frac{q}{\varepsilon_0}\\
+\Downarrow\\
+\vec{E} = \vec{a_R}E_R=\vec{a_R}\frac{q}{4\pi \varepsilon_0R^2}
+\]</span></p></li>
+<li><p>点电荷的位置矢量为 <span class="math inline">\(\vec{R&#39;}\)</span> <span class="math display">\[
+\vec{E} = \frac{\vec{R}-\vec{R&#39;}}{|\vec{R}-\vec{R&#39;}|} \cdot
+\frac{q}{4\pi \varepsilon_0 |\vec{R}-\vec{R&#39;}|^2} = \frac{1}{4\pi
+\varepsilon_0} \cdot \frac{q(\vec{R}-\vec{R&#39;})}{
+|\vec{R}-\vec{R&#39;}|^3}
+\]</span></p></li>
+</ul></li>
+<li><p>电偶极子：</p>
+<ul>
+<li>定义电荷量 <span class="math inline">\(q\)</span> 与矢量 <span class="math inline">\(d\)</span> （从 <span class="math inline">\(-q\)</span> 到 <span class="math inline">\(+q\)</span> ）的乘积称为电偶极矩 <span class="math inline">\(p\)</span> <span class="math display">\[
+\vec{E} = \frac{p}{4\pi \varepsilon_0 R^3} (\vec{a_R}2cos\theta +
+\vec{a_\theta}sin\theta)
+\]</span></li>
+</ul></li>
+<li><p>离散电荷系统：</p>
+<ul>
+<li><span class="math display">\[
+\vec{E} = \frac{1}{4\pi \varepsilon_0} \cdot
+\sum_{k=1}^n\frac{k(\vec{R}-\vec{R&#39;_k})}{
+|\vec{R}-\vec{R&#39;_k}|^3}
+\]</span></li>
+</ul></li>
+<li><p>连续电荷系统：</p>
+<ul>
+<li><p>先微分：<span class="math inline">\(Q = \rho\,dv&#39;\)</span>
+（此处可以采用不同的微分方式，如面微分或者线微分） <span class="math display">\[
+d\vec{E} = \vec{a_R}dE_R=\vec{a_R}\frac{\rho\,dv&#39;}{4\pi
+\varepsilon_0R^2}
+\]</span></p></li>
+<li><p>后积分：其中 <span class="math inline">\(\vec{a_R} =
+/R^3\)</span> <span class="math display">\[
+\vec{E} = \frac{1}{4\pi
+\varepsilon_0}\int_{v&#39;}\frac{\vec{R}\,\rho}{R^3}\,dv&#39;
+\]</span></p></li>
+</ul></li>
+</ol>
+<h4 id="电位计算">电位计算：</h4>
+<ol type="1">
+<li><p>引入：由零恒等式的推论：一个无旋矢量场总可以写成一个标量场的梯度，由此可以使用场强来定义出电位：
+<span class="math display">\[
+\vec{E} = -\vec{\nabla} V
+\]</span> 电位的物理意义与功联系： <span class="math display">\[
+\frac{W}{q} = -\int^{P_2}_{P_1}\vec{E}\cdot d\vec{l} = V_{P_2}-V_{P_1}
+\]</span></p></li>
+<li><p>单个点电荷的电位（以无限远处作为零电位） <span class="math display">\[
+V = -\int^R_\infty \left( \vec{a_R} \frac{q}{4\pi \varepsilon_0R^2}
+\right) \cdot \vec{a_R} dR\\
+\Downarrow\\
+V = \frac{q}{4\pi \varepsilon_0R}
+\]</span></p></li>
+<li><p>离散点电荷系统： $$</p>
+<p>$$</p></li>
+<li><p>电偶极子： <span class="math display">\[
+V = \frac{\vec{p} \cdot \vec{a_R}}{4\pi \varepsilon_0R^2}
+\]</span></p></li>
+</ol>
+<h4 id="静电场中的导体">静电场中的导体</h4>
+<ol type="1">
+<li><p>研究内容：静电场中的导体内部和表面的电荷分布</p></li>
+<li><p>使用高斯定理可知：导体内部不存在电荷分布 <span class="math display">\[
+\rho = 0\\
+\vec{E} = 0
+\]</span></p></li>
+<li><p>导体表面场强：</p>
+<ol type="1">
+<li>切向场强：使用场强的旋度描述可知为 <span class="math inline">\(0\)</span></li>
+<li>法向场强：使用高斯定理：<span class="math inline">\(\vec{E_n} =
+\rho_S/\varepsilon_0\)</span></li>
+</ol>
+<p><span class="math display">\[
+\vec{E_t} = 0\\
+\vec{E_n} = \frac{\rho_S}{\varepsilon_0}
+\]</span></p></li>
+</ol>
+<h4 id="静电场中的电介质">静电场中的电介质</h4>
+<p>首先为了描述极化电介质引入了极化矢量： <span class="math display">\[
+\vec{p} =  \lim_{\Delta v\rightarrow0} \frac{\sum_{k=1}^{n\Delta
+v}\vec{p_k}}{\Delta v}
+\]</span>
+通过电位可以把极化电介质使用一个等效极化面电荷密度和一个等效极化体电荷密度替代：
+<span class="math display">\[
+\rho_{ps} = \vec{P} \cdot \vec{a_n}\\
+\rho_p = \vec{\nabla} \cdot \vec{P}
+\]</span> 由于极化电介质会引起等效体电荷密度 <span class="math inline">\(\rho_p\)</span>，所以电介质中给定源产生的电场强度将与真空中不同。</p>
+<p>计算真空中给定源产生的场强的方法是应用静电学基本公理：<span class="math inline">\(\vec{\nabla} \cdot \vec{E} =
+\frac{\rho}{\varepsilon_0}\)</span>，但这个式子只适用于真空环境中，在电介质中必须要修改这个式子：
+<span class="math display">\[
+\vec{\nabla} \cdot \vec{E} = \frac{\rho+\rho_p}{\varepsilon_0}
+\]</span> 为了便于后面的分析，我们在此处还引入了一个新的概念：电通密度
+<span class="math inline">\(\vec{D} =
+\varepsilon_0\vec{E}+\vec{P}\)</span></p>
+<p>使用电通密度来描述电介质中的源产生的电场的好处是：不需要涉及极化矢量和极化电荷密度：
+<span class="math display">\[
+\vec{\nabla} \cdot \vec{D} = \rho
+\]</span>
+当电介质是线性且各向同性的时候，极化强度正比于电场强度，由上面电通密度的定义式可以进一步推出此条件下非常有用的结论：
+<span class="math display">\[
+\vec{D} = \varepsilon\vec{E} = \varepsilon_r\varepsilon_0\vec{E}
+\]</span></p>
+<hr>
+<h3 id="标量场梯度">标量场梯度</h3>
+<h4 id="文字理解">文字理解：</h4>
+<ul>
+<li>导数：函数某一点的导数是过该点切线的斜率</li>
+<li>偏导数：多变量函数在直角坐标系中沿某一坐标轴方向上的导数</li>
+<li>方向导数：函数在任意方向上的导数是方向导数
+<ul>
+<li>“任意方向” 中方向使用矢量来描述而不是坐标轴平面</li>
+<li>用来描述方向使用的矢量可以分解在坐标轴方向上</li>
+</ul></li>
+<li>梯度：标量场中有许多不同方向的方向导数，其中数值最大的方向上的方向导数称为梯度</li>
+</ul>
+<h4 id="数学描述">数学描述：</h4>
+<ul>
+<li>空间中有一<strong>标量函数</strong> <span class="math inline">\(V(u_1,u_2,u_3)\)</span></li>
+<li>若其刻画的标量场在空间中分布不均匀，那么当 <span class="math inline">\(V\)</span>
+发生微小变化时，变化方向不同，其大小也不同。</li>
+<li>由此我们得到<strong>方向导数</strong>的定义：<span class="math inline">\(dV/dl\)</span> ，方向导数是一个标量</li>
+<li>当 <span class="math inline">\(d\vec{l}\)</span>
+方向发生变化并使方向导数值取最大，即该方向上有<strong>最大变化率</strong>时，设此时方向：<span class="math inline">\(d\vec{l}=d\vec{n}\)</span></li>
+<li>得到<strong>梯度</strong>定义：</li>
+</ul>
+<p><span class="math display">\[
+\nabla V = \vec{a_n}\frac{dV}{dn}
+\]</span></p>
+<h4 id="实用公式">实用公式：</h4>
+<ul>
+<li><p>使用梯度来表示方向导数： <span class="math display">\[
+\frac{dV}{dl}=\frac{dV}{dn}\frac{dn}{dl}=\frac{dV}{dn}cos\alpha=\frac{dV}{dn}\vec{a_n}\cdot\vec{a_l}=\nabla
+V\cdot\vec{a_l}
+\]</span> 疑问：为什么 <span class="math inline">\(\frac{dn}{dl}=cos\alpha\)</span></p></li>
+<li><p>将方向矢量分解到坐标系表示的梯度公式（使用梯度公式）： <span class="math display">\[
+\nabla V = \left(\vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1}
++  \vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
+\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}\right)V
+\]</span></p></li>
+<li><p>微分算子 <span class="math inline">\(\nabla\)</span> <span class="math display">\[
+\nabla = \vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1}
++  \vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
+\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}
+\]</span></p></li>
+</ul>
+<h3 id="矢量场散度和旋度">矢量场散度和旋度</h3>
+<h4 id="文字理解-1">文字理解：</h4>
+<ul>
+<li>标量场空间导数得到梯度的概念</li>
+<li>矢量场空间导数得到散度和旋度两个概念</li>
+</ul>
+<h4 id="数学描述-1">数学描述：</h4>
+<ul>
+<li><p>通量：即矢量场中矢量的面积积分：<span class="math inline">\(\oint_S\vec{A}\,d\vec{s}\)</span></p></li>
+<li><p>散度： 包围某点的体积趋于 <span class="math inline">\(0\)</span>
+时，单位体积内流出的 <span class="math inline">\(\vec{A}\)</span>
+的<strong>净通量</strong>： <span class="math display">\[
+div\vec{A} = \lim_{\Delta
+v\rightarrow0}{\frac{\oint_S\vec{A}\,d\vec{s}}{\Delta v}}
+\]</span></p></li>
+</ul>
+<h4 id="实用公式-1">实用公式：</h4>
+<ul>
+<li><p>使用矢量微分算子表示散度 <span class="math display">\[
+\nabla \cdot \vec{A} = div\vec{A}
+\]</span></p></li>
+<li><p>正交曲线坐标系下的公式 <span class="math display">\[
+div\vec{A}=\nabla \cdot \vec{A} = \frac{1}{h_1h_2h_3}
+\]</span></p></li>
+</ul>
+<p>&lt;iframe height='500' scrolling='100'
+src='https://www.bilibili.com/video/BV1or4y1M78k/'</p>
+]]></content>
+  </entry>
+  <entry>
     <title>电子学</title>
     <url>/2022/02/27/16-41-33/</url>
     <content><![CDATA[<h1 id="电子学">电子学</h1>
@@ -6425,311 +6794,6 @@ A(j\omega_0) =29\end{gather}
       </tags>
   </entry>
   <entry>
-    <title>电磁场与电磁波</title>
-    <url>/2022/09/28/14-52-54/</url>
-    <content><![CDATA[<h2 id="矢量分析">矢量分析</h2>
-<h3 id="坐标系">坐标系</h3>
-<p>基本正交坐标系的度量系数 <span class="math inline">\(h\)</span></p>
-<table>
-<colgroup>
-<col style="width: 12%">
-<col style="width: 26%">
-<col style="width: 27%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>坐标系关系</th>
-<th>直角坐标系（<span class="math inline">\(x,y,z\)</span>）</th>
-<th>柱坐标系（<span class="math inline">\(r,\phi,z\)</span>）</th>
-<th>球坐标系（<span class="math inline">\(R,\theta,\phi\)</span>）</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(h1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(h2\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(r\)</span></td>
-<td><span class="math inline">\(R\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(h3\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(Rsin\theta\)</span></td>
-</tr>
-</tbody>
-</table>
-<h3 id="矢量微积分中的微分元">矢量微积分中的微分元</h3>
-<ol type="1">
-<li>线微元：<span class="math inline">\(d\vec{l} =
-\vec{a_1}(h_1{a_{u_{1}}})+\vec{a_2}(h_2{a_{u_{2}}})+\vec{a_3}(h_3{a_{u_{3}}})\)</span><br>
-</li>
-<li>面微元：<span class="math inline">\(d\vec{s} =
-\vec{a_n}ds\)</span>，其中 <span class="math inline">\(\vec{a_n}\)</span> 是面积 <span class="math inline">\(s\)</span> 的单位法向量
-<ul>
-<li><span class="math inline">\(ds_1 = h_2h_3du_2du_3\)</span></li>
-<li><span class="math inline">\(ds_2 = h_1h_3du_1du_3\)</span></li>
-<li><span class="math inline">\(ds_3 = h_1h_2du_1du_2\)</span></li>
-</ul></li>
-<li>体微元：<span class="math inline">\(dv =
-h_1h_2h_3du_1du_2du_3\)</span></li>
-</ol>
-<h3 id="场函数的特性描述">场函数的特性描述</h3>
-<p>标量场梯度：对于标量场 <span class="math inline">\(V(u_1,u_2,u_3)\)</span></p>
-<ul>
-<li>梯度定义式： <span class="math inline">\(\vec{\nabla} =
-\vec{a_n}\frac{dV}{dn}\)</span></li>
-<li>梯度计算式：<span class="math inline">\(\vec{\nabla} V =
-\left(\vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1} +
-\vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
-\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}\right)V\)</span></li>
-<li>标量场方向导数：<span class="math inline">\(dV/dl = \vec{\nabla} V
-\cdot \vec{a_l}\)</span></li>
-</ul>
-<p>矢量场的散度：对于矢量场 <span class="math inline">\(\vec{A} =
-\vec{a_1}A_1 + \vec{a_2}A_2 + \vec{a_3}A_3\)</span></p>
-<ul>
-<li>散度定义式：<span class="math inline">\(div \vec{A} = \lim_{\Delta
-v\rightarrow0}{\frac{\oint_s\vec{A}d\vec{s}}{\Delta v}}\)</span></li>
-<li>散度计算式：<span class="math inline">\(div \vec{A} = \vec{\nabla}
-\cdot \vec{A}\)</span></li>
-<li>散度定理：<span class="math inline">\(\oint_s\vec{A}\,d\vec{s} =
-\int_v \vec{\nabla} \cdot \vec{A} \,dv\)</span></li>
-</ul>
-<p>矢量场的旋度：</p>
-<ul>
-<li>旋度的定义式：<span class="math inline">\(curl \vec{A} =
-\lim_{\Delta
-s\rightarrow0}{\left[\frac{\vec{a_n}\oint_c\vec{A}d\vec{l}}{\Delta
-s}\right]_{max}}\)</span><br>
-</li>
-<li>旋度的计算式：<span class="math inline">\(curl \vec{A} =
-\vec{\nabla} \times \vec{A}\)</span></li>
-<li>斯托克斯公式：<span class="math inline">\(\int_s \vec{\nabla} \times
-\vec{A} \,d\vec{s} = \oint_c\vec{A}\,d\vec{l}\)</span></li>
-</ul>
-<p>恒等式：</p>
-<ul>
-<li><span class="math inline">\(\vec{\nabla} \times (\vec{\nabla} V) =
-0\)</span></li>
-<li><span class="math inline">\(\vec{\nabla} \cdot (\vec{\nabla} \times
-\vec{A}) = 0\)</span></li>
-</ul>
-<p>亥姆霍兹定律：如果一个矢量场的散度和旋度处处都已经给定，那么这个矢量场（矢量点函数）就确定了，最多附加一个常数。</p>
-<h3 id="静电场">静电场</h3>
-<h4 id="真空静电学基本公理">真空静电学基本公理：</h4>
-<p><span class="math display">\[
-\vec{\nabla} \cdot \vec{E} = \frac{\rho}{\varepsilon_0}\\
-\vec{\nabla} \times \vec{E} =0
-\]</span></p>
-<h4 id="高斯定理">高斯定理：</h4>
-<p>对场强的散度描述可以推出高斯定理 <span class="math display">\[
-\oint_s\vec{E}\,d\vec{s} = \int_v\vec{\nabla} \cdot \vec{E} \,dv= \int_v
-\frac{\rho}{\varepsilon_0} \,dv = \frac{Q}{\varepsilon_0}
-\]</span></p>
-<h4 id="基尔霍夫定律">基尔霍夫定律：</h4>
-<p>对场强的旋度描述可以推出基尔霍夫定律 <span class="math display">\[
-\oint_c\vec{E}\,d\vec{l} = \int_s \vec{\nabla} \times \vec{E} \,d\vec{s}
-=  \int_s 0 \,d\vec{s} = 0
-\]</span></p>
-<h4 id="场强计算">场强计算：</h4>
-<ol type="1">
-<li><p>静止在无界真空中的单个点电荷 <span class="math inline">\(q\)</span> 的场强计算：</p>
-<ul>
-<li><p>点电荷的位置矢量为 <span class="math inline">\(\vec{0}\)</span>
-即 <span class="math inline">\(q\)</span> 位于坐标原点： <span class="math display">\[
-\oint_s\vec{E}\,d\vec{s} = E_R(4\pi R^2) = \frac{q}{\varepsilon_0}\\
-\Downarrow\\
-\vec{E} = \vec{a_R}E_R=\vec{a_R}\frac{q}{4\pi \varepsilon_0R^2}
-\]</span></p></li>
-<li><p>点电荷的位置矢量为 <span class="math inline">\(\vec{R&#39;}\)</span> <span class="math display">\[
-\vec{E} = \frac{\vec{R}-\vec{R&#39;}}{|\vec{R}-\vec{R&#39;}|} \cdot
-\frac{q}{4\pi \varepsilon_0 |\vec{R}-\vec{R&#39;}|^2} = \frac{1}{4\pi
-\varepsilon_0} \cdot \frac{q(\vec{R}-\vec{R&#39;})}{
-|\vec{R}-\vec{R&#39;}|^3}
-\]</span></p></li>
-</ul></li>
-<li><p>电偶极子：</p>
-<ul>
-<li>定义电荷量 <span class="math inline">\(q\)</span> 与矢量 <span class="math inline">\(d\)</span> （从 <span class="math inline">\(-q\)</span> 到 <span class="math inline">\(+q\)</span> ）的乘积称为电偶极矩 <span class="math inline">\(p\)</span> <span class="math display">\[
-\vec{E} = \frac{p}{4\pi \varepsilon_0 R^3} (\vec{a_R}2cos\theta +
-\vec{a_\theta}sin\theta)
-\]</span></li>
-</ul></li>
-<li><p>离散电荷系统：</p>
-<ul>
-<li><span class="math display">\[
-\vec{E} = \frac{1}{4\pi \varepsilon_0} \cdot
-\sum_{k=1}^n\frac{k(\vec{R}-\vec{R&#39;_k})}{
-|\vec{R}-\vec{R&#39;_k}|^3}
-\]</span></li>
-</ul></li>
-<li><p>连续电荷系统：</p>
-<ul>
-<li><p>先微分：<span class="math inline">\(Q = \rho\,dv&#39;\)</span>
-（此处可以采用不同的微分方式，如面微分或者线微分） <span class="math display">\[
-d\vec{E} = \vec{a_R}dE_R=\vec{a_R}\frac{\rho\,dv&#39;}{4\pi
-\varepsilon_0R^2}
-\]</span></p></li>
-<li><p>后积分：其中 <span class="math inline">\(\vec{a_R} =
-/R^3\)</span> <span class="math display">\[
-\vec{E} = \frac{1}{4\pi
-\varepsilon_0}\int_{v&#39;}\frac{\vec{R}\,\rho}{R^3}\,dv&#39;
-\]</span></p></li>
-</ul></li>
-</ol>
-<h4 id="电位计算">电位计算：</h4>
-<ol type="1">
-<li><p>引入：由零恒等式的推论：一个无旋矢量场总可以写成一个标量场的梯度，由此可以使用场强来定义出电位：
-<span class="math display">\[
-\vec{E} = -\vec{\nabla} V
-\]</span> 电位的物理意义与功联系： <span class="math display">\[
-\frac{W}{q} = -\int^{P_2}_{P_1}\vec{E}\cdot d\vec{l} = V_{P_2}-V_{P_1}
-\]</span></p></li>
-<li><p>单个点电荷的电位（以无限远处作为零电位） <span class="math display">\[
-V = -\int^R_\infty \left( \vec{a_R} \frac{q}{4\pi \varepsilon_0R^2}
-\right) \cdot \vec{a_R} dR\\
-\Downarrow\\
-V = \frac{q}{4\pi \varepsilon_0R}
-\]</span></p></li>
-<li><p>离散点电荷系统： $$</p>
-<p>$$</p></li>
-<li><p>电偶极子： <span class="math display">\[
-V = \frac{\vec{p} \cdot \vec{a_R}}{4\pi \varepsilon_0R^2}
-\]</span></p></li>
-</ol>
-<h4 id="静电场中的导体">静电场中的导体</h4>
-<ol type="1">
-<li><p>研究内容：静电场中的导体内部和表面的电荷分布</p></li>
-<li><p>使用高斯定理可知：导体内部不存在电荷分布 <span class="math display">\[
-\rho = 0\\
-\vec{E} = 0
-\]</span></p></li>
-<li><p>导体表面场强：</p>
-<ol type="1">
-<li>切向场强：使用场强的旋度描述可知为 <span class="math inline">\(0\)</span></li>
-<li>法向场强：使用高斯定理：<span class="math inline">\(\vec{E_n} =
-\rho_S/\varepsilon_0\)</span></li>
-</ol>
-<p><span class="math display">\[
-\vec{E_t} = 0\\
-\vec{E_n} = \frac{\rho_S}{\varepsilon_0}
-\]</span></p></li>
-</ol>
-<h4 id="静电场中的电介质">静电场中的电介质</h4>
-<p>首先为了描述极化电介质引入了极化矢量： <span class="math display">\[
-\vec{p} =  \lim_{\Delta v\rightarrow0} \frac{\sum_{k=1}^{n\Delta
-v}\vec{p_k}}{\Delta v}
-\]</span>
-通过电位可以把极化电介质使用一个等效极化面电荷密度和一个等效极化体电荷密度替代：
-<span class="math display">\[
-\rho_{ps} = \vec{P} \cdot \vec{a_n}\\
-\rho_p = \vec{\nabla} \cdot \vec{P}
-\]</span> 由于极化电介质会引起等效体电荷密度 <span class="math inline">\(\rho_p\)</span>，所以电介质中给定源产生的电场强度将与真空中不同。</p>
-<p>计算真空中给定源产生的场强的方法是应用静电学基本公理：<span class="math inline">\(\vec{\nabla} \cdot \vec{E} =
-\frac{\rho}{\varepsilon_0}\)</span>，但这个式子只适用于真空环境中，在电介质中必须要修改这个式子：
-<span class="math display">\[
-\vec{\nabla} \cdot \vec{E} = \frac{\rho+\rho_p}{\varepsilon_0}
-\]</span> 为了便于后面的分析，我们在此处还引入了一个新的概念：电通密度
-<span class="math inline">\(\vec{D} =
-\varepsilon_0\vec{E}+\vec{P}\)</span></p>
-<p>使用电通密度来描述电介质中的源产生的电场的好处是：不需要涉及极化矢量和极化电荷密度：
-<span class="math display">\[
-\vec{\nabla} \cdot \vec{D} = \rho
-\]</span>
-当电介质是线性且各向同性的时候，极化强度正比于电场强度，由上面电通密度的定义式可以进一步推出此条件下非常有用的结论：
-<span class="math display">\[
-\vec{D} = \varepsilon\vec{E} = \varepsilon_r\varepsilon_0\vec{E}
-\]</span></p>
-<hr>
-<h3 id="标量场梯度">标量场梯度</h3>
-<h4 id="文字理解">文字理解：</h4>
-<ul>
-<li>导数：函数某一点的导数是过该点切线的斜率</li>
-<li>偏导数：多变量函数在直角坐标系中沿某一坐标轴方向上的导数</li>
-<li>方向导数：函数在任意方向上的导数是方向导数
-<ul>
-<li>“任意方向” 中方向使用矢量来描述而不是坐标轴平面</li>
-<li>用来描述方向使用的矢量可以分解在坐标轴方向上</li>
-</ul></li>
-<li>梯度：标量场中有许多不同方向的方向导数，其中数值最大的方向上的方向导数称为梯度</li>
-</ul>
-<h4 id="数学描述">数学描述：</h4>
-<ul>
-<li>空间中有一<strong>标量函数</strong> <span class="math inline">\(V(u_1,u_2,u_3)\)</span></li>
-<li>若其刻画的标量场在空间中分布不均匀，那么当 <span class="math inline">\(V\)</span>
-发生微小变化时，变化方向不同，其大小也不同。</li>
-<li>由此我们得到<strong>方向导数</strong>的定义：<span class="math inline">\(dV/dl\)</span> ，方向导数是一个标量</li>
-<li>当 <span class="math inline">\(d\vec{l}\)</span>
-方向发生变化并使方向导数值取最大，即该方向上有<strong>最大变化率</strong>时，设此时方向：<span class="math inline">\(d\vec{l}=d\vec{n}\)</span></li>
-<li>得到<strong>梯度</strong>定义：</li>
-</ul>
-<p><span class="math display">\[
-\nabla V = \vec{a_n}\frac{dV}{dn}
-\]</span></p>
-<h4 id="实用公式">实用公式：</h4>
-<ul>
-<li><p>使用梯度来表示方向导数： <span class="math display">\[
-\frac{dV}{dl}=\frac{dV}{dn}\frac{dn}{dl}=\frac{dV}{dn}cos\alpha=\frac{dV}{dn}\vec{a_n}\cdot\vec{a_l}=\nabla
-V\cdot\vec{a_l}
-\]</span> 疑问：为什么 <span class="math inline">\(\frac{dn}{dl}=cos\alpha\)</span></p></li>
-<li><p>将方向矢量分解到坐标系表示的梯度公式（使用梯度公式）： <span class="math display">\[
-\nabla V = \left(\vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1}
-+  \vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
-\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}\right)V
-\]</span></p></li>
-<li><p>微分算子 <span class="math inline">\(\nabla\)</span> <span class="math display">\[
-\nabla = \vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1}
-+  \vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
-\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}
-\]</span></p></li>
-</ul>
-<h3 id="矢量场散度和旋度">矢量场散度和旋度</h3>
-<h4 id="文字理解-1">文字理解：</h4>
-<ul>
-<li>标量场空间导数得到梯度的概念</li>
-<li>矢量场空间导数得到散度和旋度两个概念</li>
-</ul>
-<h4 id="数学描述-1">数学描述：</h4>
-<ul>
-<li><p>通量：即矢量场中矢量的面积积分：<span class="math inline">\(\oint_S\vec{A}\,d\vec{s}\)</span></p></li>
-<li><p>散度： 包围某点的体积趋于 <span class="math inline">\(0\)</span>
-时，单位体积内流出的 <span class="math inline">\(\vec{A}\)</span>
-的<strong>净通量</strong>： <span class="math display">\[
-div\vec{A} = \lim_{\Delta
-v\rightarrow0}{\frac{\oint_S\vec{A}\,d\vec{s}}{\Delta v}}
-\]</span></p></li>
-</ul>
-<h4 id="实用公式-1">实用公式：</h4>
-<ul>
-<li><p>使用矢量微分算子表示散度 <span class="math display">\[
-\nabla \cdot \vec{A} = div\vec{A}
-\]</span></p></li>
-<li><p>正交曲线坐标系下的公式 <span class="math display">\[
-div\vec{A}=\nabla \cdot \vec{A} = \frac{1}{h_1h_2h_3}
-\]</span></p></li>
-</ul>
-<p>&lt;iframe height='500' scrolling='100'
-src='https://www.bilibili.com/video/BV1or4y1M78k/'</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>电路基础</title>
-    <url>/2022/02/27/16-42-00/</url>
-    <content><![CDATA[
-]]></content>
-      <tags>
-        <tag>Electrical Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Matlab收集数据绘制箱型图</title>
     <url>/2022/02/25/08-07-35/</url>
     <content><![CDATA[<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%读取实验数据并绘制箱型图</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">##########################################################</span></span><br><span class="line"><span class="comment">使用手册：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">数据文档：(Data Text) 软件生成的文本文档，例如：qjy_q1-1_20210827181142。</span></span><br><span class="line"><span class="comment">数据文件夹：(Date File) 使用软件时创建的文件夹，例如：20210827；约定：数据文件夹的名称按“年月日”连续数字来命名，不按照约定命名可能导致读取异常。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">设置文件夹：</span></span><br><span class="line"><span class="comment">首先设置matlab的“当前文件夹”为包含“数据文件夹”的文件夹</span></span><br><span class="line"><span class="comment">根据提示输入“数据文件夹”名称</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">##########################################################</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line">prompt = <span class="string">&#x27;请输入数据文件夹名称：&#x27;</span>;</span><br><span class="line">str = input(prompt);</span><br><span class="line">DataFileName = sprintf(<span class="string">&#x27;%d&#x27;</span>,str);<span class="comment">%读入“数字”并转化为“文件夹名”</span></span><br><span class="line"></span><br><span class="line">stop_tag = <span class="built_in">length</span>(&#123;DataFileInf.name&#125;);<span class="comment">%先转化成元胞数组，然后统计元胞数量作为截至循环标签</span></span><br><span class="line"></span><br><span class="line">n=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> n+<span class="number">2</span>&lt;=stop_tag</span><br><span class="line">	DataText(n).Name=DataFileInf(n+<span class="number">2</span>).name;</span><br><span class="line"></span><br><span class="line">	userpath(DataFileInf(<span class="number">1</span>).folder);<span class="comment">%修改当前文件夹为“数据文件夹”</span></span><br><span class="line"></span><br><span class="line">	fileID = fopen(DataText(n).Name);</span><br><span class="line">	CellMidDatas = textscan(fileID,<span class="string">&#x27;%s %*[^\n]&#x27;</span>);<span class="comment">%以cell形式提取文件的第一列</span></span><br><span class="line">	fclose(fileID);</span><br><span class="line"></span><br><span class="line">	mid = CellMidDatas&#123;<span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line">	C_usfull_data = [mid(<span class="number">3</span>,<span class="number">1</span>),mid(<span class="number">8</span>,<span class="number">1</span>),mid(<span class="number">9</span>,<span class="number">1</span>),mid(<span class="number">10</span>,<span class="number">1</span>)];<span class="comment">%提取有用信息</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">==================</span></span><br><span class="line"><span class="comment">J_sc=mid(3,1);</span></span><br><span class="line"><span class="comment">V_oc=mid(8,1);</span></span><br><span class="line"><span class="comment">FF=mid(9,1);</span></span><br><span class="line"><span class="comment">Eta = mid(10,1);</span></span><br><span class="line"><span class="comment">===================</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line">	usfull_data_str = cell2mat(C_usfull_data);<span class="comment">%将元胞数组转化为普通数组(单引号字符串的数组形式会自动合并)</span></span><br><span class="line">	C_usfull_data_num = regexp(usfull_data_str,<span class="string">&#x27;\d*\.?\d*&#x27;</span>,<span class="string">&#x27;match&#x27;</span>);<span class="comment">%提取字符串中的数字并以元胞数组形式储存</span></span><br><span class="line">	usfull_data_num=string(C_usfull_data_num);<span class="comment">%将元胞数组转换为普通(双引号字符串)数组</span></span><br><span class="line">	usfull_data = str2double(usfull_data_num);<span class="comment">%将字符串转化为数字</span></span><br><span class="line">	Data(n,:) = usfull_data(<span class="number">1</span>,:);</span><br><span class="line">	n=n+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">J_sc = Data(:,<span class="number">1</span>);</span><br><span class="line">V_oc = Data(:,<span class="number">2</span>);</span><br><span class="line">FF = Data(:,<span class="number">3</span>);</span><br><span class="line">Eta = Data(:,<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">disp</span>(<span class="string">&#x27;统计数据完成&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -6738,6 +6802,15 @@ src='https://www.bilibili.com/video/BV1or4y1M78k/'</p>
 ]]></content>
       <tags>
         <tag>备忘笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电路基础</title>
+    <url>/2022/02/27/16-42-00/</url>
+    <content><![CDATA[
+]]></content>
+      <tags>
+        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
@@ -6870,6 +6943,113 @@ so\:TH0=0x24,TL0=0x00;
 ]]></content>
       <tags>
         <tag>电子设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逻辑设计基础</title>
+    <url>/2022/03/09/16-14-26/</url>
+    <content><![CDATA[<h1 id="logic-design">Logic Design</h1>
+<h3 id="数制">数制</h3>
+<p>数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中<strong>基数</strong>是指使用数码的个数，例如：二进制的基数为<code>2</code>，十进制的基数为<code>10</code>。<strong>位权</strong>是指数制某位所表示的数值权重的大小，例如：十进制数<code>123</code>，<code>1</code>的位权是<code>100</code>，<code>2</code>的位权是<code>10</code>，<code>3</code>的位权是<code>1</code>。二进制数<code>1011</code>，从左至右<code>1</code>、<code>0</code>、<code>1</code>、<code>1</code>的位权依次是<code>8</code>、<code>4</code>、<code>2</code>、<code>1</code>。常用的数制有<strong>二</strong>、<strong>八</strong>、<strong>十</strong>、<strong>十六</strong>四种进制，书写时可以在相应数值尾部添加字母<strong>B</strong>、<strong>O</strong>、<strong>D</strong>、<strong>H</strong>或者下标<strong>2</strong>、<strong>8</strong>、<strong>10</strong>、<strong>16</strong>进行标识，计算机<strong>传输和保存数据</strong>通常使用的是<strong>二进制</strong>。</p>
+<h3 id="码制">码制</h3>
+<p>码制是计算机存储、传输数据所使用的编码规则；其中原码、反码、补码是计算机设备保存数值类型数据的编码方式，ASCII
+与 Unicode 属于保存字符类型数据的编码格式；而 BCD
+编码、格雷码则主要用于设备之间的数据<strong>传输以及转换</strong>。</p>
+<blockquote>
+<p>BCD
+码的优点在于格式转换容易，十进制数值表达精度较高；缺点是增加了电路进行算术运算的复杂度，并且存储效率较低。</p>
+</blockquote>
+<h3 id="数字系统">数字系统</h3>
+<p>数字系统设计大致分为三个方面</p>
+<ul>
+<li>系统设计
+<ul>
+<li>系统设计是将一个数字系统划分为多个子系统进行设计。</li>
+</ul></li>
+<li>逻辑设计
+<ul>
+<li>逻辑设计是将多个逻辑功能块互联实现特定功能</li>
+</ul></li>
+<li>电路设计</li>
+</ul>
+<p>数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分析。开关电路有两种——组合电路和时序电路。</p>
+<p>开关电路分类：</p>
+<ul>
+<li>组合电路
+<ul>
+<li>组合电路中输出值仅与当前输入值有关</li>
+<li>组合电路的基本构成是逻辑门，逻辑设计就是将逻辑门相互连接起来以便将电路的输入信号转化为预期的输出信号。</li>
+</ul></li>
+<li>时序电路
+<ul>
+<li>时序电路中输出值不仅与当前输入值有关，也与之前的输入值有关；可以认为时序电路具有记忆功能</li>
+<li>时序电路的基本存储元件（存储之前的值）是触发器，触发器与逻辑门一起组成时序电路——如计数器和寄存器。</li>
+</ul></li>
+</ul>
+<h3 id="布尔代数">布尔代数</h3>
+<p>逻辑设计课程中我们使用二值布尔代数来设计开关电路。我们使用布尔变量来表示电路的输入和输出，其中布尔变量代表逻辑电路中的两种不同状态——</p>
+<p>普通代数中的<strong>交换律</strong>和<strong>结合律</strong>同样可以在布尔代数中使用。</p>
+<p>布尔代数中的交换律表明开关的位置（出现次序）不会影响最终结果，结合律表明开关导通的次序不会影响最终结果。</p>
+<p>在布尔代数中，分配律有两种形式：</p>
+<ul>
+<li><p>一种是普通的分配律：<span class="math inline">\(X(Y+Z)=XY+XZ\)</span></p>
+<p>​ 与运算可以分配在或运算上</p>
+<p>​ 去和括号内相乘</p></li>
+<li><p>另一种被称作第二分配律：<span class="math inline">\(X+(YZ)=(X+Y)(X+Z)\)</span></p>
+<p>​ 或运算可以分配在与运算上</p>
+<p>​ 去和括号内相加</p></li>
+</ul>
+<p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
+<h2 id="数字电路概念">数字电路概念</h2>
+<h3 id="高阻态">高阻态</h3>
+<p>高阻抗状态（<em>High
+impedance</em>）表示电路中的某个节点具有相对电路中其它点更高的阻抗，电路分析时通常将高阻态作为开路理解。即可以将其视为输出/输入电阻极大，极限状态可以认为是悬空（<em>断路</em>）的状态，高阻态通常使用字母<strong>Z</strong>表示。</p>
+<h3 id="三态门">三态门</h3>
+<p>数字电路中的三态逻辑（<em>Three-state
+logic</em>）是指其输出既可以是代表<code>0</code>和<code>1</code>的高低电平，也可以是其特有的高阻抗状态（<em>相当于隔断状态，电阻极大，类似于开路</em>）。</p>
+<p>具有高电平、低电平、高阻态三种状态的元器件称为三态器件，三态器件都通过一个控制使能端
+B
+来控制整个三态门电路的通断。当使能端高电平有效时，三态器件可以正常的<code>0</code>或<code>1</code>输出，当使能端低电平无效时，三态电路将会输出高阻态。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">输入端 A</th>
+<th style="text-align: left;">使能端 B</th>
+<th style="text-align: left;">输出端 C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>X</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Z</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="组合时序逻辑电路">组合/时序逻辑电路</h3>
+<ul>
+<li><strong>组合逻辑电路</strong>（<em>Combinational Logic
+Circuit</em>），其任一时刻的稳态输出仅与该时刻输入的变量取值有关，而与该时刻之前输入的变量取值无关。组合电路主要由各种逻辑门（<code>半加器</code>、<code>全加器</code>、<code>半减器</code>、<code>全减器</code>、<code>数据选择器</code>、<code>数据分配器</code>、<code>编码器</code>、<code>译码器</code>）组成，电路中没有记忆元件和反馈线。</li>
+<li><strong>时序逻辑电路</strong>（<em>Sequential Logic
+Circuit</em>）任意时刻的稳态输出不仅取决于当前输入，还与前一时刻输入的状态有关，换而言之，时序逻辑电路必须拥有特定的储存元件来保存前一次的输入状态。因此，时序逻辑电路除包含有组合逻辑电路以外，还必须含拥有存储信息能力的电路（<code>触发器</code>、<code>寄存器</code>、<code>计数器</code>）。</li>
+</ul>
+<h3 id="gpio">GPIO</h3>
+<p><strong>通用输入输出</strong>（<em>General-purpose
+input/output</em>），功能类似于 8051 单片机的 P0 到 P3
+口，引脚输出的高低电平可由开发人员读写相应寄存器进行控制。该接口有时也称为<strong>总线扩展器</strong>，当开发板接口不够用时，可以通过转接板将其扩展为<code>I²C</code>、<code>SPI</code>等其它串行接口。</p>
+]]></content>
+      <tags>
+        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
@@ -7161,204 +7341,6 @@ Otsu（大津展之），东京大学博士，先后在筑波大学和东京大�
 ]]></content>
       <tags>
         <tag>电子设计</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电子学笔记</title>
-    <url>/2022/02/21/08-25-17/</url>
-    <content><![CDATA[<h1 id="电子学">电子学</h1>
-<h3 id="基本概念">基本概念</h3>
-<p>组态：</p>
-<ul>
-<li>定义：晶体管接入电路的方法（晶体管接入电路的形态）。</li>
-<li>种类：共基组态（共基极的接入方法）、共射组态和共集组态</li>
-<li>F&amp;Q：
-<ul>
-<li>共"的含义——共在组态的概念中指端口共用。
-<ul>
-<li>进一步解释端口共用："将 BJT
-晶体管看作一个双端口网络模型进行分析时，需要输入输出各两个端口，而晶体管有
-3 个端口，因此需要一个端口共用。"</li>
-</ul></li>
-<li>在组态概念下我们要讨论的问题是什么：
-<ul>
-<li>首先明确组态概念下讨论的是晶体管本身的伏安特性，谈论组态时是不含不涵盖除晶体管之外的其他元器件的。</li>
-<li>不同组态下晶体管展现出的不同的输入输出特性（伏安特性）是我们研究的重点</li>
-</ul></li>
-</ul></li>
-</ul>
-<p>电路负载线：</p>
-<ul>
-<li>定义：电路负载线表征电路对元器件施加的约束，这个约束表现为一种伏安关系</li>
-<li>方法：负载线可以由基本的电路定律得到（如基尔霍夫定律）</li>
-<li>tips：使用电路定律得到的负载线公式可以整理成针对于某一负载伏安关系的一次函数:
-<span class="math inline">\(i=k v+b\)</span></li>
-</ul>
-<p>器件的伏安特性与</p>
-<p>耦合：</p>
-<ul>
-<li>定义：耦合就是连接的意思</li>
-<li>耦合电容：晶体管电路中的耦合电容起到连接直流源与交流源的作用</li>
-</ul>
-<p>偏置与静态工作点：</p>
-<ul>
-<li><p>偏置的含义：偏置是一种利用直流电压为电路设置固定直流电流和电压的广义称谓</p></li>
-<li><p>讨论偏置时的研究对象我们的研究对象不是电子元器件，而是某一电路</p></li>
-<li><p>偏置操作不但在"电路网络（黑箱）"外加入了直流电源，而且配合了电阻器件进行约束。</p>
-<ul>
-<li>以晶体管的偏置为例：直流电源与电阻一起构成了晶体管电路，该对晶体管工作范围进行了约束，这种约束可以使用负载线来表示，并且可以通过数学形式变化将负载线与晶体管的输入输出特征曲线放在同一坐标轴下得到一个交点，称为静态工作点</li>
-</ul></li>
-<li><p>静态工作点的含义：</p>
-<ul>
-<li>偏置时设置的固定的电流与电压被称为静态工作点，标记为 Q</li>
-<li>静态工作点由元器件伏安特性和电路伏安约束共同确定，对于特定的器件，静态工作点仅由电路的配置决定。</li>
-<li>对于晶体管，配置不同的静态工作点有两个目标
-<ul>
-<li>第一个目标时让晶体管工作在特定的状态，在模拟电子技术中我们希望让晶体管工作在放大的工作状态</li>
-<li>第二个目标是针对线性的放大工作范围，我们还要挑选一个合适的位置，不能使得放大的信号失真</li>
-</ul></li>
-</ul></li>
-<li><p>晶体管放大要求（偏置要求）</p>
-<ul>
-<li><p>输入电压应该超过晶体管导通电压。</p>
-<p>The input voltage should exceed <strong>cut-in voltage</strong> for
-the transistor to be <strong>ON</strong>.</p></li>
-<li><p>BJT应该在有源区，作为一个放大器。</p>
-<p>The BJT should be in the <strong>active region</strong>, to be
-operated as an <strong>amplifier</strong>.</p></li>
-</ul></li>
-</ul>
-<p><span class="math display">\[
-\begin{gather*}
-\begin{aligned}
-I_C&amp;=I_{\sf{多子电流}}+I_{\sf{少子电流}}\\
-   &amp;=\alpha I_E+I_{CBO}\\
-   &amp;=\alpha (I_B+I_C)+I_{CBO}\\
-\end{aligned}
-\Rightarrow
-I_C=\frac{\alpha}{1-\alpha}I_B+\frac{1}{1-\alpha}I_{CBO}=\beta
-I_B+I_{CEO}
-\end{gather*}
-\]</span> <span class="math inline">\(I_E=I_se^{v_{BE}/V_T}\)</span></p>
-<p><span class="math inline">\(I_C=\alpha I_E+I_{CBO}\)</span></p>
-<h3 id="稳定化stabilization">稳定化（Stabilization）</h3>
-<p>为了让晶体管</p>
-<blockquote>
-<p>使操作点独立于温度变化或晶体管参数变化的过程被称为稳定。</p>
-<p>The process of making the operating point independent of temperature
-changes or variations in transistor parameters is known as
-<strong>Stabilization</strong>.</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>电子学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>逻辑设计基础</title>
-    <url>/2022/03/09/16-14-26/</url>
-    <content><![CDATA[<h1 id="logic-design">Logic Design</h1>
-<h3 id="数制">数制</h3>
-<p>数制是用一组固定符号和统一规则来表示数值的方法，通常包含基数和位权两个基本要素。其中<strong>基数</strong>是指使用数码的个数，例如：二进制的基数为<code>2</code>，十进制的基数为<code>10</code>。<strong>位权</strong>是指数制某位所表示的数值权重的大小，例如：十进制数<code>123</code>，<code>1</code>的位权是<code>100</code>，<code>2</code>的位权是<code>10</code>，<code>3</code>的位权是<code>1</code>。二进制数<code>1011</code>，从左至右<code>1</code>、<code>0</code>、<code>1</code>、<code>1</code>的位权依次是<code>8</code>、<code>4</code>、<code>2</code>、<code>1</code>。常用的数制有<strong>二</strong>、<strong>八</strong>、<strong>十</strong>、<strong>十六</strong>四种进制，书写时可以在相应数值尾部添加字母<strong>B</strong>、<strong>O</strong>、<strong>D</strong>、<strong>H</strong>或者下标<strong>2</strong>、<strong>8</strong>、<strong>10</strong>、<strong>16</strong>进行标识，计算机<strong>传输和保存数据</strong>通常使用的是<strong>二进制</strong>。</p>
-<h3 id="码制">码制</h3>
-<p>码制是计算机存储、传输数据所使用的编码规则；其中原码、反码、补码是计算机设备保存数值类型数据的编码方式，ASCII
-与 Unicode 属于保存字符类型数据的编码格式；而 BCD
-编码、格雷码则主要用于设备之间的数据<strong>传输以及转换</strong>。</p>
-<blockquote>
-<p>BCD
-码的优点在于格式转换容易，十进制数值表达精度较高；缺点是增加了电路进行算术运算的复杂度，并且存储效率较低。</p>
-</blockquote>
-<h3 id="数字系统">数字系统</h3>
-<p>数字系统设计大致分为三个方面</p>
-<ul>
-<li>系统设计
-<ul>
-<li>系统设计是将一个数字系统划分为多个子系统进行设计。</li>
-</ul></li>
-<li>逻辑设计
-<ul>
-<li>逻辑设计是将多个逻辑功能块互联实现特定功能</li>
-</ul></li>
-<li>电路设计</li>
-</ul>
-<p>数字系统的中许多子系统以开关电路的形式存在，开关电路具有一个或多个输入端，一个或多个输出端，输入输出端都取离散值的电路。开关电路一般使用门电路来描述，使用布尔代数进行分析。开关电路有两种——组合电路和时序电路。</p>
-<p>开关电路分类：</p>
-<ul>
-<li>组合电路
-<ul>
-<li>组合电路中输出值仅与当前输入值有关</li>
-<li>组合电路的基本构成是逻辑门，逻辑设计就是将逻辑门相互连接起来以便将电路的输入信号转化为预期的输出信号。</li>
-</ul></li>
-<li>时序电路
-<ul>
-<li>时序电路中输出值不仅与当前输入值有关，也与之前的输入值有关；可以认为时序电路具有记忆功能</li>
-<li>时序电路的基本存储元件（存储之前的值）是触发器，触发器与逻辑门一起组成时序电路——如计数器和寄存器。</li>
-</ul></li>
-</ul>
-<h3 id="布尔代数">布尔代数</h3>
-<p>逻辑设计课程中我们使用二值布尔代数来设计开关电路。我们使用布尔变量来表示电路的输入和输出，其中布尔变量代表逻辑电路中的两种不同状态——</p>
-<p>普通代数中的<strong>交换律</strong>和<strong>结合律</strong>同样可以在布尔代数中使用。</p>
-<p>布尔代数中的交换律表明开关的位置（出现次序）不会影响最终结果，结合律表明开关导通的次序不会影响最终结果。</p>
-<p>在布尔代数中，分配律有两种形式：</p>
-<ul>
-<li><p>一种是普通的分配律：<span class="math inline">\(X(Y+Z)=XY+XZ\)</span></p>
-<p>​ 与运算可以分配在或运算上</p>
-<p>​ 去和括号内相乘</p></li>
-<li><p>另一种被称作第二分配律：<span class="math inline">\(X+(YZ)=(X+Y)(X+Z)\)</span></p>
-<p>​ 或运算可以分配在与运算上</p>
-<p>​ 去和括号内相加</p></li>
-</ul>
-<p>很多布尔代数表达式可以使用一个更简单的表达式替换，每个布尔代数表达式</p>
-<h2 id="数字电路概念">数字电路概念</h2>
-<h3 id="高阻态">高阻态</h3>
-<p>高阻抗状态（<em>High
-impedance</em>）表示电路中的某个节点具有相对电路中其它点更高的阻抗，电路分析时通常将高阻态作为开路理解。即可以将其视为输出/输入电阻极大，极限状态可以认为是悬空（<em>断路</em>）的状态，高阻态通常使用字母<strong>Z</strong>表示。</p>
-<h3 id="三态门">三态门</h3>
-<p>数字电路中的三态逻辑（<em>Three-state
-logic</em>）是指其输出既可以是代表<code>0</code>和<code>1</code>的高低电平，也可以是其特有的高阻抗状态（<em>相当于隔断状态，电阻极大，类似于开路</em>）。</p>
-<p>具有高电平、低电平、高阻态三种状态的元器件称为三态器件，三态器件都通过一个控制使能端
-B
-来控制整个三态门电路的通断。当使能端高电平有效时，三态器件可以正常的<code>0</code>或<code>1</code>输出，当使能端低电平无效时，三态电路将会输出高阻态。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">输入端 A</th>
-<th style="text-align: left;">使能端 B</th>
-<th style="text-align: left;">输出端 C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>0</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>1</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>X</code></td>
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>Z</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="组合时序逻辑电路">组合/时序逻辑电路</h3>
-<ul>
-<li><strong>组合逻辑电路</strong>（<em>Combinational Logic
-Circuit</em>），其任一时刻的稳态输出仅与该时刻输入的变量取值有关，而与该时刻之前输入的变量取值无关。组合电路主要由各种逻辑门（<code>半加器</code>、<code>全加器</code>、<code>半减器</code>、<code>全减器</code>、<code>数据选择器</code>、<code>数据分配器</code>、<code>编码器</code>、<code>译码器</code>）组成，电路中没有记忆元件和反馈线。</li>
-<li><strong>时序逻辑电路</strong>（<em>Sequential Logic
-Circuit</em>）任意时刻的稳态输出不仅取决于当前输入，还与前一时刻输入的状态有关，换而言之，时序逻辑电路必须拥有特定的储存元件来保存前一次的输入状态。因此，时序逻辑电路除包含有组合逻辑电路以外，还必须含拥有存储信息能力的电路（<code>触发器</code>、<code>寄存器</code>、<code>计数器</code>）。</li>
-</ul>
-<h3 id="gpio">GPIO</h3>
-<p><strong>通用输入输出</strong>（<em>General-purpose
-input/output</em>），功能类似于 8051 单片机的 P0 到 P3
-口，引脚输出的高低电平可由开发人员读写相应寄存器进行控制。该接口有时也称为<strong>总线扩展器</strong>，当开发板接口不够用时，可以通过转接板将其扩展为<code>I²C</code>、<code>SPI</code>等其它串行接口。</p>
-]]></content>
-      <tags>
-        <tag>Electrical Engineering</tag>
       </tags>
   </entry>
   <entry>
