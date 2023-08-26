@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"y006.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="矢量分析 坐标系 基本正交坐标系的度量系数 \(h\)          坐标系关系 直角坐标系（\(x,y,z\)） 柱坐标系（\(r,\phi,z\)） 球坐标系（\(R,\theta,\phi\)）     \(h1\) \(1\) \(1\) \(1\)   \(h2\) \(1\) \(r\) \(R\)   \(h3\)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="电磁场与电磁波">
+<meta property="og:url" content="https://y006.github.io/2022/09/28/14-52-54/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="矢量分析 坐标系 基本正交坐标系的度量系数 \(h\)          坐标系关系 直角坐标系（\(x,y,z\)） 柱坐标系（\(r,\phi,z\)） 球坐标系（\(R,\theta,\phi\)）     \(h1\) \(1\) \(1\) \(1\)   \(h2\) \(1\) \(r\) \(R\)   \(h3\)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-28T06:52:54.000Z">
+<meta property="article:modified_time" content="2022-11-22T15:53:54.000Z">
+<meta property="article:author" content="邱金羽">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://y006.github.io/2022/09/28/14-52-54/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://y006.github.io/2022/09/28/14-52-54/","path":"2022/09/28/14-52-54/","title":"电磁场与电磁波"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>电磁场与电磁波 | Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">邱金羽的技术博客！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">矢量分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">1.1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%AD%E7%9A%84%E5%BE%AE%E5%88%86%E5%85%83"><span class="nav-number">1.2.</span> <span class="nav-text">矢量微积分中的微分元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%BA%E5%87%BD%E6%95%B0%E7%9A%84%E7%89%B9%E6%80%A7%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.3.</span> <span class="nav-text">场函数的特性描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA"><span class="nav-number">1.4.</span> <span class="nav-text">静电场</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9C%9F%E7%A9%BA%E9%9D%99%E7%94%B5%E5%AD%A6%E5%9F%BA%E6%9C%AC%E5%85%AC%E7%90%86"><span class="nav-number">1.4.1.</span> <span class="nav-text">真空静电学基本公理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="nav-number">1.4.2.</span> <span class="nav-text">高斯定理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E5%AE%9A%E5%BE%8B"><span class="nav-number">1.4.3.</span> <span class="nav-text">基尔霍夫定律：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%BA%E5%BC%BA%E8%AE%A1%E7%AE%97"><span class="nav-number">1.4.4.</span> <span class="nav-text">场强计算：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E4%BD%8D%E8%AE%A1%E7%AE%97"><span class="nav-number">1.4.5.</span> <span class="nav-text">电位计算：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%AF%BC%E4%BD%93"><span class="nav-number">1.4.6.</span> <span class="nav-text">静电场中的导体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E4%B8%AD%E7%9A%84%E7%94%B5%E4%BB%8B%E8%B4%A8"><span class="nav-number">1.4.7.</span> <span class="nav-text">静电场中的电介质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%9C%BA%E6%A2%AF%E5%BA%A6"><span class="nav-number">1.5.</span> <span class="nav-text">标量场梯度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E7%90%86%E8%A7%A3"><span class="nav-number">1.5.1.</span> <span class="nav-text">文字理解：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.5.2.</span> <span class="nav-text">数学描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%94%A8%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.3.</span> <span class="nav-text">实用公式：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%9C%BA%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">1.6.</span> <span class="nav-text">矢量场散度和旋度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E7%90%86%E8%A7%A3-1"><span class="nav-number">1.6.1.</span> <span class="nav-text">文字理解：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">1.6.2.</span> <span class="nav-text">数学描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%94%A8%E5%85%AC%E5%BC%8F-1"><span class="nav-number">1.6.3.</span> <span class="nav-text">实用公式：</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="邱金羽"
+      src="/images/custom-logo.jpg">
+  <p class="site-author-name" itemprop="name">邱金羽</p>
+  <div class="site-description" itemprop="description">联系我：2420457716@qq.com</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/32844822/dynamic" title="Bilibili个人空间 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;32844822&#x2F;dynamic" rel="noopener" target="_blank">Bilibili个人空间</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/qiu-jin-yu-60" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;qiu-jin-yu-60" rel="noopener" target="_blank">知乎</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://uinika.github.io/" title="https:&#x2F;&#x2F;uinika.github.io&#x2F;" rel="noopener" target="_blank">UinIO</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fazzie-key.cool/" title="https:&#x2F;&#x2F;fazzie-key.cool&#x2F;" rel="noopener" target="_blank">摸黑干活</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://eater.net/" title="https:&#x2F;&#x2F;eater.net&#x2F;" rel="noopener" target="_blank">Ben Eater</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.52diy.com.cn/" title="https:&#x2F;&#x2F;blog.52diy.com.cn&#x2F;" rel="noopener" target="_blank">52diy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://gaoyichao.com/Xiaotu/" title="https:&#x2F;&#x2F;gaoyichao.com&#x2F;Xiaotu&#x2F;" rel="noopener" target="_blank">小土的世界</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stm32f4-discovery.net/" title="https:&#x2F;&#x2F;stm32f4-discovery.net&#x2F;" rel="noopener" target="_blank">Tilen Majerle</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://mculover666.blog.csdn.net/" title="https:&#x2F;&#x2F;mculover666.blog.csdn.net&#x2F;" rel="noopener" target="_blank">Mculover666</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ssy1938010014.github.io/" title="https:&#x2F;&#x2F;ssy1938010014.github.io&#x2F;" rel="noopener" target="_blank">ssy的小天地</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://bengoooo.github.io/" title="https:&#x2F;&#x2F;bengoooo.github.io&#x2F;" rel="noopener" target="_blank">BENgoooo</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/yourname" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/09/28/14-52-54/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          电磁场与电磁波
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-09-28 14:52:54" itemprop="dateCreated datePublished" datetime="2022-09-28T14:52:54+08:00">2022-09-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-11-22 23:53:54" itemprop="dateModified" datetime="2022-11-22T23:53:54+08:00">2022-11-22</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/09/28/14-52-54/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/28/14-52-54/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="矢量分析">矢量分析</h2>
+<h3 id="坐标系">坐标系</h3>
+<p>基本正交坐标系的度量系数 <span class="math inline">\(h\)</span></p>
+<table>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 26%">
+<col style="width: 27%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>坐标系关系</th>
+<th>直角坐标系（<span class="math inline">\(x,y,z\)</span>）</th>
+<th>柱坐标系（<span class="math inline">\(r,\phi,z\)</span>）</th>
+<th>球坐标系（<span class="math inline">\(R,\theta,\phi\)</span>）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(h1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(h2\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(r\)</span></td>
+<td><span class="math inline">\(R\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(h3\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(Rsin\theta\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="矢量微积分中的微分元">矢量微积分中的微分元</h3>
+<ol type="1">
+<li>线微元：<span class="math inline">\(d\vec{l} =
+\vec{a_1}(h_1{a_{u_{1}}})+\vec{a_2}(h_2{a_{u_{2}}})+\vec{a_3}(h_3{a_{u_{3}}})\)</span><br>
+</li>
+<li>面微元：<span class="math inline">\(d\vec{s} =
+\vec{a_n}ds\)</span>，其中 <span class="math inline">\(\vec{a_n}\)</span> 是面积 <span class="math inline">\(s\)</span> 的单位法向量
+<ul>
+<li><span class="math inline">\(ds_1 = h_2h_3du_2du_3\)</span></li>
+<li><span class="math inline">\(ds_2 = h_1h_3du_1du_3\)</span></li>
+<li><span class="math inline">\(ds_3 = h_1h_2du_1du_2\)</span></li>
+</ul></li>
+<li>体微元：<span class="math inline">\(dv =
+h_1h_2h_3du_1du_2du_3\)</span></li>
+</ol>
+<h3 id="场函数的特性描述">场函数的特性描述</h3>
+<p>标量场梯度：对于标量场 <span class="math inline">\(V(u_1,u_2,u_3)\)</span></p>
+<ul>
+<li>梯度定义式： <span class="math inline">\(\vec{\nabla} =
+\vec{a_n}\frac{dV}{dn}\)</span></li>
+<li>梯度计算式：<span class="math inline">\(\vec{\nabla} V =
+\left(\vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1} +
+\vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
+\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}\right)V\)</span></li>
+<li>标量场方向导数：<span class="math inline">\(dV/dl = \vec{\nabla} V
+\cdot \vec{a_l}\)</span></li>
+</ul>
+<p>矢量场的散度：对于矢量场 <span class="math inline">\(\vec{A} =
+\vec{a_1}A_1 + \vec{a_2}A_2 + \vec{a_3}A_3\)</span></p>
+<ul>
+<li>散度定义式：<span class="math inline">\(div \vec{A} = \lim_{\Delta
+v\rightarrow0}{\frac{\oint_s\vec{A}d\vec{s}}{\Delta v}}\)</span></li>
+<li>散度计算式：<span class="math inline">\(div \vec{A} = \vec{\nabla}
+\cdot \vec{A}\)</span></li>
+<li>散度定理：<span class="math inline">\(\oint_s\vec{A}\,d\vec{s} =
+\int_v \vec{\nabla} \cdot \vec{A} \,dv\)</span></li>
+</ul>
+<p>矢量场的旋度：</p>
+<ul>
+<li>旋度的定义式：<span class="math inline">\(curl \vec{A} =
+\lim_{\Delta
+s\rightarrow0}{\left[\frac{\vec{a_n}\oint_c\vec{A}d\vec{l}}{\Delta
+s}\right]_{max}}\)</span><br>
+</li>
+<li>旋度的计算式：<span class="math inline">\(curl \vec{A} =
+\vec{\nabla} \times \vec{A}\)</span></li>
+<li>斯托克斯公式：<span class="math inline">\(\int_s \vec{\nabla} \times
+\vec{A} \,d\vec{s} = \oint_c\vec{A}\,d\vec{l}\)</span></li>
+</ul>
+<p>恒等式：</p>
+<ul>
+<li><span class="math inline">\(\vec{\nabla} \times (\vec{\nabla} V) =
+0\)</span></li>
+<li><span class="math inline">\(\vec{\nabla} \cdot (\vec{\nabla} \times
+\vec{A}) = 0\)</span></li>
+</ul>
+<p>亥姆霍兹定律：如果一个矢量场的散度和旋度处处都已经给定，那么这个矢量场（矢量点函数）就确定了，最多附加一个常数。</p>
+<h3 id="静电场">静电场</h3>
+<h4 id="真空静电学基本公理">真空静电学基本公理：</h4>
+<p><span class="math display">\[
+\vec{\nabla} \cdot \vec{E} = \frac{\rho}{\varepsilon_0}\\
+\vec{\nabla} \times \vec{E} =0
+\]</span></p>
+<h4 id="高斯定理">高斯定理：</h4>
+<p>对场强的散度描述可以推出高斯定理 <span class="math display">\[
+\oint_s\vec{E}\,d\vec{s} = \int_v\vec{\nabla} \cdot \vec{E} \,dv= \int_v
+\frac{\rho}{\varepsilon_0} \,dv = \frac{Q}{\varepsilon_0}
+\]</span></p>
+<h4 id="基尔霍夫定律">基尔霍夫定律：</h4>
+<p>对场强的旋度描述可以推出基尔霍夫定律 <span class="math display">\[
+\oint_c\vec{E}\,d\vec{l} = \int_s \vec{\nabla} \times \vec{E} \,d\vec{s}
+=  \int_s 0 \,d\vec{s} = 0
+\]</span></p>
+<h4 id="场强计算">场强计算：</h4>
+<ol type="1">
+<li><p>静止在无界真空中的单个点电荷 <span class="math inline">\(q\)</span> 的场强计算：</p>
+<ul>
+<li><p>点电荷的位置矢量为 <span class="math inline">\(\vec{0}\)</span>
+即 <span class="math inline">\(q\)</span> 位于坐标原点： <span class="math display">\[
+\oint_s\vec{E}\,d\vec{s} = E_R(4\pi R^2) = \frac{q}{\varepsilon_0}\\
+\Downarrow\\
+\vec{E} = \vec{a_R}E_R=\vec{a_R}\frac{q}{4\pi \varepsilon_0R^2}
+\]</span></p></li>
+<li><p>点电荷的位置矢量为 <span class="math inline">\(\vec{R&#39;}\)</span> <span class="math display">\[
+\vec{E} = \frac{\vec{R}-\vec{R&#39;}}{|\vec{R}-\vec{R&#39;}|} \cdot
+\frac{q}{4\pi \varepsilon_0 |\vec{R}-\vec{R&#39;}|^2} = \frac{1}{4\pi
+\varepsilon_0} \cdot \frac{q(\vec{R}-\vec{R&#39;})}{
+|\vec{R}-\vec{R&#39;}|^3}
+\]</span></p></li>
+</ul></li>
+<li><p>电偶极子：</p>
+<ul>
+<li>定义电荷量 <span class="math inline">\(q\)</span> 与矢量 <span class="math inline">\(d\)</span> （从 <span class="math inline">\(-q\)</span> 到 <span class="math inline">\(+q\)</span> ）的乘积称为电偶极矩 <span class="math inline">\(p\)</span> <span class="math display">\[
+\vec{E} = \frac{p}{4\pi \varepsilon_0 R^3} (\vec{a_R}2cos\theta +
+\vec{a_\theta}sin\theta)
+\]</span></li>
+</ul></li>
+<li><p>离散电荷系统：</p>
+<ul>
+<li><span class="math display">\[
+\vec{E} = \frac{1}{4\pi \varepsilon_0} \cdot
+\sum_{k=1}^n\frac{k(\vec{R}-\vec{R&#39;_k})}{
+|\vec{R}-\vec{R&#39;_k}|^3}
+\]</span></li>
+</ul></li>
+<li><p>连续电荷系统：</p>
+<ul>
+<li><p>先微分：<span class="math inline">\(Q = \rho\,dv&#39;\)</span>
+（此处可以采用不同的微分方式，如面微分或者线微分） <span class="math display">\[
+d\vec{E} = \vec{a_R}dE_R=\vec{a_R}\frac{\rho\,dv&#39;}{4\pi
+\varepsilon_0R^2}
+\]</span></p></li>
+<li><p>后积分：其中 <span class="math inline">\(\vec{a_R} =
+/R^3\)</span> <span class="math display">\[
+\vec{E} = \frac{1}{4\pi
+\varepsilon_0}\int_{v&#39;}\frac{\vec{R}\,\rho}{R^3}\,dv&#39;
+\]</span></p></li>
+</ul></li>
+</ol>
+<h4 id="电位计算">电位计算：</h4>
+<ol type="1">
+<li><p>引入：由零恒等式的推论：一个无旋矢量场总可以写成一个标量场的梯度，由此可以使用场强来定义出电位：
+<span class="math display">\[
+\vec{E} = -\vec{\nabla} V
+\]</span> 电位的物理意义与功联系： <span class="math display">\[
+\frac{W}{q} = -\int^{P_2}_{P_1}\vec{E}\cdot d\vec{l} = V_{P_2}-V_{P_1}
+\]</span></p></li>
+<li><p>单个点电荷的电位（以无限远处作为零电位） <span class="math display">\[
+V = -\int^R_\infty \left( \vec{a_R} \frac{q}{4\pi \varepsilon_0R^2}
+\right) \cdot \vec{a_R} dR\\
+\Downarrow\\
+V = \frac{q}{4\pi \varepsilon_0R}
+\]</span></p></li>
+<li><p>离散点电荷系统： $$</p>
+<p>$$</p></li>
+<li><p>电偶极子： <span class="math display">\[
+V = \frac{\vec{p} \cdot \vec{a_R}}{4\pi \varepsilon_0R^2}
+\]</span></p></li>
+</ol>
+<h4 id="静电场中的导体">静电场中的导体</h4>
+<ol type="1">
+<li><p>研究内容：静电场中的导体内部和表面的电荷分布</p></li>
+<li><p>使用高斯定理可知：导体内部不存在电荷分布 <span class="math display">\[
+\rho = 0\\
+\vec{E} = 0
+\]</span></p></li>
+<li><p>导体表面场强：</p>
+<ol type="1">
+<li>切向场强：使用场强的旋度描述可知为 <span class="math inline">\(0\)</span></li>
+<li>法向场强：使用高斯定理：<span class="math inline">\(\vec{E_n} =
+\rho_S/\varepsilon_0\)</span></li>
+</ol>
+<p><span class="math display">\[
+\vec{E_t} = 0\\
+\vec{E_n} = \frac{\rho_S}{\varepsilon_0}
+\]</span></p></li>
+</ol>
+<h4 id="静电场中的电介质">静电场中的电介质</h4>
+<p>首先为了描述极化电介质引入了极化矢量： <span class="math display">\[
+\vec{p} =  \lim_{\Delta v\rightarrow0} \frac{\sum_{k=1}^{n\Delta
+v}\vec{p_k}}{\Delta v}
+\]</span>
+通过电位可以把极化电介质使用一个等效极化面电荷密度和一个等效极化体电荷密度替代：
+<span class="math display">\[
+\rho_{ps} = \vec{P} \cdot \vec{a_n}\\
+\rho_p = \vec{\nabla} \cdot \vec{P}
+\]</span> 由于极化电介质会引起等效体电荷密度 <span class="math inline">\(\rho_p\)</span>，所以电介质中给定源产生的电场强度将与真空中不同。</p>
+<p>计算真空中给定源产生的场强的方法是应用静电学基本公理：<span class="math inline">\(\vec{\nabla} \cdot \vec{E} =
+\frac{\rho}{\varepsilon_0}\)</span>，但这个式子只适用于真空环境中，在电介质中必须要修改这个式子：
+<span class="math display">\[
+\vec{\nabla} \cdot \vec{E} = \frac{\rho+\rho_p}{\varepsilon_0}
+\]</span> 为了便于后面的分析，我们在此处还引入了一个新的概念：电通密度
+<span class="math inline">\(\vec{D} =
+\varepsilon_0\vec{E}+\vec{P}\)</span></p>
+<p>使用电通密度来描述电介质中的源产生的电场的好处是：不需要涉及极化矢量和极化电荷密度：
+<span class="math display">\[
+\vec{\nabla} \cdot \vec{D} = \rho
+\]</span>
+当电介质是线性且各向同性的时候，极化强度正比于电场强度，由上面电通密度的定义式可以进一步推出此条件下非常有用的结论：
+<span class="math display">\[
+\vec{D} = \varepsilon\vec{E} = \varepsilon_r\varepsilon_0\vec{E}
+\]</span></p>
+<hr>
+<h3 id="标量场梯度">标量场梯度</h3>
+<h4 id="文字理解">文字理解：</h4>
+<ul>
+<li>导数：函数某一点的导数是过该点切线的斜率</li>
+<li>偏导数：多变量函数在直角坐标系中沿某一坐标轴方向上的导数</li>
+<li>方向导数：函数在任意方向上的导数是方向导数
+<ul>
+<li>“任意方向” 中方向使用矢量来描述而不是坐标轴平面</li>
+<li>用来描述方向使用的矢量可以分解在坐标轴方向上</li>
+</ul></li>
+<li>梯度：标量场中有许多不同方向的方向导数，其中数值最大的方向上的方向导数称为梯度</li>
+</ul>
+<h4 id="数学描述">数学描述：</h4>
+<ul>
+<li>空间中有一<strong>标量函数</strong> <span class="math inline">\(V(u_1,u_2,u_3)\)</span></li>
+<li>若其刻画的标量场在空间中分布不均匀，那么当 <span class="math inline">\(V\)</span>
+发生微小变化时，变化方向不同，其大小也不同。</li>
+<li>由此我们得到<strong>方向导数</strong>的定义：<span class="math inline">\(dV/dl\)</span> ，方向导数是一个标量</li>
+<li>当 <span class="math inline">\(d\vec{l}\)</span>
+方向发生变化并使方向导数值取最大，即该方向上有<strong>最大变化率</strong>时，设此时方向：<span class="math inline">\(d\vec{l}=d\vec{n}\)</span></li>
+<li>得到<strong>梯度</strong>定义：</li>
+</ul>
+<p><span class="math display">\[
+\nabla V = \vec{a_n}\frac{dV}{dn}
+\]</span></p>
+<h4 id="实用公式">实用公式：</h4>
+<ul>
+<li><p>使用梯度来表示方向导数： <span class="math display">\[
+\frac{dV}{dl}=\frac{dV}{dn}\frac{dn}{dl}=\frac{dV}{dn}cos\alpha=\frac{dV}{dn}\vec{a_n}\cdot\vec{a_l}=\nabla
+V\cdot\vec{a_l}
+\]</span> 疑问：为什么 <span class="math inline">\(\frac{dn}{dl}=cos\alpha\)</span></p></li>
+<li><p>将方向矢量分解到坐标系表示的梯度公式（使用梯度公式）： <span class="math display">\[
+\nabla V = \left(\vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1}
++  \vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
+\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}\right)V
+\]</span></p></li>
+<li><p>微分算子 <span class="math inline">\(\nabla\)</span> <span class="math display">\[
+\nabla = \vec{a_{u_1}}\frac{\partial}{h_1 \partial u_1}
++  \vec{a_{u_2}}\frac{\partial}{h_2 \partial u_2} +
+\vec{a_{u_3}}\frac{\partial}{h_3 \partial u_3}
+\]</span></p></li>
+</ul>
+<h3 id="矢量场散度和旋度">矢量场散度和旋度</h3>
+<h4 id="文字理解-1">文字理解：</h4>
+<ul>
+<li>标量场空间导数得到梯度的概念</li>
+<li>矢量场空间导数得到散度和旋度两个概念</li>
+</ul>
+<h4 id="数学描述-1">数学描述：</h4>
+<ul>
+<li><p>通量：即矢量场中矢量的面积积分：<span class="math inline">\(\oint_S\vec{A}\,d\vec{s}\)</span></p></li>
+<li><p>散度： 包围某点的体积趋于 <span class="math inline">\(0\)</span>
+时，单位体积内流出的 <span class="math inline">\(\vec{A}\)</span>
+的<strong>净通量</strong>： <span class="math display">\[
+div\vec{A} = \lim_{\Delta
+v\rightarrow0}{\frac{\oint_S\vec{A}\,d\vec{s}}{\Delta v}}
+\]</span></p></li>
+</ul>
+<h4 id="实用公式-1">实用公式：</h4>
+<ul>
+<li><p>使用矢量微分算子表示散度 <span class="math display">\[
+\nabla \cdot \vec{A} = div\vec{A}
+\]</span></p></li>
+<li><p>正交曲线坐标系下的公式 <span class="math display">\[
+div\vec{A}=\nabla \cdot \vec{A} = \frac{1}{h_1h_2h_3}
+\]</span></p></li>
+</ul>
+<p>&lt;iframe height='500' scrolling='100'
+src='https://www.bilibili.com/video/BV1or4y1M78k/'</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>如果有帮助请我喝杯咖啡吧(●'◡'●)</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="邱金羽 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="邱金羽 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>邱金羽
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://y006.github.io/2022/09/28/14-52-54/" title="电磁场与电磁波">https://y006.github.io/2022/09/28/14-52-54/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/15/11-22-34/" rel="prev" title="电力电子技术">
+                  <i class="fa fa-chevron-left"></i> 电力电子技术
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/10/12/23-40-51/" rel="next" title="单片机实验讲义">
+                  单片机实验讲义 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">邱金羽</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"Bolgqjy","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

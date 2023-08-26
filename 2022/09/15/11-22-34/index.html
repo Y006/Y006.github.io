@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"y006.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="2. 电力电子器件 2.1 电力电子器件概述 主电路（main power circuit）：电力系统中直接承担电能变换或者控制任务的 电力电子器件（power electronic device）：主电路中实现电能变换或者控制的电子器件  分类：  电真空器件（淘汰） 半导体器件（主流）—— 主要材料是硅  与信息电子器件的区别  电力电子器件处理的电功率较大 一般">
+<meta property="og:type" content="website">
+<meta property="og:title" content="电力电子技术">
+<meta property="og:url" content="https://y006.github.io/2022/09/15/11-22-34/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="2. 电力电子器件 2.1 电力电子器件概述 主电路（main power circuit）：电力系统中直接承担电能变换或者控制任务的 电力电子器件（power electronic device）：主电路中实现电能变换或者控制的电子器件  分类：  电真空器件（淘汰） 半导体器件（主流）—— 主要材料是硅  与信息电子器件的区别  电力电子器件处理的电功率较大 一般">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-15T03:22:34.000Z">
+<meta property="article:modified_time" content="2022-09-15T06:45:24.000Z">
+<meta property="article:author" content="邱金羽">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://y006.github.io/2022/09/15/11-22-34/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://y006.github.io/2022/09/15/11-22-34/","path":"2022/09/15/11-22-34/","title":"电力电子技术"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>电力电子技术 | Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">邱金羽的技术博客！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E5%99%A8%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">2. 电力电子器件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E5%99%A8%E4%BB%B6%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">2.1 电力电子器件概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%8A%9B%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="nav-number">1.2.</span> <span class="nav-text">2.2 电力二极管</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%B6%E9%97%B8%E7%AE%A1"><span class="nav-number">1.3.</span> <span class="nav-text">2.3 晶闸管</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="邱金羽"
+      src="/images/custom-logo.jpg">
+  <p class="site-author-name" itemprop="name">邱金羽</p>
+  <div class="site-description" itemprop="description">联系我：2420457716@qq.com</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/32844822/dynamic" title="Bilibili个人空间 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;32844822&#x2F;dynamic" rel="noopener" target="_blank">Bilibili个人空间</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/qiu-jin-yu-60" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;qiu-jin-yu-60" rel="noopener" target="_blank">知乎</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://uinika.github.io/" title="https:&#x2F;&#x2F;uinika.github.io&#x2F;" rel="noopener" target="_blank">UinIO</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fazzie-key.cool/" title="https:&#x2F;&#x2F;fazzie-key.cool&#x2F;" rel="noopener" target="_blank">摸黑干活</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://eater.net/" title="https:&#x2F;&#x2F;eater.net&#x2F;" rel="noopener" target="_blank">Ben Eater</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.52diy.com.cn/" title="https:&#x2F;&#x2F;blog.52diy.com.cn&#x2F;" rel="noopener" target="_blank">52diy</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://gaoyichao.com/Xiaotu/" title="https:&#x2F;&#x2F;gaoyichao.com&#x2F;Xiaotu&#x2F;" rel="noopener" target="_blank">小土的世界</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stm32f4-discovery.net/" title="https:&#x2F;&#x2F;stm32f4-discovery.net&#x2F;" rel="noopener" target="_blank">Tilen Majerle</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://mculover666.blog.csdn.net/" title="https:&#x2F;&#x2F;mculover666.blog.csdn.net&#x2F;" rel="noopener" target="_blank">Mculover666</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ssy1938010014.github.io/" title="https:&#x2F;&#x2F;ssy1938010014.github.io&#x2F;" rel="noopener" target="_blank">ssy的小天地</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://bengoooo.github.io/" title="https:&#x2F;&#x2F;bengoooo.github.io&#x2F;" rel="noopener" target="_blank">BENgoooo</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/yourname" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/09/15/11-22-34/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：2420457716@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          电力电子技术
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-09-15 11:22:34 / 修改时间：14:45:24" itemprop="dateCreated datePublished" datetime="2022-09-15T11:22:34+08:00">2022-09-15</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/09/15/11-22-34/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/15/11-22-34/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="电力电子器件">2. 电力电子器件</h2>
+<h3 id="电力电子器件概述">2.1 电力电子器件概述</h3>
+<p>主电路（main power
+circuit）：电力系统中直接承担电能变换或者控制任务的</p>
+<p>电力电子器件（power electronic
+device）：主电路中实现电能变换或者控制的电子器件</p>
+<ul>
+<li>分类：
+<ul>
+<li>电真空器件（淘汰）</li>
+<li>半导体器件（主流）—— 主要材料是硅</li>
+</ul></li>
+<li>与信息电子器件的区别
+<ul>
+<li>电力电子器件处理的电功率较大</li>
+<li>一般工作在开关状态：通态阻抗小，短态阻抗大，管子两端电压由外电路决定</li>
+<li>电力电子器件一般使用信息电子器件来控制，需要中间电路对控制信号进行放大，因此需要驱动电路</li>
+<li>因为开关损耗的存在，发热比较大，因此讲究散热设计</li>
+</ul></li>
+<li>分析方法：
+<ul>
+<li>关注电力电子器件的动态特性（开关特性）和参数</li>
+<li>做电路分析时一般使用理想开关来代替</li>
+</ul></li>
+</ul>
+<p>电力电子系统</p>
+<ul>
+<li>控制电路
+<ul>
+<li>信息电子器件：小功率</li>
+<li>检测主电路信号（需要检测电路），生成控制信号（需要驱动电路）</li>
+</ul></li>
+<li>主电路
+<ul>
+<li>电力电子器件：大功率</li>
+<li>电力电子器件相比于主电路中普通元器件承受过电压和过电流的能力弱，因此需要在主电路和控制电路之间加保护电路</li>
+</ul></li>
+<li>控制电路和主电路之间连接有检测电路和驱动电路，这些四种电路的连接中需要进行电气隔离，可以采用光或者磁信号来替代电信号</li>
+</ul>
+<p>电力电子器件的分类</p>
+<ul>
+<li><p>控制程度</p>
+<ul>
+<li><p>半控型器件：可以控制其导通但是不能控制其关断（晶闸管）</p></li>
+<li><p>全控型器件：既可以控制导通也可以控制关断（IGBT 和
+MOSEFT）</p></li>
+<li><p>不可控器件：通断取决于电路，不能控制（电力二极管）</p></li>
+</ul></li>
+<li><p>控制信号</p>
+<ul>
+<li>电流控制型：控制端注入或者抽出电流形成通断</li>
+<li>电压控制型：控制端和公共端施加电压信号形成通断（也成为场控器件）
+<ul>
+<li>施加电压信号
+<ul>
+<li>脉冲触发型：给脉冲，改变状态直到下一个脉冲到来</li>
+<li>电平控制型：电平对应状态，电平改变即状态改变</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>载流子</p>
+<ul>
+<li>单极型：仅一种载流子（多子）</li>
+<li>双极型：电子空穴两种载流子</li>
+<li>复合型</li>
+</ul></li>
+</ul>
+<h3 id="电力二极管">2.2 电力二极管</h3>
+<p>PN结原理</p>
+<ul>
+<li>本征半导体：热激发使得本征半导体中产生电子空穴对，电子空穴相遇后会复合而成对消失。室温下本征半导体中存在少量的载流子</li>
+<li>非本征半导体：在本征半导体中掺杂低价或者高价元素可以引入多余的电子或者空穴，得到非本征半导体。非本征半导体中N型半导体是电子为多子的半导体，P型半导体是空穴为多子的半导体</li>
+<li>当P型半导体和N型半导体结合成为PN结时，由于双方中多子类型不同，因此形成了多子的浓度梯度，多子会在浓度梯度的作用下向对方扩散，此时多子扩散运动产生了扩散电流</li>
+<li>当多子进入对面半导体时成为了少子，并且在新环境中很容易与该环境的多子进行复合。复合使得PN结中间结处载流子数量减少并且产生空间电荷区。空间电荷区会平衡浓度梯度，最终扩散运动消失。</li>
+<li>空间电荷区会吸引附近的少子。少子会在电场加速向对面移动形成漂移电流。</li>
+<li>正向偏置是，电源正极对P型，负极对N型；此时外加电源的电场方向与空间电荷区电场方向相反，从而打破平衡，产生持续的扩散电流，此时为PN结正向导通状态。</li>
+<li>反向偏置时，电源正极对N型，负极对P型；此时外加电源的电场方向与空间电荷区电场方向相同，因空间电荷区加速产生的漂移电流进一步增强（不过因为是少子电流因此电流很小），而扩散电流被进一步抑制。总体上表现为几乎没有电流的反向截至状态。</li>
+</ul>
+<p>区别：普通的信息二极管可以认为是PN结，而电力二极管进行了一些变化以适应高电压和大电流</p>
+<ul>
+<li>横向导电结构改为了垂直导电结构：电流方向与硅片表面垂直，使得通过二极管的有效面积增大，显著提高了二极管的通流能力</li>
+<li>电力二极管增加在PN结中间增加了低掺杂N区，也称为漂移区，形成了N-I-P结构，低掺杂区域导电性差，类似于本征半导体，因此可以承受更高的反向电压而不被击穿产生大电流
+<ul>
+<li>漂移区不利于正向导通——解决方案：电导调制效应（Conductivity
+Modulation）
+<ul>
+<li>正向偏置时P区多子扩散到N区形成少子，扩散电流很大时大量少子注入N区会激发新的多子出现，从而提高N区载流子数量从而降低电阻率，使得正向导通时电力二极管表现为低阻态（压降始终维持在1V左右）</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>电力二极管的反向击穿：</p>
+<ul>
+<li>反向偏置电压过大时电流会突然增大，称为反向击穿
+<ul>
+<li>雪崩击穿</li>
+<li>齐纳击穿</li>
+</ul></li>
+<li>击穿发生时如果限制通过的电流，那么二极管不会损坏</li>
+<li>如果不限制电流使得功率超过了允许的耗散功率，那么会过热烧毁，称为热击穿</li>
+</ul>
+<p>电力二极管的电容效应：</p>
+<ul>
+<li>PN结中的电荷量随外加电压变化
+<ul>
+<li>扩散电容：正向偏置产生</li>
+<li>势垒电容：外部电压变化时产生</li>
+</ul></li>
+</ul>
+<p>电力二极管的基本特性：</p>
+<ul>
+<li><p>静态特性：电力二极管的伏安特性，与信息二极管类似</p></li>
+<li><p>动态特性：由于电容效应，在电力二级管发生状态变化时的电流电压特性不能使用静态描述中的伏安特性来描述。</p>
+<p><strong>理解两种特性：静态伏安特性认为电压变化时电流将瞬间发生变化，因此可以描点画线表示不同电压取值下一一对应的瞬态电流取值。但是动态效应考量的时真正的半导体器件具有电容效应，电压突变的时候电流不会随即发生变化，中间具有时间差，为了刻画这种时间差，我们将时间作为横坐标，将电压和电流同时作为纵坐标，绘制两条曲线，然后只要做垂直线就可以在时间轴上采样观察电压和电流的关系，体会电容带来的延时变化。</strong></p></li>
+</ul>
+<p>电力二极管的动态特性：</p>
+<ol type="1">
+<li>从零偏到正偏，正向电流线性增长然后稳定，正向电压先过冲然后减小趋于稳定</li>
+<li>正偏到反偏时，正向电流瞬间减小，下降速率由反偏电压和电路中电感决定</li>
+<li>正向电压不会随之下降，因为电导调制效应会增大电阻维持正向电压</li>
+<li>当正向电流减小为零时，正向电压开始下降</li>
+<li>当反向电流反向达将近最大值时，正向电压达到零并以大速率下降</li>
+<li>反向电流达到最值后开始下降，过程中由于外电路的电感效用会使反向电压产生过冲</li>
+<li>反向电流下降到比较低的时候，速度比较慢的时候，反向电压也减小到反偏电压</li>
+<li>时间：
+<ul>
+<li>延迟时间 = 反向电流取最值的时间点 - 正向电流减小为零的时间点</li>
+<li>电流下降时间 = 反向电压等于反偏电压的时间点 -
+反向电流取最值的时间点</li>
+<li>电力二极管的反向恢复时间 = 延迟时间 + 电流下降时间</li>
+<li>恢复系数 = 电流下降时间 / 延迟时间</li>
+</ul></li>
+</ol>
+<p>电力二极管主要参数：</p>
+<table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>正向平均电流</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>正向压降</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>反向重复峰值压降</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>最高工作结温</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>反向恢复时间</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>浪涌电流</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>电力二极管的主要类型：</p>
+<table>
+<thead>
+<tr class="header">
+<th>类型</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>普通二极管</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>快速恢复二极管</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>肖特基二极管</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="晶闸管">2.3 晶闸管</h3>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>如果有帮助请我喝杯咖啡吧(●'◡'●)</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="邱金羽 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="邱金羽 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>邱金羽
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://y006.github.io/2022/09/15/11-22-34/" title="电力电子技术">https://y006.github.io/2022/09/15/11-22-34/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/13/17-54-09/" rel="prev" title="《从电路设计的角度入门VerilogHDL》笔记">
+                  <i class="fa fa-chevron-left"></i> 《从电路设计的角度入门VerilogHDL》笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/09/28/14-52-54/" rel="next" title="电磁场与电磁波">
+                  电磁场与电磁波 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">邱金羽</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"Bolgqjy","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
