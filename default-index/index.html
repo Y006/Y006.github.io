@@ -137,13 +137,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -219,6 +219,186 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2024/08/14/22-59-26/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.jpg">
+      <meta itemprop="name" content="邱金羽">
+      <meta itemprop="description" content="联系我：y006@henu.edu.cn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/14/22-59-26/" class="post-title-link" itemprop="url">计算程序问题数学基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-08-14 22:59:26 / 修改时间：23:00:08" itemprop="dateCreated datePublished" datetime="2024-08-14T22:59:26+08:00">2024-08-14</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2024/08/14/22-59-26/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/08/14/22-59-26/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="成像问题建模">成像问题建模</h4>
+<p>成像问题被表述为一个线性逆问题，这个逆问题的前向过程表示为公式（1）
+<span class="math display">\[
+y=Ax+\epsilon
+\]</span> 逆问题的目标在于求解 <span class="math inline">\(x\)</span>。在公式（1）中，<span class="math inline">\(y\)</span> 是我们可以测量得到的测量值，<span class="math inline">\(x\)</span> 是我们想要求解的内容，<span class="math inline">\(A\)</span>
+是前向算子，表示施加在原始图像中的物理过程，<span class="math inline">\(\epsilon\)</span> 是前向过程中引入的噪声值。</p>
+<p>成像问题的逆问题的一个重要特征是，前向算子 <span class="math inline">\(A\)</span> 通常是一个 <span class="math inline">\(m&lt;n\)</span> 的矩阵，这意味 <span class="math inline">\(A\)</span>
+的逆矩阵不存在，也无法求得唯一的解析解。虽然线性代数中提供了伪逆 <span class="math inline">\(A^{\dagger}\)</span> 来求解病态的 <span class="math inline">\(y=Ax\)</span>
+问题，但是由于在前向过程中噪声的引入，更常见的方法是使用最优化方法进行建模分析求解上面的问题。</p>
+<p>根据《<a target="_blank" rel="noopener" href="http://faculty.bicmr.pku.edu.cn/~wenzw/optbook/opt1.pdf">最优化：建模、算法与理论</a>》书中内容<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>可以注意到，公式（1）的形式满足线性回归模型的形式（虽然定义域和值域不同，但是形式一致）。书中指出，<strong>当假设误差是高斯白噪声时，最小二乘法的解是线性回归模型的最大似然解。</strong>因此常见的作法是使用最小二乘法来给出病态的
+<span class="math inline">\(y=Ax\)</span>
+问题的最佳近似解。最小二乘法最常见的做法是极小化误差的 <span class="math inline">\(\ell_{2}\)</span> 范数的平方，即 <span class="math display">\[
+\min_{x\in\mathbb{R}^n}\quad\frac12\|Ax-y\|_2^2.
+\]</span> 由于在上面这个最小二乘问题中，矩阵 <span class="math inline">\(A\)</span> 的 <span class="math inline">\(m &lt;
+n\)</span>
+时，最优解很可能不止一个，且并不是所有的解都是我们想要的，所以通常借助引入先验知识来选出我们需要的特定性质的解。解的先验知识需要对具体问题进行具体分析。常见的，如果我们希望解向量的长度尽可能的短（欧几里得长度尽量短），那么可以加入
+<span class="math inline">\(\ell_{2}\)</span>
+范数作为正则项；如果我们希望解中非零元素尽可能多（解是稀疏的），那么可以引入
+<span class="math inline">\(\ell_{1}\)</span> 范数作为正则项。</p>
+<p>接下来的分析，我们借助具体的例子进行分析。假设我们希望得到的图像（逆问题的解）是稀疏的，那么可以引入
+<span class="math inline">\(\ell_{1}\)</span> 范数作为正则项。<span class="math inline">\(\ell_{1}\)</span>
+范数定义为将矩阵中的全部元素绝对值相加。当最小化 <span class="math inline">\(\ell_{1}\)</span>
+范数时，可以认为是让尽可能多的元素为0，从而筛选出包含最多零的解。当公式（2）选择<span class="math inline">\(\ell_{1}\)</span>
+范数作为正则项时，此时的问题被称作 LASSO 问题，即 <span class="math display">\[
+LASSO:\;\;\;\;
+\min_{x\in\mathbb{R}^n}\quad\frac12\|Ax-b\|_2^2+\mu\|x\|_1
+\]</span> LASSO 问题是一个典型的复合优化问题，可以被抽象地定义为 <span class="math display">\[
+\min_{x\in\mathbb{R}^n}\quad\psi(x)\xrightarrow{\mathrm{def}}f(x)+h(x)
+\]</span> 其中 <span class="math inline">\(f(x)\)</span>
+为光滑的可微函数，<span class="math inline">\(h(x)\)</span>
+为不可微函数。对于光滑函数 <span class="math inline">\(f(x)\)</span>，可以使用最常见且有效的梯度下降法来求解，迭代公式如公式（5）所示。
+<span class="math display">\[
+x^{k+1}=x^k-\alpha_k\nabla f(x^k)
+\]</span> 但是，对于不可微函数 <span class="math inline">\(h(x)\)</span>，梯度下降法没有办法使用。因此需要引入新的算法来实现求解。第一个方法是近端梯度下降法（Proximal
+Gradient Descent）。</p>
+<h4 id="近端梯度下降法">近端梯度下降法</h4>
+<p>类似于一般的梯度下降法，近端梯度下降法给出了迭代公式进行最优化求解，即
+<span class="math display">\[
+y^{k}=x^k-t_k\nabla f(x^k)\\
+x^{k+1}=\mathrm{prox}_{t_kh}(y^k)\\
+\]</span>
+观察公式（6）可以注意到，近端梯度下降法的两步迭代中，第一步是一个一般的梯度下降法，第二步是使用了一个被称为近端算子的运算来实现。对于一个凸函数
+<span class="math inline">\(h(x)\)</span> ，可以将其近端算子定义为 <span class="math display">\[
+\mathrm{prox}_h(x)=\arg\min_{u\in\mathrm{dom}h}\left\{h(u)+\frac12\|u-x\|^2\right\}.
+\]</span> 可以看到，邻近算子的目的是求解一个距 <span class="math inline">\(x\)</span> 不算太远的点<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>，并使函数值 <span class="math inline">\(h(x)\)</span>
+也相对较小。可以证明的是，给出的定义中优化问题解的存在具有唯一性<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>。在 LASSO
+问题中，为了更方便的求出近端算子，可以借助次梯度来求解。邻近算子与次梯度的关系如公式（8）所示。
+<span class="math display">\[
+u=\mathrm{prox}_h(x)\Longleftrightarrow x-u\in\partial h(u).
+\]</span> 次梯度被定义为在函数 <span class="math display">\[f\]</span>
+在某一点 <span class="math display">\[x\]</span>
+的任意邻域内，对于所有的 <span class="math display">\[y\]</span> 都满足
+<span class="math display">\[f(y) \geq f(x) + g^T (y - x)\]</span>
+的向量 <span class="math display">\[g\]</span>。这里给出 <span class="math display">\[\ell_1\]</span>​​ 范数的次梯度求解。</p>
+<p>已知 <span class="math display">\[\ell_1\]</span> 范数为 <span class="math display">\[
+\|x\|_1 = \sum_{i} |x_i|
+\]</span> 可以注意到到其在 <span class="math inline">\(x_i=0\)</span>
+的时候不可导，此处次梯度为 <span class="math display">\[[-1, 1]\]</span>
+区间内的所有值，写作 <span class="math display">\[
+\partial\|x\|_1 =
+\begin{cases}
+\{1\},&amp;x&gt;0,\\
+[-1,1],&amp;x=0,\\
+\{-1\},&amp;x&lt;0,
+\end{cases}
+\]</span> 因此，当公式（4）中的 <span class="math inline">\(h(x)\)</span> 为 <span class="math display">\[\ell_1\]</span>
+范数时，可以根据公式（8）和公式（10）得到 <span class="math display">\[
+x-u\in t\partial\|u\|_1 =
+\begin{cases}
+\{t\},&amp;u&gt;0,\\
+[-t,t],&amp;u=0,\\
+\{-t\},&amp;u&lt;0,
+\end{cases}
+\]</span> 因此，当 <span class="math display">\[x &gt; t\]</span>
+时，<span class="math display">\[u = x - t\]</span>；当 <span class="math display">\[x &lt; -t\]</span> 时，<span class="math display">\[u = x + t\]</span>；当 <span class="math display">\[x \in [-t, t]\]</span> 时，<span class="math display">\[u = 0\]</span>，即 <span class="math display">\[
+u = \mathrm{prox}_h(x) = \text{sign}(x) \max\{|x| - t, 0\}
+\]</span>
+将公式（12）带入到公式（6）中，可以给出LASSO问题的近端梯度下降法具体的迭代公式
+<span class="math display">\[
+y^{k}=x^k-t_kA^\mathrm{T}(Ax^k-b)\\
+x^{k+1}=\mathrm{prox}_h(y^k)=\operatorname{sign}(y^k)\max\{|y^k|-t_k\mu,0\}
+\]</span></p>
+<h4 id="fista-算法简介">FISTA 算法简介</h4>
+<p>一个非常简单的 FISTA 算法介绍：</p>
+<p>从算法时间复杂度角度上考虑，近端梯度下降法属于 <span class="math inline">\(\mathcal{O}\left(\frac1k\right)\)</span>
+问题。FISTA 算法的目的在于降低算法的时间复杂度到 <span class="math inline">\(\mathcal{O}\left(\frac{1}{k^2}\right)\)</span>。</p>
+<p>实现方法是，先沿着前两步的计算方向计算一个新点，然后在该新点处做一步近似点梯度迭代，即
+<span class="math display">\[
+y^k=\quad x^{k-1}+\frac{k-2}{k+1}(x^{k-1}-x^{k-2})\\
+x^k=\quad\mathrm{prox}_{t_kh}(y^k-t_k\nabla f(y^k))
+\]</span></p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>具体指的《最优化：建模、算法与理论》中 3.2 回归分析
+的内容。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>这句话摘自《最优化：建模、算法与理论》P344，但是我并不是很能理解这个定义为什么可以保证离
+x 不远。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>证明过程可见《最优化：建模、算法与理论》P344 中定理 8.1
+的证明。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -2917,257 +3097,6 @@ SysTick 定时器（基于 HSI 时钟）每间隔 <code>1ms</code>
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2022/04/10/11-17-01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/custom-logo.jpg">
-      <meta itemprop="name" content="邱金羽">
-      <meta itemprop="description" content="联系我：y006@henu.edu.cn">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/10/11-17-01/" class="post-title-link" itemprop="url">概率论</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-04-10 11:17:01 / 修改时间：17:55:32" itemprop="dateCreated datePublished" datetime="2022-04-10T11:17:01+08:00">2022-04-10</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2022/04/10/11-17-01/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/04/10/11-17-01/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="概率与统计">概率与统计</h1>
-<h3 id="随机实验">随机实验</h3>
-<p>满足条件：</p>
-<ol type="1">
-<li>可以被重复；</li>
-<li>具有多种可能结果并均明确可知；</li>
-<li>试验结果不可预先获知。</li>
-</ol>
-<p>随机实验可能出现的每一种结果称为<strong>样本点</strong>，每一个样本点都彼此不相容，因而它是构成试验结果的最基础原子，故而样本点也被称为<strong>基本事件</strong>。</p>
-<p>所有样本点（也即所有的可能结果）的集合就被称为<strong>样本空间</strong></p>
-<p>一次试验可能出现的结果称为<strong>随机事件</strong>，随机事件是一个集合，内部元素均为随机实验的样本点</p>
-<p>为什么要引入样本空间：</p>
-<p>引入样本空间是为了给予“随机”这一相对较为暧昧的机制一个严格的数学范围。在这以后，一切事件的概率才得以在其相对应的样本空间之下具备良好的定义。</p>
-<p>这就像样本空间（Sample
-space）产生出了事件域，而我们讨论相应的事件概率，就只在其定义的样本空间下具有意义，而同一事件在不同样本空间下，其发生的概率可能截然不同</p>
-<p>样本空间的引入实际上是在为概率的定义提供了一个严格的范围。</p>
-<p>一个样本空间可以是有限的，可数无穷的和不可数无穷的</p>
-<p>假如S是可数的，包括有限和可数无穷的，那么S为一个离散的样本空间</p>
-<p>假如S是不可数的，即不可数无穷的，那么S为一个连续的样本空间</p>
-<p>对于随机试验的结果，即随机事件，其描述可以由多个观测量组成，因此样本空间可以是有不同维度的，维度数即描述一个随机时间的测量量的数目</p>
-<p>概率的定义：（概率的本质）</p>
-<p>直觉：概率就是事件发生的可能性。</p>
-<p>古典概型：</p>
-<p>进行<span class="math inline">\(n\)</span>次随机实验，得到的某一结果的次数记作<span class="math inline">\(N_k(n)\)</span>，则得到该结果的相对次数为<span class="math inline">\(f_k(n)=\frac{N_k(n)}{n}\)</span></p>
-<p>当<span class="math inline">\(n\)</span>的数值足够大时，<span class="math inline">\(f_k(n)\)</span>则收敛于一个稳定的数值，即<span class="math inline">\(lim_{n-&gt;\infty}f_k(n)=p_k\)</span>，<span class="math inline">\(p_k\)</span>称作概率</p>
-<p>古典概型的前提：</p>
-<ol type="1">
-<li>在古典概型的样本空间中，样本点也即基本事件的个数是有限的（骰子只能掷出6个数字）</li>
-<li>每个样本点也即每个基本事件发生的可能性是相等的（投出6和投出1或任意其它一种结果的可能性完全一致）</li>
-</ol>
-<p>古典概型是<strong>先验</strong>的，因为我们<strong>先验</strong>的认为，这个骰子掷出任意一个数字的可能性都是相同的。并且同样<strong>先验</strong>的确定，掷出任意一个数字的频率都会稳定于古典概型计算出的这个先验概率附近。</p>
-<p>先验来自于我们的直觉，来自于实践中的观察</p>
-<p><strong>后验</strong>认为，对于事件发生的先验假设，我们不应当存在任何的偏好——即基本事件等可能这种事，并不是理所当然的</p>
-<p>后验中我们可以随意假设一个估计性质的开始概率，重要的是，我们可以通过后续的重复试验，来不断的更新纠正这一概率，而当通过试验获取的信息趋近于无穷时，我们最终就可以获得一个收敛于某个具体数值的<strong>后验</strong>概率。</p>
-<p>让我们能够摆脱“可能性”的束缚，从而绕开先验与后验的争论，来在数学上精确的定义概率呢？</p>
-<p>在有了样本空间将事件构造成的集合以后，再通过测度的方式，将它们映射至0到1取值范围内的实数域
-<span class="math inline">\([0,1]\)</span>上。</p>
-<p>若以这样的方式来定义概率，我们不就可以将它从事件发生可能性这样的束缚上解脱出来，从而获得一个纯粹的数学定义。为了实现这种测度的构造，就可以人为的对样本空间到实数域的映射规则进行规定，即：</p>
-<ol type="1">
-<li>概率必然是非负的，即 <span class="math inline">\(P(A)\ge
-0\)</span></li>
-<li>样本空间所代表的全集，概率规定为1，即 <span class="math inline">\(P(\Omega)=1\)</span></li>
-<li>对于任意可列的互不相容事件（即两两交集均为 <span class="math inline">\(\varnothing\)</span>
-的子集），它们并集的概率等于它们概率的和，即 <span class="math inline">\(P(A\cup B)=P(A)+P(B)\)</span></li>
-</ol>
-<p>满足这三个条件的映射，即有概率 <span class="math inline">\(P\)</span>
-，这也被称为概率的公理化定义。</p>
-<p>也由于这种定义的实质就是将样本空间对实数进行映射，故而这种映射也被称为<strong>概率测度</strong>。</p>
-<p>条件概率公式所反映的，实际上是决策树的<strong>剪枝</strong>过程。而条件概率的本质，则是<strong>由于前提事件的发生所导致的待计算事件其样本点与样本空间的同时缩小（如同上文中文氏图所示的右侧聚焦过程）</strong>。</p>
-<p><strong>全概率公式</strong>：</p>
-<p>假设：样本空间 <span class="math inline">\(S\)</span>
-有一个完备的事件组 <span class="math inline">\(A_1,A_2,A_3\)</span>：也就是样本空间被这三个事件瓜分完了</p>
-<p>满足两个条件：三个事件：</p>
-<ol type="1">
-<li><span class="math inline">\(A_1 \cup A_2 \cup
-A_3=\Omega\)</span></li>
-<li><span class="math inline">\(A_1 \cap A_2 \cap
-A_3=\varnothing\)</span></li>
-</ol>
-<p>则又有一事件 <span class="math inline">\(B\)</span> 时，<span class="math inline">\(P(B)=P(B \cap \Omega)=P[B\cup (A_1 \cup A_2 \cup
-A_3)]=P(BA_1 \cup BA_2 \cup BA_3)\)</span></p>
-<p>因为 <span class="math inline">\(A_1 \cap A_2 \cap
-A_3=\varnothing\)</span>，所以 <span class="math inline">\(BA_1 \cup
-BA_2 \cup BA_3=\varnothing\)</span></p>
-<p>所以：<span class="math inline">\(P(BA_1 \cup BA_2 \cup
-BA_3)=P(BA_1)+P(BA_2)+P(BA_3)\)</span></p>
-<p>由条件概率公式可得：</p>
-<p><span class="math inline">\(P(B)=P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)P(B|A_3)\)</span></p>
-<p>即全概率公式事实上是一种<strong>对事件的先验分解</strong>。</p>
-<p>全概率公式的使用条件，就是连续做多次实验，可以画出决策树，然后每一种分支可能性会发生变化，即前一次的选择会对下一次的选择产生影响；这是若求解第二轮即以后某个结果发生的可能性，则使用全概率公式</p>
-<p>贝叶斯公式：</p>
-<p>贝叶斯公式是后验的，即，我们已经做了实验，然后通过实验结果我们不断去修正导致这一结果发生的某些概率值</p>
-<p>贝叶斯公式可以由全概率公式变形得来： <span class="math display">\[
-\begin{aligned}
-P(A_1|B)&amp;=\frac{P(A_1B)}{P(B)}\\
-&amp;=\frac{P(A_1B)}{P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)P(B|A_3)}\\
-&amp;=\frac{P(A_1)P(B|A_1)}{P(A_1)P(B|A_1)+P(A_2)P(B|A_2)+P(A_3)P(B|A_3)}
-\end{aligned}
-\]</span></p>
-<p>随机变量：随机变量的本质实际上就是<strong>随机事件的数字化</strong>。</p>
-<p>现实世界中各色各样具象的随机事件，可以被映射成数学世界中抽象的数字，而这种映射规则就叫做随机变量。</p>
-<p>离散随机变量的（概率分布律）概率质量函数（<span class="math inline">\(pmf\)</span>）：</p>
-<p>离散性随机变量记作 <span class="math inline">\(X\)</span>，<span class="math inline">\(X\)</span> 的可能值是一个可数集合中的元素：<span class="math inline">\(S_X={x_1,x_2,x_3...}\)</span></p>
-<table>
-<thead>
-<tr class="header">
-<th><span class="math inline">\(X\)</span></th>
-<th><span class="math inline">\(x=1\)</span></th>
-<th><span class="math inline">\(x=0\)</span></th>
-<th><span class="math inline">\(x=2\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(pmf\)</span></td>
-<td><span class="math inline">\(P(x=1)=0.125\)</span></td>
-<td><span class="math inline">\(p(x=0)=0.25\)</span></td>
-<td><span class="math inline">\(P(x=2)=0.625\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><span class="math inline">\(pmf\)</span> 的性质：</p>
-<ul>
-<li><p><span class="math display">\[
-对于所有\;x\; 都有 \;P_X(x)\ge 0
-\]</span></p></li>
-<li><p><span class="math display">\[
-\sum_{x\in S}P_X(x)=1
-\]</span></p></li>
-<li><p><span class="math display">\[
-P(X\;in\;B)=\sum_{x\in B}P_X(x)\;其中B\subset S_X
-\]</span></p></li>
-</ul>
-<p>随机变量可以是离散的，连续的和混合的</p>
-<p>累积分布函数（<span class="math inline">\(cdf\)</span>：cumulative
-distribution
-function），常被使用在随机变量的正式定义中，可以处理三种类型的随机变量</p>
-<p>一个离散性随机变量的 <span class="math inline">\(pmf\)</span> 是由
-<span class="math inline">\(\{X=b\}\)</span>
-来定义的，累计分布函数（<span class="math inline">\(cdf\)</span>：cumulative distribution
-function）则是由 <span class="math inline">\(\{X\le b\}\)</span>
-来定义的。</p>
-<p>累计分布函数的优点在于它不局限于离散型随机变量，而是可以在所有类型的随机变量中使用</p>
-<ol type="1">
-<li><span class="math inline">\(F_X(x)\)</span>必然是一个单调不减函数——因概率不可为负，随着对应样本点的增多，概率的累加必然是单调不减的；</li>
-<li><span class="math inline">\(F_X(x)\)</span>
-必然是一个右连续函数；</li>
-<li><span class="math inline">\(\lim_{n \to
--\infty}F_X(x)=0\)</span>，<span class="math inline">\(\lim_{n \to
-\infty}F_X(x)=1\)</span>
-——即对应样本点集合为空时，概率必然为0，而对应样本点集合为整个样本空间时，概率必然为1。</li>
-</ol>
-<p>可以看到，无论分布函数以何种形式构造，又呈现出何种性质，其最最核心的效用，就是为了能够良好的表示出样本空间的这一性质：
-<span class="math display">\[
-P_1+P_2+P_3+...+P_n=\sum_iP_i=1
-\]</span> 即实现样本空间 <span class="math inline">\(S\)</span>
-对应的概率<strong>归向于1</strong>，从而完成样本空间向值域 <span class="math inline">\([0,1]\)</span>
-的映射。因此，分布函数的本质实际上是<strong>随机变量的归一化</strong>。</p>
-<p>而当随机变量由离散型扩展至连续型时，在把握到分布函数的本质是样本点概率的累加函数以后，便可以推测连续型随机变量的分布函数
-<span class="math inline">\(F_X(x)\)</span>
-必然会表现为一种积分形式。</p>
-<p>但是与离散型概率分布中，每个随机变量对应着一个确定的概率值所不同，若以类似的方式来通过分布函数计算连续型随机变量中任意一点的概率，即用这一点的分布函数值减去这一点处左极限的分布函数值：
-<span class="math display">\[
-P\{x=x_0\}=F_X(x_0)-\lim_{n \to x_0^-}F_X(x_0)
-\]</span> 由于 <span class="math inline">\(F_X(x)\)</span>
-是连续的概率累加，因此它在性质上也必然是一个非负不减的连续函数，故根据连续的性质，有：
-<span class="math display">\[
-F_X(x_0)=\lim_{n \to x_0^+}F_X(x_0)= \lim_{n \to x_0^-}F_X(x_0)
-\]</span> 故有： <span class="math display">\[
-P\{x=x_0\}=0
-\]</span>
-由此可以看到，无论我们怎么计算，在连续型随机变量的分布函数上想要直接计算某一点处的概率，它将始终都会是0。</p>
-<p>从这一结论，你应该就能明白，在概率论的开篇中，我们提到通过引入测度，将事件的概率测度与它在现实中发生的可能性这两个概念分开具有怎样重要的意义。</p>
-<p>可以看到，在连续型随机变量中，某一点出的概率为0，并不意味着它在事件发生的角度来看是不可能的，而只是意味着这一点处的概率测度为0。</p>
-<p>而之所以会出现概率测度为0的原因，是因为在这里一开始所着眼的计算目标就错了。打个比方来说就相当于，你并不会去计算一个点的长度，不会去计算一条线的面积，不会去计算一个面的体积。换句话说，在连续型随机变量中，计算某一点处的概率就相当于在求一条线的面积。</p>
-<p>在认识到这一点之后，为了刻画连续型随机变量中某点处局部的概率性质就需要另外的工具，而这个工具在微积分的阶段就已经准备好早已被我们熟稔于胸——当然就是导数，即有：
-<span class="math display">\[
-F^{&#39;}_X(x_0)=\lim_{x\to x_0}\frac{F_X(x)-F_X(x_0)}{x-x_0}
-\]</span>
-换句话说，对于连续型随机变量，我们用以刻画在一点处局部性质的量不是概率，而应该是<strong>概率测度的变化率。</strong></p>
-<p>借用我们在散度与测度一章中的两个相类似的例子来说，就是：</p>
-<ul>
-<li>在位移运动中，刻画某一瞬时性质的不是位移而是速度；</li>
-<li>在有质物体中，刻画某一质点性质的不是质量而是密度。</li>
-</ul>
-<p>也因此，以质量与密度的关系来考量概率与概率变化率，才会将连续型随机变量的分布函数，一个变上限积分：<span class="math inline">\(F(x)=\int^x_{-\infty}f(t)dt\)</span> 的导函数：
-<span class="math inline">\(F&#39;(x)=f(x)\)</span>
-命名为<strong>概率密度</strong>。</p>
-<p>更要值得一提的是，如果用离散型随机变量的概率分布即：</p>
-<p>一个随机变量对应一个确定的概率测度 <span class="math inline">\(x_i\sim P_i\)</span></p>
-<p>来进行类比的话，连续型随机变量的概率分布实际上应当为：</p>
-<p>一个随机变量对应其<strong>附近领域</strong>的概率测度 <span class="math inline">\(x_i\sim f(x_i)dx_i\)</span></p>
-<p>而非直接对应概率密度函数 <span class="math inline">\(f(x)\)</span>，从这个类比，可以更直观的认为，若视离散型随机变量的分布函数为一个楼层分明的阶梯，那么连续型随机变量的分布函数就是一个将楼层无限增加细分从而使层次分明的阶梯最终转换为一个<strong>平滑化</strong>的斜坡。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/default-index/page/2/">2</a><a class="page-number" href="/default-index/page/3/">3</a><a class="extend next" rel="next" href="/default-index/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -3181,7 +3110,7 @@ F^{&#39;}_X(x_0)=\lim_{x\to x_0}\frac{F_X(x)-F_X(x_0)}{x-x_0}
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

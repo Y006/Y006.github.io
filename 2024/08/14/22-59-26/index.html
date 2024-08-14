@@ -21,28 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"y006.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1},"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-  <meta name="description" content="2023-10-06 diffusion model ZERO-SHOT IMAGE RESTORATION USING DENOISING DIFFUSION NULL-SPACE MODEL 论文标题： 使用去噪扩散概率模型（实现）零样本图像复原 摘要：  现有的用于处理图像复原的模型均针对特定的任务（task-specific） 使用去噪扩散概率模型（DDNM）实现任意线性图">
+  <meta name="description" content="成像问题建模 成像问题被表述为一个线性逆问题，这个逆问题的前向过程表示为公式（1） \[ y&#x3D;Ax+\epsilon \] 逆问题的目标在于求解 \(x\)。在公式（1）中，\(y\) 是我们可以测量得到的测量值，\(x\) 是我们想要求解的内容，\(A\) 是前向算子，表示施加在原始图像中的物理过程，\(\epsilon\) 是前向过程中引入的噪声值。 成像问题的逆问题的一个重要特征">
 <meta property="og:type" content="website">
-<meta property="og:title" content="论文阅读笔记">
-<meta property="og:url" content="https://y006.github.io/2023/10/08/23-25-14/index.html">
+<meta property="og:title" content="计算程序问题数学基础">
+<meta property="og:url" content="https://y006.github.io/2024/08/14/22-59-26/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="2023-10-06 diffusion model ZERO-SHOT IMAGE RESTORATION USING DENOISING DIFFUSION NULL-SPACE MODEL 论文标题： 使用去噪扩散概率模型（实现）零样本图像复原 摘要：  现有的用于处理图像复原的模型均针对特定的任务（task-specific） 使用去噪扩散概率模型（DDNM）实现任意线性图">
+<meta property="og:description" content="成像问题建模 成像问题被表述为一个线性逆问题，这个逆问题的前向过程表示为公式（1） \[ y&#x3D;Ax+\epsilon \] 逆问题的目标在于求解 \(x\)。在公式（1）中，\(y\) 是我们可以测量得到的测量值，\(x\) 是我们想要求解的内容，\(A\) 是前向算子，表示施加在原始图像中的物理过程，\(\epsilon\) 是前向过程中引入的噪声值。 成像问题的逆问题的一个重要特征">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-08T15:25:14.000Z">
-<meta property="article:modified_time" content="2023-10-09T05:06:05.734Z">
+<meta property="article:published_time" content="2024-08-14T14:59:26.000Z">
+<meta property="article:modified_time" content="2024-08-14T15:00:08.464Z">
 <meta property="article:author" content="邱金羽">
-<meta property="article:tag" content="文献阅读">
+<meta property="article:tag" content="计算成像">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://y006.github.io/2023/10/08/23-25-14/">
+<link rel="canonical" href="https://y006.github.io/2024/08/14/22-59-26/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://y006.github.io/2023/10/08/23-25-14/","path":"2023/10/08/23-25-14/","title":"论文阅读笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://y006.github.io/2024/08/14/22-59-26/","path":"2024/08/14/22-59-26/","title":"计算程序问题数学基础"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>论文阅读笔记 | Blog</title>
+<title>计算程序问题数学基础 | Blog</title>
   
 
 
@@ -126,9 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#diffusion-model"><span class="nav-number">1.</span> <span class="nav-text">2023-10-06 diffusion model</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#zero-shot-image-restoration-using-denoising-diffusion-null-space-model"><span class="nav-number">1.1.</span> <span class="nav-text">ZERO-SHOT
-IMAGE RESTORATION USING DENOISING DIFFUSION NULL-SPACE MODEL</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.1.</span> <span class="nav-text">论文标题：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.1.2.</span> <span class="nav-text">摘要：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.3.</span> <span class="nav-text">介绍：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.4.</span> <span class="nav-text">背景：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.5.</span> <span class="nav-text">方法：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C"><span class="nav-number">1.1.6.</span> <span class="nav-text">实验：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">1.1.7.</span> <span class="nav-text">结论：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#diffusion-posterior-sampling-for-general-noisy-inverse-problems"><span class="nav-number">1.2.</span> <span class="nav-text">DIFFUSION
-POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E6%A0%87%E9%A2%98-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">论文标题：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%91%98%E8%A6%81-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">摘要：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">介绍：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%83%8C%E6%99%AF-1"><span class="nav-number">1.2.4.</span> <span class="nav-text">背景：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">方法：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C-1"><span class="nav-number">1.2.6.</span> <span class="nav-text">实验：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-1"><span class="nav-number">1.2.7.</span> <span class="nav-text">结论：</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%90%E5%83%8F%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-number">1.</span> <span class="nav-text">成像问题建模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%91%E7%AB%AF%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">近端梯度下降法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fista-%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="nav-number">3.</span> <span class="nav-text">FISTA 算法简介</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,7 +233,7 @@ POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</span></a><ol class="nav-c
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2023/10/08/23-25-14/">
+    <link itemprop="mainEntityOfPage" href="https://y006.github.io/2024/08/14/22-59-26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/custom-logo.jpg">
@@ -248,7 +246,7 @@ POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</span></a><ol class="nav-c
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          论文阅读笔记
+          计算程序问题数学基础
         </h1>
 
         <div class="post-meta-container">
@@ -258,15 +256,9 @@ POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</span></a><ol class="nav-c
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-10-08 23:25:14" itemprop="dateCreated datePublished" datetime="2023-10-08T23:25:14+08:00">2023-10-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-09 13:06:05" itemprop="dateModified" datetime="2023-10-09T13:06:05+08:00">2023-10-09</time>
+      <time title="创建时间：2024-08-14 22:59:26 / 修改时间：23:00:08" itemprop="dateCreated datePublished" datetime="2024-08-14T22:59:26+08:00">2024-08-14</time>
     </span>
 
   
@@ -278,8 +270,8 @@ POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</span></a><ol class="nav-c
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2023/10/08/23-25-14/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/10/08/23-25-14/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2024/08/14/22-59-26/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/08/14/22-59-26/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -293,69 +285,108 @@ POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</span></a><ol class="nav-c
     
     
     <div class="post-body" itemprop="articleBody">
-        <h4 id="diffusion-model">2023-10-06 diffusion model</h4>
-<h5 id="zero-shot-image-restoration-using-denoising-diffusion-null-space-model">ZERO-SHOT
-IMAGE RESTORATION USING DENOISING DIFFUSION NULL-SPACE MODEL</h5>
-<h6 id="论文标题">论文标题：</h6>
-<p>使用去噪扩散概率模型（实现）零样本图像复原</p>
-<h6 id="摘要">摘要：</h6>
-<ul>
-<li>现有的用于处理图像复原的模型均针对特定的任务（task-specific）</li>
-<li>使用去噪扩散概率模型（DDNM）实现任意线性图像复原</li>
-<li>使用改进后的 <span class="math inline">\(DDNM^+\)</span>
-解决更复杂的图像复原问题</li>
-</ul>
-<h6 id="介绍">介绍：</h6>
-<ol type="1">
-<li><p>定义图像复原（IR）问题：IR的目的是从损坏（degraded）的图像中生成（yielding）高质量的图像</p>
-<p>数学上表示为从 <span class="math inline">\(y=Ax+n\)</span> 中得到
-<span class="math inline">\(\hat{x}\)</span></p></li>
-<li><p>传统技术的局限性：传统 IR
-技术是基于“先验”的数学模型进行复原，处理效果不够好</p></li>
-<li><p>DNN技术的局限性：end-to-end DNN 可以使用损坏图像（degraded
-image）<span class="math inline">\(y_i\)</span> 和真实图像（ground truth
-image）<span class="math inline">\(x_i\)</span>
-实现一个复原过程的直接映射，这避免了“先验”，但是不具备良好的可解释性（lack
-interpretation），并且不能解决域偏移（domain shift）</p></li>
-<li><p>文章提出当前有两种发展方向：</p>
-<ol type="1">
-<li>使用 end-to-end learning-based IR methods，即上面的 DNN
-技术的一种延续</li>
-<li>使用 latent space of pretrained generative
-models，也就是本文关注的技术</li>
-</ol></li>
+        <h4 id="成像问题建模">成像问题建模</h4>
+<p>成像问题被表述为一个线性逆问题，这个逆问题的前向过程表示为公式（1）
+<span class="math display">\[
+y=Ax+\epsilon
+\]</span> 逆问题的目标在于求解 <span class="math inline">\(x\)</span>。在公式（1）中，<span class="math inline">\(y\)</span> 是我们可以测量得到的测量值，<span class="math inline">\(x\)</span> 是我们想要求解的内容，<span class="math inline">\(A\)</span>
+是前向算子，表示施加在原始图像中的物理过程，<span class="math inline">\(\epsilon\)</span> 是前向过程中引入的噪声值。</p>
+<p>成像问题的逆问题的一个重要特征是，前向算子 <span class="math inline">\(A\)</span> 通常是一个 <span class="math inline">\(m&lt;n\)</span> 的矩阵，这意味 <span class="math inline">\(A\)</span>
+的逆矩阵不存在，也无法求得唯一的解析解。虽然线性代数中提供了伪逆 <span class="math inline">\(A^{\dagger}\)</span> 来求解病态的 <span class="math inline">\(y=Ax\)</span>
+问题，但是由于在前向过程中噪声的引入，更常见的方法是使用最优化方法进行建模分析求解上面的问题。</p>
+<p>根据《<a target="_blank" rel="noopener" href="http://faculty.bicmr.pku.edu.cn/~wenzw/optbook/opt1.pdf">最优化：建模、算法与理论</a>》书中内容<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>可以注意到，公式（1）的形式满足线性回归模型的形式（虽然定义域和值域不同，但是形式一致）。书中指出，<strong>当假设误差是高斯白噪声时，最小二乘法的解是线性回归模型的最大似然解。</strong>因此常见的作法是使用最小二乘法来给出病态的
+<span class="math inline">\(y=Ax\)</span>
+问题的最佳近似解。最小二乘法最常见的做法是极小化误差的 <span class="math inline">\(\ell_{2}\)</span> 范数的平方，即 <span class="math display">\[
+\min_{x\in\mathbb{R}^n}\quad\frac12\|Ax-y\|_2^2.
+\]</span> 由于在上面这个最小二乘问题中，矩阵 <span class="math inline">\(A\)</span> 的 <span class="math inline">\(m &lt;
+n\)</span>
+时，最优解很可能不止一个，且并不是所有的解都是我们想要的，所以通常借助引入先验知识来选出我们需要的特定性质的解。解的先验知识需要对具体问题进行具体分析。常见的，如果我们希望解向量的长度尽可能的短（欧几里得长度尽量短），那么可以加入
+<span class="math inline">\(\ell_{2}\)</span>
+范数作为正则项；如果我们希望解中非零元素尽可能多（解是稀疏的），那么可以引入
+<span class="math inline">\(\ell_{1}\)</span> 范数作为正则项。</p>
+<p>接下来的分析，我们借助具体的例子进行分析。假设我们希望得到的图像（逆问题的解）是稀疏的，那么可以引入
+<span class="math inline">\(\ell_{1}\)</span> 范数作为正则项。<span class="math inline">\(\ell_{1}\)</span>
+范数定义为将矩阵中的全部元素绝对值相加。当最小化 <span class="math inline">\(\ell_{1}\)</span>
+范数时，可以认为是让尽可能多的元素为0，从而筛选出包含最多零的解。当公式（2）选择<span class="math inline">\(\ell_{1}\)</span>
+范数作为正则项时，此时的问题被称作 LASSO 问题，即 <span class="math display">\[
+LASSO:\;\;\;\;
+\min_{x\in\mathbb{R}^n}\quad\frac12\|Ax-b\|_2^2+\mu\|x\|_1
+\]</span> LASSO 问题是一个典型的复合优化问题，可以被抽象地定义为 <span class="math display">\[
+\min_{x\in\mathbb{R}^n}\quad\psi(x)\xrightarrow{\mathrm{def}}f(x)+h(x)
+\]</span> 其中 <span class="math inline">\(f(x)\)</span>
+为光滑的可微函数，<span class="math inline">\(h(x)\)</span>
+为不可微函数。对于光滑函数 <span class="math inline">\(f(x)\)</span>，可以使用最常见且有效的梯度下降法来求解，迭代公式如公式（5）所示。
+<span class="math display">\[
+x^{k+1}=x^k-\alpha_k\nabla f(x^k)
+\]</span> 但是，对于不可微函数 <span class="math inline">\(h(x)\)</span>，梯度下降法没有办法使用。因此需要引入新的算法来实现求解。第一个方法是近端梯度下降法（Proximal
+Gradient Descent）。</p>
+<h4 id="近端梯度下降法">近端梯度下降法</h4>
+<p>类似于一般的梯度下降法，近端梯度下降法给出了迭代公式进行最优化求解，即
+<span class="math display">\[
+y^{k}=x^k-t_k\nabla f(x^k)\\
+x^{k+1}=\mathrm{prox}_{t_kh}(y^k)\\
+\]</span>
+观察公式（6）可以注意到，近端梯度下降法的两步迭代中，第一步是一个一般的梯度下降法，第二步是使用了一个被称为近端算子的运算来实现。对于一个凸函数
+<span class="math inline">\(h(x)\)</span> ，可以将其近端算子定义为 <span class="math display">\[
+\mathrm{prox}_h(x)=\arg\min_{u\in\mathrm{dom}h}\left\{h(u)+\frac12\|u-x\|^2\right\}.
+\]</span> 可以看到，邻近算子的目的是求解一个距 <span class="math inline">\(x\)</span> 不算太远的点<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>，并使函数值 <span class="math inline">\(h(x)\)</span>
+也相对较小。可以证明的是，给出的定义中优化问题解的存在具有唯一性<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>。在 LASSO
+问题中，为了更方便的求出近端算子，可以借助次梯度来求解。邻近算子与次梯度的关系如公式（8）所示。
+<span class="math display">\[
+u=\mathrm{prox}_h(x)\Longleftrightarrow x-u\in\partial h(u).
+\]</span> 次梯度被定义为在函数 <span class="math display">\[f\]</span>
+在某一点 <span class="math display">\[x\]</span>
+的任意邻域内，对于所有的 <span class="math display">\[y\]</span> 都满足
+<span class="math display">\[f(y) \geq f(x) + g^T (y - x)\]</span>
+的向量 <span class="math display">\[g\]</span>。这里给出 <span class="math display">\[\ell_1\]</span>​​ 范数的次梯度求解。</p>
+<p>已知 <span class="math display">\[\ell_1\]</span> 范数为 <span class="math display">\[
+\|x\|_1 = \sum_{i} |x_i|
+\]</span> 可以注意到到其在 <span class="math inline">\(x_i=0\)</span>
+的时候不可导，此处次梯度为 <span class="math display">\[[-1, 1]\]</span>
+区间内的所有值，写作 <span class="math display">\[
+\partial\|x\|_1 =
+\begin{cases}
+\{1\},&amp;x&gt;0,\\
+[-1,1],&amp;x=0,\\
+\{-1\},&amp;x&lt;0,
+\end{cases}
+\]</span> 因此，当公式（4）中的 <span class="math inline">\(h(x)\)</span> 为 <span class="math display">\[\ell_1\]</span>
+范数时，可以根据公式（8）和公式（10）得到 <span class="math display">\[
+x-u\in t\partial\|u\|_1 =
+\begin{cases}
+\{t\},&amp;u&gt;0,\\
+[-t,t],&amp;u=0,\\
+\{-t\},&amp;u&lt;0,
+\end{cases}
+\]</span> 因此，当 <span class="math display">\[x &gt; t\]</span>
+时，<span class="math display">\[u = x - t\]</span>；当 <span class="math display">\[x &lt; -t\]</span> 时，<span class="math display">\[u = x + t\]</span>；当 <span class="math display">\[x \in [-t, t]\]</span> 时，<span class="math display">\[u = 0\]</span>，即 <span class="math display">\[
+u = \mathrm{prox}_h(x) = \text{sign}(x) \max\{|x| - t, 0\}
+\]</span>
+将公式（12）带入到公式（6）中，可以给出LASSO问题的近端梯度下降法具体的迭代公式
+<span class="math display">\[
+y^{k}=x^k-t_kA^\mathrm{T}(Ax^k-b)\\
+x^{k+1}=\mathrm{prox}_h(y^k)=\operatorname{sign}(y^k)\max\{|y^k|-t_k\mu,0\}
+\]</span></p>
+<h4 id="fista-算法简介">FISTA 算法简介</h4>
+<p>一个非常简单的 FISTA 算法介绍：</p>
+<p>从算法时间复杂度角度上考虑，近端梯度下降法属于 <span class="math inline">\(\mathcal{O}\left(\frac1k\right)\)</span>
+问题。FISTA 算法的目的在于降低算法的时间复杂度到 <span class="math inline">\(\mathcal{O}\left(\frac{1}{k^2}\right)\)</span>。</p>
+<p>实现方法是，先沿着前两步的计算方向计算一个新点，然后在该新点处做一步近似点梯度迭代，即
+<span class="math display">\[
+y^k=\quad x^{k-1}+\frac{k-2}{k+1}(x^{k-1}-x^{k-2})\\
+x^k=\quad\mathrm{prox}_{t_kh}(y^k-t_k\nabla f(y^k))
+\]</span></p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>具体指的《最优化：建模、算法与理论》中 3.2 回归分析
+的内容。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>这句话摘自《最优化：建模、算法与理论》P344，但是我并不是很能理解这个定义为什么可以保证离
+x 不远。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>证明过程可见《最优化：建模、算法与理论》P344 中定理 8.1
+的证明。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-<h6 id="背景">背景：</h6>
-<p>背景部分介绍了 DIFFUSION MODELS 和 Range-Null Space
-Decomposition（零值域分解）的概念。</p>
-<h6 id="方法">方法：</h6>
-<p>方法部分介绍了 DDNM 和 <span class="math inline">\(DDNM^{+}\)</span>
-的方法，进行了一系列数学推导</p>
-<h6 id="实验">实验：</h6>
-<ol type="1">
-<li>对DDNM在五种典型的图像恢复任务上的性能进行了评估，并与最先进的零样本图像恢复方法进行了比较。</li>
-<li>验证了DDNM+在三种典型的图像恢复任务上相对于DDNM的性能改进。</li>
-<li>展示了DDNM和DDNM+在具有挑战性的实际应用中的出色表现。</li>
-</ol>
-<p>评估：</p>
-<ol type="1">
-<li>DDNM 评估：与最先进的零样本图像复原方法（DGP、Pulse、ILVR、RePaint
-和 DDRM）比较</li>
-<li><span class="math inline">\(DDNM^+\)</span>
-评估：去噪性能和鲁棒性两个方面</li>
-<li>real-world：真实噪声和旧照片修复两个方面</li>
-</ol>
-<h6 id="结论">结论：</h6>
-<p>结论指出本文提出的方法不仅适用于解决图像复原问题，也对求解一般的逆问题有着指导意义</p>
-<h5 id="diffusion-posterior-sampling-for-general-noisy-inverse-problems">DIFFUSION
-POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</h5>
-<h6 id="论文标题-1">论文标题：</h6>
-<h6 id="摘要-1">摘要：</h6>
-<h6 id="介绍-1">介绍：</h6>
-<h6 id="背景-1">背景：</h6>
-<h6 id="方法-1">方法：</h6>
-<h6 id="实验-1">实验：</h6>
-<h6 id="结论-1">结论：</h6>
+</section>
 
     </div>
 
@@ -391,7 +422,7 @@ POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</h5>
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://y006.github.io/2023/10/08/23-25-14/" title="论文阅读笔记">https://y006.github.io/2023/10/08/23-25-14/</a>
+      <a href="https://y006.github.io/2024/08/14/22-59-26/" title="计算程序问题数学基础">https://y006.github.io/2024/08/14/22-59-26/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -400,21 +431,18 @@ POSTERIOR SAMPLING FOR GENERAL NOISY INVERSE PROBLEMS</h5>
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" rel="tag"># 文献阅读</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%88%90%E5%83%8F/" rel="tag"># 计算成像</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/08/26/09-33-31/" rel="prev" title="hexo博客移植记录">
-                  <i class="fa fa-chevron-left"></i> hexo博客移植记录
+                <a href="/2023/10/08/23-25-14/" rel="prev" title="论文阅读笔记">
+                  <i class="fa fa-chevron-left"></i> 论文阅读笔记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/08/14/22-59-26/" rel="next" title="计算程序问题数学基础">
-                  计算程序问题数学基础 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
