@@ -8391,4 +8391,103 @@ input/output</em>），功能类似于 8051 单片机的 P0 到 P3
         <tag>Electrical Engineering</tag>
       </tags>
   </entry>
+  <entry>
+    <title>远程控制实验室的Windows电脑</title>
+    <url>/2024/11/28/13-41-55/</url>
+    <content><![CDATA[<h3 id="背景">背景</h3>
+<p>研一初入组，实验室给配了一台新电脑，电脑配置不错，用起来很舒服。可惜美中不足的是暂时是我和我的同门两人一起使用一台电脑。虽然目前我的同门对电脑的需求还不高，但是研一期间恐怕不会在配置第二台电脑，因此研究一下如何两个人共用一台电脑是一个值得思考的问题。除此之外，实验室电脑是台式机，台式机与笔记本有着本质性的不同，笔记本是移动办公而台式机是固定办公。或许一些人会觉得，笔记本牺牲了性能换来便携性，台式机牺牲了便携性换来了性能。这个观点当然是没有什么毛病的，但是显然便携性还牺牲了一样东西，那就是对于电脑开关状态和网络状态的悲观预判。一台笔记本，我们很难假定它总是开机并且处于一个稳定的网络中，但是台式机，特别是实验室的电脑，则是正好相反。</p>
+<p>基于以上两条理由，寻找远程控制的方案是一个很有意义的行为。</p>
+<p>我的第一个想法是看看实验室的别人如何处理的这个问题，因为组里同样采用远程的人不在少数。于是我首先得到的推荐是
+Todesk
+这个远程控制软件。这个软件我用了大概两个月，从这个时间长度来看，这个软件显然是可用的。首先是它没有广告，并且可以免费实现远程桌面的显示，而且使用很符合直觉，一点即可连接，连接习惯的快捷键都可以正常使用，而且跟自己的电脑切换起来也是很自然流畅。但是缺点也是很明显，免费的版本非常不清晰，虽然不卡，但是画质完全得不到保障。而我在开学初买了一台
+4k 的显示器，有时候在寝室进行一些远程控制的时候，看着 4k
+显示器着模糊的画面，感觉自己的钱真是白花了（笑）。由于 Todesk
+以及同类型的软件，都是将整个屏幕画面进行一个同步，显然如果所有免费用户都能有个
+4k 显示画面，那么做这个软件的公司早就倒闭了。所以我咬咬牙尝试了一个月的
+Todesk
+会员，预算有限，我选择了最便宜的会员——专业版。使用一段时间后仍然是非常失望：画面是清晰了，但是只有一点点，这一点点，是当会员结束后退回到免费的画面时候才感受到的！</p>
+<p>因此这成为了压死骆驼的最后一根稻草，Todesk
+结束后，我发现我完全不能再接受长时间看着那模糊的画面工作，因此我下定决心，要换个更好的方式进行工作。</p>
+<p>换个方式进行远程控制，我首先想到了服务器，虽然没学过太多网络知识，但是我知道不少实验室是租借服务器，远程写代码，本地计算机不需要什么算力。因此我的一个想法就是尝试把实验室的电脑变成一个提供算力的服务器，然后我就可以美滋滋的在自己的电脑上，看着自己笔记本的画面或者寝室的
+4k 显示器写代码了。</p>
+<p>这个时候我想起来之前在使用树莓派的时候，我曾经使用 SSH
+远程访问树莓派，然后借助 VSCode 中的 SSH 插件，把树莓派的终端搬到 VSCode
+里面。用 SSH 远程读取写入文件，运行终端，然后编辑器还是我个人最喜欢的
+VSCode，这多是一件美事。</p>
+<p>说干就干，经过查阅资料，我对实验室和自己的电脑进行了配置，实现了远程控制，现在可以舒舒服服写代码了！</p>
+<h3 id="开启局域网-ssh-远程访问">开启局域网 SSH 远程访问</h3>
+<p>首先需要打开 Windows 上自带的
+OpenSSH。这里提供两种方法。第一种是打开【设置-&gt;应用】，查找【可选功能】，搜索【OpenSSH】并打开
+OpenSSH 的客户端和服务器。第二种方法是使用管理员模式打开
+PowerShell，然后输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Get-WindowsCapability -Online | ? Name -like &#x27;OpenSSH*&#x27;</span><br></pre></td></tr></table></figure>
+<p>如果出现</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Name  : OpenSSH.Client~~~~0.0.1.0</span><br><span class="line">State : NotPresent</span><br><span class="line">Name  : OpenSSH.Server~~~~0.0.1.0</span><br><span class="line">State : NotPresent</span><br></pre></td></tr></table></figure>
+<p>则代表 OpenSSH 可用于安装，可以使用下面的命令进行安装：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0</span><br></pre></td></tr></table></figure>
+<p>如果输出</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Path          :</span><br><span class="line">Online        : True</span><br><span class="line">RestartNeeded : False</span><br></pre></td></tr></table></figure>
+<p>则代表安装成功。</p>
+<p>如果使用
+<code>Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'</code>
+后显示</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Name  : OpenSSH.Client~~~~0.0.1.0</span><br><span class="line">State : Installed</span><br><span class="line"></span><br><span class="line">Name  : OpenSSH.Server~~~~0.0.1.0</span><br><span class="line">State : Installed</span><br></pre></td></tr></table></figure>
+<p>则代表已经安装成功。</p>
+<p>然后在终端依次输入下面的指令来开启 SSH
+、设置服务自动启动并检查防火墙。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net start sshd</span><br><span class="line">Set-Service -Name sshd -StartupType &#x27;Automatic&#x27;</span><br><span class="line">Get-NetFirewallRule -Name *ssh*</span><br></pre></td></tr></table></figure>
+<p>下面是示例输出，如果 14 行 Name 是 OpenSSH-Server-In-TCP 且 19 行
+Enabled 是 True 那么说明没问题。这表示防火墙规则已启用，允许 SSH
+服务的流量进入。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Windows PowerShell</span><br><span class="line">版权所有 (C) Microsoft Corporation。保留所有权利。</span><br><span class="line"></span><br><span class="line">尝试新的跨平台 PowerShell https://aka.ms/pscore6</span><br><span class="line"></span><br><span class="line">加载个人及系统配置文件用了 1307 毫秒。</span><br><span class="line">(base) PS C:\Users\Administrator&gt; net start sshd</span><br><span class="line">OpenSSH SSH Server 服务正在启动 ..</span><br><span class="line">OpenSSH SSH Server 服务已经启动成功。</span><br><span class="line"></span><br><span class="line">(base) PS C:\Users\Administrator&gt; Set-Service -Name sshd -StartupType &#x27;Automatic&#x27;</span><br><span class="line">(base) PS C:\Users\Administrator&gt; Get-NetFirewallRule -Name *ssh*</span><br><span class="line"></span><br><span class="line">Name                          : OpenSSH-Server-In-TCP</span><br><span class="line">DisplayName                   : OpenSSH SSH Server (sshd)</span><br><span class="line">Description                   : Inbound rule for OpenSSH SSH Server (sshd)</span><br><span class="line">DisplayGroup                  : OpenSSH Server</span><br><span class="line">Group                         : OpenSSH Server</span><br><span class="line">Enabled                       : True</span><br><span class="line">Profile                       : Any</span><br><span class="line">Platform                      : &#123;&#125;</span><br><span class="line">Direction                     : Inbound</span><br><span class="line">Action                        : Allow</span><br><span class="line">EdgeTraversalPolicy           : Block</span><br><span class="line">LooseSourceMapping            : False</span><br><span class="line">LocalOnlyMapping              : False</span><br><span class="line">Owner                         :</span><br><span class="line">PrimaryStatus                 : OK</span><br><span class="line">Status                        : 已从存储区成功分析规则。 (65536)</span><br><span class="line">EnforcementStatus             : NotApplicable</span><br><span class="line">PolicyStoreSource             : PersistentStore</span><br><span class="line">PolicyStoreSourceType         : Local</span><br><span class="line">RemoteDynamicKeywordAddresses :</span><br><span class="line">PolicyAppId                   :</span><br><span class="line"></span><br><span class="line">(base) PS C:\Users\Administrator&gt;</span><br></pre></td></tr></table></figure>
+<p>接下来在终端设置一个新的用户用于远程访问。（注意这里的 your_user_name
+和 your_password 需要改成自己的）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user your_user_name your_password /add</span><br><span class="line">net user your_user_name</span><br></pre></td></tr></table></figure>
+<p>访问路径
+<code>C:\ProgramData\ssh\sshd_config</code>，在文件中添加：</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">AllowUsers your_user_name</span><br></pre></td></tr></table></figure>
+<p>然后在 PowerShell 中输入命令以重启终端：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Restart-Service sshd</span><br></pre></td></tr></table></figure>
+<h3 id="vscode配置">VSCode配置</h3>
+<p>配置好上面的内容就可以在内网中进行远程控制了。首先在自己的电脑上下载
+VSCode，然后安装 Remote - SSH 插件。</p>
+<p><img src="/2024/11/28/13-41-55/ssh.jpg"></p>
+<p>安装插件之后打开配置界面</p>
+<p><img src="/2024/11/28/13-41-55/config.jpg"></p>
+<p>然后在配置界面写入下面的配置信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host 内网</span><br><span class="line">    HostName 被控电脑的 IPv4 地址</span><br><span class="line">    User your_user_name</span><br><span class="line">    Port 22</span><br></pre></td></tr></table></figure>
+<p>保存配置文件后侧栏 SSH 下面会刷新出
+your_user_name，连接，选择【继续】，输入【密码】，然后如果一切正常，左下角蓝色方块处应该会显示连接到的远程的名称。</p>
+<p>这样就实现了远程控制。但是目前我们必须跟被控电脑连接在同一个网络中才可以正常远程控制。下面我们需要进行内网穿透以便在任何地方访问我们的电脑。</p>
+<h3 id="内网穿透">内网穿透</h3>
+<p>这里我们借助零讯提供的服务实现免费的内网穿透。</p>
+<p>首先进入网址 https://www.zeronews.cc，点击下载 win 版本的软件。</p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-09-40.png"></p>
+<p>下载到的文件是一个压缩包，直接解压并且放在一个合适的目录下即可。然后右键选择解压后的
+zeronews.exe
+文件选择用管理员身份打开。打开后先不管弹出的终端，回到网页，点击登录，注册账号并登录，进入管理页面。</p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-10-52.png"></p>
+<p>根据提示获取 token ：</p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-11-13.png"></p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-11-22.png"></p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-12-21.png"></p>
+<p>获取 token 后回到刚才的终端设置 token：</p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-13-55.png"></p>
+<p>然后再去查看自己的区域，在终端设置区域。</p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-14-21.png"></p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-15-17.png"></p>
+<p>最后在终端输入指令以选择启动和运行方式：<code>zeronews.exe start -d</code></p>
+<p><img src="/2024/11/28/13-41-55/Snipaste_2024-11-28_11-16-26.png"></p>
+<p>然后就可以关闭终端，回到网页继续配置。</p>
+<p>首先添加域名：</p>
+<p><img src="/2024/11/28/13-41-55/image-20241128141359284.png"></p>
+<p><img src="/2024/11/28/13-41-55/image-20241128141333873.png"></p>
+<p>然后添加应用：</p>
+<p><img src="/2024/11/28/13-41-55/image-20241128141316299.png"></p>
+<p><img src="/2024/11/28/13-41-55/image-20241128141259363.png"></p>
+<p>上述内容配置好后，在 VSCode 的 SSH 配置界面进行下面的配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host 外网</span><br><span class="line">    HostName 上面自己起的域名.south.takin.cc</span><br><span class="line">    User your_user_name</span><br><span class="line">    Port 上面自己选择的端口，我这里是10510</span><br></pre></td></tr></table></figure>
+<p>然后就可以愉快的使用远程控制了。</p>
+]]></content>
+  </entry>
 </search>
