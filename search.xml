@@ -6904,22 +6904,25 @@ modulation）的技术来控制电机的转速。下面我们就来详细地了�
       </tags>
   </entry>
   <entry>
-    <title>计算程序问题数学基础</title>
+    <title>计算成像问题数学基础</title>
     <url>/2024/08/14/22-59-26/</url>
     <content><![CDATA[<h4 id="成像问题建模">成像问题建模</h4>
-<p>成像问题被表述为一个线性逆问题，这个逆问题的前向过程表示为公式（1）
-<span class="math display">\[
+<p>成像问题被表述为一个线性逆问题，这个逆问题的前向过程表示为公式（1）</p>
+<p><span class="math display">\[
 y=Ax+\epsilon
-\]</span> 逆问题的目标在于求解 <span class="math inline">\(x\)</span>。在公式（1）中，<span class="math inline">\(y\)</span> 是我们可以测量得到的测量值，<span class="math inline">\(x\)</span> 是我们想要求解的内容，<span class="math inline">\(A\)</span>
+\]</span></p>
+<p>逆问题的目标在于求解 <span class="math inline">\(x\)</span>。在公式（1）中，<span class="math inline">\(y\)</span> 是我们可以测量得到的测量值，<span class="math inline">\(x\)</span> 是我们想要求解的内容，<span class="math inline">\(A\)</span>
 是前向算子，表示施加在原始图像中的物理过程，<span class="math inline">\(\epsilon\)</span> 是前向过程中引入的噪声值。</p>
 <p>成像问题的逆问题的一个重要特征是，前向算子 <span class="math inline">\(A\)</span> 通常是一个 <span class="math inline">\(m&lt;n\)</span> 的矩阵，这意味 <span class="math inline">\(A\)</span>
 的逆矩阵不存在，也无法求得唯一的解析解。虽然线性代数中提供了伪逆 <span class="math inline">\(A^{\dagger}\)</span> 来求解病态的 <span class="math inline">\(y=Ax\)</span>
 问题，但是由于在前向过程中噪声的引入，更常见的方法是使用最优化方法进行建模分析求解上面的问题。</p>
 <p>根据《<a href="http://faculty.bicmr.pku.edu.cn/~wenzw/optbook/opt1.pdf">最优化：建模、算法与理论</a>》书中内容<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>可以注意到，公式（1）的形式满足线性回归模型的形式（虽然定义域和值域不同，但是形式一致）。书中指出，<strong>当假设误差是高斯白噪声时，最小二乘法的解是线性回归模型的最大似然解。</strong>因此常见的作法是使用最小二乘法来给出病态的
 <span class="math inline">\(y=Ax\)</span>
-问题的最佳近似解。最小二乘法最常见的做法是极小化误差的 <span class="math inline">\(\ell_{2}\)</span> 范数的平方，即 <span class="math display">\[
+问题的最佳近似解。最小二乘法最常见的做法是极小化误差的 <span class="math inline">\(\ell_{2}\)</span> 范数的平方，即</p>
+<p><span class="math display">\[
 \min_{x\in\mathbb{R}^n}\quad\frac12\|Ax-y\|_2^2.
-\]</span> 由于在上面这个最小二乘问题中，矩阵 <span class="math inline">\(A\)</span> 的 <span class="math inline">\(m &lt;
+\]</span></p>
+<p>由于在上面这个最小二乘问题中，矩阵 <span class="math inline">\(A\)</span> 的 <span class="math inline">\(m &lt;
 n\)</span>
 时，最优解很可能不止一个，且并不是所有的解都是我们想要的，所以通常借助引入先验知识来选出我们需要的特定性质的解。解的先验知识需要对具体问题进行具体分析。常见的，如果我们希望解向量的长度尽可能的短（欧几里得长度尽量短），那么可以加入
 <span class="math inline">\(\ell_{2}\)</span>
@@ -6929,62 +6932,75 @@ n\)</span>
 <span class="math inline">\(\ell_{1}\)</span> 范数作为正则项。<span class="math inline">\(\ell_{1}\)</span>
 范数定义为将矩阵中的全部元素绝对值相加。当最小化 <span class="math inline">\(\ell_{1}\)</span>
 范数时，可以认为是让尽可能多的元素为0，从而筛选出包含最多零的解。当公式（2）选择<span class="math inline">\(\ell_{1}\)</span>
-范数作为正则项时，此时的问题被称作 LASSO 问题，即 <span class="math display">\[
+范数作为正则项时，此时的问题被称作 LASSO 问题，即</p>
+<p><span class="math display">\[
 LASSO:\;\;\;\;
 \min_{x\in\mathbb{R}^n}\quad\frac12\|Ax-b\|_2^2+\mu\|x\|_1
-\]</span> LASSO 问题是一个典型的复合优化问题，可以被抽象地定义为 <span class="math display">\[
+\]</span></p>
+<p>LASSO 问题是一个典型的复合优化问题，可以被抽象地定义为</p>
+<p><span class="math display">\[
 \min_{x\in\mathbb{R}^n}\quad\psi(x)\xrightarrow{\mathrm{def}}f(x)+h(x)
-\]</span> 其中 <span class="math inline">\(f(x)\)</span>
+\]</span></p>
+<p>其中 <span class="math inline">\(f(x)\)</span>
 为光滑的可微函数，<span class="math inline">\(h(x)\)</span>
-为不可微函数。对于光滑函数 <span class="math inline">\(f(x)\)</span>，可以使用最常见且有效的梯度下降法来求解，迭代公式如公式（5）所示。
-<span class="math display">\[
+为不可微函数。对于光滑函数 <span class="math inline">\(f(x)\)</span>，可以使用最常见且有效的梯度下降法来求解，迭代公式如公式（5）所示。</p>
+<p><span class="math display">\[
 x^{k+1}=x^k-\alpha_k\nabla f(x^k)
-\]</span> 但是，对于不可微函数 <span class="math inline">\(h(x)\)</span>，梯度下降法没有办法使用。因此需要引入新的算法来实现求解。第一个方法是近端梯度下降法（Proximal
+\]</span></p>
+<p>但是，对于不可微函数 <span class="math inline">\(h(x)\)</span>，梯度下降法没有办法使用。因此需要引入新的算法来实现求解。第一个方法是近端梯度下降法（Proximal
 Gradient Descent）。</p>
 <h4 id="近端梯度下降法">近端梯度下降法</h4>
-<p>类似于一般的梯度下降法，近端梯度下降法给出了迭代公式进行最优化求解，即
-<span class="math display">\[
+<p>类似于一般的梯度下降法，近端梯度下降法给出了迭代公式进行最优化求解，即</p>
+<p><span class="math display">\[
 y^{k}=x^k-t_k\nabla f(x^k)\\
 x^{k+1}=\mathrm{prox}_{t_kh}(y^k)\\
-\]</span>
-观察公式（6）可以注意到，近端梯度下降法的两步迭代中，第一步是一个一般的梯度下降法，第二步是使用了一个被称为近端算子的运算来实现。对于一个凸函数
-<span class="math inline">\(h(x)\)</span> ，可以将其近端算子定义为 <span class="math display">\[
+\]</span></p>
+<p>观察公式（6）可以注意到，近端梯度下降法的两步迭代中，第一步是一个一般的梯度下降法，第二步是使用了一个被称为近端算子的运算来实现。对于一个凸函数
+<span class="math inline">\(h(x)\)</span> ，可以将其近端算子定义为</p>
+<p><span class="math display">\[
 \mathrm{prox}_h(x)=\arg\min_{u\in\mathrm{dom}h}\left\{h(u)+\frac12\|u-x\|^2\right\}.
-\]</span> 可以看到，邻近算子的目的是求解一个距 <span class="math inline">\(x\)</span> 不算太远的点<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>，并使函数值 <span class="math inline">\(h(x)\)</span>
+\]</span></p>
+<p>可以看到，邻近算子的目的是求解一个距 <span class="math inline">\(x\)</span> 不算太远的点<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>，并使函数值 <span class="math inline">\(h(x)\)</span>
 也相对较小。可以证明的是，给出的定义中优化问题解的存在具有唯一性<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>。在 LASSO
-问题中，为了更方便的求出近端算子，可以借助次梯度来求解。邻近算子与次梯度的关系如公式（8）所示。
-<span class="math display">\[
+问题中，为了更方便的求出近端算子，可以借助次梯度来求解。邻近算子与次梯度的关系如公式（8）所示。</p>
+<p><span class="math display">\[
 u=\mathrm{prox}_h(x)\Longleftrightarrow x-u\in\partial h(u).
-\]</span> 次梯度被定义为在函数 <span class="math display">\[f\]</span>
-在某一点 <span class="math display">\[x\]</span>
-的任意邻域内，对于所有的 <span class="math display">\[y\]</span> 都满足
-<span class="math display">\[f(y) \geq f(x) + g^T (y - x)\]</span>
-的向量 <span class="math display">\[g\]</span>。这里给出 <span class="math display">\[\ell_1\]</span>​​ 范数的次梯度求解。</p>
-<p>已知 <span class="math display">\[\ell_1\]</span> 范数为 <span class="math display">\[
+\]</span></p>
+<p>次梯度被定义为在函数 <span class="math inline">\(f\)</span> 在某一点
+<span class="math inline">\(x\)</span> 的任意邻域内，对于所有的 <span class="math inline">\(y\)</span> 都满足 <span class="math inline">\(f(y)
+\geq f(x) + g^T (y - x)\)</span> 的向量 <span class="math inline">\(g\)</span>。这里给出 <span class="math inline">\(\ell_1\)</span> 范数的次梯度求解。</p>
+<p>已知 <span class="math inline">\(\ell_1\)</span> 范数为</p>
+<p><span class="math display">\[
 \|x\|_1 = \sum_{i} |x_i|
-\]</span> 可以注意到到其在 <span class="math inline">\(x_i=0\)</span>
-的时候不可导，此处次梯度为 <span class="math display">\[[-1, 1]\]</span>
-区间内的所有值，写作 <span class="math display">\[
+\]</span></p>
+<p>可以注意到到其在 <span class="math inline">\(x_i=0\)</span>
+的时候不可导，此处次梯度为 <span class="math inline">\([-1, 1]\)</span>
+区间内的所有值，写作</p>
+<p><span class="math display">\[
 \partial\|x\|_1 =
 \begin{cases}
 \{1\},&amp;x&gt;0,\\
 [-1,1],&amp;x=0,\\
 \{-1\},&amp;x&lt;0,
 \end{cases}
-\]</span> 因此，当公式（4）中的 <span class="math inline">\(h(x)\)</span> 为 <span class="math display">\[\ell_1\]</span>
-范数时，可以根据公式（8）和公式（10）得到 <span class="math display">\[
+\]</span></p>
+<p>因此，当公式（4）中的 <span class="math inline">\(h(x)\)</span> 为
+<span class="math inline">\(\ell_1\)</span>
+范数时，可以根据公式（8）和公式（10）得到</p>
+<p><span class="math display">\[
 x-u\in t\partial\|u\|_1 =
 \begin{cases}
 \{t\},&amp;u&gt;0,\\
 [-t,t],&amp;u=0,\\
 \{-t\},&amp;u&lt;0,
 \end{cases}
-\]</span> 因此，当 <span class="math display">\[x &gt; t\]</span>
-时，<span class="math display">\[u = x - t\]</span>；当 <span class="math display">\[x &lt; -t\]</span> 时，<span class="math display">\[u = x + t\]</span>；当 <span class="math display">\[x \in [-t, t]\]</span> 时，<span class="math display">\[u = 0\]</span>，即 <span class="math display">\[
+\]</span></p>
+<p>因此，当 <span class="math inline">\(x &gt; t\)</span> 时，<span class="math inline">\(u = x - t\)</span>；当 <span class="math inline">\(x &lt; -t\)</span> 时，<span class="math inline">\(u = x + t\)</span>；当 <span class="math inline">\(x \in [-t, t]\)</span> 时，<span class="math inline">\(u = 0\)</span>，即</p>
+<p><span class="math display">\[
 u = \mathrm{prox}_h(x) = \text{sign}(x) \max\{|x| - t, 0\}
-\]</span>
-将公式（12）带入到公式（6）中，可以给出LASSO问题的近端梯度下降法具体的迭代公式
-<span class="math display">\[
+\]</span></p>
+<p>将公式（12）带入到公式（6）中，可以给出LASSO问题的近端梯度下降法具体的迭代公式</p>
+<p><span class="math display">\[
 y^{k}=x^k-t_kA^\mathrm{T}(Ax^k-b)\\
 x^{k+1}=\mathrm{prox}_h(y^k)=\operatorname{sign}(y^k)\max\{|y^k|-t_k\mu,0\}
 \]</span></p>
@@ -6992,8 +7008,8 @@ x^{k+1}=\mathrm{prox}_h(y^k)=\operatorname{sign}(y^k)\max\{|y^k|-t_k\mu,0\}
 <p>一个非常简单的 FISTA 算法介绍：</p>
 <p>从算法时间复杂度角度上考虑，近端梯度下降法属于 <span class="math inline">\(\mathcal{O}\left(\frac1k\right)\)</span>
 问题。FISTA 算法的目的在于降低算法的时间复杂度到 <span class="math inline">\(\mathcal{O}\left(\frac{1}{k^2}\right)\)</span>。</p>
-<p>实现方法是，先沿着前两步的计算方向计算一个新点，然后在该新点处做一步近似点梯度迭代，即
-<span class="math display">\[
+<p>实现方法是，先沿着前两步的计算方向计算一个新点，然后在该新点处做一步近似点梯度迭代，即</p>
+<p><span class="math display">\[
 y^k=\quad x^{k-1}+\frac{k-2}{k+1}(x^{k-1}-x^{k-2})\\
 x^k=\quad\mathrm{prox}_{t_kh}(y^k-t_k\nabla f(y^k))
 \]</span></p>
